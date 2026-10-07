@@ -3,7 +3,8 @@
 var fs = require('fs'), path = require('path'), vm = require('vm');
 function load(dir) {
   dir = dir || process.env.STEEL_SRC || path.join(__dirname, '..', 'ext');
-  var order = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'ext', '_order.json'), 'utf8'));
+  /* a tree with its own _order.json (the baseline copy) is loaded in ITS order, so a file added later to ext/ never leaks into a baseline run */
+  var ownOrder = path.join(dir, '_order.json'), order = JSON.parse(fs.readFileSync(fs.existsSync(ownOrder) ? ownOrder : path.join(__dirname, '..', 'ext', '_order.json'), 'utf8'));
   var sb = { console: console, setTimeout: setTimeout, clearTimeout: clearTimeout };
   sb.window = sb; sb.self = sb;
   vm.createContext(sb);
