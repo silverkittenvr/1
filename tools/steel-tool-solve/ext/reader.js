@@ -2091,13 +2091,26 @@ function addSelf(t) {
   return m ? m[0] : null;
 }
 function neglectSelf(t) {
-  var m = /(?:neglect|ignore|disregard|not\s+include|do\s+not\s+include|self[- ]weights?\s+(?:are\s+)?not\s+(?:included|considered))[^.;]{0,40}(?:weight|self)/i.exec(t);
+  /* (cloud, A2-beam-178 / 70 / 31 / 32) "wd=1 klf, does not include beam weight", "the dead load does not include the weight of the beam", "the loads do
+     not include ...": a STATEMENT about the given load, so the weight is ADDED (selfMentions reads it so, kind 'not').  It was taken here for the
+     instruction "do not include it" and vetoed the add: 405 printed for 409.73, W18X35 for W18X40, 221.9 psf for 219.4.  Only "not include" with no
+     subject in front ("Do not include the beam weight", "should not include ...") is an instruction to neglect. */
+  var re1 = /(?:neglect|ignore|disregard|not\s+include|do\s+not\s+include|self[- ]weights?\s+(?:are\s+)?not\s+(?:included|considered))[^.;]{0,40}(?:weight|self)/gi, m, pre1;
+  while ((m = re1.exec(t)) !== null) {
+    pre1 = t.slice(Math.max(0, m.index - 30), m.index);
+    if (/^not\s+include/i.test(m[0]) && /\b(?:does|did)\s*$/i.test(pre1)) continue;
+    if (/^do\s+not\s+include/i.test(m[0]) && /\b(?:loads?|it|this|that|which|they|these|those|values?|numbers?|figures?|given|above)\s+$/i.test(pre1)) continue;
+    break;
+  }
   if (!m) m = /beam\s+self[- ]weights?\s+(?:are\s+)?not\s+included/i.exec(t);
   /* 0.6 (review 4): more ways of saying the steel's own weight is not to be added: "this includes the weight of the framing", "the beam weight is
      negligible", "may be ignored", "is not considered", "without the self-weight", "excluding beam self-weight", "already included in the ... dead load"
      (the worksheet added the weight of the beam it picked: 173.25 printed for 169.2) */
   /* ("this INCLUDES the weight of the framing" only: her own sentence "(Include the self-weight of the beam in your calculation.)" means ADD it) */
-  if (!m) m = /\b(?:this|which|that)\s+(?:already\s+)?includes\s+(?:the\s+)?(?:self[- ]?)?weight\s+of\s+(?:the\s+)?(?:steel\s+)?(?:framing|beams?|steel|members?)\b|\b(?:beam|member|steel|framing)(?:'s)?\s+(?:self[- ]?)?weights?\s+(?:is|are|may\s+be|can\s+be|should\s+be)\s+(?:negligible|neglected|ignored|disregarded|not\s+considered|already\s+included|included\s+in)|\b(?:self[- ]?weight|own\s+weight|weight\s+of\s+the\s+(?:steel\s+)?(?:beams?|framing|steel|members?))\s+(?:is|are|may\s+be|can\s+be|should\s+be)\s+(?:negligible|neglected|ignored|disregarded|not\s+considered|already\s+included|included\s+in)|\b(?:without|excluding|exclusive\s+of)\s+(?:the\s+)?(?:beam(?:'s)?\s+)?(?:self[- ]?weight|own\s+weight)|\bdead\s+load\b[^.;]{0,24}?\bincluding\s+(?:the\s+)?(?:beam|framing|steel|member)s?(?:'s)?\s+(?:self[- ]?)?weights?\b/i.exec(t);
+  if (!m) m = /\b(?:this|which|that)\s+(?:already\s+)?includes\s+(?:the\s+)?(?:self[- ]?)?weight\s+of\s+(?:the\s+)?(?:steel\s+)?(?:framing|beams?|steel|members?)\b|\b(?:beam|member|steel|framing)(?:'s)?\s+(?:self[- ]?)?weights?\s+(?:is|are|may\s+be|can\s+be|should\s+be)\s+(?:negligible|neglected|ignored|disregarded|not\s+considered|already\s+included|included\s+in)|\b(?:self[- ]?weight|own\s+weight|weight\s+of\s+the\s+(?:steel\s+)?(?:beams?|framing|steel|members?))\s+(?:is|are|may\s+be|can\s+be|should\s+be)\s+(?:negligible|neglected|ignored|disregarded|not\s+considered|already\s+included|included\s+in)|\b(?:without|excluding|exclusive\s+of)\s+(?:the\s+)?(?:beam(?:'s)?\s+)?(?:self[- ]?weight|own\s+weight)|\bdead\s+load\b(?:(?!\bnot\b|\bwithout\b)[^.;]){0,24}?\bincluding\s+(?:the\s+)?(?:beam|framing|steel|member)s?(?:'s)?\s+(?:self[- ]?)?weights?\b/i.exec(t);
+  /* (cloud, A2-beam-179 / noise-144) the last rule's span crossed the "not" of "dead load of 1 klf not including beam weight" and "dead load 1k/ft (not
+     including the beam weight)" (only the full stop of a decimal load stopped it): the load that LEAVES the weight out was read as holding it (405 for
+     409.73, W12X26 for W14X26).  The span may not hold "not" or "without". */
   return m ? m[0] : null;
 }
 
