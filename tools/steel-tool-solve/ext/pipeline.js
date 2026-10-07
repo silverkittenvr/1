@@ -1837,6 +1837,11 @@ function normalizeTyped(text) {
      - "(ans. 9.67 in^2)": the book's printed answer is not a given of the question. */
   t = t.replace(/(\d\s*-?\s*(?:in\.?|inch(?:es)?|")\s*-?\s*)phi(?=\s*-?\s*(?:diameter\s+|dia\.?\s+)?(?:bolts?|holes?|rivets?|rods?|bars?|fasteners?)\b)/gi, '$1diameter');
   t = t.replace(/\bphi\s+(?=\d+(?:\s?\/\s?\d+|\.\d+)?\s*-?\s*(?:in\.?|inch(?:es)?|")\s*-?\s*(?:diameter\s+|dia\.?\s+)?(?:bolts?|holes?|rivets?|rods?|bars?|fasteners?)\b)/gi, 'diameter ');
+  /* (10/07, A1-tcap-19 / A1-tsel-11 / A1-tsel-12, his glued typing) a bolt size or a count glued to the bolt words: "3/4inbolts", "2holes", "3bolts",
+     "2perflange", "3perline", "boltsper flange".  Nothing read them, and the page answered as if there were no holes (702 printed, 596.2 right).
+     Spaces only: no word or number is changed. */
+  t = t.replace(/(\d\s*(?:in\.?|"))(?=(?:bolts?|holes?|rivets?)\b)/gi, '$1 ').replace(/(\d)(?=(?:bolts?|holes?|lines?|rows?)\b)/gi, '$1 ');
+  t = t.replace(/(^|[^A-Za-z])per(flanges?|lines?|rows?)\b/gi, '$1per $2').replace(/(\d|\b(?:bolts?|holes?|fasteners?))per\b/gi, '$1 per');
   t = t.replace(/\b(fig(?:ure|s)?\.?|problem|prob\.?|example|ex\.)[ \t]*(?:no\.?[ \t]*)?[A-Za-z]{0,2}\d+(?:[-.]\d+)*[a-z]?(?![A-Za-z0-9\/])/gi, '$1');
   t = t.replace(/\(\s*ans(?:wer)?s?\b\.?\s*:?[^()]{0,80}\)/gi, ' ');
   /* a textbook problem number in front of the question ("3-22 A C12 x 30 is connected ...") */
