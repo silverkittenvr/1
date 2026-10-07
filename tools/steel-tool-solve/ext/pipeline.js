@@ -799,6 +799,9 @@ function amendRoute(route, askText, stem) {
      (with the hanger's 0.48 kips it is 125.4).  Any mention stops it ("dead load includes the self weight" too: the page cannot tell the two apart),
      unless the words say to neglect it. */
   if (/^[CT]-maxl$|^L-max$/.test(String(r5.form || '')) && MAXL_SELFW_RE.test(all) && !MAXL_NEGLECT_RE.test(all)) return notInRoute(r5, 'maxl-self-weight', MAXL_SELFW_STOP, [MAXL_SELFW_RE.exec(all)[0]]);
+  /* 5c. ... and a LIVE LOAD ALREADY GIVEN as a number ("dead load 150 k, live load 50 k. what is the max L it can carry in addition": the form gives the
+     whole live load, 107.5, where 57.5 is asked), or the loads given per square foot on a column or a hanger (the form takes D in kips): one sentence. */
+  if (/^[CT]-maxl$|^L-max$/.test(String(r5.form || '')) && (MAXL_LIVE_GIVEN_RE.test(all) || MAXL_AREA_RE.test(all))) return notInRoute(r5, 'maxl-given-live', MAXL_GIVEN_STOP, [(MAXL_LIVE_GIVEN_RE.exec(all) || MAXL_AREA_RE.exec(all))[0]]);
   /* 6. (unit D) the largest live load of a BEAM whose loads are given per foot, with no floor: the page's form works it from a floor (slab, psf, beam
      spacing), so "W16x26 spans 20 ft, dead load 0.5 k/ft ... maximum service live load" stopped asking for a spacing the question does not have, and
      "W16x31 ... dead load 0.6 k/ft. max service live load in k/ft" printed "ANSWER: Mu = 60.48 kip-ft".  One plain sentence instead. */
@@ -825,6 +828,10 @@ var MAXL_ASK_RE = /\b(?:max(?:imum)?\.?|largest|greatest|biggest|highest)\s+(?:(
 var MAXL_SELFW_RE = /\bself[\s-]?weights?\b|\bown\s+weights?\b|\bweights?\s+of\s+the\s+(?:member|hanger|column|rod|bar|angle|plate|section|shape|tie|strut|channel|tee|pipe)\b/i;
 var MAXL_NEGLECT_RE = /\b(?:neglect|ignor|disregard)\w*\b[^.;]{0,40}\b(?:self|own|weight)|\b(?:self[\s-]?weight|own\s+weight)s?\b[^.;]{0,30}\b(?:neglected|ignored|disregarded|negligible)\b/i;
 var MAXL_SELFW_STOP = 'Your question speaks of the member\'s own weight, and the page\'s largest-live-load calculation does not add it to the dead load, so it gives no answer to copy here.';
+/* (an "L = 14 ft" is the column's length, not a live load) */
+var MAXL_LIVE_GIVEN_RE = /\blive(?:\s+loads?)?\s*(?:=|of|is|:)?\s*\d|\bL\s*=\s*\d+(?:\.\d+)?(?!\d|\.\d|\s*-?\s*(?:ft|feet|foot|in\b|inch|'))|\bLL\s*(?:=|of|is|:)?\s*\d|\d\s*(?:k|kips?|psf|plf|klf|k\s*\/\s*ft)\s+(?:of\s+)?live\b/i;
+var MAXL_AREA_RE = /psf|sq\.?\s*ft|square\s+f(?:ee|oo)t|ft\s?\^?\s?2\b|\btributary\b/i;
+var MAXL_GIVEN_STOP = 'Your question gives a live load already, or its loads per square foot, and the page\'s largest-live-load calculation works only from a service dead load in kips with the live load unknown, so it gives no answer to copy here.';
 var MAXL_PER_FOOT_STOP = 'Your question gives the beam\'s loads per foot and no floor, and the page works out the largest live load of a beam only from a floor (slab, loads in psf and the beam spacing), so it gives no answer to copy here.';
 /* (unit D) the ask of rule 7: a dead load (or weight), service or factored */
 var DEAD_ASK_RE = /\b(?:(?:factored|service|unfactored|total|uniform(?:ly\s+distributed)?|distributed|line)\s+){0,2}dead\s+(?:loads?|weights?)\b/i;
@@ -1396,7 +1403,9 @@ function signaturePass(parts, cover, body) {
           /* ("use the recommended value, not the theoretical, for design" does not ask for the theoretical one; "what is the theoretical K" beside it does) */
           var NOT_THEO = /\b(?:not|rather\s+than|instead\s+of)\s+(?:the\s+|a\s+)?theoretical\b/gi, tSrc = /\btheoretical\b|\brecommended\b|\bdesign\b/i.test(own0) ? own0 : own1,
             theo = /\btheoretical\b/i.test(tSrc.replace(NOT_THEO, ' ')), rec = /\brecommended\b|\bdesign\b/i.test(tSrc);
-          if (theo) {
+          /* NOT when the part asks for something made FROM a K -- an effective length ("using the theoretical K, what is the effective length", "what is KL"),
+             a ratio, a comparison, a reason -- or gives the theoretical K as a number: a K line there answers what is not asked (the old stop stands) */
+          if (theo && !/\bK\s?L\b(?!\s*\/)|\beffective\s+length\b(?!\s+factor)|\bratio\b|\bdifferen|\bcompar|\bwhy\b|\bexplain|\bdescrib|\btheoretical\s+(?:value\s+(?:of\s+)?)?K\s*(?:=|is|of|equals?)\s*\d/i.test(tSrc)) {
             blanks.concat(part.alsoAsked || []).forEach(function (b) {
               /* (its own words: the text in front of the blank as typed -- the 40-letter context alone cut "theoretical" in half) */
               var c = (/_{2,}/.test(String(b.raw || '')) ? String(b.raw).split(/_{2,}/)[0] : '') + ' ' + String(b.context || ''), ct = /\btheoretical\b/i.test(c.replace(NOT_THEO, ' ')), cr = /\brecommended\b|\bdesign\b/i.test(c);
