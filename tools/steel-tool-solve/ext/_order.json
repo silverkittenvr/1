@@ -16,6 +16,7 @@
  "llm_reader_core.js",
  "expand.js",
  "wordsx.js",
+ "asks.js",
  "pipeline.js",
  "ui.js"
 ]

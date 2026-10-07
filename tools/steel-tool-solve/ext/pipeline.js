@@ -1644,6 +1644,9 @@ SOLVE.wantedBoxes = function (part, vals, run) {
     out.push({ si: si0, path: path, name: b0.name, label: plainLabel(b0.label), unit: b0.unit || '', kind: b0.kind, hint: SOLVE.boxHint(b0.name), cands: SOLVE.candidatesForBox(part, si0, path) });
   }
   if (part.kind !== 'form') return out;
+  /* (10/07, unit E) a part that names a drawing and stopped for something only the drawing shows is asked in plain questions, ONE at a time (asks.js).
+     His W18x46 of fig p3-23 was asked two boxes at once and then nothing: the calculator wanted the connection, a choice, and this list holds numbers only. */
+  if (root.STEEL_ASKS) { try { names = root.STEEL_ASKS.list(part, vals, run, { runPart: SOLVE.runPart }); } catch (eA) { names = []; } if (names.length) return names; names = []; }
   for (si = 0; si < part.stages.length; si++) {
     st = part.stages[si];
     if (!st.boxes) continue;
@@ -1671,6 +1674,8 @@ SOLVE.wantedBoxes = function (part, vals, run) {
   }
   return out;
 };
+/* his answer to one ask of asks.js (a number, or the key of the button he pressed): false when it is not a valid answer */
+SOLVE.applyAsk = function (part, vals, ask, value) { return !!(root.STEEL_ASKS && ask && ask.ask && root.STEEL_ASKS.apply(part, vals, ask, value)); };
 
 
 /* What he types is not what the rules were written for.  Her exams print the resistance factor as a slashed O ("OMn" with a stroke through the O; seen on the
