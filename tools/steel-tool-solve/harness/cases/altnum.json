@@ -1,0 +1,402 @@
+[
+ {
+  "id": "an01",
+  "text": "a w10x49 colum n is 14ftlong with pinned ends ,Fy=50ksi.  determien the desgin strength phi Pn of the colmun",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 471 kips (her method)",
+    "For comparison only (do not copy): KL/r route 466.6; exact E3 470.6"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an02",
+  "text": "w10x49 colmun 14 ft long pinned both ends ,supports a dead laod of 150kips and live load 200 kips.is the column adequate?",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 471 kips (her method) -- adequate: phi Pn >= Pu? NO",
+    "Check: adequate: phi Pn >= Pu? NO (471 < 500 kips)",
+    "For comparison only (do not copy): KL/r route 466.6; exact E3 470.6"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an03",
+  "text": "selcet the lightest w14 colmun to carry Pu = 1100kips ,KL = 16ft both axis..",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Lightest column: W14X109",
+    "Check: W14X109 (109 lb/ft) phi Pn = 1190 kips > Pu = 1100 kips ok (Table 4-1a, her method: KL = 16 ft)",
+    "For comparison only (do not copy): KL/r route 1180.8"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an04",
+  "text": "a W12 x53 column ,KxLx = 24 ft and KyLy = 12ft .Fy = 50 ksi find phi Pn",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 544.4 kips (her method)"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an05",
+  "text": "w18x35 beam is fully braced  Mu = 230 kip-ft.is the beam adequate? find phi Mp",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Design moment phi Mp: phi Mp = 249 kip-ft (W18X35, fully braced); adequate",
+    "Check: adequate for Mu = 230"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an06",
+  "text": "selcet the most economical w shape for a fully braced beam with Mu=324kip-ft",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Most economical beam: W21X44",
+    "Check: W21X44 (44 lb/ft, d = 20.7 in) phi Mp = 358 kip-ft >= Mu = 324"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an07",
+  "text": "a w14x82 tensoin member is connectd through its flanges with 4 lines of 3/4in bolts (2 in each flange) ,3 bolts per line. a992 steel.determine the desgin tensile strength",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 921.7 kips -- rupture governs",
+    "Check: yielding 1080, rupture 921.7"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an08",
+  "text": "select the lightest w8 tension member for dead load 50 kips and live load 100kips, connected through the flanges with 2 lines of 3/4in bolts in each flange 3 bolts per line ,length 20 ft",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Lightest tension member: W8X24",
+    "Check: W8X24 (24 lb/ft) phi Pn = 249.2 kips (rupture) >= Pu = 220 kips"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an09",
+  "text": "a W8x24 tension member 20 ft long with 2 lines of 3/4 in bolts in each flange, 3 per line.  D = 50 kips L = 100 kips. what is the maximum service live load it can carry if the dead load is 50 kips",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs; adequate",
+    "Check: yielding 318.6, rupture 249.2; adequate for Pu = 220",
+    "ANSWER (step 2): Maximum service live load L: L = 118.25625 kips (service, unfactored)",
+    "Check: L = (phi Rn - 1.2 D) / 1.6; 1.4 D = 70 <= 249.21 kips ok"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an10",
+  "text": "find the factored laod for D = 100kips and L = 150 kips",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Factored load: 360 kips",
+    "Check: 1.2D + 1.6L"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an11",
+  "text": "what is the hole size for a 7/8in bolt",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Hole size for net area: hole = 1 in",
+    "Check: bolt 0.875 in + 1/8"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an12",
+  "text": "w14x82 tension member with two lines of 3/4 in bolts in each flange. find the net area An",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Net area An: An = 21.0075 in^2",
+    "Check: Ag = 24 in^2, W14X82"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an13",
+  "text": "Determine the Euler buckling load of a W8x31 colmun 25 ft long with pinned ends",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 118.48 kips",
+    "Check: Fe = 12.977 ksi, KL/r = 148.51"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an14",
+  "text": "what is the shear lag factor U for a W8x24 connected through the flanges with 3 bolts per line",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Shear lag factor U: U = 0.90",
+    "Check: Table D3.1 case 7"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an15",
+  "text": "phi Fcr for KL/r = 87 and Fy = 50 ksi",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 25.9 ksi",
+    "Check: KL/r = 87, Fy = 50 ksi"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an16",
+  "text": "a simply supported beam 20 ft span carries a uniform dead load of 1 k/ft and live load 2k/ft. find the maximum factored moment",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 220 kip-ft",
+    "Check: (1.2D + 1.6L) at x = 10 ft; reactions RA = 44 (1.2D + 1.6L), RB = 44 (1.2D + 1.6L); Vu = 44 (1.2D + 1.6L) -- reactions and shear in kips"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an17",
+  "text": "w10x49 column 14ft long pinned ends Fy=50 ksi. KL/r = ______ phi Pn = ______ kips",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 471 kips (her method)",
+    "For comparison only (do not copy): KL/r route 466.6; exact E3 470.6",
+    "FOR YOUR BLANK (KL/r = ____): KL/r = 66.14   <- write this number.   (67 is only the row of her table that phi Fcr is read from)"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "nc01",
+  "text": "(a) a c12x30 is connected through its web with three gage lines of 7/8in phi bolts. the gage lines are 3 in on center and the bolts are spaced three in on center along the gage line. if the center row of polts is staggered with respect to the outer row,  determine the effective net cross sectional area of the channel. assume there are four bolts in each line. (b) determane the effective net area of w18 x 46 shown in fig p3-23 assume holes are for 3/4 in phi bolts (ans. 9.67 in^2)",
+  "expect": {
+   "status": [
+    "refused",
+    "refused"
+   ],
+   "lines": []
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "nc02",
+  "text": "what is K for a colmun fixed at both ends",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))"
+   ]
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "nc03",
+  "text": "what is the fy and fu of a992 steel",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Steel ASTM A992: ASTM A992: Fy = 50 ksi, Fu = 65 ksi (her slide: All wide flange W, C and MC shapes)"
+   ]
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "nc04",
+  "text": "w21x44 fully braced beam find phi Mp",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Design moment phi Mp: phi Mp = 358 kip-ft (W21X44, fully braced)"
+   ]
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "an21",
+  "text": "w14x82 tension member, 2 lines of 3/4in bolts in each flange 3 per line. design strength for yielding of the gross section = ____ kips",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 921.7 kips -- rupture governs",
+    "Check: yielding 1080, rupture 921.7",
+    "CHECK YOUR BLANK: the page does not know what \"design strength for yielding of the gross section = ____ kips\" asks for. Before you copy, make sure the ANSWER line above names the SAME thing as that blank. If it names something else, that blank is NOT answered here."
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "nc06",
+  "text": "what is the modulus of elasticity of steel",
+  "expect": {
+   "status": [
+    "words"
+   ],
+   "lines": [
+    "ANSWER: Modulus of elasticity of steel (E = 29,000 ksi): 29000 ksi -- \"Modulus of elasticity of steel = 29,000 ksi (200 000 MPa)\" (undated; TO-DOWNLOAD/aisc/A360-22W-ewr.pdf [Symbols (E)] PDF page 35 (printed 16.1-xxxiii))"
+   ]
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "nc07",
+  "text": "a w12x26 tension member with no holes. find phi Pn",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 344.3 kips -- yielding governs (no holes)"
+   ]
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "an18",
+  "text": "w12x65 colmun ,K=0.8 ,L = 14ft both axis.find phi Pn",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 728 kips (her method)",
+    "For comparison only (do not copy): KL/r route 741.1; exact E3 743.6"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an19",
+  "text": "selcet the lightest w beam,fully braced,for Mu = 259.2kip-ft",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Most economical beam: W16X40",
+    "Check: W16X40 (same weight as W18X40, which has more capacity; Table 3-2's first bold row above Mu is W16X40) (40 lb/ft, d = 16 in) phi Mp = 274 kip-ft >= Mu = 259.2"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "an20",
+  "text": "a pl 1/2x8 tensoin member A36 with one line of 3/4in bolts.  phi Pn = ______ kips",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.6 kips -- yielding governs",
+    "Check: yielding 129.6, rupture 155"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "nc08",
+  "text": "find the factored load D = 100kips L = 10 kips",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Factored load: 140 kips (1.4D governs: L is less than D/8)"
+   ]
+  },
+  "note": "must NOT change"
+ },
+ {
+  "id": "nc09",
+  "text": "lightest w shape with Zx >= 98 in^3",
+  "expect": {
+   "status": [
+    "refused"
+   ],
+   "lines": []
+  },
+  "note": "must NOT change"
+ }
+]
