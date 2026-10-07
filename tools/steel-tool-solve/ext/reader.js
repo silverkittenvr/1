@@ -1843,16 +1843,144 @@ function columnLengths(F, B, D, fn) {
 
 function findBracing(t, total) {
   var o = { fraction: null, segs: null, from: null, mid: null };
-  var m = /(?:braced|supported|restrained|bracing|brace[ds]?)[^.;]{0,90}?(?:at\s+)?(?:its\s+|the\s+)?(?:one[- ])?(third|quarter|mid)[- ]?(?:points?|height|length|span)/i.exec(t);
+  /* 0.9 (10/07): "1/3 points" and "1/4 points" are the third and quarter points (A1-ccap-309: "weak axis braced at 1/3 points" was worked as mid height,
+     Ly = L/2, 636 printed for 716).  The fraction is read from the captured word only, not from the whole span of the match. */
+  var m = /(?:braced|supported|restrained|bracing|brace[ds]?)[^.;]{0,90}?(?:at\s+)?(?:its\s+|the\s+)?(?:one[- ])?(third|quarter|mid|1\s*\/\s*3|1\s*\/\s*4)[- ]?(?:points?|height|length|span)/i.exec(t);
   if (!m) m = /(one[- ]third|1\/3|third)\s+points?[^.;]{0,40}/i.exec(t);
   if (m) {
-    var w = /third/i.test(m[0]) ? 3 : (/quarter/i.test(m[0]) ? 4 : 2);
+    var w = /third|3/i.test(m[1]) ? 3 : (/quarter|4/i.test(m[1]) ? 4 : 2);
     o.fraction = w; o.from = m[0];
   }
   if (!m) { m = /(?:braced|supported)[^.;]{0,50}?(?:at\s+)?mid-?(?:height|length|span|point)|at\s+its\s+mid-?(?:height|length|point)|at\s+mid-?(?:height|length|point)/i.exec(t); if (m) { o.fraction = 2; o.from = m[0]; } }
   var b = new RegExp('(' + N + ')\\s*-?\\s*(?:ft|feet|foot|\')\\s+(?:above|from)\\s+(?:the\\s+)?(?:bottom|base|top)', 'i').exec(t);
   if (b && /brace|support/i.test(t)) { o.above = { value: parseNum(b[1]), from: b[0] }; }
+  if (o.fraction) braceReview(t, o);
+  if (o.above) braceHeights(t, o, total);
   return o;
+}
+
+/* 0.9 (10/07, A1 column bracing): the brace along the height is read with its AXIS, its NEGATION and EVERY statement of it, or the page stops.  Before,
+   the first "braced ... mid height" won with no look around it, and fillColumn always halved the WEAK axis:
+     "braced at mid height about its strong axis" / "about the x axis" / "in the plane of the web" -> 460.2 printed for 208.8 (A1-ccap-187, 271, 178;
+       W14X61 chosen for W14X90, A1-csel-04);
+     "NOT braced at mid height" / "the bracing at mid height is removed" -> 749.1 for 466 (A1-ccap-272, 207; W12X45 for W12X65, A1-csel-03);
+     "weak axis braced at the third points and strong axis at mid height" -> the second brace was lost (607.4 for 764.0, A1-ccap-281).
+   A mention of an axis is "positive" unless the words around it take it away ("but not the strong axis", "no strong axis bracing", "the strong axis is
+   not", "y axis unbraced"): those say which axis is FREE and agree with a brace on the other one. */
+var BRACE_AXES = [
+  ['x', /\b(?:strong|major)[\s-]*ax[ie]s\b|\bx\s*-\s*x\b|\bx[\s-]*ax[ie]s\b|\babout\s+(?:the\s+|its\s+)?x\b|\bin\s+the\s+plane\s+of\s+the\s+web\b/gi],
+  ['y', /\b(?:weak|minor)[\s-]*ax[ie]s\b|\by\s*-\s*y\b|\by[\s-]*ax[ie]s\b|\babout\s+(?:the\s+|its\s+)?y\b|\b(?:weak|minor)\s+direction\b|\bperpendicular\s+to\s+the\s+web\b|\bin\s+the\s+plane\s+of\s+the\s+flanges?\b/gi],
+  /* (the triage's own list: "in the strong direction" can be read for either axis, so it is not placed) */
+  ['?', /\b(?:strong|major)\s+direction\b|\bparallel\s+to\s+the\s+(?:web|flanges?)\b|\bperpendicular\s+to\s+the\s+flanges?\b/gi]
+];
+var BRACE_FILL = '(?:(?:laterally|lateral|weak|strong|minor|major|x|y|axis|weak-axis|strong-axis|intermediate|additional|any|a|an|the|its|been|be|at|about|in)\\s+){0,3}';
+var BRACE_WORD = '(?:braced|bracing|braces|brace|supported|supports|support|restrained|restraint)';
+/* "not braced at", "no bracing at", "there is no brace at", "no weak axis bracing at", "unbraced at", "without bracing at" ... (words BEFORE "mid height") */
+var BRACE_NEG_PRE = new RegExp('(?:\\b(?:not|no|never|nor|without)\\s+' + BRACE_FILL + '(?:' + BRACE_WORD + '\\s+)?|\\bun' + BRACE_WORD + '\\s+)' + BRACE_FILL + '$', 'i');
+/* "the bracing at mid height is removed", "... is not provided", "... has been removed", "bracing at mid height: none" (words AFTER it) */
+var BRACE_NEG_POST = /^\s*(?:(?:about|in|for|along|of|on|the|its|weak|strong|minor|major|x|y|axis|direction|web|flanges?|only)\s+){0,5}(?:is|are|was|were|has\s+been|have\s+been|had\s+been)\s+(?:not\s+(?:provided|present|there|used|installed|in\s+place)|removed|omitted|taken\s+(?:out|away)|eliminated|absent|missing)\b|^\s*:\s*none\b/i;
+var BRACE_CLAUSE = /[,;!?\n]|\.(?!\d)/g, BRACE_SENT = /[;!?\n]|\.(?!\d)/g;
+/* a question word after the brace ends the stretch searched for axis words ("braced at mid height about the weak axis find KL/r about the x axis") */
+var BRACE_ASK = /\b(?:find|what|determine|compute|calculate|check|select|is\s+it|how)\b/i;
+function braceSpan(t, at, end, re) {
+  var s = 0, e = t.length, mm, q;
+  re.lastIndex = 0;
+  while ((mm = re.exec(t)) !== null) {
+    if (mm.index + mm[0].length <= at) s = mm.index + mm[0].length;
+    else if (mm.index >= end) { e = mm.index; break; }
+  }
+  q = BRACE_ASK.exec(t.slice(end, e));
+  if (q) e = end + q.index;
+  return [s, e];
+}
+function braceAxes(seg) {
+  var got = {}, i, re, mm, pre, post;
+  for (i = 0; i < BRACE_AXES.length; i++) {
+    re = new RegExp(BRACE_AXES[i][1].source, 'gi');
+    while ((mm = re.exec(seg)) !== null) {
+      pre = seg.slice(0, mm.index); post = seg.slice(mm.index + mm[0].length);
+      if (/\b(?:not|no|nor|without)\s+(?:(?:about|for|in|along|on|the|its|any)\s+){0,3}$/i.test(pre) || /^\s*(?:(?:is|are)\s+)?(?:not\b|un(?:braced|supported)\b|left\s+unbraced\b|free\b)/i.test(post)) continue;
+      /* (an axis named for what is ASKED is no brace: "braced at mid height about the weak axis, KL/r about the x axis = ____") */
+      if (/(?:\bkl\s*\/\s*r|\bslenderness(?:\s+ratio)?|\bradius\s+of\s+gyration|\br\s?[xy]?|\bI\s?[xy]?|\binertia|\bgovern(?:s|ing)?)\s*(?:about|for|in|along|on)?\s*(?:the\s+|its\s+)?$/i.test(pre)) continue;
+      got[BRACE_AXES[i][0]] = true;
+    }
+  }
+  return got;
+}
+/* the one axis named in a brace statement's own stretch (its clause cut at "and" / "but" / "while"), or null */
+function braceOneAxis(t, s) {
+  var a = s.cl[0], e = s.cl[1], re = /\band\b|\bbut\b|\bwhile\b|\bwhereas\b/gi, k, g;
+  while ((k = re.exec(t)) !== null && k.index < e) {
+    if (k.index >= a && k.index + k[0].length <= s.at) a = k.index + k[0].length;
+    else if (k.index >= s.end) { e = k.index; break; }
+  }
+  g = braceAxes(t.slice(a, e));
+  return g['?'] ? null : (g.x && !g.y ? 'x' : (g.y && !g.x ? 'y' : null));
+}
+function braceReview(t, o) {
+  var FR = /\b(?:one[- ])?(third|quarter|mid|1\s*\/\s*3|1\s*\/\s*4)[- ]?(?:points?|height|length|span)\b|\bmid-?point\b/gi, mm, st = [], pos = [], i, cl, sen, n, gc, gs, ax;
+  while ((mm = FR.exec(t)) !== null) {
+    cl = braceSpan(t, mm.index, mm.index + mm[0].length, BRACE_CLAUSE);
+    /* a statement is a brace only when its own clause speaks of a brace or of an axis ("strong axis at mid height" is the second brace of A1-ccap-281) */
+    if (!/brac|support|restrain|\bax[ie]s\b|direction|\bplane\b/i.test(t.slice(cl[0], cl[1]))) continue;
+    sen = braceSpan(t, mm.index, mm.index + mm[0].length, BRACE_SENT);
+    n = /third|3/i.test(mm[1] || '') ? 3 : (/quarter|4/i.test(mm[1] || '') ? 4 : 2);
+    st.push({ at: mm.index, end: mm.index + mm[0].length, n: n, cl: cl, sen: sen,
+      neg: BRACE_NEG_PRE.test(t.slice(cl[0], mm.index)) || BRACE_NEG_POST.test(t.slice(mm.index + mm[0].length, sen[1])) });
+  }
+  for (i = 0; i < st.length; i++) if (!st[i].neg) pos.push(st[i]);
+  if (!st.length) return;
+  /* every brace along the height is said NOT to be there: no brace, Ly = L (A1-ccap-272, 207, csel-03: 466 / W12X65) */
+  if (!pos.length) { o.fraction = null; o.none = { from: t.slice(st[0].cl[0], st[0].sen[1]) }; return; }
+  /* (a "no brace at the third points" next to ONE brace at another place names where there is none: "braced at mid height, not at the third points") */
+  if (pos.length === 1 && st.every(function (s) { return !s.neg || s.n !== pos[0].n; })) st = pos;
+  if (pos.length < st.length) { o.stop ='Your question both places a brace along the height of the column and says a brace is not there, so the page does not work this column out.'; return; }
+  if (pos.length === 1) {
+    gc = braceAxes(t.slice(pos[0].cl[0], pos[0].cl[1])); gs = braceAxes(t.slice(pos[0].sen[0], pos[0].sen[1]));
+    o.fraction = pos[0].n;
+    if (gc['?'] || (gc.x && gc.y)) ax = '?';
+    else if (gc.x) ax = gs.y || gs['?'] ? '?' : 'x';
+    else if (gc.y) ax = gs.x || gs['?'] ? '?' : 'y';
+    else ax = gs.x || gs['?'] ? '?' : null;
+    if (ax === '?') o.stop = 'The page cannot tell from your words which axis the brace along the height holds (the strong x-x axis or the weak y-y axis), so it does not work this column out.';
+    /* the brace holds the STRONG axis only: Lx = L/n, Ly = L (A1-ccap-187: 208.8; A1-csel-04: W14X90) */
+    else if (ax === 'x') { o.fractionX = o.fraction; o.fraction = null; }
+    o.axis = ax;
+    return;
+  }
+  /* two braces, one said for each axis ("weak axis braced at the third points and strong axis at mid height", A1-ccap-281: Ly = L/3, Lx = L/2, 764.0).
+     Each one is read in its own stretch, cut at "and" / "but" / commas; anything less clear stops. */
+  if (pos.length === 2) {
+    var a0 = braceOneAxis(t, pos[0]), a1 = braceOneAxis(t, pos[1]), px, py;
+    if (a0 && a1 && a0 !== a1 && pos[0].end <= pos[1].at) {
+      px = a0 === 'x' ? pos[0] : pos[1]; py = a0 === 'x' ? pos[1] : pos[0];
+      o.fraction = py.n; o.fractionX = px.n; o.axis = 'xy'; o.from = t.slice(pos[0].cl[0], pos[1].end);
+      return;
+    }
+  }
+  o.stop = 'Your question describes more than one brace along the height and the page cannot tell which axis each one holds, so it does not work this column out.';
+}
+/* "braced about the weak axis at 10 ft and 20 ft from the base": EVERY height is read (only "20 ft from the base" was, so the column was split 20 + 10:
+   661.2 printed for 744.7, A1-ccap-280; W14X109 for W14X99, A1-csel-19).  o.heights = the brace heights measured from the BASE, in order. */
+function braceHeights(t, o, total) {
+  var re = new RegExp('((?:' + N + '\\s*-?\\s*(?:ft|feet|foot|\')?\\s*(?:,\\s*and\\s+|,\\s*|\\s+and\\s+))*)(' + N + ')\\s*-?\\s*(?:ft|feet|foot|\')\\s+(above|from)\\s+(?:the\\s+)?(bottom|base|top)', 'i'), mm = re.exec(t), hs, i, cl, sen, gc, gs;
+  if (!mm) return;
+  /* (a list only when it says "and" or follows "at": in "W12x79, 30 ft, 10 ft from the base" the 30 ft is the column, not a brace) */
+  hs = (mm[1] && (/\band\b/i.test(mm[1]) || /\bat\s+$/i.test(t.slice(0, mm.index))) ? (mm[1].match(new RegExp(N, 'g')) || []).map(parseNum) : []).concat([parseNum(mm[2])]);
+  /* (any other number in front that is not the column's length: "braced 10 ft, 20 ft from the base" is not read as one brace) */
+  if (hs.length === 1 && mm[1] && (mm[1].match(new RegExp(N, 'g')) || []).some(function (x) { return total === null || total === undefined || Math.abs(parseNum(x) - total) > 1e-9; })) { o.stop = 'The page cannot tell how many braces your question places along the height, so it does not work this column out.'; return; }
+  cl = braceSpan(t, mm.index, mm.index + mm[0].length, BRACE_CLAUSE); sen = braceSpan(t, mm.index, mm.index + mm[0].length, BRACE_SENT);
+  gc = braceAxes(t.slice(cl[0], cl[1])); gs = braceAxes(t.slice(sen[0], sen[1]));
+  if (hs.length > 1) o.above.from = mm[0];
+  /* a brace at a fraction AND at a height, a strong-axis or unplaced brace, a height measured "above the top", or a height not inside the column: stop */
+  if (o.fraction || o.fractionX || o.stop) { o.stop = o.stop || 'Your question places braces along the height in two different ways, so the page does not work this column out.'; return; }
+  if (gc.x || gc['?'] || (!gc.y && (gs.x || gs['?'])) || (gc.y && gs.x) || /\b(?:both|either)\s+(?:principal\s+)?(?:directions|axes)\b/i.test(t.slice(sen[0], sen[1]))) { o.stop = 'Your question braces the column at a stated height but the page cannot place that brace on the weak axis, so it does not work this column out.'; return; }
+  if (mm[3].toLowerCase() === 'above' && mm[4].toLowerCase() === 'top') { o.stop = 'The page cannot tell where along the column your brace heights are measured from, so it does not work this column out.'; return; }
+  if (total === null || total === undefined) return;
+  for (i = 0; i < hs.length; i++) {
+    if (!(hs[i] > 0 && hs[i] < total) || (i && hs[i] <= hs[i - 1])) { o.stop = 'The brace heights in your question do not fit inside the column length the page read, so it does not work this column out.'; return; }
+  }
+  o.heights = /top/i.test(mm[4]) ? hs.map(function (h) { return round6(total - h); }).reverse() : hs;
 }
 
 /* 0.6: where the plates of a plated W shape sit, when the text SAYS it: 'tips' (at the flange tips, boxing the section), 'faces' (flat on the flanges; a
@@ -1862,6 +1990,87 @@ function platePlace(t) {
     faces = /\bflat\s+on\s+the\s+outside\b|\boutside\s+faces?\b|\bflange\s+faces?\b|\bfaces?\s+of\s+(?:each|the|both)\s+flanges?\b|\bwelded\s+to\s+(?:each|the|both|the\s+top\s+and\s+(?:the\s+)?bottom)\s+flanges?\b|\b(?:on|to)\s+(?:each|both|the\s+top\s+and\s+(?:the\s+)?bottom)\s+flanges?\b|\bcover\s+plates?\b|\bcover[\s-]plated\b/i.test(t);
   if (tips && faces) return /\bcover\s+plates?\b|\bcover[\s-]plated\b/i.test(t) && !/\bflat\s+on\s+the\s+outside\b|\boutside\s+faces?\b|\bflange\s+faces?\b|\bfaces?\s+of\s+(?:each|the|both)\s+flanges?\b/i.test(t) ? 'tips' : null;
   return tips ? 'tips' : (faces ? 'faces' : null);
+}
+/* 0.9 (10/07): the strong axis braced along the height is worked out only for a column pinned at both ends (in its own words, or the cover page with no
+   end condition in the words): there are no strong-axis segment boxes, and a fixed end would need them. */
+function columnPinnedOnly(F, D) {
+  var ends0 = F.ends.filter(function (e) { return !e.viaK; }), kE = F.ends.filter(function (e) { return e.viaK; });
+  if (ends0.length) return ends0.every(function (e) { return e.id === 'pinned-pinned'; });
+  return !kE.length && !!(D.end_condition && D.end_condition.value === 'pinned-pinned');
+}
+/* 0.9 (10/07): the weak-axis segments of braces at stated heights (o.heights, from the base, in order), each with her ends: a brace is a pin, a segment
+   that touches a fixed end keeps it.  null when the ends cannot be placed (one fixed end but which one is not said; a sway or flagpole column). */
+function heightSegRows(t, hs, total, eid) {
+  var lens = [], prev = 0, i, bot, top, topF, botF;
+  for (i = 0; i < hs.length; i++) { lens.push(round6(hs[i] - prev)); prev = hs[i]; }
+  lens.push(round6(total - prev));
+  if (eid === 'pinned-pinned') { bot = false; top = false; }
+  else if (eid === 'fixed-fixed') { bot = true; top = true; }
+  else if (eid === 'fixed-pinned') {
+    topF = /fixed\s+at\s+(?:the\s+|its\s+)?top|pinned\s+at\s+(?:the\s+|its\s+)?(?:base|bottom)/i.test(t); botF = /fixed\s+at\s+(?:the\s+|its\s+)?(?:base|bottom)|pinned\s+at\s+(?:the\s+|its\s+)?top/i.test(t);
+    if (topF === botF) return null;
+    bot = botF; top = topF;
+  }
+  else return null;
+  return lens.map(function (len, j) {
+    var a = j === 0 && bot, b2 = j === lens.length - 1 && top;
+    return { length_ft: len, end_condition: (a && b2) ? 'fixed-fixed' : ((a || b2) ? 'fixed-pinned' : 'pinned-pinned') };
+  });
+}
+/* 0.9 (10/07): a K printed for EACH axis ("K = 0.8 about x and K = 1.0 about y", "Kx = 1.0, Ky = 0.8", "K = 0.8 for the strong axis and K = 1.0 for the
+   weak axis") is two numbers.  Before, the first printed K went to both axes (A1-ccap-276: K 0.8 both ways, 512 printed for 466.6), or a worded "pinned
+   ends" won and both printed K were dropped without a word (A1-ccap-274).  Now KxLx = Kx x Lx and KyLy = Ky x Ly are entered directly with the arithmetic
+   shown.  A worded end condition whose K is not the printed one, or a brace along the height with no typed Ly, stops the page.  Returns true when done. */
+/* a stop of the column reader: the lengths the words give are still put in their boxes first, so that the page does not ask "which box does 20 ft belong
+   in?" about a typed Lx before it shows the stop (A1-ccap-282 asked that instead of stopping) */
+function columnStopHere(F, B, D, Ls, tot, id, text) {
+  if (Ls.lx) B.set('Lx_ft', Ls.lx.value, Ls.lx.from, 'high');
+  else if (tot !== null && tot !== undefined) B.set('Lx_ft', tot, Ls.common.from, 'high');
+  if (Ls.ly) B.set('Ly_ft', Ls.ly.value, Ls.ly.from, 'high');
+  if (Ls.klx) B.set('KLx_ft', Ls.klx.value, Ls.klx.from, 'high');
+  if (Ls.kly) B.set('KLy_ft', Ls.kly.value, Ls.kly.from, 'high');
+  B.ask(id, text, [], null, 'stop');
+  fillAxialLoads(F, B, D);
+}
+var K_DESIGN = { 'fixed-fixed': 0.65, 'fixed-pinned': 0.8, 'pinned-pinned': 1, 'fixed-sway': 1.2, 'flagpole': 2.1, 'pinned-sway': 2 };
+function columnAxisK(F, B, D, Ls, tot) {
+  var t = F.t, k = { x: [], y: [] }, re, mm, all, ends0, ids = {}, keys, kx, ky, Lx, Ly, stop = null;
+  re = /\bK\s?_?([xy])\s*(?:=|is)\s*(\d*\.?\d+)\b/gi;
+  while ((mm = re.exec(t)) !== null) k[mm[1].toLowerCase()].push({ v: Number(mm[2]), from: mm[0] });
+  /* ("K = 1.0 in the x DIRECTION" is not tied: buckling in the x direction is about the y axis, so a direction is never read as an axis here) */
+  re = /\bK\s*(?:=|is|of)\s*(\d*\.?\d+)\s*(?:about|for)\s+(?:the\s+|its\s+)?(x|y|strong|weak|major|minor)(?:\s*-\s*[xy])?(?:[\s-]*ax[ie]s)?\b(?!\s*-?\s*directions?\b)/gi;
+  while ((mm = re.exec(t)) !== null) k[/^(?:x|strong|major)$/i.test(mm[2]) ? 'x' : 'y'].push({ v: Number(mm[1]), from: mm[0] });
+  all = t.match(/\bK\s?_?[xy]?\s*(?:=|is|of)\s*\d*\.?\d+\b(?!\s*for\s+all)/gi) || [];
+  if (k.x.length !== 1 || k.y.length !== 1 || all.length !== 2) {
+    /* two DIFFERENT printed K that are not each tied to an axis: the first one went to both axes without a word ("K = 1.0 in the x direction and K = 0.8 in
+       the y direction"); the page stops */
+    var kv = {};
+    all.forEach(function (s) { kv[String(Number(s.replace(/^[\s\S]*?(\d*\.?\d+)$/, '$1')))] = true; });
+    if (Object.keys(kv).length < 2) return false;
+    columnStopHere(F, B, D, Ls, tot, 'column_k_axes', 'Your question prints more than one K and the page cannot tell which axis each one belongs to, so it does not work this column out.');
+    return true;
+  }
+  kx = k.x[0].v; ky = k.y[0].v;
+  if (!(kx >= 0.3 && kx <= 3 && ky >= 0.3 && ky <= 3) || Ls.klx || Ls.kly) return false;
+  ends0 = F.ends.filter(function (e) { return !e.viaK; });
+  ends0.forEach(function (e) { ids[e.id] = true; });
+  keys = Object.keys(ids);
+  if (keys.length) {
+    /* the words and the printed K agree ("pinned ends, Kx = Ky = 1.0" said twice): nothing new, the end conditions are used as before */
+    if (keys.length === 1 && K_DESIGN[keys[0]] !== undefined && Math.abs(K_DESIGN[keys[0]] - kx) < 1e-9 && Math.abs(K_DESIGN[keys[0]] - ky) < 1e-9) return false;
+    stop = 'Your question prints K for each axis and also names end conditions that give a different K, so the page does not work this column out.';
+  }
+  else if (!Ls.ly && (Ls.brace.fraction || Ls.brace.fractionX || Ls.brace.above)) stop = 'Your question prints K for each axis and also braces the column along its height, so the page does not work this column out.';
+  if (stop) { columnStopHere(F, B, D, Ls, tot, 'column_k_axes', stop); return true; }
+  Lx = Ls.lx ? Ls.lx.value : tot; Ly = Ls.ly ? Ls.ly.value : tot;
+  if (Lx === null || Ly === null || Lx === undefined || Ly === undefined) return false;
+  /* (a typed Lx / Ly is put in its box too, or the page asks "which box does 28 ft belong in?" first: BC-057; the engine then says KL was typed) */
+  if (Ls.lx) B.set('Lx_ft', Ls.lx.value, Ls.lx.from, 'high');
+  if (Ls.ly) B.set('Ly_ft', Ls.ly.value, Ls.ly.from, 'high');
+  B.set('KLx_ft', round6(kx * Lx), k.x[0].from, 'high', 'K is given for the strong axis: KxLx = Kx x Lx = ' + kx + ' x ' + Lx + ' = ' + round6(kx * Lx) + ' ft');
+  B.set('KLy_ft', round6(ky * Ly), k.y[0].from, 'high', 'K is given for the weak axis: KyLy = Ky x Ly = ' + ky + ' x ' + Ly + ' = ' + round6(ky * Ly) + ' ft');
+  fillAxialLoads(F, B, D);
+  return true;
 }
 function fillColumn(fn, F, B, D) {
   var t = F.t, isSel = fn === 'column_select';
@@ -1886,13 +2095,19 @@ function fillColumn(fn, F, B, D) {
   fillFy(F, B, D, {});
   var Ls = columnLengths(F, B, D, fn);
   var tot = Ls.common ? Ls.common.value : null;
+  /* 0.9 (10/07): a brace the page cannot place, or a K printed for each axis (see braceReview, columnAxisK) */
+  if (Ls.brace.stop || (Ls.brace.fractionX && !columnPinnedOnly(F, D))) {
+    columnStopHere(F, B, D, Ls, tot, 'column_brace', Ls.brace.stop || 'Your question braces the strong axis along the height of a column that is not pinned at both ends, and the page builds braced segments for the weak axis only, so it does not work this column out.');
+    return;
+  }
+  if (columnAxisK(F, B, D, Ls, tot)) return;
   var useSeg = !Ls.ly && !Ls.brace.fraction && tot !== null && !!Ls.brace.above;
   /* 0.6 (review 4): a K the question PRINTS is a number, and KL = K x L.  It used to be turned into "the end condition that has this K" through a small
      table: K = 0.5, 0.7, 0.9, 1.5, 2.5 were not in the table, so the cover page's K = 1.0 was used (KL/r 63.83 printed for 31.91), and K = 2.0 came out
      as the flagpole's 2.1.  Now: one printed K, a plain member length, no brace along the height -> KL is entered directly, with the arithmetic shown. */
   var kPr = /\bK\s*(?:=|is|of)\s*(\d*\.?\d+)\b(?!\s*for\s+all)/.exec(t) || /\beffective\s+length\s+factor\s+(?:K\s*)?(?:of|is|=)\s*(\d*\.?\d+)\b/i.exec(t),
     kNum = kPr ? Number(kPr[1]) : null, kLx = Ls.lx ? Ls.lx.value : tot, kLy = Ls.ly ? Ls.ly.value : tot;
-  if (kNum !== null && kNum >= 0.3 && kNum <= 3 && !Ls.klx && !Ls.kly && kLx !== null && kLy !== null && !Ls.brace.fraction && !Ls.brace.above && !useSeg
+  if (kNum !== null && kNum >= 0.3 && kNum <= 3 && !Ls.klx && !Ls.kly && kLx !== null && kLy !== null && !Ls.brace.fraction && !Ls.brace.fractionX && !Ls.brace.above && !useSeg
     && (t.match(/\bK\s*(?:=|is|of)\s*\d*\.?\d+/g) || []).length <= 1 && !/\bK\s?[xy]\s*=/.test(t)) {
     B.set('KLx_ft', round6(kNum * kLx), kPr[0], 'high', 'K is given in the question: KL = K x L = ' + kNum + ' x ' + kLx + ' = ' + round6(kNum * kLx) + ' ft');
     B.set('KLy_ft', round6(kNum * kLy), kPr[0], 'high', 'K is given in the question: KL = K x L = ' + kNum + ' x ' + kLy + ' = ' + round6(kNum * kLy) + ' ft');
@@ -1908,6 +2123,13 @@ function fillColumn(fn, F, B, D) {
   else if (id0 === 'fixed-pinned') {
     var topFixed = /fixed\s+at\s+(?:the\s+|its\s+)?top|pinned\s+at\s+(?:the\s+|its\s+)?(?:base|bottom)/i.test(t), botFixed = /fixed\s+at\s+(?:the\s+|its\s+)?(?:base|bottom)|pinned\s+at\s+(?:the\s+|its\s+)?top/i.test(t);
     fx = (topFixed && !botFixed) ? { top: true, bottom: false } : ((botFixed && !topFixed) ? { top: false, bottom: true } : { top: false, bottom: true, guessed: true });
+  }
+  /* 0.9 (10/07): a TYPED weak-axis length shorter than the column, on a column with a fixed end and one end condition for both axes, has two readings:
+     Ly is a braced segment (a brace is a pin, so that segment has its own K, her rule above) or the column's K applies to the whole Ly.  The page took the
+     second without a word (A1-ccap-282: "Lx = 20 ft, Ly = 10 ft, fixed at the base and pinned at the top", 692.1 printed; her rule gives 677.9). */
+  if (fx && Ls.ly && !Ls.kly && ends0.every(function (e) { return e.id === id0; }) && (Ls.lx ? Ls.lx.value : tot) !== null && Ls.ly.value < (Ls.lx ? Ls.lx.value : tot) - 1e-9) {
+    columnStopHere(F, B, D, Ls, tot, 'column_ly_fixed', 'Your question gives a shorter weak-axis length on a column with a fixed end, and the page cannot tell whether the column\'s K or a braced segment\'s own K goes with it, so it does not work this column out.');
+    return;
   }
   if (fx && !Ls.ly) {
     mseg = new RegExp('segments?\\s+of\\s+((?:' + N + '\\s*(?:ft|feet|foot|\')?\\s*(?:,\\s*and\\s+|,\\s*|\\s+and\\s+))+' + N + ')\\s*-?\\s*(?:ft|feet|foot|\')', 'i').exec(t);
@@ -1926,6 +2148,12 @@ function fillColumn(fn, F, B, D) {
     return { length_ft: len, end_condition: (a && b2) ? 'fixed-fixed' : ((a || b2) ? 'fixed-pinned' : 'pinned-pinned') };
   }) : null;
   if (segRows) useSeg = false;
+  /* 0.9 (10/07): "braced at mid height about BOTH axes" on a column with a fixed end: the strong axis would need its own braced segments, which the page has
+     no boxes for (it kept the strong axis at its full length, K 0.65 x L); a square HSS, where x can govern, would print a wrong strength */
+  if (segRows && Ls.brace.fraction && /\b(?:braced|supported|restrained|bracing)\b[^.;]{0,90}?\b(?:in|about|along|for)\s+both\s+(?:principal\s+)?(?:directions|axes)\b/i.test(t)) {
+    columnStopHere(F, B, D, Ls, tot, 'column_brace', 'Your question braces both axes along the height of a column with a fixed end, and the page builds braced segments for the weak axis only, so it does not work this column out.');
+    return;
+  }
   var endId = fillEnds(F, B, D, 'x_end_condition', 'y_end_condition', { skipY: useSeg || !!segRows });
   // lengths
   if ((Ls.klx || Ls.kly) && !Ls.common) {
@@ -1943,6 +2171,8 @@ function fillColumn(fn, F, B, D) {
     var bothDir = !!(Ls.brace && Ls.brace.fraction && tot !== null && !segRows && /\b(?:braced|supported|restrained|bracing)\b[^.;]{0,90}?\b(?:in|about|along|for)\s+both\s+(?:principal\s+)?(?:directions|axes)\b/i.test(t));
     if (Ls.lx) B.set('Lx_ft', Ls.lx.value, Ls.lx.from, 'high');
     else if (bothDir) B.set('Lx_ft', round6(tot / Ls.brace.fraction), Ls.brace.from, 'medium', 'braced in both directions: Lx = L/' + Ls.brace.fraction + ' too');
+    /* 0.9: the brace holds the STRONG axis (A1-ccap-187 "about its strong axis", A1-ccap-281 "strong axis at mid height") */
+    else if (Ls.brace.fractionX && tot !== null) B.set('Lx_ft', round6(tot / Ls.brace.fractionX), Ls.brace.from, 'medium', 'the strong axis is braced at the ' + (Ls.brace.fractionX === 3 ? 'third' : Ls.brace.fractionX === 4 ? 'quarter' : 'mid') + ' points: Lx = L/' + Ls.brace.fractionX);
     else if (tot !== null) B.set('Lx_ft', tot, Ls.common.from, 'high', Ls.common.unit === 'in' ? 'in -> ft' : null);
     // weak axis
     if (Ls.ly) B.set('Ly_ft', Ls.ly.value, Ls.ly.from, 'high');
@@ -1952,9 +2182,17 @@ function fillColumn(fn, F, B, D) {
       B.set('Ly_ft', round6(tot / n), Ls.brace.from, 'medium', 'braced at the ' + (n === 3 ? 'third' : n === 4 ? 'quarter' : 'mid') + ' points: Ly = L/' + n);
     }
     else if (useSeg) {
-      var a1 = Ls.brace.above.value, a2 = round6(tot - a1), eid = endId || 'pinned-pinned';
-      B.set('y_segments', [{ length_ft: a1, end_condition: eid }, { length_ft: a2, end_condition: eid }], Ls.brace.above.from, 'medium', 'a brace at a height splits the length in two segments');
+      /* 0.9 (10/07): every brace height makes a segment (A1-ccap-280 "at 10 ft and 20 ft from the base": three 10-ft segments), and the segments get her
+         ends as segRows above does: a brace is a pin, only a segment that touches a fixed end keeps it.  Before, both segments got the WHOLE column's end
+         (A1-ccap-279 fixed base / pinned top, brace 12 ft up: 823.6 printed for 721.5; A1-ccap-257 fixed-fixed: 0.65 per segment, 856.1 for 781.8). */
+      /* (no end condition in the words or on the cover: the segments are not built as pinned, since the end he picks later would reach the x axis only) */
+      var hRows = endId ? heightSegRows(t, Ls.brace.heights || [Ls.brace.above.value], tot, endId) : null;
+      if (hRows) B.set('y_segments', hRows, Ls.brace.above.from, 'medium', 'a brace at a height is a pin: the column is split at each brace height; a segment that touches a fixed end keeps it (K 0.8), the others are pinned-pinned (K 1.0)');
+      else B.ask('column_brace', 'Your question braces the column at a stated height, and the page cannot give each braced segment its ends from your words, so it does not work this column out.', [], null, 'stop');
     }
+    else if (Ls.brace.fractionX && tot !== null) B.set('Ly_ft', tot, Ls.common.from, 'high', 'the brace holds the strong axis only: Ly = L');
+    /* 0.9: "NOT braced at mid height", "the bracing at mid height is removed" (A1-ccap-272, 207): no brace, and the words say so */
+    else if (Ls.brace.none && tot !== null) B.set('Ly_ft', tot, Ls.common.from, 'high', 'the words say there is no brace along the height: Ly = L');
     else if (tot !== null) B.set('Ly_ft', tot, Ls.common.from, 'high', 'one length, same for both axes');
     else if (!Ls.lx && !Ls.ly) B.ask('column_length', 'What is the column length (ft)? (Say if the weak axis is braced.)', ['Lx_ft', 'Ly_ft'], null);
     if (!B.has('Lx_ft') && B.has('Ly_ft') && !Ls.lx) { /* only weak axis given */ B.ask('column_Lx', 'What is the strong-axis length Lx (ft)?', ['Lx_ft'], null); }
