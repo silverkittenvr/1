@@ -412,5 +412,47 @@
    ]
   },
   "note": "changes: her value alone on the ANSWER line"
+ },
+ {
+  "id": "rv01",
+  "text": "W10x49 colmun 14 ft long pinned ends.  using table 4-14 find phi Pn",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ]
+  },
+  "note": "review: a question that names the KL/r route (Table 4-14) keeps the whole line -- never \"do not copy\" beside the value it asks for"
+ },
+ {
+  "id": "rv02",
+  "text": "a w12x53 colmun ,K = 0.8, L = 19 ft ,fy = 50ksi. determine the design strength phi Pn (a) using the aisc equations (b) using the column tables of the manual",
+  "expect": {
+   "status": [
+    "answered",
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 15.2 ft read at the 16-ft row, phi Pn = 453 kips (KL/r route 471.1; exact E3 472.7)",
+    "ANSWER: Column capacity phi Pn: phi Pn = 453 kips (her method)",
+    "For comparison only (do not copy): KL/r route 471.1; exact E3 472.7"
+   ]
+  },
+  "note": "review: part (a) names the AISC equations: whole line kept; part (b) names the column tables: cut"
+ },
+ {
+  "id": "rv03",
+  "text": "For a W14x82 column with KxLx = 30 ft and KyLy = 15 ft, find the design strength phi Pn using Table 4-14.",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 732 kips (her method)"
+   ]
+  },
+  "note": "review: unequal KL, Table 4-14 named: the cut prints no \"do not copy\" line, so it stays cut"
  }
 ]

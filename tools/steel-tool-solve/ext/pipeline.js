@@ -3601,7 +3601,7 @@ function answerLine(res) {
    is made only when the text has exactly the form below AND the number kept is the calculator's own answer value (for a selection: the shape it selected);
    any other text keeps the old line.  Left whole on purpose: a list asked for as a whole (every property of a shape, Fy and Fu of a steel, a conversion, the
    members of a floor plan), a NOT RELIABLE result, KL/r above 200, the slender-element (E7) column, and any text that names 1.4D (her class uses 1.2D + 1.6L only; that question is a fix of its own).   -> [ANSWER text, comparison, check] or null */
-function oneNumberSplit(fn, res) {
+function oneNumberSplit(fn, res, ask) {
   var a = res && res.answer, vals = (res && res.values) || {}, t, L, m, p, cmp = '', chk = '', vd = '';
   if (!a || !a.label || !a.text) return null;
   t = collapse(a.text); L = String(a.label);
@@ -3610,9 +3610,13 @@ function oneNumberSplit(fn, res) {
   function picked(s) { return !!(vals.selected_shape && String(vals.selected_shape.value) === s); }
   function out(main, ok) { return ok ? [L + ': ' + main, cmp, chk] : null; }
   if (fn === 'column_capacity' && L === 'Column capacity phi Pn') {
+    /* (review 10/07) "W12x53, K = 0.8, L = 19 ft. phi Pn (a) using the AISC equations (b) using the column tables": part (a) asks for the exact E3 value
+       (472.7), "use Table 4-14" for the KL/r route (471.1) -- the cut put them under "do not copy" beside her 453.  A question that names a route keeps
+       the calculator's whole line, as before, whenever the cut would print a "do not copy" line. */
+    var named = /\beq(?!ual|ui)[a-z]*\b|\be\s*3\b|formula|4\s*[-.]\s*(?:14|22)\b|f\s*cr\b|critical\s+(?:buckling\s+)?stress|kl\s*\/\s*r\s*(?:route|method|approach)|(?:not|without|no)\s+(?:using\s+)?(?:the\s+)?(?:column\s+)?tables?\b|\bspec(?:ification)?\b/i.test(String(ask || ''));
     if ((m = /^(.*?) -- (adequate: phi Pn >= Pu\? (YES|NO) \(.*)$/.exec(t))) { t = m[1]; chk = m[2]; vd = ' -- adequate: phi Pn >= Pu? ' + m[3]; }
-    if ((m = /^Table 4-1a \(her method\): KL = [\d.]+ ft(?: read at the \d+-ft row)?, phi Pn = ([\d.]+) kips \((KL\/r route [\d.]+; exact E3 [\d.]+)\)$/.exec(t))) { cmp = m[2]; return out('phi Pn = ' + m[1] + ' kips (her method)' + vd, near(m[1])); }
-    if ((m = /^phi Pn = ([\d.]+) kips \(table method: [^()]*\)(?:; (Table 4-1a lookup: [\d.]+ kips))?$/.exec(t))) { cmp = m[2] || ''; return out('phi Pn = ' + m[1] + ' kips (her method)' + vd, near(m[1])); }
+    if ((m = /^Table 4-1a \(her method\): KL = [\d.]+ ft(?: read at the \d+-ft row)?, phi Pn = ([\d.]+) kips \((KL\/r route [\d.]+; exact E3 [\d.]+)\)$/.exec(t))) { cmp = m[2]; return out('phi Pn = ' + m[1] + ' kips (her method)' + vd, near(m[1]) && !named); }
+    if ((m = /^phi Pn = ([\d.]+) kips \(table method: [^()]*\)(?:; (Table 4-1a lookup: [\d.]+ kips))?$/.exec(t))) { cmp = m[2] || ''; return out('phi Pn = ' + m[1] + ' kips (her method)' + vd, near(m[1]) && !(cmp && named)); }
     return null;
   }
   if (fn === 'column_select' && L === 'Lightest column') {
@@ -3869,7 +3873,7 @@ SOLVE.writeBlock = function (part, run, vals) {
     }
     /* (10/07) her value alone on the line to copy; the other numbers of the calculator's answer text on lines of their own (see oneNumberSplit) */
     var one = null;
-    try { one = oneNumberSplit(sr.fn || (st && st.fn), res); } catch (eOne) { one = null; }
+    try { one = oneNumberSplit(sr.fn || (st && st.fn), res, part.ctx ? String(part.ctx).slice(part.coverLen || 0) : part.text); } catch (eOne) { one = null; }
     write.push('ANSWER' + (multi ? ' (step ' + (si + 1) + ')' : '') + ': ' + (one ? one[0] : answerLine(res)));
     if (one && one[2]) write.push('Check: ' + one[2]);
     if (one && one[1]) write.push('For comparison only (do not copy): ' + one[1]);
