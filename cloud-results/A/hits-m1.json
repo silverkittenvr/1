@@ -1,0 +1,2614 @@
+{
+ "RIGHT": [
+  {
+   "id": "A1-tcap-20",
+   "text": "W10x33 3/4in bolts 2 per flange 3 per line. Pu = 1.2(100) + 1.6(150). ok?",
+   "right": "Pu = 360 kips: NOT adequate (phi Pn 359.2 < 360)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 1.2"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-21",
+   "text": "W10x33 3/4in bolts 2 per flange 3 per line. max service live load if D = 100k?",
+   "right": "maximum service live load L = (359.2 - 1.2(100)) / 1.6 = 149.5 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 280"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-27",
+   "text": "w12x53 tension member bolted through flanges, 2 lines of 3/4in bolts each flange, 3 bolts per line. design strength for yielding?",
+   "right": "phi Pn (yielding) = 702 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-28",
+   "text": "W10x33 tension member 3/4in bolts 2 per flange 3 per line. gross yielding?",
+   "right": "phi Pn (yielding) = 437.0 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-29",
+   "text": "PL 1/2 x 8 plate A36 with one line of 3/4 in bolts, 2 holes across the width. find the rupture strength",
+   "right": "phi Pn (rupture) = 135.9 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.6 kips -- yielding governs (yielding 129.6, rupture 135.9)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-30",
+   "text": "PL 1/2 x 8 A36, 2 holes across the width for 3/4in bolts. phi Pn for rupture",
+   "right": "phi Pn (rupture) = 135.9 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.6 kips -- yielding governs (yielding 129.6, rupture 135.9)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-36",
+   "text": "W10x33 3/4in bolts 2 per flange 3 per line. dead 100 live 150 kips. ok?",
+   "right": "Pu = 360 kips: NOT adequate",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 240"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-02",
+   "text": "w8x21 tension 3/4in bolts 2 per flange 3 per line D=50 L=100 kips. is it adequate? ____",
+   "right": "NO (phi Pn = 197.2 < Pu = 220 kips)",
+   "lines": [
+    "ANSWER FOR YOUR BLANK (Is it adequate? ____): YES   (phi Pn = 197.24 kips is at least Pu = 160 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-18",
+   "text": "required net area PD=30k PL=60k A36",
+   "right": "required effective net area Ae >= 132/(0.75 x 58) = 3.034 in^2 (An needs U); not Ag",
+   "lines": [
+    "ANSWER: Required gross area: Ag >= 4.074 in^2 (Pu = 132 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-19",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. required Ae?",
+   "right": "Ae >= 192/(0.75 x 65) = 3.938 in^2",
+   "lines": [
+    "ANSWER: Required gross area: Ag >= 4.267 in^2 (Pu = 192 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-23",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. what is the excess capacity",
+   "right": "excess capacity = 249.21 - 192 = 57.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 192"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-25",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. what percent of the capacity is used",
+   "right": "192/249.21 = 77.0 %",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 192"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-36",
+   "text": "20 ft w8x24 hanger, 3/4in bolts 2 per flange 3 per line, dead load 40k, include self weight. maximum live load",
+   "right": "L = (249.21 - 1.2 x 40.48)/1.6 = 125.40 kips",
+   "lines": [
+    "ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 48",
+    "ANSWER (step 2): Maximum service live load L: L = (phi Rn - 1.2 D) / 1.6 = 125.75625 kips (service, unfactored; 1.4 D = 56 <= 249.21 kips ok)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-274",
+   "text": "W10x49 14 ft long pinned ends. K = 0.8 about the x axis and K = 1.0 about the y axis. phi Pn",
+   "right": "stop/ask (two readings); with the printed K per axis: 466.6 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-220",
+   "text": "W8x31 column 20 ft long pinned ends. find the euler critical stress",
+   "right": "Fe = 20.28 ksi",
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 185.12 kips (Fe = 20.276 ksi, KL/r = 118.81)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-213",
+   "text": "W12x40 column 16 ft long pinned ends Pu = 1.2(100) + 1.6(150) is it adequate",
+   "right": "NOT adequate: Pu = 1.2(100) + 1.6(150) = 360 kips > phi Pn 257 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 16 ft, phi Pn = 257 kips (KL/r route 257.4; exact E3 257.3) -- adequate: phi Pn >= Pu? YES (257 >= 1.2 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-307",
+   "text": "W12x58 column 20 ft long pinned ends. find the max service live load, dead load = 100 kips",
+   "right": "maximum service live load L = (392 - 1.2 x 100)/1.6 = 170 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 392 kips (KL/r route 389.3; exact E3 392) -- adequate: phi Pn >= Pu? YES (392 >= 280 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-62",
+   "text": "W10x49 column 14 ft long pinned ends. using table 4-14 find phi Pn",
+   "right": "phi Pn = 466.6 kips (Table 4-14, as the question orders)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-159",
+   "text": "W12x53 Fy = 50 ksi. KxLx = 30 ft and KyLy = 15 ft. What is the design strength from Table 4-1a",
+   "right": "phi Pn = 478 kips (Table 4-1a, HW 6-15 equivalent-length way: KLx/(rx/ry) = 30/2.11 = 14.22 < 15 -> 15-ft row)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 475.8 kips (table method: KL/r 72.6 rounded up to 73, phi Fcr 30.5 ksi x Ag 15.6 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-227",
+   "text": "beam fixed at one end and pinned at the other, span 10 ft, wd = 0.3 klf wl = 0.5 klf find Mu",
+   "right": "STOP; by statics Mu = 14.5 at the FIXED END (not at x = 5), reactions 7.25 (fixed) / 4.35 (pin)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-110",
+   "text": "W18x35 for Mu = 230 kip-ft, how much extra moment can it carry",
+   "right": "extra = 249 - 230 = 19 kip-ft",
+   "lines": [
+    "ANSWER: Design moment phi Mp: phi Mp = 249 kip-ft (W18X35, fully braced); adequate for Mu = 230"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-13",
+   "text": "Fy of a plate, A572 Gr. 50",
+   "right": "Fy = 50 ksi (one item)",
+   "lines": [
+    "ANSWER: Steel for plate: ASTM A36: Fy = 36 ksi, Fu = 58 ksi",
+    "ANSWER: Steel ASTM A572 Grade 50: ASTM A572 Grade 50: Fy = 50 ksi, Fu = 65 ksi (her slide: All M, S, HP & L shapes; All Plates (alternate, by thickness))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-14",
+   "text": "Fy of a L4x4x1/2 ,A36 steel",
+   "right": "Fy = 36 ksi (one item)",
+   "lines": [
+    "ANSWER: Steel for L4X4X1/2: ASTM A572 Grade 50: Fy = 50 ksi, Fu = 65 ksi",
+    "ANSWER: Steel ASTM A36: ASTM A36: Fy = 36 ksi, Fu = 58 ksi (her slide: All Plates)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-42",
+   "text": "nominal depth of a w14x22",
+   "right": "14 in",
+   "lines": [
+    "ANSWER: d of W14X22: d = 13.7 in (W14X22, overall depth d)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-60",
+   "text": "moment of inertia of 2 W14x90 side by side about the strong axis",
+   "right": "2 x 999 = 1998 in^4",
+   "lines": [
+    "ANSWER: W14X90: W = 90 lb/ft, A = 26.5 in^2, d = 14 in, bf = 14.5 in, tw = 0.44 in, tf = 0.71 in, Ix = 999 in^4, Zx = 157 in^3, Sx = 143 in^3, rx = 6.14 in, Iy = 362 in^4, Zy = 75.6 in^3, Sy = 49.9 in^3, ry = 3.7 in"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-193",
+   "text": "a w12x53 column kl = 14 ft both axes, find phi pn",
+   "right": "502 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 502 kips (KL/r route 500.8; exact E3 501.9)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-144",
+   "text": "selct the lightest w beam span 20ft simply suported fully braced dead load 1k/ft (not including the beam weight) live load 1k/ft",
+   "right": "W14X26",
+   "lines": [
+    "ANSWER: Most economical beam: W12X26 (same weight as W14X26 and W16X26, which have more capacity; Table 3-2's first bold row above Mu is W12X26) (26 lb/ft, d = 12.2 in) phi Mp = 140 kip-ft >= Mu = 140"
+   ],
+   "hidden": false
+  }
+ ],
+ "STOPPED": [
+  {
+   "id": "A1-tcap-35",
+   "text": "W10x33 3/4in bolts 2 per flange 3 per line. D=100k,L=150. adequate?",
+   "right": "Pu = 360 kips: NOT adequate",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-03",
+   "text": "select lightest w8 welded D=50k L=100",
+   "right": "W8X18 (Pu = 220 kips)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-05",
+   "text": "select lightest w8 welded, dead load 50 kips, live load twice the dead load",
+   "right": "W8X18 (L = 100, Pu = 220 kips)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-06",
+   "text": "w8x21 tension member 3/4in bolts 2 per flange 3 per line, dead load 50 kips, live load twice the dead load. is it adequate? ____",
+   "right": "NO (197.2 < 220)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-09",
+   "text": "required gross area, dead load 30 kips, live load 3 times the dead load, A36",
+   "right": "Ag >= 5.556 in^2 (L = 90, Pu = 180 kips)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-30",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, dead load 40k. max service live load?",
+   "right": "L = (249.21 - 1.2 x 40)/1.6 = 125.76 kips",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-31",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. find max. live load",
+   "right": "125.76 kips",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-32",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. maximum LL?",
+   "right": "125.76 kips",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-34",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. maximum total service load",
+   "right": "D + L = 40 + 125.76 = 165.76 kips",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-05",
+   "text": "D = 150 k, L = 2D, KL=14 ft, select lightest w12",
+   "right": "Pu = 660 kips; W12X65 (685)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-06",
+   "text": "interior column, bays 25 ft x 20 ft, 3 floors, dead 80 psf, live load twice the dead load, find the factored load",
+   "right": "Pu = 528 kips",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-09",
+   "text": "interior column, bays 20 ft x 25 ft, 3 floors, live 50 psf dead 80 psf, KL=12 ft, select lightest w10",
+   "right": "Pu = 264 kips; W10X33 (292 at 12 ft)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-10",
+   "text": "a column supports a roof and 3 floors. tributary area 600 sq ft. roof: dead 20 psf, live 20 psf. floors: dead 90 psf, live 70 psf. select the lightest w12, KL = 12 ft",
+   "right": "Pu = 429.6 kips; W12X50 (443 at 12 ft)",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-157",
+   "text": "W18x35 span 30 ft , dead load 0.5 klf incl beam wt , max service live load in klf ?",
+   "right": "wL max = 1.008 k/ft",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-03",
+   "text": "D = 20 k, L = 2D, factored load",
+   "right": "88 kips",
+   "lines": [],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-15",
+   "text": "dead load = 50 k, live load = 5 k. using the combination 1.2D+1.6L find Pu",
+   "right": "68 kips",
+   "lines": [],
+   "hidden": false
+  }
+ ],
+ "CHECK": [
+  {
+   "id": "A1-tcap-01",
+   "text": "W12x53, two lines of 3/4in bolts in each flange, 3 per line, no bolt holes in the web. find phi Pn",
+   "right": "phi Pn = 596.2 kips (rupture governs)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 702 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-02",
+   "text": "A W12x53 tension member is connected through its flanges with two lines of 3/4-in. diameter bolts in each flange, three bolts per line. There are no bolt holes in the web. Determine the design tensile strength.",
+   "right": "phi Pn = 596.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 702 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-03",
+   "text": "W12x53 tension member 2 lines of 3/4in bolts each flange 3 bolts per line.there are no bolt holes in web.find An",
+   "right": "An = 13.59 in^2",
+   "lines": [
+    "ANSWER: Net area An: An = 15.6 in^2 (Ag = 15.6 in^2, W12X53)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-04",
+   "text": "W12x53 tension member 2 lines of 3/4in bolts each flange 3 bolts per line, no bolt holes in the web. find U",
+   "right": "U = 0.90",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 702 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-05",
+   "text": "W10x49 bolted through the web only with 2 lines of 4 bolts 3/4in, no bolt holes in the flanges. find design strength",
+   "right": "phi Pn = 471.1 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 648 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-06",
+   "text": "An L6x4x1/2 is connected through its long leg with one line of four 3/4 in. bolts; the short leg has no bolt holes. Determine phi Pn.",
+   "right": "phi Pn = 168.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 213.8 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-07",
+   "text": "PL 1/2 x 8 A572 gr 50 with 2 holes across for 3/4in bolts, no bolt holes elsewhere. find design strength",
+   "right": "phi Pn = 152.3 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 180 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-08",
+   "text": "W12x53, 4 holes in the flanges for 3/4in bolts, no holes in the web, U=0.9. phi Pn",
+   "right": "phi Pn = 596.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 684.45 kips -- rupture governs (yielding 702, rupture 684.45; welded, U = 0.9 as given)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-09",
+   "text": "W12x53 connected through its flanges using four lines of 3/4in bolts, no holes in the web, 3 bolts per line. find phi Pn",
+   "right": "phi Pn = 596.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 603.5 kips -- rupture governs (yielding 702, rupture 603.5)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-10",
+   "text": "W10x49 bolted through the flanges with two lines of 7/8in bolts, no bolts through the web, 4 bolts per line. find phi Pn",
+   "right": "phi Pn = 582.7 kips (two lines shared by the flanges, 1 hole per flange) -- 533.5 if two lines in EACH flange; never web",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 614.3 kips -- rupture governs (yielding 648, rupture 614.3)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-11",
+   "text": "W10x49, two lines of 7/8in bolts, no bolts through the web, 4 bolts per line. phi Pn",
+   "right": "flange holes: 582.7 kips (1 per flange) or 533.5 (2 per flange) -- should ask; 468.2 (web holes, U 0.70) is wrong under ",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 468.2 kips -- rupture governs (yielding 648, rupture 468.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-12",
+   "text": "two L4x4x1/2 angles, each connected by one leg with one line of 4 bolts 3/4 in. find design strength",
+   "right": "phi Pn = 258.4 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.2 kips -- rupture governs (yielding 168.8, rupture 129.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-13",
+   "text": "two L5x5x1/2 angles, one line of 4 bolts 7/8in through one leg of each angle. find An",
+   "right": "An = 8.58 in^2",
+   "lines": [
+    "ANSWER: Net area An: An = 4.29 in^2 (Ag = 4.79 in^2, L5X5X1/2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-14",
+   "text": "An L4x4x1/2 tension member is connected through both legs with one line of 3/4-in. diameter bolts in each leg, four bolts per line. Determine the design tensile strength.",
+   "right": "phi Pn = 140.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.2 kips -- rupture governs (yielding 168.8, rupture 129.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-15",
+   "text": "L4x4x1/2 bolted through both legs with 3/4in bolts, 4 per line. find U",
+   "right": "U = 1.0 (Case 1, every element connected)",
+   "lines": [
+    "ANSWER: Shear lag factor U: U = 0.80 (Table D3.1 case 8)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-16",
+   "text": "L4x4x1/2 connected to gusset through both legs w/ 3/4in bolts, 4 bolts per line, one line in each leg. find An",
+   "right": "An = 2.875 in^2",
+   "lines": [
+    "ANSWER: Net area An: An = 3.3125 in^2 (Ag = 3.75 in^2, L4X4X1/2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-17",
+   "text": "W12x53 tension member, 3/4in bolts, 6 bolts in each flange, 3 bolts per line. find design strength",
+   "right": "phi Pn = 596.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 419.6 kips -- rupture governs (yielding 702, rupture 419.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-18",
+   "text": "A W12x53 tension member is bolted with one line of 3/4-in. bolts on each side of the web in each flange, three bolts per line. Determine the design strength.",
+   "right": "phi Pn = 596.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 640.3 kips -- rupture governs (yielding 702, rupture 640.3)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-19",
+   "text": "w12x53 tension member 3/4inbolts 2holes per flange 3bolts per line find phi Pn",
+   "right": "phi Pn = 596.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 702 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-22",
+   "text": "A W10x33 is connected through its flanges with three bolts per line. The holes are 15/16 in. in diameter, two holes in each flange. Determine the net area An.",
+   "right": "An = 7.97 in^2",
+   "lines": [
+    "ANSWER: Net area An: An = 7.8613 in^2 (Ag = 9.71 in^2, W10X33)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-23",
+   "text": "W10x33 tension member, holes 7/8 in diameter, 2 per flange, 3 per line. find An",
+   "right": "An = 8.08 in^2 (hole 7/8 + 1/16 per her slide) -- or ask bolt or hole; 7.97 treats the hole as a bolt",
+   "lines": [
+    "ANSWER: Net area An: An = 7.97 in^2 (Ag = 9.71 in^2, W10X33)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-24",
+   "text": "A W10x33 tension member is connected through its flanges with two 3/4-in. diameter bolts in each flange, three bolts per line. Determine the nominal tensile strength Pn.",
+   "right": "Pn = 479.0 kips (nominal, no phi; rupture governs)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-25",
+   "text": "W10x33 tension member 3/4in bolts 2 per flange 3 per line. what is Pn",
+   "right": "Pn = 479.0 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-26",
+   "text": "W10x33 tension member 3/4in bolts 2 per flange 3 per line. nominal yield strength",
+   "right": "Pn (yielding) = Fy Ag = 485.5 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-31",
+   "text": "W12x53 tension member, 2 lines of 3/4 in bolts each flange 3 per line, (a) find An (b) find Ae (c) find yielding strength (d) rupture strength",
+   "right": "(c) phi Pn (yielding) = 702 kips",
+   "lines": [
+    "ANSWER: Net area An: An = 13.5875 in^2 (Ag = 15.6 in^2, W12X53)",
+    "ANSWER TO \"effective net area Ae\": Ae = 12.23 in^2",
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)",
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-32",
+   "text": "W12x53 tension member 3/4in bolts 2 per flange 3 per line, length 20ft. L/r?",
+   "right": "L/r = 96.8 (<= 300 OK)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-33",
+   "text": "W12x53 tension member, flanges welded to gusset plates, find the effective net area",
+   "right": "an Ae line or a stop -- never a strength; (her rule: welded, no holes -> only yielding is checked, so no Ae is worked ou",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 702 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tcap-34",
+   "text": "W10x33 3/4in bolts 2 per flange 3 per line. D=100, L=150 kips. adequate?",
+   "right": "Pu = 1.2(100) + 1.6(150) = 360 kips: NOT adequate (359.2 < 360)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 240"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-01",
+   "text": "select lightest w8 D=50 L=100 kips welded",
+   "right": "W8X18 (Pu = 1.2(50)+1.6(100) = 220 kips)",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X13 (13 lb/ft) phi Pn = 172.8 kips (yielding) >= Pu = 160 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-04",
+   "text": "required gross area of a tension member D = 30, L = 60 kips, A36",
+   "right": "Ag >= 4.074 in^2 (Pu = 132 kips)",
+   "lines": [
+    "ANSWER: Required gross area: Ag >= 2.963 in^2 (Pu = 96 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-07",
+   "text": "select lightest w8 welded, D = L = 75 kips",
+   "right": "W8X18 (Pu = 1.2(75)+1.6(75) = 210 kips)",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 120 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-08",
+   "text": "select lightest w8 tension member welded, dead and live loads are each 50 kips",
+   "right": "W8X13 (Pu = 140 kips)",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 80 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-10",
+   "text": "select lightest w8 PD=50k PL=100k bolted 3/4in 2 per flange 3 per line",
+   "right": "W8X24 (249.2 rupture >= 220)",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X18 (18 lb/ft) phi Pn = 236.7 kips (yielding) >= Pu = 220 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-11",
+   "text": "w8x24 tension member with 3/4inbolts 2perflange 3perline. design strength?",
+   "right": "phi Pn = 249.2 kips (rupture governs)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 318.6 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-12",
+   "text": "select lightest w8 tension member D=50k L=100k 3/4inbolts 2perflange 3perline",
+   "right": "W8X24",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X18 (18 lb/ft) phi Pn = 236.7 kips (yielding) >= Pu = 220 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-13",
+   "text": "select lightest w8 D=50k L=100k, 2 lines of 3/4in bolts in the flanges, 3 per line",
+   "right": "stop/ask: 1 or 2 lines per flange (2 per flange -> W8X24 249.2; the page silently took 1 per flange -> W8X21)",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X21 (21 lb/ft) phi Pn = 226.2 kips (rupture) >= Pu = 220 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-14",
+   "text": "select lightest w10 welded D=50k L=100k, L = 25 ft",
+   "right": "W10X22 (L/r = 300/1.33 = 225.6)",
+   "lines": [
+    "ANSWER: Lightest tension member: W10X17 (17 lb/ft) phi Pn = 224.6 kips (yielding) >= Pu = 220 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-15",
+   "text": "select lightest w10 welded D=50k L=100k, 25ft",
+   "right": "W10X22",
+   "lines": [
+    "ANSWER: Lightest tension member: W10X17 (17 lb/ft) phi Pn = 224.6 kips (yielding) >= Pu = 220 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-16",
+   "text": "select lightest w10 tension member welded D=50k L=100k, unbraced length 25 ft",
+   "right": "W10X22",
+   "lines": [
+    "ANSWER: Lightest tension member: W10X17 (17 lb/ft) phi Pn = 224.6 kips (yielding) >= Pu = 220 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-17",
+   "text": "w10x17 tension member welded, D=50k L=100k, 25 ft long. is it adequate? ____",
+   "right": "NO (L/r = 300/0.845 = 355 > 300), if her limit is pass/fail as in her select",
+   "lines": [
+    "ANSWER FOR YOUR BLANK (Is it adequate? ____): YES   (phi Pn = 224.55 kips is at least Pu = 220 kips)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-20",
+   "text": "select lightest w8 tension member welded D=50k L=100k. Ag required = ____ in2",
+   "right": "Ag required = 220/(0.9 x 50) = 4.889 in^2",
+   "lines": [
+    "ANSWER FOR YOUR BLANK (Ag required = ____ in2): Ag = 5.26 in^2"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-21",
+   "text": "select lightest w8 welded D=50k L=100k. min Ag?",
+   "right": "4.889 in^2",
+   "lines": [
+    "ANSWER: Lightest tension member: W8X18 (18 lb/ft) phi Pn = 236.7 kips (yielding) >= Pu = 220 kips",
+    "ANSWER TO \"gross area Ag\": Ag = 5.26 in^2"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-24",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. how much extra load can it take",
+   "right": "57.2 kips (factored)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 192"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-26",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. nominal strength Pn?",
+   "right": "Pn = 332.3 kips (nominal: min(Fy Ag = 354, Fu Ae = 65 x 5.112 = 332.3))",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-27",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. nominal rupture strength",
+   "right": "Fu Ae = 65 x 5.112 = 332.3 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-28",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. design strength for yielding?",
+   "right": "0.9 x 50 x 7.08 = 318.6 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-29",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. ASD allowable strength?",
+   "right": "ASD is not in her class: stop (by ASD Pn/Omega = min(354/1.67, 332.3/2.00) = 166.1 kips)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-33",
+   "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, live load 90k. maximum service dead load?",
+   "right": "D = (249.21 - 1.6 x 90)/1.2 = 87.68 kips (1.4D = 122.7 ok)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 144"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-tsel-35",
+   "text": "w8x24 tension member 3/4in bolts 2 per flange 3 per line, live load = 2 x dead load. max dead load?",
+   "right": "1.2D + 1.6(2D) = 4.4D = 249.21 -> D = 56.64 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-187",
+   "text": "a W10x45 column 20 ft long is pinned at both ends and braced at mid height about its strong axis. find the design strength",
+   "right": "phi Pn = 208.8 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 460.2 kips (table method: KL/r 59.7 rounded up to 60, phi Fcr 34.6 ksi x Ag 13.3 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-271",
+   "text": "W12x65 24 ft long pinned ends braced at mid height about the x axis. phi Pn",
+   "right": "phi Pn = 437.4 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 689.5 kips (table method: KL/r 54.5 rounded up to 55, phi Fcr 36.1 ksi x Ag 19.1 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-178",
+   "text": "W12x65 column 24 ft long pinned ends, braced at mid height in the plane of the web. phi Pn",
+   "right": "phi Pn = 437.4 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 689.5 kips (table method: KL/r 54.5 rounded up to 55, phi Fcr 36.1 ksi x Ag 19.1 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-272",
+   "text": "W12x72 25 ft long pinned ends not braced at mid height. phi Pn",
+   "right": "phi Pn = 466 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 749.1 kips (table method: KL/r 56.5 rounded up to 57, phi Fcr 35.5 ksi x Ag 21.1 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-207",
+   "text": "W12x72 column 25 ft long pinned ends. the bracing at mid height is removed. phi Pn",
+   "right": "phi Pn = 466 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 749.1 kips (table method: KL/r 56.5 rounded up to 57, phi Fcr 35.5 ksi x Ag 21.1 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-279",
+   "text": "W12x79 30 ft long fixed at the base and pinned at the top, braced in the weak direction 12 ft above the base. phi Pn",
+   "right": "phi Pn = 721.5 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 823.6 kips (table method: KL/r 56.7 rounded up to 57, phi Fcr 35.5 ksi x Ag 23.2 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-257",
+   "text": "W12x79 column 30 ft long fixed at both ends, braced in the weak direction 10 ft from the bottom. phi Pn",
+   "right": "phi Pn = 781.8 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 856.1 kips (table method: KL/r 51.1 rounded up to 52, phi Fcr 36.9 ksi x Ag 23.2 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-280",
+   "text": "W12x79 30 ft long pinned ends braced about the weak axis at 10 ft and 20 ft from the base. phi Pn",
+   "right": "phi Pn = 744.7 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 661.2 kips (table method: KL/r 78.7 rounded up to 79, phi Fcr 28.5 ksi x Ag 23.2 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-309",
+   "text": "W14x68 28 ft long pinned ends weak axis braced at 1/3 points. phi Pn",
+   "right": "phi Pn = 716 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 636 kips (table method: KL/r 68.3 rounded up to 69, phi Fcr 31.8 ksi x Ag 20 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-281",
+   "text": "W12x65 30 ft long pinned ends, weak axis braced at the third points and strong axis at mid height. phi Pn",
+   "right": "phi Pn = 764.0 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 607.4 kips (table method: KL/r 68.2 rounded up to 69, phi Fcr 31.8 ksi x Ag 19.1 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-277",
+   "text": "W10x49 14 ft long, Kx = 1.0, Ky = 0.8. find phi Pn",
+   "right": "phi Pn = 527.0 kips (compression)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 648 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-276",
+   "text": "W10x49 14 ft long, K = 0.8 about x and K = 1.0 about y. phi Pn",
+   "right": "phi Pn = 466.6 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 11.2 ft read at the 12-ft row, phi Pn = 512 kips (KL/r route 527; exact E3 528)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-267",
+   "text": "W8x31 20 ft long fixed at the base and free at the top. euler load",
+   "right": "Pcr = 41.98 kips (her design K 2.1; 46.28 with theoretical K 2.0)",
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 185.12 kips (Fe = 20.276 ksi, KL/r = 118.81)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-296",
+   "text": "euler buckling load W8x31 column 20 ft long fixed at both ends",
+   "right": "Pcr = 438.2 kips (K 0.65; 740.5 with theoretical K 0.5) -- and Euler is NOT valid there (KL/r 77.2 < 113.4)",
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 185.12 kips (Fe = 20.276 ksi, KL/r = 118.81)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-286",
+   "text": "W8x31 20 ft long pinned ends braced at mid height about the weak axis. euler load",
+   "right": "Pcr = 546.3 kips (x governs; Euler not valid: KL/r 69.2 < 113.4)",
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 185.12 kips (Fe = 20.276 ksi, KL/r = 118.81)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-218",
+   "text": "W8x31 column 20 ft long pinned ends. euler buckling load about the x axis",
+   "right": "Pcr about x = 546.3 kips (KL/r 69.16; Euler not valid by the 113.4 check)",
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 185.12 kips (Fe = 20.276 ksi, KL/r = 118.81)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-285",
+   "text": "W8x31 20 ft long pinned ends E = 30000 ksi. euler load",
+   "right": "Pcr = 191.5 kips (E = 30000 ksi as given)",
+   "lines": [
+    "ANSWER: Euler critical load Pcr: Pcr = 185.12 kips (Fe = 20.276 ksi, KL/r = 118.81)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-269",
+   "text": "W14x90 KL = 20 ft. nominal strength",
+   "right": "Pn = 974.4 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 877 kips (KL/r route 874.5; exact E3 876.7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-270",
+   "text": "W14x90 KL = 20 ft. find Pn",
+   "right": "Pn = 974.4 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 877 kips (KL/r route 874.5; exact E3 876.7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-283",
+   "text": "W14x90 KL = 20 ft. allowable strength",
+   "right": "ASD Pn/Omega = 974.4/1.67 = 583.5 kips -- outside her LRFD class: the page should say so (one sentence, no number)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 877 kips (KL/r route 874.5; exact E3 876.7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-292",
+   "text": "W12x53 column 16 ft long pinned ends. what is the effective length KL",
+   "right": "KL = 16 ft",
+   "lines": [
+    "ANSWER: Effective length factor K: K = 1 (pinned at both ends (braced frame, no sidesway))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-215",
+   "text": "W10x45 column 20 ft long pinned ends braced at mid height about the weak axis. find KL/r about the x axis",
+   "right": "KLx/rx = 55.56",
+   "lines": [
+    "ANSWER TO \"governing KL/r\": KL/r = 59.7   <- write this number.   (60 is only the row of her table that phi Fcr is read from)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-195",
+   "text": "(a) W12x65 column 24 ft long pinned ends. find phi Pn. (b) repeat if it is braced at mid height about the weak axis",
+   "right": "(b) phi Pn = 689.5 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 24 ft, phi Pn = 442 kips (KL/r route 437.4; exact E3 442)",
+    "ANSWER: Weak axis / strong axis: \"If it's pinned then buckling about the weak axis it'll effect our plane before it crushes the bracing. And if it buckles about strong axis, the bracing goes along for the ride.\""
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-282",
+   "text": "W10x60 Lx = 20 ft, Ly = 10 ft, fixed at the base and pinned at the top. phi Pn",
+   "right": "phi Pn = 677.9 kips by her brace-is-a-pin rule (or a stop: two readings)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 692.1 kips (table method: KL/r 43.7 rounded up to 44, phi Fcr 39.1 ksi x Ag 17.7 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-ccap-202",
+   "text": "W14x90 column KL = 20 ft, use phi = 0.85, find phi Pn",
+   "right": "0.85 x Pn = 0.85 x 974.4 = 828.3 kips (or a stop: her phi is 0.90)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 877 kips (KL/r route 874.5; exact E3 876.7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-01",
+   "text": "select lightest w12 column, KL = 14 ft, D/L = 200/300 kips",
+   "right": "Pu = 720 kips; W12X72 (Table 4-1a at 14 ft: 759 kips)",
+   "lines": [
+    "ANSWER: Lightest column: W12X22 (22 lb/ft) phi Pn = 37 kips > Pu = 1 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 36.9)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-02",
+   "text": "interior column, bays 20 ft x 25 ft, 3 floors, dead/live = 80/50 psf, find the factored column load",
+   "right": "Pu = 264 kips",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 3.84 kips (3 floors, no roof)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-03",
+   "text": "24 ft column pinned ends not braced at mid height, lightest W12, Pu = 360 kips",
+   "right": "W12X65 (Table 4-1a, KL = 24 ft both axes: 442 kips)",
+   "lines": [
+    "ANSWER: Lightest column: W12X45 (45 lb/ft) phi Pn = 395.6 kips > Pu = 360 kips ok (Table 4-1a: 396)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-04",
+   "text": "a 28 ft column braced at mid height about its strong axis only, pinned ends, Pu = 500 kips, select lightest W14",
+   "right": "W14X90 (KL/r 91 -> phi Fcr 24.6 ksi x 26.5 = 651.9 kips)",
+   "lines": [
+    "ANSWER: Lightest column: W14X61 (61 lb/ft) phi Pn = 569.2 kips > Pu = 500 kips ok (Table 4-1a: 571)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-07",
+   "text": "the live load is twice the dead load of 150 kips, kl=14ft, lightest w12",
+   "right": "Pu = 660 kips; W12X65 (685)",
+   "lines": [
+    "ANSWER: Lightest column: W12X53 (53 lb/ft) phi Pn = 502 kips > Pu = 420 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 500.8)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-08",
+   "text": "interior column, bays 30 ft x 30 ft, dead 80 psf live 100 psf, 4 floors, KL=12 ft select lightest W12",
+   "right": "Pu = 921.6 kips; W12X87 (981 at 12 ft)",
+   "lines": [
+    "ANSWER (step 1): Factored column load at the lowest level: Pu = 460.8 kips (4 floors, no roof)",
+    "ANSWER (step 2): Lightest column: W12X53 (53 lb/ft) phi Pn = 549 kips > Pu = 461 kips ok (Table 4-1a, her method: KL = 12 ft; KL/r route 544.4)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-11",
+   "text": "lightest w12 column KL=14ft, factored loads D=200k L=300k",
+   "right": "Pu = 500 kips; W12X53 (502)",
+   "lines": [
+    "ANSWER: Lightest column: W12X72 (72 lb/ft) phi Pn = 759 kips > Pu = 720 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 755.4)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-12",
+   "text": "(a) lightest w10 Pu=300k KL=12 ft (b) lightest w14 Pu=900k, effective length 25 ft",
+   "right": "(b) W14X120 (Table 4-1a at 25 ft: 992)",
+   "lines": [
+    "ANSWER: Lightest column: W10X39 (39 lb/ft) phi Pn = 352 kips > Pu = 300 kips ok (Table 4-1a, her method: KL = 12 ft; KL/r route 350.8)",
+    "ANSWER: Lightest column: W14X90 (90 lb/ft) phi Pn = 1070 kips > Pu = 900 kips ok (Table 4-1a, her method: KL = 12 ft; KL/r route 1068)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-13",
+   "text": "(a) interior column, bays 20 ft x 25 ft, 3 floors, dead 80 psf, live 50 psf, find the factored column load (b) select the lightest W12 for 2 floors, KL = 12 ft",
+   "right": "(b) Pu = 176 kips; W12X26 (Table 4-1a at 12 ft: 177)",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 264 kips (3 floors, no roof)",
+    "ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 352 kips > Pu = 264 kips ok (Table 4-1a, her method: KL = 12 ft; KL/r route 348.7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-14",
+   "text": "the column supports 3 floors; the load from each floor is D = 120 k, L = 80 k. find Pu",
+   "right": "Pu = 816 kips",
+   "lines": [
+    "ANSWER: Factored load: 272 kips (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-15",
+   "text": "interior column between bays of 30 ft x 25 ft and 20 ft x 25 ft, 3 floors, dead 100 psf, live 50 psf, find the factored column load",
+   "right": "Pu = 375 kips (tributary area 625 sq ft)",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 450 kips (3 floors, no roof)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-16",
+   "text": "a 4 story building, interior column, bays 30 ft x 30 ft. The roof has 20 psf dead and 20 psf live. Each floor has 80 psf dead and 100 psf live. Find the factored load in the first story column.",
+   "right": "Pu = 741.6 kips (roof + 3 floors)",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 972 kips (roof + 4 floors)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-17",
+   "text": "a column supports a roof and 3 floors, tributary area 600 sq ft. The roof has 20 psf dead and 20 psf live. Each floor has 90 psf dead and 70 psf live. Find the factored load in the column just below the roof.",
+   "right": "Pu = 33.6 kips (roof only)",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 429.6 kips (roof + 3 floors)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-18",
+   "text": "a column supports a roof and 3 floors, tributary area 600 sq ft. The roof has 20 psf dead and 20 psf live. Each floor has 90 psf dead and 70 psf live. Find the factored load in the column between the 2nd and 3rd floors.",
+   "right": "Pu = 297.6 kips (roof + 2 floors; 165.6 if the carried floors are numbered 1-3) -- never the base value",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 429.6 kips (roof + 3 floors)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-19",
+   "text": "select the lightest w14 , pu = 1000 k , pinned-pinned , L = 30 ft , weak axis braced at 10 ft and 20 ft from the bottom",
+   "right": "W14X99 (KxLx 30 governs: KL/r 58.35 -> 59, phi Fcr 34.9 x 29.1 = 1015.6 kips)",
+   "lines": [
+    "ANSWER: Lightest column: W14X109 (109 lb/ft) phi Pn = 1056 kips > Pu = 1000 kips ok (Table 4-1a: 1060)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-20",
+   "text": "select lightest w12, pu=500 kips, kxlx=kyly=14ft",
+   "right": "W12X53 (Table 4-1a at 14 ft: 502)",
+   "lines": [
+    "ANSWER: Factored load: 500 kips (already factored in the problem)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-21",
+   "text": "select lightest w12 pu=400k, Lx=24ft, Ly=12ft, pinned",
+   "right": "W12X50 (KxLx 24, KyLy 12: KL/r 73.5 -> 74, 30.2 x 14.6 = 440.9 kips)",
+   "lines": [
+    "ANSWER: Factored load: 400 kips (already factored in the problem)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-22",
+   "text": "interior column, bays 20 ft x 25 ft, 3floors, dead 80 psf, live 50 psf, find the factored column load",
+   "right": "Pu = 264 kips",
+   "lines": [
+    "ANSWER: Factored load: 176 psf (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-23",
+   "text": "interior column, bays 30 ft x 30 ft, 3 stories, dead 80 psf, live 100 psf, find the factored column load",
+   "right": "Pu = 691.2 kips (3 loaded floors; or ask about the roof)",
+   "lines": [
+    "ANSWER: Factored load: 256 psf (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-24",
+   "text": "service loads 100k dead + 150k live + 50k snow, find the factored load",
+   "right": "U = 385 kips (combination 2 with 0.5 S) by the 7-combination method the page states",
+   "lines": [
+    "ANSWER: Largest factored load U: 360 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 360 kips (combination 2); smallest: 90 kips (combination 5 and 7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A1-csel-26",
+   "text": "choose lightest w12 Pu=500k length 14 ft",
+   "right": "stop / ask whether it is a column or a tension member (as a column: W12X53, 502 kips at 14 ft)",
+   "lines": [
+    "ANSWER: Lightest tension member: W12X40 (40 lb/ft) phi Pn = 526.5 kips (yielding) >= Pu = 500 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-178",
+   "text": "W18x35 span 30 ft wd=1 klf wl=1.5 klf, does not include beam weight. Mu?",
+   "right": "Mu = 409.73 kip-ft (RA = RB = 54.63 kips)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 405 kip-ft (1.2D + 1.6L) at x = 15 ft; reactions RA = 54 (1.2D + 1.6L), RB = 54 (1.2D + 1.6L); Vu = 54 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-31",
+   "text": "select the lightest beam  span 32ft  dead load 1 klf (does not include beam weight) live load 0.98 klf",
+   "right": "W21X48 (Mu with its own weight 361.68 kip-ft <= phi Mp 398)",
+   "lines": [
+    "ANSWER: Most economical beam: W21X44 (44 lb/ft, d = 20.7 in) phi Mp = 358 kip-ft >= Mu = 354.3"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-32",
+   "text": "W16x26 span 20 ft beams spaced 8ft  dead load 50 psf (does not include beam weight) find the max live load in psf",
+   "right": "219.4 psf",
+   "lines": [
+    "ANSWER: Largest service live load: 221.9 psf (W16X26, L = 20 ft, tributary 8 ft, phi Mp 166 kip-ft)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-70",
+   "text": "a simply supported beam 30 ft long carries a uniform dead load of 0.7 k/ft and live load of 0.85 k/ft. the dead load does not include the weight of the beam. select the lightest W18",
+   "right": "W18X40",
+   "lines": [
+    "ANSWER: Most economical beam: W18X35 (35 lb/ft, d = 17.7 in) phi Mp = 249 kip-ft >= Mu = 247.5"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-179",
+   "text": "W18x35 span 30 ft dead load of 1 klf not including beam weight, live load 1.5 klf. find Mu",
+   "right": "Mu = 409.73 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 405 kip-ft (1.2D + 1.6L) at x = 15 ft; reactions RA = 54 (1.2D + 1.6L), RB = 54 (1.2D + 1.6L); Vu = 54 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-180",
+   "text": "W21x44 28ft simple span wd=0.6 klf wl=1 klf (beam weight not included). find Mu",
+   "right": "Mu = 232.53 kip-ft (or ASK: two readings)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 227.36 kip-ft (1.2D + 1.6L) at x = 14 ft; reactions RA = 32.48 (1.2D + 1.6L), RB = 32.48 (1.2D + 1.6L); Vu = 32.48 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-231",
+   "text": "W16x26 span 20 ft wd = 1 klf wl = 1 klf , self wieght not included . Mu",
+   "right": "Mu = 141.56 kip-ft (add 26 plf) -- or ASK",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 140 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 28 (1.2D + 1.6L), RB = 28 (1.2D + 1.6L); Vu = 28 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-96",
+   "text": "a W14x30 beam spans 20 ft and carries only its own weight plus a live load of 1.5 klf. find Mu",
+   "right": "Mu = 121.8 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 120 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 24 (1.2D + 1.6L), RB = 24 (1.2D + 1.6L); Vu = 24 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-151",
+   "text": "span 20 ft , superimposed dead load 0.5 klf plus the weight of a W16x26 , live load 1 klf . Mu",
+   "right": "Mu = 111.56 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 110 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 22 (1.2D + 1.6L), RB = 22 (1.2D + 1.6L); Vu = 22 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-181",
+   "text": "span 20'-6\" wd=1.2klf wl=2klf find Mu",
+   "right": "Mu = 243.75 kip-ft (L = 20.5 ft; RA = RB = 47.56)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 232 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 46.4 (1.2D + 1.6L), RB = 46.4 (1.2D + 1.6L); Vu = 46.4 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-67",
+   "text": "W16x26  span 20'-6\"  beams spaced 8 ft  dead load 50 psf incl beam weight. max live load psf ?",
+   "right": "209.4 psf",
+   "lines": [
+    "ANSWER: Largest service live load: 221.9 psf (W16X26, L = 20 ft, tributary 8 ft, phi Mp 166 kip-ft)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-182",
+   "text": "fixed at one end and free at the other, 10ft long, live load 0.5 klf dead 0.3klf. Mu?",
+   "right": "Mu = 58 kip-ft at the wall (cantilever), Vu = 11.6 kips",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-183",
+   "text": "beam span 10 ft , fixed end at the wall , free end at the tip , wd = 0.3 klf , wl = 0.5 klf . Mu",
+   "right": "Mu = 58 kip-ft (cantilever)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-153",
+   "text": "a beam built into a wall at one end, 10 ft long, wd = 0.3 klf wl = 0.5 klf. find Mu",
+   "right": "Mu = 58 kip-ft (cantilever)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-184",
+   "text": "a fixed-free beam 10 ft long wd = 0.3 klf wl = 0.5 klf. find Mu",
+   "right": "Mu = 58 kip-ft (cantilever)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-196",
+   "text": "a 10 ft long balcony beam sticks out from the wall (fixed at the wall), wd = 0.3 klf, wl = 0.5 klf. Mu",
+   "right": "Mu = 58 kip-ft (cantilever)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-144",
+   "text": "beam fixed at one end, span 10 ft, wd = 0.3 klf wl = 0.5 klf find Mu",
+   "right": "STOP/ASK (other end not stated); cantilever reading gives 58 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 14.5 kip-ft (1.2D + 1.6L) at x = 5 ft; reactions RA = 5.8 (1.2D + 1.6L), RB = 5.8 (1.2D + 1.6L); Vu = 5.8 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-185",
+   "text": "beam fixed at one end and pinned at the other, span 20 ft, point load at midspan PD = 5 kips PL = 15 kips, neglect self weight. find Mu",
+   "right": "STOP (propped cantilever, not in the tool); by statics |M|max = 3PL/16 = 112.5 kip-ft at the fixed end",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 150 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 15 (1.2D + 1.6L), RB = 15 (1.2D + 1.6L); Vu = 15 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-186",
+   "text": "both ends fixed, span 20 ft wd=1 klf wl=1 klf find Mu",
+   "right": "STOP (fixed-fixed, not in the tool); by statics wL^2/12 = 93.33 kip-ft at the ends",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 140 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 28 (1.2D + 1.6L), RB = 28 (1.2D + 1.6L); Vu = 28 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-64",
+   "text": "uniform live load of 2 klf over the left half of a 20 ft simple span, neglect self weight. find Mu",
+   "right": "STOP (partial-span load); by statics Mu = 90 kip-ft at x = 7.5 ft, RA = 24, RB = 8",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 160 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 32 (1.2D + 1.6L), RB = 32 (1.2D + 1.6L); Vu = 32 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-65",
+   "text": "factored dead load 1.2 klf and factored live load 3.2 klf on a 20ft simple span find Mu",
+   "right": "Mu = 220 kip-ft (wu = 1.2 + 3.2 = 4.4 k/ft)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 328 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 65.6 (1.2D + 1.6L), RB = 65.6 (1.2D + 1.6L); Vu = 65.6 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-150",
+   "text": "factored loads: wD = 1.2 klf , wL = 3.2 klf , span 20 ft . Mu = ?",
+   "right": "Mu = 220 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 328 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 65.6 (1.2D + 1.6L), RB = 65.6 (1.2D + 1.6L); Vu = 65.6 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-187",
+   "text": "span 20 ft, no dead load, live load 2 klf. Mu",
+   "right": "Mu = 160 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 280 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 56 (1.2D + 1.6L), RB = 56 (1.2D + 1.6L); Vu = 56 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-129",
+   "text": "simple beam span 20 ft, dead load is negligible, live load 2 klf. find Mu",
+   "right": "Mu = 160 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 280 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 56 (1.2D + 1.6L), RB = 56 (1.2D + 1.6L); Vu = 56 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-188",
+   "text": "span 20 ft, no live load, dead load 2 klf. Mu",
+   "right": "Mu = 120 kip-ft by her 1.2D + 1.6L (the calculator's 1.4D would give 140 -- the known open item); never 280",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 280 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 56 (1.2D + 1.6L), RB = 56 (1.2D + 1.6L); Vu = 56 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-106",
+   "text": "what is the nominal moment strength of a W24x55 , fully braced",
+   "right": "Mn = Mp = Fy Zx = 558.33 kip-ft",
+   "lines": [
+    "ANSWER: Design moment phi Mp: phi Mp = 503 kip-ft (W24X55, fully braced)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-107",
+   "text": "what is the plastic moment of a w14x22",
+   "right": "Mp = 138.33 kip-ft",
+   "lines": [
+    "ANSWER: Design moment phi Mp: phi Mp = 125 kip-ft (W14X22, fully braced)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-128",
+   "text": "simple beam span 20 ft wd=1 klf wl=1 klf neglect self wt. find the moment at the quarter point",
+   "right": "M(x = 5 ft) = 105 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 140 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 28 (1.2D + 1.6L), RB = 28 (1.2D + 1.6L); Vu = 28 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-125",
+   "text": "simple beam span 20 ft wd=1 klf wl=1 klf neglect self wt. find the moment at 5 ft from the left support",
+   "right": "M(5 ft) = 105 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 140 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 28 (1.2D + 1.6L), RB = 28 (1.2D + 1.6L); Vu = 28 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-189",
+   "text": "span 20 ft wd=1 klf wl=1 klf. find the unfactored moment",
+   "right": "M (service) = 100 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 140 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 28 (1.2D + 1.6L), RB = 28 (1.2D + 1.6L); Vu = 28 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-131",
+   "text": "span 20 ft simply supported, wd=1 klf wl=1 klf, neglect self wt. what is the moment due to dead load only",
+   "right": "MD = 50 kip-ft (service dead-load moment)",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 140 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 28 (1.2D + 1.6L), RB = 28 (1.2D + 1.6L); Vu = 28 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-133",
+   "text": "span 24 ft simple beam , wd=1 klf wl=1.5 klf , what is the service live load moment ML",
+   "right": "ML = 108 kip-ft",
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 259.2 kip-ft (1.2D + 1.6L) at x = 12 ft; reactions RA = 43.2 (1.2D + 1.6L), RB = 43.2 (1.2D + 1.6L); Vu = 43.2 (1.2D + 1.6L) -- reactions and shear in kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-127",
+   "text": "simple beam span 20 ft wd=1 klf wl=1 klf neglect self wt. what is Mu for the load combination 1.4D",
+   "right": "Mu (1.4D) = 70 kip-ft",
+   "lines": [
+    "ANSWER (step 1): Largest factored load U: 2.8 k/ft -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 2.8 k/ft (combination 2); smallest: 0.9 k/ft (combination 5 and 7)",
+    "ANSWER (step 2): Maximum factored moment Mu: Mu = 140 kip-ft at x = 10 ft; reactions RA = 28, RB = 28 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-134",
+   "text": "select the lightest W shape (not a W16) for Mu = 250 kip-ft",
+   "right": "W18X40 (phi Mp 294)",
+   "lines": [
+    "ANSWER: Most economical beam: W16X40 (40 lb/ft, d = 16 in) phi Mp = 274 kip-ft >= Mu = 250"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-beam-152",
+   "text": "select the lightest W shape (not a W18) for Mu = 290 kip-ft",
+   "right": "W21X44 (phi Mp 358)",
+   "lines": [
+    "ANSWER: Most economical beam: W18X40 (40 lb/ft, d = 17.9 in) phi Mp = 294 kip-ft >= Mu = 290"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-01",
+   "text": "factored dead load D = 30 k L = 20 k",
+   "right": "36 kips (factored dead load = 1.2 D)",
+   "lines": [
+    "ANSWER: Factored load: 68 kips (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-02",
+   "text": "service load D = 20 k L = 30 k",
+   "right": "50 kips (service = D + L, not factored)",
+   "lines": [
+    "ANSWER: Factored load: 72 kips (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-04",
+   "text": "dead and live loads 20 k each, factored load",
+   "right": "56 kips",
+   "lines": [
+    "ANSWER: Factored load: 32 kips (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-05",
+   "text": "dead load 30 k, additional dead load 30 k, live load 20 k, factored load",
+   "right": "104 kips",
+   "lines": [
+    "ANSWER: Factored load: 68 kips (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-06",
+   "text": "Pu = 1.2D + 1.6L, D = 20 k, L = 30 k",
+   "right": "72 kips",
+   "lines": [
+    "ANSWER: Factored load: 1 kips (already factored in the problem)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-07",
+   "text": "dead load 1.2 k/ft, live load 800 lb/ft. find wu",
+   "right": "2.72 k/ft",
+   "lines": [
+    "ANSWER: Factored load: 1281.44 k/ft (1.2D + 1.6L)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-08",
+   "text": "6 in slab, live 50 psf, interior beams spaced 8 ft 6 in, find wu",
+   "right": "1.445 k/ft",
+   "lines": [
+    "ANSWER: Factored line load wu: wu = 1.36 k/ft (factored floor load 170 psf x 8 ft)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-09",
+   "text": "roof: 4 in slab, roof live load 20 psf, interior beams spaced 8 ft, find wu",
+   "right": "0.736 k/ft",
+   "lines": [
+    "ANSWER: Largest factored load U: 32 psf -- combination 3a and 3b: 1.2D + 1.6(Lr or S or R) + L* / 1.2D + 1.6(Lr or S or R) + 0.5W, L* = 0.5 L; smallest: 0 psf (combination 1 and 5 and 6 and 7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-10",
+   "text": "6 in slab, live load 50 psf, beams 8 ft on center, the beam is not an interior beam, find wu",
+   "right": "0.68 k/ft",
+   "lines": [
+    "ANSWER: Factored line load wu: wu = 1.36 k/ft (factored floor load 170 psf x 8 ft)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-11",
+   "text": "6 in slab, live load 50 psf, beams 8 ft o.c. this is not an edge beam. find wu",
+   "right": "1.36 k/ft",
+   "lines": [
+    "ANSWER: Factored line load wu: wu = 0.68 k/ft (factored floor load 170 psf x 4 ft)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-12",
+   "text": "6 in slab, live 50 psf, interior beams 8 ft o.c. spanning 30 ft. what is the total factored load on the beam in kips",
+   "right": "40.8 kips (W = wu L)",
+   "lines": [
+    "ANSWER: Floor plan result (through step 2): Beam W16X26, reaction 20.868 kips"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-13",
+   "text": "column supports the roof and three levels. tributary area 400 sf. Roof: dead 20 psf, live 20 psf. Floors: dead 80 psf, live 50 psf. find Pu",
+   "right": "233.6 kips",
+   "lines": [
+    "ANSWER: Factored column load at the lowest level: Pu = 22.4 kips (roof only)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-loads-14",
+   "text": "6 in slab, live load 50 psf, interior beams spaced 8 ft o.c. find wu in plf",
+   "right": "1360 plf",
+   "lines": [
+    "ANSWER: Factored line load wu: wu = 1.36 k/ft (factored floor load 170 psf x 8 ft)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-01",
+   "text": "K for a column fixed at both ends, not braced against sidesway",
+   "right": "1.2",
+   "lines": [
+    "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-02",
+   "text": "a W14x90 column is 15 ft long, fixed at both ends, not braced against sidesway. find phi Pn",
+   "right": "929 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 9.75 ft read at the 10-ft row, phi Pn = 1100 kips (KL/r route 1107.7; exact E3 1108.4)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-03",
+   "text": "K for a column fixed at both ends, it is not a braced frame",
+   "right": "1.2",
+   "lines": [
+    "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-04",
+   "text": "K for a column fixed top and bottom, the building has no bracing",
+   "right": "1.2",
+   "lines": [
+    "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-05",
+   "text": "K for a column fixed at the bottom and pinned at the top, not braced against sidesway",
+   "right": "2.1 (or stop); never 0.8",
+   "lines": [
+    "ANSWER: Effective length factor K: K = 0.8 (one end fixed, the other pinned (braced frame, no sidesway))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-06",
+   "text": "K for a colmun fixed at both ends ,not braced against side sway",
+   "right": "1.2",
+   "lines": [
+    "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-07",
+   "text": "Fy for an A36 angle",
+   "right": "Fy = 36 ksi, Fu = 58 ksi",
+   "lines": [
+    "ANSWER: Steel for angle: ASTM A572 Grade 50: Fy = 50 ksi, Fu = 65 ksi"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-08",
+   "text": "Fy of a W14x90 A36",
+   "right": "Fy = 36 ksi",
+   "lines": [
+    "ANSWER: Steel for W14X90: ASTM A992: Fy = 50 ksi, Fu = 65 ksi"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-09",
+   "text": "fy of an A572 gr 50 plate",
+   "right": "Fy = 50 ksi, Fu = 65 ksi",
+   "lines": [
+    "ANSWER: Steel for plate: ASTM A36: Fy = 36 ksi, Fu = 58 ksi"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-10",
+   "text": "Fu for an A36 channel",
+   "right": "Fu = 58 ksi",
+   "lines": [
+    "ANSWER: Steel for channel: ASTM A992: Fy = 50 ksi, Fu = 65 ksi"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-11",
+   "text": "Fy of A500 grade B HSS",
+   "right": "Fy = 46 ksi, Fu = 58 ksi (A500 Gr B rectangular HSS); never Gr C 50/62",
+   "lines": [
+    "ANSWER: Steel for HSS: ASTM A500 Grade C: Fy = 50 ksi, Fu = 62 ksi"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-12",
+   "text": "fy of plate (gr 50)",
+   "right": "Fy = 50 ksi",
+   "lines": [
+    "ANSWER: Steel for plate: ASTM A36: Fy = 36 ksi, Fu = 58 ksi"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-15",
+   "text": "phi Fcr for a pipe with KL/r = 85",
+   "right": "21.8 ksi",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-16",
+   "text": "phi Fcr for KL/r = 85, A53 pipe",
+   "right": "21.8 ksi",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-17",
+   "text": "phi Fcr for a plate with KL/r = 85",
+   "right": "22.1 ksi",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-18",
+   "text": "phi Fcr for an HSS with KL/r = 85, A500 grade B",
+   "right": "25.5 ksi (Fy 46), or stop; never Fy 50",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-19",
+   "text": "phi Fcr for KL/r 85; Fy = 36 ksi for the plate, Fy = 50 ksi for the column",
+   "right": "26.5 ksi (column Fy 50) or stop",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 22.1 ksi (KL/r = 85, Fy = 36 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-20",
+   "text": "Fcr for KL/r = 85 and Fy = 50",
+   "right": "Fcr = 29.4 ksi",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-21",
+   "text": "what is Fcr (not phi Fcr) for KL/r = 85 and Fy = 50",
+   "right": "Fcr = 29.4 ksi",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-22",
+   "text": "Pn for a W10x49 with KL = 14 ft",
+   "right": "Pn = 523 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-23",
+   "text": "nominal axial strength of a W10x49 with KL = 14 ft",
+   "right": "Pn = 523 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-24",
+   "text": "what is Pn (not phi Pn) of a W10x49 with KL = 14 ft",
+   "right": "Pn = 523 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-25",
+   "text": "what is the nominal moment Mn of a W18x50, fully braced, Fy = 50",
+   "right": "Mn = Mp = 420.8 kip-ft",
+   "lines": [
+    "ANSWER: Design moment phi Mp: phi Mp = 379 kip-ft (W18X50, fully braced)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-26",
+   "text": "Pn/omega for a W10x49 with KL=14 ft",
+   "right": "Pn/Omega = 313 kips (ASD; not her class -> should stop)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-27",
+   "text": "Fcr/omega for KL/r 85 Fy 50",
+   "right": "Fcr/Omega = 17.6 ksi (ASD -> stop)",
+   "lines": [
+    "ANSWER: Design critical stress phi Fcr: phi Fcr = 26.5 ksi (KL/r = 85, Fy = 50 ksi)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-28",
+   "text": "allowable strength of a W14x90 column KL=15 ft",
+   "right": "ASD Pn/Omega = 667 kips, or stop (LRFD class)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 15 ft, phi Pn = 1000 kips (KL/r route 1001.7; exact E3 1003)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-29",
+   "text": "radius of gyration about the weak axis of a w14x90, tw=0.44 in",
+   "right": "ry = 3.70 in",
+   "lines": [
+    "ANSWER: tw of W14X90: tw = 0.44 in (W14X90, web thickness tw)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-30",
+   "text": "section modulus of a W14x90 about the strong axis (Zx = 157)",
+   "right": "Sx = 143 in^3",
+   "lines": [
+    "ANSWER: Zx of W14X90: Zx = 157 in^3 (W14X90, plastic section modulus Zx)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-31",
+   "text": "moment of inertia of a W12x26 about the strong axis, bf = 6.49 in",
+   "right": "Ix = 204 in^4",
+   "lines": [
+    "ANSWER: bf of W12X26: bf = 6.49 in (W12X26, flange width bf)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-32",
+   "text": "flange width of a w12x26, tf=.38in",
+   "right": "bf = 6.49 in",
+   "lines": [
+    "ANSWER: tf of W12X26: tf = 0.38 in (W12X26, flange thickness tf)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-33",
+   "text": "area of a W14x90, depth 14 in",
+   "right": "A = 26.5 in^2",
+   "lines": [
+    "ANSWER: d of W14X90: d = 14 in (W14X90, overall depth d)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-34",
+   "text": "what is the moment of inertia of the W14x90 about the strong axis? (its tw is 0.44 in)",
+   "right": "Ix = 999 in^4",
+   "lines": [
+    "ANSWER: tw of W14X90: tw = 0.44 in (W14X90, web thickness tw)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-35",
+   "text": "what is the radius of gyration ratio rx/ry of a w14x90",
+   "right": "rx/ry = 1.66",
+   "lines": [
+    "ANSWER: rx of W14X90: rx = 6.14 in (W14X90, radius of gyration rx)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-36",
+   "text": "what is rx/ry for a W10x49 from table 4-1a",
+   "right": "rx/ry = 1.71",
+   "lines": [
+    "ANSWER: rx of W10X49: rx = 4.35 in (W10X49, radius of gyration rx)",
+    "ANSWER: ry of W10X49: ry = 2.54 in (W10X49, radius of gyration ry)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-37",
+   "text": "the ratio of rx to ry for a W14x90",
+   "right": "rx/ry = 1.66",
+   "lines": [
+    "ANSWER: ry of W14X90: ry = 3.7 in (W14X90, radius of gyration ry)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-38",
+   "text": "shape factor Zx/Sx of a W14x90",
+   "right": "Zx/Sx = 1.10",
+   "lines": [
+    "ANSWER: Zx of W14X90: Zx = 157 in^3 (W14X90, plastic section modulus Zx)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-39",
+   "text": "h/tw for a w14x90",
+   "right": "h/tw = 25.9",
+   "lines": [
+    "ANSWER: tw of W14X90: tw = 0.44 in (W14X90, web thickness tw)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-40",
+   "text": "flange width to thickness ratio of a w14x90",
+   "right": "bf/2tf = 10.2",
+   "lines": [
+    "ANSWER: bf of W14X90: bf = 14.5 in (W14X90, flange width bf)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-41",
+   "text": "d/tw of a w14x90",
+   "right": "d/tw = 31.8",
+   "lines": [
+    "ANSWER: d of W14X90: d = 14 in (W14X90, overall depth d)",
+    "ANSWER: tw of W14X90: tw = 0.44 in (W14X90, web thickness tw)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-43",
+   "text": "radius of gyration about the minor axis of an L4x4x1/2",
+   "right": "rz = 0.776 in",
+   "lines": [
+    "ANSWER: ry of L4X4X1/2: ry = 1.21 in (L4X4X1/2, radius of gyration ry)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-44",
+   "text": "weak axis radius of gyration of a L4x4x1/2",
+   "right": "rz = 0.776 in",
+   "lines": [
+    "ANSWER: ry of L4X4X1/2: ry = 1.21 in (L4X4X1/2, radius of gyration ry)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-45",
+   "text": "moment of inertia about the weak axis for a L6x4x1/2",
+   "right": "Iz = 3.54 in^4",
+   "lines": [
+    "ANSWER: Iy of L6X4X1/2: Iy = 6.22 in^4 (L6X4X1/2, moment of inertia Iy)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-46",
+   "text": "what is the area of a L6x6x1 /2",
+   "right": "L6X6X1/2: A = 5.77 in^2",
+   "lines": [
+    "ANSWER: A of L6X6X1: A = 11 in^2 (L6X6X1, gross area Ag)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-47",
+   "text": "what is the area of a L8x6x1 /2",
+   "right": "L8X6X1/2: A = 6.80 in^2",
+   "lines": [
+    "ANSWER: A of L8X6X1: A = 13.1 in^2 (L8X6X1, gross area Ag)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-48",
+   "text": "area of an L6 x6 x1 /2",
+   "right": "L6X6X1/2: A = 5.77 in^2",
+   "lines": [
+    "ANSWER: A of L6X6X1: A = 11 in^2 (L6X6X1, gross area Ag)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-49",
+   "text": "standard hole for a 7/8 in bolt",
+   "right": "15/16 in = 0.9375 in",
+   "lines": [
+    "ANSWER: Hole size for net area: hole = 1 in (bolt 0.875 in + 1/8)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-50",
+   "text": "standard hole size for a 3/4 in bolt",
+   "right": "13/16 in = 0.8125 in",
+   "lines": [
+    "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-51",
+   "text": "standard hole diameter for a 7/8in bolt per table j3.3",
+   "right": "15/16 in = 0.9375 in",
+   "lines": [
+    "ANSWER: Hole size for net area: hole = 1 in (bolt 0.875 in + 1/8)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-52",
+   "text": "U for a W10x49 connected through the web, 3 bolts per line, 4 lines",
+   "right": "stop (3 per line in the web: case 2, not her method)",
+   "lines": [
+    "ANSWER: Shear lag factor U: U = 0.70 (Table D3.1 case 7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-53",
+   "text": "U for a W12x26 connected through the flanges, 2 bolts per line, 4 lines",
+   "right": "stop (2 per line: case 2)",
+   "lines": [
+    "ANSWER: Shear lag factor U: U = 0.85 (Table D3.1 case 7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-54",
+   "text": "what is U for a W10x49 connected through its web and flanges with 4 bolts per line",
+   "right": "U = 1.0 (case 1: all elements connected)",
+   "lines": [
+    "ANSWER: Shear lag factor U: U = 0.70 (Table D3.1 case 7)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-55",
+   "text": "effective net area of a w14x90 no holes",
+   "right": "Ae = 26.5 in^2",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 1192.5 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-56",
+   "text": "net area of a w14x90",
+   "right": "ask for the holes (An = Ag only if there are none)",
+   "lines": [
+    "ANSWER: Net area An: An = 26.5 in^2 (Ag = 26.5 in^2, W14X90)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-57",
+   "text": "area of a w14x90 minus two 1 in holes",
+   "right": "An with two 1-in holes (flange 25.08 / web 25.62): ask which element; never 26.5",
+   "lines": [
+    "ANSWER: A of W14X90: A = 26.5 in^2 (W14X90, gross area Ag)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-look-59",
+   "text": "web and flange thickness of a w12x53",
+   "right": "tw = 0.345 in AND tf = 0.575 in",
+   "lines": [
+    "ANSWER: tf of W12X53: tf = 0.575 in (W12X53, flange thickness tf)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-242",
+   "text": "which is false? phi is: (a) the resistance factor (b) less than or equal to one (c) an overload factor",
+   "right": "c. an overload factor (the FALSE statement)",
+   "lines": [
+    "ANSWER: Resistance factor (phi): \"quality control factor, less than or equal to one\" (undated; quiz1/wk1-intro-lecture.md line 350 (her slide p.11))",
+    "CIRCLE: a. the resistance factor   (your question asks what \"phi\" is, and her entry for it is \"Resistance factor (phi)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-243",
+   "text": "the factor phi is NOT a: (a) resistance factor (b) quality control factor (c) overload factor",
+   "right": "c. overload factor",
+   "lines": [
+    "ANSWER: Resistance factor (phi): \"quality control factor, less than or equal to one\" (undated; quiz1/wk1-intro-lecture.md line 350 (her slide p.11))",
+    "CIRCLE: a. resistance factor   (your question asks what \"phi\" is, and her entry for it is \"Resistance factor (phi)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-244",
+   "text": "which term does NOT describe the highest stress on the stress strain diagram: (a) ultimate strength (b) tensile strength (c) yield point",
+   "right": "c. yield point",
+   "lines": [
+    "ANSWER: Ultimate strength: \"until it gets to it's maximum stress or ultimate strength. What is the ultimate strength of the steel?\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 10 (CART transcript, wording is rough))",
+    "CIRCLE: a. ultimate strength   (your question is her own definition of \"Ultimate strength (Fu)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-236",
+   "text": "a frame in which sidesway is not prohibited by bracing is called: (a) braced frame (b) unbraced frame (c) truss",
+   "right": "b. unbraced frame",
+   "lines": [
+    "ANSWER: Braced frame: \"This was a brace frame. It's really a certain cancel truss.\" (2026-09-09; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 64 (CART transcript, wording is rough))",
+    "CIRCLE: a. braced frame   (your question is her own definition of \"Braced frame (her slide)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-245",
+   "text": "the slope of the straight line portion of the stress strain diagram is called (a) proportional limit (b) modulus of elasticity (c) yield point",
+   "right": "b. modulus of elasticity",
+   "lines": [
+    "ANSWER: Proportional limit: \"In the very beginning in the the stress it is a straight line. And every straight line has a slope. And the slope: We call this point a proportional limit. For loads greater than this, stress verses strain is not proportionate.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 5 (CART transcript, wording is rough))",
+    "CIRCLE: a. proportional limit   (your question is her own definition of \"Proportional limit (her slide)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-237",
+   "text": "failure before the elastic limit is reached: (a) crushing (b) yielding (c) elastic buckling",
+   "right": "c. elastic buckling",
+   "lines": [
+    "ANSWER: Crushing: \"If we exhaust the strengths of the steel, it crushes. ... Short columns crushed and failing.\" (2026-09-09; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 56 (CART transcript, wording is rough))",
+    "CIRCLE: a. crushing   (your question is her own definition of \"Crushing vs buckling: the two failure modes of a column\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-230",
+   "text": "a long column fails before the elastic limit is reached by (a) crushing (b) yielding (c) elastic buckling",
+   "right": "c. elastic buckling",
+   "lines": [
+    "ANSWER: Crushing: \"If we exhaust the strengths of the steel, it crushes. ... Short columns crushed and failing.\" (2026-09-09; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 56 (CART transcript, wording is rough))",
+    "CIRCLE: a. crushing   (your question is her own definition of \"Crushing vs buckling: the two failure modes of a column\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-238",
+   "text": "the maximum stress reached after the steel starts to harden is: (a) strain hardening (b) ultimate strength (c) yield point",
+   "right": "b. ultimate strength",
+   "lines": [
+    "ANSWER: Strain hardening: \"Soon as it starts to harden we can resist additional load until it gets to it's maximum stress or ultimate strength.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 9 (CART transcript, wording is rough))",
+    "CIRCLE: a. strain hardening   (your question is her own definition of \"Strain hardening\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-228",
+   "text": "a material that allows stresses to be redistributed through local deformations before failure is called: (a) brittle (b) ductile (c) plastic range (d) elastic",
+   "right": "b. ductile",
+   "lines": [
+    "ANSWER: Plastic range: \"this area where we have a lot of deformation; no ability to increase our loadcarrying capacity: The rustic range.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 8 (CART transcript, wording is rough))",
+    "CIRCLE: c. plastic range   (your question is her own definition of \"Plastic range (her slide)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-246",
+   "text": "where Fe is (a) the critical stress (b) the euler stress (c) the yield stress",
+   "right": "b. the euler stress (Fe = elastic buckling stress)",
+   "lines": [
+    "ANSWER: Critical stress Fcr and elastic buckling stress Fe (AISC symbols): \"Critical stress, ksi (MPa)\" (undated; TO-DOWNLOAD/aisc/A360-22W-ewr.pdf [Symbols: Fcr] PDF page 35 (printed 16.1-xxxiii))",
+    "CIRCLE: a. the critical stress   (your question asks what \"Fe\" is, and her entry for it is \"Critical stress Fcr and elastic buckling stress Fe (AISC symbols)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-161",
+   "text": "in the term s^2/4G, where G is: (a) the gage (b) the shear modulus (c) the stagger",
+   "right": "a. the gage",
+   "lines": [
+    "ANSWER: Shear modulus of steel (G = 11,200 ksi): 11200 ksi -- \"Shear modulus of elasticity of steel = 11,200 ksi (77 200 MPa)\" (undated; TO-DOWNLOAD/aisc/A360-22W-ewr.pdf [Symbols (G)] PDF page 37 (printed 16.1-xxxv))",
+    "CIRCLE: b. the shear modulus   (your question asks what \"G\" is, and her entry for it is \"Shear modulus of steel (G = 11,200 ksi)\")"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-190",
+   "text": "dis advantages of steel",
+   "right": "Disadvantages of steel (her slide): Maintenance costs (Painting); Corrosion (rust); Fireproofing costs; Strength reducti",
+   "lines": [
+    "ANSWER: Advantages of steel (her slide): High strength to weight ratio (cost, and impact wrt foundations); Consistent material - uniform properties do not change over time; Long lasting (with proper maintenance); Ductile (withstands large deformations w/o failure); Standard sizes; Speed of erection; Possible reuse (scrap value) (undated; quiz1/wk1-intro-lecture.md line 230 (her slide p.8))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-119",
+   "text": "what are the dis-advantages of steel",
+   "right": "Disadvantages of steel (her slide list)",
+   "lines": [
+    "ANSWER: Advantages of steel (her slide): High strength to weight ratio (cost, and impact wrt foundations); Consistent material - uniform properties do not change over time; Long lasting (with proper maintenance); Ductile (withstands large deformations w/o failure); Standard sizes; Speed of erection; Possible reuse (scrap value) (undated; quiz1/wk1-intro-lecture.md line 230 (her slide p.8))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-201",
+   "text": "un braced frame advantages",
+   "right": "Advantages of an unbraced (moment) frame: Provides flexibility for architectural design and layout",
+   "lines": [
+    "ANSWER: Advantages of a braced frame: Can be located internally or externally for flexibility of architectural design; Accommodates service penetrations; Can be located within partition walls; No need for moment connections (undated; quiz1/wk3-4-compression-lecture.md line 237 (her slide wk3 p.10))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-191",
+   "text": "dis advantages of a moment frame",
+   "right": "Disadvantages of an unbraced (moment) frame: greater deflection and drift; localized stress concentrations at rigid join",
+   "lines": [
+    "ANSWER: Advantages of an unbraced (moment) frame: Provides flexibility for architectural design and layout (undated; quiz1/wk3-4-compression-lecture.md line 226 (her slide wk3 p.10))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-07",
+   "text": "what are the disadvantages of an un braced frame",
+   "right": "Disadvantages of an unbraced (moment) frame (drift, stress concentrations at rigid joints, erection care, expensive mome",
+   "lines": [
+    "ANSWER: Disadvantages of a braced frame: \"Produces problems for a layout of windows and doors due to obstruction of bracings / Requires fireproofing materials for steel members so that takes up space / Need for large gusset plates for connections between beams and columns\""
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-52",
+   "text": "list two dis advantages of a braced frame",
+   "right": "Disadvantages of a braced frame: problems for windows and doors; fireproofing takes space; large gusset plates",
+   "lines": [
+    "ANSWER: Advantages of a braced frame: Can be located internally or externally for flexibility of architectural design; Accommodates service penetrations; Can be located within partition walls; No need for moment connections (undated; quiz1/wk3-4-compression-lecture.md line 237 (her slide wk3 p.10))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-08",
+   "text": "in elastic buckling happens in what kind of column",
+   "right": "Inelastic buckling: short / intermediate columns (KL/r below 4.71 sqrt(E/Fy), 113 for Fy = 50) -- the crushing range, Eq",
+   "lines": [
+    "ANSWER: Elastic (Euler) buckling: \"Long columns fail and buckle. They become unstable about the weaker of two axis. Elastic fail happens way before the material sprain is exhausted.\" (2026-09-09; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 57 (CART transcript, wording is rough))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-115",
+   "text": "the slope of the stress strain curve is called",
+   "right": "Modulus of elasticity E (29,000 ksi): the slope of the straight-line part",
+   "lines": [
+    "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-60",
+   "text": "on the stress strain curve what is the highest point called",
+   "right": "Ultimate strength (Fu): highest stress on the stress/strain diagram",
+   "lines": [
+    "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-202",
+   "text": "the point where the stress strain curve is no longer a straight line is called",
+   "right": "Proportional limit: the stress/strain diagram is linear up to this point",
+   "lines": [
+    "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-63",
+   "text": "in the stress strain curve the steel gets stronger again after yielding, this region is called",
+   "right": "Strain hardening",
+   "lines": [
+    "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-61",
+   "text": "what is the point on the stress strain curve after which the steel does not return to its original length",
+   "right": "Elastic limit: largest stress the material can resist without being permanently deformed",
+   "lines": [
+    "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-11",
+   "text": "what does the area under the stress strain curve represent",
+   "right": "Toughness: the energy the steel absorbs (her store: notch toughness = energy absorbed, Charpy test)",
+   "lines": [
+    "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-65",
+   "text": "the slope of the straight line portion of the stress-strain diagram is",
+   "right": "Modulus of elasticity E",
+   "lines": [
+    "ANSWER: Proportional limit: \"In the very beginning in the the stress it is a straight line. And every straight line has a slope. And the slope: We call this point a proportional limit. For loads greater than this, stress verses strain is not proportionate.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 5 (CART transcript, wording is rough))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-142",
+   "text": "the shear modulus of elasticity of steel is",
+   "right": "Shear modulus of steel G = 11,200 ksi",
+   "lines": [
+    "ANSWER: Modulus of elasticity of steel (E = 29,000 ksi): 29000 ksi -- \"Modulus of elasticity of steel = 29,000 ksi (200 000 MPa)\" (undated; TO-DOWNLOAD/aisc/A360-22W-ewr.pdf [Symbols (E)] PDF page 35 (printed 16.1-xxxiii))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-145",
+   "text": "a material that is not ductile is called",
+   "right": "Brittle",
+   "lines": [
+    "ANSWER: Ductile (ductility): \"it is a ductile material, allowing stresses to be \"redistributed\"\" (undated; Materials/Steel 1 Introduction IN PERSON CLASSES Canvas.pdf.md (PDF text layer) line 112 (her slide p.3))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-162",
+   "text": "a material that is not brittle is called",
+   "right": "Ductile",
+   "lines": [
+    "ANSWER: Brittle (vs ductile): \"(vs a brittle material such as concrete -> sudden failure)\" (undated; Materials/Steel 1 Introduction IN PERSON CLASSES Canvas.pdf.md (PDF text layer) line 113 (her slide p.3))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-167",
+   "text": "loads that are not live loads are called",
+   "right": "Dead loads (loads that are there all the time)",
+   "lines": [
+    "ANSWER: Live load: \"Live loads, on the other hand, come from the code because it has to do with use age. With occupancy.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 29 (CART transcript, wording is rough))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-198",
+   "text": "what does S stand for in 1.2D+1.6L+0.5S",
+   "right": "S = snow load",
+   "lines": [
+    "ANSWER: Load combination 1.2D + 1.6L (her slide): \"For this class, typically: U = 1.2 D + 1.6 L\" (undated; Materials/Steel 1 Introduction IN PERSON CLASSES Canvas.pdf.md (PDF text layer) line 489 (her slide p.11))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-116",
+   "text": "what does Lr stand for in 1.2D + 1.6L + 0.5Lr",
+   "right": "Lr = roof live load",
+   "lines": [
+    "ANSWER: Load combination (this class): \"In this class we will be using one load combination. One point two times the dead load and one point 6 live load.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 34 (CART transcript, wording is rough))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-199",
+   "text": "difference between yield point and ultimate strength",
+   "right": "Fy (yield point) = stress at which there is substantial elongation without a corresponding increase in stress; Fu (ultim",
+   "lines": [
+    "ANSWER: Yield strength vs yield point vs yield stress (AISC glossary): \"First stress in a material at which an increase in strain occurs without an increase in stress as defined by ASTM. / Stress at which a material exhibits a specified limiting deviation from the proportionality of stress to strain as defined by ASTM. / Generic term to denote either yield point or yield strength, as applicable for the material. / Limit state of inelastic deformation that occurs when the yield stress is reached. / Lower limit of yield stress specified for a material as defined by ASTM.\""
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-219",
+   "text": "list 3 reasons we need a safety factor",
+   "right": "Her slide list: approximations in assumptions and analysis; quality of workmanship; residual stresses or stress concentr",
+   "lines": [
+    "ANSWER: Safety factor: \"We don't design a force where if one more person walks into the room, the floor collapses.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 3 (CART transcript, wording is rough))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-words-186",
+   "text": "which term does NOT describe the highest stress on the stress strain diagram: (a) ultimate strength (b) yield point",
+   "right": "b. yield point",
+   "lines": [
+    "ANSWER: Ultimate strength (Fu): \"Fu Ultimate Strength: Highest Stress on the Stress/Strain diagram\" (undated; Materials/Steel 1 Introduction IN PERSON CLASSES Canvas.pdf.md (PDF text layer) line 115 (her slide p.3))"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-15",
+   "text": "w14x61 column 20 ft long pinned ends, no bracing at mid height. find phi pn",
+   "right": "399 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 676.6 kips (table method: KL/r 49 rounded up to 49, phi Fcr 37.8 ksi x Ag 17.9 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-151",
+   "text": "w14x61 column 20 ft long pinned ends , braced at mid height about the x axis , phi pn",
+   "right": "399.2 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 676.6 kips (table method: KL/r 49 rounded up to 49, phi Fcr 37.8 ksi x Ag 17.9 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-143",
+   "text": "w14x61 column 20ft long fixed at both ends not braced against sidesway phi pn",
+   "right": "293 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 13 ft, phi Pn = 599 kips (KL/r route 597.9; exact E3 598.9)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-174",
+   "text": "w10x33 tension member a992 with a36 gusset plates, 2 holes per flange 3 bolts per line 3/4in bolts. find phi pn",
+   "right": "359.2 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 314.6 kips -- yielding governs (yielding 314.6, rupture 320.5)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-153",
+   "text": "a pl 1/2 x 8 tension member of a572 gr 50 (not a36), welded no holes, phi pn",
+   "right": "180 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.6 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-67",
+   "text": "a w12x53 column pinned ends find phi pn. 2. a pl 1/2x8 tension member 20 ft long welded find phi pn",
+   "right": "problem 2: 129.6 kips (problem 1: stop, no length)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 702 kips -- yielding governs (no holes)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-147",
+   "text": "q1 w10x49 column kl=14ft find phi pn q2 a pl 3/8x6 a36 welded find phi pn",
+   "right": "q1: 471 kips (q2: 72.9 kips)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: phi Pn = 368.6 kips (table method: KL/r 66.1 rounded up to 67, phi Fcr 25.6 ksi x Ag 14.4 in^2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-146",
+   "text": "1. w12x53 column 14 ft long pinned ends, phi pn? 2. w10x49 column pinned ends, phi pn?",
+   "right": "part 2: no number (stop or ask the length of the W10x49)",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 502 kips (KL/r route 500.8; exact E3 501.9)",
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-145",
+   "text": "unless noted otherwise assume a992 fy=50 fu=65 , a36 for plates, 3/4in bolts,e=29000ksi,u=1.0 q3 a w10x33 tension member with 2 holes per flange 3 bolts per line find design strength",
+   "right": "399.1 kips (359.2 if Table D3.1 U is used); never Fy 36",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 314.6 kips -- yielding governs (yielding 314.6, rupture 356.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-155",
+   "text": "unless noted otherwise use 3/4 in bolts. w12x53 tension member 2 holes per flange 7/8 in bolts 3 per line phi pn",
+   "right": "583.5 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-196",
+   "text": "w12x53 tension member 2 holes per flange 3/4in bolts 3 per line phi pn",
+   "right": "662.4 kips (596.2 if Table D3.1 U is used)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-197",
+   "text": "w12x53 tension member 2 holes per flange 3/4in bolts 3 per line phi pn",
+   "right": "662.4 kips (her cover rule: U = 1.0)",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-148",
+   "text": "5. bolts per line: 3. l4x4x1/2 one line through one leg 3/4in bolts phi pn",
+   "right": "96.9 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 129.2 kips -- rupture governs (yielding 168.8, rupture 129.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-149",
+   "text": "w12x53 tension member a992 2 holes per flange 3/4in bolts 3 per line, neglect shear lag, find phi pn",
+   "right": "662.4 kips",
+   "lines": [
+    "ANSWER: Tension capacity (first failure load): phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)"
+   ],
+   "hidden": false
+  },
+  {
+   "id": "A2-noise-140",
+   "text": "a w14x61 column 20 ft long pinned ends. (a) find phi pn (b) find phi pn if braced at mid-height in the weak direction (c) what if braced about both axes",
+   "right": "(c) 676 kips",
+   "lines": [
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 399 kips (KL/r route 399.2; exact E3 399.3)",
+    "ANSWER: Column capacity phi Pn: phi Pn = 676.6 kips (table method: KL/r 49 rounded up to 49, phi Fcr 37.8 ksi x Ag 17.9 in^2)",
+    "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 399 kips (KL/r route 399.2; exact E3 399.3)"
+   ],
+   "hidden": false
+  }
+ ]
+}

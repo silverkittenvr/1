@@ -1,0 +1,21 @@
+[
+ "_block0.js",
+ "shapes.js",
+ "tables.js",
+ "materials.js",
+ "rules.js",
+ "glossary.js",
+ "overrides.js",
+ "selftest.js",
+ "finder-data.js",
+ "spelling.js",
+ "glossary-extra.js",
+ "engine.js",
+ "finder.js",
+ "reader.js",
+ "llm_reader_core.js",
+ "expand.js",
+ "wordsx.js",
+ "pipeline.js",
+ "ui.js"
+]

@@ -1,0 +1,324 @@
+{
+ "clusters": [
+  {
+   "key": "tension-hole-negation-scope",
+   "title": "A 'no (bolt) holes in the web / flanges / short leg / elsewhere' is read as 'the whole member is welded', or a lazy skip runs across the negation and counts web lines",
+   "ids": [
+    "A1-tcap-01",
+    "A1-tcap-02",
+    "A1-tcap-03",
+    "A1-tcap-04",
+    "A1-tcap-05",
+    "A1-tcap-06",
+    "A1-tcap-07",
+    "A1-tcap-08",
+    "A1-tcap-09",
+    "A1-tcap-10",
+    "A1-tcap-11"
+   ],
+   "root_cause": "reader.js tensionCommon line 1612 `if (/no\\s+bolt\\s+holes/i.test(t)) welded = true;` fires on any 'no bolt holes', with no check of what follows ('in the web', 'in the flanges', 'elsewhere', 'the short leg has ...') and even after a bolt size and hole counts were read. findHoles line ~1205-1206 (the weldedWord regex) has the same unscoped `no\\s+bolt\\s+holes|...|no\\s+holes\\b`. The welded test at line 1610 also ignores H.cutFlange, H.lines and H.across, so 'no holes in the web' plus '4 holes in the flanges' becomes welded (tcap-08). Welded mode skips every hole count, so only yielding is computed (702 printed where 596.2 is right). findHoles line 1147 (web lines) and its 'through ... lines of' twins use the lazy skip `(?:\\S+\\s+){0,5}?`, which crosses ', no ' and reads the negated 'bolts/holes through the web' as web lines (tcap-09/10/11). H.web then wins over H.noWeb. pipeline.js line 3347-3352 (the 'mentions bolts or holes' guard) is switched off by its own exclusion `\\bno\\s+(?:bolt\\s+)?holes?\\b`. I checked this on the branch: the same text without 'no bolt holes in the web' prints 596.2.",
+   "fix_plan": "reader.js only, plus one small pipeline hunk. (1) findHoles weldedWord regex (~1205): `no\\s+bolt\\s+holes` and `no\\s+holes\\b` count as welded only when NOT scoped. Add a negative lookahead for `\\s+(?:are\\s+|is\\s+)?(?:in|through|on|at)\\s+(?:the\\s+|its\\s+|either\\s+|each\\s+|any\\s+)?(?:web|stem|flanges?|(?:short|long|outstanding|other)?\\s*legs?)` and `\\s+elsewhere`. Check 'X has no bolt holes' with a slice test on the text before the match (ES5, no lookbehind). (2) tensionCommon line 1612: use the same scoped test, and add `&& !F.bolt && !H.perFlange && !H.cutFlange && !H.web && !H.lines && !H.perLine && !H.across && !H.inSection && !H.forBolt`. Line 1610: add the same count slots. (3) noWeb/noFlange regexes: make the article optional ('no bolt holes in web'), so the scoped phrase still sets web_holes = 0. (4) Line 1147 and its twins: the token skip may not cross a comma, a semicolon or a negation: `(?:(?!(?:no|not|none|without)\\b)[^\\s,;]+\\s+){0,5}?`. If H.web and H.noWeb are both set, raise a count_web ask (kind 'need'), never a silent override. (5) pipeline.js 3349: the exclusion keeps only an unscoped 'no holes'. ANSWER where the reading is single: tcap-01/02/03/05/07 give 596.2 / 471.1 / 152.3, tcap-06 gives 168.2 (Case 8), tcap-08/09 give 596.2, tcap-04 gives U = 0.90. ASK: tcap-10 then falls to the '2 lines in the flanges' halving rule (cluster tension-geometry-multiplier: 1 or 2 per flange), and tcap-11 (no flange word) asks holes_count. MUST NOT CHANGE: a bare 'no bolt holes' / 'there are no holes' / 'welded' / 'all connections are welded' stays welded and yielding only. Also unchanged: '(there are no bolts in the web)' with flange counts (noWeb), her May 2024 Q8 'four lines ... through its flanges' (2 per flange), and gross-section-yielding mode.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js",
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "medium"
+  },
+  {
+   "key": "tension-geometry-multiplier",
+   "title": "A tension count's multiplier or a size's kind is chosen silently: two angles, both legs, bolts per flange vs holes, each side of the web, halved lines, hole diameter vs bolt diameter",
+   "ids": [
+    "A1-tcap-12",
+    "A1-tcap-13",
+    "A1-tcap-14",
+    "A1-tcap-15",
+    "A1-tcap-16",
+    "A1-tcap-17",
+    "A1-tcap-18",
+    "A1-tcap-22",
+    "A1-tcap-23",
+    "A1-tsel-13"
+   ],
+   "root_cause": "reader.js findHoles / tensionCommon / findBolt take one reading of a geometry word without a second check. (a) tensionCommon lines 1585 and 1602: angles = 2 only for a 2L name or the adjacent `(double|pair of|two) angles`. 'two L4x4x1/2 angles' (the shape name in between) drops the count (tcap-12/13: half the strength). (b) Nothing reads 'both legs' / 'each leg'. findHoles yields H.lines = 1, so line ~1661 sets holes_across = 1, and the connection rule at ~1713 (`memberIsAngle && (H.locLeg || F.bolt ...)`) gives Case 8 'one leg' (tcap-14/15/16). (c) findHoles line ~1091 `(WN) ... (holes?|bolts?) (in|across|through) (each|every|both) flanges?` takes a BOLT count per flange as holes across, even when 'N bolts per line' is in the text (6 bolts/3 per line = 2 lines; tcap-17). (d) The each-side-of-the-web doubling (~1070-1075) runs only when no per-flange count was read, and cgApply had already set perFlange = 1 from the same phrase (tcap-18). (e) tensionCommon 1641-1644 halves cutFlange 'N lines of bolts in/through the flanges' to N/2 per flange (confidence medium) without an ask. That is right for her Q8 'four lines', but '2 lines ... in the flanges' has two readings (tsel-13). (f) findBolt line 1228 (pattern 4) returns kind 'bolt' even when its noun is 'holes' ('holes are 15/16 in. in diameter'), so the existing bolt_or_hole path never runs and hole + 1/8 is applied to a hole (tcap-22/23).",
+   "fix_plan": "reader.js only. (a) Lines 1585/1602: also accept `\\b(?:two|2|double|pair\\s+of)\\s+(?:L\\s?\\d[\\w\\/.\\s-]{0,14}?\\s+)?angles?\\b` when exactly one L name is in the text: ANSWER (angles = 2). (b) For an angle with 'through/in both legs' or 'each leg': U = 1.0 (Case 1, every element connected, her case). Set holes_across = 2 x lines only when a per-leg line count is read ('one line in each leg'); otherwise ASK holes_across (kind 'need'). Never Case 8. tcap-14 gives 140.2, tcap-15 gives U = 1.0, tcap-16 gives An = 2.875. (c) Line ~1091: if the noun is 'bolts' and a per-line count exists, holes per flange = N / perLine when it divides evenly (ANSWER 2 for 6/3). Otherwise ASK count_perFlange ('need'). A bolt count is never holes. (d) Each-side doubling: also apply it when the per-flange count came from the same 'on each side of the web' clause (ANSWER 2 per flange). If another per-flange number was typed, use the existing conflict ask. (e) Line 1641: keep the halving for N >= 4 (her Q8). N = 2 'lines in/through the flanges' raises a count_perFlange question naming both readings. The existing count_ mechanism (pipeline markReaderStops) empties the box and asks. (f) findBolt line 1228: kind = /hole/i.test(noun) ? 'hole' : 'bolt'. The existing bolt_or_hole / MISSING path then asks. Never add 1/8 to a hole. MUST NOT CHANGE: 2L names, 'double angles', HW 3-23 'one each side of the web' (2 per flange), 'N holes per flange', one-leg angles (Case 8, U from her table), 'four lines ... through its flanges' = 2 per flange.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "large"
+  },
+  {
+   "key": "tension-holes-unread-nonblocking",
+   "title": "The bolt words are there but no bolt size or hole count is read (glued '3/4inbolts', '2perflange', 'bolted 3/4in'): the asks are non-blocking, so only yielding is computed",
+   "ids": [
+    "A1-tcap-19",
+    "A1-tsel-10",
+    "A1-tsel-11",
+    "A1-tsel-12"
+   ],
+   "root_cause": "reader.js tensionCommon line 1625 (B.ask 'bolt_dia') and lines 1649/1673 (B.ask 'holes_count') are raised with no kind, so they default to kind 'value'. pipeline.js markReaderStops (2997-3015) blocks only 'stop' and 'need', so the engine runs with empty hole boxes as 'no holes' (702 / 318.6 printed). The safety guard in pipeline.js 3346-3352 covers only tension_capacity/tension_net_area, not tension_select (tsel-10, 12). It tests `\\b(?:bolt(?:s|ed)?|holes?)\\b`, and there is no word boundary inside the glued 'inbolts' / '2holes' / '3bolts' (tcap-19, tsel-11). The trigger is pipeline.js normalizeTyped line 1864: the glued-unit splitter refuses 'in' followed by a letter ('3/4inbolts'). findHoles line 1117 needs \\s+ before 'per' and a \\b(holes?|bolts?)\\b in the text ('bolted' does not count).",
+   "fix_plan": "(1) reader.js tensionCommon 1625, 1649/1650, 1673: when the member is not welded and the text contains bolt|hole|rivet as a SUBSTRING (not \\b, so glued words count), raise these asks with kind 'need'. The gate then asks ONE question instead of printing yielding only. (2) pipeline.js 3347: extend the guard regex to tension_select and use the substring test (one-line hunk). (3) Coverage only, after (1)-(2) are in: normalizeTyped 1864 also splits `(\\d)(in)(?=bolts?|holes?|dia)`, and `(\\d)(per|holes?|bolts?|lines?)\\b` becomes 'N per'. These are splits only and change no reading. ANSWER where the reader then reads the size and counts. ASK (need) otherwise. MUST NOT CHANGE: 'select lightest w8 welded' (no bolt word, no ask), 'no holes' / welded members, plates and angles whose counts are read, selections where the hole counts are read.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js",
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "small"
+  },
+  {
+   "key": "load-pair-half-missing",
+   "title": "Only one of D / L is read and the other, named in the words (D=, L=, dead, live, 'twice the dead load', 'each'), is silently taken as 0",
+   "ids": [
+    "A1-tcap-34",
+    "A1-tcap-35",
+    "A1-tcap-36",
+    "A1-tsel-01",
+    "A1-tsel-02",
+    "A1-tsel-03",
+    "A1-tsel-04",
+    "A1-tsel-05",
+    "A1-tsel-06",
+    "A1-tsel-07",
+    "A1-tsel-08",
+    "A1-csel-05",
+    "A1-csel-06"
+   ],
+   "root_cause": "reader.js fillAxialLoads lines 1457-1468: `if (d) B.set('D'...); if (l) B.set('L'...)` sets whichever kind was read and never asks for the other, although the text names it. The frozen engine's loadFromArgs then uses 0 (1.4D governs, Pu = 70 / 160 / 240 printed). FILL.loads_takedown line 2497 asks only when BOTH floor loads are missing (`if (!d && !l)`), so 'live load twice the dead load' becomes 0 (csel-06). The numbers are lost upstream in findLoads: the bare 'D = 50 k' rule (line 256-264) needs a load unit right after EACH number ('D=50 L=100 kips', 'D = 30, L = 60 kips', 'L=150', 'D = L = 75 kips'). The kind-named rule at 312 needs a unit ('dead 100 live 150 kips'). No rule reads 'twice / N times the dead load', 'L = 2D' or 'dead and live loads are each 50 kips'. Unitless numbers never reach the unused-number gate either. I checked this on the branch: 'D=50k L=100 kips' prints W8X18 (right).",
+   "fix_plan": "(1) Smallest safe guard, reader.js fillAxialLoads after line 1466: if exactly one of d/l was read and the text names the other kind, raise B.ask('load_L' or 'load_D', 'Your question names a live (dead) load but the page did not read its number. Type L (D) in kips.', ['L'] or ['D'], null, 'need'). Dead: `\\b(?:P\\s?_?)?D(?:L)?\\s*=|\\bdead\\b`. Live: `\\b(?:P\\s?_?)?L(?:L)?\\s*=(?![\\d.\\s\\/]*(?:ft|feet|foot|in\\b|'))|\\blive\\b`. Skip the ask when the words say the load is absent ('no live load', 'live load is zero', 'dead load only'). (2) The same in FILL.loads_takedown line 2497 for floor_D_psf / floor_L_psf (kind 'need'). (3) Coverage only where unambiguous, in findLoads: a bare pair sharing ONE trailing unit ('D=50 L=100 kips', 'D = 30, L = 60 kips': joined by space, comma or 'and', unit after the last) reads both in that unit. 'D = L = 75 kips' reads both as 75. 'dead and live loads are each 50 kips' reads both as 50. 'live load is twice / N times the dead load' gives L = N x D only when D was read with a unit. Anything else stays MISSING and goes to the ask, never 0. MUST NOT CHANGE: dead-load-only questions with no live word (XA-19, DS-21), 'L = 25 ft' (a length), L-shape names (L4x4), PD/PL symbols, a given factored Pu, takedowns that read both floor loads.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "small"
+  },
+  {
+   "key": "load-number-misbound",
+   "title": "A load number is bound to the wrong kind or coefficient: a gap that crosses another load label, a number-first rule that binds across a label, an expression's first coefficient, a D/L slash pair read as a fraction, a substring test that hides a snow load, 'factored loads D=' not seen as factored",
+   "ids": [
+    "A1-tcap-20",
+    "A1-ccap-213",
+    "A1-csel-01",
+    "A1-csel-02",
+    "A1-csel-07",
+    "A1-csel-08",
+    "A1-csel-09",
+    "A1-csel-11",
+    "A1-csel-24"
+   ],
+   "root_cause": "reader.js findLoads. (a) Line 236, the symbol form `... (?:=|:)\\s*(N)(?:\\s*-?\\s*(UNITS)|(?![A-Za-z0-9]))`: the unitless branch accepts '1.2' in 'Pu = 1.2(100) + 1.6(150)' because '(' is not alphanumeric, so Pu = 1.2 kips is a given factored load ('adequate for Pu = 1.2'). (b) Line 258 / 312: in 'D/L = 200/300 kips' and 'dead/live = 80/50 psf' the '/' is a boundary, so only 'L = 200/300' / 'live = 80/50' match. N's fraction branch (line 87) turns them into 0.667 / 1.6, and D is lost. (c) The word-form gap at line 268 `[^0-9.;=]{0,28}?` runs from 'live load' across ' is twice the dead load of ' (csel-07) and takes the dead load's number as the live load. (d) The number-first rule at line 292 binds '80 psf live' across the label boundary in 'dead 80 psf live 100 psf'. Rule 312 then skips 'dead 80 psf' and 'live 100 psf' as overlaps, so D is missing and L = 80 (csel-08/09). The unused '100 psf' is then hidden across the chain by pipeline.js computeUnused 2463 / unusedOf 2619. (e) Rule 292 accepts only dead|live, so '50 k snow' is not read. readChunk's safety net (line ~2611, occ substring test) finds '50 k' inside '150 k live', so the number is not listed as unplaced (csel-24). (f) loadBasis line 1426 givenFactored misses 'factored loads D=200k L=300k' (a symbol stands between 'loads' and '='), so D and L are refactored (720 for 500; csel-11).",
+   "fix_plan": "reader.js only. (a) Line 236: reject the unitless branch when the number is followed by `\\s*[(*x+]` or a second number. When 'Pu =' / 'P =' is followed by an arithmetic expression, raise B.ask('pu_formula', 'Your question writes the load as a formula: work it out and type Pu in kips.', ['Pu'], null, 'need'). ASK, no number in the message. (b) Lines 258/312: a slash pair of two symbols or two kinds ('D/L', 'dead/live') followed by a slash pair of two numbers is read in order (D = a, L = b, with the shared unit): ANSWER, because the order is unambiguous. Any other slash after a load symbol does not use the fraction branch; it stays MISSING and goes to the cluster load-pair-half-missing ask. (c) Line 268 gap: it may not cross another load-kind word or a load symbol with '=' or 'if': `(?:(?!\\b(?:dead|live|snow|wind|rain|roof)\\b|\\b[DLSWPw]{1,2}\\s*=|\\bif\\b)[^0-9.;=]){0,28}?`. The live load is then not read and the half-missing ask follows. (d) Line 292: skip a match whose number is directly preceded by a kind word (`(dead|live|snow|wind)\\s*(?:=|:)?\\s*$` on the slice before). Rule 312 then reads 'dead 80 psf' and 'live 100 psf': ANSWER 921.6 / 264. (e) Rule 292: add snow, so loads_combinations reads S = 50 (ANSWER 385 by the page's 7-combination form). In readChunk occ(): a match counts only when the character before it is not a digit or '.', so a missed load stays unplaced and blocking. (f) loadBasis: also `factored\\s+loads?\\s*,?\\s*(?:[A-Za-z]{1,3}\\s*=)` and '(factored)' / 'these are factored loads' give 'factored'. The existing loads_basis ask follows (ASK, not a silent sum). MUST NOT CHANGE: 'PD = 115 k', 'Pu = 800 kips', '100 k dead + 150 k live', the 'dead + live = 120 psf is a sum' guard, '3/4 in' fractions in bolt sizes, the framing-weight rule of C-28.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "medium"
+  },
+  {
+   "key": "prose-ask-qualifier",
+   "title": "A question with no blank asks for nominal / bare Pn / one limit state / ASD / excess / percent / L/r / KL / Euler critical stress / KL/r about x, and the form's governing phi Pn (or K, Pcr) stays a clean ANSWER",
+   "ids": [
+    "A1-tcap-24",
+    "A1-tcap-25",
+    "A1-tcap-26",
+    "A1-tcap-27",
+    "A1-tcap-28",
+    "A1-tcap-29",
+    "A1-tcap-30",
+    "A1-tcap-31",
+    "A1-tcap-32",
+    "A1-tsel-23",
+    "A1-tsel-24",
+    "A1-tsel-25",
+    "A1-tsel-26",
+    "A1-tsel-27",
+    "A1-tsel-28",
+    "A1-tsel-29",
+    "A1-ccap-269",
+    "A1-ccap-270",
+    "A1-ccap-283",
+    "A1-ccap-292",
+    "A1-ccap-220",
+    "A1-ccap-215"
+   ],
+   "root_cause": "pipeline.js prose path. The words that change the quantity live only on the blank path, in wordId line 922 (`excess|extra|percent|nominal|allowable|asd|omega ...`) and lines 925-941 (yield -> phipn_y, rupture -> phipn_r). The sentence path never applies them. (1) asksInProse line 1002 needs an asking verb, or 2+ symbols with no digit, so 'nominal yield strength', 'design strength for yielding?', 'gross yielding?', 'phi Pn for rupture', 'L/r?' and '(d) rupture strength' ask nothing. (2) ASK_WORDS 975-999 has no bare 'Pn'/'nominal' entry. The phipn entry (989) matches 'tensile strength' inside 'nominal tensile strength' and becomes the form's own result. There is no 'rupture strength' / 'yielding strength' entry. The fe entry (998) has no /i flag and no 'euler critical stress'. The klr entry (978) ignores 'about the x axis', and there is no prose 'KL'. (3) askedInWords 1007-1035 has no qualifier test. (4) The limit-state block in signaturePass 1334-1343 already detects 'for yielding' / 'rupture strength' (ls = 'y' / 'r'), but only RENAMES an existing phipn ask, and here there is none. (5) writeBlock line 3841: allProse never demotes the form's ANSWER while STRENGTH_ASK (1038) matches 'strength' / 'capacity'. I confirmed on the branch that tcap-31 parts (c) and (d) still print the governing 596.2 as ANSWER.",
+   "fix_plan": "Put a small helper in a NEW file (or wordsx.js), called at the end of askedInWords, with one-line hunks in signaturePass and writeBlock. (1) A part's LAST sentence with no digit that ends in '?' or is a bare noun phrase naming a known quantity counts as asking. (2) Apply wordId's qualifier list to the asking sentence. 'allowable|ASD|omega' gives a not-in-tool sentence (one sentence, no number: her class is LRFD), so tsel-29 / ccap-283 STOP. 'excess|extra|additional|margin|percent|utiliz|remaining|reserve' pushes an UNKNOWN ask (part.unknownBlanks = the phrase). The existing 'CHECK YOUR BLANK' line then stands under the ANSWER (tsel-23/24/25: not clean, no new number). (3) 'nominal' or a bare 'Pn' (no phi) gives id pn / pn_y / pn_r with the limit-state words. SIG_NOMINAL then prints column Pn = phi Pn / 0.9 (ccap-269/270: 974.4, unambiguous) and tension Pn_y = yielding/0.9, Pn_r = rupture/0.75 (tsel-27: 332.3; tcap-26: 485.5... only if Pn_y/Pn_r come from her phis). A tension 'Pn' with no limit state (two phis) is an UNKNOWN ask, so a CHECK warning shows (tcap-24/25, tsel-26). Exclude 'nominal' before the phipn ASK_WORDS match. (4) signaturePass 1342: when ls is set and no phipn/pn ask exists on a tension part, push a prose ask phipn_y / phipn_r (pn_y / pn_r with 'nominal'). This ANSWERs the form's own yielding/rupture value (702, 437, 135.9, 318.6): unambiguous by her method. (5) writeBlock 3841: allProse also demotes the form's ANSWER to ALSO FOUND when every prose ask is one of {phipn_y, phipn_r, pn, pn_y, pn_r, fe, klrx, klry, kl}, even when STRENGTH_ASK matches. (6) ASK_WORDS: fe gets /i and 'Euler (critical|buckling) stress' (ANSWER Fe 20.28). 'KL/r about the x|strong|major axis' maps to klrx, and y|weak|minor to klry (ANSWER 55.56). 'effective length KL' / a final 'KL' maps to 'kl' (existing id; only with one length: ANSWER 16 ft). 'L/r?' is caught by (1) (ANSWER 96.8). MUST NOT CHANGE: 'Determine the design tensile strength. Report An, U and Ae' (the strength stays ANSWER), her review 'Find: Euler Pcr, the AISC phi Pn' (never flagged), 'for yielding and rupture' (no single limit state), the whole blank path, and 'Design strength for yielding of the gross section' (already right). Run harness/regress.sh and classify every changed line.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js",
+    "/home/user/1/tools/steel-tool-solve/ext/wordsx.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "large"
+  },
+  {
+   "key": "required-area-ask",
+   "title": "A REQUIRED area (Ag required, min Ag, required Ae / net area) is answered with the chosen shape's Ag, or with the required-Ag headline when Ae was asked",
+   "ids": [
+    "A1-tsel-09",
+    "A1-tsel-18",
+    "A1-tsel-19",
+    "A1-tsel-20",
+    "A1-tsel-21"
+   ],
+   "root_cause": "pipeline.js. In wordId, the in2 symbol shortcut at line 936 (`/ ag /` -> 'ag') runs BEFORE the required/minimum/min/needed guard at line 954. 'Ag required = ____ in2' becomes id 'ag', and SIG_VALUE.ag (/^Ag$/ first) returns the selected W8X18's 5.26 (tsel-20). askedInWords line 1016 SKIPS ag/an/ae whenever 'required|minimum|needed|necessary' is in the sentence. So 'required Ae?' and 'required net area' add no ask and the form's 'Required gross area: Ag' headline stays clean (tsel-18/19). The list has no 'min', so 'min Ag?' adds a plain 'ag' ask that returns the shape's Ag (tsel-21). tsel-09: the frozen finder routes 'required gross area' with no tension word to loads_factored, and no amendRoute rule (760-787) corrects it. Its live load ('3 times the dead load') is also unread (load-pair-half-missing). The engine already holds Ag_required (tension_select, tension_required_area) and Ae_required (tension_required_area).",
+   "fix_plan": "pipeline.js, small hunks. (1) wordId: move the `/ required | minimum | min | needed | req d /` test above the in2 shortcuts (935-936). Map 'required/min Ag' to a new id 'agreq' (SIG_VALUE [/^Ag_required$/]) and 'required Ae' to 'aereq' ([/^Ae_required$/]). Add both to SIG_LABEL. In sigGives, tension_required_area gives agreq (main) and aereq (also), and tension_select gives agreq (also). (2) askedInWords 1016: instead of skipping, push agreq / aereq. 'required net area An' has no single value (it needs U and the hole layout), so push an UNKNOWN ask and the CHECK warning shows. (3) tsel-09: one amendRoute rule. 'required (gross|effective) area' / 'Ag required' with loads in kips and no column/beam/moment word moves to tension_required_area. Its unread live load then gets the load-pair ask. ANSWER: required Ag = Pu/(0.9 Fy) and required Ae = Pu/(0.75 Fu) (D2a/D2b, her method: tsel-20/21 4.889, tsel-19 3.938, tsel-18 Ae 3.034). ASK/CHECK: required An. MUST NOT CHANGE: 'Ag = ____' of a capacity question (the shape's own Ag), 'Show Ag required and the L/r check' extra lines, beams' required Zx (lookup_by_property rule 2), the C-48 'a36 is not a required Zx' rule.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "medium"
+  },
+  {
+   "key": "max-load-ask-unrouted",
+   "title": "'max / max. / maximum LL / max dead / maximum total service load' asked on a capacity question: the route stays capacity and the phi Pn line is the clean ANSWER",
+   "ids": [
+    "A1-tsel-30",
+    "A1-tsel-31",
+    "A1-tsel-32",
+    "A1-tsel-33",
+    "A1-tsel-34",
+    "A1-tsel-35",
+    "A1-tcap-21",
+    "A1-ccap-307"
+   ],
+   "root_cause": "The frozen finder-data.js T-maxl signals ('max live', 'maximum live', 'maximum service live') miss 'max service live' (tsel-30, tcap-21, ccap-307), 'max. live' (tsel-31) and 'maximum LL' (tsel-32). reader.js ASKDEFS max_load (line ~513) needs 'maximum|largest|how much live load', so no capacity>loads_max_service chain is built. No form solves for the maximum DEAD load or D + L (tsel-33/34/35). pipeline.js amendRoute (760-787) has no rule for these, askedInWords has no live-load ask, and STRENGTH_ASK (1038) matches 'maximum service dead load' / 'strength'. The capacity line therefore stays the ANSWER. In tcap-21 / ccap-307 the live load is also stolen from 'D = 100k' / 'dead load = 100 kips' (the word-form gap of cluster load-number-misbound). I checked this on the branch: 'find maximum live load' already chains and prints 125.76.",
+   "fix_plan": "(1) A spelling pre-pass before the finder: pipeline normalizeTyped (one line), or expand.js if it runs first. `\\bmax\\.?(?=\\s+(?:service\\s+|unfactored\\s+)?(?:live|LL)\\b)` becomes 'maximum', and 'maximum (service )?LL' becomes 'maximum $1live load'. The frozen finder then routes to the existing chain: ANSWER L = (phi Pn - 1.2 D)/1.6 (tsel-30/31/32: 125.76; tcap-21: 149.5; ccap-307: 170), her method. Also accept 'max\\.?' in reader ASKDEFS max_load (513). (2) No form solves for max DEAD, max TOTAL / D + L, or a load given as a ratio: STOP with one sentence and no number ('this page solves only for the maximum service LIVE load with D given; NOT answered here'), through amendRoute (route not_in_tool) or a stage refuse. tsel-33/34/35 STOP. (3) Depends on load-number-misbound (c), so that 'if D = 100k' / ', dead load = 100' no longer becomes L in step 1. MUST NOT CHANGE: 'maximum factored load the member can carry' and 'how much load can it carry' (capacity, STRENGTH_ASK), beam_max_live_load questions, 'Lmax', 'max spacing', the OA-28 / XA-29 / DS-28 variants that already work.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js",
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js",
+    "/home/user/1/tools/steel-tool-solve/ext/expand.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "medium"
+  },
+  {
+   "key": "column-bracing-reading",
+   "title": "findBracing reads one brace with no axis, no negation, one height, and '1/3 points' as mid height, and fillColumn always puts it on the weak axis",
+   "ids": [
+    "A1-ccap-187",
+    "A1-ccap-271",
+    "A1-ccap-178",
+    "A1-csel-04",
+    "A1-ccap-272",
+    "A1-ccap-207",
+    "A1-csel-03",
+    "A1-ccap-280",
+    "A1-csel-19",
+    "A1-ccap-309",
+    "A1-ccap-281"
+   ],
+   "root_cause": "reader.js findBracing lines 1844-1856. (a) Line 1846 (and the fallback at 1852) matches 'braced/bracing ... mid height' with no look at the words before ('not braced', 'un-') or after ('is removed'), so a negated brace sets fraction = 2 (ccap-272/207, csel-03). (b) No axis words are read: 'about its strong axis', 'about the x axis', 'in the plane of the web', 'strong axis only'. fillColumn 1943-1952 then always sets Ly = L/n and Lx = L. Only bothDir (1943) moves it to Lx (ccap-187/271/178, csel-04: 460.2 for 208.8). (c) Line 1849 `w = /third/ ? 3 : /quarter/ ? 4 : 2` turns '1/3 points' into mid height (ccap-309). (d) Only the first brace statement is read, so 'weak axis at third points and strong axis at mid height' loses the second (ccap-281). (e) Line 1853 exec()s the 'N ft above/from the base' regex once, so '10 ft and 20 ft from the base' keeps only 20 (ccap-280, csel-19). The useSeg split is then 20/10.",
+   "fix_plan": "reader.js findBracing + fillColumn 1943-1956. (a) Negation: 'not|no|never|without' within the clause before the match, a 'un-' prefix, or '(is|are|was|been) (removed|omitted|taken out|eliminated)' after it means NO brace: ANSWER with L about both axes (unambiguous: ccap-272/207 466, csel-03 W12X65). A text with both a negated and a positive brace raises an ASK (need). (b) Axis: read the axis words in the brace's own clause. strong|major|x[- ]?axis|x-x|'in the plane of the web' gives 'x', so Lx = L/n and Ly = L (ANSWER 208.8 / 437.4, W14X90). weak|minor|y|'weak direction' or no axis word keeps the current Ly = L/n. 'both' keeps bothDir. Unclear words ('strong direction', 'perpendicular to the web') raise an ASK. (c) '1\\/3' gives third and '1\\/4' gives quarter (ANSWER 716). (d) Loop over every brace statement: two statements naming different axes set each axis (ccap-281: Ly = L/3, Lx = L/2: 764.0). Two statements for the same axis, or one that cannot be placed, raise an ASK. (e) Collect every 'N ft (and M ft) from/above the base|bottom'. Two or more heights on a pinned-pinned column give segments at those heights (brace = pin, her method; ANSWER 744.7 / W14X99). With a fixed end, use cluster column-segments-and-per-axis-K. Unclear raises an ASK. MUST NOT CHANGE: plain 'braced at mid-height' (Ly = L/2), 'about the weak axis at mid height', 'in both directions/axes', 'braced against sidesway' (an end condition, not a mid brace), HW 5-17 'segments of 12, 8 and 8 ft', the 9/9 class column at third points.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js"
+   ],
+   "exam_likelihood": "high",
+   "effort": "medium"
+  },
+  {
+   "key": "column-segments-and-per-axis-K",
+   "title": "Brace-is-a-pin segments get the whole column's end condition, a typed Ly with a fixed end takes the whole K, and printed per-axis K values are collapsed into one",
+   "ids": [
+    "A1-ccap-279",
+    "A1-ccap-257",
+    "A1-ccap-282",
+    "A1-ccap-276",
+    "A1-ccap-274"
+   ],
+   "root_cause": "reader.js fillColumn. The useSeg branch at lines 1954-1956 gives BOTH segments of a brace 'N ft above/from the base' `end_condition: eid` (the whole column's 'fixed-pinned' / 'fixed-fixed'). The her-method segRows builder (1912-1927) runs only from brace.fraction or 'segments of', never from brace.above (ccap-279: 823.6 for 721.5; ccap-257: 856.1 for 781.8). The builder is gated by `if (fx && !Ls.ly)` (1912), so a TYPED Ly with a fixed end skips it. fillEnds (1569-1570) then puts the column's K on the whole Ly (ccap-282). fillEnds lines 1555-1557: with no worded end, kEnds[0] (the FIRST printed K) is set into both x and y end conditions, and the second K and its 'about x / about y' words are ignored (ccap-276). fillEnds line 1531: a worded end wins and the printed K list is never compared with it (ccap-274). fillColumn's direct-K path (line 1896) is off whenever 2 K values or 'Kx =' are printed.",
+   "fix_plan": "reader.js only. (1) useSeg branch 1954-1956: build the end conditions as segRows does (a brace is a pin). The segment that touches a fixed end keeps 'fixed-pinned' and the other is 'pinned-pinned'. With 'fixed at both ends' each segment is fixed-pinned. When it is not said which end is fixed (fx.guessed), ASK. This ANSWERs ccap-279 721.5 and ccap-257 781.8 by her method. (2) Line 1912: a typed Ly on a column with a fixed end has two readings (Ly is a braced segment, a pin at the brace, versus the whole column's K), so ASK (need: 'the end condition of the weak-axis segment'). Never the whole K silently (ccap-282). (3) fillEnds / fillColumn K path: if every printed K is tied to an axis by its own words ('K = 0.8 about x', 'Kx = 1.0', 'Ky = 0.8'), set KLx_ft = Kx x Lx and KLy_ft = Ky x Ly directly with the arithmetic shown (unambiguous; ccap-276: 466.6, and ccap-277 in cluster form-choice-guards). Otherwise ASK. A printed K that disagrees with a worded end condition raises an ASK naming both, never one silently (ccap-274). MUST NOT CHANGE: the single printed K path (review 4: KL = K x L), HW 5-17 segments 12/8/8, the 9/9 third-point column, the cover line 'K = 1.0 for all columns', end conditions said per axis ('Lx = 15 ft (fixed at both ends), Ly = ...').",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "medium"
+  },
+  {
+   "key": "euler-form-gaps",
+   "title": "The Euler form takes K = 1 by default, ignores bracing and axis words, and ignores a typed E",
+   "ids": [
+    "A1-ccap-267",
+    "A1-ccap-296",
+    "A1-ccap-286",
+    "A1-ccap-218",
+    "A1-ccap-285"
+   ],
+   "root_cause": "reader.js FILL.column_euler (1969-1996). Line 1991 raises B.ask('euler_K', ..., choices) for any end other than pinned-pinned, and that becomes kind 'choice'. pipeline.js mergeBoxes (549) gives the empty, non-required K box its engine default of 1, and markReaderStops (2997) ignores 'choice', so a flagpole or a fixed-fixed column is worked out with K = 1 (185.12 printed; ccap-267/296). Lines 1984-1986 read ONE length (Ls.lx || Ls.common). Ls.brace and the axis words ('about the x axis') are never used, and the frozen engine takes r = min(rx, ry) (ccap-286/218). The engine's Euler form has no E box. The typed 'E = 30000 ksi' is listed as unused, but pipeline.js unusedQuestions (2754) marks a stress non-blocking, so the gate lets it through (ccap-285).",
+   "fix_plan": "reader.js column_euler, plus at most one pipeline condition. (1) Line 1991: raise euler_K with kind 'need' (keep the choices in the text). Euler with a non-pinned end has two K sets (theoretical vs her design K), so ASK and never use the default 1. (2) Raise a 'stop' with one sentence and no number ('this Euler form uses one length and the smaller r; NOT answered here') when Ls.brace.fraction or Ls.brace.above is set, when Lx and Ly differ, or when the words name an axis (about the x|strong|major axis). The frozen engine cannot apply rx or two lengths. (3) A typed 'E = N' with N not equal to 29000 raises a 'stop' (no E box). Equivalently, unusedQuestions marks an unplaced 'E =' stress as blocking. MUST NOT CHANGE: pinned-pinned Euler from a shape name, 'A = 11.9 in^2, r = 3.67 in' given in the question, a printed K (line 1989), 'ry = ...' as the only r, the 'Euler applies?' 113.4 check.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js",
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "small"
+  },
+  {
+   "key": "stated-condition-dropped",
+   "title": "A condition the words state, but no box takes, passes without blocking: an unread member length (no L/r check), the L/r > 300 verdict, an unread effective length, self-weight in the maximum live load, a typed phi, a named table",
+   "ids": [
+    "A1-tsel-14",
+    "A1-tsel-15",
+    "A1-tsel-16",
+    "A1-tsel-17",
+    "A1-tsel-36",
+    "A1-csel-12",
+    "A1-ccap-202",
+    "A1-ccap-62",
+    "A1-ccap-159"
+   ],
+   "root_cause": "The common thread: pipeline.js unusedQuestions line 2754 makes an unplaced plain length (and any unitless number or stress) non-blocking, and nothing else checks the stated condition. (a) reader.js tensionCommon 1751-1754 sets length_ft only from findLengths (1284-1370) 'N ft long' / 'length N ft' / 'N-ft member'. 'L = 25 ft' goes to L.items, a bare '25ft' is not read, and 'unbraced length 25 ft' is skipped (line 1334). So tension_select runs without its L/r <= 300 check (W10X17 for W10X22; tsel-14/15/16). (b) pipeline.js writeBlock 3874-3880 builds the YES/NO from lv.adequate (the engine's phi Pn >= Pu) and never looks at lv.L_over_r (355 > 300; tsel-17). (c) columnLengths (1817-1829) reads 'effective length 25 ft' only with axis words, and findLengths skips it. pipeline carryAcross step 3 (3483-3500) then fills (b)'s empty lengths from (a) (csel-12). (d) FILL.loads_max_service (2525-2530) never checks selfWeight(F) for 'include self weight' (tsel-36). (e) There is no stop for a typed 'phi = 0.85', and computeUnused collects only numbers with a unit (ccap-202). (f) writeBlock copies the engine headline (Table 4-1a when KL is the same both ways, the KL/r route otherwise) and never checks the table the question NAMES ('using table 4-14', 'from Table 4-1a'; ccap-62/159).",
+   "fix_plan": "(a) reader.js: in a tension part, read 'L = N ft' (a member-length symbol with no axis), 'unbraced length N ft', and a bare 'N ft' that is the ONLY length of a tension question, into length_ft. That is unambiguous: the member length for L/r. ANSWER W10X22. pipeline unusedQuestions 2754: an unplaced length in a tension_select / tension_capacity part is blocking (ASK where it goes). (b) writeBlock verdict 3874: when lv.L_over_r > 300, print NO with the reason. Her select applies L/r <= 300 as a requirement, and the page's own tension_select does too. If the owner prefers zero choice, print a STOP sentence instead. Never a bare YES. (c) columnLengths: a plain 'effective length N ft' with no axis is KL for both axes (ANSWER W14X120). carryAcross step 3 does not carry into a part that has its own unplaced length (ASK). (d) loads_max_service: with 'self weight' in the words and the shape and length read, D = D + wt x L/1000 is shown (her method: dead load includes self weight; ANSWER 125.40). If either is missing, ASK (need). (e) 'phi = x' (or 'phi c = x') with x other than her 0.90 (0.75 for tension rupture) gives a one-sentence STOP. (f) When the words name 'table 4-14' and the headline is Table 4-1a, the ANSWER line is the KL/r-route value the engine already prints (466.6). When they name 'table 4-1a' and the headline is the KL/r route, use the engine's Table 4-1a step value (478) only if it is in the result; otherwise a CHECK warning. MUST NOT CHANGE: 'Not used' notes for bolt spacing and edge distance (the 10/06 rule: 16 false stops), selects that give no length (the 'L/r not checked' NOTE stays), the her-method headline when no table is named, KL given with axis labels.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js",
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "large"
+  },
+  {
+   "key": "takedown-floors-and-levels",
+   "title": "Column takedown: floor count not read ('3floors', 'stories'), 'N story' plus a roof, per-floor kips taken as the total, the level asked ('below the roof', 'between floors'), two bay sizes, (b) carrying (a)'s Pu",
+   "ids": [
+    "A1-csel-13",
+    "A1-csel-14",
+    "A1-csel-15",
+    "A1-csel-16",
+    "A1-csel-17",
+    "A1-csel-18",
+    "A1-csel-22",
+    "A1-csel-23"
+   ],
+   "root_cause": "(a) reader.js gatherFacts floorsN line 747 `(WN)\\s+(?:floor|story|storey)(?:s)?` needs a space ('3floors') and does not match 'stories'. With no count the finder falls to loads_factored and prints 'Factored load: 176 psf' as the column load (csel-22/23). (b) Line 747 / FILL.loads_takedown 2481: 'a 4 story building' becomes floors = 4 below the roof, even when the roof is loaded separately (roof + 3 floors is the other reading; csel-16). (c) FILL.loads_factored (2505) and fillAxialLoads (1438) never look at F.floorsN, so 'the load from each floor is D = 120 k' becomes the total (csel-14). computeUnused 2463 drops the count. (d) pipeline.js markLevel 3020-3028 has no 'below/under the roof' and no 'between the 2nd and 3rd floors', so the base load is printed (csel-17/18). (e) loads_takedown line 2468 `bay.exec(t)` takes the first 'bays A x B' and ignores the second bay (csel-15). (f) pipeline carryAcross step 2 (3464-3482) carries Pu_bottom from (a)'s takedown into (b)'s column_select, although (b) names its own floor count (csel-13).",
+   "fix_plan": "(a) reader.js line 747: `(WN)\\s*(?:floor|stor(?:y|ies|eys?))(?:s)?` (glued and 'stories'). This is a coverage fix: the existing takedown then answers or asks. Check that no '3floors' look-alike turns into a count in the regression. (b) 'N story/storey building' plus loads given for the roof gives an ASK on 'floors' (need) with both readings. (c) fillAxialLoads / loads_factored: a load given 'from/for each floor' or 'per floor', with a floor count in the words, gives an ASK (need: the total or the takedown). Never one floor as the total. (d) markLevel: add `(?:just\\s+)?(?:below|under|beneath)\\s+the\\s+roof`, `between\\s+the\\s+\\w+\\s+and\\s+(?:the\\s+)?\\w+\\s+(?:floors?|levels?|stor)`, and 'from the Nth floor to the roof'. Each gives the existing STOP sentence. (e) loads_takedown: two 'bays A x B' sizes for an interior column give an ASK for tributary_area_sf (need), never the first bay. (f) carryAcross step 2: do not carry into a part whose own text has a floor count or any load (ASK). MUST NOT CHANGE: '3 floors' / 'four office floors' takedowns, the roof-sentence logic of 0.6, the existing markLevel stops, the 'A column supports a single floor ... 900 ft2' floor-to-column route, C-28's framing-weight rule.",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js",
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "medium"
+  },
+  {
+   "key": "form-choice-guards",
+   "title": "signaturePass keeps or picks a form that does not answer: a prose ask no form gives leaves an unrelated answer clean, a reroute crosses to another member family with no word for it, a referring part becomes a definition",
+   "ids": [
+    "A1-tcap-33",
+    "A1-csel-20",
+    "A1-csel-21",
+    "A1-csel-26",
+    "A1-ccap-277",
+    "A1-ccap-195"
+   ],
+   "root_cause": "pipeline.js signaturePass. (a) Line 1448 `else if (proseOnly) { /* ... stays ... unflagged */ }`: when a sentence asks for something (the 'lightest W12' shape ask, an Ae ask) that the finished form does not give (curScore 0) and no other form can run, the finder's form is printed as a clean ANSWER. csel-20/21 print 'Factored load: 500 kips' for 'select lightest W12', and tcap-33 prints the welded capacity for 'find the effective net area'. The column form could not run because findLengths (1298-1299) is case-sensitive on 'kxlx=kyly=14ft' and fillEnds does not read a bare 'pinned'. (b) Reroute loop 1400-1447 with sigConflict 1146-1150: a candidate of another member family is excluded only when another family's words appear and its own do not. With no member word at all ('choose lightest w12 Pu=500k length 14 ft') tension_select is taken silently (csel-26). The compression regex C has no Kx/Ky/'K ='/effective length, so 'Kx = 1.0, Ky = 0.8' went to tension_capacity (648 for 527; ccap-277). (c) The frozen finder routes part (b) 'repeat if it is braced at mid height about the weak axis' to lookup_definition. REF_RE (line 613) protects only 'repeat (a)', and no guard stops a calculation part from becoming a words answer (ccap-195).",
+   "fix_plan": "pipeline.js, small hunks (with the coverage bits in reader.js). (a) Line 1448: when curOk and the form gives NONE of the prose asks and one ask is 'shape' (a selection was asked and a non-selection answered), set part.askedMismatch. The existing 'NOT WHAT YOUR BLANK ASKS' line then shows. Start that narrow. Extend it to {ae, an, u} asks on a tension form only if regress.sh shows no right answer flagged. The 10/07 01:15 dump is why prose asks are weak evidence, but that case is covered by the earlier 'gives at least one' continue. Coverage: findLengths reads 'kxlx=kyly=14ft' case-insensitively, and fillEnds reads a bare 'pinned' as pinned-pinned. csel-20 then gives W12X53 and csel-21 gives W12X50. (b) Reroute: a candidate whose family differs from the finder's route family needs a word of ITS OWN family in the text. Add `\\bK\\s?[xy]\\s*=|\\bK\\s*=\\s*\\d|effective\\s+length|\\bK\\s?L\\b` to C. With no member word at all, ASK (need/choice: column or tension member). Never pick one silently: csel-26 ASKs, and ccap-277 stops on its end conditions or is answered by cluster column-segments-and-per-axis-K. (c) A lettered part that refers back (repeat / same column / 'if it is braced ...') and has no shape or length of its own is not routed to a definition. Extend REF_RE, or carry (a)'s stem, or ASK. A words answer under a lettered part whose sibling is a calculation gets a warning. MUST NOT CHANGE: the 10/07 01:15 cases (prose asks never flag a part that gives one of them), the floor-plan ways out, the 'named member is never moved to a selection' rule, word questions and multiple choice (C-48).",
+   "files": [
+    "/home/user/1/tools/steel-tool-solve/ext/pipeline.js",
+    "/home/user/1/tools/steel-tool-solve/ext/reader.js"
+   ],
+   "exam_likelihood": "medium",
+   "effort": "medium"
+  }
+ ],
+ "unassigned": [
+  "A1-csel-10 (passes now): on branch cloud the status is 'needs'. The gate asks for the roof dead and live loads instead of printing W12X26, so there is no clean wrong block. It is still a coverage loss: the lower-case 'roof: ... floors: ...' sentences are not split."
+ ]
+}

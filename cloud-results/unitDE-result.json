@@ -1,0 +1,739 @@
+[
+ {
+  "item": "hercombo",
+  "fix": {
+   "branch": "fix-hercombo",
+   "commits": [
+    "01e53c4 harness: hercombo cases -- her one load combination, never 1.4D",
+    "b47c769 pipeline: her one load combination, never 1.4D"
+   ],
+   "worktree": "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-1 (the worktree was created from main, which has no tools/steel-tool-solve; branch fix-hercombo was created from cloud dc98246 and is checked out there; never pushed)",
+   "files": [
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-1/tools/steel-tool-solve/ext/pipeline.js",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-1/tools/steel-tool-solve/harness/cases/hercombo.json"
+   ],
+   "cases": [
+    {
+     "text": "hc01 a tension member carries a service dead load of 100 kips and no live load. find Pu",
+     "before": "ANSWER Factored load: 140 kips (1.4D governs)",
+     "after": "ANSWER Factored load: 120 kips (her one load combination)",
+     "right": "120 kips"
+    },
+    {
+     "text": "hc02 a tension member carries a service dead load of 100 kisp and no live load . find Pu",
+     "before": "140 kips (1.4D)",
+     "after": "120 kips",
+     "right": "120 kips"
+    },
+    {
+     "text": "hc03 a tensoin member carries a dead load of 200 k and a live  load of 10k .find the factored load",
+     "before": "280 kips (1.4D)",
+     "after": "256 kips",
+     "right": "256 kips"
+    },
+    {
+     "text": "hc04 find the factored laod if the dead load is 100psf and the live load is 10 psf",
+     "before": "140 psf (1.4D)",
+     "after": "136 psf",
+     "right": "136 psf"
+    },
+    {
+     "text": "hc05 a w12x53 colum is 14ft long with pined ends ,D=300k and L =20 kips. is it adequite?",
+     "before": "phi Pn 502, YES (502 >= 420)",
+     "after": "phi Pn 502, YES (502 >= 392); working line 'Her class uses one load combination: Pu = 1.2 D + 1.6 L = 1.2 (300) + 1.6 (20) = 392 kips'",
+     "right": "YES, Pu = 392"
+    },
+    {
+     "text": "hc06 select the lightest W12 column for a dead load of 280 kips and a live load of 20 kips. 14 ft pinned",
+     "before": "W12X53 (Pu = 392)",
+     "after": "W12X50 (phi Pn 384 > Pu 368)",
+     "right": "W12X50"
+    },
+    {
+     "text": "hc07 selct the lightest W8 tension member, D 200 k, L 20 k, welded through its flanges, length 20 ft",
+     "before": "W8X24 (Pu = 280)",
+     "after": "W8X21 (277.2 >= Pu 272)",
+     "right": "W8X21"
+    },
+    {
+     "text": "hc08 a W8x24 tension member welded through its flanges, D 200 k, L 20 k. is it adequate?",
+     "before": "phi Pn 318.6; adequate for Pu = 280",
+     "after": "phi Pn 318.6; adequate for Pu = 272",
+     "right": "adequate, Pu = 272"
+    },
+    {
+     "text": "hc09 a tension member must carry D = 150 kips and L = 15 kips. required gross area for yielding, Fy = 50",
+     "before": "Ag >= 4.667 in^2 (Pu = 210)",
+     "after": "Ag >= 4.533 in^2 (Pu = 204)",
+     "right": "4.533 in^2"
+    },
+    {
+     "text": "hc10 a member has phi Pn = 1000 kips. service dead load 750 kips. find the maximum service live load",
+     "before": "STOP: 'No live load can be carried' (1.4D = 1050 > 1000)",
+     "after": "ANSWER L = 62.5 kips (service, unfactored)",
+     "right": "62.5 kips"
+    },
+    {
+     "text": "hc11 phi Rn = 500 kips,D = 380 kips. what is the largest live load L the member can carry?",
+     "before": "STOP: no live load (1.4D = 532 > 500)",
+     "after": "L = 27.5 kips",
+     "right": "27.5 kips"
+    },
+    {
+     "text": "hc12 a simply suported beam spans 20ft and carries a uniform dead load of 2k/ft. find Mu",
+     "before": "Mu = 140 kip-ft (1.4D)",
+     "after": "STOP, plain sentence, no number",
+     "right": "her Mu = 120 kip-ft (withheld: beam load cases)"
+    },
+    {
+     "text": "hc13 a cantilever beam 10 ft long, dead 3 k/ft, live 0.2 k/ft. find Mu",
+     "before": "Mu = 210 kip-ft (1.4D)",
+     "after": "STOP, no number",
+     "right": "her Mu = 196 (withheld)"
+    },
+    {
+     "text": "hc14 a beam spans 30 ft, dead 1.5 k/ft, live 0.1 k/ft. select the lightest W shape",
+     "before": "W18X35, Mu = 236.25 (1.4D)",
+     "after": "STOP, no number",
+     "right": "her Mu = 220.5 (withheld)"
+    },
+    {
+     "text": "hc15 a column supports 5 floors, 400 sq ft, dead 150 psf, live 10 psf. factored load at the base",
+     "before": "Pu = 420 kips (1.4D)",
+     "after": "STOP, no number",
+     "right": "her 392 kips (withheld: takedown)"
+    },
+    {
+     "text": "hc16 a floor has a 6 in slab and a live load of 5 psf, beams 10 ft on center. factored line load on an interior beam",
+     "before": "wu = 1.05 k/ft (1.4D, via loads_floor)",
+     "after": "STOP from floor_plan (MISSING: needs the beam span), no number",
+     "right": "her 0.98 k/ft (withheld)"
+    },
+    {
+     "text": "hc17 determine the governing load combination for D = 100 kips, L = 10 kips, S = 5 kips",
+     "before": "U = 140 kips, combination 1: 1.4D",
+     "after": "STOP, no number",
+     "right": "two readings (slide vs her one combination): stop"
+    },
+    {
+     "text": "hc18 a column carries D = 300 kips and L = 30 kips. Pu = ____ kips",
+     "before": "420 kips (1.4D)",
+     "after": "408 kips",
+     "right": "408 kips"
+    },
+    {
+     "text": "hc19 (a) a tension member carries D = 200 kips and L = 10 kips. find Pu (b) selct the lightest W8 tension member, welded, 20 ft",
+     "before": "(a) 280 kips (1.4D); (b) STOP asks loads",
+     "after": "(a) 256 kips; (b) same STOP",
+     "right": "(a) 256"
+    },
+    {
+     "text": "hc20 a tension member carries D = 50 kips (service). find the factored load",
+     "before": "70 kips (1.4D)",
+     "after": "60 kips",
+     "right": "60 kips"
+    },
+    {
+     "text": "hc21 compute the factored load: dead load 2 k/ft, live load 0.2 k/ft",
+     "before": "2.8 k/ft (1.4D)",
+     "after": "2.72 k/ft",
+     "right": "2.72 k/ft"
+    },
+    {
+     "text": "hc22 a beam spans 20 ft, point load at midspan D = 20 kips and L = 2 kips. find Mu",
+     "before": "Mu = 140 kip-ft (1.4D)",
+     "after": "STOP, no number",
+     "right": "her 136 (withheld)"
+    },
+    {
+     "text": "hc23 a W16x26 beam spans 30 ft, beams 10 ft o.c., 6 in slab, superimposed dead 40 psf. largest live load in psf?",
+     "before": "STOP with numbers claiming 'No live load is possible' (1.4D)",
+     "after": "STOP, plain sentence, no number",
+     "right": "her about 6 psf (withheld)"
+    },
+    {
+     "text": "hc24 the dead load is 20 kips and the live load is twice the dead load. factored load?",
+     "before": "28 kips (1.4D on unread L)",
+     "after": "STOP: live load not read, no number",
+     "right": "88 kips (L unread: stop)"
+    },
+    {
+     "text": "hc25 W10x33 3/4in bolts 2 per flange 3 per line. D=100k,L=150. adequate?",
+     "before": "adequate for Pu = 140 (L unread)",
+     "after": "STOP: live load not read",
+     "right": "Pu = 360 > 359.2: NOT adequate (stop is safe)"
+    },
+    {
+     "text": "hc26 dead load 1200 plf and live load 0.8 k/ft. find the factored load",
+     "before": "1680 lb/ft (1.4D on misread unit)",
+     "after": "no number (route falls back to beam_analysis, which asks for a span)",
+     "right": "2720 lb/ft"
+    },
+    {
+     "text": "hc27 a hanger carries D = 60 kips. L = 0. select lightest W8 welded",
+     "before": "W8X10, Pu = 84",
+     "after": "W8X10, Pu = 72",
+     "right": "W8X10, Pu = 72"
+    },
+    {
+     "text": "hc28 w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. maximum total service load",
+     "before": "answered the capacity (adequate for Pu = 56)",
+     "after": "STOP: asks for a load, no number",
+     "right": "not the capacity (stop is safe)"
+    },
+    {
+     "text": "hc29 A 13 ft column fixed at both ends, dead load of 300 k and a live load of 40 0 k. Select the most economical W14",
+     "before": "W14X43 on Pu = 420 (L unread, 1.4D)",
+     "after": "STOP: live load not read",
+     "right": "Pu with L = 400 (stop is safe)"
+    },
+    {
+     "text": "hc30 a w12x53 colmn ,KL=14ft , dead load 350 kips, no live load. is it adequite?",
+     "before": "YES (502 >= 490)",
+     "after": "YES (502 >= 420)",
+     "right": "YES, Pu = 420"
+    },
+    {
+     "text": "hc31 W8x24 tension member, two 3/4\" bolts each flange, 3 per line, dead load 40k. maximum service live load it can carry",
+     "before": "step 1 adequate for Pu = 56; step 2 L = 125.75625",
+     "after": "step 1 adequate for Pu = 48; step 2 L = 125.75625 (SAME)",
+     "right": "L = 125.756 kips"
+    },
+    {
+     "text": "hs01 find the factored load for D = 100 kips and L = 50 kips",
+     "before": "200 kips (1.2D + 1.6L)",
+     "after": "SAME",
+     "right": "200"
+    },
+    {
+     "text": "hs02 tension member D 100 kips, L 12.5 kips. find Pu",
+     "before": "140 kips (tie)",
+     "after": "SAME",
+     "right": "140"
+    },
+    {
+     "text": "hs03 W10x49 column 12 ft pinned, D 200, L 100. adequate",
+     "before": "YES (512 >= 400)",
+     "after": "SAME",
+     "right": "YES"
+    },
+    {
+     "text": "hs04 simply supported beam 24 ft, dead 2 k/ft, live 1 k/ft, max moment",
+     "before": "Mu = 288 kip-ft",
+     "after": "SAME",
+     "right": "288"
+    },
+    {
+     "text": "hs05 W16x26 spans 30 ft, beams 10 ft o.c., 6 in slab, superimposed dead 20 psf. largest live load psf",
+     "before": "21 psf",
+     "after": "SAME",
+     "right": "21 psf"
+    },
+    {
+     "text": "hs06 6 in slab, live 10 psf, beams 10 ft o.c. factored line load",
+     "before": "wu = 1.06 k/ft",
+     "after": "SAME",
+     "right": "1.06"
+    },
+    {
+     "text": "hs07 a tensoin member: D = 60 k, L = 40 k, find Pu",
+     "before": "136 kips",
+     "after": "SAME",
+     "right": "136"
+    },
+    {
+     "text": "hs08 select the lightest W12 colmun for D = 200 kips and L = 150 kips, pinned ends, 14 ft long",
+     "before": "W12X53 (Pu 480)",
+     "after": "SAME",
+     "right": "W12X53"
+    },
+    {
+     "text": "hs09 his own sample: (a) c12x30 staggered ... (b) w18 x 46 fig p3-23 ... (ans. 9.67 in^2)",
+     "before": "(a) NOT_IN_TOOL stop; (b) asks holes + figure",
+     "after": "SAME",
+     "right": "unchanged (no loads)"
+    },
+    {
+     "text": "hs10 phi Pn = 1000 kips, service dead load 500 kips. maximum service live load",
+     "before": "L = 250 kips",
+     "after": "SAME",
+     "right": "250"
+    }
+   ],
+   "tests": "node harness/selftest.js: self-test 945/945. node harness/check.js: all page scripts ES5, ASCII, no forbidden calls. Cases harness/cases/hercombo.json (41): all 31 hc changed as expected; 10 hs SAME (diff.js 30 changed + hc23, whose change is in the stop line, which diff.js does not compare). Engine equivalence check: the already-factored path vs the service path where 1.2D+1.6L governs, 50 runs of the 5 load forms: only the sources list differs. Regression (scratchpad/hc/all-q.json = reg/all.json, reg/C-holdout.json, B/clean-*, A/**, C, deduplicated by text: 5463 questions), baseline STEEL_SRC=base-src vs the committed tree, procs 2: diff.js '62 changed of 5463'; fulldiff (all write/read lines) 62. Every one classified (table: scratchpad/hc/all.final.table.txt). NEWLY RIGHT 10: A2-loads-p26 48, p93 68 (asked 1.2D+1.6L, was loads_combinations 70), p94 136, p127 L = 6.25, p181 68, p184 68, p207 48, p208 68, A/csel/q1:P07 W12X50 (Pu 360), A/csel/q2:Q08 Pu 240. CHAIN STEP 1 ONLY (final step 2 SAME) 8: c09#2, A1-tsel-36, -p-p05, -p-p42, -p-p43, -p-p63, -p-b04, -p-b05 (step 1 Pu 1.4D -> her 1.2D). WRONG -> STOP/ASK (no number) 44: unread live loads (twice/3D/L=D/L/D/50% larger, unitless L=150 and L=100, numspace '3 00', '40 0', '18 0', '9 5', '1 00', '2 0', '5klive', the '?'-split BC-107~syntax part 1); asked-load questions answered with a capacity (A1-tsel-30/31/32/34, p-p28, p-p31, b03, b08, b09, b10); mixed lb/kip (A2-loads-p85, p204 -> ask for span); beam/takedown/loads_combinations 1.4D (A2-beam-157, BC-085, BC-101 x2, BC-104, BC-127, A/csel/q2:Q18). WRONG created: 0. B/rough.json (3174, his typing at scale): 10 changed, all baseline-wrong numspace/syntax variants -> stop. Probe sets probe1-5 (scratchpad/hc) also read by hand. Last run on the committed code = previous run (0 changed).",
+   "unsure": "1) loads_combinations is withheld whenever combination 1 (1.4D) alone governs, including a question that explicitly asks for 'the governing load combination' with snow or wind. By her slide 1.4D would be the answer; by her one-combination rule it is not, so I stop. Coverage cost: hc17, BC-101, BC-104. 2) loads_floor is withheld, not recomputed. In 'a floor has a 6 in slab and a live load of 5 psf ...' (hc16) the signature pass then keeps the finder's floor_plan, which stops with 'Step 2 needs the beam span (ft)' (no number) instead of the plain sentence. 3) 1.4D is detected from the result values (*governing_combination*, U_max_combination '1', any 'govern' table column), plus a text regex on the engine's own wording, used for the floor-plan and beam-select self-weight switches. That is safe only while engine.js stays frozen. 4) The guards are deliberately broad but act only where 1.4D governed. A question that says 'live' anywhere in the whole text, asks for a 'maximum ... load', has a load number not used, or mixes lb and kip units stops instead of getting her answer. Every such stop in the corpus was a baseline wrong answer. 5) Answer lines of the re-run member forms are the engine's own text and still carry its alternative numbers ('KL/r route 500.8; exact E3 501.9'); that is the altnum item. My own answer lines carry one number ('120 kips (her one load combination)', 'L = 62.5 kips (service, unfactored)'). 6) beam_max_live_load's 1.4D refusal is always replaced by the plain sentence, even where 1.2 wD alone also exceeds the capacity (no live load by her method either); a stop either way. 7) Built on cloud dc98246, not on the builder's current local tree. The pipeline hunks are a function block inserted after runOne() plus a 2-line hook in runPart after the floor-plan self-weight block.",
+   "not_done": "Pre-existing wrong answers seen in the changed set or the probes, NOT changed by this fix (all on the 1.2D+1.6L path or in unchanged final steps): (a) spaced numbers misread on the normal path: 'a dead load of 2 00 kips and a live load of 20 kips' -> 'Factored load: 32 kips (1.2D + 1.6L)' (D read as 0); (b) BC-107~syntax: a mid-sentence '?' splits the question, and part [2] still prints 152 kips (1.6L only; right 254); (c) A1-tsel-36 / A1-tsel-p-p43 'include the self weight' maximum-live-load chains: step 2 still omits the hanger's own weight (125.756 printed both before and after). Her value is not computed (withheld instead) for beam load cases, loads_floor, floor_plan, loads_takedown and loads_combinations; it would need step-text rewriting or new arithmetic there. beam_max_live_load in her 1.4D-only region is withheld, not computed. No RETURN.md written (the orchestrator merges). No ui.js change was needed (ui.js calls SOLVE.runPart, so the page and the harness share the hook)."
+  },
+  "review": null
+ },
+ {
+  "item": "altnum",
+  "fix": {
+   "branch": "fix-altnum (made from `cloud` 9f0de21. The worktree had been created from `main` 473308c, which does not contain tools/steel-tool-solve. Nothing pushed.)",
+   "commits": [
+    "440ac4b altnum: failing cases first -- one number on the line to copy",
+    "401e9dd altnum: her value alone on the ANSWER line; other numbers on Check / comparison lines",
+    "a35d42e altnum: lookup_by_property -- the shape alone on the ANSWER line"
+   ],
+   "worktree": "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-2",
+   "files": [
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-2/tools/steel-tool-solve/ext/pipeline.js (two hunks: a new function oneNumberSplit() right after answerLine(), about 85 lines; and 6 lines in writeBlock where the ANSWER line is pushed. No other code is touched.)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-2/tools/steel-tool-solve/harness/cases/altnum.json (30 cases [{id,text,expect:{status,lines},note}]: 22 that must change and 8 that must not; most are typed in his rough style, and his own 3-22/3-23 sample is included)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-2/tools/steel-tool-solve/harness/cases/altnum-check.js (usage: node harness/cases/altnum-check.js harness/cases/altnum.json run.json. It compares every WRITE THIS line that is not a numbered step.)",
+    "scratch tools (not committed): /tmp/claude-0/-home-user-1/a6672620-4f5b-5cfe-8fc0-05cb48074075/scratchpad/altnum/{classify.js,inv.js,show.js,merge.js,mkcases.js,report.js}, plus the runs reg.base.json, reg.new.json, reg2.base.json, reg2.new.json, cases.base.json, cases.new.json, cases.base.txt"
+   ],
+   "cases": [
+    {
+     "text": "an01: a w10x49 colum n is 14ftlong with pinned ends ,Fy=50ksi.  determien the desgin strength phi Pn of the colmun",
+     "before": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6)",
+     "after": "ANSWER: Column capacity phi Pn: phi Pn = 471 kips (her method) || For comparison only (do not copy): KL/r route 466.6; exact E3 470.6",
+     "right": "yes: same value (471), one number on the ANSWER line"
+    },
+    {
+     "text": "an02: w10x49 colmun 14 ft long pinned both ends ,supports a dead laod of 150kips and live load 200 kips.is the column adequate?",
+     "before": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6) -- adequate: phi Pn >= Pu? NO (471 < 500 kips)",
+     "after": "ANSWER: Column capacity phi Pn: phi Pn = 471 kips (her method) -- adequate: phi Pn >= Pu? NO || Check: adequate: phi Pn >= Pu? NO (471 < 500 kips) || For comparison only (do not copy): KL/r route 466.6; exact E3 470.6",
+     "right": "yes: the verdict NO stays on the ANSWER line; its numbers moved to the Check line"
+    },
+    {
+     "text": "an03: selcet the lightest w14 colmun to carry Pu = 1100kips ,KL = 16ft both axis..",
+     "before": "ANSWER: Lightest column: W14X109 (109 lb/ft) phi Pn = 1190 kips > Pu = 1100 kips ok (Table 4-1a, her method: KL = 16 ft; KL/r route 1180.8)",
+     "after": "ANSWER: Lightest column: W14X109 || Check: W14X109 (109 lb/ft) phi Pn = 1190 kips > Pu = 1100 kips ok (Table 4-1a, her method: KL = 16 ft) || For comparison only (do not copy): KL/r route 1180.8",
+     "right": "yes: same shape"
+    },
+    {
+     "text": "an04: a W12 x53 column ,KxLx = 24 ft and KyLy = 12ft .Fy = 50 ksi find phi Pn",
+     "before": "ANSWER: Column capacity phi Pn: phi Pn = 544.4 kips (table method: KL/r 58.1 rounded up to 59, phi Fcr 34.9 ksi x Ag 15.6 in^2)",
+     "after": "ANSWER: Column capacity phi Pn: phi Pn = 544.4 kips (her method)",
+     "right": "yes: same value; the working is already in the numbered steps"
+    },
+    {
+     "text": "an05: w18x35 beam is fully braced  Mu = 230 kip-ft.is the beam adequate? find phi Mp",
+     "before": "ANSWER: Design moment phi Mp: phi Mp = 249 kip-ft (W18X35, fully braced); adequate for Mu = 230",
+     "after": "ANSWER: Design moment phi Mp: phi Mp = 249 kip-ft (W18X35, fully braced); adequate || Check: adequate for Mu = 230",
+     "right": "yes"
+    },
+    {
+     "text": "an06: selcet the most economical w shape for a fully braced beam with Mu=324kip-ft",
+     "before": "ANSWER: Most economical beam: W21X44 (44 lb/ft, d = 20.7 in) phi Mp = 358 kip-ft >= Mu = 324",
+     "after": "ANSWER: Most economical beam: W21X44 || Check: W21X44 (44 lb/ft, d = 20.7 in) phi Mp = 358 kip-ft >= Mu = 324",
+     "right": "yes"
+    },
+    {
+     "text": "an07: a w14x82 tensoin member is connectd through its flanges with 4 lines of 3/4in bolts (2 in each flange) ,3 bolts per line. a992 steel.determine the desgin tensile strength",
+     "before": "ANSWER: Tension capacity (first failure load): phi Pn = 921.7 kips -- rupture governs (yielding 1080, rupture 921.7)",
+     "after": "ANSWER: Tension capacity (first failure load): phi Pn = 921.7 kips -- rupture governs || Check: yielding 1080, rupture 921.7",
+     "right": "yes"
+    },
+    {
+     "text": "an08: select the lightest w8 tension member for dead load 50 kips and live load 100kips, connected through the flanges with 2 lines of 3/4in bolts in each flange 3 bolts per line ,length 20 ft",
+     "before": "ANSWER: Lightest tension member: W8X24 (24 lb/ft) phi Pn = 249.2 kips (rupture) >= Pu = 220 kips",
+     "after": "ANSWER: Lightest tension member: W8X24 || Check: W8X24 (24 lb/ft) phi Pn = 249.2 kips (rupture) >= Pu = 220 kips",
+     "right": "yes"
+    },
+    {
+     "text": "an09: a W8x24 tension member 20 ft long with 2 lines of 3/4 in bolts in each flange, 3 per line.  D = 50 kips L = 100 kips. what is the maximum service live load it can carry if the dead load is 50 kips",
+     "before": "ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 220 || ANSWER (step 2): Maximum service live load L: L = (phi Rn - 1.2 D) / 1.6 = 118.25625 kips (service, unfactored; 1.4 D = 70 <= 249.21 kips ok)",
+     "after": "ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs; adequate || Check: yielding 318.6, rupture 249.2; adequate for Pu = 220 || ANSWER (step 2): Maximum service live load L: L = 118.25625 kips (service, unfactored) || Check: L = (phi Rn - 1.2 D) / 1.6; 1.4 D = 70 <= 249.21 kips ok",
+     "right": "yes"
+    },
+    {
+     "text": "an10: find the factored laod for D = 100kips and L = 150 kips",
+     "before": "ANSWER: Factored load: 360 kips (1.2D + 1.6L)",
+     "after": "ANSWER: Factored load: 360 kips || Check: 1.2D + 1.6L",
+     "right": "yes"
+    },
+    {
+     "text": "an11: what is the hole size for a 7/8in bolt",
+     "before": "ANSWER: Hole size for net area: hole = 1 in (bolt 0.875 in + 1/8)",
+     "after": "ANSWER: Hole size for net area: hole = 1 in || Check: bolt 0.875 in + 1/8",
+     "right": "yes"
+    },
+    {
+     "text": "an12: w14x82 tension member with two lines of 3/4 in bolts in each flange. find the net area An",
+     "before": "ANSWER: Net area An: An = 21.0075 in^2 (Ag = 24 in^2, W14X82)",
+     "after": "ANSWER: Net area An: An = 21.0075 in^2 || Check: Ag = 24 in^2, W14X82",
+     "right": "yes"
+    },
+    {
+     "text": "an13: Determine the Euler buckling load of a W8x31 colmun 25 ft long with pinned ends",
+     "before": "ANSWER: Euler critical load Pcr: Pcr = 118.48 kips (Fe = 12.977 ksi, KL/r = 148.51)",
+     "after": "ANSWER: Euler critical load Pcr: Pcr = 118.48 kips || Check: Fe = 12.977 ksi, KL/r = 148.51",
+     "right": "yes ('-- NOT VALID here' stays on the ANSWER line in the 107 regression lines that carry it)"
+    },
+    {
+     "text": "an14: what is the shear lag factor U for a W8x24 connected through the flanges with 3 bolts per line",
+     "before": "ANSWER: Shear lag factor U: U = 0.90 (Table D3.1 case 7)",
+     "after": "ANSWER: Shear lag factor U: U = 0.90 || Check: Table D3.1 case 7",
+     "right": "yes"
+    },
+    {
+     "text": "an15: phi Fcr for KL/r = 87 and Fy = 50 ksi",
+     "before": "ANSWER: Design critical stress phi Fcr: phi Fcr = 25.9 ksi (KL/r = 87, Fy = 50 ksi)",
+     "after": "ANSWER: Design critical stress phi Fcr: phi Fcr = 25.9 ksi || Check: KL/r = 87, Fy = 50 ksi",
+     "right": "yes"
+    },
+    {
+     "text": "an16: a simply supported beam 20 ft span carries a uniform dead load of 1 k/ft and live load 2k/ft. find the maximum factored moment",
+     "before": "ANSWER: Maximum factored moment Mu: Mu = 220 kip-ft (1.2D + 1.6L) at x = 10 ft; reactions RA = 44 (1.2D + 1.6L), RB = 44 (1.2D + 1.6L); Vu = 44 (1.2D + 1.6L) -- reactions and shear in kips",
+     "after": "ANSWER: Maximum factored moment Mu: Mu = 220 kip-ft || Check: (1.2D + 1.6L) at x = 10 ft; reactions RA = 44 (1.2D + 1.6L), RB = 44 (1.2D + 1.6L); Vu = 44 (1.2D + 1.6L) -- reactions and shear in kips",
+     "right": "yes"
+    },
+    {
+     "text": "an17: w10x49 column 14ft long pinned ends Fy=50 ksi. KL/r = ______ phi Pn = ______ kips",
+     "before": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route 466.6; exact E3 470.6) || FOR YOUR BLANK (KL/r = ____): KL/r = 66.14 <- write this number. (67 is only the row ...)",
+     "after": "ANSWER: Column capacity phi Pn: phi Pn = 471 kips (her method) || For comparison only (do not copy): KL/r route 466.6; exact E3 470.6 || FOR YOUR BLANK (KL/r = ____): unchanged",
+     "right": "yes: the FOR YOUR BLANK line is unchanged because it reads the calculator values, not the text"
+    },
+    {
+     "text": "an18: w12x65 colmun ,K=0.8 ,L = 14ft both axis.find phi Pn",
+     "before": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 11.2 ft read at the 12-ft row, phi Pn = 728 kips (KL/r route 741.1; exact E3 743.6)",
+     "after": "ANSWER: Column capacity phi Pn: phi Pn = 728 kips (her method) || For comparison only (do not copy): KL/r route 741.1; exact E3 743.6",
+     "right": "yes: KL and the row it was read at are in numbered step 6"
+    },
+    {
+     "text": "an19: selcet the lightest w beam,fully braced,for Mu = 259.2kip-ft",
+     "before": "ANSWER: Most economical beam: W16X40 (same weight as W18X40, which has more capacity; Table 3-2's first bold row above Mu is W16X40) (40 lb/ft, d = 16 in) phi Mp = 274 kip-ft >= Mu = 259.2",
+     "after": "ANSWER: Most economical beam: W16X40 || Check: W16X40 (same weight as W18X40, ...) (40 lb/ft, d = 16 in) phi Mp = 274 kip-ft >= Mu = 259.2",
+     "right": "yes: the second shape (W18X40) is no longer on the line to copy"
+    },
+    {
+     "text": "an20: a pl 1/2x8 tensoin member A36 with one line of 3/4in bolts.  phi Pn = ______ kips",
+     "before": "ANSWER: Tension capacity (first failure load): phi Pn = 129.6 kips -- yielding governs (yielding 129.6, rupture 155)",
+     "after": "ANSWER: Tension capacity (first failure load): phi Pn = 129.6 kips -- yielding governs || Check: yielding 129.6, rupture 155",
+     "right": "yes"
+    },
+    {
+     "text": "an21: w14x82 tension member, 2 lines of 3/4in bolts in each flange 3 per line. design strength for yielding of the gross section = ____ kips",
+     "before": "ANSWER: ...phi Pn = 921.7 kips -- rupture governs (yielding 1080, rupture 921.7) || CHECK YOUR BLANK: (unchanged)",
+     "after": "ANSWER: ...phi Pn = 921.7 kips -- rupture governs || Check: yielding 1080, rupture 921.7 || CHECK YOUR BLANK: (unchanged)",
+     "right": "yes: still under CHECK YOUR BLANK as before; yielding 1080 is the correct value and sits on a Check line (deliberately not marked 'do not copy')"
+    },
+    {
+     "text": "an22: Select lightest w sh ape with a plastic section modulous of at lesat 98in^3 (requried zx = 98in^3)",
+     "before": "ANSWER: Lightest W with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3",
+     "after": "ANSWER: Lightest W with enough Zx: W21X48 || Check: Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3",
+     "right": "yes"
+    },
+    {
+     "text": "nc01 (his own sample, must not change): (a) a c12x30 is connected through its web with three gage lines of 7/8in phi bolts ... (b) determane the effective net area of w18 x 46 shown in fig p3-23 ... (ans. 9.67 in^2)",
+     "before": "[a] tension_net_area refused || [b] tension_capacity refused (figure gate); UNKNOWN polts",
+     "after": "identical",
+     "right": "yes: stop stays a stop"
+    },
+    {
+     "text": "nc02: what is K for a colmun fixed at both ends",
+     "before": "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))",
+     "after": "identical",
+     "right": "yes (one number already)"
+    },
+    {
+     "text": "nc03: what is the fy and fu of a992 steel",
+     "before": "ANSWER: Steel ASTM A992: ASTM A992: Fy = 50 ksi, Fu = 65 ksi (her slide: ...)",
+     "after": "identical",
+     "right": "yes: both values are asked, so the line is left whole"
+    },
+    {
+     "text": "nc04: w21x44 fully braced beam find phi Mp",
+     "before": "ANSWER: Design moment phi Mp: phi Mp = 358 kip-ft (W21X44, fully braced)",
+     "after": "identical",
+     "right": "yes"
+    },
+    {
+     "text": "nc06: what is the modulus of elasticity of steel",
+     "before": "ANSWER: Modulus of elasticity of steel (E = 29,000 ksi): 29000 ksi -- \"...\" (source)",
+     "after": "identical",
+     "right": "yes: word answers are untouched"
+    },
+    {
+     "text": "nc07: a w12x26 tension member with no holes. find phi Pn",
+     "before": "ANSWER: Tension capacity (first failure load): phi Pn = 344.3 kips -- yielding governs (no holes)",
+     "after": "identical",
+     "right": "yes"
+    },
+    {
+     "text": "nc08: find the factored load D = 100kips L = 10 kips",
+     "before": "ANSWER: Factored load: 140 kips (1.4D governs: L is less than D/8)",
+     "after": "identical",
+     "right": "yes: deliberately left whole because 1.4D belongs to the hercombo fix"
+    },
+    {
+     "text": "nc09: lightest w shape with Zx >= 98 in^3",
+     "before": "[beam_select refused]",
+     "after": "identical",
+     "right": "yes: stop stays a stop"
+    }
+   ],
+   "tests": "Fast tests on fix-altnum: node harness/selftest.js gives 945/945 (table failures 0). node harness/check.js gives \"all page scripts ES5, ASCII, no forbidden calls\"; no lookbehind is used.\n\nThe case file harness/cases/altnum.json (30 cases): the baseline (STEEL_SRC=base-src) passes 8 of 30, which are exactly the 8 must-not-change cases. The fixed tree passes 30 of 30. The baseline printout is saved in scratchpad/altnum/cases.base.txt.\n\nRegression: 7585 questions, each run on the baseline and on my tree with node harness/batch.js --procs 2, then compared with harness/diff.js. The question files were every [{id,text}] file under A/** (beam, ccap, loads, look, tcap, tsel), B/clean-calc.json, B/clean-words.json, B/rough.json (3221 rough copies), B/cause/variants*.json and reg/probe-now.json. B/clean-all.json was left out because it duplicates clean-calc + clean-words. C/ was not used (it is a holdout).\n- First set, 5616 questions: 2916 changed.\n- Second set (files that appeared later), 1969 questions: 534 changed.\n\nEvery changed question was classified by scratchpad/altnum/classify.js, which requires all of the following:\n- Same part count, kind, form, status, why, gate and read lines.\n- The only write-line difference is an ANSWER (or ALSO FOUND / FOUND, BUT NOT) line split into the cut ANSWER line plus Check / For comparison lines.\n- At most one number on the new ANSWER line, not counting shape names, the ^2 exponent or the label.\n- Every number on the new lines was already on the old line.\n\nResult: 3450 of 3450 are this kind of reformat. Newly right 0, stop->stop 0, other 0, WRONG 0, status changes 0. I read every distinct pattern (52 in the first set, 34 in the second) and spot-read real diffs (BC-038, BC-061~pair1, A1-tcap-08, A2-beam-163, A2-loads-p126). In every pattern the number kept is her headline: the 4-1a value (not KL), phi Pn (not the yielding or rupture value), Mu, the largest combination, L after the formula, and the selected shape. At run time each cut is also checked against res.answer.value or res.values.selected_shape.\n\nFOR YOUR BLANK, ANSWER TO, CHECK YOUR BLANK and the adequacy YES/NO lines did not change in any question. askedLines / sigValueFor read res.values, not the answer text (checked in the code). SOLVE.blankLines (THE ANSWERS bar) now shows only the cut ANSWER line, e.g. 'Lightest column: W14X109'.",
+   "unsure": "1. Wording choices the builder may want to change:\n- The comparison line is 'For comparison only (do not copy): ' (the other routes: KL/r route, exact E3, Table 4-1a lookup).\n- The line for the numbers the answer stands on is 'Check: '. It is close to the read-box 'CHECK:' flags, but it is printed in the WRITE THIS block.\n- The column ANSWER now says '(her method)' with no table name, to keep '4-1a' off the line.\n- beam_capacity keeps '(W18X35, fully braced)' on the ANSWER line: I treated a shape name as an identifier, not a second number. Several other lines likewise keep a shape name, its family name or a fraction-shaped name.\n\n2. Tension yielding and rupture go on the 'Check:' line, not 'do not copy'. A blank may ask for either, as in an21 where the unknown blank asks for yielding and 1080 is right.\n\n3. KL, and the table-method KL/r working, are dropped from the column ANSWER and not repeated on another line, because numbered steps 6 and 7 already print them. Information is moved, never computed.\n\n4. A prose-only 'is it adequate?' keeps YES/NO on the ANSWER line, but the numbers behind the verdict are now on the Check line.\n\n5. Not tested in a browser (no Chrome here). ui.js is untouched; its pre block prints writeLines as before.\n\n6. Two pre-existing clean WRONG answers seen in the regression files. My change does not alter either value:\n- B/cause/variants BC-094~pair1#cleanpair, part b) 'Select the lightest W shape with ... Zx at least 98'. The page answers W16X57 (it takes the W16 family from part a's W16x31); the right answer is W21X48.\n- A/tcap/hits A1-tcap-08 'W12x53, 4 holes in the flanges for 3/4in bolts, ..., U=0.9'. The page prints 684.45 'welded, U = 0.9 as given', which ignores the holes; the holes give rupture 596.2 kips. This one is already in a red-team hits file.",
+   "not_done": "Forms left whole on purpose, which still carry more than one number on the ANSWER line:\n- floor_plan summary (beam + girder + reaction).\n- lookup_material (Fy and Fu are both asked).\n- lookup_shape full-property list and section_properties.\n- units conversion.\n- lookup_definition and word answers (her sentences carry dates and sources).\n- Column texts marked NOT RELIABLE, KL/r > 200 'EXCEEDS 200', the slender-element E7 text, and the custom-section 'Flexural-buckling-only comparison' text.\n- Every text that names 1.4D, left for the hercombo fix: loads_factored '1.4D governs', loads_takedown '...; 1.4D governs', beam_analysis '(1.4D)', loads_combinations 'combination 1: 1.4D'.\n\nNot touched: the existing adequacy blank line 'ANSWER FOR YOUR BLANK (...): YES (phi Pn = X is at least Pu = Y)' still has two numbers. It is not built from the answer text; it is assembled from values in writeBlock.\n\nRETURN.md was not written: not asked, and the orchestrator merges.\n\nThe work is on fix-altnum in /home/user/1/.claude/worktrees/wf_bc4ae91c-357-2. Nothing is merged into cloud and nothing is pushed."
+  },
+  "review": {
+   "verdict": "accept-with-changes",
+   "problems": [
+    "FIXED in the review fixups. As delivered (a35d42e), the cut moved quantities a question asks for onto the 'Check:' line, so the ANSWER line answered something else. Corpus A2-beam-52 'find the reactions of a 20ft simple beam with dead load 1 klf and live load 2 klf' printed 'ANSWER: Maximum factored moment Mu: Mu = 220 kip-ft' with RA = RB = 44 only on Check. The baseline ANSWER line carried the reactions. The same happened for 'find RA and RB', 'where does the maximum moment occur' (x moved off the line), 'which load combination governs?' (only '144 kips' / '125 kips'), 'which case of Table D3.1' and 'find the factored floor load qu in psf and the line load wu'.",
+    "FIXED in the review fixups. Column questions that name another route got that route's value under 'For comparison only (do not copy)' next to her Table 4-1a value. Corpus A1-ccap-62 'W10x49 column 14 ft long pinned ends. using table 4-14 find phi Pn' printed 'phi Pn = 471 kips (her method)' and 'do not copy: KL/r route 466.6'. In 'w12x53, K=0.8, L=19 ft ... (a) using the aisc equations (b) using the column tables', part (a) put E3 472.7 under 'do not copy' beside 453. The baseline kept both values on the ANSWER line, labelled 'Table 4-1a'.",
+    "Every other change checks out. Over 6065 corpus questions (2871 changed vs baseline after the fixups), only the ANSWER line changes, plus inserted Check / comparison lines. The kept number is always the old line's headline, so the student copies the same number as before. No status, read, blank or ALSO FOUND line moves, no NOT RELIABLE line is cut, no YES/NO verdict is lost and no changed ANSWER line has a second number. ES5/ASCII check passes, self-test 945/945, the fix's own cases 37/37 with 7 review cases added. About 80 new probe questions were run on both trees (clean and in his rough style). Hand-checked values include W10x49 471 and 466.6, W12x53 KL 15.2 -> 16-ft row 453, W12x65 26/13 ft 660.9, W12x58 select 523.6, W14x82 16 ft 697, W14x90 40 ft 356, W8x31 12 ft 283, W10x45 411, W14x82 30/15 ft table method 732, W12x50 rupture 498.9, PL 3/8x6 72.9 and 81.6, W12x40 welded 513.34, W18x35 249, W24x62 574, Mu 220 / 259.2 / 486, R 43.2 / 44, Ag >= 3.58, phi Fcr 15.4 at 121, Euler 2056.87, hole 0.875, U 0.90, 1.2D+1.6L = 144 / 38, floor 256 psf -> wu 2.048.",
+    "MINOR, not changed. The loads_combinations L* alternative ('with L* = 1.0 L: 140 kips') now sits on the Check line, while the engine's NOTE still says 'The other total is printed beside it'. The headline is the same number as in the baseline.",
+    "PRE-EXISTING, in baseline too, not caused by this fix. A column question that names a route ('(a) using the AISC equations', 'use table 4-14') still gets her Table 4-1a value as its ANSWER (453 against E3 472.7, a 4% gap). The page should stop or ask, or use the named route; that needs a pipeline fix of its own.",
+    "PRE-EXISTING, in baseline too, not caused by this fix. Beam selection ignores 'the dead load does not include the weight of the beam'. Corpus A2-beam-70: span 30 ft, D 0.7, L 0.85 gives 'W18X35, phi Mp 249 >= Mu 247.5'. With its own 35 lb/ft, Mu = 252.2 > 249, so W18X35 fails. A2-beam-31 is the same: W21X44 at Mu 354.3, but 361.1 with self-weight against phi Mp 358. No warning is printed: a clean wrong answer in baseline and fix alike."
+   ],
+   "new_wrong_answers": [
+    "(fixed by ff1bec7) 'find the reactions of a 20ft simple beam with dead load 1 klf and live load 2 klf (neglect self weight)' [corpus A2-beam-52] -> 'ANSWER: Maximum factored moment Mu: Mu = 220 kip-ft' alone; the reactions RA = RB = 44 kips are only on the Check line (baseline ANSWER line had them)",
+    "(fixed by ff1bec7) 'simply supported beam 24 ft span wd = 1 k/ft wl = 1.5 k/ft.find RA and RB' -> 'ANSWER: ... Mu = 259.2 kip-ft' alone (RA = RB = 43.2 only on Check)",
+    "(fixed by ff1bec7) 'D = 40 kips L = 60 kips .find the factored load.which combination governs' -> 'ANSWER: Largest factored load U: 144 kips' alone (combination 2 only on Check)",
+    "(fixed by ff1bec7) 'a beam 30 ft long simply supported with a dead load of 2 k/ft and live 1 k/ft.where does the maximum moment occur' -> 'ANSWER: ... Mu = 450 kip-ft' alone (x = 15 ft only on Check)",
+    "(fixed by 01e6a88) 'W10x49 column 14 ft long pinned ends. using table 4-14 find phi Pn' [corpus A1-ccap-62] -> 'ANSWER: phi Pn = 471 kips (her method)' + 'For comparison only (do not copy): KL/r route 466.6' -- the asked Table 4-14 value marked do-not-copy",
+    "(fixed by 01e6a88) 'a w12x53 colmun ,K = 0.8, L = 19 ft ... (a) using the aisc equations (b) using the column tables' part (a) -> 'phi Pn = 453 kips (her method)' + 'do not copy: ... exact E3 472.7'",
+    "(fixed by 61a34cc) 'floor dead load 80 psf ,live load 100 psf ,tributary width 8 ft.find the factored floor load qu in psf and the line load wu' -> 'ANSWER: wu = 2.048 k/ft' alone (256 psf only on Check)"
+   ],
+   "pushed_fixups": "I committed four fixups on branch fix-altnum in /home/user/1/.claude/worktrees/wf_bc4ae91c-357-2 (nothing pushed; I could not commit to a remote). Each one only puts the baseline's whole ANSWER line back, so none can print a number the baseline did not.\n\n- 01e6a88 \"review fixup: a column question that names a route keeps the whole line\". When the question's text names the AISC equations, E3, Table 4-14 or 4-22, Fcr or critical stress, the KL/r route or method, \"not the tables\" or the specification, column_capacity keeps the whole line wherever the cut would print a \"do not copy\" line. Three cases added (rv01-rv03).\n- a16d784 \"review fixup: the route a cover line names counts too\". The check now also reads the cover line, so a cover saying \"use the AISC equations\" counts.\n- ff1bec7 \"review fixup: a question that asks for what the cut moves keeps the whole line\". This is a per-form check on the question's words: reactions, shear, location or combination for a beam; which combination, smallest or uplift for the loads; which case for U; row or round for phi Fcr; gross area for An. \"Governing factored load\" and \"using the combination 1.2D+1.6L\" still get the cut. Four cases added (rv04-rv07).\n- 61a34cc \"review fixup: the factored floor load and wu keeps the whole wu line\". Applies to the line-load form only.\n\nAll changes are in ext/pipeline.js: one hunk inside the new oneNumberSplit, plus a one-line change to its call in writeBlock (21 lines added, 4 removed). The 7 new cases are in harness/cases/altnum.json.\n\nResults:\n- ES5/ASCII check passes and the self-test is 945/945.\n- The fix's own cases pass 37/37.\n- Full regression of 6065 questions: 2871 change against the baseline. Against the fix as delivered, 10 questions now print the baseline line again (A1-ccap-62/109, A2-noise-83/137, BC-053~numspace, A2-beam-52/87/121/127/197) and nothing else moves.\n- The regression diff is at /tmp/claude-0/-home-user-1/a6672620-4f5b-5cfe-8fc0-05cb48074075/scratchpad/reg/altnum-rv7.diff.txt and the probe files are in .../scratchpad/rvalt/."
+  }
+ },
+ {
+  "item": "asks",
+  "fix": {
+   "branch": "fix-asks",
+   "commits": [
+    "0a1daa9 harness: unit E cases first -- asks.json (35) and asks-run.js (answer the page's asks one at a time from the drawing)",
+    "f61f793 asks: what only the drawing shows is asked in plain words, one question at a time (unit E, his W18x46 of fig p3-23)",
+    "1466e35 ui: drawWanted shows ONE ask of asks.js at a time -- choice buttons, or one number (unit E)",
+    "6b0d7d9 harness: STEEL_WANTED=1 records what a part with no answer asks for (solve.js, diff.js); ui-asks.js drives the page's own asks"
+   ],
+   "worktree": "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3 (it started on `main`, which has no tools/ tree, so branch fix-asks was created from `cloud` at 71cdf91; never pushed)",
+   "files": [
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/ext/asks.js (NEW: data and pure functions, loaded before pipeline.js; build.js must include it before pipeline.js)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/ext/_order.json (asks.js added before pipeline.js)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/ext/pipeline.js (wantedBoxes asks asks.js first and falls back to the old box list; SOLVE.applyAsk; 5 lines)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/ext/ui.js (drawWanted: one line that routes to the new drawAsk, which draws ONE ask: choice buttons, one number box, or a stop sentence with a Go back button)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/harness/cases/asks.json (35 cases [{id,text,expect}])",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/harness/asks-run.js (answers the asks one at a time from expect.answers, then gate, runPart, wantedBoxes, until an answer, a stop or the unused-number gate)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/harness/ui-asks.js (the real ui.js in a small fake DOM: type, Solve, press buttons, type numbers, tick the figure box, read WRITE THIS)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/harness/solve.js (with STEEL_WANTED=1 only: rec.wanted)",
+    "/home/user/1/.claude/worktrees/wf_bc4ae91c-357-3/tools/steel-tool-solve/harness/diff.js (prints the wanted line when it is present)"
+   ],
+   "cases": [
+    {
+     "text": "E-01 determane the effective net area of w18 x 46 shown in fig p3-23 assume holes are for 3/4 in phi bolts (ans. 9.67 in^2)",
+     "before": "Two boxes at once (holes_per_flange + web_holes). After 2 and 0: refused 'Where is the member connected?' and nothing is asked: dead end. The baseline page (fake DOM) shows the same.",
+     "after": "Where are the bolts? -> flanges; straight or zig-zag? -> straight; holes in ONE flange -> 2; bolts in ONE line -> 4; tick the figure box -> ANSWER TO \"effective net area Ae\": Ae = 9.68 in^2. Same result through the real ui.js.",
+     "right": "9.67 in^2 by the book (Ae = 0.85 x 11.3825 = 9.6751; the frozen engine rounds it to 9.68)"
+    },
+    {
+     "text": "E-02 his full 2-part sample, part (b)",
+     "before": "dead end, as E-01",
+     "after": "same 4 asks -> Ae = 9.68 in^2",
+     "right": "9.67"
+    },
+    {
+     "text": "E-03 his sample part (a): C12x30, staggered",
+     "before": "NOT_IN_TOOL stop (staggered holes in a rolled shape)",
+     "after": "unchanged, no ask",
+     "right": "stop"
+    },
+    {
+     "text": "E-04 a w 18x46 tensoin member shown in fig p3-23,holes for 3/4in phi bolts.find the desgin tensile strength",
+     "before": "dead end at 'Where is the member connected?'",
+     "after": "flanges / straight / 2 / 4 -> phi Pn = 471.7 kips",
+     "right": "471.66"
+    },
+    {
+     "text": "E-05 determine the net area of the w 12x26 shown in fig p3-8 ... (ans 6.32 in^2)",
+     "before": "two boxes -> An = 6.32",
+     "after": "flanges / straight / 2 -> An = 6.32 in^2",
+     "right": "6.32"
+    },
+    {
+     "text": "E-06 design strength of the w14x48 hanger shown in the figure, 7/8 in bolts",
+     "before": "dead end at the connection",
+     "after": "web / straight / 2 / 4 -> phi Pn = 458 kips",
+     "right": "457.96"
+    },
+    {
+     "text": "E-07 net area of the c10x20 shown in the figure, holes for 3/4in bolts",
+     "before": "two boxes -> An = 5.2068",
+     "after": "web / straight / 2 -> An = 5.2068",
+     "right": "5.207"
+    },
+    {
+     "text": "E-08 l4x4x1/2 angle, one leg, 7/8 in bolts, fig p3-5, phi pn",
+     "before": "boxes 1, 4 -> 126.8",
+     "after": "straight / 1 / 4 -> 126.8 kips",
+     "right": "126.8 (L is A572 Gr 50)"
+    },
+    {
+     "text": "E-09 effective net area of the l6x4x1/2 shown in the figure, long leg bolted, 3/4 in",
+     "before": "boxes holes_across 2, per line 3 -> CLEAN WRONG Ae = 2.33 (one line by default, U 0.60)",
+     "after": "straight / 2 / 3 / lines 2 -> Ae = 3.1 in^2",
+     "right": "3.10 (she counts all 6 bolts: U 0.80)"
+    },
+    {
+     "text": "E-10 the 1/2 x 8 in plate shown in fig p3-1, 3/4in bolts, net area",
+     "before": "box holes_across -> 3.125",
+     "after": "straight / 2 -> An = 3.125",
+     "right": "3.125"
+    },
+    {
+     "text": "E-11 same plate, zig-zag in the drawing",
+     "before": "a single count box (a straight count of staggered holes gives a wrong An)",
+     "after": "zig-zag -> stop: use the hole helper part B (no number); 'Go back' re-asks",
+     "right": "stop / helper"
+    },
+    {
+     "text": "E-12 W18x46 with zig-zag holes in the drawing",
+     "before": "two count boxes",
+     "after": "flanges / zig-zag -> stop: the page cannot do zig-zag holes in a W shape (no number)",
+     "right": "stop"
+    },
+    {
+     "text": "E-13 a w10x49 column with pinned ends is shown in fig p4-2. phi pn",
+     "before": "Lx box -> 471 (never asked about a brace)",
+     "after": "length 14 / brace? no -> 471 kips",
+     "right": "471"
+    },
+    {
+     "text": "E-14 a 14 ft long w10x49 coloumn as shown in the figure. find phi pn",
+     "before": "dead end: the end condition is a choice box, never asked",
+     "after": "bottom pinned / top pinned / brace no -> 471 kips",
+     "right": "471"
+    },
+    {
+     "text": "E-15 the w8x40 colmun shown in fig p4-6 is 16 ft long. determine phi pn (the drawing has braces at the third points)",
+     "before": "dead end",
+     "after": "pinned / pinned / third points -> 422.4 kips (KL/r 54.4 -> 55, 36.1 x 11.7)",
+     "right": "422.4"
+    },
+    {
+     "text": "E-16 beam shown in fig 2-4, simply supported, 1.2 / 1.8 k/ft, Mu",
+     "before": "span box -> 216",
+     "after": "span 20 -> 216 kip-ft",
+     "right": "216"
+    },
+    {
+     "text": "E-17 the bema shown in fig 2-4 carrys ... find mu (support only in the drawing)",
+     "before": "span box -> 216 (simple span assumed silently)",
+     "after": "how is it held -> simple / span 20 -> 216",
+     "right": "216"
+    },
+    {
+     "text": "E-18 interior column, 400 sq ft each floor of the building shown, 80/50 psf",
+     "before": "dead end ('found no floor and no roof')",
+     "after": "floors 3 -> Pu = 211.2 kips",
+     "right": "211.2"
+    },
+    {
+     "text": "E-19 w12x26 through both flanges, 2 lines each flange, 4 per line, as shown (words give all)",
+     "before": "no ask, Ae 5.37",
+     "after": "unchanged",
+     "right": "5.37"
+    },
+    {
+     "text": "E-20 no figure: effective net area of a w18x46 with holes for 3/4 in bolts",
+     "before": "old box list, then dead end at the connection",
+     "after": "unchanged (no drawing named, so no new ask)",
+     "right": "unchanged by design"
+    },
+    {
+     "text": "E-21 q40. whqt is sher lag? see fig 3-34",
+     "before": "no ask",
+     "after": "no ask (a plate the words do not name)",
+     "right": "no ask"
+    },
+    {
+     "text": "E-22 As shown what isplastic section modulis ... zx of a w16 40",
+     "before": "old span box",
+     "after": "no ask from asks.js (no loads), so the old box stays as before",
+     "right": "no new ask"
+    },
+    {
+     "text": "E-23 #25 a w12x58column ... braced about week axis at mid-hright as shown",
+     "before": "old box bar_dia_in (shape unread)",
+     "after": "unchanged",
+     "right": "no new ask"
+    },
+    {
+     "text": "E-24 a plate of a36 stel ... required gross area ... as shown in the figure",
+     "before": "refused, no ask",
+     "after": "unchanged",
+     "right": "no ask"
+    },
+    {
+     "text": "E-25 floor plan shown, 5 in slab, 80 psf live, Mu of the typical interior beam",
+     "before": "two boxes -> Mu 233.1",
+     "after": "beam span 30 / spacing 10 -> Mu 233.1",
+     "right": "233.1"
+    },
+    {
+     "text": "E-26 the w8x40 column in the sketch has pinned ends and is 16 ft long (words complete)",
+     "before": "275 kips (figure status)",
+     "after": "unchanged, no ask (the figure tick and its 'different Ly?' line cover a drawn brace)",
+     "right": "unchanged"
+    },
+    {
+     "text": "E-27 a 20 ft w10x49 column shown in the figure (fixed / pinned, brace at mid-height)",
+     "before": "dead end",
+     "after": "fixed / pinned / mid -> stop, no number (a braced column whose ends are not both pinned)",
+     "right": "stop"
+    },
+    {
+     "text": "E-28 c8x11.5 shown in fig p3-12, 3/4 in bolts, phi pn",
+     "before": "two boxes, then a dead end at Case 2",
+     "after": "web / straight / 2 / 3 / spacing 3 -> 131.6 kips",
+     "right": "131.6 (AISC Case 2, U = 1 - 0.571/6)"
+    },
+    {
+     "text": "E-29 effective net area of the wt6x17.5 shown in the figure;bolts are 3/4in",
+     "before": "two boxes",
+     "after": "flange / straight / 2 / 3 -> Ae = 3.83",
+     "right": "3.834 (her tee rule, U 0.90)"
+    },
+    {
+     "text": "E-30 w10x33 through both flanges, 3/4 in bolts, as shown, Ae",
+     "before": "two boxes, then a fasteners box",
+     "after": "straight / 2 / 4 -> Ae = 7.37 (no 'where' ask: the words give it)",
+     "right": "7.369"
+    },
+    {
+     "text": "E-31 the w8x40 column in the sketch is 16 ft long (brace somewhere else)",
+     "before": "dead end",
+     "after": "pinned / pinned / other / longest piece 10 -> 408.3 kips",
+     "right": "408.3"
+    },
+    {
+     "text": "E-32 a interior colum ... 20ft x 25 ft on each flor of the bulding shown ...",
+     "before": "dead end",
+     "after": "floors 4 -> Pu = 376 kips",
+     "right": "376"
+    },
+    {
+     "text": "E-33 net area of the l5x3x1/2 angle shown in the figure (bolted)",
+     "before": "dead end",
+     "after": "straight / 1 / bolt size 3/4 -> An = 3.3125",
+     "right": "3.3125"
+    },
+    {
+     "text": "E-34 l6x4x1/2, short leg, 2 bolts in a line",
+     "before": "dead end (Case 2)",
+     "after": "straight / 1 / 2 -> the calculator's own Case 2 message stays (x-bar of an unequal angle is not asked)",
+     "right": "stop"
+    },
+    {
+     "text": "E-35 l4x4x1/2, 2 bolts in a line",
+     "before": "dead end (Case 2)",
+     "after": "straight / 1 / 2 / spacing 3 -> 98 kips",
+     "right": "97.96"
+    },
+    {
+     "text": "Regression corpus (10 changed): b19, A2-noise-58, BC-003~H2, BC-055~M1, BC-071~H2, BC-073~H3, BC-122~M2, C-16, C-16~typed, C-31",
+     "before": "old boxes (or a dead end)",
+     "after": "Only what is asked changed; no printed result changed. Each was answered to the end. Newly right: BC-055~M1 (422.4; before, a dead end, or 275 WRONG if he found the end-condition box), C-16 and C-16~typed (e.g. 478 kips for 15 ft pinned; before, a dead end). Same ask, now in plain words: b19 (An 11.38), A2-noise-58 (596.2), BC-071~H2 (311.04), C-31 (261), BC-073~H3 (held by the unused-number question on 0.9 kip/ft). Two pre-existing WRONG results are reachable exactly as through the old boxes: BC-003~H2 and BC-122~M2.",
+     "right": "no WRONG introduced"
+    }
+   ],
+   "tests": "node harness/selftest.js: 945/945. node harness/check.js: all page scripts ES5, ASCII, no forbidden calls. Cases (node harness/asks-run.js harness/cases/asks.json): 35/35 on fix-asks; baseline 16cede60: 8/35, cloud-only tree: 8/35 (only the must-not-change cases pass). Page level (node harness/ui-asks.js, the real ui.js in a fake DOM): E-01 gives Ae = 9.68; the column with braces at the third points gives 422.4 (with the figure ticked first); the plate zig-zag stop, then Go back, then straight / 2 gives An 3.125; the beam gives 216; the takedown gives 211.2. The baseline page on E-01 shows two boxes and then 'Where is the member connected?' with nothing to press. Regression (STEEL_WANTED=1, 6141 questions: A/**, B/clean-*.json, B/rough.json, every json in reg/ (reg/extra is empty), C questions, the unit E cases; --procs 3): cloud-only vs fix-asks: 36 changed, 0 printed lines changed, all of them 'wanted' lines (26 are the E cases; the 10 corpus questions were each walked to the end and classified above: 3 newly right, 7 the same ask or stop->stop, 0 WRONG introduced). Baseline vs fix-asks: 48 changed = those 36 + the 12 of cloud's own two fixes (A2-beam-190..195/214, BC-079, C-28, C-28~typed, C-48, C-48~typed), the same 12 as baseline vs cloud. The runs are in /tmp/claude-0/-home-user-1/a6672620-4f5b-5cfe-8fc0-05cb48074075/scratchpad/asks/run/ (cloud-vs-new.diff.txt, base-vs-new.diff.txt, cases35.base.txt, cases35.new.txt).",
+   "unsure": "1) The page prints 9.68, not the book's 9.67: the frozen engine rounds Ae = 9.6751 that way. 2) The figure tick is still needed after the last ask. I did not tick it automatically, because the tick also covers other drawn numbers. While the tick holds the run back, asks.js makes a trial engine run to find what to ask, once per redraw of a figure part that has no answer. 3) His answers are held in vals[si]['_ask:<id>'] and written into the boxes only after the last ask. Until then the box rows look empty. 4) Case 2 (bolt spacing to l) is asked only for a channel through its web, a tee through its flange, or an equal-leg angle, because those are the cases where the engine's Manual x-bar is the right one. It is AISC, beyond the cases 1/7/8 she taught; the engine itself goes to Case 2 there. 5) The column brace question shows only when the words give no weak-axis length of their own. A Ly equal to Lx counts as the reader's copy of the length and may be replaced. A braced column whose ends are not both pinned stops. A column question that already has an answer (E-26) is not asked about braces. 6) Two pre-existing WRONG results can be reached through the same asks as through the old boxes; I spawned a follow-up task for each (task_6fdaeee3, task_29568cff). (a) BC-003~H2: 'a36steel' glued is not read, so 126.8 kips is printed instead of 113.1. This is wrong even with no figure. (b) BC-122~M2: the reader takes 'spandrel girder' as an edge position for the beams, so R = 16.61 instead of about 32.48, and the ANSWER line names shapes, not the point load. The second task's prompt has a stray id 'BC-063/' typed before BC-122~M2. 7) The f61f793 commit message gives the regression numbers from an earlier run (5742 questions / 34 asks changed). The final run is 6141 questions / 36 asks changed / 0 printed changes. 8) E-10 and E-11 have the same text, so collect.js keeps only one of them in the corpus.",
+   "not_done": "build.js is not in this tree: it must include ext/asks.js before pipeline.js, as _order.json now does. Not asked by design: a part with no drawing (E-20: the connection dead end without a figure stays the old box list); the column KL in floor_plan step 4; tributary area or bay dimensions in loads_takedown (a corner or edge column would make a bay dimension wrong); beam loads that are only in the drawing (a cantilever with point loads stops; otherwise the old flow); column_select; staggered holes in a rolled shape or an angle (they stop). The old box list still asks odd boxes for misreadings it already asked before (E-22 span for a Zx look-up, E-23 bar_dia_in for an unread shape); I left that untouched. Not merged into cloud; not pushed."
+  },
+  "review": null
+ }
+]

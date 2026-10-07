@@ -1,0 +1,4774 @@
+[
+ {
+  "n": 1,
+  "term": "Actual stress (lowercase f)",
+  "topic": "Stress and safety",
+  "kind": "definition",
+  "her_words": [
+   "Actual stress: Is equal to load divided by the geometric property that existed and for reasons you don't understand, actual stress is usual ly lower case f."
+  ]
+ },
+ {
+  "n": 2,
+  "term": "Material strength (capital F)",
+  "topic": "Stress and safety",
+  "kind": "definition",
+  "her_words": [
+   "this stress has to be less than or equal to the material stress. The stress the material can resist. And that usually is a capital letter. Material strength is capped F."
+  ]
+ },
+ {
+  "n": 3,
+  "term": "Safety factor",
+  "topic": "Stress and safety",
+  "kind": "definition",
+  "her_words": [
+   "We don't design a force where if one more person walks into the room, the floor collapses."
+  ]
+ },
+ {
+  "n": 4,
+  "term": "Strain (epsilon)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Strain: Is it equal to the change in length, designated epsilon?"
+  ]
+ },
+ {
+  "n": 5,
+  "term": "Proportional limit",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "In the very beginning in the the stress it is a straight line. And every straight line has a slope. And the slope: We call this point a proportional limit. For loads greater than this, stress verses strain is not proportionate."
+  ]
+ },
+ {
+  "n": 6,
+  "term": "Elastic limit",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "If I take steel and stretch it and let it go it goes back to the original. No permanent deformation. So for loads between zero and the elastic limit."
+  ]
+ },
+ {
+  "n": 7,
+  "term": "Yield strength / yielding",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "get to a point of yield strength. The material who relaxes or creeps because of sustained load. It can't carry additional load. It has a lot of deformation. It's very, very saggy."
+  ]
+ },
+ {
+  "n": 8,
+  "term": "Plastic range",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "this area where we have a lot of deformation; no ability to increase our loadcarrying capacity: The rustic range."
+  ]
+ },
+ {
+  "n": 9,
+  "term": "Strain hardening",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Soon as it starts to harden we can resist additional load until it gets to it's maximum stress or ultimate strength."
+  ]
+ },
+ {
+  "n": 10,
+  "term": "Ultimate strength",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "until it gets to it's maximum stress or ultimate strength. What is the ultimate strength of the steel?"
+  ]
+ },
+ {
+  "n": 11,
+  "term": "Rupture",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "at some point, there is rupture when we are talking about tension. It snaps. Let's call this failure.",
+   "rupture. Which is a fancy way of saying ripping."
+  ]
+ },
+ {
+  "n": 12,
+  "term": "Specifications (Manual)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "this is the specifications. Out of this whole heavy book, these are the rules on specifications."
+  ]
+ },
+ {
+  "n": 13,
+  "term": "Commentary (gray pages)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "This gray part is an explanation of the rules. Everything else are tables to make design easier."
+  ]
+ },
+ {
+  "n": 14,
+  "term": "Table 2-4 (availability)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "if you go to the General and you go to table 2 4, what it tells you is: For different shapes, what is readily available. For different grades of steel, what is readily available."
+  ]
+ },
+ {
+  "n": 15,
+  "term": "A992",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "if I'm talking about wide flange, then the common strength of the material is A992 steel.",
+   "The Y flange s today are A 992. So they are 50 and distance is 65."
+  ]
+ },
+ {
+  "n": 16,
+  "term": "A36",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "the common seal at that time was 836. So you're going to be using the values for wide flange for a 36.",
+   "Plates and bashes are typically 36K SI. And FU 58AS I."
+  ]
+ },
+ {
+  "n": 17,
+  "term": "Structural steel (composition)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Structural steel: Is 98 percent iron, plus carbon, silicon, all different kind of elements. And that 2 percent and what it's actually made of influences certain properties."
+  ]
+ },
+ {
+  "n": 18,
+  "term": "Brittle (carbon)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "carbon gives hardness and strength so you might think that's a good thing, but the more carbon you have the more brittle the steel is."
+  ]
+ },
+ {
+  "n": 19,
+  "term": "Dimensions chapter",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "The next chapter is labelled Dimensions. And basically, it has all the different shapes that are specially available to do."
+  ]
+ },
+ {
+  "n": 20,
+  "term": "Section designation (W27x84)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "Everything you need to know about the shape is in the name. ... The second set tells you what the nominal depth is. ... The second is the weight."
+  ]
+ },
+ {
+  "n": 21,
+  "term": "Nominal depth",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "A w27 is about 27 inches deep. The 27 x29 is 27.6 inches deep."
+  ]
+ },
+ {
+  "n": 22,
+  "term": "Decimals vs fractions",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "The decimal is what we use as designers because that's accurate. The fractions: That's what the fabricator uses when they make shop drawings."
+  ]
+ },
+ {
+  "n": 23,
+  "term": "WT shape",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "It's half a W section so WT7 x45 is half W14 x90. Just sliced it in half."
+  ]
+ },
+ {
+  "n": 24,
+  "term": "Buckling",
+  "topic": "Steel behaviour",
+  "kind": "definition",
+  "her_words": [
+   "The limiting thing is compression and because steel is thin as compared to it's length. In compression it buckles.",
+   "if it becomes geometrically unstable, it buckles."
+  ]
+ },
+ {
+  "n": 25,
+  "term": "Fire rating",
+  "topic": "Steel behaviour",
+  "kind": "definition",
+  "her_words": [
+   "all office buildings have to have a two hour fire rate. It means you have two hours to evacuate the building."
+  ]
+ },
+ {
+  "n": 26,
+  "term": "Gravity loads",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "First, is the gravity loads. ... What are gravity loads? Dead loads and live loads."
+  ]
+ },
+ {
+  "n": 27,
+  "term": "Dead load",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Dead loads are loads that are there all the time."
+  ]
+ },
+ {
+  "n": 28,
+  "term": "Construction dead load / superimposed dead load",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Construction dead load is the structure imposed dead load is everything else. The idea is that it's there all the time."
+  ]
+ },
+ {
+  "n": 29,
+  "term": "Live load",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Live loads, on the other hand, come from the code because it has to do with use age. With occupancy."
+  ]
+ },
+ {
+  "n": 30,
+  "term": "Lateral loads",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "We also have lateral codes: Horizontal: The obvious one is wind, E Q and soil. And these are all considered live loads."
+  ]
+ },
+ {
+  "n": 31,
+  "term": "Allowable strength (ASD)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Allowable strength. The dog whistle. It means the safety factor is on the material side. We don't take 100 percent of the material strength; we take 60 percent."
+  ]
+ },
+ {
+  "n": 32,
+  "term": "Ultimate strength design / LRFD",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "This semester and next we are going to put the safety factor on the load side."
+  ]
+ },
+ {
+  "n": 33,
+  "term": "Overload factors",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Notice the safety factors are called overload factors. So if you're looking at just dead load alone we would increase by 40 percent."
+  ]
+ },
+ {
+  "n": 34,
+  "term": "Load combination (this class)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "In this class we will be using one load combination. One point two times the dead load and one point 6 live load."
+  ]
+ },
+ {
+  "n": 35,
+  "term": "Service / working loads (unfactored)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "If loads are called service loads or working loads, they have not been factored. If nothing is said about the loads that I have not been factored and we have the factors.",
+   "If they say nothing, it means it's unfactored."
+  ]
+ },
+ {
+  "n": 36,
+  "term": "Capacity reduction factor (phi)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "There's one more factor and smells and tastes like a safety factor, but technically it isn't. And that is called a capacity reduction factor. ... I think of it as a quality control factor."
+  ]
+ },
+ {
+  "n": 37,
+  "term": "Analysis vs design",
+  "topic": "Analysis and design",
+  "kind": "definition",
+  "her_words": [
+   "Both problems so far is analysis. We know what we have and the size of the member, we know the strength of the steel and calculate the capacity.",
+   "What I want to look at is design. It always feels uncomfortable. What do we know when we are designing? We've chosen the material. We're looking for the Geometric Property."
+  ]
+ },
+ {
+  "n": 38,
+  "term": "Tension member",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Today we're going to talk about tension members. Let's do a little bit review: Pulling forces"
+  ]
+ },
+ {
+  "n": 39,
+  "term": "Fy and Fu (two numbers)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "There are two numbers when we talk about strength of steel, and the stress value where we have yielding, and we have the stress value where we have strain hardening.",
+   "There are two numbers that define the strength of any steel. When it starts to yield and gets very, very saggy. And on a molecular level, it starts to again and it fails abruptly because it's brittle."
+  ]
+ },
+ {
+  "n": 40,
+  "term": "Yielding failure (gross area)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "When we're looking at yielding failure, we look at the gross section."
+  ]
+ },
+ {
+  "n": 41,
+  "term": "Rupture (net area)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Rupture we're looking at it at the reduced section. We are looking to find the smallest area."
+  ]
+ },
+ {
+  "n": 42,
+  "term": "Gross area",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Look up the gross area and multiply by 2. ... That's the gross area. Always look it up."
+  ]
+ },
+ {
+  "n": 43,
+  "term": "Net area",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "What is my net area? Is 3 square inches minus two little rectangles."
+  ]
+ },
+ {
+  "n": 44,
+  "term": "Bolt hole (standard)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Tension in the bolt hole is actually the bolt diameter plus an eighth of an inch."
+  ]
+ },
+ {
+  "n": 45,
+  "term": "First failure load",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "what we're looking for is the first failure load. ... The lowest, the first failure that's the maximum capacity of the system."
+  ]
+ },
+ {
+  "n": 46,
+  "term": "Stagger (s)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "The design or the design parallel to the tension force. It's a stagger."
+  ]
+ },
+ {
+  "n": 47,
+  "term": "Gage (g)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "the vertical distance or the spacing perpendicular to the tension course. We call it the gage."
+  ]
+ },
+ {
+  "n": 48,
+  "term": "s^2/4g correction",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "we add back a little bit of material because we know hypotonus of a tray angle that's the largest distance. We get back a little bit material. How much do we add back? It's S squared over 4g."
+  ]
+ },
+ {
+  "n": 49,
+  "term": "Net depth (d_net)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Rather than finding the smallest area, I was looking for the smallest depth and then multiply it by the thickness."
+  ]
+ },
+ {
+  "n": 50,
+  "term": "Effective net area / shear lag",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "It takes some time to get a hundred percent of this force into the top of the WT. ... You want a reduction factor to try to model this lag of the force."
+  ]
+ },
+ {
+  "n": 51,
+  "term": "Shear lag factor U (Table D3.1)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "If all standing elements are connected, the answer is 1.",
+   "almost like an efficiency number.",
+   "If all of the outstanding parts are not connected, then there's an efficiency number. A number less than one. Because it takes some amount of time for the entire area to be engaged."
+  ]
+ },
+ {
+  "n": 52,
+  "term": "Gusset plate",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "the forces are in the double angles and go through the bolts assuming they don't fail then into the gusset plate, then they go into the channel."
+  ]
+ },
+ {
+  "n": 53,
+  "term": "Splice",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Slice detail in real life looks like this. These plates would be welded."
+  ]
+ },
+ {
+  "n": 54,
+  "term": "Center of gravity (force location)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Where is this force? At the center of gravity."
+  ]
+ },
+ {
+  "n": 55,
+  "term": "L/r <= 300 (tension slenderness)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "We look to see that L /r is greater or equal to the length of 300. L over 300."
+  ]
+ },
+ {
+  "n": 56,
+  "term": "Crushing",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "If we exhaust the strengths of the steel, it crushes. ... Short columns crushed and failing."
+  ]
+ },
+ {
+  "n": 57,
+  "term": "Elastic (Euler) buckling",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Long columns fail and buckle. They become unstable about the weaker of two axis. Elastic fail happens way before the material sprain is exhausted."
+  ]
+ },
+ {
+  "n": 58,
+  "term": "Euler equation Pcr",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Pc r equals to my squared E I over L squared. I is a Geometric Property."
+  ]
+ },
+ {
+  "n": 59,
+  "term": "Radius of gyration r",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "If I ac knowledge the duration is equal to the square root of I/A",
+   "R is the radius integration"
+  ]
+ },
+ {
+  "n": 60,
+  "term": "Slenderness ratio KL/r",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "K equals the effective length factor L is the lateral unbraced length R is the radius integration KL/R is equal to slenderness ratio"
+  ]
+ },
+ {
+  "n": 61,
+  "term": "Effective length factor K",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "these are the theoretical effective length factors. A number we use to try to model conditions"
+  ]
+ },
+ {
+  "n": 62,
+  "term": "Effective length",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "We can say the effective blend is equal to F. What we're looking for is; there are two points of zero moment."
+  ]
+ },
+ {
+  "n": 63,
+  "term": "Flagpole",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Last, but not least, the flagpole: Not only move laterally, but also to rotate."
+  ]
+ },
+ {
+  "n": 64,
+  "term": "Braced frame",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "This was a brace frame. It's really a certain cancel truss."
+  ]
+ },
+ {
+  "n": 65,
+  "term": "Unbraced / moment frame",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Advantages of a moment frame that's unbraced: It provides flexibility for architectural design and layout. Disadvantages produces greater deflection and drift compared to that of braced frames or shear walls."
+  ]
+ },
+ {
+  "n": 66,
+  "term": "Sway vs non-sway K",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "wherever a compression member is part of a system that's allowed to sway, it's greater than 1. And where it's not allowed to sway ... it's one or less."
+  ]
+ },
+ {
+  "n": 67,
+  "term": "HSS",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "We have something called HSS's hollow structural shapes.",
+   "H SS (halo structural shape) 12 x12x blank It was a square tube."
+  ]
+ },
+ {
+  "n": 68,
+  "term": "Pipe weights",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "The interesting thing about pipes is they call them standard weight, extra strong, double extra strong. The diameter stays the same, but what changes is the thickness of the wall."
+  ]
+ },
+ {
+  "n": 69,
+  "term": "Inelastic buckling equation",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Stress and compression is equal to 0.6 58 Fu X's F y",
+   "the other one is an empirical formula. In the crushing range, the material strength is part of the equation."
+  ]
+ },
+ {
+  "n": 70,
+  "term": "Elastic/inelastic boundary 4.71 sqrt(E/Fy)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "The slender F Ratio is 4.71 over E over Fy. ... So if I was using F Y50k size steel, a slenderness ratio which separates the elastic"
+  ]
+ },
+ {
+  "n": 71,
+  "term": "Compression capacity phi Fcr Ag",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "the capacity is equal to five times F critical times A gross. There's no A net here"
+  ]
+ },
+ {
+  "n": 72,
+  "term": "Table 4-14 (Lc/r vs phi Fcr)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "What these tables give us is solving those two equations starting at the slenderness ratio of 1 and ending at the slenderness ratio of 200."
+  ]
+ },
+ {
+  "n": 73,
+  "term": "Lc/r vs KL/r (manual editions)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "open up the red manual instead of LC/ r they call it KL/ r."
+  ]
+ },
+ {
+  "n": 74,
+  "term": "Parallel-axis theorem",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "I tot equals I plus AD squared I re ct width x depth third over 12"
+  ]
+ },
+ {
+  "n": 75,
+  "term": "Weak axis / strong axis",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "If it's pinned then buckling about the weak axis it'll effect our plane before it crushes the bracing. And if it buckles about strong axis, the bracing goes along for the ride."
+  ]
+ },
+ {
+  "n": 76,
+  "term": "Column load tables (Table 4-1)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "these numbers here are the effective length. It's KL. Not KL over R. They already looked up the calculation and gave the capacity."
+  ]
+ },
+ {
+  "n": 77,
+  "term": "Truss chord as compression member",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Like all spanning members the top is in compression and the bottom cord is intention. But we're going to be designing this exactly the same way as we design columns."
+  ]
+ },
+ {
+  "n": 78,
+  "term": "Tributary area (column)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "In order to find a column load, I'm going to take a tributary area. It doesn't care how the beams are framed. Up and down, left to right. One way or another this typical column carries 30 feet by 40 feet of load."
+  ]
+ },
+ {
+  "n": 79,
+  "term": "Story lift (column splicing)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "As a pattern of cost savings for detailing. It makes for pure connecters.",
+   "It's less expensive with respect to labor if we design columns into story lift."
+  ]
+ },
+ {
+  "n": 80,
+  "term": "Splice plates / shims",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Steel shins meant to keep the plates from smoosh ing in taking bending.",
+   "each of these planes 44 1 kips goes through in baring. And then the plates have to supply the rest."
+  ]
+ },
+ {
+  "n": 81,
+  "term": "Beam / spanning member",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Where the load is perpendicular to the longitudinal axis. ... Loads are perpendicular to the longitudinal axis and it's physical response is it bends."
+  ]
+ },
+ {
+  "n": 82,
+  "term": "Bending as a couple",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "bending is both tension and compression, we can take our moment and resolve it into a couple"
+  ]
+ },
+ {
+  "n": 83,
+  "term": "Compression flange",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "you're going to be looking at the top flange, you get your compression member like a column."
+  ]
+ },
+ {
+  "n": 84,
+  "term": "Plastic moment / full plasticity",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "once the extreme fiber yields, we don't get more stress here until the entire section yields. ... And the end of the rope for us is when full plasticity happens."
+  ]
+ },
+ {
+  "n": 85,
+  "term": "Plastic section modulus Z",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "On the right hand side of the page, that's the Geometric Property that resist bending in the plastic zone."
+  ]
+ },
+ {
+  "n": 86,
+  "term": "Lateral bracing / unbraced length of compression flange",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Full lateral bracing (unbraced length of the compression flange is zero."
+  ]
+ },
+ {
+  "n": 87,
+  "term": "Continuously braced",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "for all of these cases, the compression flange is continuously that's the most compression load it can resist."
+  ]
+ },
+ {
+  "n": 88,
+  "term": "Shear studs / composite deck",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "We weld sheer studs and we power a concrete slab. What's important is that we have steel studs welded to it."
+  ]
+ },
+ {
+  "n": 89,
+  "term": "Metal deck as form",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "the metal deck is I plus that it's a same place form."
+  ]
+ },
+ {
+  "n": 90,
+  "term": "Economy table (Table 3-2)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "The economy table ... the one at the very top of each grouping is in boldface and the one in boldface is the cheapest. It's the lightest."
+  ]
+ },
+ {
+  "n": 91,
+  "term": "Point load vs uniform load (sources)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Point load: It's either a beam reaction or transferring a column. Uniform load: A certain amount of tributary on the floor or supporting a wall."
+  ]
+ },
+ {
+  "n": 92,
+  "term": "Mmax formulas",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "M max equals to W L squared over 8 plus Pa."
+  ]
+ },
+ {
+  "n": 93,
+  "term": "One-way slab direction",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "load flows in the direction of least resistance."
+  ]
+ },
+ {
+  "n": 94,
+  "term": "Girder",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "when we look at the girders they are just going to have one point load on them equal to two become rep actions."
+  ]
+ },
+ {
+  "n": 95,
+  "term": "Tributary width (beam)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "The span length is 25 feet. Tributary width was 10 feet."
+  ]
+ },
+ {
+  "n": 96,
+  "term": "Partitions (as psf)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Usual partitions if you go into a building code, it's again a square per foot number because we don't redesign a floor. We move around the partitions."
+  ]
+ },
+ {
+  "n": 97,
+  "term": "Concrete unit weight",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "A blob that's one foot by one foot by one foot weighs 150 pounds."
+  ]
+ },
+ {
+  "n": 98,
+  "term": "Depth limitation",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "What if we have depth limitations? There's only so high you can build."
+  ]
+ },
+ {
+  "n": 99,
+  "term": "Ad^2",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Most of the moment of inertia is the area of the flange times it's distance squared."
+  ]
+ },
+ {
+  "n": 100,
+  "term": "Accreditation / RA",
+  "topic": "The profession",
+  "kind": "definition",
+  "her_words": [
+   "You can call yourself a designer, but can not use the word architect until you have R A next to your name."
+  ]
+ },
+ {
+  "n": 101,
+  "term": "Yield strength",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "the stress at which there is a substantial elongation without a corresponding increase in stress"
+  ]
+ },
+ {
+  "n": 102,
+  "term": "Modulus of elasticity",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "in the elastic range, the ratio of stress to strain"
+  ]
+ },
+ {
+  "n": 103,
+  "term": "Proportional limit (her slide)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Proportional Limit: Stress/Strain diagram is linear up to this point; the slope of the straight-line E= Modulus of elasticity"
+  ]
+ },
+ {
+  "n": 104,
+  "term": "Elastic limit (her slide)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Elastic Limit: Largest stress the material can resist without being permanently deformed"
+  ]
+ },
+ {
+  "n": 105,
+  "term": "Yield point (Fy)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Fy Yield Point: the stress at which there is substantial elongation (strain) w/o a corresponding increase in stress",
+   "First stress in a material at which an increase in strain occurs without an increase in stress as defined by ASTM."
+  ]
+ },
+ {
+  "n": 106,
+  "term": "Plastic range (her slide)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Plastic Range = local deformations before failure - it is a ductile material, allowing stresses to be \"redistributed\"",
+   "(vs a brittle material such as concrete -> sudden failure)"
+  ]
+ },
+ {
+  "n": 107,
+  "term": "Strain hardening (her slide)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Strain hardening = unacceptably large deformations"
+  ]
+ },
+ {
+  "n": 108,
+  "term": "Ultimate strength (Fu)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Fu Ultimate Strength: Highest Stress on the Stress/Strain diagram",
+   "Maximum tensile stress that a material is capable of sustaining as defined by ASTM."
+  ]
+ },
+ {
+  "n": 109,
+  "term": "Rupture strength (her slide)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Rupture Strength: Stress at failure"
+  ]
+ },
+ {
+  "n": 110,
+  "term": "Necking",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Actual Rupture Strength (necking)",
+   "NECKING"
+  ]
+ },
+ {
+  "n": 111,
+  "term": "Points and regions on her stress-strain curve (slide p.2)",
+  "topic": "Stress-strain curve",
+  "kind": "list",
+  "her_words": [
+   "Proportional Limit",
+   "Elastic Limit",
+   "Yield pt",
+   "Ultimate Strength",
+   "Rupture Strength",
+   "Actual Rupture Strength (necking)"
+  ]
+ },
+ {
+  "n": 112,
+  "term": "Strain regions on her stress-strain curve (slide p.2)",
+  "topic": "Stress-strain curve",
+  "kind": "list",
+  "her_words": [
+   "Elastic Strain",
+   "Plastic Strain",
+   "Strain Hardening",
+   "Failure"
+  ]
+ },
+ {
+  "n": 113,
+  "term": "Hooke's law",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Hooke's Law says Stress is Proportional to Strain"
+  ]
+ },
+ {
+  "n": 114,
+  "term": "Modulus of elasticity of steel (E = 29,000 ksi)",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "E steel = 29,000 ksi a constant",
+   "Modulus of elasticity of steel = 29,000 ksi (200 000 MPa)",
+   "E = 29,000 ksi"
+  ]
+ },
+ {
+  "n": 115,
+  "term": "Shear modulus of steel (G = 11,200 ksi)",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "Shear modulus of elasticity of steel = 11,200 ksi (77 200 MPa)",
+   "G = shear modulus of elasticity of steel"
+  ]
+ },
+ {
+  "n": 116,
+  "term": "Poisson's ratio of steel (0.3)",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "= Poisson's ratio = 0.3",
+   "= 0.3 (Poisson's ratio)"
+  ]
+ },
+ {
+  "n": 117,
+  "term": "Thermal expansion of steel (AISC gives a value only above 150 F)",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "For structural and reinforcing steels: For calculations at temperatures above 150 deg F (66 deg C), the coefficient of thermal expansion is 7.8 x 10-6/ deg F (1.4 x 10-5/ deg C)."
+  ]
+ },
+ {
+  "n": 118,
+  "term": "Density (unit weight) of steel = 490 lb/cu ft",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "Structural steel | 490 lb/cu ft"
+  ]
+ },
+ {
+  "n": 119,
+  "term": "Steel composition: iron plus carbon and alloys (her slide)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Structural Steel is 98% Iron Plus",
+   "Carbon, Silicon, Manganese, Sulfur, Phosphorus etc",
+   "Chromium, silicon & nickel produce higher strength, but more expensive"
+  ]
+ },
+ {
+  "n": 120,
+  "term": "Ductile (ductility)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Ductile (withstands large deformations w/o failure)",
+   "it is a ductile material, allowing stresses to be \"redistributed\""
+  ]
+ },
+ {
+  "n": 121,
+  "term": "Brittle (vs ductile)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "(vs a brittle material such as concrete -> sudden failure)",
+   "Carbon gives hardness & strength, but the more carbon the more brittle (ex: bad weldability)",
+   "it fails abruptly because it's brittle"
+  ]
+ },
+ {
+  "n": 122,
+  "term": "Advantages of steel (her slide)",
+  "topic": "Steel as a material",
+  "kind": "list",
+  "her_words": [
+   "High strength to weight ratio (cost, and impact wrt foundations)",
+   "Consistent material - uniform properties do not change over time",
+   "Long lasting (with proper maintenance)",
+   "Ductile (withstands large deformations w/o failure)",
+   "Standard sizes",
+   "Speed of erection",
+   "Possible reuse (scrap value)"
+  ]
+ },
+ {
+  "n": 123,
+  "term": "Disadvantages of steel (her slide)",
+  "topic": "Steel as a material",
+  "kind": "list",
+  "her_words": [
+   "Maintenance costs (Painting)",
+   "Corrosion (rust) - note rust scale can be 12x original thickness",
+   "Fireproofing costs - steel an excellent conductor of heat",
+   "Strength reduction at high temperatures",
+   "Buckling - byproduct of high strength to weight",
+   "Fatigue - due to stress reversals (wind)",
+   "Cites: Delivery of large members"
+  ]
+ },
+ {
+  "n": 124,
+  "term": "High strength to weight ratio",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "High strength to weight ratio (cost, and impact wrt foundations)",
+   "High strength to weight. Given it's strength, steel is a very light material."
+  ]
+ },
+ {
+  "n": 125,
+  "term": "Consistent material (uniform properties)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Consistent material - uniform properties do not change over time",
+   "steel is a consistent material. We have high confidence. Uniform properties that don't change over time.",
+   "Steel mills are very, very reliable today. What we see in the steel manual is what we get."
+  ]
+ },
+ {
+  "n": 126,
+  "term": "Long lasting (with proper maintenance)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Long lasting (with proper maintenance)",
+   "It's long lasting assuming you maintain it."
+  ]
+ },
+ {
+  "n": 127,
+  "term": "Standard sizes",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Standard sizes",
+   "It use d to be way back in the early 1900s that every steel mill had it's own steel manual. So you had to know where you were going to get the steel. But today, even internationally it's all standardized."
+  ]
+ },
+ {
+  "n": 128,
+  "term": "Speed of erection",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Speed of erection",
+   "Speed of erection. Put up a steel frame very fast. Concrete frames, you're building two structures. So time is of the essence."
+  ]
+ },
+ {
+  "n": 129,
+  "term": "Possible reuse (scrap value)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Possible reuse (scrap value)",
+   "And there is some scrap value. You can take apart a steel frame, burn off the edges and then use the rest of it again."
+  ]
+ },
+ {
+  "n": 130,
+  "term": "Maintenance costs (painting)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Maintenance costs (Painting)",
+   "They have to be painted and have to be maintained."
+  ]
+ },
+ {
+  "n": 131,
+  "term": "Corrosion (rust)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Corrosion (rust) - note rust scale can be 12x original thickness",
+   "How about rust? Steel; all metals rust. They have to be painted and have to be maintained.",
+   "It gets very thick and pushes up on the grid."
+  ]
+ },
+ {
+  "n": 132,
+  "term": "Fireproofing (steel and fire)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Fireproofing costs - steel an excellent conductor of heat",
+   "Steel is an excellent conductor of heat.",
+   "It isn't to save the building, it's to make sure people can evacuate before the building collapses.",
+   "One of the bad things about steel is when it's exposed to high temperatures. It really just looses it's strength and becomes ribbon candy."
+  ]
+ },
+ {
+  "n": 133,
+  "term": "Buckling as a disadvantage of steel (her slide)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Buckling - byproduct of high strength to weight",
+   "Where does it fail in compression? Buckling failure."
+  ]
+ },
+ {
+  "n": 134,
+  "term": "Fatigue",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Fatigue - due to stress reversals (wind)",
+   "Limit state of crack initiation and growth resulting from repeated application of live loads."
+  ]
+ },
+ {
+  "n": 135,
+  "term": "Delivery of large members",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Cites: Delivery of large members",
+   "And another possible disadvantage is: How do you bring in large pieces? Delivery."
+  ]
+ },
+ {
+  "n": 136,
+  "term": "Steel is good in tension, weak in compression",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Steel is very good in tension. The limiting thing is compression and because steel is thin as compared to it's length. In compression it buckles.",
+   "If we don't make swiss cheese out of steel, it's really good intention. The weak link is compression because of buckling."
+  ]
+ },
+ {
+  "n": 137,
+  "term": "Why use steel? (her list, said in class 2026-08-26)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Why would we build in structural steel? What are the advantages?",
+   "So if we have a list of advantages you know we have an list of disadvantages. What are the disadvantages of steel?"
+  ]
+ },
+ {
+  "n": 138,
+  "term": "Dead load (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Dead Loads = loads that are there all the time"
+  ]
+ },
+ {
+  "n": 139,
+  "term": "Construction dead load (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Construction DL : self-weight of the structural elements"
+  ]
+ },
+ {
+  "n": 140,
+  "term": "Superimposed dead load (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Superimposed DL : finishes, partitions, MEP, ceilings, etc."
+  ]
+ },
+ {
+  "n": 141,
+  "term": "Live load (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Loads that come & go, determined through codes: usage & geographical location"
+  ]
+ },
+ {
+  "n": 142,
+  "term": "Gravity loads (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Gravity Loads - Act in the direction of gravity"
+  ]
+ },
+ {
+  "n": 143,
+  "term": "Lateral loads (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Lateral Loads - Wind, Earthquake, Soil & Hydrostatic pressure"
+  ]
+ },
+ {
+  "n": 144,
+  "term": "Safety factor: why it is needed (her slide)",
+  "topic": "Stress and safety",
+  "kind": "list",
+  "her_words": [
+   "Approximations in assumptions, and analysis",
+   "Quality of workmanship",
+   "Residual stresses or stress concentrations (forcing a connection during construction)",
+   "Accidental overload",
+   "Importance of member & consequence of failure (beam vs column)"
+  ]
+ },
+ {
+  "n": 145,
+  "term": "Service loads and working loads (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Unfactored loads are called Service loads or Working Loads",
+   "If loads are not labeled as Factored loads - you must assume they are unfactored loads"
+  ]
+ },
+ {
+  "n": 146,
+  "term": "Allowable Stress Design -- ASD (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "This is called Allowable Stress Design (ASD)",
+   "Design was limited to the elastic range",
+   "Reduced by a Safety factor < 1.0",
+   "Method of proportioning structural components such that the allowable strength equals or exceeds the required strength of the component under the action of the ASD load combinations."
+  ]
+ },
+ {
+  "n": 147,
+  "term": "LRFD -- Load Reduction Factored Design (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "This is called Load Reduction Factored Design (LRFD)",
+   "Design will be designing at the limit state of the material",
+   "Method of proportioning structural components such that the design strength equals or exceeds the required strength of the component under the action of the LRFD load combinations."
+  ]
+ },
+ {
+  "n": 148,
+  "term": "Resistance factor (phi)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "quality control factor, less than or equal to one",
+   "There's one more factor and smells and tastes like a safety factor, but technically it isn't. And that is called a capacity reduction factor.",
+   "I think of it as a quality control factor.",
+   "Factor that accounts for unavoidable deviations of the nominal strength from the actual strength and for the manner and consequences of failure."
+  ]
+ },
+ {
+  "n": 149,
+  "term": "Load factor -- definition (AISC glossary)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Factor that accounts for deviations of the nominal load from the actual load, for uncertainties in the analysis that transforms the load into a load effect and for the probability that more than one extreme load will occur simultaneously."
+  ]
+ },
+ {
+  "n": 150,
+  "term": "Overload factors (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "SF: Overload factors, typically greater than 1.0"
+  ]
+ },
+ {
+  "n": 151,
+  "term": "Safety factor Omega (ASD) -- definition (AISC glossary)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "Factor that accounts for deviations of the actual strength from the nominal strength, deviations of the actual load from the nominal load, uncertainties in the analysis that transforms the load into a load effect, and for the manner and consequences of failure."
+  ]
+ },
+ {
+  "n": 152,
+  "term": "Factored load (U, Pu, Mu)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "the design or factored load",
+   "Product of a load factor and the nominal load."
+  ]
+ },
+ {
+  "n": 153,
+  "term": "Load combination 1.2D + 1.6L (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "definition",
+  "her_words": [
+   "For this class, typically: U = 1.2 D + 1.6 L",
+   "Typically, compare all reasonable possible combinations - and design each element for its worst case"
+  ]
+ },
+ {
+  "n": 154,
+  "term": "Load symbols U, D, L, Lr, S, R, W, E (her slide)",
+  "topic": "Loads and LRFD",
+  "kind": "list",
+  "her_words": [
+   "the design or factored load",
+   "dead load",
+   "live load due to occupancy",
+   "roof live load",
+   "snow load",
+   "nominal load due to initial rainwater or ice, exclusive of the ponding contribution",
+   "wind load",
+   "earthquake load"
+  ]
+ },
+ {
+  "n": 155,
+  "term": "Tension members: possible issues (her slide wk2 p.1)",
+  "topic": "Tension members",
+  "kind": "list",
+  "her_words": [
+   "Difficulty in connections",
+   "Very little stiffness (can sag under its own weight)",
+   "Possible vibration or \"whipping\" (think guitar string)"
+  ]
+ },
+ {
+  "n": 156,
+  "term": "Two tension checks: yielding on Ag, rupture on Ae (her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Hence, the code requires two checks: Yielding at the gross area Or Rupture at the effective net Area",
+   "w/o fracture can resist a load greater than AgFy because of strain hardening",
+   "however it will lengthen a great deal, slack introduced may lead to failure",
+   "shall be the lower value obtained according to the limit states of tensile yielding in the gross section and tensile rupture in the net section."
+  ]
+ },
+ {
+  "n": 157,
+  "term": "Bolt hole width in the net area (AISC B4.3b on her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "In computing net area for tension and shear, the width of a bolt hole shall be taken as 1/16 in. (2 mm) greater than the nominal dimension of the hole."
+  ]
+ },
+ {
+  "n": 158,
+  "term": "Gross area (Spec B4.3a on her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "The gross area, Ag, of a member is the total cross-sectional area.",
+   "Gross area of member, in.2 (mm2)"
+  ]
+ },
+ {
+  "n": 159,
+  "term": "Net area (Spec B4.3b on her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "The net area, An, of a member is the sum of the products of the thickness and the net width of each element computed as follows:",
+   "Gross area reduced to account for removed material."
+  ]
+ },
+ {
+  "n": 160,
+  "term": "Effective net area Ae = An U (Spec D3 on her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "where U, the shear lag factor, is determined as shown in Table D3.1.",
+   "Net area modified to account for the effect of shear lag."
+  ]
+ },
+ {
+  "n": 161,
+  "term": "Shear lag factor U (her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "U = reduction coefficient to account for a lag in transferring a tension force from the bolts into the member",
+   "U models 'lag' before entire X-Area is effective"
+  ]
+ },
+ {
+  "n": 162,
+  "term": "Shear lag (definition)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Nonuniform tensile stress distribution in a member or connecting element in the vicinity of a connection.",
+   "It takes some time to get a hundred percent of this force into the top of the WT."
+  ]
+ },
+ {
+  "n": 163,
+  "term": "Block shear rupture",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "FOR ROLLED SHAPES ONLY - CHECK 'BLOCK SHEAR'",
+   "Note: 2 phenomena are going on simultaneously - Shear + Tension.",
+   "Anv = Net Area in Shear",
+   "Ant = Net Area in tension",
+   "Agv = Gross Area in Shear",
+   "In a connection, limit state of tension rupture along one path and shear yielding or shear rupture along another path."
+  ]
+ },
+ {
+  "n": 164,
+  "term": "Stagger / pitch s (her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "s = longitudinal c-to-c spacing, pitch (parallel to P tension)",
+   "Longitudinal center-to-center spacing of fasteners."
+  ]
+ },
+ {
+  "n": 165,
+  "term": "Gage g (her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "g = transverse c-to-c spacing, gage (perp. to P tension)",
+   "Transverse center-to-center spacing of fasteners.",
+   "For angles, the gage for bolt holes in opposite adjacent legs shall be the sum of the gages from the back of the angles less the thickness."
+  ]
+ },
+ {
+  "n": 166,
+  "term": "Net area with staggered holes: An = Ag - holes + s^2/4g (her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "An = Ag - holes + s^2/4g",
+   "add back material for each diagonal",
+   "CHECK ALL POSSIBLE PATHS FOR LEAST Anet (dnet)"
+  ]
+ },
+ {
+  "n": 167,
+  "term": "Tension slenderness limit L/r 300 (Spec D1 on her slide)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "There is no maximum slenderness limit for members in tension.",
+   "the slenderness ratio of the member as fabricated-taken as the fabricated length of the member divided by the least radius of gyration of the section-preferably should not exceed 300."
+  ]
+ },
+ {
+  "n": 168,
+  "term": "Shear lag factor U: Case 1 (all elements connected)",
+  "topic": "Tension members",
+  "kind": "table_row",
+  "her_words": [
+   "if all outstanding elements are connected, U = 1.0",
+   "All tension members where the tension load is transmitted directly to each of the cross-sectional elements by fasteners or welds (except as in Cases 4, 5, and 6)."
+  ]
+ },
+ {
+  "n": 169,
+  "term": "Shear lag factor U: Case 7 (W, M, S, HP, WT)",
+  "topic": "Tension members",
+  "kind": "table_row",
+  "her_words": [
+   "Connected through the flanges w/ 3 or more fasteners per line - line = parallel to force.",
+   "bf >= (2/3)d -> U = 0.9",
+   "bf < (2/3)d -> U = 0.85",
+   "Connected through Web, 4 or more fasteners per line.",
+   "U = 0.70",
+   "W-, M-, S-, or HP-shapes, or tees cut from these shapes. (If U is calculated per Case 2, the larger value is permitted to be used.)"
+  ]
+ },
+ {
+  "n": 170,
+  "term": "Shear lag factor U: Case 8 (single and double angles)",
+  "topic": "Tension members",
+  "kind": "table_row",
+  "her_words": [
+   "4 or more fasteners per line: U = 0.80",
+   "3 fasteners per line: U = 0.60",
+   "in either leg, parallel to force",
+   "Do Not use 2 or less fasteners",
+   "Single and double angles. (If U is calculated per Case 2, the larger value is permitted to be used.)"
+  ]
+ },
+ {
+  "n": 171,
+  "term": "Shear lag factor U: Case 2 (general, U = 1 - x/l)",
+  "topic": "Tension members",
+  "kind": "table_row",
+  "her_words": [
+   "All tension members, except HSS, where the tension load is transmitted to some but not all of the cross-sectional elements by fasteners or by longitudinal welds in combination with transverse welds.",
+   "Alternatively, Case 7 is permitted for W, M, S, and HP shapes and Case 8 is permitted for angles."
+  ]
+ },
+ {
+  "n": 172,
+  "term": "Shear lag factor U: Cases 3-6 (welds, HSS gussets)",
+  "topic": "Tension members",
+  "kind": "table_row",
+  "her_words": [
+   "All tension members where the tension load is transmitted only by transverse welds to some but not all of the cross-sectional elements.",
+   "Plates, angles, channels with welds at heels, tees, and W-shapes with connected elements, where the tension load is transmitted by longitudinal welds only.",
+   "Round and rectangular HSS with single concentric gusset through slots in the HSS.",
+   "Rectangular HSS with two side gusset plates."
+  ]
+ },
+ {
+  "n": 173,
+  "term": "Design vs analysis (her slides)",
+  "topic": "Analysis and design",
+  "kind": "definition",
+  "her_words": [
+   "Design: know LOAD & Fmat'l, choose GEO. PROP",
+   "Analysis: know GEO. PROP & Fmat'l, calculate LOAD",
+   "Know the load, must chose a size",
+   "Design is trial & error",
+   "Know the section size: know A_g & r"
+  ]
+ },
+ {
+  "n": 174,
+  "term": "Geometric property (the three things: load, geometric property, material)",
+  "topic": "Analysis and design",
+  "kind": "definition",
+  "her_words": [
+   "There's always 3 things: The load. Geometric property. The material. You will know two out of the three.",
+   "If we're looking at axial loads, it's area. If we're looking at bending Geometric Property is the section module."
+  ]
+ },
+ {
+  "n": 175,
+  "term": "Crushing vs buckling: the two failure modes of a column",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Compression, we have two failure modes. If we exhaust the strengths of the steel, it crushes. And if it becomes geometrically unstable, it buckles.",
+   "Short Columns fail by crushing",
+   "Material strength is exhausted",
+   "Inelastic Failure",
+   "Long Columns fail by buckling",
+   "Column Instability",
+   "Elastic Failure - Failure before the elastic limit is reached",
+   "Buckling: Long column-elastic instability."
+  ]
+ },
+ {
+  "n": 176,
+  "term": "Euler's formula and what it is missing (her slides)",
+  "topic": "Compression members",
+  "kind": "list",
+  "her_words": [
+   "No Safety Factor",
+   "Independent of material strength",
+   "Assumed pin ends",
+   "Valid only in the elastic range"
+  ]
+ },
+ {
+  "n": 177,
+  "term": "Euler's formula (her slide wk3 p.2)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "In the 1700's Euler recognized the significance of Buckling & its relationship to Slenderness",
+   "Note that as the column length becomes very long, the critical load becomes very small, approaching zero as a limit.",
+   "High loads result in high stresses, which cause crushing rather than buckling."
+  ]
+ },
+ {
+  "n": 178,
+  "term": "Radius of gyration r (her slide)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "r = radius of gyration (\"measure of lateral stiffness\")",
+   "Knowing Radius of Gyration:",
+   "Radius of gyration, in. (mm)"
+  ]
+ },
+ {
+  "n": 179,
+  "term": "KL/r symbols and the slenderness limit 200 (her slide)",
+  "topic": "Compression members",
+  "kind": "list",
+  "her_words": [
+   "K = effective length factor",
+   "L = Laterally Unbraced length",
+   "r = radius of gyration (\"measure of lateral stiffness\")",
+   "L_c/r = KL/r <= 200 - \"Slenderness Ratio\""
+  ]
+ },
+ {
+  "n": 180,
+  "term": "Slenderness: more slender means less load (her slide)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "As a compression member becomes more slender, the amount of load it can carry before buckling is smaller",
+   "The longer a compression member is the quicker it fails."
+  ]
+ },
+ {
+  "n": 181,
+  "term": "Effective length KL (her slide)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Define: KL = Effective Length",
+   "Distance between Inflection Points / Distance between Points of Zero Moment",
+   "Length of an otherwise identical compression member with the same strength when analyzed with simple end conditions."
+  ]
+ },
+ {
+  "n": 182,
+  "term": "Effective length factor K (AISC glossary)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Ratio between the effective length and the unbraced length of the member.",
+   "K = effective length factor"
+  ]
+ },
+ {
+  "n": 183,
+  "term": "Unbraced length (AISC glossary)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Distance between braced points of a member, measured between the centers of gravity of the bracing members.",
+   "L = Laterally Unbraced length"
+  ]
+ },
+ {
+  "n": 184,
+  "term": "Sidesway",
+  "topic": "Frames and bracing",
+  "kind": "definition",
+  "her_words": [
+   "Column is in this position after sidesway and joint rotation.",
+   "K > 1.0",
+   "K <= 1.0",
+   "wherever a compression member is part of a system that's allowed to sway, it's greater than 1.",
+   "Stability limit state involving lateral sidesway instability of a frame."
+  ]
+ },
+ {
+  "n": 185,
+  "term": "Unbraced (moment) frame (her slide)",
+  "topic": "Frames and bracing",
+  "kind": "definition",
+  "her_words": [
+   "An unbraced frame must depend on the stiffness of each member and the rotational rigidity of the joints",
+   "Framing system that provides resistance to lateral loads and provides stability to the structural system, primarily by shear and flexure of the framing members and their connections."
+  ]
+ },
+ {
+  "n": 186,
+  "term": "Braced frame (her slide)",
+  "topic": "Frames and bracing",
+  "kind": "definition",
+  "her_words": [
+   "A braced frame sidesway is prohibited by bracing, shear walls or lateral support from adjoining structures",
+   "Essentially vertical truss system that provides resistance to lateral forces and provides stability for the structural system."
+  ]
+ },
+ {
+  "n": 187,
+  "term": "Advantages of an unbraced (moment) frame",
+  "topic": "Frames and bracing",
+  "kind": "list",
+  "her_words": [
+   "Provides flexibility for architectural design and layout"
+  ]
+ },
+ {
+  "n": 188,
+  "term": "Disadvantages of an unbraced (moment) frame",
+  "topic": "Frames and bracing",
+  "kind": "list",
+  "her_words": [
+   "Produces greater deflection and drift compared to that of braced frames or shear walls",
+   "Produces localized stress concentrations at rigid joints",
+   "Requires care in the erection of connections in order to resist lateral loads properly",
+   "Expensive moment connections"
+  ]
+ },
+ {
+  "n": 189,
+  "term": "Advantages of a braced frame",
+  "topic": "Frames and bracing",
+  "kind": "list",
+  "her_words": [
+   "Can be located internally or externally for flexibility of architectural design",
+   "Accommodates service penetrations",
+   "Can be located within partition walls",
+   "No need for moment connections"
+  ]
+ },
+ {
+  "n": 190,
+  "term": "Disadvantages of a braced frame",
+  "topic": "Frames and bracing",
+  "kind": "list",
+  "her_words": [
+   "Produces problems for a layout of windows and doors due to obstruction of bracings",
+   "Requires fireproofing materials for steel members so that takes up space",
+   "Need for large gusset plates for connections between beams and columns"
+  ]
+ },
+ {
+  "n": 191,
+  "term": "Elastic vs inelastic buckling: Eqn 3-2 and Eqn 3-3 (her slide)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "NOTE: Empirical Equation based on material Strength (F_y) ~= parabolic",
+   "NOTE: Euler Equation w/ SF ~= 1.15",
+   "TWO EQUATIONS",
+   "One is the oiler equation except we added a safety factor to it and the other one is an empirical formula. In the crushing range, the material strength is part of the equation."
+  ]
+ },
+ {
+  "n": 192,
+  "term": "Elastic / inelastic boundary KL/r for Fy = 50 ksi",
+  "topic": "Compression members",
+  "kind": "table_row",
+  "her_words": [
+   "113 | 50 ksi",
+   "You know it's at 113."
+  ]
+ },
+ {
+  "n": 193,
+  "term": "Elastic / inelastic boundary KL/r for Fy = 46 ksi",
+  "topic": "Compression members",
+  "kind": "table_row",
+  "her_words": [
+   "118 | 46 ksi"
+  ]
+ },
+ {
+  "n": 194,
+  "term": "Elastic / inelastic boundary KL/r for Fy = 36 ksi",
+  "topic": "Compression members",
+  "kind": "table_row",
+  "her_words": [
+   "134 | 36 ksi"
+  ]
+ },
+ {
+  "n": 195,
+  "term": "Controlling slenderness when KxLx = KyLy (her slide)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "L/r_y is the critical slenderness & will yield the first failure load",
+   "IF K_xL_x = K_yL_y then KL/r_y is always the maximum slenderness ratio, and the compression member will fail first, buckle about the y-axis.",
+   "Cannot determine KL/r|_max by observation",
+   "If the lengths are the same in both directions, the weak axis will fail first."
+  ]
+ },
+ {
+  "n": 196,
+  "term": "Column load tables Table 4-1: how they are organized (her slide wk4 p.3)",
+  "topic": "Compression members",
+  "kind": "list",
+  "her_words": [
+   "Tables organized by different steel strength, F_y",
+   "Column capacity is organized by KL in feet, with respect to r_y",
+   "Shapes are organized first by depth, then by weight",
+   "Phi = 0.9 for compression members",
+   "This table is limited to K_L_x = K_L_y"
+  ]
+ },
+ {
+  "n": 197,
+  "term": "Table 4-14 critical stress table (her slide wk3 p.17)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "AISC Table 4-14 pgs 4-228 through 232",
+   "Calculates PhiF_n from L_c = KL/r = 1 -> 200 (limit), for F_y = 35, 36, 46, 50, 65, & 70 using eqns. 3-2 & 3-3"
+  ]
+ },
+ {
+  "n": 198,
+  "term": "Compression members: phi = 0.90",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "phi = 0.90",
+   "Of course, they use.9 for compression."
+  ]
+ },
+ {
+  "n": 199,
+  "term": "Bending: phi = 0.90",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "For bending 0/= to 0.9.",
+   "If you're using LR85 for bending is quote 9"
+  ]
+ },
+ {
+  "n": 200,
+  "term": "Tension: phi = 0.90 on yielding, 0.75 on rupture",
+  "topic": "Material constants",
+  "kind": "constant",
+  "her_words": [
+   "Capacity of structural steel intention is equal to either 0.9F y times the gross area that would be yielding failure Or.75 equals Fu times the affective net area"
+  ]
+ },
+ {
+  "n": 201,
+  "term": "Bracing is also a compression member: 2 percent rule (her slide)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "must be able to resist 2% of Column axial load",
+   "Member or system that provides stiffness and strength to limit the out-of-plane movement of another member at a brace point."
+  ]
+ },
+ {
+  "n": 202,
+  "term": "Reinforcing a column with cover plates (her slide and class)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Idea: More AD^2 [is] better [underlined] than more I",
+   "Same amount of material, but turning them and making a box rather than a reinforced eye is more rigid."
+  ]
+ },
+ {
+  "n": 203,
+  "term": "Elastic section modulus S",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "If we're looking at bending Geometric Property is the section module.",
+   "Elastic section modulus taken about the x-axis, in.3 (mm3)"
+  ]
+ },
+ {
+  "n": 204,
+  "term": "Plastic section modulus Zx (AISC symbols)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Plastic section modulus taken about the x-axis, in.3 (mm3)"
+  ]
+ },
+ {
+  "n": 205,
+  "term": "Moment of inertia I",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Most of the moment of inertia is the area of the flange times it's distance squared.",
+   "If I asked you what is the moment of inertia about the x axis for the regular 14x 90. That's pretty easy. You just have to find it.",
+   "moment of inertia about the principal axes, in.4 (mm4)"
+  ]
+ },
+ {
+  "n": 206,
+  "term": "Beam (AISC glossary)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Nominally horizontal structural member that has the primary function of resisting bending moments.",
+   "Loads are perpendicular to the longitudinal axis and it's physical response is it bends."
+  ]
+ },
+ {
+  "n": 207,
+  "term": "Column (AISC glossary)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Nominally vertical structural member that has the primary function of resisting axial compressive force."
+  ]
+ },
+ {
+  "n": 208,
+  "term": "Beam-column (AISC glossary)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Structural member that resists both axial force and bending moment."
+  ]
+ },
+ {
+  "n": 209,
+  "term": "Plastic moment Mp (AISC glossary)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Theoretical resisting moment developed within a fully yielded cross section.",
+   "Fully yielded zone that forms in a structural member when the plastic moment is attained.",
+   "And the end of the rope for us is when full plasticity happens."
+  ]
+ },
+ {
+  "n": 210,
+  "term": "Compact section",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Section that can reach the plastic moment before local buckling occurs as defined by the element width-to-thickness ratio less than or equal to lambda_p."
+  ]
+ },
+ {
+  "n": 211,
+  "term": "Noncompact section",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Section that is not able to reach the plastic moment before inelastic local buckling occurs as defined by the element width-to-thickness ratio greater than lambda_p and less than or equal to lambda_r."
+  ]
+ },
+ {
+  "n": 212,
+  "term": "Slender-element section",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Section that is able to only reach a strength limited by local buckling of an element defined by element width-to-thickness ratio greater than lambda_r."
+  ]
+ },
+ {
+  "n": 213,
+  "term": "Lateral-torsional buckling",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Buckling mode of a flexural member involving deflection out of the plane of bending occurring simultaneously with twist about the shear center of the cross section.",
+   "As the unbraced lengths gets longer, just like a column, the amount of compression load it can carry goes down. If the compression force goes down, the moment goes down."
+  ]
+ },
+ {
+  "n": 214,
+  "term": "Lp and Lr: limiting unbraced lengths",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Limiting laterally unbraced length for the limit state of yielding",
+   "Limiting laterally unbraced length for the limit state of inelastic lateral-torsional buckling",
+   "So, if my unbraced length is less than the Lp of whatever section I'm looking at, I know it's in zone 1."
+  ]
+ },
+ {
+  "n": 215,
+  "term": "Local buckling (AISC glossary)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Limit state of buckling of a compression element within a cross section."
+  ]
+ },
+ {
+  "n": 216,
+  "term": "Flexural buckling (AISC glossary)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Buckling mode in which a compression member deflects laterally without twist or change in cross-sectional shape."
+  ]
+ },
+ {
+  "n": 217,
+  "term": "Camber",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Curvature fabricated into a beam or truss so as to compensate for deflection induced by loads."
+  ]
+ },
+ {
+  "n": 218,
+  "term": "Notch toughness (AISC glossary)",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Energy absorbed at a specified temperature as measured in the Charpy V-notch impact test."
+  ]
+ },
+ {
+  "n": 219,
+  "term": "Limit state (AISC glossary)",
+  "topic": "Stress and safety",
+  "kind": "definition",
+  "her_words": [
+   "Condition in which a structure or component becomes unfit for service and is judged either to be no longer useful for its intended function (serviceability limit state) or to have reached its ultimate load-carrying capacity (strength limit state).",
+   "Design will be designing at the limit state of the material"
+  ]
+ },
+ {
+  "n": 220,
+  "term": "Nominal, required, design and available strength (AISC glossary)",
+  "topic": "Stress and safety",
+  "kind": "list",
+  "her_words": [
+   "Strength of a structure or component (without the resistance factor or safety factor applied) to resist load effects, as determined in accordance with this Specification.",
+   "Forces, stresses, and deformations acting on a structural component, determined by either structural analysis, for the LRFD or ASD load combinations, as applicable, or as specified by this Specification or Standard.",
+   "Resistance factor multiplied by the nominal strength, phiRn.",
+   "Design strength or allowable strength, as applicable.",
+   "Nominal strength divided by the safety factor, Rn Omega.",
+   "nominal material strength"
+  ]
+ },
+ {
+  "n": 221,
+  "term": "Yield strength vs yield point vs yield stress (AISC glossary)",
+  "topic": "Stress-strain curve",
+  "kind": "list",
+  "her_words": [
+   "First stress in a material at which an increase in strain occurs without an increase in stress as defined by ASTM.",
+   "Stress at which a material exhibits a specified limiting deviation from the proportionality of stress to strain as defined by ASTM.",
+   "Generic term to denote either yield point or yield strength, as applicable for the material.",
+   "Limit state of inelastic deformation that occurs when the yield stress is reached.",
+   "Lower limit of yield stress specified for a material as defined by ASTM."
+  ]
+ },
+ {
+  "n": 222,
+  "term": "Fy and Fu (AISC symbols)",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Specified minimum yield stress, ksi (MPa)",
+   "Specified minimum tensile strength, ksi (MPa)",
+   "Lower limit of tensile strength specified for a material as defined by ASTM."
+  ]
+ },
+ {
+  "n": 223,
+  "term": "Critical stress Fcr and elastic buckling stress Fe (AISC symbols)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Critical stress, ksi (MPa)",
+   "Elastic buckling stress, ksi (MPa)",
+   "Note: Critical (cr) = Euler"
+  ]
+ },
+ {
+  "n": 224,
+  "term": "Nominal strengths Pn and Mn, required strengths Pu and Mu (AISC symbols)",
+  "topic": "Stress and safety",
+  "kind": "list",
+  "her_words": [
+   "Nominal axial strength, kips (N)",
+   "Nominal flexural strength, kip-in. (N-mm)",
+   "Required axial strength in compression using LRFD load combinations, kips (N)"
+  ]
+ },
+ {
+  "n": 225,
+  "term": "Strong axis and weak axis",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Major principal centroidal axis of a cross section.",
+   "Long columns fail and buckle. They become unstable about the weaker of two axis."
+  ]
+ },
+ {
+  "n": 226,
+  "term": "Gusset plate (AISC glossary)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Plate element connecting truss members or a strut or brace to a beam or column."
+  ]
+ },
+ {
+  "n": 227,
+  "term": "Splice (AISC glossary)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Connection between two structural elements joined at their ends to form a single, longer element."
+  ]
+ },
+ {
+  "n": 228,
+  "term": "Leaning column and stability (AISC glossary)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Column designed to carry gravity loads only, with connections that are not intended to provide resistance to lateral loads.",
+   "Condition in the loading of a structural component, frame, or structure in which a slight disturbance in the loads or geometry does not produce large displacements."
+  ]
+ },
+ {
+  "n": 229,
+  "term": "Drift and story drift (AISC glossary)",
+  "topic": "Frames and bracing",
+  "kind": "definition",
+  "her_words": [
+   "Lateral deflection of structure.",
+   "Horizontal deflection at the top of the story relative to the bottom of the story.",
+   "Disadvantages produces greater deflection and drift compared to that of braced frames or shear walls."
+  ]
+ },
+ {
+  "n": 230,
+  "term": "Stiffness (AISC glossary)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Resistance to deformation of a member or structure, measured by the ratio of the applied force (or moment) to the corresponding displacement (or rotation)."
+  ]
+ },
+ {
+  "n": 231,
+  "term": "Stress (AISC glossary)",
+  "topic": "Stress and safety",
+  "kind": "definition",
+  "her_words": [
+   "Force per unit area caused by axial force, moment, shear, or torsion.",
+   "So if I take a load in pounds or kips and I divided by the area, what are my units? ASI."
+  ]
+ },
+ {
+  "n": 232,
+  "term": "Reading a steel designation: W 27 x 84 (her slide)",
+  "topic": "Shape names",
+  "kind": "list",
+  "her_words": [
+   "W: shape = wide flange",
+   "approximate depth in inches",
+   "weight 84 #/LF",
+   "Why is depth & weight important??"
+  ]
+ },
+ {
+  "n": 233,
+  "term": "Decimals vs fractions (her slide)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "Decimals = accurate, used by designers",
+   "Fractions = to the nearest 1/16th, used by detailers"
+  ]
+ },
+ {
+  "n": 234,
+  "term": "HP shape (bearing pile)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is a bearing pile section approximately 12 in deep, weighing 74 lb/ft.",
+   "Bearing piles are made with the regular W rolls, but with thicker webs to provide better resistance to the impact of pile driving."
+  ]
+ },
+ {
+  "n": 235,
+  "term": "M shape (miscellaneous)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is a miscellaneous section 8 in deep, weighing 6.5 lb/ft.",
+   "It is one of a group of doubly symmetrical H-shaped members that cannot by dimensions be classified as a W, S, or HP section, as the slope of their inner flanges is other than 16 2/3 percent."
+  ]
+ },
+ {
+  "n": 236,
+  "term": "C shape (channel)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is a channel 10 in deep, weighing 30 lb/ft.",
+   "C section (American standard channel)"
+  ]
+ },
+ {
+  "n": 237,
+  "term": "MC shape (miscellaneous channel)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is a miscellaneous channel 18 in deep, weighing 58 lb/ft, which cannot be classified as a C shape because of its dimensions."
+  ]
+ },
+ {
+  "n": 238,
+  "term": "HSS rectangular shape (hollow structural section)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is a rectangular hollow structural section 14 in deep, 10 in wide, with a 5/8-in wall thickness. It weighs 93.34 lb/ft. Square and round HSS sections are also available."
+  ]
+ },
+ {
+  "n": 239,
+  "term": "L shape (angle)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is an equal leg angle, each leg being 6 in long and 1/2 in thick."
+  ]
+ },
+ {
+  "n": 240,
+  "term": "WT shape (structural tee) (her slide)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "is a tee obtained by splitting a W36x302. This type of section is known as a structural tee."
+  ]
+ },
+ {
+  "n": 241,
+  "term": "S shape and plates vs bars (her slide)",
+  "topic": "Shape names",
+  "kind": "definition",
+  "her_words": [
+   "S beam (American standard beam)",
+   "Rectangular steel sections are classified as wide plates or narrow bars."
+  ]
+ },
+ {
+  "n": 242,
+  "term": "Fy or Fu given as a range: use the lowest",
+  "topic": "Steel as a material",
+  "kind": "definition",
+  "her_words": [
+   "Sometimes you're given a range. Use the lowest number unless told specifically to do otherwise."
+  ]
+ },
+ {
+  "n": 243,
+  "term": "Round KL/r up before reading Table 4-14",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Between 46 and 47. My advice is just round up."
+  ]
+ },
+ {
+  "n": 244,
+  "term": "Decimal places: we do not work for NASA",
+  "topic": "Analysis and design",
+  "kind": "definition",
+  "her_words": [
+   "I just want to remind everybody we don't work for NASA. We are in construction. Decimal places have no meaning for us."
+  ]
+ },
+ {
+  "n": 245,
+  "term": "Show all work and source; do not forget units",
+  "topic": "Analysis and design",
+  "kind": "definition",
+  "her_words": [
+   "Show all work and source. Don't forget units.",
+   "Questions like this appear semester after semester."
+  ]
+ },
+ {
+  "n": 246,
+  "term": "A36/A36M (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A36/A36M | - | 36 | 58-80 [b]"
+  ]
+ },
+ {
+  "n": 247,
+  "term": "A53/A53M Gr. B (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A53/A53M | Gr. B | 35 | 60"
+  ]
+ },
+ {
+  "n": 248,
+  "term": "A500/A500M Gr. B (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A500/A500M | Gr. B | 46 | 58"
+  ]
+ },
+ {
+  "n": 249,
+  "term": "A500/A500M Gr. C (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A500/A500M | Gr. C | 50 | 62"
+  ]
+ },
+ {
+  "n": 250,
+  "term": "A500/A500M Gr. D (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A500/A500M | Gr. D | 36 | 58"
+  ]
+ },
+ {
+  "n": 251,
+  "term": "A501/A501M Gr. B (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A501/A501M [c] | Gr. B | 46 | 65"
+  ]
+ },
+ {
+  "n": 252,
+  "term": "A529/A529M Gr. 50 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A529/A529M [d] | Gr. 50 | 50 | 65-100"
+  ]
+ },
+ {
+  "n": 253,
+  "term": "A529/A529M Gr. 55 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A529/A529M [d] | Gr. 55 | 55 | 70-100"
+  ]
+ },
+ {
+  "n": 254,
+  "term": "A709/A709M Gr. 36 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A709/A709M | Gr. 36 | 36 | 58-80 [b]"
+  ]
+ },
+ {
+  "n": 255,
+  "term": "A1043/A1043M Gr. 36 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A1043/A1043M [e][f] | Gr. 36 | 36-52 | 58"
+  ]
+ },
+ {
+  "n": 256,
+  "term": "A1043/A1043M Gr. 50 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A1043/A1043M [e][f] | Gr. 50 | 50-65 | 65"
+  ]
+ },
+ {
+  "n": 257,
+  "term": "A1085/A1085M Gr. A (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A1085/A1085M | Gr. A | 50-70 | 65"
+  ]
+ },
+ {
+  "n": 258,
+  "term": "A572/A572M Gr. 42 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A572/A572M [g] | Gr. 42 | 42 | 60"
+  ]
+ },
+ {
+  "n": 259,
+  "term": "A572/A572M Gr. 50 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A572/A572M [g] | Gr. 50 | 50 | 65"
+  ]
+ },
+ {
+  "n": 260,
+  "term": "A572/A572M Gr. 55 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A572/A572M [g] | Gr. 55 | 55 | 70"
+  ]
+ },
+ {
+  "n": 261,
+  "term": "A572/A572M Gr. 60 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A572/A572M [g] | Gr. 60 [h] | 60 | 75"
+  ]
+ },
+ {
+  "n": 262,
+  "term": "A572/A572M Gr. 65 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A572/A572M [g] | Gr. 65 [h] | 65 | 80"
+  ]
+ },
+ {
+  "n": 263,
+  "term": "A618/A618M Gr. Ia, Ib & II (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A618/A618M [c] | Gr. Ia[f], Ib & II | 50 [i] | 70 [i]"
+  ]
+ },
+ {
+  "n": 264,
+  "term": "A618/A618M Gr. III (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A618/A618M [c] | Gr. III | 50 | 65"
+  ]
+ },
+ {
+  "n": 265,
+  "term": "A709/A709M Gr. 50 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A709/A709M | Gr. 50 | 50 | 65"
+  ]
+ },
+ {
+  "n": 266,
+  "term": "A709/A709M Gr. 50S (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A709/A709M | Gr. 50S | 50-65 | 65"
+  ]
+ },
+ {
+  "n": 267,
+  "term": "A709/A709M Gr. 50W (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A709/A709M | Gr. 50W | 50 | 70"
+  ]
+ },
+ {
+  "n": 268,
+  "term": "A913/A913M Gr. 50 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A913/A913M | Gr. 50 | 50 | 65"
+  ]
+ },
+ {
+  "n": 269,
+  "term": "A913/A913M Gr. 60 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A913/A913M | Gr. 60 | 60 | 75"
+  ]
+ },
+ {
+  "n": 270,
+  "term": "A913/A913M Gr. 65 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A913/A913M | Gr. 65 | 65 | 80"
+  ]
+ },
+ {
+  "n": 271,
+  "term": "A913/A913M Gr. 70 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A913/A913M | Gr. 70 | 70 | 90"
+  ]
+ },
+ {
+  "n": 272,
+  "term": "A913/A913M Gr. 80 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A913/A913M | Gr. 80 | 80 | 95"
+  ]
+ },
+ {
+  "n": 273,
+  "term": "A992/A992M (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A992/A992M | - | 50-65 | 65"
+  ]
+ },
+ {
+  "n": 274,
+  "term": "A1065/A1065M Gr. 50 (Table 2-4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "A1065/A1065M [f] | Gr. 50 | 50 | 60"
+  ]
+ },
+ {
+  "n": 275,
+  "term": "Most commonly used steel for each shape (her slide p.4)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "list",
+  "her_words": [
+   "All wide flange W, C and MC shapes are ASTM A992 -> Fy = 50 ksi Fu = 65 ksi",
+   "All M, S, HP & L shapes are ASTM A572 Grade 50 -> Fy = 50 ksi Fu = 65 ksi",
+   "All Plates are ASTM A 36 -> Fy = 36 ksi Fu = 58 ksi",
+   "or ASTM A 572 GRADE 50 -> Fy = 50 ksi Fu = 65 ksi",
+   "depending on thickness",
+   "All pipes are ASTM A 53, GRADE B -> Fy = 35 ksi Fu = 60 ksi",
+   "All HSS sections are",
+   "ASTM A 500 Grade C -> Fy = 50 ksi Fu = 62 ksi if Rectangular or Round"
+  ]
+ },
+ {
+  "n": 276,
+  "term": "Steel for W, C and MC shapes: A992",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "All wide flange W, C and MC shapes are ASTM A992 -> Fy = 50 ksi Fu = 65 ksi"
+  ]
+ },
+ {
+  "n": 277,
+  "term": "Steel for M, S, HP and L shapes: A572 Grade 50",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "All M, S, HP & L shapes are ASTM A572 Grade 50 -> Fy = 50 ksi Fu = 65 ksi"
+  ]
+ },
+ {
+  "n": 278,
+  "term": "Steel for plates: A36 (or A572 Grade 50 by thickness)",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "All Plates are ASTM A 36 -> Fy = 36 ksi Fu = 58 ksi"
+  ]
+ },
+ {
+  "n": 279,
+  "term": "Steel for pipes: A53 Grade B",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "All pipes are ASTM A 53, GRADE B -> Fy = 35 ksi Fu = 60 ksi"
+  ]
+ },
+ {
+  "n": 280,
+  "term": "Steel for HSS (rectangular or round): A500 Grade C",
+  "topic": "Steel grades (Table 2-4)",
+  "kind": "table_row",
+  "her_words": [
+   "ASTM A 500 Grade C -> Fy = 50 ksi Fu = 62 ksi if Rectangular or Round"
+  ]
+ },
+ {
+  "n": 281,
+  "term": "Live load: Apartment houses - Apartments",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Apartment houses - Apartments | 40"
+  ]
+ },
+ {
+  "n": 282,
+  "term": "Live load: Apartment houses - Public rooms",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Apartment houses - Public rooms | 100"
+  ]
+ },
+ {
+  "n": 283,
+  "term": "Live load: Dining rooms and restaurants",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Dining rooms and restaurants | 100"
+  ]
+ },
+ {
+  "n": 284,
+  "term": "Live load: Garages (passenger cars only)",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Garages (passenger cars only) | 40"
+  ]
+ },
+ {
+  "n": 285,
+  "term": "Live load: Gymnasiums, main floors, and balconies",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Gymnasiums, main floors, and balconies | 100"
+  ]
+ },
+ {
+  "n": 286,
+  "term": "Live load: Office buildings - Lobbies",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Office buildings - Lobbies | 100"
+  ]
+ },
+ {
+  "n": 287,
+  "term": "Live load: Office buildings - Offices",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Office buildings - Offices | 50"
+  ]
+ },
+ {
+  "n": 288,
+  "term": "Live load: Schools - Classrooms",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Schools - Classrooms | 40"
+  ]
+ },
+ {
+  "n": 289,
+  "term": "Live load: Schools - Corridors, first floor",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Schools - Corridors, first floor | 100"
+  ]
+ },
+ {
+  "n": 290,
+  "term": "Live load: Schools - Corridors above first floor",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Schools - Corridors above first floor | 80"
+  ]
+ },
+ {
+  "n": 291,
+  "term": "Live load: Storage warehouses - Light",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Storage warehouses - Light | 125"
+  ]
+ },
+ {
+  "n": 292,
+  "term": "Live load: Storage warehouses - Heavy",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Storage warehouses - Heavy | 250"
+  ]
+ },
+ {
+  "n": 293,
+  "term": "Live load: Stores (retail) - First floor",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Stores (retail) - First floor | 100"
+  ]
+ },
+ {
+  "n": 294,
+  "term": "Live load: Stores (retail) - Other floors",
+  "topic": "Live loads by occupancy",
+  "kind": "table_row",
+  "her_words": [
+   "Stores (retail) - Other floors | 75"
+  ]
+ },
+ {
+  "n": 295,
+  "term": "Typical live loads by occupancy (her slide p.9 table)",
+  "topic": "Live loads by occupancy",
+  "kind": "list",
+  "her_words": [
+   "Apartment houses - Apartments | 40",
+   "Apartment houses - Public rooms | 100",
+   "Dining rooms and restaurants | 100",
+   "Garages (passenger cars only) | 40",
+   "Gymnasiums, main floors, and balconies | 100",
+   "Office buildings - Lobbies | 100",
+   "Office buildings - Offices | 50",
+   "Schools - Classrooms | 40",
+   "Schools - Corridors, first floor | 100",
+   "Schools - Corridors above first floor | 80",
+   "Storage warehouses - Light | 125",
+   "Storage warehouses - Heavy | 250",
+   "Stores (retail) - First floor | 100",
+   "Stores (retail) - Other floors | 75"
+  ]
+ },
+ {
+  "n": 296,
+  "term": "Typical live loads said in class: house 40, office 50, gym 100",
+  "topic": "Live loads by occupancy",
+  "kind": "definition",
+  "her_words": [
+   "If you're designing a house, the live load is 40 pounds per square foot. If you're designing an office, 50 pounds per square foot. If you're designing a gymnasium, a 100 pounds per square foot."
+  ]
+ },
+ {
+  "n": 297,
+  "term": "Unit weight: Reinforced concrete",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Reinforced concrete | 150 lb/cu ft"
+  ]
+ },
+ {
+  "n": 298,
+  "term": "Unit weight: Structural steel",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Structural steel | 490 lb/cu ft"
+  ]
+ },
+ {
+  "n": 299,
+  "term": "Unit weight: Plain concrete",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Plain concrete | 145 lb/cu ft"
+  ]
+ },
+ {
+  "n": 300,
+  "term": "Unit weight: Movable steel partitions",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Movable steel partitions | 4 psf"
+  ]
+ },
+ {
+  "n": 301,
+  "term": "Unit weight: Plaster on concrete",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Plaster on concrete | 5 psf"
+  ]
+ },
+ {
+  "n": 302,
+  "term": "Unit weight: Suspended steel channel system",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Suspended steel channel system | 2 psf"
+  ]
+ },
+ {
+  "n": 303,
+  "term": "Unit weight: 5-Ply felt and gravel",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "5-Ply felt and gravel | 6 psf"
+  ]
+ },
+ {
+  "n": 304,
+  "term": "Unit weight: Hardwood flooring (7/8 in)",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Hardwood flooring (7/8 in) | 4 psf"
+  ]
+ },
+ {
+  "n": 305,
+  "term": "Unit weight: 2x12 @ 16 in spacing, double wood floors",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "2x12 @ 16 in spacing, double wood floors | 7 psf"
+  ]
+ },
+ {
+  "n": 306,
+  "term": "Unit weight: Wood studs with 1/2 in gypsum each side",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Wood studs with 1/2 in gypsum each side | 8 psf"
+  ]
+ },
+ {
+  "n": 307,
+  "term": "Unit weight: Clay brick wythes (4 in)",
+  "topic": "Dead-load unit weights",
+  "kind": "table_row",
+  "her_words": [
+   "Clay brick wythes (4 in) | 39 psf"
+  ]
+ },
+ {
+  "n": 308,
+  "term": "Dead-load unit weights (her slide p.9 table)",
+  "topic": "Dead-load unit weights",
+  "kind": "list",
+  "her_words": [
+   "Reinforced concrete | 150 lb/cu ft",
+   "Structural steel | 490 lb/cu ft",
+   "Plain concrete | 145 lb/cu ft",
+   "Movable steel partitions | 4 psf",
+   "Plaster on concrete | 5 psf",
+   "Suspended steel channel system | 2 psf",
+   "5-Ply felt and gravel | 6 psf",
+   "Hardwood flooring (7/8 in) | 4 psf",
+   "2x12 @ 16 in spacing, double wood floors | 7 psf",
+   "Wood studs with 1/2 in gypsum each side | 8 psf",
+   "Clay brick wythes (4 in) | 39 psf"
+  ]
+ },
+ {
+  "n": 309,
+  "term": "K values: theoretical vs recommended design (her slide wk3 p.8, Figure 9.16)",
+  "topic": "Compression members",
+  "kind": "table_row",
+  "her_words": [
+   "Theoretical K value | 0.5 | 0.7 | 1.0 | 1.0 | 2.0 | 2.0",
+   "Recommended design value when ideal conditions are approximated | 0.65 | 0.80 | 1.2 | 1.0 | 2.10 | 2.0",
+   "K for design",
+   "See: AISC Steel Manual page 16.1-650, Table C-A-7.1",
+   "The other thing I want you to notice is wherever a compression member is part of a system that's allowed to sway, it's greater than 1.",
+   "Use K for design."
+  ]
+ },
+ {
+  "n": 310,
+  "term": "History of structural steel (her slide p.5)",
+  "topic": "History of steel",
+  "kind": "list",
+  "her_words": [
+   "1779 First Cast Iron bridge (England)",
+   "Revolutionary, but brittle",
+   "Cast Iron: low carbon content (<= 0.15%)",
+   "1840 Wrought Iron began to replace Cast Iron",
+   "More Malleable",
+   "Wrought Iron: high carbon content (>= 2.00%)",
+   "1853-1858 First Buildings w/ Wrought Iron frames",
+   "Ex: Six story Foundation Building in NYC @ Cooper Union",
+   "1856 Steel first made in the USA",
+   "Carbon added to Iron (<= 1%) with the Bessemer Process (textbook pg. 6)",
+   "1890 Structural Steel replaced Wrought Iron in construction",
+   "Carbon Content: 0.15% to 1.7%",
+   "Mild steel 0.15% - 0.29%",
+   "Medium carbon steel 0.30% - 0.59%",
+   "High carbon steel 0.60% - 1.70%"
+  ]
+ },
+ {
+  "n": 311,
+  "term": "Concrete slab thickness to a floor load (psf)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Floor load = 150 pounds per cubic foot x 2 inches /12 inches per foot = 25 pounds per square foot.",
+   "And then the concrete weighs 150 pounds per cubic foot. So 62.5 pounds per square foot.",
+   "On a set of drawings, framing plan, midterm and final exam, you might be given the weight of concrete. You have to remember to change it to a floor load."
+  ]
+ },
+ {
+  "n": 312,
+  "term": "Steel and wood framing weight is given as a psf number",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "On the midterm and dreaded design project, there will be a floor number on pounds per square foot.",
+   "The only difference is that you will be given the steel framing as a pound per square foot number so you don't have to go back and forth.",
+   "The interesting thing about steel and wood design is we take steel framing and wood framing as a pound per square number."
+  ]
+ },
+ {
+  "n": 313,
+  "term": "Self-weight: choose a size, add it, check again",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "We'll choose a size and add the self weight. And see if it still works.",
+   "Unless there's a very good reason to pick something that isn't economical."
+  ]
+ },
+ {
+  "n": 314,
+  "term": "Most economical = the lightest, not the closest",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "We are not looking for the one that's closest. We are looking for the lightest.",
+   "They are grouped into bunches of similar section modular and the moment capacity and the one in boldface is the most economical.",
+   "we want to pick the most economical to compare weight because it takes out length and fabrication and if we compare weight, and the lighter it is the cheeper it is."
+  ]
+ },
+ {
+  "n": 315,
+  "term": "Bolt hole area is a rectangle, not a circle",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Pointing out the bolt hole is round the area we subject is a rectangle. It's the whole diameter plus an eighth of an inch.",
+   "The area which was the Geometric Property that resists tension is reduced by two rectangles; not by 8 circles."
+  ]
+ },
+ {
+  "n": 316,
+  "term": "Minimum two bolts",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "Even if our calculations say we only need one bolt we put it for it. If the one bolt fails, the whole connection fails.",
+   "Do Not use 2 or less fasteners"
+  ]
+ },
+ {
+  "n": 317,
+  "term": "Compression capacity uses the gross area (no net area)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "There's no A net here because even if there are holes to make a connection between pieces in a compression system, the shaft of the bolts are made of material that is stronger with the base material and just becomes part of the air way."
+  ]
+ },
+ {
+  "n": 318,
+  "term": "Load path: slab to beam to girder to column",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "The slab load gets in there, but it gets in there through the beam.",
+   "And they deposit a point load on diverters. So when we look at the girders they are just going to have one point load on them equal to two become rep actions.",
+   "The slab bends in response to the load, load to the beams the beams responds to the point loads delivered by the beams."
+  ]
+ },
+ {
+  "n": 319,
+  "term": "Maximum moment: uniform load wL^2/8 (Table 3-22 diagram 1)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "WL squared over 8.",
+   "diagram 1 shows a uniform load and the maximum moment happens at midspan",
+   "For designing beams, you want to go to the beam chapter."
+  ]
+ },
+ {
+  "n": 320,
+  "term": "Maximum moment: single point load at midspan PL/4 (diagram 7)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Somebody tell me what the equation is for the maximum moment or a single load in the center of the span?",
+   "Correction: Mu=P uL/ 4 You are looking at diagram 7.",
+   "You will be asked to calculate moments on the midterm. You'll only be using the economy table, but you have to be familiar with the moment equation."
+  ]
+ },
+ {
+  "n": 321,
+  "term": "Maximum moment: two equal point loads P a (+ wL^2/8 for self-weight)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "The maximum moment is Pa. Since the maximums happening in the same place, I can just add them. M max equals to W L squared over 8 plus Pa.",
+   "Mu equals Pa 49. 84 (8)= 398. 7 kips."
+  ]
+ },
+ {
+  "n": 322,
+  "term": "Table 1-1 (W-shapes: dimensions and properties)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "Table 1-1 (continued) - W-Shapes, Dimensions",
+   "W-Shapes Dimensions"
+  ]
+ },
+ {
+  "n": 323,
+  "term": "Table 1-7 (angles: properties)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "Table 1-7, Angles, Properties"
+  ]
+ },
+ {
+  "n": 324,
+  "term": "Table 4-1a (column loads, W-shapes, Fy = 50 ksi)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "Table 4-1a - Available Strength in Axial Compression, kips, W-Shapes, W14, F_y = 50 ksi"
+  ]
+ },
+ {
+  "n": 325,
+  "term": "Table 4-5 (column loads, round HSS)",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "Available Strength in Axial Compression, kips, Round HSS"
+  ]
+ },
+ {
+  "n": 326,
+  "term": "Shape factor",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "Shape factor = Mp/My = Z/S = (bd^2/4)/(bd^2/6) = 1.5 For a Rectangle"
+  ]
+ },
+ {
+  "n": 1001,
+  "term": "Units of stress: kips or pounds over square inches give ksi or psi",
+  "topic": "Stress-strain curve",
+  "kind": "fact",
+  "her_words": [
+   "So if I take a load in pounds or kips and I divided by the area, what are my units?",
+   "You can definitely pass statics and steel without really understanding units, but when you get to concrete, it's going to be a problem."
+  ],
+  "summary": "Stress is load divided by area, so a load in pounds or kips over an area in square inches gives pounds per square inch (psi) or kips per square inch (ksi). The caption after her question is garbled ('ASI. Pounds per square. Inch or pounds per square foot?'); the best reading is ksi or psi, because the area is in square inches. She said you can pass statics and steel without really understanding units, but concrete (next semester) will make unit sense a problem.",
+  "answers": [
+   "A load in kips divided by an area in square inches gives a stress in what unit?",
+   "What are the units of stress in this course?"
+  ]
+ },
+ {
+  "n": 1002,
+  "term": "Statics used part of the stress-strain curve; steel design uses all of it",
+  "topic": "Stress-strain curve",
+  "kind": "comparison",
+  "her_words": [
+   "In statics we limited our conversation because we were learning about stress and strains. This semester we are going to go through the entire range. We are going to be using the entire stress strength curve.",
+   "It's to show you we stopped last semester. So we were in a very limited part of the stress strain curve to capture additional capacity."
+  ],
+  "summary": "In statics the conversation was limited to the early part of the stress-strain curve (stress and strain, below the elastic limit). In this course she goes through the entire range (yield strength, hardening, ultimate strength, failure) and uses the entire stress-strain curve; she said the Steel Manual has a picture of it. On 9/23 she said it again for beams: statics stopped in a very limited part of the curve, and design now captures the additional capacity.",
+  "answers": [
+   "Which part of the stress-strain curve did statics use, and which part does this course use?",
+   "Why does steel design use the whole stress-strain curve?"
+  ]
+ },
+ {
+  "n": 1003,
+  "term": "Why a high-carbon steel is not used where the stresses reverse (wind bracing)",
+  "topic": "Steel as a material",
+  "kind": "reason",
+  "her_words": [
+   "So you wouldn't want to use it in a circumstance where you have issues. Where the stresses reverse themselves. You might use it and it's just a flaw. You wouldn't use it for wind bracing. Because it's brittle."
+  ],
+  "summary": "More carbon gives hardness and strength but makes steel more brittle. Where the stresses reverse themselves, as in wind bracing, a flaw in a brittle steel could start a failure, so she would not use it there. The caption wording is rough ('You might use it and it's just a flaw'); this is the reader's best reading.",
+  "answers": [
+   "Why would a high-carbon steel not be used for wind bracing?",
+   "What is the problem with using a brittle steel where the stresses reverse?"
+  ]
+ },
+ {
+  "n": 1004,
+  "term": "What the designer specifies and what the fabricator supplies",
+  "topic": "Construction and fire",
+  "kind": "comparison",
+  "her_words": [
+   "We are just going to specify the strength and size and they will supply the different pieces.",
+   "This was actually not that important to us as designers except to understand what our steel fabricators are telling us."
+  ],
+  "summary": "The designer only specifies the strength and size of the steel; the fabricator supplies the different pieces. She said the history of steel (cast iron, wrought iron, mild, medium and high carbon steel) is not that important to designers except to understand what their steel fabricators are telling them.",
+  "answers": [
+   "What does the designer specify and what does the fabricator supply?",
+   "Why does a designer need to know a little of the history of steel?"
+  ]
+ },
+ {
+  "n": 1005,
+  "term": "Why one Manual covers every shape (mills used to have their own)",
+  "topic": "The Manual",
+  "kind": "reason",
+  "her_words": [
+   "It use d to be way back in the early 1900s that every steel mill had it's own steel manual. So you had to know where you were going to get the steel. But today, even internationally it's all standardized."
+  ],
+  "summary": "In the early 1900s every steel mill had its own steel manual, so you had to know where you were going to get the steel. Today the shapes are standardized, even internationally, and they are all in the Steel Manual in the chapter called Dimensions (Part 1). The caption has a stray 'It use d' (= It used).",
+  "answers": [
+   "Why can a designer today use one Manual for every shape?",
+   "What was different about steel manuals in the early 1900s?"
+  ]
+ },
+ {
+  "n": 1006,
+  "term": "Floor-to-ceiling space limits the depth of the structure",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "You must realize that between the finished floor and the finished ceiling, there's only so much room and a lot of stuff has to go on here.",
+   "you can only build so tall. Those are code issues and you want to have X number of floors and you want to have the ceiling at a certain height. 8, 10, 12 feet."
+  ],
+  "summary": "Between the finished floor and the finished ceiling there is only so much room, and the structure of the floor, the structural framing, the mechanical systems and everything else must fit in it. How much room there is comes from the code limit on how tall you can build, the number of floors you want and the ceiling height you want (8, 10 or 12 ft). That is why the depth of a member is one of the two most important facts about it (the other is its weight, which is cost).",
+  "answers": [
+   "What has to fit in the space between the finished floor and the finished ceiling?",
+   "What fixes how much room there is for the structure of a floor?"
+  ]
+ },
+ {
+  "n": 1007,
+  "term": "The lightest section is not always the best solution",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "Doesn't mean that's the best solution for you. Sometimes the best solution isn't the most economical, but an easy way to compare it is to look at the weight and the second set of numbers.",
+   "We are not looking for the one that's closest. We are looking for the lightest. Unless there's a very good reason to pick something that isn't economical."
+  ],
+  "summary": "Weight is an easy way to compare options (it takes out length and fabrication) and the lighter section is the cheaper one, but that does not mean it is the best solution for the project: sometimes the best solution is not the most economical. On 9/30 she said to choose the lightest, not the closest, unless there is a very good reason to pick something that is not economical.",
+  "answers": [
+   "True or false: the lightest section is always the best solution.",
+   "When might you pick a section that is not the most economical?"
+  ]
+ },
+ {
+  "n": 1008,
+  "term": "Tabulated thicknesses are averages: use the tabulated thickness (captions unclear)",
+  "topic": "The Manual",
+  "kind": "fact",
+  "her_words": [
+   "When we talk about thickness and look at thicknesses you have to remember they were giving us an average, the edges of the angle occur. But we're going to use the thickness."
+  ],
+  "summary": "She said the thicknesses listed are an average (the edges, for example of an angle, vary), but that the tabulated thickness is the one to use. The captions are unclear here ('the edges of the angle occur'); it is not certain whether she meant angle legs or flanges.",
+  "answers": [
+   "The tables give thicknesses that are averages because the edges vary; which value do you use in calculations?"
+  ]
+ },
+ {
+  "n": 1009,
+  "term": "Why steel's strength can be trusted more than concrete's or wood's",
+  "topic": "Steel as a material",
+  "kind": "comparison",
+  "her_words": [
+   "When we specify steel, size and strength that comes from a steel mill you get paperwork. We know what we are getting.",
+   "When you're talking about concrete, it's like cooking. You have some sand, gravel, water, cement. I don't know what the mixture is.",
+   "Wood comes from a tree; there are still flaws in it because it comes from a tree."
+  ],
+  "summary": "Steel is specified by size and strength and comes from a steel mill with paperwork, so you know what you are getting and can have high confidence in the Manual. Concrete is like cooking (some sand, gravel, water and cement; she does not know the mixture, 'too many cooks in the kitchen'), which creates potential problems. Wood still has flaws because it comes from a tree. Steel's properties are uniform and do not change over time.",
+  "answers": [
+   "Why can a designer trust the strength of steel more than that of concrete or wood?",
+   "What did she compare concrete to when explaining that steel is a consistent material?"
+  ]
+ },
+ {
+  "n": 1010,
+  "term": "Concrete is the biggest place for screw-ups; steel mills are reliable",
+  "topic": "Steel as a material",
+  "kind": "fact",
+  "her_words": [
+   "I don't know of a case where structural steel underperformed.",
+   "Preengineered wood also reliable. Biggest place for screwups is in concrete because it's like cooking. Like making Muffins.",
+   "It's a man made product and being made on the site."
+  ],
+  "summary": "Asked whether steel is reliable, she said she knows of no case where structural steel underperformed: steel mills are very reliable today, what is in the Manual is what you get, and steel comes from a mill with a certificate. Pre-engineered wood is also reliable. The biggest place for screw-ups is concrete, because it is a man-made product made on the site, like cooking or making muffins (crushed rock, sand, water, cement, following a recipe).",
+  "answers": [
+   "Which material did she call the biggest place for screw-ups, and why?",
+   "Besides steel, which material did she call reliable?"
+  ]
+ },
+ {
+  "n": 1011,
+  "term": "Why bad soil argues against a concrete structure: concrete is very heavy",
+  "topic": "Steel as a material",
+  "kind": "reason",
+  "her_words": [
+   "Concrete is very heavy. If you got bad soil conditions, you're not building with concrete. Because most of the work concrete structure does is hold itself up. Steel, considering how strong it is, it's very light."
+  ],
+  "summary": "Concrete is very heavy, and most of the work a concrete structure does is hold itself up, so if you have bad soil conditions you are not building with concrete. Steel, considering how strong it is, is very light (she meant regular structural steel, not 'lightweight'). This is the consequence of steel's high strength-to-weight ratio.",
+  "answers": [
+   "Why would bad soil conditions argue against building in concrete?"
+  ]
+ },
+ {
+  "n": 1012,
+  "term": "Cost as a disadvantage of steel: exotic where there is no steel industry",
+  "topic": "Steel as a material",
+  "kind": "reason",
+  "her_words": [
+   "I guess if you have a steel industry or can get low cost steel, but let's put it down any way. It's exotic for where you're building; yes."
+  ],
+  "summary": "A student named cost as a disadvantage. She accepted it with a condition: steel is not costly if you have a steel industry or can get low-cost steel, but it is exotic (and so costly) for some places where you are building. Cost is not on her written list of disadvantages (painting, rust, fireproofing, buckling, fatigue, delivery).",
+  "answers": [
+   "Besides fireproofing, what cost problem can steel have?",
+   "When is steel not a costly choice?"
+  ]
+ },
+ {
+  "n": 1013,
+  "term": "What rust does to a brick building on a steel frame",
+  "topic": "Steel as a material",
+  "kind": "fact",
+  "her_words": [
+   "In New York City, where we have all of these lovely brick buildings, is sitting on a steel, and it will happen to rust over time. It gets very thick and pushes up on the grid.",
+   "Because when you look at these town houses and you see these cracks, this was why. It pushes up and brick like concrete it's very brittle."
+  ],
+  "summary": "In New York City many of the lovely brick buildings sit on a steel frame that rusts over time. The rust gets very thick and pushes up (the caption says 'on the grid', probably the brick or masonry); the brick is brittle, like concrete, and cracks, which is why you see these cracks in town houses. Her slide gives the figure: rust scale can be 12 times the original thickness.",
+  "answers": [
+   "What does rusting steel do to a brick building on a steel frame?",
+   "Why do old New York town houses show cracks in the brick?"
+  ]
+ },
+ {
+  "n": 1014,
+  "term": "The code is the minimum: why a designer may give more than the two-hour fire rating",
+  "topic": "Construction and fire",
+  "kind": "reason",
+  "her_words": [
+   "The code is the least you can do. If you know as a responsible designer that you need more time do better than that; not less. We have to use our judgment in addition to the code."
+  ],
+  "summary": "The code asks for a two-hour fire rating for office buildings, meaning two hours to evacuate, but she said the code is the least you can do. In a 100-story building everybody tries to get out at the same time; a responsible designer who knows more time is needed does better than the code, not less, and uses judgment in addition to the code.",
+  "answers": [
+   "The code requires a two-hour fire rating; why might a designer provide more?",
+   "Is the building code a maximum or a minimum?"
+  ]
+ },
+ {
+  "n": 1015,
+  "term": "Steel building erection sequence in her video",
+  "topic": "Construction and fire",
+  "kind": "fact",
+  "her_words": [
+   "Here comes the next level columns that sits on top of the lower one."
+  ],
+  "summary": "From the video she showed: the foundations are concrete; the columns are set, then the beams between the columns; the columns always pop up above the floor so the next level's columns can sit on top of the lower ones (she said how this affects design comes when columns are covered); beams frame to the girders and the load comes down. The captions of this passage are garbled ('Mary list columns', 'herders' = girders).",
+  "answers": [
+   "What material are the foundations of a steel-framed building, and what do the columns do at each floor?",
+   "How does the next level's column connect to the one below?"
+  ]
+ },
+ {
+  "n": 1016,
+  "term": "Floor and cladding on a steel frame (her video)",
+  "topic": "Construction and fire",
+  "kind": "fact",
+  "her_words": [
+   "This is the metal deck. Maybe you're pouring concrete on top of this to make the floor. That's spanning between the beams.",
+   "And then last, but not least you scale the building with whatever your materials are that's also hanging off the framing."
+  ],
+  "summary": "In the same video: a metal deck sits on the beams and concrete may be poured on top of it to make the floor, spanning between the beams. Last, the building is scaled (clad) with whatever materials are chosen, and the cladding hangs off the framing.",
+  "answers": [
+   "How is the floor formed on the beams of a steel frame, and how is the cladding carried?"
+  ]
+ },
+ {
+  "n": 1017,
+  "term": "A lighter replacement of a finish is still dead load",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "We can peel away and put in something lighter, but it still will be considered dead load because it's there all the time."
+  ],
+  "summary": "Dead load is anything that is there all the time. If you peel away a finish and put in something lighter, it is still considered dead load, because it is there all the time.",
+  "answers": [
+   "A heavy finish is replaced by a lighter one; is the new finish dead load or live load?"
+  ]
+ },
+ {
+  "n": 1018,
+  "term": "Where dead loads are found: the architectural sections you draw",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "In the architectural sections. One of those sections you draw. It tells your consultant what you're thinking, 3 quart inch marble, wood, ceiling.",
+   "The way you're consulting will be able to calculate the load is through these sections."
+  ],
+  "summary": "The dead loads are found in the architectural sections you draw: they show, for example, 3/4 inch marble, wood and ceiling, which tells your consultant what you are thinking, and the consultant calculates the load from those sections. (Caption garbles: '3 quart inch' = 3/4 inch; 'consulting' = consultant.)",
+  "answers": [
+   "On which drawings do you find the dead loads of a floor?"
+  ]
+ },
+ {
+  "n": 1019,
+  "term": "Live loads come from the building code (same in NYC, BOCA, IBC)",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "They don't change. It is the same numbers in the New York City code. Boca code. International building codes."
+  ],
+  "summary": "Live loads come from the building code, because they depend on use and occupancy. The typical live-load numbers do not change: they are the same in the New York City code, the BOCA code and the International building codes (house 40, office 50, gymnasium 100 psf).",
+  "answers": [
+   "Where do live loads come from, and do the numbers differ from city to city?"
+  ]
+ },
+ {
+  "n": 1020,
+  "term": "Wind or earthquake: which lateral load governs in New York City and in California",
+  "topic": "Loads and LRFD",
+  "kind": "comparison",
+  "her_words": [
+   "but wind always governs. In other words, it was more load on our structure. We always designing for wind. You go to California it's reverse."
+  ],
+  "summary": "Lateral loads depend on where the building is. In New York City there is an earthquake (seismic) code but wind always governs, because it puts more load on the structure, so you always design for wind; in California it is the reverse. The wind and seismic numbers are the drivers of the lateral loads. (Caption garbles: 'assignment code' and 'sizement' = seismic.)",
+  "answers": [
+   "Which lateral load governs in New York City, and which in California?"
+  ]
+ },
+ {
+  "n": 1021,
+  "term": "How lateral loads vary: wind with height, soil with depth",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "as we go up, the wind increases. We are on the 8th floor on the balcony, it feels a lot windier.",
+   "As we go deeper, there's more push on the wall. We might approximate some point load instead of the triangular load the idea is the same."
+  ],
+  "summary": "Wind increases as you go up (an 8th-floor balcony feels a lot windier). Soil is the opposite: on a basement wall there is more push the deeper you go, a triangular load that might be approximated by a point load; the idea is the same.",
+  "answers": [
+   "How does wind load change with height, and how does soil pressure on a basement wall change with depth?"
+  ]
+ },
+ {
+  "n": 1022,
+  "term": "Renovating a building: work backwards to the capacity",
+  "topic": "Analysis and design",
+  "kind": "fact",
+  "her_words": [
+   "You know the geometric property because the structure is there. You know the material because the structure is there.",
+   "You're work ing backwards to see what is the capacity and compare it to what you're going to be using it for."
+  ],
+  "summary": "When renovating or repurposing a building (her example: a residence at 40 psf becoming a restaurant at 100 psf) you do not choose the geometric property or the material, because the structure is already there. You know those two and work backwards to find the capacity, then compare it with what the building will now be used for.",
+  "answers": [
+   "A residence designed for 40 psf becomes a restaurant at 100 psf; how do you check the structure?"
+  ]
+ },
+ {
+  "n": 1023,
+  "term": "The concrete designers changed to ultimate-strength design in 1972 (as she remembers)",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "The concrete people changed ultimate strength design in 1972; I think."
+  ],
+  "summary": "She said the concrete people changed to ultimate-strength design in 1972, and added 'I think' (the captions print the digits garbled; the reader's best reading is the 1970s).",
+  "answers": [
+   "Which group of designers changed to ultimate-strength design first, and about when?"
+  ]
+ },
+ {
+  "n": 1024,
+  "term": "Allowable or ultimate: the one word that decides the overload factors (anchor)",
+  "topic": "Loads and LRFD",
+  "kind": "reason",
+  "her_words": [
+   "I apply overload factors or not is that one word does it say allowable or ultimate. They are not going to explain it to you."
+  ],
+  "summary": "Manufacturers' charts give either allowable strength or ultimate strength. Her anchor example: an anchor with a pull-out value of ten kips. The only thing that tells you whether to apply the overload factors to your loads is that one word, allowable or ultimate: an allowable value already has the safety factor in it, while an ultimate value means you have to increase (factor) your loads. 'They are not going to explain it to you.'",
+  "answers": [
+   "A catalog gives an anchor pull-out value of 10 kips; what decides whether you apply the overload factors to your loads?"
+  ]
+ },
+ {
+  "n": 1025,
+  "term": "Why the dead-load factor is 0.9 with wind or earthquake",
+  "topic": "Loads and LRFD",
+  "kind": "reason",
+  "her_words": [
+   "It's trying to turn this building clockwise. To turn it over it's toe. One stabilizes it.",
+   "I would be applying the wind load times this lever arm and what's keeping it from flipping over is the dead weight times this.",
+   "If I overestimate by dead load, which we all tend to do, then I'm assuming I have more stability than I have."
+  ],
+  "summary": "All the load factors are one or greater except the factor on dead load in the combinations with a lateral load (0.9 D). A lateral load such as wind or earthquake tries to turn the building over about its toe, and the dead weight is what keeps it from flipping (wind load times its lever arm against dead weight times its lever arm). People tend to overestimate dead load, which would overstate the stability, so in that case dead load is reduced instead of increased. (Caption garbles: 'sizement' = seismic; 'any accounts to dead load' = the factor on dead load.)",
+  "answers": [
+   "Why is the dead-load factor only 0.9 in the combinations with wind or earthquake?",
+   "Why is it unsafe to overestimate dead load when there is a lateral load?"
+  ]
+ },
+ {
+  "n": 1026,
+  "term": "Drawings give the bolt diameter (the shaft), not the hole diameter",
+  "topic": "Bolts and connections",
+  "kind": "reason",
+  "her_words": [
+   "any drawing you look at they are going to give you the bolt diameter. That's what's given. Because the diameter of the shaft is what generates how much we can calculate the strength of the bolt tension."
+  ],
+  "summary": "Any drawing gives the bolt diameter, the diameter of the shaft, because the shaft diameter is what sets the strength of the bolt (the caption says 'bolt tension'). The hole you deduct in the net area is larger: bolt diameter plus 1/8 in (a 3/4 in bolt gives a 7/8 in hole).",
+  "answers": [
+   "A drawing gives 3/4 in bolts; what hole size do you use, and why does the drawing give the bolt size?"
+  ]
+ },
+ {
+  "n": 1027,
+  "term": "Why bolts are sometimes staggered: a narrow member would become like Swiss cheese",
+  "topic": "Tension members",
+  "kind": "reason",
+  "her_words": [
+   "you can see that if this becomes too much like swiss cheese. And this length or this one, the distance between both bolts on the edge is too small."
+  ],
+  "summary": "When a member is too narrow to take the bolts it needs in one line, the member becomes too much like Swiss cheese and the distances between the bolts and to the edge get too small, so the bolts are sometimes forced to offset (stagger). Minimum spacing and the capacity of the bolts come later in the course. The captions are rough.",
+  "answers": [
+   "Why are bolts sometimes offset instead of placed in one line?"
+  ]
+ },
+ {
+  "n": 1028,
+  "term": "Rupture is a word for tension members: 'a fancy way of saying ripping'",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "The world rupture is really limited to tension members.",
+   "Which is a fancy way of saying ripping."
+  ],
+  "summary": "She said the word rupture is really limited to tension members (rupture across the reduced, net area), and called rupture 'a fancy way of saying ripping'. The caption prints 'world' for 'word'.",
+  "answers": [
+   "To what kind of member does the word rupture really belong?"
+  ]
+ },
+ {
+  "n": 1029,
+  "term": "Why wide flanges use A992 (stronger) while plate is commonly A36",
+  "topic": "Steel as a material",
+  "kind": "reason",
+  "her_words": [
+   "Over time A 36 is a common place for plate, but for white flange s, we use A 999. It's stronger. You use stronger steel because when you get to the bottom storage your generating a lot of load."
+  ],
+  "summary": "A36 (Fy 36) is a common steel for plate, but for wide flanges she uses A992 (Fy 50, Fu 65), which is stronger. You use stronger steel because when you get to the bottom stories you are generating a lot of load. (Caption garbles: 'A 999' = A992; 'white flange s' = wide flanges; 'bottom storage' = bottom stories.)",
+  "answers": [
+   "Why use A992 for wide flanges when plate is commonly A36?"
+  ]
+ },
+ {
+  "n": 1030,
+  "term": "A WT chord is spliced with a connector plate; the force acts at the center of gravity",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "They are going to come in pieces and you're going to have to assemble them. It might come in two pieces and we use this connect or plate to get the force from one side of the joint",
+   "Where is this force? At the center of gravity."
+  ],
+  "summary": "Her WT lower-chord example: the members come in pieces and have to be assembled, so a connector plate carries the tension force across the joint (pulling to the left on one side and to the right on the other). The force acts at the center of gravity, which could be somewhere off the plate. The captions are rough.",
+  "answers": [
+   "Where does the force act in a tension member, and why does a WT chord need a connector plate?"
+  ]
+ },
+ {
+  "n": 1031,
+  "term": "Shear lag picture: one third of the force enters at each of three sets of bolts",
+  "topic": "Tension members",
+  "kind": "reason",
+  "her_words": [
+   "You're pulling the top plate to the right. One third of the force goes through in sheer when it hits the first set of bolts. Another third goes throughout second set of bolts and then the third."
+  ],
+  "summary": "Pulling a plate on the flange of a WT: one third of the force goes through in shear when it hits the first set of bolts, another third at the second set and the last third at the third set. It takes some time before 100 percent of the force is in the top of the WT and engages the entire area. U is the reduction factor that models this lag, and how much the lag costs depends on the geometry of the section.",
+  "answers": [
+   "Using three rows of bolts, explain why U is below 1 when only the flange is bolted."
+  ]
+ },
+ {
+  "n": 1032,
+  "term": "Why steel members are compared by weight (chopped meat)",
+  "topic": "Shape names",
+  "kind": "reason",
+  "her_words": [
+   "We buy structural steel the way we buy chopped meet. So many dollars per pound.",
+   "it doesn't matter if the element is being stored in Nebraska or Times Square. Take out labor costs and go graphical cost and you just go by weight."
+  ],
+  "summary": "The weight in the shape name matters because it is cost: structural steel is bought the way chopped meat is, so many dollars per pound. When you compare solutions you pick the most economical, so you compare weight, because then it does not matter where the piece is stored (Nebraska or Times Square): take out labor and geographic cost and you just go by weight. (Caption garbles: 'chopped meet'; 'graphical cost' = geographical cost.)",
+  "answers": [
+   "Why do we compare solutions by weight?"
+  ]
+ },
+ {
+  "n": 1033,
+  "term": "Wood still uses allowable stress design (steel and concrete do not)",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "It doesn't matter where the safety factor is. As you go through your professional life, sometimes it's on the other. Even today when we're using ultimate strength design with steel and concrete, we still use reliable design for wood."
+  ],
+  "summary": "She said it does not matter where the safety factor sits, because through your professional life you will meet both: even today, when steel and concrete use ultimate-strength design, wood is still designed the other way. The caption says 'reliable design for wood', best read as allowable stress design.",
+  "answers": [
+   "Which material is still designed with allowable stress design while steel and concrete use ultimate-strength design?"
+  ]
+ },
+ {
+  "n": 1034,
+  "term": "The design project: what the building is",
+  "topic": "Analysis and design",
+  "kind": "fact",
+  "her_words": [
+   "It's really just a big fat homework problem.",
+   "So what I will be handing out is a very boring building. It'll be two framed levels of steel sitting on one framed level of concrete."
+  ],
+  "summary": "The design project (she called it 'the dreaded design project' and 'a big fat homework problem') is a very boring building: two framed levels of steel sitting on one framed level of concrete. Everybody gets a different base size (for example a 30 by 20 ft or a 30 by 40 ft bay), so the work is the same but the numbers differ, and everybody hands in his or her own work. She hands out paper copies in week 9 and goes over each step with her own base size. (Captions call it 'the midterm project' once; the caption 'side' means size.)",
+  "answers": [
+   "Describe the building of the design project.",
+   "What is different from student to student in the design project?"
+  ]
+ },
+ {
+  "n": 1035,
+  "term": "Purpose of the design project: one decision affects other decisions",
+  "topic": "Analysis and design",
+  "kind": "reason",
+  "her_words": [
+   "And the purpose is to help you understand something that you are probably learning in the studio. That one decision effects other decisions.",
+   "You're given this, now find that. How you space the beams is going to have an impact. So it's a way to have you do exactly what you've done for homework, but not siloized."
+  ],
+  "summary": "The purpose of the design project is to help you understand what you are probably learning in studio: one decision affects other decisions (how you space the beams will have an impact on everything else). The textbook homework problems say 'you're given this, now find that'; the project has you do exactly that work but not siloed.",
+  "answers": [
+   "What does the design project teach?"
+  ]
+ },
+ {
+  "n": 1036,
+  "term": "Steel in tension forgives imperfections: pulling on it makes them disappear",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "The nice thing about tension and steel; assuming you don't poke a hole if there are any imperfections in the steel, pulling on it kind of makes them disappear."
+  ],
+  "summary": "The nice thing about tension in steel (as long as you do not poke a hole in it): if there are any imperfections in the steel, pulling on it 'kind of makes them disappear'. Compression is different; it has two failure modes, crushing (the strength of the steel is exhausted) and buckling (the member becomes geometrically unstable).",
+  "answers": [
+   "Why is steel in tension forgiving of imperfections when there are no holes?"
+  ]
+ },
+ {
+  "n": 1037,
+  "term": "The subscript cr means critical (Pcr, Fcr): wherever E is hidden in an equation",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Anytime there's E hidden in an equation our CR for critical."
+  ],
+  "summary": "The subscript cr stands for critical: any time E is hidden in an equation, the load or stress in it is a critical (buckling) one, as in Pcr and Fcr. (Her words are rough: 'our CR for critical'.)",
+  "answers": [
+   "What does the subscript cr in Fcr and Pcr stand for?"
+  ]
+ },
+ {
+  "n": 1038,
+  "term": "Fixed-fixed end condition: her example is a piece of steel embedded in concrete",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [],
+  "summary": "SUMMARY (not her words; no clear caption or slide line to quote): Her example of a fixed support for a column (fixed-fixed): a piece of steel embedded in concrete, where we know right where the supports are. The caption reads 'A peace of industrial imbedded in concrete'; the reader's best reading is a piece of steel.",
+  "answers": [
+   "Give a physical example of a fixed support for a column."
+  ]
+ },
+ {
+  "n": 1039,
+  "term": "Braced versus unbraced frame: why the unbraced (moment) frame needs bigger members",
+  "topic": "Frames and bracing",
+  "kind": "comparison",
+  "her_words": [
+   "We have an unbraced frame that gives us a lot more flexibility. However, we have to use bigger members because it's flexible. It'll move.",
+   "Much more complicated. All of these connections are truss connections. All equal to zeroto zero."
+  ],
+  "summary": "A braced frame is truss-like: its connections are truss connections (moment zero). An unbraced (moment) frame gives a lot more flexibility for the layout, but it is flexible and will move, so its members have to be bigger, and its connections are much more complicated (they have to carry moment). Her slide adds: flexibility for architectural design and layout, but greater deflection and drift than braced frames or shear walls.",
+  "answers": [
+   "Why does an unbraced (moment) frame need bigger members than a braced frame?"
+  ]
+ },
+ {
+  "n": 1040,
+  "term": "A round pipe or round HSS has only one radius of gyration",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "Because it's round there's only 1 and I look up R and it's 3. 68 and it's structural steel.",
+   "If it's round, there's only one r and look up the A."
+  ],
+  "summary": "A round section (pipe or round HSS) has only one radius of gyration to look up, 'because it's round there's only 1', so the slenderness ratio uses that single r instead of separate x and y values. She said it for the 10-inch standard pipe column (9/09) and again for the round HSS sample problem (9/30).",
+  "answers": [
+   "Why does a round pipe column have only one r to look up?"
+  ]
+ },
+ {
+  "n": 1041,
+  "term": "Why the elastic (Euler) buckling equation has no material strength in it",
+  "topic": "Compression members",
+  "kind": "reason",
+  "her_words": [
+   "It kind of makes sense because when a compression member buckles, we don't know how good it's material is because it becomes unstable before we exhaust the material strength."
+  ],
+  "summary": "A member that buckles becomes unstable before its material strength is exhausted, so you do not know (and it does not matter) how good its material is; that is why the elastic buckling equation contains no material strength. The other equation, the empirical one for the crushing range, does contain the material strength.",
+  "answers": [
+   "Why does the pin-ended elastic buckling equation contain no material strength?"
+  ]
+ },
+ {
+  "n": 1042,
+  "term": "Table 4-14 or the formula: use the formula if Fy is not in the table",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "Is one way more preferable than the other? No. All you need to know is, \"What is your steel strength?\". If you have something other than this then go to the formula."
+  ],
+  "summary": "Neither the table nor the formula is preferred: all you need to know is your steel strength. If the steel strength is one of the table's columns (named in class: 35, 36, 46, 50 and 70 ksi; her slide also lists 65) read the table; if you have something other than this, go to the formula. The table is set up for KL/r from 1 to 200.",
+  "answers": [
+   "The column steel has a yield stress that is not one of the Table 4-14 columns; what do you do?",
+   "Is the table or the formula preferred for the critical stress?"
+  ]
+ },
+ {
+  "n": 1043,
+  "term": "Why I-shapes are used as columns if a box is stronger (connections)",
+  "topic": "Compression members",
+  "kind": "reason",
+  "her_words": [
+   "That's a good question. It's the connections to the beam as a column. But, if we have a section as a column and you want to reinforce it, as our colleague said, it would be much different as a box."
+  ],
+  "summary": "A student asked why wide-flange (I) shapes are used if a box is so much stronger. Her answer: it is the connections to the beam; but when an existing section is used as a column and you want to reinforce it, a box (plates beside the web) is much better. She was answering a student's question, not setting an exam question.",
+  "answers": [
+   "A box is much stiffer than plates on the flanges; why are I-shapes used anyway?"
+  ]
+ },
+ {
+  "n": 1044,
+  "term": "A real building cited for a box-reinforced column (garbled captions)",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "Just referencing the Pfizer building, what they showed us though columns was supposed to be reinforced to make a box. And the level that buckled, they didn't want to use the F word failed."
+  ],
+  "summary": "While discussing welded plates on the W10x39 column she cited a real building (the captions say the Pfizer building): its columns were supposed to be reinforced with plates to make a box, and 'the level that buckled' (she avoided the word failed). The captions after that ('What happened to the plates? They brought the construction led load.') are garbled, so the rest of the story is uncertain.",
+  "answers": [
+   "In the real-building example she cited, what were the columns supposed to be reinforced into?"
+  ]
+ },
+ {
+  "n": 1045,
+  "term": "Weak axis braced, strong axis not: the strong axis uses the full length",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "What my teacher used to say is: Put your thumb on the axis you can understand if it's oriented this way, it's buckling the strong axis is the full length."
+  ],
+  "summary": "When the weak axis is braced at points and the strong axis is not, strong-axis buckling uses the full length of the column (for example K = 0.8 on the full 28 ft in homework 5-17), while the braces shorten only the weak-axis length. Her own teacher's trick was to 'put your thumb on the axis you can understand' and see which way the column buckles.",
+  "answers": [
+   "The weak axis is braced at points and the strong axis is not; which unbraced length goes with strong-axis buckling?"
+  ]
+ },
+ {
+  "n": 1046,
+  "term": "Which column to pick when several work (W14x53, W12x50, W10x49)",
+  "topic": "Compression members",
+  "kind": "reason",
+  "her_words": [
+   "A 10x49 is a little bit cheaper, but it fits better in the detail. You can play a lot with it until you find something that works for you."
+  ],
+  "summary": "The W14x53, W12x50 and W10x49 all carry the 492 kip load at KL = 10 ft; they have different profiles. The W10x49 is a little bit cheaper but fits better in the detail, and she said you can play a lot with it until you find something that works for you. (The reader notes that the reasoning in the captions is unclear.)",
+  "answers": [
+   "W14x53, W12x50 and W10x49 all carry 492 k at KL 10 ft; why might you choose the W10x49?"
+  ]
+ },
+ {
+  "n": 1047,
+  "term": "Truss compression members are designed like columns",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "We're going to note the unbraced length that has to do with the framing, one direction is the panel length and other direction is where do the gains come in and use these tables?"
+  ],
+  "summary": "A truss is a very deep and long spanning member; like all spanning members its top chord is in compression and its bottom chord in tension. Its compression members are designed exactly the way columns are, with the same tables, whether vertical or horizontal; the unbraced lengths come from the framing (one direction is the panel length, the other is where the bracing comes in), and its tension members are designed as in tension design. The design project asks you to design a truss.",
+  "answers": [
+   "How is a compression member of a truss designed, and what sets its unbraced lengths?",
+   "What will the design project ask you to design?"
+  ]
+ },
+ {
+  "n": 1048,
+  "term": "Truss top chord: method of joints, then the column tables",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "Eventually, I'm going to hand out the dreaded design project and one of the elements you're going to have to design is a truss.",
+   "Turns out the top chords are pure compression members and once you do the method of joints, and you find out what the compression is, you can look it up."
+  ],
+  "summary": "In the design project one of the elements you design is a truss. Its top chords are pure compression members: do the method of joints, find out what the compression is, then look it up in the column tables. It does not matter whether the member is vertical, horizontal or diagonal: if it only resists compression you can use the column tables (they presume the same unbraced length in both directions).",
+  "answers": [
+   "How do you find the compression force in a truss top chord before using the column tables?"
+  ]
+ },
+ {
+  "n": 1049,
+  "term": "Which axis a beam bends about (load plane, strong x-x, weak y-y)",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [
+   "Where the load is perpendicular to the longitudinal axis. It could be perpendicular to the weak axis. Which means it bends in this direction."
+  ],
+  "summary": "A beam's load is perpendicular to its longitudinal axis, and its response is bending. On her week-5 slide sketch the load acts in the plane of the weak axis y-y, so the section bends about its strong axis x-x, and she notes Ixx is much greater than Iyy for the same area (the slide poses the question why a wide flange is used; the answer she gave is the deeper-section entry). In class (9/23) she added that the load could be perpendicular to the weak axis, in which case the beam bends in that other direction. The economy table (Table 3-2) covers bending about the x axis only. The slide detail is the reader's reading of the page image.",
+  "answers": [
+   "A W beam is loaded in the plane of its web: about which axis does it bend, and how do Ixx and Iyy compare for the same area?"
+  ]
+ },
+ {
+  "n": 1050,
+  "term": "Beam bending: top flange compression, bottom flange tension, force = M / depth",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [
+   "Concave upward or positive the top is compression and the bottom is tension. Top flange in compression, bottom flange in tension separated by the distance",
+   "We take the moment and do we do by the depth of the Y flange."
+  ],
+  "summary": "For a beam bent concave upward (positive bending) the top flange is in compression and the bottom flange in tension, separated by the depth of the beam. The force in each flange is found by taking the moment and dividing by the depth (her slide: bending is a couple, C = T and M = C d = T d). When the compression in the top flange exceeds its buckling capacity the flange buckles, like a column. (The caption of her division sentence is garbled.)",
+  "answers": [
+   "In a beam bent concave upward, which flange is in compression, and how is the flange force found?"
+  ]
+ },
+ {
+  "n": 1051,
+  "term": "Encasing steel in concrete for fire: good news and bad news",
+  "topic": "Construction and fire",
+  "kind": "comparison",
+  "her_words": [
+   "If you have steel fully encased, the good news is the steel is fireproof. The bad news is you're carrying a lot of extra weight.",
+   "Maybe the only thing that needs to be incased is the top flange which was true, but it does mean we have to fireproof what sticks below it."
+  ],
+  "summary": "If the steel is fully encased, the good news is that it is fireproof; the bad news is that you carry a lot of extra weight. Over time it became more sophisticated: perhaps only the top flange needs to be encased, but then you still have to fireproof whatever sticks out below it, which is still a lot of extra weight. An encased beam, an encased top flange and a composite slab are cases where the compression flange counts as continuously braced.",
+  "answers": [
+   "What are the good news and the bad news of fully encasing steel in concrete?"
+  ]
+ },
+ {
+  "n": 1052,
+  "term": "Shear studs about 6 in on center brace the compression flange",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "How we build today is we lay down steel depth. We weld sheer studs and we power a concrete slab.",
+   "In order for the compression flange to buckle it has to break that weld at every stud and they March along 6 inches on center."
+  ],
+  "summary": "Today's floor: lay down the steel deck, weld shear studs to the beam and pour a concrete slab. For the compression flange to buckle sideways it would have to break the weld at every stud, and the studs march along about 6 in on center, so that is not what happens first and the compression flange is continuously braced (and the steel is still fireproofed).",
+  "answers": [
+   "How far apart are the shear studs on a composite beam, and why does that brace the flange?"
+  ]
+ },
+ {
+  "n": 1053,
+  "term": "Details that give a continuously braced compression flange (and the upset beam)",
+  "topic": "Beams and floor framing",
+  "kind": "list",
+  "her_words": [
+   "Anything other than this has to be your judgment and you have to be very careful as designers actually look at the details.",
+   "We would have to weld it and maybe build a wall above it. This was not continuously lateral when braced. This was fully unbraced."
+  ],
+  "summary": "Continuously braced compression flange (maximum moment capacity): a fully encased beam, an encased top flange, and composite construction (slab on a steel deck with welded studs). Anything other than these is your judgment, and as a designer you have to look very closely at the details: for example, if the beam is set so that the metal deck sits below the top flange (an 'upset' beam) you would have to weld it and maybe build a wall above it, and that is not continuously braced; it is treated as fully unbraced.",
+  "answers": [
+   "Name two construction details in which the compression flange can be taken as continuously laterally braced, and one that needs judgment."
+  ]
+ },
+ {
+  "n": 1054,
+  "term": "A steel beam in a wood building: the designer decides (her story)",
+  "topic": "Construction and fire",
+  "kind": "fact",
+  "her_words": [
+   "There was a time when the fire department if I have a steel beam and a wood building there was a time when the DOB and the fire department says it's not placed.",
+   "You as the designer has to make a decision."
+  ],
+  "summary": "She told a story about a time when the buildings department and the fire department objected to a steel beam in a wood building, and ended 'You as the designer has to make a decision': when the standard detail does not settle it, the designer decides. The captions of the story are garbled, so the answer is uncertain beyond that.",
+  "answers": [
+   "Who decides what to do when the bracing or fire-protection detail is not the standard one?"
+  ]
+ },
+ {
+  "n": 1055,
+  "term": "We never design in ASD (use the LRFD columns of the economy table)",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "We never design in AS B. If you have renovated a building built preL RFD, you might have to know what capacity are.",
+   "To do this, we only design that when we're looking at the white columns with the blue lettering."
+  ],
+  "summary": "She said 'We never design in ASD'; you might need to know ASD capacities only if you renovate a building built before LRFD. In the economy table she pointed to the LRFD columns ('the white columns with the blue lettering', as heard; which columns these are cannot be checked from the captions). The foot of the table page on her slide prints phi_b = 0.90 for LRFD and Omega_b = 1.67 for ASD (the reader's reading of the page image).",
+  "answers": [
+   "When might you need ASD capacities, and which columns of the economy table do you use for LRFD?"
+  ]
+ },
+ {
+  "n": 1056,
+  "term": "Why steel and wood framing can be counted as a psf number but concrete cannot",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "for the kind of loads that these two materials carry, they are pretty lightweight and treat it in a pound per square foot number. That won't be so next semester in concrete because concrete is very heavy.",
+   "So we have most of the work that a concrete structure does is hold itself up."
+  ],
+  "summary": "Steel and wood framing are taken as a pound-per-square-foot number because the loads these two materials carry are pretty lightweight; an unusually large member is looked at separately (caption garble). That will not be so next semester in concrete, because concrete is very heavy and most of the work a concrete structure does is hold itself up.",
+  "answers": [
+   "Why can steel framing be counted as a psf load but concrete cannot?"
+  ]
+ },
+ {
+  "n": 1057,
+  "term": "First failure sets the capacity: the compression flange of a wide flange",
+  "topic": "Beams and floor framing",
+  "kind": "comparison",
+  "her_words": [
+   "Whenever we are looking at a phenomenon failure load, maximum load and the thing that fails first for bending in a wide flange is the compression flange. Once that buckles, we are done.",
+   "It'll be the reverse when we do concrete. So we'll be looking at what cracks first. As soon as it cracks that's the end of the line."
+  ],
+  "summary": "For bending of a wide flange the thing that fails first is the compression flange: once it buckles you are done, as soon as the first part fails that is the capacity (the same first-failure idea as for tension parts and the column KL/r values). It will be the reverse when you do concrete (next semester): you look at what cracks first, and as soon as it cracks that is the end of the line. The tension flange is fine as long as it is not punched full of holes.",
+  "answers": [
+   "What decides the capacity of a concrete beam, unlike a steel wide flange?",
+   "In bending of a wide flange, which part fails first?"
+  ]
+ },
+ {
+  "n": 1058,
+  "term": "The load is the load: the moment does not depend on the material",
+  "topic": "Analysis and design",
+  "kind": "fact",
+  "her_words": [
+   "The load is the load. Concrete beam and it had a 62 kip force at mid span. The moment will still be 310 kips.",
+   "How you design and what's happen to it. That's the material base. The load is the load."
+  ],
+  "summary": "The load, and the moment it causes, do not depend on the material: a 62 kip load at mid-span of the 20 ft girder gives 310 kip-ft whether the beam is steel or concrete. What differs is how you design for it, which is the material's part ('That's the material base'). (The caption writes the moment as 310 kips; it is kip-ft.)",
+  "answers": [
+   "A 62 k point load acts at mid-span of a 20 ft girder; does the moment depend on the material?"
+  ]
+ },
+ {
+  "n": 1059,
+  "term": "Concrete versus steel: tension side, hanger versus column",
+  "topic": "Steel as a material",
+  "kind": "comparison",
+  "her_words": [
+   "With concrete is the opposite. It's really good in compression. It's very brittle in tension. That's why the steel is on the tension side and the concrete is on the compression side.",
+   "We're using two materials in the best way possible. Load is the same. A lot less steel as a hanger than as a because steel has really good intention."
+  ],
+  "summary": "Steel is very good in tension if you do not make Swiss cheese of it; the weak link is compression, because of buckling, so a compression member needs more steel. Concrete is the opposite: very good in compression and very brittle in tension, which is why the steel goes on the tension side and the concrete on the compression side of a concrete beam (two materials used in the best way possible). The load is the same, but a tension hanger needs a lot less steel than a column. (Caption garbles: 'intention' = tension.)",
+  "answers": [
+   "Why does a reinforced-concrete beam carry its steel on the tension side?",
+   "Which needs less steel for the same load, a hanger or a column?"
+  ]
+ },
+ {
+  "n": 1060,
+  "term": "Yield moment My: the extreme fiber first reaches Fy (her week-5 slide)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "The magnitude of the bending stress at the extreme fiber reaches the yield point Fy of the material",
+   "And we allowed the stress level to increase until the extreme fiber started to yield and when that happened? We stopped. That's as far as we went in statics."
+  ],
+  "summary": "Stage 1 of bending on her week-5 slide: the bending stress at the extreme fiber reaches the yield point Fy of the material. In the elastic range the extreme-fiber stress is fb = M/S (marked 'statics' on the slide), so at first yield Fy = My/S and My = Fy S (the formulas are the reader's reading of the slide image). In statics she let the stress rise only until the extreme fiber started to yield and then stopped.",
+  "answers": [
+   "At the instant the extreme fiber first reaches Fy, what is the moment called and how is it computed?"
+  ]
+ },
+ {
+  "n": 1061,
+  "term": "Beyond My the yielding spreads inward (stage 2 of bending)",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "M > My Stress at the extreme fiber cannot exceed Fy",
+   "Stress is transferred fibers that are not yet @ yield point",
+   "It starts the permeate the entire depth until the entire depth of the section has yielded it."
+  ],
+  "summary": "Stage 2 on her week-5 slide: when M is greater than My, the stress at the extreme fiber cannot exceed Fy, so stress is transferred to fibers that are not yet at the yield point. In class (9/23) she said the yielding then goes through the entire depth of the section until the whole section has yielded; once the extreme fiber yields you do not get more stress there.",
+  "answers": [
+   "What happens in a beam when the moment goes beyond the yield moment My?"
+  ]
+ },
+ {
+  "n": 1062,
+  "term": "Full plasticity M = Mp: maximum bending strength (stage 3)",
+  "topic": "Beams and floor framing",
+  "kind": "definition",
+  "her_words": [
+   "M = Mp Full plasticity of the cross section = maximum bending strength of the section",
+   "beyond this point the extra stress capacity due strain hardening is impractical because the strains are too large"
+  ],
+  "summary": "Stage 3 on her week-5 slide: M = Mp, full plasticity of the cross section, is the maximum bending strength of the section; beyond that point the extra stress capacity from strain hardening is impractical because the strains are too large. Mp = Fy Z (for the rectangle she derived, Z = b d^2/4, with S = b d^2/6 and a shape factor Mp/My = 1.5; these formulas are the reader's reading of the slide image). On 9/23 she did the rectangle once and said she would not do it again.",
+  "answers": [
+   "What does full plasticity mean for a beam, and why is strain-hardening strength not counted?"
+  ]
+ },
+ {
+  "n": 1063,
+  "term": "Beam, and the members that act as beams (her week-5 slide)",
+  "topic": "Beams and floor framing",
+  "kind": "list",
+  "her_words": [
+   "Beam: A structural element (usually horizontal), that rests on supports & resists loads perpendicular to its longitudinal axis"
+  ],
+  "summary": "Her week-5 slide: a beam is a structural element, usually horizontal, that rests on supports and resists loads perpendicular to its longitudinal axis. Members that are beams: joists, lintels, spandrels, stringers, girders, retaining walls, and others (the list is open-ended, 'etc').",
+  "answers": [
+   "Name four kinds of member that act as beams."
+  ]
+ },
+ {
+  "n": 1064,
+  "term": "Beam diagrams: Table 3-23, enough about 85 percent of the time",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [
+   "Refer to AISC Table 3-23 pg 3-208 to 3-221 Shears, Moments & Deflections",
+   "I would say 85 percent of the time, you can just use these diagrams in the beam section towards the back."
+  ],
+  "summary": "For the maximum moment you can use statics or go to the Steel Manual: the beam chapter has common beam loadings (diagrams) at the back, and she said that about 85 percent of the time you can just use these diagrams. Her week-5 slide cites AISC Table 3-23, pages 3-208 to 3-221, for shears, moments and deflections. The diagrams she used: diagram 1 (uniform load, wL^2/8), diagram 7 (single load at the center, PL/4), diagram 9 (two equal loads, Pa).",
+  "answers": [
+   "How often can the common beam diagrams in the Manual replace a statics calculation?",
+   "Which Manual table does her slide cite for shears, moments and deflections of beams?"
+  ]
+ },
+ {
+  "n": 1065,
+  "term": "Total equivalent uniform load row of the beam diagrams",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [],
+  "summary": "SUMMARY (not her words; no clear caption or slide line to quote): On her week-5 slides each beam diagram also prints a total equivalent uniform load: wl for diagram 1, 2P for diagram 7 (a single load at the center of a simple span), 8Pa/l for diagram 9, 4wl for the cantilever with a uniform load (diagram 19) and 8P for the cantilever with a point load at the free end (diagram 22). It was shown but never discussed in class (the reader read it from the page images).",
+  "answers": [
+   "What total equivalent uniform load corresponds to a single load P at the center of a simple span?"
+  ]
+ },
+ {
+  "n": 1066,
+  "term": "Economy table is for Fy 50 and the x axis only; Table 3-4 is the y axis",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [
+   "Table is set up for Fy=50 ksi steel only",
+   "Bending about the X axis only (AISC Table 3-4: Bending about the Y axis)"
+  ],
+  "summary": "Her week-5 slide on the economy tables (Table 3-2, pages 3-19 to 3-27): the table is set up for Fy = 50 ksi steel only; it covers bending about the x axis only (AISC Table 3-4 is for bending about the y axis); shapes are grouped by similar Zx and similar phi Mpx (moment capacity), and within a grouping the most economical is in boldface type.",
+  "answers": [
+   "For which steel strength and which axis of bending is the economy table set up, and which table covers the y axis?"
+  ]
+ },
+ {
+  "n": 1067,
+  "term": "What braces the compression flange of a girder: the beams that frame into it",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [
+   "It's braced only by the beams that frame into it."
+  ],
+  "summary": "In a floor system the compression flange of a girder is braced by the beams that frame into it, so its unbraced length is their spacing (her week-5 slide sketch shows a girder with beams framing in at its third points; her 9/30 example with an 8 ft unbraced length: 'braced only by the beams that frame into it'). The slide sketch detail is the reader's reading of the page image.",
+  "answers": [
+   "In a floor system what braces the compression flange of a girder, and at what spacing?"
+  ]
+ },
+ {
+  "n": 1068,
+  "term": "Span length gives the moment load; the unbraced length gives the capacity",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "Span length gives us moment load, the unbraced length gives us capacity. Big difference.",
+   "The moment doesn't change. The unbraced length changes."
+  ],
+  "summary": "For a beam, the span length gives the moment load (the moment to be resisted); the unbraced length of the compression flange gives the capacity. When the unbraced length gets longer, like a column that gets more spaghetti-like, the compression the flange can carry goes down and so the moment capacity goes down. The moment does not change; the unbraced length changes the capacity. (The unbraced-length curves themselves are taught after the midterm cut.)",
+  "answers": [
+   "What does the span fix and what does the unbraced length fix for a beam?",
+   "Does the unbraced length of the compression flange change the moment Mu?"
+  ]
+ },
+ {
+  "n": 1069,
+  "term": "Why a deeper section carries more moment (why wide flanges)",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "The deeper the member is the further away these two flanges are the more moment it can resist.",
+   "Without adding additional seal we make it deeper. We are increasing the moment capacity.",
+   "So for the same, A and make it deeper you get a lot more capacity."
+  ],
+  "summary": "Bending resolves into a couple (one flange acts like a compression member and the other like a tension member), so the deeper the member, the farther apart the two flanges and the more moment it can resist, without adding steel. For the same area, making it deeper gives a lot more capacity, because most of the moment of inertia is the area of the flange times its distance squared (A d^2). (Caption garble: 'seal' = steel.)",
+  "answers": [
+   "Why does a deeper section carry much more moment than a shallower one of the same area?",
+   "Why are wide-flange shapes used for beams?"
+  ]
+ },
+ {
+  "n": 1070,
+  "term": "Euler check: compute the slenderness ratio first",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "Because that will tell me if it's reasonable to be using oiler. They have to be very slender to be oiler columns."
+  ],
+  "summary": "In her round-HSS sample (HSS 7 x 0.25, K = 1, L = 32 ft, only one r) she did the slenderness ratio first (KL/r about 161), because it tells you whether it is reasonable to use Euler: Euler columns have to be very slender. (Caption garble: 'oiler' = Euler.) Then the Euler stress (about 11 ksi) times the area gives the critical buckling load, which she compared with the Manual's HSS column table.",
+  "answers": [
+   "Why do the slenderness ratio first in the Euler sample problem?"
+  ]
+ },
+ {
+  "n": 1071,
+  "term": "Column table page: check the Fy at the top (ordinary steel is Fy 50)",
+  "topic": "The Manual",
+  "kind": "fact",
+  "her_words": [
+   "Make sure you're at the correct Fy. We're not using exotic steel. It'll be Fy50. It's at the top of the page."
+  ],
+  "summary": "When reading the column tables, make sure you are at the correct Fy: it is printed at the top of the page. In her 9/30 sample she said they are not using exotic steel, so it is Fy 50, then look at the W8 rows and the KL row.",
+  "answers": [
+   "How do you know which Fy a column-table page is for?"
+  ]
+ },
+ {
+  "n": 1072,
+  "term": "Why fixed ends carry more load (like a shorter column)",
+  "topic": "Compression members",
+  "kind": "reason",
+  "her_words": [
+   "Resistance to rotation is the same as the shorter column. A shorter distance of points of 0 moment. If the length is shorter, we can carry more load."
+  ],
+  "summary": "Fixed ends resist rotation, which is the same as a shorter column: a shorter distance between the points of zero moment. If the length is shorter, we can carry more load (K = 0.65 for fixed-fixed against 1.0 for pinned-pinned).",
+  "answers": [
+   "Why does a column with fixed ends carry more load than a pinned one?"
+  ]
+ },
+ {
+  "n": 1073,
+  "term": "Adding braces to the compression flange raises the moment (her slide)",
+  "topic": "Beams and floor framing",
+  "kind": "reason",
+  "her_words": [
+   "Adding braces to the compression flange -> decreasing the unbraced length increasing the axial load C required to buckle the top flange increasing the amount of M that can be resisted & the applied load",
+   "Therefore: Maximum Moment capacity -> the compression flange is continuously laterally braced",
+   "Same game; same n flange, but this time I'm going to brace it at the third points. So there was going to be a moment greater than the second moment. A lot greater than the first moment."
+  ],
+  "summary": "Her week-5 slide: adding braces to the compression flange decreases the unbraced length, which increases the axial load C required to buckle the top flange, which increases the moment that can be resisted and the load that can be applied. In class: brace it once and the moment it can carry is greater than the first; brace it at the third points and it is greater than the second and a lot greater than the first. Therefore the maximum moment capacity is reached when the compression flange is continuously laterally braced.",
+  "answers": [
+   "Why does bracing the compression flange of a beam raise the moment it can carry?"
+  ]
+ },
+ {
+  "n": 1074,
+  "term": "A flat ceiling: choose the girder as deep as the beams (W16x50)",
+  "topic": "Beams and floor framing",
+  "kind": "fact",
+  "her_words": [
+   "Is there something that works so that the bottom of the flanges are at the same elevation? Is there a W16 that works?",
+   "Both are solutions the W21 is the most economical. They both work.",
+   "You want the ceiling to be flat."
+  ],
+  "summary": "For the 20 ft girder (Mu = 310 kip-ft, fully braced) the most economical is the W21x44; but if you want the bottom of the flanges at the same elevation as the beams (a flat ceiling) you ask whether a W16 works: the W16x50 does (345 kip-ft). Both are solutions; the W21 is the most economical. A depth requirement is a very good reason to pick something that is not the lightest.",
+  "answers": [
+   "The lightest girder is deeper than the beams; what do you choose if the ceiling must be flat?",
+   "When can the lightest section be rejected?"
+  ]
+ },
+ {
+  "n": 1075,
+  "term": "Table 2-4 legend: black square, shaded cell, blank cell",
+  "topic": "The Manual",
+  "kind": "definition",
+  "her_words": [
+   "Preferred material specification; light-shaded cell = Other applicable material specification (availability should be confirmed prior to specification); blank/white cell = Material specification does not apply."
+  ],
+  "summary": "The legend printed under Table 2-4 (shown on her week-1 slide 4): a black square marks the preferred material specification for that shape; a light-shaded cell marks another applicable specification (confirm availability before specifying it); a blank cell means the specification does not apply to that shape.",
+  "answers": [
+   "In the Manual table of applicable ASTM specifications, what do a black square, a shaded cell and a blank cell mean?"
+  ]
+ },
+ {
+  "n": 1076,
+  "term": "Carbon content: mild, medium and high carbon steel (percentages)",
+  "topic": "Steel as a material",
+  "kind": "list",
+  "her_words": [
+   "1890 Structural Steel replaced Wrought Iron in construction",
+   "Carbon Content: 0.15% to 1.7%",
+   "Mild steel 0.15% - 0.29%",
+   "Medium carbon steel 0.30% - 0.59%",
+   "High carbon steel 0.60% - 1.70%",
+   "And today, we even have mild, medium and high carbon steel."
+  ],
+  "summary": "On her week-1 slide p.5: structural steel replaced wrought iron in construction in 1890, with a carbon content of 0.15% to 1.7%; mild steel 0.15% - 0.29%; medium carbon steel 0.30% - 0.59%; high carbon steel 0.60% - 1.70%. In class (8/26) she said that today there are mild, medium and high carbon steels.",
+  "answers": [
+   "What carbon range defines medium carbon steel?",
+   "What is the carbon content of mild steel?"
+  ]
+ },
+ {
+  "n": 1077,
+  "term": "Cast iron and wrought iron: carbon content on her slide",
+  "topic": "Steel as a material",
+  "kind": "comparison",
+  "her_words": [
+   "Cast Iron: low carbon content (<= 0.15%)",
+   "Wrought Iron: high carbon content (>= 2.00%)",
+   "1840 Wrought Iron began to replace Cast Iron",
+   "Less brittle, again, high carbon content, but could span longer distances."
+  ],
+  "summary": "Her version, as written on her week-1 slide p.5: 1779, the first cast-iron bridge (England), revolutionary but brittle, with cast iron low in carbon (<= 0.15%); 1840, wrought iron began to replace cast iron, more malleable, with wrought iron high in carbon (>= 2.00%). In class (8/26, the captions say 'water iron') she described wrought iron as less brittle, 'again, high carbon content', able to span longer distances. This entry stores her version only.",
+  "answers": [
+   "Which has more carbon, cast iron or wrought iron?",
+   "Which iron replaced the other in 1840, and which was more malleable?"
+  ]
+ },
+ {
+  "n": 1078,
+  "term": "1856: steel first made in the USA, carbon added to iron (<= 1%)",
+  "topic": "Steel as a material",
+  "kind": "fact",
+  "her_words": [
+   "1856 Steel first made in the USA",
+   "Carbon added to Iron (<= 1%) with the Bessemer Process (textbook pg. 6)"
+  ],
+  "summary": "Her week-1 slide p.5: 1856, steel first made in the USA, with carbon added to the iron (<= 1%) by the steel-making process of the day (the Bessemer process, textbook p.6); 1890, structural steel replaced wrought iron in construction (carbon content 0.15% to 1.7%).",
+  "answers": [
+   "In 1856 steel was first made in the USA; how much carbon was added to the iron?"
+  ]
+ },
+ {
+  "n": 1079,
+  "term": "Effect of carbon on steel: harder and stronger but more brittle",
+  "topic": "Steel as a material",
+  "kind": "fact",
+  "her_words": [
+   "Carbon gives hardness & strength, but the more carbon the more brittle (ex: bad weldability)",
+   "Chromium, silicon & nickel produce higher strength, but more expensive",
+   "carbon gives hardness and strength so you might think that's a good thing, but the more carbon you have the more brittle the steel is."
+  ],
+  "summary": "Her week-1 slide p.4 and class 8/26: carbon gives hardness and strength, but the more carbon the more brittle the steel (for example, bad weldability); chromium, silicon and nickel give higher strength but are more expensive (project-specific decisions).",
+  "answers": [
+   "What does carbon do to the strength and the brittleness of steel?"
+  ]
+ },
+ {
+  "n": 1080,
+  "term": "Why holes call for the rupture check at the net section (wk2 p.1)",
+  "topic": "Tension members",
+  "kind": "reason",
+  "her_words": [
+   "w/ Bolt holes - can fail @ the net section (reduced area @ the holes).",
+   "Ar @ load lower than the load required to yield the gross area.",
+   "Strain hardening @ the reduced area is quickly reached"
+  ],
+  "summary": "On her week-2 slide 1, a member without holes can resist more than Ag Fy because of strain hardening, but it would lengthen a great deal; a member with bolt holes can fail at the net section (the reduced area at the holes) at a load lower than the load needed to yield the gross area, because strain hardening in the reduced area is quickly reached. Hence the code requires two checks: yielding at the gross area, or rupture at the effective net area. (The middle annotation is rough: 'Ar @ load lower than ...'.)",
+  "answers": [
+   "Why does a member with bolt holes need a rupture check?",
+   "Why does tension have two checks?"
+  ]
+ },
+ {
+  "n": 1081,
+  "term": "Block shear: what it is (her slide wk2 p.19-21)",
+  "topic": "Tension members",
+  "kind": "definition",
+  "her_words": [
+   "FOR ROLLED SHAPES ONLY - CHECK 'BLOCK SHEAR'",
+   "Note: 2 phenomena are going on simultaneously - Shear + Tension.",
+   "Anv = Net Area in Shear",
+   "Agv = Gross Area in Shear",
+   "note Fy always with Ag",
+   "Fu always with An"
+  ],
+  "summary": "Her slides: for rolled shapes only, check block shear. Two phenomena go on at the same time, shear and tension: the block along the bolt rows tears out along shear planes (parallel to the load) and tension planes (perpendicular to the load). Anv = net area in shear, Ant = net area in tension, Agv = gross area in shear; phi = 0.75; U = 1.0 for a single-row connection and 0.5 for multiple rows; the strength is phi(0.6 Fu Anv + U Fu Ant) or phi(0.6 Fy Agv + U Fu Ant) (take the lower), with Fy always with the gross area and Fu always with the net area. Every homework says to neglect block shear and it was not on her 9/30 list of midterm topics.",
+  "answers": [
+   "What is block shear?",
+   "Which areas go with Fy and which with Fu in the block shear equation?"
+  ]
+ },
+ {
+  "n": 1082,
+  "term": "Block shear example: the W21x93 flange (her slide wk2 p.22)",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "Prior Example w/ W21x93 - Calculate Block Shear Strength",
+   "Note: Tmax still 996.5 k"
+  ],
+  "summary": "Her week-2 slide 22 re-uses the W21x93 flange example (bolts 3/4 in, three holes in a line spaced 2, 4, 4 in, edge distance 1.5 in, four block-shear areas): Agv = 4(10)(0.93) = 37.2 in^2; Anv = 4[10 - 2.5(3/4 + 1/8)](0.93) = 29.1 in^2; Ant = 4[1.5 - (1/2)(3/4 + 1/8)](0.93) = 3.95 in^2. phi Pn = 0.75(0.6(65)(29.1) + 1(65)(3.95)) = 1044 k and 0.75(0.6(50)(37.2) + 1(65)(3.95)) = 1030 k, both above the earlier 996.5 k, so block shear did not govern. Nothing else in the weeks 1-4 slides uses block shear.",
+  "answers": [
+   "On her W21x93 example, did block shear govern, and what are the two block shear strengths?"
+  ]
+ },
+ {
+  "n": 1083,
+  "term": "Equal-area shapes: W21x50, W10x49 and a 12 in pipe (her Figure 9.8)",
+  "topic": "Compression members",
+  "kind": "comparison",
+  "her_words": [
+   "Figure 9.8 Comparison of steel cross-sections with equivalent areas.",
+   "The more slender direction is about the YY axis, r_y = r_min",
+   "L/r_y is the critical slenderness & will yield the first failure load"
+  ],
+  "summary": "Her week-3 slide 4 (textbook Figure 9.8, three cross-sections of equal area, L = 15 ft): W21x50 (A = 14.7 in^2, ry about 1.3 in as its L/r implies) L/r = 138.5; W10x49 (A = 14.4, ry = 2.54) L/r = 70.9; 12 in standard pipe (A = 14.0, r = 4.38 about both axes) L/r = 41.1. So of the three the pipe is the least slender and the W21x50 the most. Where rx and ry differ, the more slender direction is about the y axis, r_y = r_min, and L/r_y is the critical slenderness and gives the first failure load. (The slide transcript prints ry = 1.90 for the W21x50, which does not match its L/r of 138.5; use the printed L/r values.)",
+  "answers": [
+   "Of a W21x50, a W10x49 and a 12 in standard pipe (about 14 in^2 each), which is least slender at 15 ft and what is its L/r?",
+   "A W10x49 has ry 2.54 in and L = 15 ft; what is L/r?"
+  ]
+ },
+ {
+  "n": 1084,
+  "term": "Column splice details (2 ft above the floor, milled, in bearing)",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "Contact Surfaces milled",
+   "to transfer upper col. force in bearing",
+   "2' Above Fin. Floor",
+   "Most load will go through in bearing"
+  ],
+  "summary": "Her week-4 slides 13-14 on the column splice: the splice is located 2 ft above the finished floor; the contact surfaces are milled so the upper column force is transferred in bearing; keep T consistent between the upper and lower lift sizes so that most of the load goes through in bearing. The splice plates carry the difference between the two lifts (in her example (724 - 441)/2 = 141.5 k per plate), each checked as a short compression member (KL = 3 in).",
+  "answers": [
+   "How high above the finished floor is the splice, and how is the upper column force passed on?",
+   "Why keep T consistent between the upper and lower lift sizes at a splice?"
+  ]
+ },
+ {
+  "n": 1085,
+  "term": "Eqn 3-3: Fcr = 0.877 Fe (Euler with a safety factor of about 1.15)",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "EQN 3-3 (elastic buckling): F_cr = 0.877 F_e",
+   "NOTE: Euler Equation w/ SF ~= 1.15",
+   "One is the oiler equation except we added a safety factor to it and the other one is an empirical formula."
+  ],
+  "summary": "Her week-3 slide 15 labels the two branches of the Fcr against KL/r diagram: Eqn 3-2 (inelastic buckling, an empirical equation based on the material strength, roughly parabolic) and Eqn 3-3 (elastic buckling), Fcr = 0.877 Fe, which she notes is the Euler equation with a safety factor of about 1.15. The two meet at KL/r = 4.71 sqrt(E/Fy), and the elastic branch has a limit of 200. In class (9/09) she said one is the Euler equation with a safety factor added and the other is an empirical formula.",
+  "answers": [
+   "Eqn 3-3, Fcr = 0.877 Fe, is the elastic formula with what safety factor?"
+  ]
+ },
+ {
+  "n": 1086,
+  "term": "Mild steel stress-strain figure: upper and lower yield points (Figure 5.22)",
+  "topic": "Stress-strain curve",
+  "kind": "list",
+  "her_words": [
+   "Figure 5.22 Stress-strain diagram for mild steel (A36) with key points highlighted."
+  ],
+  "summary": "Her week-3 slide 4 reuses textbook Figure 5.22, the stress-strain diagram for mild steel (A36). Points labeled: proportional limit, upper yield point, lower yield point, ultimate stress, true stress / true rupture, rupture; ranges labeled: elastic, inelastic, plastic and strain hardening, with the 'allowable' stress level marked. A red box on her slide marks the elastic range, the region where the Euler equation is valid. (The point and range names are the transcript's reading of the page image.)",
+  "answers": [
+   "Name the two yield points drawn on the mild-steel stress-strain diagram."
+  ]
+ },
+ {
+  "n": 1087,
+  "term": "Flange slopes: S and C 16 2/3 percent, W 0 to 5 percent",
+  "topic": "Shape names",
+  "kind": "fact",
+  "her_words": [
+   "as the slope of their inner flanges is other than 16 2/3 percent."
+  ],
+  "summary": "Her week-1 slide 7 (textbook Figure 1.1): the flanges of the S beam (American standard beam) and the C channel have a 16 2/3 percent slope; the flange of a W section has a slope of 0 to 5 percent. An M shape is a doubly symmetrical H shape that cannot be classed as a W, S or HP section because the slope of its inner flanges is other than 16 2/3 percent. (The slope figures come from the slide transcript's reading of the figure labels.)",
+  "answers": [
+   "What flange slope do S beams and C channels have, and what is the W-flange taper?"
+  ]
+ },
+ {
+  "n": 1088,
+  "term": "The New York building of the 1850s on her history slide",
+  "topic": "Steel as a material",
+  "kind": "fact",
+  "her_words": [],
+  "summary": "SUMMARY (not her words; no clear caption or slide line to quote): On her week-1 slide p.5 the first buildings with wrought-iron frames (1853-1858) are illustrated by the six-story Foundation Building in New York. The photo caption on the slide says it was a precursor of skeletal steel frame construction and the first building in New York to use structural wrought-iron I-beams, made from rolled railroad rails. (The caption names the person who made the beams; the name is left out here.)",
+  "answers": [
+   "What was new about the New York building of the 1850s on her history slide?"
+  ]
+ },
+ {
+  "n": 1089,
+  "term": "Braced versus unbraced frames: advantages and disadvantages (wk3 p.10)",
+  "topic": "Frames and bracing",
+  "kind": "comparison",
+  "her_words": [
+   "Produces localized stress concentrations at rigid joints",
+   "Requires care in the erection of connections in order to resist lateral loads properly",
+   "Accommodates service penetrations",
+   "Produces problems for a layout of windows and doors due to obstruction of bracings",
+   "Moment Frame = Unbraced",
+   "X-braced frame"
+  ],
+  "summary": "Her week-3 slide 10. Unbraced (moment) frame, pictured as 'Moment Frame = Unbraced': advantage, flexibility for architectural design and layout; disadvantages, greater deflection and drift than braced frames or shear walls, localized stress concentrations at rigid joints, care in erecting connections to resist lateral loads, expensive moment connections. Braced frame (pictured as the X-braced frame): advantages, can be located inside or outside, accommodates service penetrations, can be located within partition walls, no moment connections; disadvantages, bracing obstructs windows and doors, fireproofing materials take up space, large gusset plates at beam-column connections. The third system pictured is the (steel plate) shear wall. In class (9/09) she added: the unbraced frame needs bigger members because it is flexible and will move.",
+  "answers": [
+   "Name two disadvantages of an unbraced (moment) frame.",
+   "Name two advantages and two disadvantages of a braced frame."
+  ]
+ },
+ {
+  "n": 1090,
+  "term": "First guess for a column: KL/r of about 50 (40 to 60)",
+  "topic": "Compression members",
+  "kind": "fact",
+  "her_words": [
+   "KL/r for L = 10' to 15' ~= 40 to 60 ksi -> a good place to start",
+   "A good place to start is a KL /R."
+  ],
+  "summary": "Her week-4 slide 1 ('Guesstimate help'): for L = 10 to 15 ft, KL/r of about 40 to 60 is a good place to start (the slide prints 'ksi' after it, a slip: KL/r has no units); in class (9/16) she used KL/r of about 50, which gives phi Fcr = 37.5 ksi for Fy 50, then required Ag = Pu / (phi Fcr) and refined the size.",
+  "answers": [
+   "What KL/r is a good first guess for a column 10 to 15 ft long?"
+  ]
+ },
+ {
+  "n": 1091,
+  "term": "A staggered path removes more than one hole but less than two",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "This is a little bit more than one hole, but a little bit less than two holes."
+  ],
+  "summary": "On 9/02 she compared the paths: the straight line through one hole removes one hole; the zigzag (staggered) path 'is a little bit more than one hole, but a little bit less than two holes', so you take into account the diagonal and add back s^2/4g, and you check every path to find the minimum net area.",
+  "answers": [
+   "A staggered pattern removes how much of the gross area, in holes?"
+  ]
+ },
+ {
+  "n": 1092,
+  "term": "Minimum U for open shapes (Spec D3 on her slide)",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "the shear lag factor, U, need not be less than the ratio of the gross area of the connected element(s) to the member gross area.",
+   "This provision does not apply to closed sections, such as HSS, nor to plates."
+  ],
+  "summary": "Printed on her week-2 slide 2 (Spec D3): for open cross sections such as W, M, S, C or HP shapes, WTs, STs and single and double angles, the shear lag factor U need not be less than the ratio of the gross area of the connected element(s) to the member gross area; this does not apply to closed sections such as HSS, nor to plates.",
+  "answers": [
+   "For a W shape, what is the least value U may take?"
+  ]
+ },
+ {
+  "n": 1093,
+  "term": "Welds in holes or slots: use the net area through the holes (Spec D2)",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "Where connections use plug, slot, or fillet welds in holes or slots, the effective net area through the holes shall be used in Equation D2-2."
+  ],
+  "summary": "Printed on her week-2 slide 2 (Spec D2): where connections use plug, slot or fillet welds in holes or slots, the effective net area through the holes is used in the tensile rupture equation D2-2 (phi = 0.75 in LRFD).",
+  "answers": [
+   "Which net area goes into the rupture equation when plug, slot or fillet welds are used in holes or slots?"
+  ]
+ },
+ {
+  "n": 1094,
+  "term": "Tapered flange: thickness halfway between the edge and the web (Spec B4.3)",
+  "topic": "The Manual",
+  "kind": "fact",
+  "her_words": [
+   "For tapered flanges of rolled sections, the thickness is the nominal value halfway between the free edge and the corresponding face of the web."
+  ],
+  "summary": "Printed on her week-2 slide 7 (Spec B4.3): for tapered flanges of rolled sections, the thickness is the nominal value halfway between the free edge and the corresponding face of the web.",
+  "answers": [
+   "Which flange thickness applies to a rolled shape with tapered flanges?"
+  ]
+ },
+ {
+  "n": 1095,
+  "term": "HSS design wall thickness: 0.93 times the nominal (Spec B4.3)",
+  "topic": "The Manual",
+  "kind": "fact",
+  "her_words": [
+   "For HSS produced according to other standards approved for use under this Specification, the design wall thickness, t, shall be taken equal to 0.93 times the nominal wall thickness.",
+   "The design wall thickness, t, shall be taken equal to the nominal thickness for box sections and HSS produced according to ASTM A1065/A1065M or ASTM A1085/A1085M."
+  ],
+  "summary": "Printed on her week-2 slide 7 (Spec B4.3): the design wall thickness t is used in calculations with the wall thickness of hollow structural sections; it is the nominal thickness for box sections and for HSS made to ASTM A1065 or A1085, and 0.93 times the nominal wall thickness for HSS made to other standards approved by the Specification.",
+  "answers": [
+   "What design wall thickness is used for an HSS made to a standard other than A1065 or A1085?"
+  ]
+ },
+ {
+  "n": 1096,
+  "term": "A pipe may be designed as a round HSS if it is A53 Grade B",
+  "topic": "The Manual",
+  "kind": "fact",
+  "her_words": [
+   "A pipe can be designed using the provisions of this Specification for round HSS as long as the pipe conforms to ASTM A53/A53M Grade B and the appropriate limitations of this Specification are used."
+  ],
+  "summary": "Printed on her week-2 slide 7 (Spec user note): a pipe can be designed using the Specification's provisions for round HSS as long as the pipe conforms to ASTM A53 Grade B and the appropriate limitations of the Specification are used.",
+  "answers": [
+   "When may a pipe be designed as a round HSS?"
+  ]
+ },
+ {
+  "n": 1097,
+  "term": "Net area of a slotted HSS welded to a gusset plate (Spec B4.3)",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "For slotted HSS welded to a gusset plate, the net area, An, is the gross area minus the product of the thickness and the total width of material that is removed to form the slot."
+  ],
+  "summary": "Printed on her week-2 slide 7 (Spec B4.3): for a slotted HSS welded to a gusset plate, the net area An is the gross area minus the product of the thickness and the total width of material that is removed to form the slot.",
+  "answers": [
+   "How is the net area of a slotted HSS welded to a gusset plate found?"
+  ]
+ },
+ {
+  "n": 1098,
+  "term": "Modulus of elasticity E: the stiffness of steel, 29,000 ksi for every grade",
+  "topic": "Stress-strain curve",
+  "kind": "fact",
+  "her_words": [
+   "Proportional Limit: Stress/Strain diagram is linear up to this point; the slope of the straight-line E= Modulus of elasticity",
+   "E steel = 29,000 ksi a constant"
+  ],
+  "summary": "Her week-1 slide p.3: the slope of the straight line of the stress-strain diagram is E, the modulus of elasticity (the stiffness), and E for steel is 29,000 ksi, a constant. Strength (Fy, Fu) changes from grade to grade (A36 36/58, A992 50/65) but E does not: her slides use the same 29,000 ksi for Fy 50, 46 and 36 when they work out the elastic/inelastic boundary KL/r (113, 118, 134). Her Quiz 1 key words the definition as: in the elastic range, the ratio of stress to strain.",
+  "answers": [
+   "Does higher-strength steel have a greater modulus of elasticity (stiffness)?",
+   "What is E for steel, and does it depend on the grade?"
+  ]
+ },
+ {
+  "n": 1099,
+  "term": "No bolt holes (everything welded): check yielding only; there is no rupture check",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "If there are no bolt holes at all, then we only check zone yielding.",
+   "If there's no holes or welded, we don't worry about rupture because there are no holes.",
+   "If you're using welds there's no bolts."
+  ],
+  "summary": "If there are no bolt holes at all (all the connections are welded), you only check yielding on the gross area, factored load divided by the strength of the material (Ag >= Pu / (0.9 Fy)); you do not worry about rupture because there are no holes. (The 9/30 caption says 'zone yielding', read as yielding.) With welds there are no bolts, so no holes and no net-area reduction.",
+  "answers": [
+   "Welded all around, or no holes: which tension checks do you make?",
+   "Do you check rupture on a welded tension member with no holes?"
+  ]
+ },
+ {
+  "n": 1100,
+  "term": "A load not labelled factored is unfactored (service or working load)",
+  "topic": "Loads and LRFD",
+  "kind": "fact",
+  "her_words": [
+   "It doesn't have to be labelled working stress. If it's not labelled ultimate or factored, it's unfactored.",
+   "If they say nothing, it means it's unfactored.",
+   "We open up a code and looking at the snow load or water retention loads, they are going to be unfactored because they are going to reflect the usage."
+  ],
+  "summary": "A load does not have to be labelled working or service: if it is not labelled ultimate or factored, it is unfactored, and you apply the load factors yourself (1.2 D + 1.6 L). If a load is labelled ultimate (or Pu, factored) it is already factored: do not factor it again. Loads you open up in a code, such as snow or water retention loads, are unfactored because they reflect the usage; loads on a set of drawings are unfactored.",
+  "answers": [
+   "A load is not marked factored; what is it, and what do you do with it?"
+  ]
+ },
+ {
+  "n": 1101,
+  "term": "Fire and steel: loses strength; a two-hour rating is two hours to evacuate",
+  "topic": "Construction and fire",
+  "kind": "fact",
+  "her_words": [
+   "Steel is an excellent conductor of heat.",
+   "It isn't because the steel melted, it' s because at high temperatures.",
+   "It isn't to save the building, it's to make sure people can evacuate before the building collapses.",
+   "So when you go to the code and it says something like all office buildings have to have a two hour fire rate. It means you have two hours to evacuate the building.",
+   "One of the bad things about steel is when it's exposed to high temperatures. It really just looses it's strength and becomes ribbon candy."
+  ],
+  "summary": "Her words: steel is an excellent conductor of heat; in a fire it looks like ribbon candy, not because it melted but because at high temperatures it loses its strength. Fireproofing is not there to save the building but to make sure people can evacuate before the building collapses; when the code says all office buildings need a two-hour fire rating it means two hours to evacuate. On 9/23 she repeated that steel exposed to high temperatures loses its strength and becomes ribbon candy, adding that she imagines it probably does melt too. (This entry stores her version only.)",
+  "answers": [
+   "What is the fire danger to steel, and what does a two-hour fire rating mean?"
+  ]
+ },
+ {
+  "n": 1102,
+  "term": "U for a tee (WT): same as a wide flange, with the tee's own depth",
+  "topic": "Tension members",
+  "kind": "fact",
+  "her_words": [
+   "WT's are treated the same way Y flanges are.",
+   "Case 7 has to do with white flange s, M. All double shapes. Also T's cut from shapes.",
+   "Applies to W, M, S, HP, WT shapes: If we are connected only through the flanges"
+  ],
+  "summary": "Case 7 of the shear lag table covers W, M, S, HP shapes and also tees cut from shapes: 'WTs are treated the same way wide flanges are'. If only the web is connected U = 0.70; if connected through the flanges, compare the flange width bf with 2/3 of the depth d (bf at least 2/3 d gives U = 0.90, narrower gives 0.85). In her WT7x19 example (9/02) bf = 6.77 against 2/3 of 7.05 (the tee's own depth), so U = 0.9 and the capacity came out about 205 k.",
+  "answers": [
+   "What is the shear lag factor for a tee bolted through its flange, and which depth do you compare with?"
+  ]
+ },
+ {
+  "n": 1103,
+  "term": "Why the Manual's column table gives less than Euler (safety factors)",
+  "topic": "Compression members",
+  "kind": "reason",
+  "her_words": [
+   "We don't design for imminent failure. We have very robust safety factors because we design for human life.",
+   "NOTE limitations of Euler equation as a design equation:"
+  ],
+  "summary": "In her round-HSS sample (HSS 7 x 0.25, 32 ft) the Euler load came out about 55 k while the Manual's column table gives 43.3 k. What is missing in Euler that the table has is safety factors: 'We don't design for imminent failure. We have very robust safety factors because we design for human life.' Her slide lists the limitations of the Euler equation as a design equation: no safety factor, independent of material strength, assumed pin ends, valid only in the elastic range.",
+  "answers": [
+   "What is missing in Euler that is in the HSS column tables?",
+   "Why is the Manual's column capacity lower than the Euler load?"
+  ]
+ },
+ {
+  "n": 1104,
+  "term": "Why the hole is the bolt diameter plus 1/8 in (1/16 + 1/16)",
+  "topic": "Tension members",
+  "kind": "reason",
+  "her_words": [
+   "Tension in the bolt hole is actually the bolt diameter plus an eighth of an inch. Why? It's manufactured to be a 16th inch of a diameter.",
+   "We also subject an additional 16 th of an inch because the process for making these holes can damage the materials.",
+   "The hole is an eighth of an inch larger. 16th of an inch because the process of making the bolt hold the material."
+  ],
+  "summary": "The hole whose area you deduct is the bolt diameter plus an eighth of an inch: it is manufactured a 16th of an inch larger than the bolt, and an additional 16th of an inch is allowed because the process of making the holes can damage the material (a 3/4 in bolt gives a 7/8 in hole). The area taken out is a rectangle: this full hole width times the thickness of the element. She repeated the 1/8 in rule among the midterm topics on 9/30 and said she still wants the class to understand how bolts work.",
+  "answers": [
+   "Why is the hole bolt diameter + 1/8 in?",
+   "A drawing gives 3/4 in bolts; what hole size do you use in the net area?"
+  ]
+ },
+ {
+  "n": 1105,
+  "term": "Why the live-load factor 1.6 is bigger than the dead-load factor 1.2",
+  "topic": "Loads and LRFD",
+  "kind": "reason",
+  "her_words": [
+   "Live load is harder to grasp. It was an apartment now a fraternity. Have parties every night.",
+   "We can be very accurate with dead load and less accurate with live loads. So that's a bigger safety factor."
+  ],
+  "summary": "She can estimate dead load pretty accurately if the architect and the designs are good; live load is harder to grasp (an apartment that becomes a fraternity with parties every night; 50-year storms). So the live load needs the bigger safety factor: 1.2 on dead load and 1.6 on live load. Putting one safety factor on the material side says the two loads are equally uncertain, which she said is not what we feel today: we can be very accurate with dead load and less accurate with live loads.",
+  "answers": [
+   "Why is the live-load factor larger than the dead-load factor?",
+   "Why compare load combinations instead of one factor on the material side?"
+  ]
+ },
+ {
+  "n": 1106,
+  "term": "Strain is how much a member stretches: the change in length, designated epsilon",
+  "topic": "Stress-strain curve",
+  "kind": "definition",
+  "her_words": [
+   "Tension forces. It's going to want to grow a little bit.",
+   "Strain: Is it equal to the change in length, designated epsilon?",
+   "Applied forces -> Physical change (change in length or shape)",
+   "Steel subject to an applied Tension Force P will elongate Delta"
+  ],
+  "summary": "When you put a load on a structure there is a physical change: in tension it is going to want to grow a little bit (stretch). That physical response is strain, the change in length (relative to the original length, delta over L), designated epsilon. Her week-1 slide: applied forces give a physical change (change in length or shape); steel under a tension force P will elongate by delta, and strain is epsilon = delta / L, plotted against stress f = P/A. She pictured it in tension because it is easier to visualize.",
+  "answers": [
+   "What is strain, and which Greek letter stands for it?",
+   "What is the physical response of a member to a load?"
+  ]
+ },
+ {
+  "n": 1107,
+  "term": "A short column crushes (squashes)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "Short columns crushed and failing. We exceed the maximum low it can resist and the material strengths is exhausted and squashed.",
+   "If we exhaust the strengths of the steel, it crushes.",
+   "Short Columns fail by crushing"
+  ],
+  "summary": "Short columns crush: the maximum load the material can resist is exceeded, the strength of the steel is exhausted and the column squashes (her slide calls it an inelastic failure: material strength is exhausted). Long columns do not crush; they buckle.",
+  "answers": [
+   "How does a short column fail?",
+   "What is crushing in a compression member?"
+  ]
+ },
+ {
+  "n": 1108,
+  "term": "A long column buckles (bows sideways)",
+  "topic": "Compression members",
+  "kind": "definition",
+  "her_words": [
+   "And if it becomes geometrically unstable, it buckles.",
+   "Long columns fail and buckle. They become unstable about the weaker of two axis.",
+   "It'll buckle first about the axis with the smaller r."
+  ],
+  "summary": "If a compression member becomes geometrically unstable it buckles: long columns buckle, becoming unstable about the weaker of the two axes, and elastic buckling happens well before the strength of the steel is exhausted. A column starts to deform (curve), and it buckles first about the axis with the smaller r, the more 'spaghetti-like' (more slender) direction.",
+  "answers": [
+   "How does a long column fail?",
+   "About which axis does a column buckle first?"
+  ]
+ },
+ {
+  "n": 1109,
+  "term": "Ductile steel stretches before it fails; brittle material fails suddenly",
+  "topic": "Steel as a material",
+  "kind": "comparison",
+  "her_words": [
+   "Ductile (withstands large deformations w/o failure)",
+   "(vs a brittle material such as concrete -> sudden failure)",
+   "it fails abruptly because it's brittle"
+  ],
+  "summary": "Her slides: steel is ductile, it withstands large deformations without failure (the plastic range gives local deformations before failure and lets stresses be redistributed), against a brittle material such as concrete, which fails suddenly. In class (8/26) she described the yielding steel as having a lot of deformation, 'very, very saggy'; on 9/02 she said that near its ultimate strength steel fails abruptly because it is brittle.",
+  "answers": [
+   "What is the difference between a ductile and a brittle material?"
+  ]
+ }
+]

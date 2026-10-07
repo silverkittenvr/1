@@ -1,0 +1,1102 @@
+[
+ {
+  "id": "BC-001",
+  "topic": "tension-capacity",
+  "text": "A W10x33 tension member of A992 steel is connected through both flanges with two lines of 3/4-in.-diameter bolts in each flange, four bolts per line. Determine the design tensile strength phi Pn of the member, checking both gross yielding and tensile rupture."
+ },
+ {
+  "id": "BC-002",
+  "topic": "tension-capacity",
+  "text": "Determine the LRFD design strength of a PL 1/2 in. x 8 in. tension member of A36 steel. The plate is bolted with two 3/4-in.-diameter bolts in each row across its width, so every cross section through the bolts contains two holes."
+ },
+ {
+  "id": "BC-003",
+  "topic": "tension-capacity",
+  "text": "An L4 x 4 x 1/2 angle of A36 steel is used as a tension member. One leg is connected with a single line of four 7/8-in.-diameter bolts. Compute the available tensile strength phi Pn using LRFD. Consider yielding on the gross area and rupture on the effective net area."
+ },
+ {
+  "id": "BC-004",
+  "topic": "tension-capacity",
+  "text": "A C10x20 channel of A36 steel is used as a tension member. It is connected through the web with two lines of 3/4-in. bolts, three bolts in each line. Assume a shear lag factor U = 0.85. Find the design tensile strength of the channel."
+ },
+ {
+  "id": "BC-005",
+  "topic": "tension-capacity",
+  "text": "What is the maximum factored tensile load that a W8x31 (Fy = 50 ksi, Fu = 65 ksi) can resist if it is connected through its flanges with 7/8-in. bolts, two lines per flange and four bolts per line?"
+ },
+ {
+  "id": "BC-006",
+  "topic": "tension-capacity",
+  "text": "Using LRFD, determine the design tensile capacity of an L6 x 4 x 1/2 angle of A572 Grade 50 steel. The long leg is connected with one line of three 3/4-in.-diameter bolts."
+ },
+ {
+  "id": "BC-007",
+  "topic": "tension-capacity",
+  "text": "A W12x40 member, 12 ft long, carries axial tension. It is connected through the flanges with two rows of 7/8-in. bolts in each flange and three bolts per row. The steel is A992. Determine the design strength phi Pn and check the slenderness limit L/r <= 300."
+ },
+ {
+  "id": "BC-008",
+  "topic": "tension-capacity",
+  "text": "A 3/4 in. x 10 in. plate of A572 Grade 50 steel (Fy = 50 ksi, Fu = 65 ksi) is connected by two lines of 1-in.-diameter bolts. Calculate the design tensile strength of the plate."
+ },
+ {
+  "id": "BC-009",
+  "topic": "tension-capacity",
+  "text": "Calculate the design tensile strength of a W14x48 hanger of A992 steel. Each flange is bolted with two lines of 7/8-in. bolts, three bolts in each line. Which limit state controls?"
+ },
+ {
+  "id": "BC-010",
+  "topic": "tension-capacity",
+  "text": "The 5-in. leg of an L5 x 3 x 1/2 angle (A36 steel) is connected to a gusset plate by a single line of four 3/4-in.-diameter bolts. Find the first failure load under LRFD, that is, the smaller of the yielding and rupture strengths."
+ },
+ {
+  "id": "BC-011",
+  "topic": "tension-net-area",
+  "text": "Compute the net area An of a PL 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. Take the hole diameter as the bolt diameter plus 1/8 in."
+ },
+ {
+  "id": "BC-012",
+  "topic": "tension-net-area",
+  "text": "Determine the net area of a W12x26 tension member connected through both flanges with 3/4-in. bolts, two holes in each flange."
+ },
+ {
+  "id": "BC-013",
+  "topic": "tension-net-area",
+  "text": "An L4 x 4 x 3/8 angle has one hole for a 7/8-in. bolt in one leg. What is the net area of the angle, in in.^2?"
+ },
+ {
+  "id": "BC-014",
+  "topic": "tension-net-area",
+  "text": "A W10x45 has holes for two lines of 7/8-in.-diameter bolts in each flange. The net area An = ____ in.2."
+ },
+ {
+  "id": "BC-015",
+  "topic": "tension-net-area",
+  "text": "Find the effective net area Ae of an L6 x 6 x 1/2 angle connected through one leg with a single line of five 7/8-in. bolts."
+ },
+ {
+  "id": "BC-016",
+  "topic": "tension-net-area",
+  "text": "A C12x25 channel is connected through its web by two lines of 3/4-in. bolts, giving two holes through the web in each cross section. Determine the net area of the channel."
+ },
+ {
+  "id": "BC-017",
+  "topic": "tension-net-area",
+  "text": "What is the effective net area of a W8x31 tension member connected through its flanges only, with two rows of 3/4-in. bolts in each flange and three bolts in each row?"
+ },
+ {
+  "id": "BC-018",
+  "topic": "tension-U",
+  "text": "What shear lag factor U should be used for a W10x33 connected through the flanges only, with three bolts per line in the direction of the load (Table D3.1, case 7)?"
+ },
+ {
+  "id": "BC-019",
+  "topic": "tension-U",
+  "text": "Determine U for a single angle L4 x 3 x 3/8 connected through the long leg by four bolts in one line."
+ },
+ {
+  "id": "BC-020",
+  "topic": "tension-U",
+  "text": "A W12x26 tension member is bolted at both flanges with four bolts in each line. What is the shear lag factor U?"
+ },
+ {
+  "id": "BC-021",
+  "topic": "tension-U",
+  "text": "For a plate tension member in which all elements of the cross section are connected by bolts, the shear lag factor U = ____."
+ },
+ {
+  "id": "BC-022",
+  "topic": "tension-U",
+  "text": "An L5 x 5 x 1/2 angle is connected with three 3/4-in. bolts in a single line. Find the value of U from Table D3.1."
+ },
+ {
+  "id": "BC-023",
+  "topic": "tension-U",
+  "text": "A W14x48 hanger is connected by bolts through the web only, with four bolts per line in the direction of load. What value of U applies?"
+ },
+ {
+  "id": "BC-024",
+  "topic": "tension-select",
+  "text": "Select the lightest W8 shape of A992 steel to carry a service dead load of 70 kips and a service live load of 110 kips in tension. The member is connected through the flanges with two lines of 3/4-in. bolts in each flange, three bolts per line."
+ },
+ {
+  "id": "BC-025",
+  "topic": "tension-select",
+  "text": "Using LRFD, choose the lightest W10 tension member to support a factored load Pu = 500 kips. The connection is through the flanges with 7/8-in. bolts, two holes in each flange, and four bolts per line. Use A992 steel."
+ },
+ {
+  "id": "BC-026",
+  "topic": "tension-select",
+  "text": "Select the lightest equal-leg single angle of A36 steel for a tension member carrying a dead load of 30 kips and a live load of 40 kips. One leg is connected with one line of four 3/4-in. bolts."
+ },
+ {
+  "id": "BC-027",
+  "topic": "tension-select",
+  "text": "A tension member 25 ft long must resist D = 140 k and L = 180 k. It will be connected through the flanges with two rows of 7/8-in. bolts in each flange, three bolts in each row. Pick the lightest W12 shape of A992 steel."
+ },
+ {
+  "id": "BC-028",
+  "topic": "tension-select",
+  "text": "Select the most economical single angle of A572 Grade 50 steel to carry a service tension load of 45 kips dead and 65 kips live. The angle is connected through one leg by a single line of three 7/8-in. bolts."
+ },
+ {
+  "id": "BC-029",
+  "topic": "tension-select",
+  "text": "Select the lightest W14 for a truss tension chord carrying service loads of 250 kips dead and 300 kips live. The flanges are connected with two lines of 1-in. bolts per flange, four bolts per line. A992 steel."
+ },
+ {
+  "id": "BC-030",
+  "topic": "tension-required-area",
+  "text": "A tension member must carry a service dead load of 60 kips and a service live load of 90 kips. Using A992 steel, what minimum gross area is required to prevent yielding?"
+ },
+ {
+  "id": "BC-031",
+  "topic": "tension-required-area",
+  "text": "Determine the required effective net area Ae for a tension member made of A36 steel with a factored load Pu = 300 kips, based on tensile rupture."
+ },
+ {
+  "id": "BC-032",
+  "topic": "tension-required-area",
+  "text": "What gross area is required for a tension member of A572 Grade 50 steel that carries a factored load of 420 kips (yielding limit state)?"
+ },
+ {
+  "id": "BC-033",
+  "topic": "tension-required-area",
+  "text": "A plate of A36 steel carries D = 40 kips and L = 75 kips in tension. Find the required gross area for yielding and the required effective net area for rupture."
+ },
+ {
+  "id": "BC-034",
+  "topic": "tension-required-area",
+  "text": "The minimum radius of gyration required for a tension member 24 ft long so that L/r does not exceed 300 is ____ in."
+ },
+ {
+  "id": "BC-035",
+  "topic": "tension-required-area",
+  "text": "For an A992 hanger carrying a factored load of 250 kips, the required effective net area for tensile rupture is ____ in.^2."
+ },
+ {
+  "id": "BC-036",
+  "topic": "column-capacity",
+  "text": "Determine the design compressive strength phi Pn of a W12x65 column of A992 steel with an effective length KL = 16 ft about both axes."
+ },
+ {
+  "id": "BC-037",
+  "topic": "column-capacity",
+  "text": "A W14x90 column is 20 ft long and pinned at both ends. Using Table 4-1a, what is its available axial compressive strength (LRFD)?"
+ },
+ {
+  "id": "BC-038",
+  "topic": "column-capacity",
+  "text": "A W10x49 column, 14 ft long, is fixed at the base and pinned at the top. Using the recommended design value of K, find phi Pn."
+ },
+ {
+  "id": "BC-039",
+  "topic": "column-capacity",
+  "text": "Compute the design strength of a W8x31 column of A992 steel that is 12 ft long with both ends fixed."
+ },
+ {
+  "id": "BC-040",
+  "topic": "column-capacity",
+  "text": "A W12x53 column has an effective length of 18 ft about both axes and supports a service dead load of 150 kips and a service live load of 200 kips. Is the column adequate?"
+ },
+ {
+  "id": "BC-041",
+  "topic": "column-capacity",
+  "text": "What is the LRFD compressive capacity of a W14x109 with an unbraced length of 24 ft and K = 1.0 about both axes?"
+ },
+ {
+  "id": "BC-042",
+  "topic": "column-capacity",
+  "text": "A W10x33 is used as a column with a length of 13 ft, pinned at both ends. Compute KL/r about the weak axis, round it up, read phi Fcr from Table 4-14, and determine phi Pn = phi Fcr x Ag."
+ },
+ {
+  "id": "BC-043",
+  "topic": "column-capacity",
+  "text": "The design axial compressive strength of a W14x68 column, 15 ft long with pinned ends, is ____ kips."
+ },
+ {
+  "id": "BC-044",
+  "topic": "column-capacity",
+  "text": "A W8x24 column 10 ft long is fixed at the bottom and free at the top. Using the recommended design K value, find the design compressive strength."
+ },
+ {
+  "id": "BC-045",
+  "topic": "column-capacity",
+  "text": "With an effective length of 22 ft about both axes, what is the design compressive strength of a W12x79 column of A992 steel?"
+ },
+ {
+  "id": "BC-046",
+  "topic": "column-K",
+  "text": "What is the recommended design value of the effective length factor K for a column with both ends pinned?"
+ },
+ {
+  "id": "BC-047",
+  "topic": "column-K",
+  "text": "A column is fixed at the base and pinned at the top. Using the recommended design values of AISC Table C-A-7.1, K = ____."
+ },
+ {
+  "id": "BC-048",
+  "topic": "column-K",
+  "text": "Find the effective length KL of a 16 ft column that is fixed at both ends, using the recommended design value of K."
+ },
+ {
+  "id": "BC-049",
+  "topic": "column-K",
+  "text": "A 12-ft column is fixed at its base and free at its top. What is its effective length in feet, using the recommended design K?"
+ },
+ {
+  "id": "BC-050",
+  "topic": "column-K",
+  "text": "A column is fixed against rotation and translation at the bottom; at the top, rotation is fixed but translation is free. What is the recommended design value of K?"
+ },
+ {
+  "id": "BC-051",
+  "topic": "column-K",
+  "text": "Compute KL for a 20 ft column that is pinned at the top and fixed at the bottom (recommended design K)."
+ },
+ {
+  "id": "BC-052",
+  "topic": "column-axes",
+  "text": "A W12x58 column of A992 steel is 24 ft long, pinned at both ends, and braced about the weak axis at mid-height. Determine the design compressive strength."
+ },
+ {
+  "id": "BC-053",
+  "topic": "column-axes",
+  "text": "For a W14x82 column with KxLx = 30 ft and KyLy = 15 ft, find the controlling slenderness ratio and the design strength phi Pn using Table 4-14."
+ },
+ {
+  "id": "BC-054",
+  "topic": "column-axes",
+  "text": "A W10x60 column of A992 steel has Lx = 18 ft and Ly = 9 ft, with K = 1.0 about both axes. Which axis controls, and what is the design strength?"
+ },
+ {
+  "id": "BC-055",
+  "topic": "column-axes",
+  "text": "A W8x40 column is 16 ft long with pinned ends. It is braced about the weak axis at the third points. Determine phi Pn."
+ },
+ {
+  "id": "BC-056",
+  "topic": "column-axes",
+  "text": "Compute KL/r about the x-axis and about the y-axis for a W12x72 with KxLx = 26 ft and KyLy = 13 ft, and state which one governs."
+ },
+ {
+  "id": "BC-057",
+  "topic": "column-axes",
+  "text": "A W14x120 column is 28 ft tall. About the strong axis Kx = 0.8 with Lx = 28 ft; about the weak axis it is braced at mid-height, so Ky = 1.0 with Ly = 14 ft. Determine phi Pn."
+ },
+ {
+  "id": "BC-058",
+  "topic": "column-axes",
+  "text": "Determine the design compressive strength of a W10x45 column that is 20 ft long with K = 1.0 about both axes and is braced at mid-height about the y-axis only."
+ },
+ {
+  "id": "BC-059",
+  "topic": "column-select",
+  "text": "Select the lightest W12 column of A992 steel to support a service dead load of 180 kips and a service live load of 260 kips. The effective length is 14 ft about both axes."
+ },
+ {
+  "id": "BC-060",
+  "topic": "column-select",
+  "text": "Choose the lightest W14 shape for a column with a factored load Pu = 1,100 kips and KL = 16 ft."
+ },
+ {
+  "id": "BC-061",
+  "topic": "column-select",
+  "text": "Select the lightest W10 to carry D = 100 kips and L = 150 kips as a column. The column is 15 ft long and pinned at both ends."
+ },
+ {
+  "id": "BC-062",
+  "topic": "column-select",
+  "text": "Using Table 4-1a, select the lightest W8 column for a factored axial load of 250 kips with KL = 12 ft."
+ },
+ {
+  "id": "BC-063",
+  "topic": "column-select",
+  "text": "A 13 ft column that is fixed at both ends supports a dead load of 300 k and a live load of 400 k. Select the most economical W14 shape."
+ },
+ {
+  "id": "BC-064",
+  "topic": "column-select",
+  "text": "Select the lightest W-shape in Table 4-1a to carry Pu = 600 kips with an effective length of 18 ft about both axes."
+ },
+ {
+  "id": "BC-065",
+  "topic": "column-euler",
+  "text": "Determine the Euler buckling load of a W10x49 column 20 ft long with pinned ends, for buckling about its weak axis. Use E = 29,000 ksi."
+ },
+ {
+  "id": "BC-066",
+  "topic": "column-euler",
+  "text": "Calculate the elastic critical buckling load Pe for a W8x31 that is 15 ft long and pinned at both ends, buckling about the y-axis. E = 29,000 ksi."
+ },
+ {
+  "id": "BC-067",
+  "topic": "column-euler",
+  "text": "A W12x50 column is 25 ft long and fixed at both ends. Using the recommended K, find the Euler buckling load about the minor axis."
+ },
+ {
+  "id": "BC-068",
+  "topic": "column-euler",
+  "text": "What is the Euler buckling stress Fe for a column with a slenderness ratio KL/r = 120? Take E = 29,000 ksi."
+ },
+ {
+  "id": "BC-069",
+  "topic": "column-euler",
+  "text": "Find the Euler critical load for a W14x53 column with an effective length of 18 ft, buckling about the strong axis. E = 29,000 ksi."
+ },
+ {
+  "id": "BC-070",
+  "topic": "column-euler",
+  "text": "A W6x25 column 10 ft long is fixed at the bottom and pinned at the top. Compute the Euler buckling load for buckling about the y-axis, using the recommended K and E = 29,000 ksi."
+ },
+ {
+  "id": "BC-071",
+  "topic": "beam-Mu",
+  "text": "A simply supported beam spans 24 ft and carries a uniform service dead load of 1.2 kips/ft (including its own weight) and a uniform service live load of 1.8 kips/ft. Determine the factored maximum moment Mu."
+ },
+ {
+  "id": "BC-072",
+  "topic": "beam-Mu",
+  "text": "Compute Mu for a 30 ft simple-span beam that carries a uniform dead load of 0.5 k/ft and a concentrated service live load of 20 kips at midspan."
+ },
+ {
+  "id": "BC-073",
+  "topic": "beam-Mu",
+  "text": "A W16x40 beam on a 20 ft simple span supports a superimposed dead load of 0.9 kip/ft and a live load of 1.5 kip/ft. Including the self-weight of the beam, find Mu."
+ },
+ {
+  "id": "BC-074",
+  "topic": "beam-Mu",
+  "text": "Two equal concentrated service loads, each 12 kips dead and 15 kips live, act at the third points of a 27 ft simply supported beam. Neglecting self-weight, find the maximum factored moment."
+ },
+ {
+  "id": "BC-075",
+  "topic": "beam-Mu",
+  "text": "A simply supported floor beam has a span of 22 ft and a factored uniform load wu = 3.4 kips/ft. Compute the maximum factored moment Mu."
+ },
+ {
+  "id": "BC-076",
+  "topic": "beam-Mu",
+  "text": "A single concentrated load acts at the center of a 16 ft simple span: 10 k dead and 18 k live. What is the factored maximum moment? Ignore the beam weight."
+ },
+ {
+  "id": "BC-077",
+  "topic": "beam-Mu",
+  "text": "What is the maximum factored bending moment for a 28-ft simply supported beam with service loads D = 0.75 klf and L = 1.25 klf? The beam weight is included in the dead load."
+ },
+ {
+  "id": "BC-078",
+  "topic": "beam-Zx",
+  "text": "The factored moment on a fully braced A992 beam is Mu = 320 kip-ft. Find the minimum required plastic section modulus Zx."
+ },
+ {
+  "id": "BC-079",
+  "topic": "beam-Zx",
+  "text": "A simply supported beam spanning 26 ft carries service loads of 0.8 kips/ft dead and 1.4 kips/ft live. Compute the required Zx for A992 steel with full lateral support."
+ },
+ {
+  "id": "BC-080",
+  "topic": "beam-Zx",
+  "text": "Mu = 540 ft-kips and Fy = 50 ksi. The required plastic section modulus Zx = ____ in.3."
+ },
+ {
+  "id": "BC-081",
+  "topic": "beam-Zx",
+  "text": "Determine the required plastic section modulus for a fully braced beam of A36 steel resisting a factored moment of 180 kip-ft."
+ },
+ {
+  "id": "BC-082",
+  "topic": "beam-Zx",
+  "text": "A beam with a 20 ft simple span carries a factored concentrated load of 40 kips at midspan. Using Fy = 50 ksi and phi = 0.90, compute the required Zx."
+ },
+ {
+  "id": "BC-083",
+  "topic": "beam-select",
+  "text": "Select the lightest W-shape of A992 steel for a simply supported beam with a span of 30 ft carrying a uniform dead load of 1.0 kip/ft and a uniform live load of 2.0 kips/ft. The compression flange is fully braced. Neglect self-weight for the first trial, then check it."
+ },
+ {
+  "id": "BC-084",
+  "topic": "beam-select",
+  "text": "Using Table 3-2, select the most economical beam for a factored moment Mu = 410 kip-ft. Fy = 50 ksi; the beam has continuous lateral support."
+ },
+ {
+  "id": "BC-085",
+  "topic": "beam-select",
+  "text": "A 24-ft simply supported beam supports two concentrated loads at its third points, each consisting of 15 kips dead and 20 kips live. Assume full lateral bracing and A992 steel. Select the lightest W shape."
+ },
+ {
+  "id": "BC-086",
+  "topic": "beam-select",
+  "text": "Pick the lightest W-shape that can carry a factored moment of 155 ft-kips. A992 steel, fully braced."
+ },
+ {
+  "id": "BC-087",
+  "topic": "beam-select",
+  "text": "A floor beam spans 25 ft with service loads of 0.65 k/ft dead and 1.1 k/ft live. Find the lightest W-shape from the Zx table (Table 3-2), A992 steel, with full lateral support."
+ },
+ {
+  "id": "BC-088",
+  "topic": "beam-select",
+  "text": "Required: the lightest beam. Given: simple span 18 ft; a concentrated service live load of 30 kips at the center; a uniform dead load of 0.4 kips/ft; laterally braced; Fy = 50 ksi."
+ },
+ {
+  "id": "BC-089",
+  "topic": "beam-select",
+  "text": "Select the lightest W shape with a plastic section modulus of at least 98 in.^3 (required Zx = 98 in.^3)."
+ },
+ {
+  "id": "BC-090",
+  "topic": "beam-phiMp",
+  "text": "Determine the design flexural strength phi Mp of a W18x50 of A992 steel with full lateral support."
+ },
+ {
+  "id": "BC-091",
+  "topic": "beam-phiMp",
+  "text": "What is the design moment phi_b Mp of a W24x55 beam with Fy = 50 ksi and its compression flange continuously braced?"
+ },
+ {
+  "id": "BC-092",
+  "topic": "beam-phiMp",
+  "text": "Using Zx from the Manual, compute the available flexural strength (LRFD) of a fully braced W12x26 made of A36 steel."
+ },
+ {
+  "id": "BC-093",
+  "topic": "beam-phiMp",
+  "text": "Find phi Mp for a W21x44 beam of A992 steel with continuous lateral support. Express the answer in kip-ft."
+ },
+ {
+  "id": "BC-094",
+  "topic": "beam-phiMp",
+  "text": "A W16x31 beam of A992 steel is fully braced. Is it adequate for a factored moment of 190 kip-ft?"
+ },
+ {
+  "id": "BC-095",
+  "topic": "beam-max-live",
+  "text": "A W18x35 beam of A992 steel spans 20 ft on simple supports and has continuous lateral support. In addition to its own weight, it carries a uniform service dead load of 0.75 kip/ft. What is the largest uniform service live load it can support?"
+ },
+ {
+  "id": "BC-096",
+  "topic": "beam-max-live",
+  "text": "A simply supported W14x26 beam has a 16 ft span and is fully braced. The superimposed dead load is 0.5 k/ft. Determine the maximum uniform live load (k/ft) that can be applied, including the beam weight as dead load."
+ },
+ {
+  "id": "BC-097",
+  "topic": "beam-max-live",
+  "text": "Determine the maximum service live load, in kips/ft, that a W21x48 (A992) can carry on a 28-ft simple span if the uniform dead load is 1.0 kip/ft including the beam weight. Full lateral support is provided."
+ },
+ {
+  "id": "BC-098",
+  "topic": "beam-max-live",
+  "text": "What maximum concentrated service live load can be placed at midspan of a 24 ft simply supported W16x26 beam? The only dead load is the weight of the beam. Full lateral support, Fy = 50 ksi."
+ },
+ {
+  "id": "BC-099",
+  "topic": "beam-max-live",
+  "text": "A W12x22 floor beam spans 15 ft on simple supports and supports a uniformly distributed dead load of 400 lb/ft plus its self-weight. Using LRFD and assuming the beam is fully braced, find the largest uniform live load it can carry."
+ },
+ {
+  "id": "BC-100",
+  "topic": "beam-max-live",
+  "text": "A W24x68 floor girder of A992 steel spans 36 ft on simple supports with continuous lateral support. It carries a uniform dead load of 1.4 kips/ft, self-weight included. How much uniform service live load can it carry?"
+ },
+ {
+  "id": "BC-101",
+  "topic": "loads-combination",
+  "text": "A column supports a service dead load of 120 kips and a service live load of 180 kips. Compute the factored (required) load Pu using the load combination 1.2D + 1.6L."
+ },
+ {
+  "id": "BC-102",
+  "topic": "loads-combination",
+  "text": "Determine the factored load for a tension member with a dead load of 45 k and a live load of 30 k."
+ },
+ {
+  "id": "BC-103",
+  "topic": "loads-combination",
+  "text": "A beam has a dead load of 0.85 kip/ft and a live load of 1.3 kip/ft. Find the factored uniform load wu."
+ },
+ {
+  "id": "BC-104",
+  "topic": "loads-combination",
+  "text": "The service loads on a hanger are 25 kips dead and 5 kips live. What is the governing factored load?"
+ },
+ {
+  "id": "BC-105",
+  "topic": "loads-combination",
+  "text": "The floor loads are 75 psf dead and 100 psf live. Compute the factored floor load in psf."
+ },
+ {
+  "id": "BC-106",
+  "topic": "loads-combination",
+  "text": "The service dead load moment on a girder is 150 kip-ft and the service live load moment is 210 kip-ft. Find the factored moment Mu."
+ },
+ {
+  "id": "BC-107",
+  "topic": "loads-combination",
+  "text": "What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and an occupancy live load of 95 kips?"
+ },
+ {
+  "id": "BC-108",
+  "topic": "loads-combination",
+  "text": "A roof beam supports a dead load of 0.4 k/ft and a roof live load of 0.3 k/ft. The factored load = ____ k/ft."
+ },
+ {
+  "id": "BC-109",
+  "topic": "loads-line-load",
+  "text": "Floor beams are spaced 8 ft on center. The floor dead load is 70 psf and the live load is 80 psf. Determine the factored uniform line load on a typical interior beam in kips per foot."
+ },
+ {
+  "id": "BC-110",
+  "topic": "loads-line-load",
+  "text": "Beams at 10 ft o.c. support a concrete slab with a dead load of 60 psf and a live load of 125 psf. The beam weighs 40 lb/ft. Find wu."
+ },
+ {
+  "id": "BC-111",
+  "topic": "loads-line-load",
+  "text": "An interior floor beam spans 28 ft and the beams are spaced at 9 ft. DL = 85 psf and LL = 50 psf. Compute the factored distributed load on the beam and the factored maximum moment."
+ },
+ {
+  "id": "BC-112",
+  "topic": "loads-line-load",
+  "text": "The tributary width of a beam is 7.5 ft. Service floor loads are 50 psf dead and 100 psf live. What are the service dead and live line loads on the beam in kips/ft?"
+ },
+ {
+  "id": "BC-113",
+  "topic": "loads-line-load",
+  "text": "Floor beams spaced 6 ft apart carry a dead load of 45 psf and a live load of 40 psf. The factored load per foot on each beam = ____ lb/ft."
+ },
+ {
+  "id": "BC-114",
+  "topic": "loads-line-load",
+  "text": "An edge (spandrel) beam supports half of a 10 ft beam spacing, so its tributary width is 5 ft. It also carries a curtain wall dead load of 0.4 kip/ft. The floor dead load is 80 psf and the live load is 60 psf. Determine wu for the edge beam."
+ },
+ {
+  "id": "BC-115",
+  "topic": "loads-line-load",
+  "text": "A W16x31 floor beam spans 24 ft with a tributary width of 8 ft. The floor dead load is 65 psf (not including the beam) and the live load is 100 psf. Including the beam weight, compute the factored line load and Mu."
+ },
+ {
+  "id": "BC-116",
+  "topic": "loads-line-load",
+  "text": "Find the factored uniform load on a roof beam spaced 12 ft o.c. with a roof dead load of 20 psf and a roof live load of 20 psf."
+ },
+ {
+  "id": "BC-117",
+  "topic": "loads-floor-plan",
+  "text": "A floor bay measures 30 ft by 40 ft between column centerlines. Beams span 30 ft in the north-south direction and are spaced 10 ft on center; they frame into girders that span 40 ft along the east-west column lines. The dead load is 80 psf and the live load is 100 psf. Determine the factored uniform load on an interior beam and its maximum factored moment."
+ },
+ {
+  "id": "BC-118",
+  "topic": "loads-floor-plan",
+  "text": "In a framing plan with columns on a 24 ft x 36 ft grid, infill beams span 24 ft between girders and are spaced 9 ft on center, so each interior girder spanning 36 ft receives beams from both sides at 9 ft, 18 ft and 27 ft. The floor dead load is 75 psf (including beam weight) and the live load is 80 psf. Find the factored concentrated load at each beam connection on the interior girder."
+ },
+ {
+  "id": "BC-119",
+  "topic": "loads-floor-plan",
+  "text": "A floor plan has W-beams spanning 25 ft, spaced at 8 ft o.c., framing into girders that span 24 ft between columns. The dead load is 90 psf and the live load is 50 psf. Compute the factored end reaction of a typical interior beam."
+ },
+ {
+  "id": "BC-120",
+  "topic": "loads-floor-plan",
+  "text": "A girder spanning 30 ft supports beams at its third points; the beams frame in from both sides. Each beam spans 32 ft and has a tributary width of 10 ft. Floor DL = 70 psf, LL = 100 psf. Find the factored point load on the girder and the girder's maximum factored moment, ignoring the girder self-weight."
+ },
+ {
+  "id": "BC-121",
+  "topic": "loads-floor-plan",
+  "text": "The columns of a floor are laid out on a 25 ft x 30 ft grid. The floor dead load is 80 psf and the live load is 70 psf. Find the factored load that an interior column receives from one floor."
+ },
+ {
+  "id": "BC-122",
+  "topic": "loads-floor-plan",
+  "text": "A spandrel girder spanning 30 ft receives beams from one side only, at 10 ft spacing (at its third points). Each beam spans 28 ft. The floor dead load is 60 psf and the live load is 100 psf. Find the factored point load that each beam delivers to the spandrel girder."
+ },
+ {
+  "id": "BC-123",
+  "topic": "loads-floor-plan",
+  "text": "Roof beams span 20 ft and are spaced 6 ft o.c.; they frame into girders spanning 18 ft. The roof dead load is 25 psf and the roof live load is 20 psf. Determine the factored uniform load on a roof beam and the factored reaction it delivers to the girder."
+ },
+ {
+  "id": "BC-124",
+  "topic": "loads-takedown",
+  "text": "An interior column in a three-story office building supports a tributary area of 30 ft x 25 ft at each level. Each of the two floors has a dead load of 90 psf and a live load of 50 psf; the roof has a dead load of 30 psf and a roof live load of 20 psf. Determine the factored axial load in the first-story column."
+ },
+ {
+  "id": "BC-125",
+  "topic": "loads-takedown",
+  "text": "Determine the total factored load on a ground-floor interior column of a four-story building. The tributary area is 20 ft x 30 ft at each of the four levels (three floors and the roof), and every level has a dead load of 100 psf and a live load of 80 psf. Neglect the column self-weight."
+ },
+ {
+  "id": "BC-126",
+  "topic": "loads-takedown",
+  "text": "An exterior column has a tributary area of 15 ft x 25 ft on each of three floors. DL = 85 psf and LL = 60 psf on every floor, and the cladding adds a dead load of 8 kips per floor. Compute Pu at the base of the column."
+ },
+ {
+  "id": "BC-127",
+  "topic": "loads-takedown",
+  "text": "A corner column supports a tributary area of 12.5 ft x 15 ft on each of four floors. Each floor has a dead load of 75 psf and a live load of 100 psf. Find the service dead load, the service live load and the factored load on the column at the foundation."
+ },
+ {
+  "id": "BC-128",
+  "topic": "loads-takedown",
+  "text": "An interior column in a two-story building has a tributary area of 25 ft x 25 ft at each of its two levels. Each level carries DL = 80 psf and LL = 50 psf. The column is a W10x49 and each story is 12 ft high. Including the column self-weight, find Pu in the lower story."
+ },
+ {
+  "id": "BC-129",
+  "topic": "loads-takedown",
+  "text": "At each floor an interior column receives two girder reactions, each 30 kips dead and 40 kips live (service). The column supports three floors. Compute the factored axial load in the bottom story."
+ },
+ {
+  "id": "BC-130",
+  "topic": "loads-takedown",
+  "text": "An interior column of a six-level office building (five floors plus the roof) has bays of 30 ft x 30 ft on all sides. Every level has a dead load of 95 psf and a live load of 50 psf. What is the total factored axial load at the base of the column?"
+ },
+ {
+  "id": "BL-001",
+  "topic": "lookup-shape",
+  "text": "What is the cross-sectional area, A, of a W14x90?"
+ },
+ {
+  "id": "BL-002",
+  "topic": "lookup-shape",
+  "text": "Using Table 1-1 of the AISC Manual, determine the actual depth, d, of a W18x50."
+ },
+ {
+  "id": "BL-003",
+  "topic": "lookup-shape",
+  "text": "The flange width, bf, of a W12x65 is ____ in."
+ },
+ {
+  "id": "BL-004",
+  "topic": "lookup-shape",
+  "text": "Find the flange thickness, tf, of a W10x49 in inches."
+ },
+ {
+  "id": "BL-005",
+  "topic": "lookup-shape",
+  "text": "What is the web thickness, tw, of a W21x44 wide-flange section?"
+ },
+ {
+  "id": "BL-006",
+  "topic": "lookup-shape",
+  "text": "Look up the moment of inertia about the strong axis, Ix, for a W24x68."
+ },
+ {
+  "id": "BL-007",
+  "topic": "lookup-shape",
+  "text": "What is the plastic section modulus about the x-axis, Zx, of a W16x40?"
+ },
+ {
+  "id": "BL-008",
+  "topic": "lookup-shape",
+  "text": "The elastic section modulus, Sx, of a W27x84 is ____ in.^3."
+ },
+ {
+  "id": "BL-009",
+  "topic": "lookup-shape",
+  "text": "Determine the radius of gyration about the weak axis, ry, for a W8x31."
+ },
+ {
+  "id": "BL-010",
+  "topic": "lookup-shape",
+  "text": "What is the radius of gyration about the strong axis, rx, of a W14x22?"
+ },
+ {
+  "id": "BL-011",
+  "topic": "lookup-shape",
+  "text": "For a W12x26 beam, list the cross-sectional area A, the depth d, and the plastic section modulus Zx."
+ },
+ {
+  "id": "BL-012",
+  "topic": "lookup-shape",
+  "text": "A W14x53 column is being checked for buckling. Give its radii of gyration rx and ry."
+ },
+ {
+  "id": "BL-013",
+  "topic": "lookup-shape",
+  "text": "Report both the flange width and the flange thickness of a W30x99, in inches."
+ },
+ {
+  "id": "BL-014",
+  "topic": "lookup-shape",
+  "text": "From the AISC Manual, find the gross area and the weak-axis radius of gyration of a W10x33."
+ },
+ {
+  "id": "BL-015",
+  "topic": "lookup-shape",
+  "text": "An L4x4x3/8 single angle is used as a tension member. What are its area, A, and its least radius of gyration, rz?"
+ },
+ {
+  "id": "BL-016",
+  "topic": "lookup-shape",
+  "text": "For a C10x30 channel, what are the area, the depth, and the web thickness?"
+ },
+ {
+  "id": "BL-017",
+  "topic": "lookup-shape",
+  "text": "Give Sx and Ix for a W18x35 bending about its strong axis."
+ },
+ {
+  "id": "BL-018",
+  "topic": "lookup-shape",
+  "text": "For a WT8x28.5 structural tee, find the cross-sectional area and the depth of the tee."
+ },
+ {
+  "id": "BL-019",
+  "topic": "lookup-material",
+  "text": "What are the minimum yield stress, Fy, and the minimum tensile strength, Fu, of ASTM A992 steel?"
+ },
+ {
+  "id": "BL-020",
+  "topic": "lookup-material",
+  "text": "The yield stress of ASTM A36 steel is ____ ksi."
+ },
+ {
+  "id": "BL-021",
+  "topic": "lookup-material",
+  "text": "What is the ultimate tensile strength, Fu, of ASTM A572 Grade 50 steel?"
+ },
+ {
+  "id": "BL-022",
+  "topic": "lookup-material",
+  "text": "A W12x50 is used as a tension member. If the steel grade is not stated, what values of Fy and Fu should be used?"
+ },
+ {
+  "id": "BL-023",
+  "topic": "lookup-material",
+  "text": "A 3/8 in. thick gusset plate is made of A36 steel. Give Fy and Fu for the plate."
+ },
+ {
+  "id": "BL-024",
+  "topic": "lookup-material",
+  "text": "Which steel grade is most commonly specified for rectangular HSS, and what are its Fy and Fu?"
+ },
+ {
+  "id": "BL-025",
+  "topic": "lookup-material",
+  "text": "A Pipe 6 Std column is made of ASTM A53 Grade B steel. What are Fy and Fu?"
+ },
+ {
+  "id": "BL-026",
+  "topic": "lookup-material",
+  "text": "Unless otherwise noted, what are the yield stress and the tensile strength of an L5x5x1/2 angle?"
+ },
+ {
+  "id": "BL-027",
+  "topic": "lookup-material",
+  "text": "Using Table 2-4 of the AISC Manual, find Fy and Fu for ASTM A572 Grade 65 steel."
+ },
+ {
+  "id": "BL-028",
+  "topic": "lookup-hole",
+  "text": "When computing the net area of a tension member, what hole diameter is used for a 3/4 in. diameter bolt?"
+ },
+ {
+  "id": "BL-029",
+  "topic": "lookup-hole",
+  "text": "For 7/8 in. diameter bolts, the width of each bolt hole deducted in the net area calculation is ____ in."
+ },
+ {
+  "id": "BL-030",
+  "topic": "lookup-hole",
+  "text": "A plate is connected with 1 in. diameter bolts. What hole size should be used to find the net area?"
+ },
+ {
+  "id": "BL-031",
+  "topic": "lookup-hole",
+  "text": "According to Table J3.3 of the AISC Specification, what is the nominal diameter of a standard hole for a 3/4 in. bolt?"
+ },
+ {
+  "id": "BL-032",
+  "topic": "lookup-hole",
+  "text": "Bolts of 5/8 in. and 1-1/8 in. diameter are used in two different connections. Give the hole diameter to deduct for each when computing the net area."
+ },
+ {
+  "id": "BL-033",
+  "topic": "lookup-K",
+  "text": "What is the recommended design value of the effective length factor, K, for a column fixed at both ends?"
+ },
+ {
+  "id": "BL-034",
+  "topic": "lookup-K",
+  "text": "A column is fixed at its base and pinned at its top. What K value should be used for design?"
+ },
+ {
+  "id": "BL-035",
+  "topic": "lookup-K",
+  "text": "A flagpole-type column is fixed at the base and free at the top. What is the recommended design value of K?"
+ },
+ {
+  "id": "BL-036",
+  "topic": "lookup-K",
+  "text": "What is the theoretical K value for a column pinned at both ends?"
+ },
+ {
+  "id": "BL-037",
+  "topic": "lookup-K",
+  "text": "Give the recommended design K values for a fixed-fixed column and for a fixed-pinned column."
+ },
+ {
+  "id": "BL-038",
+  "topic": "lookup-K",
+  "text": "A column is fixed at the bottom; its top is fixed against rotation but free to translate. What is the recommended design value of K?"
+ },
+ {
+  "id": "BL-039",
+  "topic": "lookup-U",
+  "text": "What is the shear lag factor, U, when the tension load is transmitted directly to every element of the cross section by bolts?"
+ },
+ {
+  "id": "BL-040",
+  "topic": "lookup-U",
+  "text": "A W10x45 tension member is connected through its flanges with three bolts per line in the direction of the load. Determine the shear lag factor U."
+ },
+ {
+  "id": "BL-041",
+  "topic": "lookup-U",
+  "text": "Using Case 7 of Table D3.1, find U for a W12x26 connected through the flanges with four bolts per line."
+ },
+ {
+  "id": "BL-042",
+  "topic": "lookup-U",
+  "text": "A single angle L6x4x1/2 is bolted through one leg with four bolts in a line. What is the shear lag factor U?"
+ },
+ {
+  "id": "BL-043",
+  "topic": "lookup-U",
+  "text": "An L4x4x3/8 angle is connected by three 3/4 in. diameter bolts in one line. Find the hole diameter used for the net area and the shear lag factor U."
+ },
+ {
+  "id": "BL-044",
+  "topic": "lookup-U",
+  "text": "A W8x31 is connected through its web only, with four bolts per line parallel to the force. What value of U applies?"
+ },
+ {
+  "id": "BL-045",
+  "topic": "lookup-4-14",
+  "text": "Using Table 4-14, find the available critical stress phi Fcr for KL/r = 87 and Fy = 50 ksi."
+ },
+ {
+  "id": "BL-046",
+  "topic": "lookup-4-14",
+  "text": "What is phi Fcr for a slenderness ratio of 120 when Fy = 36 ksi?"
+ },
+ {
+  "id": "BL-047",
+  "topic": "lookup-4-14",
+  "text": "From Table 4-14 with Fy = 50 ksi, what is phi Fcr for Lc/r = 64.3?"
+ },
+ {
+  "id": "BL-048",
+  "topic": "lookup-4-14",
+  "text": "Find phi Fcr from Table 4-14 for KL/r values of 45 and 110, both with Fy = 50 ksi."
+ },
+ {
+  "id": "BL-049",
+  "topic": "lookup-4-14",
+  "text": "For a column of A992 steel with a controlling slenderness ratio of 100, what design critical stress phi Fcr does Table 4-14 give?"
+ },
+ {
+  "id": "BL-050",
+  "topic": "lookup-4-14",
+  "text": "With Fy = 50 ksi and KL/r = 150, Table 4-14 gives phi Fcr = ____ ksi."
+ },
+ {
+  "id": "BL-051",
+  "topic": "word-definition (stress-strain curve)",
+  "text": "Define the elastic limit of steel."
+ },
+ {
+  "id": "BL-052",
+  "topic": "word-definition (stress-strain curve)",
+  "text": "What is the yield point, Fy, on the stress-strain curve?"
+ },
+ {
+  "id": "BL-053",
+  "topic": "word-definition (stress-strain curve)",
+  "text": "Define ultimate strength, Fu."
+ },
+ {
+  "id": "BL-054",
+  "topic": "word-definition (material constants)",
+  "text": "What is the modulus of elasticity, E? Give its value for structural steel."
+ },
+ {
+  "id": "BL-055",
+  "topic": "word-definition (steel as a material)",
+  "text": "Define ductility and explain why it is an advantage of structural steel."
+ },
+ {
+  "id": "BL-056",
+  "topic": "word-definition (stress-strain curve)",
+  "text": "What is strain hardening?"
+ },
+ {
+  "id": "BL-057",
+  "topic": "word-definition (stress-strain curve)",
+  "text": "What is the proportional limit on the stress-strain curve?"
+ },
+ {
+  "id": "BL-058",
+  "topic": "word-definition (LRFD)",
+  "text": "What does LRFD stand for, and on which side of the design equation does it place the safety factor?"
+ },
+ {
+  "id": "BL-059",
+  "topic": "word-definition (load types)",
+  "text": "Define dead load and give two examples."
+ },
+ {
+  "id": "BL-060",
+  "topic": "word-definition (load types)",
+  "text": "What is a live load?"
+ },
+ {
+  "id": "BL-061",
+  "topic": "word-definition (compression members)",
+  "text": "What is the radius of gyration, r, of a cross section?"
+ },
+ {
+  "id": "BL-062",
+  "topic": "word-definition (compression members)",
+  "text": "Define the slenderness ratio of a compression member."
+ },
+ {
+  "id": "BL-063",
+  "topic": "word-definition (tension members)",
+  "text": "What is shear lag?"
+ },
+ {
+  "id": "BL-064",
+  "topic": "word-definition (steel making)",
+  "text": "Structural steel is about 98 percent iron. What makes up the remaining 2 percent, and why does it matter?"
+ },
+ {
+  "id": "BL-065",
+  "topic": "word-mc (LRFD)",
+  "text": "Which of the following is the load combination used in this course? (a) 1.4D (b) 1.2D + 1.6L (c) 0.9D + 1.0W (d) 1.2D + 1.0E + L"
+ },
+ {
+  "id": "BL-066",
+  "topic": "word-mc (modulus of elasticity)",
+  "text": "The stiffness of steel is represented by:\nA. the yield stress, Fy\nB. the ultimate stress, Fu\nC. the modulus of elasticity, E\nD. the shear lag factor, U"
+ },
+ {
+  "id": "BL-067",
+  "topic": "word-mc (failure modes)",
+  "text": "A short, stocky column fails by ____. a) buckling b) crushing c) rupture d) necking"
+ },
+ {
+  "id": "BL-068",
+  "topic": "word-mc (steel making)",
+  "text": "Choose the correct answer. Increasing the carbon content of steel makes it: (A) stronger and more ductile (B) weaker and more brittle (C) harder and stronger, but more brittle (D) softer and easier to weld"
+ },
+ {
+  "id": "BL-069",
+  "topic": "word-mc (A992 / A36)",
+  "text": "Which ASTM specification is the most common steel for wide-flange shapes today?\n  a. A36\n  b. A53 Grade B\n  c. A500 Grade C\n  d. A992"
+ },
+ {
+  "id": "BL-070",
+  "topic": "word-mc (A992 / A36)",
+  "text": "A36, A572 Grade 50, A53 Grade B, A500 Grade C: which of these steels is most commonly used for plates? Circle one."
+ },
+ {
+  "id": "BL-071",
+  "topic": "word-mc (resistance factors)",
+  "text": "The resistance factor phi for tension rupture on the effective net area is: [ ] 0.75 [ ] 0.85 [ ] 0.90 [ ] 1.00"
+ },
+ {
+  "id": "BL-072",
+  "topic": "word-mc (load types)",
+  "text": "Which of the following is a lateral load? 1) dead load 2) live load 3) wind load 4) superimposed dead load"
+ },
+ {
+  "id": "BL-073",
+  "topic": "word-mc (frames and bracing)",
+  "text": "Which of the following statements about a braced frame is correct?\n(a) Sidesway is prevented by bracing, shear walls, or lateral support from adjoining structures.\n(b) It depends only on the rigidity of its joints to resist lateral load.\n(c) It produces greater drift than a moment frame.\n(d) It gives the most freedom for openings in the architectural layout."
+ },
+ {
+  "id": "BL-074",
+  "topic": "word-mc (stress-strain curve)",
+  "text": "In which region of the stress-strain curve does strain increase with no increase in stress? a. elastic range  b. plastic range  c. strain hardening  d. necking"
+ },
+ {
+  "id": "BL-075",
+  "topic": "word-mc (slenderness limits)",
+  "text": "The maximum slenderness ratio, KL/r, recommended for compression members is: (a) 100 (b) 200 (c) 300 (d) 400"
+ },
+ {
+  "id": "BL-076",
+  "topic": "word-tf (modulus of elasticity)",
+  "text": "True or False: The modulus of elasticity of A992 steel is greater than that of A36 steel."
+ },
+ {
+  "id": "BL-077",
+  "topic": "word-tf (tension members)",
+  "text": "T / F: Gross yielding of a tension member is checked on the net area."
+ },
+ {
+  "id": "BL-078",
+  "topic": "word-tf (load types)",
+  "text": "True or false? Loads that are not called factored are service (working) loads and must be multiplied by the load factors."
+ },
+ {
+  "id": "BL-079",
+  "topic": "word-tf (compression members)",
+  "text": "The design strength of a compression member is based on the gross area, not the net area. (True / False)"
+ },
+ {
+  "id": "BL-080",
+  "topic": "word-tf (failure modes)",
+  "text": "True or False: A long, slender column buckles about the axis with the larger radius of gyration."
+ },
+ {
+  "id": "BL-081",
+  "topic": "word-tf (ductility)",
+  "text": "State whether the following statement is true or false: Structural steel is a brittle material."
+ },
+ {
+  "id": "BL-082",
+  "topic": "word-tf (tension members)",
+  "text": "True or False: For a tension member, the first failure load is the larger of the yielding capacity and the rupture capacity."
+ },
+ {
+  "id": "BL-083",
+  "topic": "word-tf (beams)",
+  "text": "True/False: The most economical beam in Table 3-2 is the lightest section, which is printed in bold type."
+ },
+ {
+  "id": "BL-084",
+  "topic": "word-tf (LRFD)",
+  "text": "True or False: In LRFD, the live load factor (1.6) is larger than the dead load factor (1.2) because live loads are harder to predict."
+ },
+ {
+  "id": "BL-085",
+  "topic": "word-short (failure modes)",
+  "text": "Name the two failure modes of a compression member, and state which one controls a long column."
+ },
+ {
+  "id": "BL-086",
+  "topic": "word-short (steel as a material)",
+  "text": "List two advantages and two disadvantages of steel as a building material."
+ },
+ {
+  "id": "BL-087",
+  "topic": "word-short (tension members)",
+  "text": "Why is the bolt hole taken as the bolt diameter plus 1/8 in. when computing the net area?"
+ },
+ {
+  "id": "BL-088",
+  "topic": "word-short (analysis and design)",
+  "text": "Explain the difference between analysis and design."
+ },
+ {
+  "id": "BL-089",
+  "topic": "word-short (tension members)",
+  "text": "What are the two limit states that must be checked for a tension member, and on which area is each one based?"
+ },
+ {
+  "id": "BL-090",
+  "topic": "word-short (compression members)",
+  "text": "Why does a column with fixed ends carry more load than the same column with pinned ends?"
+ }
+]

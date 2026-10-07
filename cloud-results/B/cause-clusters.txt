@@ -1,0 +1,198 @@
+ran 1386 of 1386 -> /tmp/claude-0/-home-user-1/a6672620-4f5b-5cfe-8fc0-05cb48074075/scratchpad/B/cause/variants-run.json
+ran 311 of 311 -> /tmp/claude-0/-home-user-1/a6672620-4f5b-5cfe-8fc0-05cb48074075/scratchpad/B/cause/variants2-run.json
+DIFFERENT  numspace  n=28
+    details: numspace:numspace x28
+    reading: column_capacity -> column_capacity:answered x9; loads_factored -> loads_factored:answered x4; tension_select -> tension_select:answered x3
+    e.g. BC-024~numspace BC-025~numspace BC-029~numspace BC-030~numspace BC-033~numspace BC-037~numspace
+DIFFERENT  syntax  n=7
+    details: syntax:qmark x5; syntax:qmark,qmark x1; syntax:bracket,qmark x1
+    reading: tension_capacity -> tension_capacity:answered x1; column_euler -> column_capacity:answered column_euler:needs x1; beam_analysis -> lookup_definition:refused loads_factored:answered x1
+    e.g. BC-015~syntax BC-067~syntax BC-075~H3 BC-104~syntax BC-107~syntax BL-006~H1
+DIFFERENT  pair  n=6
+    details: pair:dot x2; pair:bare x2; pair:close x2
+    reading: tension_capacity -> tension_capacity:refused lookup_hole:answered x1; tension_capacity -> tension_required_area:answered x1; column_select -> column_select:answered x1
+    e.g. BC-004~pair1 BC-005~pair1 BC-061~pair1 BC-094~pair1 BC-115~pair1 BL-024~pair1
+DIFFERENT  pair+typing  n=6
+    details: pair+typing x6
+    reading: column_capacity -> column_select:answered x1; lookup_K -> column_select:answered x1; beam_select -> beam_select:answered beam_analysis:needs x1
+    e.g. BC-036~pair1 BC-047~pair1 BC-083~pair1 BC-087~pair1 BC-093~pair1 BL-007~pair1
+DIFFERENT  misspell  n=5
+    details: misspell:bolts x1; misspell:weak x1; misspell:weak+axis x1; misspell:net+hole x1; misspell:stress-strain+stress+point x1
+    reading: lookup_shape lookup_shape -> lookup_shape:answered x2; tension_capacity -> tension_capacity:answered x1; lookup_hole -> tension_net_area:answered x1
+    e.g. BC-006~M3 BL-014~L2 BL-014~M1 BL-043~M2 BL-052~H3
+DIFFERENT  nostops  n=5
+    details: nostops:nostops x5
+    reading: tension_net_area -> lookup_hole:answered x2; column_select -> loads_factored:answered x1; beam_analysis -> lookup_definition:refused loads_factored:answered x1
+    e.g. BC-011~nostops BC-011~L2 BC-063~M3 BC-075~H3 BC-089~H2
+DIFFERENT  compress  n=3
+    details: compress:no-the x1; compress:dia,dia,no-the x1; compress:dia,dia x1
+    reading: lookup_hole -> tension_net_area:answered x2; beam_analysis -> lookup_definition:refused loads_factored:answered x1
+    e.g. BC-075~H3 BL-043~compress BL-043~M2
+DIFFERENT  typed  n=3
+    details: typed:book answer x3
+    reading: lookup_by_property -> lookup_by_property:answered x2; lookup_shape lookup_shape -> lookup_shape:answered x1
+    e.g. BC-089~H1 BC-089~H2 BL-006~H1
+DIFFERENT  lower  n=2
+    details: lower:lower x2
+    reading: tension_net_area -> lookup_hole:answered x2
+    e.g. BC-011~lower BC-011~L1
+DIFFERENT  nospace  n=2
+    details: nospace:join,num-word x1; nospace:num-word x1
+    reading: column_select -> loads_factored:answered x1; loads_combinations -> loads_combinations:answered x1
+    e.g. BC-063~M3 BC-104~M2
+DIFFERENT  spaces  n=2
+    details: spaces:inword x2
+    reading: lookup_definition -> lookup_definition:words x2
+    e.g. BL-052~spaces BL-056~L3
+DIFFERENT  fig  n=2
+    details: fig:fig x2
+    reading: lookup_definition -> lookup_definition:words x2
+    e.g. BL-061~fig BL-061~H1
+DIFFERENT  shuffle  n=1
+    details: shuffle:shuffle x1
+    reading: column_select -> loads_factored:answered x1
+    e.g. BC-063~M3
+DIFFERENT  glue  n=1
+    details: glue:glue x1
+    reading: loads_combinations -> loads_combinations:answered x1
+    e.g. BC-104~M2
+DIFFERENT  breaks  n=1
+    details: breaks:added x1
+    reading: lookup_critical_stress -> lookup_critical_stress:answered x1
+    e.g. BL-050~breaks
+HIDDEN-DIFFERENT  nospace  n=15 (15 hidden)
+    details: nospace:join x4; nospace:join,join,join x2; nospace:join,join,num-word x1; nospace:join,num-word,after-punct x1; nospace:num-word,join,after-punct x1; nospace:num-word,num-word,join x1
+    reading: lookup_definition -> lookup_definition:words x4; tension_capacity -> tension_capacity:answered x1; tension_select -> tension_select:figure x1
+    e.g. BC-006~H2 BC-029~H2 BC-033~nospace BC-050~M3 BC-091~H3 BC-102~H3
+HIDDEN-DIFFERENT  spaces  n=8 (8 hidden)
+    details: spaces:inword,inword x3; spaces:inword x2; spaces:inword,inword,inword x1; spaces:before-punct,inword x1; spaces:double,inword x1
+    reading: lookup_definition -> lookup_definition:words x4; tension_capacity -> tension_net_area:answered x1; tension_net_area -> tension_net_area:answered x1
+    e.g. BC-006~spaces BC-012~M3 BC-039~M3 BC-047~spaces BL-056~L1 BL-056~L2
+HIDDEN-DIFFERENT  numspace  n=5 (5 hidden)
+    details: numspace:numspace x5
+    reading: loads_combinations -> loads_combinations:answered x2; column_capacity -> column_capacity:figure x1; beam_select -> beam_select:figure x1
+    e.g. BC-043~H2 BC-084~H2 BC-085~numspace BC-101~H3 BC-104~H3
+HIDDEN-DIFFERENT  pair+typing  n=4 (4 hidden)
+    details: pair+typing x4
+    reading: column_capacity -> column_capacity:answered x1; beam_capacity -> beam_capacity:figure x1; loads_combinations -> loads_combinations>floor_plan:refused x1
+    e.g. BC-043~pair1 BC-090~pair1 BC-101~pair1 BL-011~pair1
+HIDDEN-DIFFERENT  misspell  n=3 (3 hidden)
+    details: misspell:fixed+design x1; misspell:fixed x1; misspell:hardening+hardenning x1
+    reading: column_capacity -> column_capacity:answered x1; lookup_K -> lookup_K:answered x1; lookup_definition -> lookup_definition:words x1
+    e.g. BC-038~M1 BC-047~L1 BL-056~M3
+HIDDEN-DIFFERENT  pair-half  n=3 (3 hidden)
+    details: pair-half:shape+misspell+lower+nostops+breaks x1; pair-half:glue+typed+label+lower+nospace x1; pair-half:misspell+lower+syntax+nospace+spaces x1
+    reading: column_capacity -> column_capacity:answered lookup_K:answered x1; column_select -> column_capacity:answered x1; lookup_definition -> lookup_definition:words x1
+    e.g. BC-038~pair1 BC-060~pair1 BL-053~pair1
+HIDDEN-DIFFERENT  glue  n=2 (2 hidden)
+    details: glue:glue x2
+    reading: tension_net_area -> tension_net_area:answered x1; loads_factored -> loads_factored:answered x1
+    e.g. BC-012~M3 BC-102~H3
+HIDDEN-DIFFERENT  compress  n=2 (2 hidden)
+    details: compress:per-line,digits,no-the x1; compress:dia,dia,no-the x1
+    reading: tension_select -> tension_select:figure x1; lookup_hole -> tension_net_area:figure x1
+    e.g. BC-029~H2 BL-043~H2
+HIDDEN-DIFFERENT  pair  n=2 (2 hidden)
+    details: pair:bare x1; pair:dot x1
+    reading: tension_required_area -> tension_required_area:answered tension_capacity:answered x1; floor_plan -> floor_plan:answered x1
+    e.g. BC-030~pair1 BC-118~pair1
+HIDDEN-DIFFERENT  nostops  n=2 (2 hidden)
+    details: nostops:nostops x2
+    reading: lookup_K -> lookup_K:answered x1; lookup_hole -> tension_net_area:answered x1
+    e.g. BC-050~M3 BL-043~M3
+HIDDEN-DIFFERENT  shuffle  n=2 (2 hidden)
+    details: shuffle:shuffle x2
+    reading: beam_select -> beam_select:figure x1; lookup_material -> tension_capacity:answered x1
+    e.g. BC-084~H2 BL-022~H1
+HIDDEN-DIFFERENT  syntax  n=2 (2 hidden)
+    details: syntax:qmark x1; syntax:qmark,punct x1
+    reading: beam_capacity -> beam_capacity:needs lookup_definition:words x1; lookup_material -> tension_capacity:answered x1
+    e.g. BC-091~H3 BL-022~H3
+HIDDEN-DIFFERENT  shape  n=1 (1 hidden)
+    details: shape:x as * x1
+    reading: floor_plan -> floor_plan:answered x1
+    e.g. BC-115~M3
+HIDDEN-DIFFERENT  lower  n=1 (1 hidden)
+    details: lower:lower x1
+    reading: lookup_material -> tension_capacity:answered x1
+    e.g. BL-022~H3
+FEWER  compress  n=46
+    details: compress:DL,LL x8; compress:per-line x5; compress:LL x5; compress:DL,LL,no-the x4; compress:DL x3; compress:pinned-ends x2
+    reading: lookup_U -> lookup_U:refused x6; loads_factored -> loads_factored:asks x6; beam_select -> beam_select:asks x5
+    e.g. BC-001~compress BC-018~compress BC-018~M1 BC-024~compress BC-024~M2 BC-030~compress
+FEWER  shape  n=46
+    details: shape:x as * x26; shape:no x x19; shape:spaces x1
+    reading: column_capacity -> column_capacity:refused x9; lookup_shape lookup_shape -> lookup_shape:needs x9; lookup_shape -> lookup_shape:needs x7
+    e.g. BC-001~M1 BC-009~shape BC-012~shape BC-012~M2 BC-014~M3 BC-016~M1
+FEWER  syntax  n=39
+    details: syntax:qmark x10; syntax:punct,qmark x9; syntax:qmark,qmark x6; syntax:qmark,punct x6; syntax:punct,punct x2; syntax:bracket,punct x1
+    reading: column_capacity -> column_capacity:refused x3; lookup_shape -> null:nomatch x3; tension_select -> tension_select:refused x2
+    e.g. BC-005~syntax BC-012~syntax BC-013~syntax BC-016~M3 BC-023~syntax BC-024~syntax
+FEWER  nospace  n=39
+    details: nospace:num-word,after-punct x6; nospace:num-word x5; nospace:after-punct,num-word x4; nospace:num-word,num-word x3; nospace:join,num-word x2; nospace:after-punct,num-word,after-punct x2
+    reading: column_capacity -> column_capacity:refused x4; beam_capacity -> beam_capacity:needs x4; column_euler -> column_euler:refused x3
+    e.g. BC-009~H2 BC-012~nospace BC-015~H3 BC-018~M3 BC-019~H1 BC-037~M3
+FEWER  typed  n=35
+    details: typed:book answer x35
+    reading: tension_capacity -> tension_capacity:asks x6; column_capacity -> column_capacity:asks x5; column_euler -> column_euler:asks x4
+    e.g. BC-004~H2 BC-008~typed BC-008~M2 BC-008~M3 BC-035~typed BC-035~M1
+FEWER  spaces  n=32
+    details: spaces:inword x8; spaces:before-punct,inword x3; spaces:double,inword,double x3; spaces:inword,before-punct x2; spaces:double x1; spaces:inword,double x1
+    reading: lookup_shape -> null:nomatch x5; tension_net_area -> tension_net_area:refused x4; tension_select -> tension_select:refused x4
+    e.g. BC-008~M2 BC-013~spaces BC-014~L2 BC-016~L3 BC-016~M1 BC-019~H1
+FEWER  misspell  n=29
+    details: misspell:lines x2; misspell:bolts x2; misspell:effective+bolts x1; misspell:channel+lines+find x1; misspell:plate x1; misspell:bolts+lines x1
+    reading: tension_capacity -> tension_capacity:refused x4; tension_net_area -> tension_net_area:refused x3; tension_capacity -> tension_capacity:asks x2
+    e.g. BC-001~M3 BC-003~M3 BC-004~H2 BC-008~misspell BC-008~M2 BC-009~M3
+FEWER  pair  n=28
+    details: pair:close x8; pair:bare x8; pair:dot x8; pair:close-nl x4
+    reading: lookup_definition -> lookup_definition:words x4; lookup_K -> lookup_K:answered lookup_shape:answered x2; tension_capacity -> tension_capacity:refused x1
+    e.g. BC-009~pair1 BC-010~pair1 BC-013~pair1 BC-018~pair1 BC-048~pair1 BC-054~pair1
+FEWER  numspace  n=28
+    details: numspace:numspace x28
+    reading: column_capacity -> column_capacity:refused x4; column_select -> column_select:refused x3; column_euler -> column_euler:refused x3
+    e.g. BC-031~numspace BC-032~numspace BC-035~numspace BC-035~H1 BC-036~numspace BC-054~numspace
+FEWER  nostops  n=17
+    details: nostops:nostops x17
+    reading: lookup_K -> lookup_K:needs x4; lookup_shape -> column_capacity:needs x4; lookup_definition tension_net_area -> lookup_definition:words x4
+    e.g. BC-049~nostops BC-049~L1 BC-049~L2 BC-049~M1 BC-049~M2 BC-049~H2
+FEWER  label  n=16
+    details: label:label x16
+    reading: lookup_definition -> null:nomatch x4; lookup_shape lookup_shape -> null:nomatch x2; lookup_definition -> loads_factored:refused x2
+    e.g. BC-102~M1 BL-011~label BL-014~label BL-014~H1 BL-016~label BL-018~label
+FEWER  lower  n=15
+    details: lower:lower x15
+    reading: column_capacity -> column_capacity:refused x11; lookup_K -> column_capacity:refused x2; column_capacity -> column_capacity:asks x1
+    e.g. BC-053~lower BC-053~L1 BC-053~L3 BC-053~M2 BC-053~H1 BC-056~lower
+FEWER  pair-half  n=14
+    details: pair-half:shape+misspell+nostops x1; pair-half:shape+phi+misspell+lower x1; pair-half:shape+glue+misspell+lower+nostops+syntax+nospace+breaks x1; pair-half:shape+glue+misspell+label+lower+nostops+syntax x1; pair-half:glue+typed+lower+nostops+nospace+breaks x1; pair-half:glue+lower+nostops+spaces x1
+    reading: lookup_shape lookup_shape -> lookup_shape:needs tension_net_area:refused x2; tension_capacity -> tension_capacity:refused tension_capacity:answered x1; tension_net_area -> tension_net_area:refused tension_capacity:answered x1
+    e.g. BC-001~pair1 BC-014~pair1 BC-046~pair1 BC-056~pair1 BC-062~pair1 BC-066~pair1
+FEWER  fig  n=12
+    details: fig:fig x12
+    reading: lookup_shape lookup_shape -> lookup_shape:needs x2; lookup_shape lookup_shape lookup_shape -> lookup_shape:figure x2; lookup_definition -> lookup_definition:words x2
+    e.g. BC-049~fig BL-011~fig BL-014~fig BL-014~M2 BL-014~H1 BL-016~fig
+FEWER  frac  n=7
+    details: frac:dash x6; frac:dash,decimal x1
+    reading: tension_capacity -> tension_capacity:refused x4; tension_net_area -> tension_net_area:refused x1; lookup_hole -> lookup_hole:refused x1
+    e.g. BC-003~frac BC-006~M1 BC-009~frac BC-011~frac BC-017~frac BL-031~frac
+FEWER  glue  n=6
+    details: glue:glue x6
+    reading: lookup_definition tension_net_area -> lookup_definition:words x3; column_euler -> column_euler:needs x1; column_euler -> column_euler:refused x1
+    e.g. BC-066~H2 BC-069~M2 BL-004~M2 BL-087~glue BL-087~M1 BL-087~H3
+FEWER  blanks  n=4
+    details: blanks:? x2; blanks:= _ x1; blanks:= x1
+    reading: tension_required_area -> tension_capacity:refused x2; lookup_K -> column_capacity:refused x2
+    e.g. BC-035~blanks BC-035~L1 BC-047~blanks BC-047~H1
+FEWER  phi  n=2
+    details: phi:phi x2
+    reading: tension_net_area -> tension_net_area:refused x1; lookup_critical_stress -> null:nomatch x1
+    e.g. BC-014~L3 BL-050~H1
+FEWER  combined  n=1
+    details: combined x1
+    reading: tension_net_area -> tension_net_area:refused x1
+    e.g. BC-014~M1
+FEWER  pair+typing  n=1
+    details: pair+typing x1
+    reading: beam_analysis -> beam_analysis:answered units:needs x1
+    e.g. BC-076~pair1

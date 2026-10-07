@@ -1,0 +1,28 @@
+--- a/vendor/reader.js	2026-10-07 09:58:02.873974992 +0000
++++ b/vendor/reader.js	2026-10-07 09:58:02.880346383 +0000
+@@ -2366,7 +2366,12 @@
+   else if (sdl && sdl.qualifier !== null && /superimposed|additional|fixed/.test(sdl.qualifier)) B.set('superimposed_dead_psf', sdl.value, sdl.from, 'high');
+   /* 0.5: "dead load 85 psf (includes self-weight)" and no slab thickness anywhere: the whole dead load is given, so it goes in the dead-load box (slab left blank) */
+   else if (sdl && !F.slab && !o.noSdl) B.set('superimposed_dead_psf', sdl.value, sdl.from, 'medium', 'the dead load is given in psf and no slab thickness is given: the slab box stays blank');
+-  var fr = /(?:steel\s+)?framing[^.;]{0,40}?(\d+(?:\.\d+)?)\s*psf/i.exec(t);
++  var fr = /(?:steel\s+)?framing[^.;)]{0,40}?(\d+(?:\.\d+)?)\s*psf/i.exec(t);
++  /* (cloud, holdout C-28) the number after "framing" must be the framing's OWN weight.  "The floor dead load is 75 psf (including the weight of the
++     framing) and the floor live load is 100 psf" took the LIVE load as a framing weight (D = 75 + 100 = 175 psf: wu 3.7, Mu 473.6, W24X55 printed clean;
++     right 2.5, 320, W21X44); typed without the bracket ("dead 75psf including weight of framing live 100psf") the same.  Words of another load, or of
++     "including", between the two never make it a framing weight; with lost full stops "framing plan ... dead load 75psf" neither. */
++  if (fr && /\b(?:dead|live|loads?|includ\w*|plan|slab|floor|roof|partitions?|superimposed|snow|ceiling|mechanical)\b/i.test(fr[0].replace(/^(?:steel\s+)?framing/i, '').replace(/\d+(?:\.\d+)?\s*psf$/i, ''))) fr = null;
+   /* 0.8: the number FIRST: "10 psf for framing", "8 psf of steel framing"; and a dead load named by what it is: "10 psf of roofing", "15 psf for ceiling
+      and mechanical" (never when the words call it a live load) */
+   if (!fr) fr = /(\d+(?:\.\d+)?)\s*psf\s+(?:of|for)\s+(?:the\s+)?(?:steel\s+)?(?:framing|beams\s+and\s+girders|structural\s+steel)\b/i.exec(t);
+@@ -2403,6 +2408,11 @@
+   /* 0.6: "Ignore the self-weight of the beam" switches the worksheet's own self-weight recheck off (it stayed on: 169.65 printed where 165.6 is right) */
+   var negF = neglectSelf(t);
+   if (negF) B.set('self_weight_recheck', false, negF, 'high');
++  /* (cloud, holdout C-28) "The floor dead load is 75 psf (including the weight of the framing)": the steel is already IN the dead load, so the worksheet
++     must not add each member's weight again (it did: Mu 326.76 printed where 320 is right).  "not including the framing" says the opposite: left alone. */
++  var inclF = /\b(?:includ(?:es|ing|ed)?|incl\.)\s+(?:the\s+)?(?:(?:self[- ]?)?weights?\s+of\s+(?:the\s+)?)?(?:steel\s+)?(?:framing|beams\s+and\s+girders|structural\s+steel)\b|\b(?:steel\s+)?framing(?:\s+weight)?\s+(?:is\s+)?(?:already\s+)?included\b/i.exec(t);
++  if (inclF && /\bnot\s+$|\bexcluding\s+$|\bwithout\s+$/i.test(t.slice(Math.max(0, inclF.index - 12), inclF.index))) inclF = null;
++  if (inclF && !negF && !B.has('framing_psf')) B.set('self_weight_recheck', false, inclF[0], 'high', 'the dead load already includes the weight of the framing');
+   /* 0.5: the beam's span and the girder's span are named apart: "the beams span 36 ft between girders ...; the girders span 27 ft between columns" */
+   var gs = new RegExp('\\bgirders?\\b[^.;]{0,40}?\\bspan(?:s|ning)?\\s*(?:of\\s+|is\\s+|=\\s*)?(' + N + ')' + UF, 'i').exec(t) || new RegExp('(' + N + ')' + UF + '\\s*-?\\s*(?:long\\s+)?girders?\\b', 'i').exec(t)
+     || new RegExp('\\bgirder\\s+span\\s*(?:of\\s+|is\\s+|=\\s*|:\\s*)?(' + N + ')' + UF, 'i').exec(t);
