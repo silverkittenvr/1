@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steel exam solver</title>
+<style>
+:root { --ink: #1b1f24; --mut: #5a6370; --line: #cfd5dd; --bg: #f4f6f9; --panel: #ffffff; --brand: #17365d; --accent: #1d5fb4;
+  --ok: #1d7a3a; --okbg: #eef8f0; --warn: #a55a00; --warnbg: #fff4dc; --bad: #b3261e; --badbg: #fde7e4; --hl: #ffe066; --note: #eaf0f8; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.45 system-ui, "Segoe UI", Roboto, Arial, sans-serif; }
+#app { max-width: 1060px; margin: 0 auto; padding: 12px 14px 60px; }
+h1 { font-size: 1.45rem; margin: 6px 0 8px; color: var(--brand); }
+h1 .sub { font-size: 0.9rem; font-weight: 400; color: var(--mut); }
+h2 { font-size: 1.1rem; margin: 18px 0 6px; color: var(--brand); }
+button { font: inherit; cursor: pointer; }
+button.small { font-size: 0.85rem; padding: 3px 9px; border: 1px solid var(--line); background: #fff; border-radius: 6px; margin: 2px 4px 2px 0; }
+button.small:hover { background: #eef2f7; }
+button.go { font-size: 1.05rem; font-weight: 700; padding: 10px 18px; border: 2px solid var(--brand); background: var(--brand); color: #fff; border-radius: 8px; }
+button.go.off, button.go:disabled { background: #b8c0cc; border-color: #b8c0cc; cursor: not-allowed; }
+button.go2 { font-weight: 700; padding: 6px 14px; border: 2px solid var(--ok); background: var(--ok); color: #fff; border-radius: 8px; }
+button.primary { font-size: 1.1rem; font-weight: 700; padding: 10px 26px; border: 2px solid var(--brand); background: var(--brand); color: #fff; border-radius: 8px; }
+.hint { color: var(--mut); font-size: 0.85rem; }
+.note { color: var(--mut); font-size: 0.82rem; font-style: italic; }
+
+/* top bars */
+.mb { border-radius: 8px; padding: 8px 12px; margin: 6px 0; border: 2px solid; }
+.mb-main { font-size: 1.05rem; }
+.mb-sub { font-size: 0.88rem; margin-top: 2px; }
+.mb-big { background: #e8f6ec; border-color: #1d7a3a; }
+.mb-small { background: #fff4dc; border-color: #d98a00; }
+.mb-none { background: #fde7e4; border-color: #c62d1f; }
+.mb-check { background: #eef2f7; border-color: #9aa5b5; }
+.st { border-radius: 8px; padding: 6px 12px; margin: 6px 0; font-size: 0.9rem; border: 1px solid; }
+.st-pass { background: #eef8f0; border-color: #1d7a3a; }
+.st-fail { background: #fde7e4; border-color: #c62d1f; font-weight: 600; }
+
+/* input */
+#input { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 10px 0; }
+#input label.big { display: block; font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
+textarea#q { width: 100%; min-height: 11em; font: 15px/1.4 ui-monospace, Consolas, "Courier New", monospace; padding: 8px 10px; border: 2px solid var(--accent); border-radius: 8px; resize: vertical; }
+textarea#defaults { width: 100%; min-height: 4.5em; font: 14px/1.35 ui-monospace, Consolas, "Courier New", monospace; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; }
+#input .btnrow { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+#status { color: var(--bad); font-weight: 600; }
+details.defs { margin-top: 8px; }
+details.defs summary { cursor: pointer; font-size: 0.92rem; color: var(--brand); }
+.exrow { margin-top: 6px; }
+
+/* a question and its parts */
+.qhead { font-size: 1.2rem; margin: 18px 0 4px; }
+.qbar { background: var(--note); border: 1px solid #b9c9df; border-radius: 8px; padding: 6px 10px; margin-bottom: 8px; }
+.part { background: var(--panel); border: 1px solid var(--line); border-left: 8px solid var(--accent); border-radius: 10px; padding: 10px 14px 12px; margin: 0 0 14px; }
+.part-out { border-left-color: var(--bad); }
+.part-none { border-left-color: #d98a00; }
+.phead { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; }
+.plabel { font-weight: 700; font-size: 1.1rem; color: var(--mut); }
+.pform { font-weight: 700; font-size: 1.25rem; color: var(--brand); }
+.pform.bad { color: var(--bad); }
+.pform.warn { color: var(--warn); }
+.forced { font-size: 0.8rem; background: #eee; border-radius: 10px; padding: 1px 8px; }
+.ptext { color: var(--mut); font-size: 0.9rem; margin: 2px 0 6px; }
+.gives { margin: 4px 0; }
+.decided { margin: 2px 0 6px; }
+.chip { display: inline-block; padding: 0 8px; margin: 1px 4px 1px 0; border-radius: 999px; font-size: 0.85rem; border: 1px solid var(--line); background: #f1f3f6; white-space: nowrap; }
+.chip.dec { background: #d9e8ff; border-color: #8fb2e8; }
+.chip.trp { background: #ffd9d2; border-color: #e09a8e; }
+.chip.un { background: #fff1d6; border-color: #d98a00; cursor: default; }
+.warnbox { background: var(--warnbg); border: 1px solid #d98a00; border-radius: 6px; padding: 6px 10px; margin: 6px 0; }
+.bad { background: var(--badbg); border: 2px solid #c62d1f; border-radius: 6px; padding: 6px 10px; margin: 6px 0; font-weight: 600; }
+.figure { background: var(--warnbg); border: 2px solid #d98a00; border-radius: 6px; padding: 8px 12px; margin: 8px 0; }
+.ticklab { display: block; margin-top: 6px; font-weight: 700; }
+.ticklab input { width: 1.2em; height: 1.2em; vertical-align: -0.2em; }
+details.checks { margin: 6px 0; }
+details.checks summary { cursor: pointer; font-weight: 600; font-size: 0.92rem; }
+.chk { font-size: 0.88rem; margin: 3px 0 3px 8px; }
+
+/* the copy of his words */
+.ctxhead { font-size: 0.85rem; color: var(--mut); margin-top: 8px; }
+.ctx { white-space: pre-wrap; background: #fafbfc; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; font: 14px/1.5 ui-monospace, Consolas, "Courier New", monospace; max-height: 12em; overflow: auto; }
+.ctx mark { color: inherit; border-radius: 3px; padding: 0 1px; }
+.ctx mark.hl { background: var(--hl); outline: 2px solid #d9b000; }
+.ctx mark.unused { background: transparent; text-decoration: underline wavy #d98a00; text-underline-offset: 3px; }
+
+/* the boxes */
+.reading { margin: 8px 0 2px; }
+.readingmsg { background: #eef2f7; border: 1px dashed #9aa5b5; border-radius: 6px; padding: 8px 10px; font-weight: 600; }
+.readby { font-size: 0.85rem; color: var(--mut); }
+.stagehead { font-weight: 700; font-size: 1.05rem; margin: 12px 0 4px; padding: 3px 8px; background: #eef2f7; border-radius: 6px; }
+.rows { margin: 4px 0; }
+.row { display: grid; grid-template-columns: 190px minmax(160px, 1.3fr) minmax(150px, 1.2fr) 190px; gap: 6px 10px; align-items: start; padding: 8px 8px; border: 1px solid var(--line); border-left: 6px solid #9aa5b5; border-radius: 6px; margin: 5px 0; background: #fff; cursor: default; }
+.row .lab b { font-size: 0.98rem; }
+.row .req { color: var(--bad); font-weight: 700; }
+.row .unitlab { color: var(--mut); font-size: 0.85rem; }
+.row.st-agree, .row.st-model, .row.st-rule { border-left-color: #d9b23a; background: #fffdf3; }
+.row.st-conflict { border-left-color: var(--bad); background: #fff6f5; }
+.row.st-carried { border-left-color: #8a96a8; background: #f4f6f9; color: var(--mut); }
+.row.st-empty, .row.st-unclear, .row.st-rejected { border-left-color: #d98a00; }
+.row.st-default { border-left-color: #cbd2dc; }
+.row.need { border-left-color: var(--bad); }
+.row.engine-missing { outline: 3px solid var(--bad); }
+.row.ask { border-left-color: #d98a00; background: #fffaf0; }
+.row .status { font-size: 0.85rem; color: var(--mut); }
+.row.need .status, .row.st-conflict .status { color: var(--bad); font-weight: 600; }
+.ed input[type=text], .ed select, .ed textarea { font: inherit; padding: 5px 8px; border: 1px solid #98a3b3; border-radius: 6px; width: 100%; max-width: 360px; background: #fff; }
+.ed.ed-name input[type=text] { max-width: 100%; }
+.ed .unit { margin-left: 6px; color: var(--mut); font-size: 0.9rem; }
+.ed button.opt { font-size: 0.82rem; padding: 3px 8px; border: 1px solid #98a3b3; background: #fff; border-radius: 6px; margin: 2px 4px 2px 0; text-align: left; }
+.ed button.opt.on { background: var(--brand); color: #fff; border-color: var(--brand); }
+.optdesc { margin-top: 3px; font-size: 0.8rem; color: var(--mut); }
+.optsel { color: var(--ink); font-size: 0.86rem; }
+.optline { margin: 1px 0; }
+.words .w { font-size: 0.88rem; margin: 2px 0; }
+.words q { font-family: ui-monospace, Consolas, monospace; font-size: 0.85rem; background: #f0f2f5; padding: 0 4px; border-radius: 3px; quotes: none; }
+.words q::before { content: '"'; } .words q::after { content: '"'; }
+.src { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 0 6px; border-radius: 8px; text-transform: uppercase; letter-spacing: 0.03em; }
+.src-model { background: #dfeaff; color: #1a3f8f; }
+.src-rules { background: #e6f3e6; color: #1d5a2a; }
+.grab { font-size: 0.82rem; color: #6a4a00; margin-top: 3px; }
+.rq { font-size: 0.82rem; color: #6a4a00; margin-top: 3px; }
+.alts { display: flex; flex-direction: column; gap: 4px; margin-bottom: 6px; }
+button.alt { text-align: left; font-size: 0.9rem; padding: 5px 8px; border: 2px solid #98a3b3; border-radius: 6px; background: #fff; }
+button.alt:hover { border-color: var(--brand); background: #f1f6ff; }
+.altwords { font-size: 0.8rem; color: var(--mut); }
+button.alt.invalid { border-color: #d6a5a0; background: #fbf1f0; }
+.badname { color: var(--bad); font-size: 0.8rem; }
+.howto { margin: 4px 0 8px; font-size: 0.92rem; color: var(--mut); padding-left: 20px; }
+.howto li { margin: 1px 0; }
+.ed textarea { max-width: 100%; }
+.list .lrow { display: flex; flex-wrap: wrap; gap: 6px; align-items: flex-end; margin-bottom: 4px; }
+.list .lcell { display: flex; flex-direction: column; font-size: 0.78rem; color: var(--mut); }
+.list .lcell input, .list .lcell select { width: 8em; font: inherit; padding: 3px 6px; border: 1px solid #98a3b3; border-radius: 6px; }
+details.restbox { margin: 6px 0; }
+details.restbox summary { cursor: pointer; font-size: 0.9rem; color: var(--brand); }
+.restnames { font-size: 0.8rem; color: var(--mut); margin: 3px 0 6px; }
+.usual { font-size: 0.85rem; color: #4a4f58; background: #f4f6f9; border: 1px solid var(--line); border-radius: 6px; padding: 4px 8px; margin: 6px 0; }
+.rnote { font-size: 0.85rem; color: #6a4a00; margin: 4px 0; }
+.unused { margin: 10px 0 4px; }
+.unusedhead { font-weight: 700; color: #7a4a00; }
+.gate { margin: 8px 0 0; }
+.gatehead { font-weight: 700; color: var(--bad); }
+ul.gl { margin: 2px 0 4px 18px; padding: 0; color: var(--bad); }
+.gorow { margin: 8px 0 2px; }
+details.altform { margin-top: 10px; }
+details.altform summary { cursor: pointer; font-size: 0.88rem; color: var(--mut); }
+.formpick .fprow { margin: 3px 0; }
+.fpsec { font-weight: 700; font-size: 0.85rem; color: var(--mut); }
+.swbar { margin: 6px 0; }
+
+/* the result */
+.result { margin-top: 10px; }
+.write { border: 2px solid var(--ok); border-left: 12px solid var(--ok); background: var(--okbg); border-radius: 8px; padding: 8px 14px 10px; margin: 8px 0; }
+.whead { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.wtitle { font-weight: 800; font-size: 1.15rem; color: var(--ok); letter-spacing: 0.04em; }
+pre.wtext { white-space: pre-wrap; word-break: break-word; font: 15.5px/1.55 ui-monospace, Consolas, "Courier New", monospace; margin: 6px 0 4px; color: #111; }
+.readonly { border: 2px dashed #8a8f98; background: #f3f3ee; border-radius: 8px; padding: 6px 12px 8px; margin: 8px 0; color: #3b3f46; }
+.rhead { font-weight: 800; font-style: italic; letter-spacing: 0.02em; color: #5a5f68; }
+.readonly ul { margin: 4px 0 2px 18px; padding: 0; }
+.fl { font-size: 0.9rem; margin: 3px 0; }
+.fl-warning { color: var(--bad); font-weight: 600; }
+.fl-check { color: var(--warn); font-weight: 600; }
+.errbox { border: 2px solid var(--bad); background: var(--badbg); border-radius: 8px; padding: 8px 12px; margin: 8px 0; }
+.errhead { font-weight: 800; color: var(--bad); }
+.errmsg { margin: 4px 0; }
+.errgo { margin-top: 6px; font-weight: 600; }
+.stephint { margin-top: 6px; background: #fff; border: 1px dashed #b3261e; border-radius: 6px; padding: 5px 8px; }
+.info { background: var(--note); border: 1px solid #b9c9df; border-radius: 6px; padding: 6px 10px; }
+button.sg { font-weight: 700; }
+details.other { margin: 6px 0; font-size: 0.9rem; }
+details.other summary { cursor: pointer; color: var(--mut); }
+
+/* history */
+#hist { margin-top: 22px; border-top: 2px solid var(--line); }
+.hitem { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; margin: 6px 0; }
+.hitem summary { cursor: pointer; }
+.hsub { color: var(--mut); font-size: 0.85rem; }
+.hq { font-size: 0.85rem; color: var(--mut); margin: 4px 0; }
+
+@media (max-width: 760px) {
+  .row { grid-template-columns: 1fr; }
+  #app { padding: 8px 8px 40px; }
+}
+
+details.cannot { margin: 4px 0 8px; font-size: 0.9rem; }
+details.cannot summary { cursor: pointer; color: var(--brand); }
+details.cannot ul { margin: 4px 0 4px 18px; padding: 0; color: var(--mut); }
+.foot { margin-top: 28px; font-size: 0.75rem; color: var(--mut); }
+
+.fromparts { margin-top: 4px; }
+.fromline { font-size: 0.85rem; margin: 2px 0; }
+
+.kitnav { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 0.82rem; padding: 2px 0 6px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
+.kitnav .kn { color: var(--mut); text-decoration: none; }
+.kitnav a.kn:hover { text-decoration: underline; color: var(--brand); }
+.kitnav .kn-here { color: var(--brand); font-weight: 700; border-bottom: 2px solid var(--brand); }
+.calclink { margin: 6px 0 2px; font-size: 0.88rem; }
+.uq { background: #fffaf0; border: 1px solid #d98a00; border-left: 6px solid #d98a00; border-radius: 6px; padding: 6px 10px; margin: 6px 0; }
+.uqhead { font-weight: 600; margin-bottom: 4px; }
+.uq button.opt { font-size: 0.85rem; padding: 3px 9px; border: 1px solid #98a3b3; background: #fff; border-radius: 6px; margin: 2px 4px 2px 0; }
+.uq button.opt:hover { background: #eef2f7; }
+.uq button.opt.on { background: var(--brand); color: #fff; border-color: var(--brand); }
+.uqmsg { font-size: 0.85rem; margin-top: 3px; }
+.uqmsg.open { color: var(--bad); font-weight: 600; }
+.uqmsg.done { color: var(--ok); }
+ul.figq { margin: 4px 0 4px 18px; padding: 0; }
+ul.figq li { margin: 5px 0; font-size: 0.92rem; }
+ul.figq input[type=text] { width: 7em; font: inherit; padding: 2px 6px; border: 1px solid #98a3b3; border-radius: 6px; }
+.figask { margin-top: 6px; }
+.row.flash { outline: 3px solid #d98a00; }
+.mb-tech { font-size: 0.75rem; color: var(--mut); margin-top: 2px; }
+
+/* ---- 10/06: answers first, the AI helper as a background check, every question kept on the page */
+.question { margin: 0 0 26px; padding-top: 4px; border-top: 3px solid var(--brand); }
+.qbar-ok { background: var(--okbg); border-color: var(--ok); }
+.qbar-need { background: var(--warnbg); border-color: #d98a00; }
+/* ---- 10/06 evening: THE ANSWERS of a question, one line per blank, at its top */
+.qanswers { margin-top: 8px; padding: 8px 10px; background: var(--panel); border: 2px solid var(--ok); border-radius: 8px; }
+.qbar-need .qanswers { border-color: #d98a00; }
+.qanshead { font-weight: 700; color: var(--brand); margin-bottom: 4px; }
+.qansrow { padding: 3px 0; border-top: 1px dotted var(--line); font-size: 1.05rem; }
+.qansblank { color: var(--mut); }
+.qansval { color: var(--ink); }
+.qansnone { color: var(--warn); }
+.qanswarn { color: var(--bad); font-weight: 600; font-size: 0.95rem; }
+.qanssame { margin-top: 6px; padding-top: 4px; border-top: 1px solid var(--line); color: var(--mut); font-size: 0.95rem; }
+.spellnote { margin: 6px 0; padding: 6px 10px; border: 1px solid #b8960b; border-left: 5px solid #b8960b; background: #fff8dc; border-radius: 4px; font-size: 0.98rem; }
+.stalenote { margin: 6px 0; padding: 8px 10px; border: 2px solid var(--bad); background: #fde0e0; border-radius: 4px; font-size: 1rem; }
+.isstale .write, .isstale .qanswers, .isstale .chk2 { display: none; }
+.isunknown .write, .isunknown .qanswers, .isunknown .chk2 { display: none; }
+.unknote { margin: 6px 0; padding: 8px 10px; border: 2px solid var(--bad); background: #fde0e0; border-radius: 4px; font-size: 1rem; line-height: 1.5; }
+.symhint { margin: 6px 0 8px; padding: 6px 10px; background: var(--note); border: 1px solid #b9c9df; border-radius: 6px; font-size: 0.92rem; line-height: 1.7; }
+.symhint .symrow { display: inline-block; margin-right: 18px; white-space: nowrap; }
+.symhint .sym { font-weight: 700; font-size: 1.05rem; }
+.symhint code { background: #fff; border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; }
+.usedstrip { margin: 4px 0 8px; padding: 6px 8px; background: #fff8dc; border: 1px solid #c9a227; border-radius: 4px; font-size: 0.95rem; line-height: 1.5; }
+.usedshape { font-weight: 700; font-size: 1.05rem; }
+.usedrule { color: var(--mut); font-size: 0.88rem; margin-top: 2px; }
+details.more { margin: 10px 0 0; border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px 6px; background: #fbfcfe; }
+details.more > summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--brand); padding: 3px 0; }
+.needs { border: 2px solid #d98a00; border-left: 12px solid #d98a00; background: var(--warnbg); border-radius: 8px; padding: 8px 14px; margin: 8px 0; }
+.needshead { font-weight: 700; font-size: 1.05rem; }
+.needs ul { margin: 4px 0 4px 18px; padding: 0; }
+.write.hold pre.wtext { opacity: 0.35; text-decoration: line-through; }
+.write.hold { border-color: var(--bad); background: var(--badbg); }
+.holdmsg { font-weight: 700; color: var(--bad); margin-bottom: 4px; }
+.chk2 { border: 1px solid #b9c9df; background: var(--note); border-radius: 8px; padding: 6px 12px 8px; margin: 8px 0; }
+.chk2head { font-weight: 700; margin-bottom: 4px; }
+table.chk2t { border-collapse: collapse; width: 100%; font-size: 0.93rem; }
+table.chk2t { table-layout: fixed; }
+table.chk2t td { border-top: 1px solid #c9d5e6; padding: 3px 8px 3px 0; vertical-align: top; overflow-wrap: anywhere; word-break: break-word; }
+table.chk2t td.c-l { width: 30%; }
+table.chk2t td.c-v { font-weight: 700; width: 22%; }
+table.chk2t td.c-a { width: 14%; }
+.holehelp input, .holehelp select { max-width: 100%; }
+table.chk2t td.c-w { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 0.86rem; }
+table.chk2t td.c-a { color: var(--mut); font-size: 0.82rem; }
+table.chk2t tr.c-you td.c-w { color: var(--warn); font-family: inherit; }
+.ai { margin: 6px 0 0; }
+.ai-line { font-size: 0.9rem; color: var(--mut); padding: 3px 0; }
+.ai-busy { color: var(--accent); }
+.ai-ok { color: var(--ok); }
+.ai-warn { color: var(--warn); }
+.aiclock { font-weight: 700; font-variant-numeric: tabular-nums; }
+.ai-diff { border: 2px solid var(--bad); border-left: 12px solid var(--bad); background: var(--badbg); border-radius: 8px; padding: 8px 14px; margin: 6px 0; }
+.ai-diffhead { font-weight: 700; font-size: 1.02rem; color: var(--bad); }
+.ai-d { border-top: 1px solid #e3b5b0; margin-top: 6px; padding-top: 6px; }
+.ai-dl { font-weight: 700; }
+.ai-db { margin-top: 3px; }
+.mb-sw { display: block; font-size: 0.88rem; margin-top: 4px; cursor: pointer; }
+.mb-sum { font-size: 0.9rem; margin-top: 4px; }
+button.warnbtn { border-color: var(--bad); color: var(--bad); font-weight: 700; }
+ol.howto.top { margin: 4px 0 10px 20px; padding: 0; font-size: 0.95rem; }
+.holehelp { border: 1px solid #b9c9df; background: #fff; border-radius: 8px; padding: 6px 12px 8px; margin: 8px 0; }
+.hh-head { font-weight: 700; }
+.hh-row { margin-top: 6px; }
+.hh-sub { margin: 3px 0 3px 18px; }
+.hh-done { background: var(--okbg); border: 1px solid var(--ok); border-radius: 6px; padding: 4px 8px; margin: 4px 0; }
+input.hh-n { width: 4.5em; }
+input.hh-d { width: 16em; max-width: 100%; }
+.choices { border: 1px solid #b9c9df; background: var(--note); border-radius: 8px; padding: 6px 12px 8px; margin: 8px 0; }
+.ch-head { font-weight: 700; margin-bottom: 4px; }
+.ch-row { border-top: 1px solid #c9d5e6; padding: 5px 0; }
+.ch-best { background: #fffbe0; }
+.ch-tag { color: var(--warn); font-size: 0.85rem; font-weight: 600; }
+.ch-entry { font-size: 0.93rem; margin-top: 2px; }
+.related { border: 1px solid #b9c9df; background: #fff; border-radius: 8px; padding: 6px 12px 8px; margin: 8px 0; }
+.rel-head { font-weight: 700; }
+.rel-row { border-top: 1px solid #dfe5ee; padding: 5px 0; }
+.rel-text { font-size: 0.95rem; }
+details.ai-soft { border: 1px dashed #9aa5b5; border-radius: 8px; padding: 4px 10px 6px; margin: 4px 0; background: #fafbfc; }
+details.ai-soft > summary { cursor: pointer; font-size: 0.9rem; color: var(--mut); }
+.loose { margin-top: 5px; font-size: 0.9rem; background: var(--warnbg); border: 1px solid #e3c98a; border-radius: 6px; padding: 4px 8px; }
+
+/* a part whose form was chosen by what is asked and what is given (council 10/06) */
+.reroute { background: #eef4ff; border-left: 4px solid #3465a4; padding: 6px 10px; margin: 6px 0; font-size: 14px; }
+
+/* a box the page is waiting for: asked about as a box, his own phrases as the choices (council 10/06) */
+.wanted { border: 2px solid #c77700; background: #fff7e6; border-radius: 6px; padding: 8px 12px; margin: 8px 0; }
+.wantedhead { font-weight: bold; font-size: 16px; margin-bottom: 2px; }
+.wbox { margin: 8px 0 4px 0; padding-top: 8px; border-top: 1px dashed #d9b36c; }
+.wlabel { font-size: 15px; }
+.whint { color: #333; font-weight: normal; margin: 2px 0 4px 0; }
+.wcand { display: block; text-align: left; margin: 4px 0; padding: 5px 9px; font-size: 14px; }
+.wtyperow { margin-top: 6px; font-size: 14px; }
+.wtype { font-size: 15px; padding: 3px 5px; }
+
+/* the cover-page assumptions: the first step, and what the page understood of them */
+#defsbox { border: 2px solid #c77700; background: #fff7e6; border-radius: 6px; padding: 6px 10px; margin: 8px 0; }
+#defsbox > summary { font-weight: bold; cursor: pointer; }
+.defsnote { margin-top: 6px; font-size: 14px; color: #222; }
+
+</style>
+</head>
+<body>
+<div id="app">
+  <nav id="kitnav" class="kitnav" aria-label="Pages of the kit"></nav>
+  <h1>Steel exam solver <span class="sub">type the question, check the words, write down what it prints</span></h1>
+  <ol class="howto top">
+    <li>Type the question exactly as printed, <b>one question at a time, including its answer line</b> (for example <code>Pu = ____ kips</code> or <code>W____x____</code>) and, for multiple choice, every choice on its own line. Then press <b>Solve</b>. The answer line tells the page what is asked.</li>
+    <li>Under each answer is a short list: <b>Check these values</b>. Each line shows a value and the words of YOUR question it came from. If the words do not say what the label says, open <b>Change a value</b> and fix it.</li>
+    <li>Copy by hand what is under <b>WRITE THIS</b>. The number for your blank is the line that starts <b>ANSWER</b> (when there is a line <b>ANSWER FOR YOUR BLANK</b>, that one). An orange block means the page needs something from you first. A red block means the AI helper disagrees: decide it before you write.</li>
+  </ol>
+  <div id="modelbar" class="mb mb-check">Looking for the local model...</div>
+  <div id="selftest" class="st">Running the calculator self-test...</div>
+
+  <section id="input">
+    <details class="defs" id="defsbox">
+      <summary id="defssum">FIRST, ONCE: the assumptions printed on the cover page of your exam</summary>
+      <div class="hint">Look at the first page of the exam for a list that starts like "Unless noted otherwise, assume: ..." (all loads given are service loads; Fy = 50 ksi; pinned support conditions; K = 1.0 for all columns; shear lag factor U = 1.0 ...). Type that whole list here, once, before your first question. The page uses it for every question, and it changes answers. If your exam has no such list, leave this empty.</div>
+      <textarea id="defaults" spellcheck="false" autocomplete="off"></textarea>
+      <div id="defsnote" class="defsnote"></div>
+    </details>
+    <label class="big" for="q">Type ONE question exactly as printed, with its answer line (Pu = ____ kips).</label>
+    <textarea id="q" spellcheck="false" autocomplete="off" placeholder="Paste or type the whole question here, with its parts (a) (b) (c) if it has them."></textarea>
+    <div class="symhint"><b>Symbols on the paper that are not on the keyboard:</b>
+      <span class="symrow"><span class="sym">&Oslash;</span> or <span class="sym">&phi;</span> in front of Pn, Mn, Rn (as in &Oslash;Pn) is PHI: type <code>phi Pn</code></span>
+      <span class="symrow"><span class="sym">&Oslash;</span> beside a bolt or hole size (3/4" &Oslash;) means DIAMETER: type <code>dia</code> or leave it out</span>
+      <span class="symrow"><span class="sym">&le;</span> type <code>&lt;=</code></span>
+      <span class="symrow"><span class="sym">&times;</span> type <code>x</code></span>
+      <span class="symrow"><span class="sym">in&sup2;</span> type <code>in^2</code></span>
+      <span class="symrow"><span class="sym">&prime;</span> type <code>ft</code>, <span class="sym">&Prime;</span> type <code>in</code></span>
+      <span class="symrow">a blank line on the paper: type <code>____</code> (a few underscores)</span>
+    </div>
+    <div class="btnrow"><button type="button" id="solve" class="primary">Solve</button><button type="button" id="clear" class="small">Clear</button><span id="status"></span></div>
+    <div class="exrow"><span class="hint">Examples to try: </span><span id="examples"></span></div>
+  </section>
+
+  <section id="out" aria-live="polite"></section>
+
+  <section id="hist" style="display:none"><h2>Solved so far (newest first)</h2><div id="histlist"></div></section>
+  <details class="cannot"><summary>What this page cannot do (read once)</summary>
+    <ul>
+      <li>It cannot see a figure. A number that is only drawn (hole positions, spans, a width) must be typed by you: the page asks about the quantities it found in your text and makes you tick that you looked at the figure.</li>
+      <li>The calculator does not do: beams that are not fully braced (Lb above 0), shear strength, deflection, bolt or weld strength, combined bending and compression, composite beams, overhangs and continuous beams. The page says so for a part that asks for one of them.</li>
+      <li>The page's reader can be wrong, and so can the AI helper. Every value shows the words of your text it came from: if the words do not say what the label says, change the box.</li>
+      <li>It writes out the calculator's steps and answer. It does not decide what your professor wants written: write only what is under WRITE THIS and what your question asks for.</li>
+    </ul>
+  </details>
+
+  <div id="foot" class="foot"></div>
+  <noscript><p class="bad">This page needs JavaScript. Open it in a normal browser (Chrome, Edge, Firefox).</p></noscript>
+</div>
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+<!--script-->
+</body>
+</html>
