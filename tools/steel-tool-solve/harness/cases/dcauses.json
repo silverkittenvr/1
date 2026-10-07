@@ -37,5 +37,8 @@
 {"id":"dc43","text":"what is the recommended design K for a fixed-pinned column","expect":"SAME: 0.8"},
 {"id":"dc44","text":"K for a pinned-pinned column: theoretical = ____ recommended = ____","expect":"1.0 and 1.0, each on its own line"},
 {"id":"dc45","text":"a W12x53 column 14 ft long fixed at both ends, use the theoretical K value. find phi Pn","expect":"SAME (stop: her method uses the recommended design K)"},
-{"id":"dc46","text":"what is K for a fixed-pinned column","expect":"SAME: 0.8"}
+{"id":"dc46","text":"what is K for a fixed-pinned column","expect":"SAME: 0.8"},
+{"id":"dc47","text":"what is the theoretical K value for a fixed-pinned column?\nK = ____","expect":"the K blank is the theoretical one: 0.7; the design 0.8 never as the answer"},
+{"id":"dc48","text":"whats the theoritical k for a column thats fixed at both ends","expect":"0.5 (his typing); 0.65 never as the answer"},
+{"id":"dc49","text":"a fixed-pinned column 14 ft long: theoretical K = ____ , KL = ____ ft","expect":"SAME as baseline or a line for K = 0.7; never KL from the design K under it"}
 ]

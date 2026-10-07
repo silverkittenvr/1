@@ -889,11 +889,14 @@ var SIG_VALUE = {
   an: [/^An$/], ae: [/^Ae$/, /^Ae_required$/], ag: [/^Ag$/, /^Ag_required$/, /^A$/], u: [/^U$/], k: [/^K$/], zx: [/^Zx_required$/, /^Zx$/, /^Z$/],
   shape: [/^selected_shape$/], pu: [/^Pu$/, /^factored_total$/, /^Pu_bottom$/, /^U_max$/],
   live: [/^live_psf$/, /^L_max$/], fe: [/^Fe$/], pcr: [/^Pcr$/], fy: [/^Fy$/], fu: [/^Fu$/], hole: [/^hole$/],
-  axis: [/^governing_axis$/], governs: [/^governs$/]
+  axis: [/^governing_axis$/], governs: [/^governs$/],
+  /* (unit D) the theoretical K of her table, which the K look-up holds beside the design value (see signaturePass) */
+  ktheo: [/^K_theoretical$/]
 };
 var SIG_LABEL = { vu: 'Vu', reaction: 'Reaction', ra: 'RA', rb: 'RB', mu: 'Mu', wu: 'wu', klr: 'KL/r', phifcr: 'phi Fcr', phipn: 'phi Pn', phimn: 'phi Mn', an: 'An', ae: 'Ae', ag: 'Ag', u: 'U', k: 'K',
   zx: 'Zx', shape: 'Shape', pu: 'Pu', live: 'Live load', fe: 'Fe', pcr: 'Pcr', fy: 'Fy', fu: 'Fu', hole: 'Hole size', phipn_y: 'phi Pn (yielding)', phipn_r: 'phi Pn (rupture)',
-  pn: 'Pn', mn: 'Mn', fcr: 'Fcr', pn_y: 'Pn (yielding)', pn_r: 'Pn (rupture)', kl: 'KL', klrx: 'KxLx/rx', klry: 'KyLy/ry', deadpsf: 'Dead load', livepsf: 'Live load' };
+  pn: 'Pn', mn: 'Mn', fcr: 'Fcr', pn_y: 'Pn (yielding)', pn_r: 'Pn (rupture)', kl: 'KL', klrx: 'KxLx/rx', klry: 'KyLy/ry', deadpsf: 'Dead load', livepsf: 'Live load',
+  ktheo: 'K (theoretical)' };
 /* REVIEW 10/06: a blank WITHOUT phi asks for the NOMINAL value ("Mp = ___", "Pn = ___", "Fcr = ___"); the forms give the design value.  The page printed the
    design value into such blanks (phi Mp = 240 where Mp = 266.7).  Nominal = design / phi, and only where that phi is one number: columns, beams, the stress
    table, and ONE named limit state of a tension member. */
@@ -1383,6 +1386,30 @@ function signaturePass(parts, cover, body) {
             if (lens.length === 1) { b.id = 'kl'; b.raw = 'KL = ____ ft'; b.len = lens[0]; }
           }
         });
+        /* (unit D) THE THEORETICAL K.  "what is the theoretical K value for a fixed-pinned column? ____ and the recommended design value ____" printed
+           only "ANSWER: K = 0.8", under which the theoretical blank (0.7) read as answered; "what is the theoretical K for a column fixed at both ends"
+           stopped.  The K look-up holds both values of her table: a blank or an ask that says "theoretical" gets the theoretical one (ktheo), one that
+           says "recommended" or "design" the design one; when the part says only "theoretical", every K blank is the theoretical one (a KL blank, worked
+           from the design K, is then not known), a line for it is always there, and the design K is not the answer (writeBlock: theoOnly).  A blank
+           whose own words say both, or neither while the part says both, is a blank the page does not know. */
+        if (fn0 === 'lookup_K') {
+          /* ("use the recommended value, not the theoretical, for design" does not ask for the theoretical one; "what is the theoretical K" beside it does) */
+          var NOT_THEO = /\b(?:not|rather\s+than|instead\s+of)\s+(?:the\s+|a\s+)?theoretical\b/gi, tSrc = /\btheoretical\b|\brecommended\b|\bdesign\b/i.test(own0) ? own0 : own1,
+            theo = /\btheoretical\b/i.test(tSrc.replace(NOT_THEO, ' ')), rec = /\brecommended\b|\bdesign\b/i.test(tSrc);
+          if (theo) {
+            blanks.concat(part.alsoAsked || []).forEach(function (b) {
+              /* (its own words: the text in front of the blank as typed -- the 40-letter context alone cut "theoretical" in half) */
+              var c = (/_{2,}/.test(String(b.raw || '')) ? String(b.raw).split(/_{2,}/)[0] : '') + ' ' + String(b.context || ''), ct = /\btheoretical\b/i.test(c.replace(NOT_THEO, ' ')), cr = /\brecommended\b|\bdesign\b/i.test(c);
+              if (!rec) { if (b.id === 'k' || (!b.id && !b.unit && ct)) { b.id = 'ktheo'; if (b.prose) b.raw = b.sym = 'theoretical K'; } else if (b.id === 'kl') b.id = null; return; }
+              if (b.prose) return;
+              if ((b.id === 'k' || !b.id) && !b.unit) { if (ct && !cr) b.id = 'ktheo'; else if (cr && !ct) b.id = 'k'; else if (b.id === 'k') b.id = null; }
+              else if (b.id === 'kl') b.id = null;
+            });
+            if (!blanks.concat(part.alsoAsked || []).some(function (b) { return b.id === 'ktheo'; }) && (!rec || blanks.some(function (b) { return b.prose && b.id === 'k'; })))
+              blanks.push({ id: 'ktheo', unit: '', raw: 'theoretical K', sym: 'theoretical K', byWords: true, prose: true, context: '', after: '' });
+            part.theoLine = true; part.theoOnly = !rec;
+          }
+        }
       })();
       known = blanks.filter(function (b) { return !!b.id; });
       /* REVIEW 10/06: "phi Pn for yielding" / "based on gross section yielding" / "for rupture" asks for ONE limit state of a tension member */
@@ -1564,7 +1591,8 @@ function askedLines(part, run) {
         continue;
       }
     }
-    if (has(SIG_OUT, b.id) || (lastFn !== 'floor_plan' && sigGives(lastFn, b.id) === 2)) continue;
+    /* (unit D: beside a theoretical K, the design K blank gets a line of its own too -- the ANSWER line alone does not say which blank it is for) */
+    if (has(SIG_OUT, b.id) || (lastFn !== 'floor_plan' && sigGives(lastFn, b.id) === 2 && !(b.id === 'k' && part.theoLine))) continue;
     v = sigValueFor(part, run, b);
     if (!v) continue;
     txt = (SIG_LABEL[b.id] || b.sym || b.id) + ' = ' + (typeof v.value === 'number' ? sigNum(v.value) : String(v.value)) + (v.unit ? ' ' + v.unit : '');
@@ -2342,6 +2370,8 @@ function readStageInner(part, si, deps, done) {
       flagAssumedLengths(part, boxes);
       stage.refuse = null; stage.refuseHard = false; stage.plateWhere = false; stage.refuseUnless = null;
       markReaderStops(stage, ruleQs);
+      /* (unit D) the THEORETICAL K has an answer line of its own now (signaturePass sets theoLine): the reader's stop for it is lifted for the K look-up */
+      if (part.theoLine && fn === 'lookup_K' && /\bTHEORETICAL K\b/.test(String(stage.refuse || ''))) { stage.refuse = null; stage.refuseHard = false; }
       markLevel(part, stage);
       markAdequacy(part, stage);
       markFloorPlan(part, stage);
@@ -3894,7 +3924,8 @@ SOLVE.writeBlock = function (part, run, vals) {
      design tensile strength. Report An, U and Ae" asks for all four -- the regression dump of 10/07 01:00 caught the strength being marked "not asked") */
   var allProse = (part.asked || []).length > 0 && (part.asked || []).every(function (b) { return b.prose; })
     && !STRENGTH_ASK.test(String(part.ctx || '').slice(part.coverLen || 0) || String(part.text || ''));
-  if (al.length && ((part.blankCount || 0) === 1 || allProse) && (!mainAsked || lastFnW === 'floor_plan')) {
+  /* (unit D: a part that asks only for the THEORETICAL K never has the design K as its answer, however many blanks it has) */
+  if ((al.length || part.theoOnly) && ((part.blankCount || 0) === 1 || allProse || part.theoOnly) && (!mainAsked || lastFnW === 'floor_plan')) {
     /* council 10/06: one answer to copy.  The form's own result is not what the blank asks, so it must not carry the word ANSWER. */
     for (ai = 0; ai < write.length; ai++) if (/^ANSWER(?: \(step \d+\))?: /.test(write[ai])) write[ai] = write[ai].replace(/^ANSWER(?: \(step \d+\))?: /, 'ALSO FOUND (your blank does not ask for this): ');
   }
