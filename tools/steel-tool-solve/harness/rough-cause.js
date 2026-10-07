@@ -115,15 +115,24 @@ targets.forEach(function (r) {
   kind = label(r);
   var rec = { id: r.id, kind: kind, hidden: r.cls === 'HIDDEN', causes: keys, how: how, move: move, transforms: c.transforms };
   out.push(rec);
+  var seenTop = {};
   keys.forEach(function (k) {
-    var top = k.replace(/:.*$/, '') === 'misspell' ? k : k.replace(/^(\w+(?:-\w+)?):.*$/, '$1');
+    var top = k.replace(/^(\w+(?:[-+]\w+)?):.*$/, '$1');
     var ck = kind + ' | ' + top;
     var cl = clusters[ck] = clusters[ck] || { name: top, kind: kind, ids: [], details: {}, moves: {}, hidden: 0 };
-    cl.ids.push(r.id); if (rec.hidden) cl.hidden++;
+    if (!seenTop[ck]) { seenTop[ck] = 1; cl.ids.push(r.id); if (rec.hidden) cl.hidden++; }
     cl.details[k] = (cl.details[k] || 0) + 1; cl.moves[move] = (cl.moves[move] || 0) + 1;
   });
 });
 fs.writeFileSync(path.join(o['out-dir'], 'causes.json'), JSON.stringify(out, null, 1));
+// the cause of each case is written into the case files of rough-compare.js too (different.json, fewer.json, hidden-different.json)
+var byId = {}; out.forEach(function (x) { byId[x.id] = x; });
+['different.json', 'fewer.json', 'hidden-different.json'].forEach(function (f) {
+  var p = path.join(o['cmp-dir'], f); if (!fs.existsSync(p)) return;
+  var cases = JSON.parse(fs.readFileSync(p, 'utf8'));
+  cases.forEach(function (c) { var x = byId[c.id]; if (x) { c.cause = x.causes; c.causeHow = x.how; c.reading = x.move; } });
+  fs.writeFileSync(p, JSON.stringify(cases, null, 1));
+});
 var ORDERK = { DIFFERENT: 0, 'HIDDEN-DIFFERENT': 1, FEWER: 2 };
 var list = Object.keys(clusters).map(function (k) { return clusters[k]; }).sort(function (x, y) { return x.kind === y.kind ? y.ids.length - x.ids.length : ORDERK[x.kind] - ORDERK[y.kind]; });
 fs.writeFileSync(path.join(o['out-dir'], 'clusters.json'), JSON.stringify(list, null, 1));
