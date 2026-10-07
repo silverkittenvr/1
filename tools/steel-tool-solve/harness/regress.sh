@@ -9,7 +9,7 @@ H=$(cd "$(dirname "$0")" && pwd)
 Q=$SP/reg/all.$L.json
 node "$H/collect.js" $Q $SP/A $SP/B/clean-all.json $SP/B/rough.json $SP/reg/C-holdout.json $SP/reg/extra >/dev/null
 SUM=$(md5sum $Q | cut -c1-12); BASE=$SP/reg/base.$SUM.run.json
-if [ ! -f $BASE ]; then STEEL_SRC=$SP/base-src node "$H/batch.js" $Q --out $BASE.tmp.$$ --procs 3 >/dev/null && mv $BASE.tmp.$$ $BASE; fi
-node "$ROOT/harness/batch.js" $Q --out $SP/reg/run.$L.json --procs 3 >/dev/null
+if [ ! -f $BASE ]; then STEEL_SRC=$SP/base-src node "$H/batch.js" $Q --out $BASE.tmp.$$ --procs 2 >/dev/null && mv $BASE.tmp.$$ $BASE; fi
+node "$ROOT/harness/batch.js" $Q --out $SP/reg/run.$L.json --procs 2 >/dev/null
 node "$H/diff.js" $BASE $SP/reg/run.$L.json > $SP/reg/$L.diff.txt
 echo "$(python3 -c "import json;print(len(json.load(open('$Q'))))") questions; $(tail -1 $SP/reg/$L.diff.txt) vs baseline -> $SP/reg/$L.diff.txt"
