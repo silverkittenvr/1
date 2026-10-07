@@ -1,0 +1,40 @@
+=== A2-beam-190: interior beam span 30 ft spaced 8 ft, dead load 80 psf including framing, live load 100 psf. find Mu
+-   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W21X44, reaction 45.12 kips
+-   ANSWER TO "factored moment Mu": Mu = 338.4 kip-ft
++   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W18X35, reaction 30.72 kips
++   ANSWER TO "factored moment Mu": Mu = 230.4 kip-ft
+=== A2-beam-191: floor bay 24 ft x 30 ft, interior beams span 30 ft at 8 ft o.c. and frame into interior girders spanning 24 ft from both sides. dead load 80 psf (includes frami
+-   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 3): Beam W21X44, girder W24X76
+-   ANSWER TO "factored moment Mu": Mu = 721.92 kip-ft
++   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 3): Beam W18X35, girder W24X55
++   ANSWER TO "factored moment Mu": Mu = 491.52 kip-ft
+=== A2-beam-192: floor dead load 80 psf including framing , live load 100 psf , beams 8 ft o.c. interior , find the factored line load wu
+-   ANSWER: Factored line load wu: wu = 3.008 k/ft (factored floor load 376 psf x 8 ft)
++   ANSWER: Factored line load wu: wu = 2.048 k/ft (factored floor load 256 psf x 8 ft)
+=== A2-beam-193: interior beam span 30 ft spaced 8 ft, live load 100 psf, dead load 80 psf (includes framing). find Mu
+-   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W18X35, reaction 31.35 kips
+-   ANSWER TO "factored moment Mu": Mu = 235.13 kip-ft
++   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W18X35, reaction 30.72 kips
++   ANSWER TO "factored moment Mu": Mu = 230.4 kip-ft
+=== A2-beam-194: interior beam span 30 ft spaced 8 ft, dead load (includes framing) 80 psf , live load 100 psf. find Mu
+-   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W21X44, reaction 42.24 kips
+-   ANSWER TO "factored moment Mu": Mu = 316.8 kip-ft
++   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W18X35, reaction 30.72 kips
++   ANSWER TO "factored moment Mu": Mu = 230.4 kip-ft
+=== A2-beam-195: interior beam span 30 ft spaced 8 ft , dead load = 80 psf (incl. framing) , live load = 100 psf , Mu = ____
+-   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W21X44, reaction 45.12 kips
+-   ANSWER FOR YOUR BLANK (Mu = ____, the beam): Mu = 338.4 kip-ft
++   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W18X35, reaction 30.72 kips
++   ANSWER FOR YOUR BLANK (Mu = ____, the beam): Mu = 230.4 kip-ft
+=== A2-beam-214: interior beam span 30 ft spaced 8 ft, dead load 70 psf plus 10 psf for steel framing, live load 100 psf. find Mu
+- [-] form floor_plan asks
+-   gate unused:The number "10 psf" is in your text but in no box. Say which box it belongs in, or that it belongs in none.
++ [-] form floor_plan answered
++   ALSO FOUND (your blank does not ask for this): Floor plan result (through step 2): Beam W18X35, reaction 30.72 kips
++   ANSWER TO "factored moment Mu": Mu = 230.4 kip-ft
+=== BC-079: A simply supported beam spanning 26 ft carries service loads of 0.8 kips/ft dead and 1.4 kips/ft live. Compute the required Zx for A992 steel with full lateral 
+- [-] form lookup_by_property asks
+-   gate unusedgroup:Numbers in your text that no box used (every box that could take them already has a value): "0.8 kips/ft", "1.4 kips/ft". Look at each one, then tick the box.
++ [-] form beam_required_zx needs
++   gate required:"Factored moment Mu" is required: it is empty.
+8 changed of 4718

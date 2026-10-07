@@ -1,0 +1,179 @@
+--- a/src/pipeline.js	2026-10-07 09:58:02.837974993 +0000
++++ b/src/pipeline.js	2026-10-07 09:58:02.841974993 +0000
+@@ -762,8 +762,13 @@
+   /* 1. a multiple-choice question whose choices are WORDS is a word question, whatever member it happens to mention ("... for a column is (choose one): ...") */
+   ch = mcChoices(t);
+   if (route.family !== 'words' && ch && choicesAreWords(ch)) return wordsRoute(route, ['multiple choice']);
+-  /* 2. "the required Ix is 3000 in4 ... the lightest section" is a look-up by property, not a beam chosen from a moment */
+-  if (route.fn !== 'lookup_by_property' && (m = /\b(?:required|needed|minimum|necessary)\s+(?:value\s+of\s+)?(I[xy]|Z[xy]|S[xy]|r[xy])\b[^.;0-9]{0,40}?\d|\b(I[xy]|S[xy]|r[xy])\s+(?:required|needed|req'?d)\b[^.;0-9]{0,30}?\d/i.exec(t))
++  /* (cloud, holdout C-48) ... and it STAYS one: the rules below never turn it into a calculation.  "(c) the one with Zx closest to required Zx
++     (d) a36 steel shape" fell to rule 2 below (the 3 of "a36" read as the required Zx) and printed "ANSWER: Lightest W with Zx >= 36: W16X26" under a
++     question whose answer is the letter b. */
++  if (route.family === 'words' && ch && choicesAreWords(ch)) return route;
++  /* 2. "the required Ix is 3000 in4 ... the lightest section" is a look-up by property, not a beam chosen from a moment.
++     (cloud, holdout C-48) The number must stand on its own: a digit glued to a letter ("A36", "a36 steel") is a grade, never the property's value. */
++  if (route.fn !== 'lookup_by_property' && (m = /\b(?:required|needed|minimum|necessary)\s+(?:value\s+of\s+)?(I[xy]|Z[xy]|S[xy]|r[xy])\b[^.;0-9]{0,40}?[^A-Za-z0-9.;]\d|\b(I[xy]|S[xy]|r[xy])\s+(?:required|needed|req'?d)\b[^.;0-9]{0,30}?[^A-Za-z0-9.;]\d/i.exec(t))
+     && /lightest|economical|section|shape|\bbeam\b|\bW\b/i.test(t) && !/\bM\s?u\s*=|\bkip\s?-?\s?ft\b|\bk\s?-\s?ft\b/i.test(t)) return formRoute(route, 'lookup_by_property', [trim(m[0]).replace(/\s*\d$/, '')], 'The lightest shape that has at least some property');
+   /* 3. "KL/r = 100, what is the available (critical, design) stress" with no shape named is the phi Fcr table, not a column's capacity */
+   if (route.fn !== 'lookup_critical_stress' && /\bk\s?l\s*\/\s*r\s*(?:=|of|is)\s*\d/i.test(all) && /\b(?:available|critical|design|nominal|allowable)\s+(?:\w+\s+)?stress\b|phi\s*_?\s*c?\s*F\s*_?\s*(?:cr|n)\b|\bF\s?cr\b/i.test(t)
+@@ -3223,6 +3228,150 @@
+   try { res = E.STEEL.run(fn, clone(args)); } catch (e) { res = { ok: false, name: fn, error: { code: 'INVALID', message: 'Internal error: ' + String(e && e.message ? e.message : e), suggestions: [] } }; }
+   return res;
+ }
++/* (10/07) HER ONE LOAD COMBINATION.  Her rule R3: "In this class we will be using one load combination. One point two times the dead load and one
++   point 6 live load."  The frozen calculator factors service loads as the LARGER of 1.4D and 1.2D + 1.6L, so whenever L < D/8 it printed a clean
++   answer that is wrong by her method: "a tension member carries a service dead load of 100 kips and no live load. find Pu" -> 140 kips (hers: 120);
++   a W12x53 column with D = 300, L = 20 was checked against Pu = 420 (hers: 392); "select the lightest W8 tension member ... dead load of 200 kips and
++   a live load of 20 kips" chose W8X24 (hers: W8X21).  The councils ruled for hers (HANDOFF 8).  After each run of the calculator:
++     - a member form that takes D / L / Pu is run again with her Pu = 1.2 D + 1.6 L typed as already factored.  The calculator's already-factored path
++       prints exactly what its service path prints when 1.2D + 1.6L governs (compared on 50 runs of the five forms: only the load line differs), and
++       that line is rewritten as her combination;
++     - loads_factored prints the 1.2D + 1.6L value it had worked out beside the 1.4D one;
++     - loads_max_service refused because 1.4 D > phi Rn ("phi Pn = 1000 kips, dead load 750 kips": no live load, it said); her one combination gives
++       L = (phi Rn - 1.2 D) / 1.6 = 62.5 kips;
++     - everywhere else (a beam load case, a floor load, the floor plan, a takedown, the seven-combination table, the largest live load of a beam) her
++       value is not on the page in a form that can be trusted, and the part stops with one plain sentence and no number. */
++var HER_COMBO_STOP = 'Her class uses one load combination; the calculator chose another one for this question, so it gives no answer to copy here.';
++/* the calculator's own words wherever 1.4D carried a result: "1.4D = 140 kips governs", "Mu = 140 kip-ft (1.4D)", "(the 1.4D combination)", "1.4D now
++   governs", "governed by the OTHER combination (1.4D", "RA = 28 kips comes from 1.4D", a self-weight row "wu self wt = 1.4 (" (floor plan, beam select) */
++var HER_COMBO_RE = /\(1\.4D\)|\b1\.4D(?: = [^;\n]{0,40})? governs\b|\b1\.4D now governs\b|\bthe 1\.4D combination\b|\bcombination \(1\.4D\b|\bcomes from 1\.4D\b|\bwu self wt = 1\.4 \(/;
++var HER_COMBO_FORMS = { column_capacity: 1, column_select: 1, tension_capacity: 1, tension_required_area: 1, tension_select: 1 };
++function herComboUsed14(res) {
++  var v = res.values || {}, k, t, i, j, c, txt = [];
++  for (k in v) if (has(v, k) && /governing_combination/.test(k) && v[k] && String(v[k].value) === '1.4D') return true;
++  /* the seven-combination table names its lines by number: line 1 is 1.4D */
++  if (v.U_max_combination && String(v.U_max_combination.value) === '1') return true;
++  /* a takedown names the combination of EVERY level in its table, not only of the lowest one */
++  for (i = 0; i < (res.tables || []).length; i++) {
++    t = res.tables[i]; c = -1;
++    for (j = 0; j < (t.columns || []).length; j++) if (/govern/i.test(String(t.columns[j]))) c = j;
++    for (j = 0; c >= 0 && j < (t.rows || []).length; j++) if (String(t.rows[j][c]) === '1.4D') return true;
++  }
++  for (i = 0; i < (res.steps || []).length; i++) txt.push(String(res.steps[i].text));
++  txt = txt.concat(res.flags || []);
++  if (res.answer) txt.push(String(res.answer.text));
++  return HER_COMBO_RE.test(txt.join('\n'));
++}
++function herComboStop(msg) { return { ok: false, error: { code: 'PAGE_STOP', message: msg || HER_COMBO_STOP } }; }
++/* With no live load READ the calculator counts L = 0, and 1.4D always governs: the regression dump of 10/07 showed most "1.4D" answers were a live load
++   the reader had missed ("the live load is twice the dead load", "L = 3D", "L = 150" with no unit, "3 00 kips live" read as L = 00, "5klive", a "?" in
++   mid-sentence that cut the live load off into another part) or a load that was the ASKED quantity ("max service live load?", "maximum total service
++   load P (D + L)").  1.2D alone is as wrong there as 1.4D.  So when L is empty or zero and the question speaks of a live load, or asks for a load,
++   nothing is printed -- unless the part's own words say there is none ("no live load", "L = 0", "dead load only"). */
++var HER_LIVE_RE = /live|\bLL\b|\bL\s*\/\s*D\b|\bD\s*\+\s*L\b|\bL\s*(?:=|is\b|of\b|equals?\b)\s*(?:\d*\.)?\d+(?![\d\/]|\.\d|\s*(?:ft\b|feet\b|foot\b|in\b|inch|'|"|-\s*ft))|\bL\s*=\s*(?:\d+(?:\.\d+)?\s*)?D\b/i;
++var HER_NO_LIVE_RE = /\bno\s+(?:service\s+)?live|\bzero\s+live|\bwithout\s+(?:any\s+|a\s+)?live|\b(?:neglect|ignor)\w*\s+(?:the\s+)?live|\blive\s+loads?\s+(?:is\s+|are\s+)?(?:negligible|neglected|ignored|zero|none)\b|\b(?:L|LL|live\s+loads?)\s*(?:=|is|of)?\s*(?:0|zero|none)(?!\d|\.\d)|\bdead\s+loads?\s+only\b|\bonly\s+(?:a\s+|the\s+)?dead\s+loads?\b/i;
++var HER_ASKS_LOAD_RE = /\bmax(?:imum|\.)?\s+(?:\w+\s+){0,3}loads?\b|\b(?:what|how\s+much)\s+(?:\w+\s+){0,4}loads?\b[^.?]{0,40}\b(?:carry|support|take|resist|hold)\b/i;
++var HER_LIVE_STOP = 'Your question speaks of a live load, but the page could not read its value, so it gives no answer to copy here. Write the live load as a number with its unit and try again.';
++var HER_ASKS_STOP = 'Your question asks for a load the member can carry, and the calculation the page found does not give it, so it gives no answer to copy here.';
++/* every number of the question that carries a load unit must be one the calculation used ("dead load of 300 k and a live load of 40 0 k": "0 k" was
++   not used, the live load had not been read) */
++var HER_LOADNUM_RE = /(\d*\.\d+|\d+)\s*(?:kips?\b|kisp\b|k\b|klf\b|kip\s*-?\s*(?:ft|in)\b|psf\b|plf\b|lbs?\b|lb\s*\/)/gi;
++var HER_LOADNUM_STOP = 'Your question has a load that the page did not use, so it gives no answer to copy here. Check that each load is written as a number followed by its unit, and try again.';
++function herLoadNumbersUsed(own, used) {
++  var m, x, i, ok;
++  HER_LOADNUM_RE.lastIndex = 0;
++  while ((m = HER_LOADNUM_RE.exec(own)) !== null) {
++    x = Number(m[1]); ok = false;
++    for (i = 0; i < used.length; i++) if (isNum(used[i]) && Math.abs(used[i] - x) <= 1e-9 * Math.max(1, Math.abs(x))) ok = true;
++    if (!ok) return false;
++  }
++  return true;
++}
++/* "dead load 1200 plf and live load 0.8 k/ft": the live load was read as 0.8 in the unit of the dead load, so it looked tiny and 1.4D governed (1680 lb/ft
++   printed; 1.2D + 1.6L on the misread value gave 1441.28; the answer is 2720).  Loads in pounds AND in kips in one question: nothing is printed. */
++var HER_LB_RE = /\d\s*(?:plf|psf|lbs?\b|lb\s*\/|pounds?\b)/i, HER_KIP_RE = /\d\s*(?:k\b|kips?\b|klf\b|k\s*\/\s*ft|kips?\s*\/|kips?\s+per\b|kip\s*-?\s*(?:ft|in)\b|ksf\b)/i;
++var HER_UNITS_STOP = 'Your question gives its loads in pounds and in kips, and the page does not convert them here, so it gives no answer to copy. Write every load in the same unit and try again.';
++/* (review 10/07) words that ask for MORE than her one combination: 1.4D named, ASCE / ASD, "combinations", a governing or controlling combination, a
++   load other than dead and live.  "dead load 100 kips, live load 5 kips. find 1.4D" printed 128 (its words ask 140); "the larger of 1.4D and 1.2D+1.6L"
++   printed 128; "D = 100 kips, L = 5 kips and S = 3 . determine the governing factored load": the table stopped, the page moved the question to the
++   factored-load form, which has no snow box, and printed 128 (wind 10, rain 2, Lr = 3 the same).  There nothing is printed. */
++var HER_ASCE_RE = /\b1\.4\s*(?:x|\*|times)?\s*(?:the\s+)?\(?\s*(?:D|DL|dead)\b|\bASCE\b|\bASD\b|\bcombinations\b|\b(?:govern|control)\w*\s+(?:\w+\s+){0,2}(?:combination|load)|\bcombination\s+(?:\w+\s+){0,2}(?:govern|control)|\bcombination\s*(?:no\.?\s*|#\s*)?\d|\b(?:snow|wind|roof|rain|seismic|earthquake)\b|\b(?:Lr|S|W|R|E)\s*=\s*-?\s*\d+(?:\.\d+)?(?!\s*(?:ksi|in\b|inch|"|ft\b|feet|'|\d|[.,]\d|\/))/i;
++var HER_ASCE_STOP = 'Your question asks for more than her one load combination (another combination, or a load other than dead and live load), so the page gives no answer to copy here.';
++function herRound(x) { return Number(Number(x).toPrecision(10)); }
++/* "a member has a design strength phi Pn = 1000 kips. the service dead load is 750 kips. find the maximum service live load": the calculator refused
++   (1.4 x 750 = 1050 > 1000).  Her one combination: L = (1000 - 1.2 x 750) / 1.6 = 62.5 kips.  The calculator's own steps, without its 1.4D check. */
++function herMaxService(phi, D, args) {
++  var f = env().STEEL.fmt, u = args && args.unit !== undefined && args.unit !== null && trim(args.unit) !== '' ? trim(args.unit) : 'kips', c2 = 1.2 * D,
++    Lm = herRound((phi - c2) / 1.6), src = 'Her rule R3: one load combination, 1.2D + 1.6L',
++    flags = ['NOTE: the answer is a SERVICE live load in the unit you typed. The member\'s own weight is dead load: put it in D if the problem includes it.'];
++  if (/(kip|k)[- ]?(ft|in)|(ft|in)[- ]?(kip|k)/i.test(u)) flags.push('NOTE: a moment: phi Rn is phi Mn and D must be the MOMENT the service dead load causes, in the same unit; the answer is a live-load MOMENT. For a simple span with a uniform load over the whole span, the uniform live load is w = 8 M / span^2 (M in kip-ft and the span in ft give k/ft; a moment in kip-in: divide by 12 first).');
++  return { ok: true, name: 'loads_max_service', answer: { label: 'Maximum service live load L', value: Lm, unit: u, text: 'L = ' + f(Lm, 5) + ' ' + u + '  (service, unfactored)' },
++    values: { phiRn: { value: phi, unit: u, source: '' }, D: { value: D, unit: u, source: '' }, L_max: { value: Lm, unit: u, source: src } },
++    steps: [{ text: 'Given: design strength phi Rn = ' + f(phi, 5) + ' ' + u + ' (phi is already in it) and service dead load D = ' + f(D, 5) + ' ' + u + '. The unknown is the live load L, as a SERVICE (unfactored) load.', source: '' },
++      { text: 'Her class uses one load combination: U = 1.2 D + 1.6 L. The member is full when 1.2 D + 1.6 L = phi Rn.', source: src },
++      { text: 'Solved for L:  L = (phi Rn - 1.2 D) / 1.6 = (' + f(phi, 5) + ' - 1.2 (' + f(D, 5) + ')) / 1.6 = (' + f(phi, 5) + ' - ' + f(c2, 5) + ') / 1.6 = ' + f(phi - c2, 5) + ' / 1.6 = ' + f(Lm, 5) + ' ' + u + '.', source: src },
++      { text: 'Check:  1.2 (' + f(D, 5) + ') + 1.6 (' + f(Lm, 5) + ') = ' + f(c2 + 1.6 * Lm, 5) + ' ' + u + ' = phi Rn (the member is exactly full).', source: src }],
++    flags: flags, sources: [src], alternatives: [], tables: [], key_values: [{ label: 'Design strength phi Rn', value: phi, unit: u }, { label: 'Maximum service live load L', value: Lm, unit: u }] };
++}
++/* -> { res, args }: the result to print (her value, or a stop) and the arguments it was worked out from.  own = the part's own words, whole = the whole
++   question's (no cover page); isLast = this stage gives the part's answer (a first stage that only feeds "maximum live load" keeps its working) */
++function herCombo(fn, args, res, own, whole, isLast) {
++  var keep = { res: res, args: args }, f = env().STEEL.fmt, e, D, L, U, a2, r2, i, hit, v, u, line, lNone;
++  if (!res) return keep;
++  if (!res.ok) {
++    e = res.error || {};
++    if (fn === 'loads_max_service' && e.dead_load_alone_exceeds && isNum(e.phiRn) && isNum(e.D) && 1.2 * e.D <= e.phiRn + 1e-9 * Math.max(1, e.phiRn)) {
++      if (HER_ASCE_RE.test(own) || HER_ASCE_RE.test(whole)) return { res: herComboStop(HER_ASCE_STOP), args: args };
++      if (HER_LB_RE.test(own) && HER_KIP_RE.test(own)) return { res: herComboStop(HER_UNITS_STOP), args: args };
++      if (!herLoadNumbersUsed(own, [e.phiRn, e.D])) return { res: herComboStop(HER_LOADNUM_STOP), args: args };
++      return { res: herMaxService(e.phiRn, e.D, args), args: args };
++    }
++    /* beam_max_live_load stops whenever 1.4 wD is more than the beam carries, and says "No live load is possible".  By her one combination a live load
++       may well be possible (W16x26, 30 ft, beams 10 ft apart, 6 in slab + 40 psf: 1.2D + 1.6L leaves about 6 psf): the plain sentence replaces that claim. */
++    if (fn === 'beam_max_live_load' && /\bcombination 1\.4D\b/.test(String(e.message || ''))) return { res: herComboStop(), args: args };
++    return keep;
++  }
++  if (!herComboUsed14(res)) return keep;
++  if (HER_ASCE_RE.test(own) || HER_ASCE_RE.test(whole)) return { res: herComboStop(HER_ASCE_STOP), args: args };
++  if (has(HER_COMBO_FORMS, fn) || fn === 'loads_factored') {
++    if (HER_LB_RE.test(own) && HER_KIP_RE.test(own)) return { res: herComboStop(HER_UNITS_STOP), args: args };
++    if (isLast && args) {
++      lNone = args.L === undefined || args.L === null || trim(args.L) === '' || parseNum(args.L) === 0;
++      if (lNone && (HER_LIVE_RE.test(whole) || HER_LIVE_RE.test(own)) && !HER_NO_LIVE_RE.test(own)) return { res: herComboStop(HER_LIVE_STOP), args: args };
++      if (lNone && HER_ASKS_LOAD_RE.test(own)) return { res: herComboStop(HER_ASKS_STOP), args: args };
++      if (!herLoadNumbersUsed(own, [parseNum(args.D), parseNum(args.L), parseNum(args.self_weight)])) return { res: herComboStop(HER_LOADNUM_STOP), args: args };
++    }
++  }
++  if (has(HER_COMBO_FORMS, fn) && args && args.already_factored !== true && (args.Pu === undefined || args.Pu === null || trim(args.Pu) === '')) {
++    D = args.D === undefined || args.D === null || trim(args.D) === '' ? 0 : parseNum(args.D);
++    L = args.L === undefined || args.L === null || trim(args.L) === '' ? 0 : parseNum(args.L);
++    U = 1.2 * D + 1.6 * L;
++    /* the calculator's own working must show the same D and L, or they were read some other way: then nothing is printed */
++    line = '1.2 D + 1.6 L = 1.2 (' + f(D, 3) + ') + 1.6 (' + f(L, 3) + ') = ' + f(U, 3) + ' kips;';
++    hit = -1;
++    for (i = 0; i < (res.steps || []).length; i++) if (String(res.steps[i].text).indexOf(line) >= 0) hit = i;
++    if (!isNum(D) || !isNum(L) || !(U > 0) || hit < 0) return { res: herComboStop(), args: args };
++    a2 = clone(args); delete a2.D; delete a2.L; a2.already_factored = true; a2.Pu = U;
++    r2 = runOne(fn, a2); hit = -1;
++    for (i = 0; r2 && r2.ok && i < (r2.steps || []).length; i++) if (/^The problem says the load is already factored: Pu = /.test(String(r2.steps[i].text))) hit = i;
++    if (hit < 0) return { res: herComboStop(), args: args };
++    r2.steps[hit].text = 'Loads are SERVICE loads unless the problem says factored. Her class uses one load combination: Pu = 1.2 D + 1.6 L = 1.2 (' + f(D, 3) + ') + 1.6 (' + f(L, 3) + ') = ' + f(U, 3) + ' kips.';
++    r2.values.governing_combination = { value: '1.2D + 1.6L', unit: '', source: res.values.governing_combination ? res.values.governing_combination.source : '' };
++    return herComboUsed14(r2) ? { res: herComboStop(), args: args } : { res: r2, args: a2 };
++  }
++  v = res.values || {};
++  if (fn === 'loads_factored' && res.answer && v.U_1_2D_1_6L && v.D && v.L && v.self_weight && v.factored_total && v.dead_part && v.live_part && v.governing_combination) {
++    r2 = clone(res); v = r2.values; u = res.answer.unit ? ' ' + res.answer.unit : '';
++    D = Number(v.D.value) + Number(v.self_weight.value); L = Number(v.L.value); U = Number(v.U_1_2D_1_6L.value); hit = -1;
++    for (i = 0; i < (r2.steps || []).length; i++) if (/^Factored = the LARGER of 1\.2D \+ 1\.6L and 1\.4D/.test(String(r2.steps[i].text))) hit = i;
++    if (hit < 0 || !isNum(D) || !isNum(L) || !(U > 0)) return { res: herComboStop(), args: args };
++    r2.steps[hit].text = 'Her class uses one load combination: Factored = 1.2 D + 1.6 L = 1.2 (' + f(D, 4) + ') + 1.6 (' + f(L, 4) + ') = ' + f(U, 4) + u + '.';
++    v.factored_total.value = U; v.dead_part.value = herRound(1.2 * D); v.live_part.value = herRound(1.6 * L); v.governing_combination.value = '1.2D + 1.6L';
++    r2.answer = { label: res.answer.label, value: U, unit: res.answer.unit, text: f(U, 4) + u + '  (her one load combination)' };
++    return herComboUsed14(r2) ? { res: herComboStop(), args: args } : { res: r2, args: args };
++  }
++  return { res: herComboStop(), args: args };
++}
+ /* vals = { stageIndex: { path: uiValue } } */
+ SOLVE.runPart = function (part, vals) {
+   var out = { ok: true, stages: [], failedAt: -1 }, si, st, rule, carry, drop, args, res, prev, src, u, why;
+@@ -3299,6 +3448,9 @@
+         }
+       }
+     }
++    /* (10/07) her one load combination, never 1.4D (see herCombo): here, so that every later check works on her result and her arguments */
++    var hcOwn = String(part.ctx || '').slice(part.coverLen || 0) || String(part.text || ''), hcR = herCombo(st.fn, args, res, hcOwn, String(part.whole || hcOwn), si === part.stages.length - 1);
++    res = hcR.res; args = hcR.args;
+     /* A WELDED member for which the question GIVES a shear lag factor below 1 ("connected by welds to its flanges only ... U = 0.85").  The calculator's welded
+        mode checks yielding only (her rule for a member with no holes) and does not use U: 463.5 kips was printed where rupture on Ae = U Ag gives 426.8
+        (REVIEW 3).  A U the question states is meant to be used: the rupture check is added here, in the open, and the smaller of the two governs.

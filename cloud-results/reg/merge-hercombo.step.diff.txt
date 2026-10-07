@@ -1,0 +1,272 @@
+=== A2-beam-157: W18x35 span 30 ft , dead load 0.5 klf incl beam wt , max service live load in klf ?
+- [-] form beam_analysis answered
+-   ANSWER: Maximum factored moment Mu: Mu = 78.75 kip-ft (1.4D) at x = 15 ft; reactions RA = 10.5 (1.4D), RB = 10.5 (1.4D); Vu = 10.5 (1.4D) -- reactions and shear in kips
++ [-] form beam_analysis refused
+=== A1-ccap-305: W12x58 column 20 ft long pinned ends. the dead load is 100 kips. what is the maximum live load it can carry
+-   ANSWER (step 1): Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 392 kips (KL/r route 389.3; exact E3 392) -- adequate: phi Pn >= Pu? YES (392 >= 140 kips)
++   ANSWER (step 1): Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 392 kips (KL/r route 389.3; exact E3 392) -- adequate: phi Pn >= Pu? YES (392 >= 120 kips)
+=== H02: interior column, bays 20 ft x 25 ft, 3 floors, live 50 psf dead 80 psf, KL=12 ft, select lightest w10
+- [-] form loads_takedown>column_select answered
+-   ANSWER (step 1): Factored column load at the lowest level: Pu = 105 kips (3 floors, no roof; 1.4D governs: L is less than D/8)
+-   ANSWER (step 2): Lightest column: W10X22 (22 lb/ft) phi Pn = 124 kips > Pu = 105 kips ok (Table 4-1a, her method: KL = 12 ft; KL/r route 122.7)
++ [-] form loads_takedown>column_select refused
+=== H06: D = 150 k, L = 2D, KL=14 ft, select lightest w12
+- [-] form column_select answered
+-   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 210 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
++ [-] form column_select refused
+=== H20: lightest w12 column, KL=14 ft, dead load = 200 kips, live load equal to the dead load
+- [-] form column_select answered
+-   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 280 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
++ [-] form column_select refused
+=== H25: interior column, bays 25 ft x 20 ft, 3 floors, dead 80 psf, live load twice the dead load, find the factored load
+- [-] form loads_takedown answered
+-   ANSWER: Factored column load at the lowest level: Pu = 168 kips (3 floors, no roof; 1.4D governs: L is less than D/8)
++ [-] form loads_takedown refused
+=== A1-csel-P07: select lightest w12 column dead load 300 kips only, kl=14ft
+-   ANSWER: Lightest column: W12X53 (53 lb/ft) phi Pn = 502 kips > Pu = 420 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 500.8)
++   ANSWER: Lightest column: W12X50 (50 lb/ft) phi Pn = 384 kips > Pu = 360 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 382.5)
+=== A1-csel-Q08: a column has D = 200 k and L = 0 , KL = 14 ft , select lightest w12
+-   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 280 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
++   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 240 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
+=== A1-csel-Q18: interior column bays 25 ft x 25 ft, 3 floors, dead load 100 psf, no live load, find the factored load
+- [-] form loads_takedown answered
+-   ANSWER: Factored column load at the lowest level: Pu = 262.5 kips (3 floors, no roof; 1.4D governs: L is less than D/8)
++ [-] form loads_takedown refused
+=== A1-csel-Q33: the dead load is 150 kips and the live load is twice the dead load. select the lightest W12 column with KL = 14 ft
+- [-] form column_select answered
+-   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 210 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
++ [-] form column_select refused
+=== A1-csel-X16: D = 150 k, L = 2 x D, KL=14 ft, select lightest w12
+- [-] form column_select answered
+-   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 210 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
++ [-] form column_select refused
+=== A1-csel-X17: dead load 150 k and live load is 3 times dead, KL=14 ft lightest w12
+- [-] form column_select answered
+-   ANSWER: Lightest column: W12X40 (40 lb/ft) phi Pn = 304 kips > Pu = 210 kips ok (Table 4-1a, her method: KL = 14 ft; KL/r route 303)
++ [-] form column_select refused
+=== A2-loads-p10: the dead load is 20 kips and the live load is twice the dead load. factored load?
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 28 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p26: no live load. dead load 40 kips. find factored load
+-   ANSWER: Factored load: 56 kips (1.4D governs: L is less than D/8)
++   ANSWER: Factored load: 48 kips (her one load combination)
+=== A2-loads-p56: dead load 20 k, live load twice the dead load, factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 28 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p57: D = 20 k and L = 3D. find the factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 28 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p85: dead load 1200 plf and live load 0.8 k/ft. find the factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 1680 lb/ft (1.4D governs: L is less than D/8)
++ [-] form beam_analysis needs
++   gate required:"Span L" is required: it is empty.
+=== A2-loads-p93: dead load = 50 k, live load = 5 k. using her combination 1.2D+1.6L find Pu
+- [-] form loads_combinations answered
+-   ANSWER: Largest factored load U: 70 kips -- combination 1: 1.4D, L* = 0.5 L; with L* = 1.0 L: 70 kips (combination 1); smallest: 45 kips (combination 5 and 7)
++ [-] form loads_combinations refused
+=== A2-loads-p94: factored load for D = 100 k and L = 10 k (use 1.2D + 1.6L)
+-   ANSWER: Factored load: 140 kips (1.4D governs: L is less than D/8)
++   ANSWER: Factored load: 136 kips (her one load combination)
+=== A2-loads-p104: D = 20 k, L = 2D, factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 28 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p127: phi Pn = 130 kips, dead load 100 kips. what is the maximum service live load the member can carry
+- [-] form loads_max_service refused
++ [-] form loads_max_service answered
++   ANSWER: Maximum service live load L: L = 6.25 kips (service, unfactored)
+=== A2-loads-p151: D = 20 k, L = D. factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 28 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p152: D = 20 k and L/D = 3, factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 28 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p155: a beam has a dead load of 1.5 k/ft and a live load 50% larger. find wu
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 2.1 k/ft (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A2-loads-p181: dead load = 50 k, live load = 5 k. using the combination 1.2D+1.6L find Pu
+- [-] form loads_combinations answered
+-   ANSWER: Largest factored load U: 70 kips -- combination 1: 1.4D, L* = 0.5 L; with L* = 1.0 L: 70 kips (combination 1); smallest: 45 kips (combination 5 and 7)
++ [-] form loads_combinations refused
+=== A2-loads-p184: D = 50 k, L = 5 k. factored load
+-   ANSWER: Factored load: 70 kips (1.4D governs: L is less than D/8)
++   ANSWER: Factored load: 68 kips (her one load combination)
+=== A2-loads-p204: dead load 500 lb/ft, live load 1.2 kips per foot, find the factored load
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 700 lb/ft (1.4D governs: L is less than D/8)
++ [-] form beam_analysis needs
++   gate required:"Span L" is required: it is empty.
+=== A2-loads-p207: what is the factored dead load if D = 40 kips
+-   ANSWER: Factored load: 56 kips (1.4D governs: L is less than D/8)
++   ANSWER: Factored load: 48 kips (her one load combination)
+=== A2-loads-p208: D = 50 k, L = 5 k. factored load (use 1.2D + 1.6L only)
+-   ANSWER: Factored load: 70 kips (1.4D governs: L is less than D/8)
++   ANSWER: Factored load: 68 kips (her one load combination)
+=== A2-noise-131: (a) select the lightest beam span 20 ft dead 1 k/ft live 2 k/ft fully braced (b) select the lightest beam span 20 ft dead 2 k/ft
+- [b] form beam_select answered
+-   ANSWER: Most economical beam: W12X26 (same weight as W14X26 and W16X26, which have more capacity; Table 3-2's first bold row above Mu is W12X26) (26 lb/ft, d = 12.2 in) phi Mp = 140 kip-ft >= Mu = 140
++ [b] form beam_select refused
+=== c09#2: A W10x33 tension member has two 3/4-in. bolts in each flange, three per line. The service dead load is 100 kips; find the maximum service live load it can carry
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 140
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 120
+=== A1-tcap-P-o54: W10x33 tension member 3/4in bolts 2 per flange 3 per line. D = 100 k, L = 150. adequate?
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 140
++ [-] form tension_capacity refused
+=== A1-tcap-P-o60: W10x33 3/4in bolts 2 per flange 3 per line. D=100k,L=150. adequate?
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 359.2 kips -- rupture governs (yielding 437, rupture 359.2); adequate for Pu = 140
++ [-] form tension_capacity refused
+=== A1-tsel-03: select lightest w8 welded D=50k L=100
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-05: select lightest w8 welded, dead load 50 kips, live load twice the dead load
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-06: w8x21 tension member 3/4in bolts 2 per flange 3 per line, dead load 50 kips, live load twice the dead load. is it adequate? ____
+- [-] form tension_capacity answered
+-   ALSO FOUND (your blank does not ask for this): Tension capacity (first failure load): phi Pn = 197.2 kips -- rupture governs (yielding 277.2, rupture 197.2); adequate for Pu = 70
+-   ANSWER FOR YOUR BLANK (Is it adequate? ____): YES   (phi Pn = 197.24 kips is at least Pu = 70 kips)
++ [-] form tension_capacity refused
+=== A1-tsel-09: required gross area, dead load 30 kips, live load 3 times the dead load, A36
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 42 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== A1-tsel-30: w8x24 tension, 3/4in bolts 2 per flange 3 per line, dead load 40k. max service live load?
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-31: w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. find max. live load
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-32: w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. maximum LL?
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-34: w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. maximum total service load
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-36: 20 ft w8x24 hanger, 3/4in bolts 2 per flange 3 per line, dead load 40k, include self weight. maximum live load
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 48
+=== A1-tsel-p-p05: W8x24 tension member, two 3/4" bolts each flange, 3 per line, dead load 40k. what is the maximum service live load it can carry
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 48
+=== A1-tsel-p-p28: a 20ft long w8x24 hanger, 3/4in bolts 2 per flange 3 per line, dead load 40k. include the self weight of the hanger. max service live load?
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-p-p31: what is the maximum total service load P (D + L) a W8x24 can carry in tension with 3/4in bolts 2 per flange 3 per line, if D = 40 kips
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-p-p42: w8x24 tension member, 3/4in bolts 2 per flange 3 per line, dead load = 40 k. what live load can it support
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 48
+=== A1-tsel-p-p43: a 20 ft long w8x24 hanger, 3/4in bolts 2 per flange 3 per line, dead load 40k, include the self weight of the member. maximum live load
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 48
+=== A1-tsel-p-p63: a w8x24 tension member with 3/4in bolts 2 per flange 3 per line. the dead load is 40 kips. find the max live load, kips
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 48
+=== A1-tsel-p-q08: select lightest w8 tension member welded D=50 kips L=100
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-p-q11: select lightest w8 welded, D=50k, L=100
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-p-s15: select lightest w8 tension member welded, the dead load is 50 kips and the live load is twice the dead load
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-p-t08: w8x21 tension member 3/4in bolts 2 per flange 3 per line, the dead load is 50 kips and the live load is twice the dead load. is it adequate? ____
+- [-] form tension_capacity answered
+-   ALSO FOUND (your blank does not ask for this): Tension capacity (first failure load): phi Pn = 197.2 kips -- rupture governs (yielding 277.2, rupture 197.2); adequate for Pu = 70
+-   ANSWER FOR YOUR BLANK (Is it adequate? ____): YES   (phi Pn = 197.24 kips is at least Pu = 70 kips)
++ [-] form tension_capacity refused
+=== A1-tsel-p-t11: select lightest w8 tension member welded, D=50k, L=2D
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-p-t12: select lightest w8 tension member welded, D = 50k and L = D
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W8X10 (10 lb/ft) phi Pn = 133.2 kips (yielding) >= Pu = 70 kips
++ [-] form tension_select refused
+=== A1-tsel-p-b03: w8x24 tension member 3/4in bolts 2 per flange 3 per line, dead load 40k. max service live load WL = ____ kips
+- [-] form tension_capacity answered MISMATCH=WL = ____ kips
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
+-   NOT WHAT YOUR BLANK ASKS: your blank is "WL = ____ kips". This calculation does not give that. Do NOT copy the ANSWER line above into that blank.
++ [-] form tension_capacity refused
+=== A1-tsel-p-b04: L4x4x1/2 tension member, one line of four 3/4in bolts, dead load 30k. maximum live load?
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 129.2 kips -- rupture governs (yielding 168.8, rupture 129.2); adequate for Pu = 42
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 129.2 kips -- rupture governs (yielding 168.8, rupture 129.2); adequate for Pu = 36
+=== A1-tsel-p-b05: L4x4x1/2 tension member welded, D = 30 k. maximum service live load
+-   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 168.8 kips -- yielding governs (no holes); adequate for Pu = 42
++   ANSWER (step 1): Tension capacity (first failure load): phi Pn = 168.8 kips -- yielding governs (no holes); adequate for Pu = 36
+=== A1-tsel-p-b08: w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k. max service live load is ____ kips
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
+-   CHECK YOUR BLANK: the page does not know what "max service live load is ____ kips" asks for. Before you copy, make sure the ANSWER line above names the SAME thing as that blank. If it names something else, that blank is NOT answered here.
++ [-] form tension_capacity refused
+=== A1-tsel-p-b09: w8x24 tension member 3/4in bolts 2 per flange 3 per line, D=40k. find max. live load
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== A1-tsel-p-b10: w8x24 tension member 3/4in bolts 2 per flange 3 per line, D=40k. find the maximum LL
+- [-] form tension_capacity answered
+-   ANSWER: Tension capacity (first failure load): phi Pn = 249.2 kips -- rupture governs (yielding 318.6, rupture 249.2); adequate for Pu = 56
++ [-] form tension_capacity refused
+=== BC-029~numspace: Select the lightest W14 for a truss tension chord carrying service loads of 250 kips dead and 3 00 kips live. The flanges are connected with two lines of 1-in. 
+- [-] form tension_select answered
+-   ANSWER: Lightest tension member: W14X38 (38 lb/ft) phi Pn = 368.1 kips (rupture) >= Pu = 350 kips
++ [-] form tension_select refused
+=== BC-063~numspace: A 13 ft column that is fixed at both ends supports a dead load of 300 k and a live load of 40 0 k. Select the most economical W14 shape.
+- [-] form column_select answered
+-   ANSWER: Lightest column: W14X43 (43 lb/ft) phi Pn = 447 kips > Pu = 420 kips ok (Table 4-1a, her method: KL = 8.45 ft read at the 9-ft row; KL/r route 458.6)
++ [-] form column_select refused
+=== BC-085~numspace: A 24-ft simply supported beam supports two concentrated loads at its third points, each consisting of 15 kips dead and 2 0 kips live. Assume full lateral bracin
+- [-] form beam_select answered
+-   ANSWER: Most economical beam: W14X30 (30 lb/ft, d = 13.8 in) phi Mp = 177 kip-ft >= Mu = 168
++ [-] form beam_select refused
+=== BC-101~numspace: A column supports a service dead load of 120 kips and a service live load of 18 0 kips. Compute the factored (required) load Pu using the load combination 1.2D 
+- [-] form loads_combinations answered
+-   ANSWER: Largest factored load U: 168 kips -- combination 1: 1.4D, L* = 0.5 L; smallest: 108 kips (combination 5 and 7)
++ [-] form loads_combinations refused
+=== BC-101~H3: 2-20) a column spuports a se rvcie dead laod of 120k and a service live load of 18 0k compute the fact ored required) load pu using the load combination 1.2d + 
+- [-] form loads_combinations answered
+-   ANSWER: Largest factored load U: 168 kips -- combination 1: 1.4D, L* = 0.5 L; smallest: 108 kips (combination 5 and 7)
++ [-] form loads_combinations refused
+=== BC-102~numspace: Determine the factored load for a tension member with a dead load of 45 k and a live load of 3 0 k.
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 63 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== BC-104~M2: 5-30) what is the governing factored load? the servcie loads on a hanger are 25kips dead and 5klive
+- [-] form loads_combinations answered
+-   ANSWER: Largest factored load U: 35 kips -- combination 1: 1.4D, L* = 0.5 L; smallest: 22.5 kips (combination 5 and 7)
++ [-] form loads_combinations refused
+=== BC-107~syntax: What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and? an occupancy live load of 95 kips?
+- [1] form loads_factored answered
+-   ANSWER: Factored load: 119 kips (1.4D governs: L is less than D/8)
++ [1] form loads_factored refused
+=== BC-107~numspace: What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and an occupancy live load of 9 5 kips?
+- [-] form loads_factored answered
+-   ANSWER: Factored load: 119 kips (1.4D governs: L is less than D/8)
++ [-] form loads_factored refused
+=== BC-127~numspace: A corner column supports a tributary area of 12.5 ft x 15 ft on each of four floors. Each floor has a dead load of 75 psf and a live load of 1 00 psf. Find the 
+- [-] form loads_takedown answered
+-   ANSWER: Factored column load at the lowest level: Pu = 78.75 kips (4 floors, no roof; 1.4D governs: L is less than D/8)
++ [-] form loads_takedown refused
+70 changed of 6065

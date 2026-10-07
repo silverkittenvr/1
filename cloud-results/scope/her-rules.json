@@ -1,0 +1,344 @@
+{
+ "source": "_PROBLEM-SPACE.md section I (her standing rules)",
+ "rules": [
+  {
+   "id": "R1",
+   "text": "LRFD only.",
+   "date": "2026-08-26",
+   "quote": "This semester and next we are going to put the safety factor on the load side.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 32 (Ultimate strength design / LRFD)"
+  },
+  {
+   "id": "R2",
+   "text": "Fy = 50, Fu = 65 for W-shapes unless told.",
+   "date": "2026-08-26",
+   "quote": "if I'm talking about wide flange, then the common strength of the material is A992 steel.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 15 (A992)"
+  },
+  {
+   "id": "R3",
+   "text": "1.2D + 1.6L.",
+   "date": "2026-08-26",
+   "quote": "In this class we will be using one load combination. One point two times the dead load and one point 6 live load.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 34 (Load combination (this class))"
+  },
+  {
+   "id": "R4",
+   "text": "Hole = bolt + 1/8 in.",
+   "date": "2026-09-02",
+   "quote": "Tension in the bolt hole is actually the bolt diameter plus an eighth of an inch.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 44 (Bolt hole (standard))"
+  },
+  {
+   "id": "R5",
+   "text": "Decimals, never fractions.",
+   "date": "2026-08-26",
+   "quote": "The decimal is what we use as designers because that's accurate. The fractions: That's what the fabricator uses when they make shop drawings.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 22 (Decimals vs fractions)"
+  },
+  {
+   "id": "R6",
+   "text": "Check BOTH tension limit states, never assume.",
+   "date": "2026-09-02",
+   "quote": "you have to check both. You never know which one will give us the first failure load.",
+   "source": "_PROBLEM-SPACE.md section I; quoted in CLAUDE-transcript-mining-2026-09-30.md (Emphasized concepts, 2026-09-02)"
+  },
+  {
+   "id": "R7",
+   "text": "First failure load = the smaller.",
+   "date": "2026-09-02",
+   "quote": "what we're looking for is the first failure load. ... The lowest, the first failure that's the maximum capacity of the system.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 45 (First failure load)"
+  },
+  {
+   "id": "R8",
+   "text": "Compression uses the gross area.",
+   "date": "2026-09-09",
+   "quote": "the capacity is equal to five times F critical times A gross. There's no A net here",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 71 (Compression capacity phi Fcr Ag)"
+  },
+  {
+   "id": "R9",
+   "text": "KL/r <= 200 (compression), L/r <= 300 (tension).",
+   "date": "2026-09-02",
+   "quote": "We look to see that L /r is greater or equal to the length of 300. L over 300.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 55 (L/r <= 300 (tension slenderness))"
+  },
+  {
+   "id": "R10",
+   "text": "Round KL/r up before reading the table.",
+   "date": "2026-09-30",
+   "quote": "My advice is just round up",
+   "source": "_PROBLEM-SPACE.md section I; quoted in _PROBLEM-SPACE.md E5 (9/30 review session)"
+  },
+  {
+   "id": "R11",
+   "text": "Most economical = lightest = the bold one.",
+   "date": "2026-09-23",
+   "quote": "The economy table ... the one at the very top of each grouping is in boldface and the one in boldface is the cheapest. It's the lightest.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 90 (Economy table (Table 3-2))"
+  },
+  {
+   "id": "R12",
+   "text": "Loads are service loads unless called factored.",
+   "date": "2026-08-26",
+   "quote": "If loads are called service loads or working loads, they have not been factored. If nothing is said about the loads that I have not been factored and we have the factors.",
+   "source": "_PROBLEM-SPACE.md section I; backed by Vocabulary no. 35 (Service / working loads (unfactored))"
+  },
+  {
+   "id": "R13",
+   "text": "Self-weight is dead load.",
+   "date": "2026-09-30",
+   "quote": "1.2 x 31 pounds per foot",
+   "source": "_PROBLEM-SPACE.md section I; quoted in _PROBLEM-SPACE.md C7 (9/30 review session)"
+  },
+  {
+   "id": "R14",
+   "text": "Show the source (table / page) and the units for every number.",
+   "date": "2026-09-30",
+   "quote": "Show all work and source. Don't forget units.",
+   "source": "_PROBLEM-SPACE.md section I; quoted in _PROBLEM-SPACE.md section 0 (9/30 review session)"
+  }
+ ],
+ "notes": [
+  {
+   "title": "Load combination, P7 (10/05)",
+   "text": "She says \"one load combination\", 1.2D + 1.6L (R3 above), and that is the number for any problem with enough live load. With only D and L the calculators also form 1.4D (ASCE 7 combination 1, line 1 of her week-1 slide, listed on this page) and print the LARGER: when L is less than D/8 the 1.4D value governs (D 100 alone: 1.4D = 140, 1.2D + 1.6L = 120). Both lines are printed in the work, so her number is always on the page. A load the problem gives already factored is never factored again, and with a factored load present only 1.2D + 1.6L is formed."
+  },
+  {
+   "title": "Her practice, from her own solution sheets (read 10/04, `extracted/hw-solutions/findings.md`):",
+   "text": "reads Table 4-14 at a whole KL/r -- usually the next row UP (129.23 -> 130; 17.14 ft -> 18 ft; \"just round up\" on 9/30), once the nearest (95.05 -> 95), once the average of two rows (61.5); a problem's \"Lc\" is the MEMBER length and she applies K to it (6-7b: 0.8 x 25 = 20 ft); two live loads on a floor -> the larger; roof live load factored 1.6 like floor live; self-weight added after choosing; girder load = 2 x the beam reaction when beams frame in from both sides."
+  },
+  {
+   "title": "Table-number aliases",
+   "text": "Her slides cite older-edition table numbers: \"Table 3-23 pg 3-208 to 3-221\" for the beam diagrams and \"Table 4-22\" for the critical stress. The 16th edition calls them Table 3-22 and Table 4-14. The tool must accept both names."
+  },
+  {
+   "title": "Homework-number trap",
+   "text": "Her slides list HW #3 as 6.4, 6.5, 6.9, 6.11 and HW #4 as 9.1, 9.3, 9.8; Canvas (the record) assigns 6-7b, 6-7c, 6-15, 6-17 and 9-1, 9-2, 9-8."
+  }
+ ],
+ "tables": [
+  {
+   "id": "2-4",
+   "title": "Availability of steel by shape and grade (materials)",
+   "use": "Fy, Fu by shape type (her week-1 slide has the course defaults)"
+  },
+  {
+   "id": "3-2",
+   "title": "W-shapes selection by Zx: design moment phi Mp (the \"economy table\", bold = lightest)",
+   "use": "beam capacity and beam selection, compression flange fully braced"
+  },
+  {
+   "id": "3-6",
+   "title": "Maximum total uniform load",
+   "use": "later topic (not built)"
+  },
+  {
+   "id": "3-22",
+   "aliases": [
+    "3-23"
+   ],
+   "title": "Shears, moments and deflections of beams (case 1 uniform, 7 load at center, 9 two symmetric loads)",
+   "use": "maximum moment formulas"
+  },
+  {
+   "id": "4-1a",
+   "title": "W-shapes, available strength in axial compression, Fy 50 ksi (KL = same both ways)",
+   "use": "column capacity / selection when KxLx = KyLy"
+  },
+  {
+   "id": "4-14",
+   "aliases": [
+    "4-22"
+   ],
+   "title": "Available critical stress phi Fcr for compression members, by KL/r and Fy",
+   "use": "column capacity when the unbraced lengths differ"
+  },
+  {
+   "id": "C-A-7.1",
+   "title": "Approximate values of the effective length factor K",
+   "use": "K from end conditions (use the recommended design value)"
+  },
+  {
+   "id": "D3.1",
+   "title": "Shear lag factors for connections to tension members",
+   "use": "U (her cases 1, 7, 8)"
+  },
+  {
+   "id": "J3.3",
+   "title": "Nominal hole dimensions",
+   "use": "standard hole = bolt + 1/16; for NET AREA she uses bolt + 1/8"
+  }
+ ],
+ "load_combinations": {
+  "source": "steel-ARCH-232-course-folder/quiz1/wk1-intro-lecture.md, page 11 (\"Full LRFD load combination list (as printed)\"), lines 372-378",
+  "lines": [
+   {
+    "id": "1",
+    "slide": "U = 1.4D",
+    "slide_plain": "U = 1.4D",
+    "slide_line": 372,
+    "text": "1.4D",
+    "terms": [
+     [
+      "D",
+      1.4
+     ]
+    ]
+   },
+   {
+    "id": "2",
+    "slide": "U = 1.2D + 1.6L + 0.5(L_r \\text{ or } S \\text{ or } R)",
+    "slide_plain": "U = 1.2D + 1.6L + 0.5(Lr or S or R)",
+    "slide_line": 373,
+    "text": "1.2D + 1.6L + 0.5(Lr or S or R)",
+    "terms": [
+     [
+      "D",
+      1.2
+     ],
+     [
+      "L",
+      1.6
+     ],
+     [
+      "ROOF",
+      0.5
+     ]
+    ]
+   },
+   {
+    "id": "3a",
+    "slide": "U = 1.2D + 1.6(L_r \\text{ or } S \\text{ or } R) + (L^* \\text{ or } 0.5W)",
+    "slide_plain": "U = 1.2D + 1.6(Lr or S or R) + (L* or 0.5W)",
+    "slide_line": 374,
+    "text": "1.2D + 1.6(Lr or S or R) + L*",
+    "terms": [
+     [
+      "D",
+      1.2
+     ],
+     [
+      "ROOF",
+      1.6
+     ],
+     [
+      "LSTAR",
+      1
+     ]
+    ]
+   },
+   {
+    "id": "3b",
+    "slide": "U = 1.2D + 1.6(L_r \\text{ or } S \\text{ or } R) + (L^* \\text{ or } 0.5W)",
+    "slide_plain": "U = 1.2D + 1.6(Lr or S or R) + (L* or 0.5W)",
+    "slide_line": 374,
+    "text": "1.2D + 1.6(Lr or S or R) + 0.5W",
+    "terms": [
+     [
+      "D",
+      1.2
+     ],
+     [
+      "ROOF",
+      1.6
+     ],
+     [
+      "W",
+      0.5
+     ]
+    ]
+   },
+   {
+    "id": "4",
+    "slide": "U = 1.2D + 1.0W + L^* + 0.5(L_r \\text{ or } S \\text{ or } R)",
+    "slide_plain": "U = 1.2D + 1.0W + L* + 0.5(Lr or S or R)",
+    "slide_line": 375,
+    "text": "1.2D + 1.0W + L* + 0.5(Lr or S or R)",
+    "terms": [
+     [
+      "D",
+      1.2
+     ],
+     [
+      "W",
+      1
+     ],
+     [
+      "LSTAR",
+      1
+     ],
+     [
+      "ROOF",
+      0.5
+     ]
+    ]
+   },
+   {
+    "id": "5",
+    "slide": "U = 0.9D + 1.0W",
+    "slide_plain": "U = 0.9D + 1.0W",
+    "slide_line": 376,
+    "text": "0.9D + 1.0W",
+    "terms": [
+     [
+      "D",
+      0.9
+     ],
+     [
+      "W_OPP",
+      1
+     ]
+    ]
+   },
+   {
+    "id": "6",
+    "slide": "U = 1.2D + E + L^* + 0.2S",
+    "slide_plain": "U = 1.2D + E + L* + 0.2S",
+    "slide_line": 377,
+    "text": "1.2D + 1.0E + L* + 0.2S",
+    "terms": [
+     [
+      "D",
+      1.2
+     ],
+     [
+      "E",
+      1
+     ],
+     [
+      "LSTAR",
+      1
+     ],
+     [
+      "S",
+      0.2
+     ]
+    ]
+   },
+   {
+    "id": "7",
+    "slide": "U = 0.9D + E",
+    "slide_plain": "U = 0.9D + E",
+    "slide_line": 378,
+    "text": "0.9D + 1.0E",
+    "terms": [
+     [
+      "D",
+      0.9
+     ],
+     [
+      "E_OPP",
+      1
+     ]
+    ]
+   }
+  ],
+  "notes": [
+   "(Lr or S or R) = the LARGEST of the three; the answer names which one was used.",
+   "L* = 0.5 L, allowed when the occupancy live load is less than or equal to 100 psf, except garages and places of public assembly (1.0 L there). Her wk3-4 slide: 277 k = 1.2(65) + 1.0(144) + 0.5(110).",
+   "Combinations 3, 4 and 6 use the TOWARD value of W / E. Combinations 5 and 7 subtract the REVERSE value when one is given (textbook Example 2-3: 0.9(200) + 1.0(-104) = 76), otherwise they add the toward value. Every load is typed positive."
+  ]
+ }
+}

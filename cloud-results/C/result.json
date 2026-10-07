@@ -1,0 +1,5142 @@
+{
+ "questions": [
+  {
+   "id": "C-01",
+   "topic": "tension: capacity of a W connected through the flanges",
+   "text": "Determine the LRFD design tensile strength \u03c6Pn of a W10x45 of A992 steel that is 20 ft long. The member is connected through its flanges with two lines of 3/4-in. bolts in each flange, three bolts in each line. \u03c6Pn = ____ kips",
+   "typed": "determine lrfd design tensile strength phi Pn w10x45 a992 20ft long connected thru its flanges 2 lines of 3/4in bolts each flang 3 bolts each line phi Pn = ?",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-02",
+   "topic": "tension: capacity of a single angle",
+   "text": "An L4x4x1/2 of A36 steel is used as a tension member. It is connected through one leg only with a single line of four 7/8-in. bolts. Determine the design tensile strength \u03c6Pn. \u03c6Pn = ____ kips",
+   "typed": "L4x4x1/2 a36 tention member connected thru one leg only single line of 4 7/8in bolts. find design tensile strenght phiPn",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-03",
+   "topic": "tension: gross area, net area and capacity of a plate (multi-blank)",
+   "text": "A PL 3/4 x 10 of A36 steel is connected to a gusset plate with two lines of 7/8-in. bolts. Determine the gross area, the net area and the design tensile strength of the plate. Ag = ____ in.^2   An = ____ in.^2   \u03c6Pn = ____ kips",
+   "typed": "pl 3/4 x 10 a36 connected to gusset plate 2 lines of 7/8in bolts. gross area ____ net area ____ design tensile strength ____",
+   "blanks": [
+    "Ag = ____ in.^2",
+    "An = ____ in.^2",
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-04",
+   "topic": "tension: W connected through the web only (U)",
+   "text": "A W8x31 tension member (A992 steel) is connected through its web only, with two lines of 7/8-in. bolts and four bolts in each line. Determine the LRFD design strength of the member. \u03c6Pn = ____ kips",
+   "typed": "w8x31 tension a992 connected thru web only 2 lines 7/8in bolts 4 in each line determine lrfd design strenght phi Pn =",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-05",
+   "topic": "tension: select the lightest W",
+   "text": "Select the lightest W8 section of A992 steel to support a service dead load of 120 kips and a service live load of 100 kips in tension. The member is 25 ft long and is connected through its flanges with two lines of 3/4-in. bolts in each flange (three bolts per line). Lightest W8 = ____",
+   "typed": "select lightest w8 a992 tention dead 120k live 100k. 25ft long connected thru flanges 2 lines 3/4in bolts per flange 3 bolts per line",
+   "blanks": [
+    "Lightest W8 = ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-06",
+   "topic": "tension: required gross area",
+   "text": "A tension member of A36 steel must carry a service dead load of 40 kips and a service live load of 60 kips. Considering only yielding of the gross section, what is the minimum gross area required? (Ans. 4.44 in.^2)   Ag,req = ____ in.^2",
+   "typed": "tension member a36 dead 40k live 60k min gross area required only yielding of gross section ans 4.44in2",
+   "blanks": [
+    "Ag,req = ____ in.^2"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-07",
+   "topic": "tension: net area of a plate (figure)",
+   "text": "Determine the net area An of the plate shown in Figure 1. The bolts are 3/4 in. in diameter. An = ____ in.^2",
+   "typed": "find net area An of the plate shown see fig 1 bolts are 3/4in diameter",
+   "blanks": [
+    "An = ____ in.^2"
+   ],
+   "figure": true
+  },
+  {
+   "id": "C-08",
+   "topic": "tension: parts (a)(b)(c), yielding, rupture, design strength",
+   "text": "A W12x50 of A992 steel, 24 ft long, is used as a tension member. It is connected through the flanges with two lines of 7/8-in. bolts in each flange, three bolts per line. (a) Determine the design strength based on yielding of the gross section. (b) Determine the design strength based on rupture of the net section. (c) What is the LRFD design tensile strength of the member? (a) \u03c6Pn = ____ kips   (b) \u03c6Pn = ____ kips   (c) \u03c6Pn = ____ kips",
+   "typed": "w12x50 a992 lenght 24ft tension member connected thru flanges 2 lines 7/8in bolts per flange 3 per line (a) design strength yielding gross section (b) design strenght rupture net section (c) lrfd design tensile strenght of member",
+   "blanks": [
+    "(a) \u03c6Pn = ____ kips",
+    "(b) \u03c6Pn = ____ kips",
+    "(c) \u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-09",
+   "topic": "tension: capacity of a double angle",
+   "text": "A 2L5x3x1/2 (long legs back-to-back) of A36 steel is used as a tension member. The long legs are connected with a single line of four 7/8-in. bolts. Determine the LRFD design tensile strength. \u03c6Pn = ____ kips",
+   "typed": "determine lrfd design tensile strength. 2L5x3x1/2 long legs back to back a36 tension member long legs connected single line of 4 7/8in bolts",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-10",
+   "topic": "columns: capacity, pinned-pinned, Table 4-1a",
+   "text": "Determine the LRFD design compressive strength \u03c6Pn of a W12x65 column of A992 steel that is 20 ft long and pinned at both ends. \u03c6Pn = ____ kips",
+   "typed": "design compressive strength phi pn of w12x65 colum a992 20ft long pinned both ends",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-11",
+   "topic": "columns: capacity, fixed-pinned K",
+   "text": "A W10x49 column (A992) is 15 ft long. It is fixed at the bottom and pinned at the top. Using the recommended design value of K, determine the design strength \u03c6Pn. \u03c6Pn = ____ kips",
+   "typed": "w10x49 column a992 15ft long fixed at bottom pinned top use recommended design K determine design strenght phiPn = ?",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-12",
+   "topic": "columns: different KL per axis, Table 4-14",
+   "text": "A W14x90 column of A992 steel is 30 ft long with pinned ends. It is braced at mid-height about its weak (y) axis only. Determine the design compressive strength \u03c6Pn. \u03c6Pn = ____ kips",
+   "typed": "w14x90 colum a992 30ft pinned ends braced at mid height weak (y) axis only. determine design compressive strength phi pn",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-13",
+   "topic": "columns: capacity, fixed-fixed K",
+   "text": "Determine the design compressive strength of a W8x40 column of A992 steel, 20 ft long, with both ends fixed. Use the recommended design K value. \u03c6Pn = ____ kips",
+   "typed": "w8x40 column a992 20ft both ends fixed use recomended design k. design compressive strength ____",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-14",
+   "topic": "columns: Euler buckling stress and load (multi-blank)",
+   "text": "A W10x33 column is 16 ft long and pinned at both ends. Using E = 29,000 ksi, determine the Euler (elastic) buckling stress Fe and the Euler buckling load Pe. Fe = ____ ksi   Pe = ____ kips",
+   "typed": "w10x33 column 16ft pinned both ends E=29000ksi euler buckling stress Fe = ? and euler buckling load Pe = ?",
+   "blanks": [
+    "Fe = ____ ksi",
+    "Pe = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-15",
+   "topic": "columns: select the lightest W12",
+   "text": "Select the lightest W12 column of A992 steel to support a service dead load of 150 kips and a service live load of 250 kips. The column is 15 ft long and pinned at both ends. Lightest W12 = ____",
+   "typed": "select lightest w12 column a992 dead load 150k live load 250k 15ft long pinned both ends",
+   "blanks": [
+    "Lightest W12 = ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-16",
+   "topic": "columns: capacity of the column shown (figure)",
+   "text": "Determine the LRFD design strength \u03c6Pn of the W12x53 column shown in Figure 2. Use A992 steel. \u03c6Pn = ____ kips",
+   "typed": "lrfd design strength phi Pn of w12x53 column shown in fig 2 a992",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": true
+  },
+  {
+   "id": "C-17",
+   "topic": "columns: parts (a)(b)(c), KL/r, phi Fcr, phi Pn",
+   "text": "A W10x45 column of A992 steel is 20 ft long and pinned at both ends. It is braced at mid-height about its weak axis. (a) Determine the governing slenderness ratio KL/r. (b) Determine \u03c6Fcr. (c) Determine the design strength \u03c6Pn. (a) KL/r = ____   (b) \u03c6Fcr = ____ ksi   (c) \u03c6Pn = ____ kips",
+   "typed": "(a) governing slenderness ratio KL/r (b) phi Fcr (c) design strength phiPn  w10x45 colum a992 20ft long pinned both ends braced at mid height about weak axis",
+   "blanks": [
+    "(a) KL/r = ____",
+    "(b) \u03c6Fcr = ____ ksi",
+    "(c) \u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-18",
+   "topic": "columns: capacity, fixed-free K",
+   "text": "A W8x31 column of A992 steel is 10 ft long. Its base is fixed and its top is free. Using the recommended design K value, determine \u03c6Pn. \u03c6Pn = ____ kips",
+   "typed": "w8x31 column a992 10ft long base fixed top is free recomended design k value find phi pn",
+   "blanks": [
+    "\u03c6Pn = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-19",
+   "topic": "beams: factored moment from uniform loads",
+   "text": "A simply supported beam spans 24 ft and supports a uniform service dead load of 1.2 k/ft (including the beam weight) and a uniform service live load of 2.0 k/ft. Determine the factored moment Mu. Mu = ____ ft-k",
+   "typed": "simply supported beam spans 24ft dead load 1.2k/ft (including beam weight) live load 2.0k/ft. factored moment Mu",
+   "blanks": [
+    "Mu = ____ ft-k"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-20",
+   "topic": "beams: required Zx",
+   "text": "A fully braced beam of A992 steel must resist a factored moment Mu = 250 ft-k. Determine the required plastic section modulus Zx. Zx,req = ____ in.^3",
+   "typed": "fully braced beam a992 factored moment mu=250ft-k required plastic section modulous zx",
+   "blanks": [
+    "Zx,req = ____ in.^3"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-21",
+   "topic": "beams: select the lightest W from Table 3-2",
+   "text": "Select the lightest W-shape from Table 3-2 for a simply supported beam with a span of 24 ft. The beam supports a service dead load of 1.0 k/ft (not including the beam weight) and a service live load of 1.25 k/ft. The compression flange is fully braced. Use A992 steel. Lightest W = ____",
+   "typed": "select lightest w shape table 3-2 simply supported 24ft span dead 1.0k/ft not including beam weight live 1.25k/ft compression flang fully braced a992",
+   "blanks": [
+    "Lightest W = ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-22",
+   "topic": "beams: phi Mp of a given beam",
+   "text": "Determine the design flexural strength \u03c6Mp of a W18x50 of A992 steel with continuous lateral support of its compression flange. \u03c6Mp = ____ ft-k",
+   "typed": "design flexural strength phi Mp of w18x50 a992 continuous lateral support of its compression flange",
+   "blanks": [
+    "\u03c6Mp = ____ ft-k"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-23",
+   "topic": "loads: floor psf to line loads and wu (multi-blank)",
+   "text": "Floor beams are spaced 8 ft on center. The floor dead load is 75 psf and the floor live load is 100 psf. Determine the service dead load and live load on a beam in kips per foot, and the factored uniform load wu. wD = ____ k/ft   wL = ____ k/ft   wu = ____ k/ft",
+   "typed": "floor beams 8ft on center floor dead 75psf live 100psf. service dead load and live load on a beam kips per foot and factored uniform load wu",
+   "blanks": [
+    "wD = ____ k/ft",
+    "wL = ____ k/ft",
+    "wu = ____ k/ft"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-24",
+   "topic": "loads: 1.2D + 1.6L",
+   "text": "A column supports a service dead load of 140 kips and a service live load of 95 kips. Using the load combination used in this class, determine the factored load Pu. (Ans. 320 k)   Pu = ____ kips",
+   "typed": "column service dead 140k live 95k using load combination used in this class factored load Pu ans 320k",
+   "blanks": [
+    "Pu = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-25",
+   "topic": "beams: largest live load a given beam can carry",
+   "text": "A W16x40 (Zx = 73.0 in.^3) of A992 steel spans 20 ft on simple supports with full lateral support. It carries a service dead load of 0.8 k/ft in addition to its own weight. Determine the largest service uniform live load the beam can carry. wL,max = ____ k/ft",
+   "typed": "w16x40 zx=73.0in3 a992 20ft simple supports full lateral support dead load 0.8k/ft in addition to its own weight. largest service uniform live load beam can carry = ?",
+   "blanks": [
+    "wL,max = ____ k/ft"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-26",
+   "topic": "beams: parts (a)(b)(c), wu, Mu, select",
+   "text": "A simply supported beam with a span of 28 ft carries a service dead load of 1.5 k/ft (including the beam weight) and a service live load of 2.0 k/ft. The compression flange is fully braced. Use A992 steel. (a) Determine the factored load wu. (b) Determine the factored moment Mu. (c) Select the lightest W-shape. (a) wu = ____ k/ft   (b) Mu = ____ ft-k   (c) W ____",
+   "typed": "simply supported beam 28ft span dead 1.5k/ft including beam weight live 2.0k/ft compresion flange fully braced a992 (a) factored load wu (b) factored moment mu (c) select lightest w shape",
+   "blanks": [
+    "(a) wu = ____ k/ft",
+    "(b) Mu = ____ ft-k",
+    "(c) W ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-27",
+   "topic": "beams: Mu from a uniform dead load plus a concentrated live load",
+   "text": "A 30 ft simple beam carries a uniform service dead load of 0.5 k/ft (including its own weight) and a concentrated service live load of 20 kips at midspan. Determine the factored moment Mu. Mu = ____ ft-k",
+   "typed": "30ft simple beam uniform dead 0.5k/ft including own weight concentrated live 20k at midspan factored moment Mu = ?",
+   "blanks": [
+    "Mu = ____ ft-k"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-28",
+   "topic": "floor plan: parts (a)(b)(c), beam wu, Mu, select",
+   "text": "In a floor framing plan, W-shape beams span 32 ft between girders and are spaced 10 ft on center. The floor dead load is 75 psf (including the weight of the framing) and the floor live load is 100 psf. Use A992 steel; the beams are fully braced. (a) Determine the factored uniform load wu on a typical beam. (b) Determine Mu for the beam. (c) Select the lightest W-shape for the beam. (a) wu = ____ k/ft   (b) Mu = ____ ft-k   (c) W ____",
+   "typed": "floor framing plan w beams span 32ft between girders spaced 10ft on center. floor dead 75psf including weight of framing live 100psf a992 beams fully braced (a) factored uniform load wu on typical beam (b) mu for beam (c) select lightest w shape for beam",
+   "blanks": [
+    "(a) wu = ____ k/ft",
+    "(b) Mu = ____ ft-k",
+    "(c) W ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-29",
+   "topic": "floor plan: girder loads from beams on both sides (multi-blank)",
+   "text": "An interior girder spans 30 ft and supports floor beams at its third points. The beams frame into the girder from both sides; each beam spans 25 ft and the beams are spaced 10 ft on center. The floor dead load is 70 psf and the live load is 80 psf. Neglect the self-weight of the beams and the girder. Determine the factored concentrated load on the girder at each third point and the factored moment in the girder. Pu = ____ kips   Mu = ____ ft-k",
+   "typed": "interior girder 30ft supports floor beams at third points beams frame in from both sides each beam spans 25ft spaced 10ft oc dead 70psf live 80psf neglect self weight of beams and girder. factored concentrated load on girder at each third point ____ and factored moment in girder ____",
+   "blanks": [
+    "Pu = ____ kips",
+    "Mu = ____ ft-k"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-30",
+   "topic": "floor plan: column load takedown",
+   "text": "An interior column supports a tributary area of 20 ft by 25 ft at each of four floor levels. The floor dead load is 80 psf and the floor live load is 70 psf. Neglect live load reduction and the column weight. Determine the factored axial load Pu in the column at the ground floor. Pu = ____ kips",
+   "typed": "interior column tributary area 20ft by 25ft each of 4 floor levels. dead 80psf live 70psf neglect live load reduction and column weight factored axial load pu in column at ground floor",
+   "blanks": [
+    "Pu = ____ kips"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-31",
+   "topic": "floor plan: Mu in beam B1 of the plan shown (figure)",
+   "text": "For the floor plan shown in Figure 3, determine the factored moment Mu in beam B1. The floor dead load is 60 psf and the live load is 100 psf. Neglect the beam weight. Mu = ____ ft-k",
+   "typed": "see fig 3 floor plan factored moment mu in beam B1 dead 60psf live 100psf neglect beam weight",
+   "blanks": [
+    "Mu = ____ ft-k"
+   ],
+   "figure": true
+  },
+  {
+   "id": "C-32",
+   "topic": "look-up: Zx of a W",
+   "text": "From the AISC Manual, what is the plastic section modulus Zx of a W21x44? Zx = ____ in.^3",
+   "typed": "plastic section modulous zx of w21x44",
+   "blanks": [
+    "Zx = ____ in.^3"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-33",
+   "topic": "look-up: several properties in one sentence (multi-blank)",
+   "text": "From the AISC Manual, list the following properties of a W14x82: area A, depth d, flange width bf, flange thickness tf and web thickness tw. A = ____ in.^2   d = ____ in.   bf = ____ in.   tf = ____ in.   tw = ____ in.",
+   "typed": "w14x82 properties area A, depth d, flang width bf, flange thickness tf, web thickness tw",
+   "blanks": [
+    "A = ____ in.^2",
+    "d = ____ in.",
+    "bf = ____ in.",
+    "tf = ____ in.",
+    "tw = ____ in."
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-34",
+   "topic": "look-up: ry of a W",
+   "text": "What is the radius of gyration about the y-axis, ry, of a W12x40? ry = ____ in.",
+   "typed": "radius of gyration y axis ry w12x40 = ?",
+   "blanks": [
+    "ry = ____ in."
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-35",
+   "topic": "look-up: Fy and Fu of a grade (multi-blank)",
+   "text": "What are the minimum yield stress Fy and the minimum tensile strength Fu of ASTM A572 Grade 50 steel? Fy = ____ ksi   Fu = ____ ksi",
+   "typed": "min yield stress fy and min tensile strength fu of astm a572 grade 50",
+   "blanks": [
+    "Fy = ____ ksi",
+    "Fu = ____ ksi"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-36",
+   "topic": "look-up: hole size for net area",
+   "text": "In net area calculations, what hole diameter is deducted for a 3/4-in. bolt? Hole diameter = ____ in.",
+   "typed": "hole diameter deducted for 3/4in bolt in net area calculations",
+   "blanks": [
+    "Hole diameter = ____ in."
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-37",
+   "topic": "look-up: K from Table C-A-7.1",
+   "text": "Using Table C-A-7.1, what is the recommended design value of K for a column whose base is fixed and whose top is fixed against rotation but free to translate? K = ____",
+   "typed": "table c-a-7.1 recommended design k column base fixed top fixed against rotation but free to translate",
+   "blanks": [
+    "K = ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-38",
+   "topic": "look-up: U from Table D3.1",
+   "text": "Using Table D3.1, determine the shear lag factor U for a single angle connected through one leg with three bolts in the direction of loading. U = ____",
+   "typed": "shear lag factor U table d3.1 single angle connected thru one leg 3 bolts in direction of loading",
+   "blanks": [
+    "U = ____"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-39",
+   "topic": "look-up: Ix of a W",
+   "text": "What is the moment of inertia Ix of a W24x68? Ix = ____ in.^4",
+   "typed": "moment of inertia Ix w24x68",
+   "blanks": [
+    "Ix = ____ in.^4"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-40",
+   "topic": "look-up: Fy of a pipe grade",
+   "text": "What is the minimum yield stress Fy of ASTM A53 Grade B steel used for pipes? Fy = ____ ksi",
+   "typed": "min yield stress fy astm a53 grade b steel pipe",
+   "blanks": [
+    "Fy = ____ ksi"
+   ],
+   "figure": false
+  },
+  {
+   "id": "C-41",
+   "topic": "stress-strain curve, elastic limit (multiple choice); n=104, 6",
+   "text": "The greatest stress to which steel can be loaded and still return to its original length when the load is removed (no permanent set) is called the ____.\na) proportional limit\nb) elastic limit\nc) yield point\nd) ultimate strength",
+   "typed": "greatest stress steel can be loaded to and still go back to original lenght when load removed (no permanent set) is called the\na) proportional limit\nb) elastic limit\nc) yeild point\nd) ultimate strenght",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "b) elastic limit"
+  },
+  {
+   "id": "C-42",
+   "topic": "material constants, modulus of elasticity same for every grade (multiple choice); n=1098, 114, 115",
+   "text": "Compare A992 steel (Fy = 50 ksi) with A36 steel (Fy = 36 ksi). Which statement about their modulus of elasticity is correct? ____ (a) A992 has the larger E because it is stronger (b) A36 has the larger E because it is softer (c) both have E = 29,000 ksi (d) both have E = 11,200 ksi",
+   "typed": "compare a992 (fy=50ksi) with a36 (fy=36ksi) which is correct about the modulous of elasticity (a) a992 larger E because its stronger (b) a36 larger E because softer (c) both E = 29,000ksi (d) both E = 11,200ksi",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "(c) both have E = 29,000 ksi"
+  },
+  {
+   "id": "C-43",
+   "topic": "tension members, shear lag factor U Table D3.1 case 8 (multiple choice); n=170",
+   "text": "A single equal-leg angle in tension is bolted through one leg only, with 3 bolts in one line parallel to the load. According to Table D3.1, the shear lag factor U is ____.\na. 1.0\nb. 0.90\nc. 0.80\nd. 0.60",
+   "typed": "single equal leg angle in tention bolted through one leg only 3 bolts in a line parallel to load. shear lag factor U per table D3.1 = ?\na. 1.0\nb. 0.90\nc. 0.80\nd. 0.60",
+   "blanks": [
+    "U = ____"
+   ],
+   "figure": false,
+   "key": "d. 0.60"
+  },
+  {
+   "id": "C-44",
+   "topic": "loads and LRFD, why the live load factor is the larger one (multiple choice); n=1105, 141",
+   "text": "In the load combination used in this course, the live load factor (1.6) is larger than the dead load factor (1.2) because ____.\nA. live loads are always heavier than dead loads\nB. live loads are harder to predict accurately than dead loads\nC. dead loads already include the resistance factor\nD. live loads act only during construction",
+   "typed": "why is the live load factor 1.6 bigger than dead load factor 1.2 in the load combo we use\nA live loads always heavier than dead loads\nB live loads harder to predict accuratly than dead loads\nC dead loads already include the resistance factor\nD live loads only act during construction",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "B. live loads are harder to predict accurately than dead loads"
+  },
+  {
+   "id": "C-45",
+   "topic": "steel grades, W shapes are A992 (multiple choice); n=275, 276, 15",
+   "text": "Unless a problem states otherwise, the ASTM specification assumed in this course for W shapes is ____. (A) A36 (B) A992 (C) A500 Grade C (D) A53 Grade B",
+   "typed": "unless problem says otherwise what astm steel is assumed for w shapes (A) a36 (B) a992 (C) a500 gr c (D) a53 gr b",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "(B) A992"
+  },
+  {
+   "id": "C-46",
+   "topic": "compression members, equal KL about both axes buckles about the weak axis (multiple choice); n=195, 1108, 75",
+   "text": "The W-shape column in Fig. 2 has the same effective length about both axes (KxLx = KyLy). It will buckle first about ____.\nA) the strong (x-x) axis\nB) the weak (y-y) axis\nC) both axes at the same time\nD) the axis with the larger radius of gyration",
+   "typed": "w shape colum see fig 2, same effective lenght both axis (KxLx = KyLy) it buckles first about\nA) strong x-x axis\nB) weak y-y axis\nC) both axis same time\nD) axis with the larger radius of gyration",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "B) the weak (y-y) axis"
+  },
+  {
+   "id": "C-47",
+   "topic": "compression members, recommended design K fixed-fixed no sway (multiple choice); n=309, 1072",
+   "text": "For a column fixed at both ends, with no sidesway, the recommended design value of the effective length factor K is ____. a) 0.50 b) 0.65 c) 0.80 d) 1.2",
+   "typed": "colum fixed both ends no sidesway, recomended design K = ? a) 0.50 b) 0.65 c) 0.80 d) 1.2",
+   "blanks": [
+    "K = ____"
+   ],
+   "figure": false,
+   "key": "b) 0.65"
+  },
+  {
+   "id": "C-48",
+   "topic": "beams, boldface shape in the economy table Table 3-2 (multiple choice); n=90, 314, 1066",
+   "text": "In the beam selection table (AISC Table 3-2), the shape printed in boldface at the top of each group is ____.\n(a) the heaviest shape in the group\n(b) the lightest shape in the group\n(c) the shape whose Zx is closest to the required Zx\n(d) a shape made of A36 steel",
+   "typed": "table 3-2 beam selection, shape in bold at top of each group is\n(a) heaviest in group\n(b) lightest in group\n(c) the one with Zx closest to required Zx\n(d) a36 steel shape",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "(b) the lightest shape in the group"
+  },
+  {
+   "id": "C-49",
+   "topic": "construction and fire, meaning of a two-hour fire rating (multiple choice); n=25, 1101",
+   "text": "When a building code requires a two-hour fire rating for an office building, this means ____.\na. the steel members will not melt for two hours\nb. occupants have two hours to evacuate the building\nc. the fireproofing must be renewed every two hours\nd. the fire department must arrive within two hours",
+   "typed": "building code needs 2 hour fire rating for office building what does it mean\na. steel wont melt for 2 hours\nb. people have 2 hours to evacuate the building\nc. fireproofing renewed every 2 hours\nd. fire dept must arrive within 2 hours",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "b. occupants have two hours to evacuate the building"
+  },
+  {
+   "id": "C-50",
+   "topic": "steel as a material, a disadvantage of steel (multiple choice); n=123, 122, 131",
+   "text": "Which of the following is a disadvantage of building with structural steel? ____  A  high strength-to-weight ratio   B  speed of erection   C  corrosion (rust)   D  possible reuse (scrap value)",
+   "typed": "which is a disadvantage of structural steel  A high strength to weight ratio B speed of erection C corrosion (rust) D possible reuse scrap value",
+   "blanks": [
+    "answer ____"
+   ],
+   "figure": false,
+   "key": "C corrosion (rust)"
+  },
+  {
+   "id": "C-51",
+   "topic": "steel as a material, ductile (fill in the blank); n=120, 1109, 106",
+   "text": "A material that can withstand large deformations without failing, unlike concrete, which fails suddenly, is said to be ____.",
+   "typed": "material that can take large deformations without failing, unlike concrete that fails suddenly, is said to be ____",
+   "blanks": [
+    "____"
+   ],
+   "figure": false,
+   "key": "ductile (ductility)"
+  },
+  {
+   "id": "C-52",
+   "topic": "compression members, effective length KL (fill in the blank); n=181, 62, 73",
+   "text": "The distance between the points of zero moment (inflection points) of a buckled column is called the ____ and is written ____.",
+   "typed": "distance between points of 0 moment (inflection points) on a buckled colum is called ____ written as ____",
+   "blanks": [
+    "____",
+    "written ____"
+   ],
+   "figure": false,
+   "key": "effective length; KL (also written Lc)"
+  },
+  {
+   "id": "C-53",
+   "topic": "tension members, shear lag (fill in the blank); n=162, 161, 50",
+   "text": "The non-uniform distribution of tensile stress near a bolted connection, which keeps the whole cross section from being effective right away and is accounted for by the factor U, is called ____.",
+   "typed": "the factor U accounts for it: non uniform tensile stress near a bolted connection so whole cross section isnt effective right away. its called",
+   "blanks": [
+    "____"
+   ],
+   "figure": false,
+   "key": "shear lag"
+  },
+  {
+   "id": "C-54",
+   "topic": "stress-strain curve, strain and epsilon (fill in the blank); n=4, 1106",
+   "text": "The change in length of a member divided by its original length is called ____, and it is designated by the Greek letter ____.",
+   "typed": "change in lenght of a member / original lenght is called ____ and its greek letter is ____",
+   "blanks": [
+    "____",
+    "Greek letter ____"
+   ],
+   "figure": false,
+   "key": "strain; epsilon"
+  },
+  {
+   "id": "C-55",
+   "topic": "analysis and design, what is known and what is found (short answer: what is); n=173, 37, 174",
+   "text": "What is the difference between analysis and design of a steel member? State what is known and what is found in each. ____",
+   "typed": "what is difference between analysis and design of a steel member, whats known and whats found in each",
+   "blanks": [
+    "____"
+   ],
+   "figure": false,
+   "key": "Analysis: the geometric property (size) and the material are known; you calculate the load (capacity). Design: the load and the material are known; you choose the geometric property (size), by trial and error."
+  },
+  {
+   "id": "C-56",
+   "topic": "beams, why a deeper section resists more moment (short answer: why); n=1069, 82, 99",
+   "text": "Why does a deeper wide-flange beam resist much more moment than a shallower beam with the same cross-sectional area? ____",
+   "typed": "why does a deeper wide flang beam resist way more moment than a shallower one with same area",
+   "blanks": [
+    "____"
+   ],
+   "figure": false,
+   "key": "Bending resolves into a couple: one flange acts in compression and the other in tension. The deeper the member, the farther apart the two flanges and the more moment it resists without adding steel; most of the moment of inertia is the flange area times its distance squared (A d^2)."
+  },
+  {
+   "id": "C-57",
+   "topic": "frames and bracing, disadvantages of an unbraced moment frame (short answer: name two); n=188, 1089, 1039",
+   "text": "Name two disadvantages of an unbraced (moment) frame compared with a braced frame. 1) ____ 2) ____",
+   "typed": "name 2 disadvantages of unbraced (moment) frame vs braced frame",
+   "blanks": [
+    "1) ____",
+    "2) ____"
+   ],
+   "figure": false,
+   "key": "Any two of: greater deflection and drift than braced frames or shear walls; localized stress concentrations at rigid joints; care needed in erecting the connections so they resist lateral loads properly; expensive moment connections; (class) bigger members because it is flexible and will move."
+  },
+  {
+   "id": "C-58",
+   "topic": "compression members, Euler load does not depend on Fy (true/false); n=176, 58, 1041, 1098",
+   "text": "True or False: The Euler critical buckling load of a slender, pin-ended column increases if a steel with a higher yield strength (Fy) is used. ____",
+   "typed": "t or f euler critical buckling load of slender pin ended colum goes up if steel with higher yield strength fy is used",
+   "blanks": [
+    "T / F ____"
+   ],
+   "figure": false,
+   "key": "False (Euler's formula is independent of material strength; Pcr = pi^2 E I / L^2 and E is the same for every grade)"
+  },
+  {
+   "id": "C-59",
+   "topic": "compression members, capacity uses the gross area (true/false); n=317, 71",
+   "text": "T / F   When a column has bolt holes, its design compressive strength, \u03c6Pn, is computed with the net area instead of the gross area. ____",
+   "typed": "T/F when column has bolt holes its design compressive strength phi Pn is computed w net area instead of gross area",
+   "blanks": [
+    "T / F ____"
+   ],
+   "figure": false,
+   "key": "False (phi Fcr times A gross; there is no A net in compression)"
+  },
+  {
+   "id": "C-60",
+   "topic": "loads and LRFD, unlabeled loads are unfactored service loads (true/false); n=145, 1100, 35",
+   "text": "True or false? Loads given in a problem that are not labeled as factored should be taken as service (unfactored) loads, and the load factors must be applied to them. ____",
+   "typed": "true or false loads in a problem not labeled factored are service (unfactored) loads and you have to apply the load factors",
+   "blanks": [
+    "T / F ____"
+   ],
+   "figure": false,
+   "key": "True"
+  }
+ ],
+ "keys": [
+  {
+   "kind": "calc",
+   "key1": {
+    "keys": [
+     {
+      "id": "C-01",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "488.3 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W10x45 (lookup): Ag=13.3, d=10.1, bf=8.02, tf=0.62, ry=2.01. A992 Fy50 Fu65. Yield: 0.9*50*13.3=598.5 k. Hole 3/4+1/8=0.875; 2 lines per flange x 2 flanges = 4 holes through tf: An=13.3-4(0.875)(0.62)=13.3-2.17=11.13. U case 7 flange, 3 per line, bf 8.02 >= 2/3 d 6.73 -> 0.90. Ae=10.017. Rupture 0.75*65*10.017=488.3 k. Smaller governs: 488.3 k. L/r=240/2.01=119<300 ok.",
+      "doubt": "Length (20 ft) only feeds the L/r<=300 check."
+     },
+     {
+      "id": "C-02",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "113.1 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "L4x4x1/2: Ag=3.75, t=0.5. Question says A36: Fy36 Fu58 (overrides her A572 default for L). Yield 0.9*36*3.75=121.5 k. Hole 7/8+1/8=1.0, one hole in section: An=3.75-1.0*0.5=3.25. U case 8, 4 bolts per line -> 0.80. Ae=2.60. Rupture 0.75*58*2.60=113.1 k. Governs 113.1 k.",
+      "doubt": "If a reader ignored 'A36' and used her L default (A572 Gr50 Fy50 Fu65), rupture would be 126.8 and yield 168.8 -> 126.8; the words say A36, so 113.1."
+     },
+     {
+      "id": "C-03",
+      "blanks": [
+       {
+        "blank": "Ag = ____ in.^2",
+        "value": "7.50 in.^2",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "An = ____ in.^2",
+        "value": "6.00 in.^2",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "243.0 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Ag=0.75*10=7.5. Two lines -> 2 holes across the width, hole 7/8+1/8=1.0: An=7.5-2(1.0)(0.75)=6.0. Plate, U=1.0 -> Ae=6.0. Yield 0.9*36*7.5=243.0 k; rupture 0.75*58*6.0=261.0 k. Governs yield 243.0 k.",
+      "doubt": "'Two lines' read as two holes in the critical cross-section (no stagger given). Bolts per line not given; irrelevant for a plate (U=1.0). J4.1 0.85Ag=6.375 limit not binding anyway."
+     },
+     {
+      "id": "C-04",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "292.1 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W8x31: Ag=9.13, tw=0.285. Yield 0.9*50*9.13=410.9 k. Web only, 2 lines -> 2 holes of 1.0 through tw: An=9.13-2(1.0)(0.285)=8.56. U case 7 web, 4 per line -> 0.70. Ae=5.992. Rupture 0.75*65*5.992=292.1 k. Governs 292.1 k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-05",
+      "blanks": [
+       {
+        "blank": "Lightest W8 = ____",
+        "value": "W8x31",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Pu=1.2(120)+1.6(100)=304 k (1.4D=168 smaller). Yield needs Ag>=304/45=6.76 -> W8x21 (6.16) fails. Flange holes 4 x 0.875 x tf, U=0.90 (bf>=2/3d for W8x24..31). W8x24: An=7.08-4(.875)(.40)=5.68, Ae=5.112, 0.75*65*5.112=249.2<304 fail. W8x28: An=8.25-4(.875)(.465)=6.6225, Ae=5.960, phiPn=290.6<304 fail. W8x31: An=9.13-4(.875)(.435)=7.6075, Ae=6.847, phiPn=333.8>=304 ok; yield 410.9 ok; L/r=300/2.02=149<300 ok. Lightest W8 = W8x31.",
+      "doubt": ""
+     },
+     {
+      "id": "C-06",
+      "blanks": [
+       {
+        "blank": "Ag,req = ____ in.^2",
+        "value": "4.44 in.^2",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Pu=1.2(40)+1.6(60)=48+96=144 k (1.4D=56 smaller). Ag,req=144/(0.9*36)=144/32.4=4.444 in^2. Matches printed answer 4.44.",
+      "doubt": ""
+     },
+     {
+      "id": "C-07",
+      "blanks": [
+       {
+        "blank": "An = ____ in.^2",
+        "value": "NEEDS FIGURE: plate width, plate thickness, number of holes in the critical section (and stagger s, gage g if staggered)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Hole = 3/4+1/8 = 0.875 in. An = (w - n*0.875)*t (+ sum s^2/(4g)*t for each diagonal on a staggered path; take the least over all paths). Width, thickness, hole count and any s/g come only from Figure 1.",
+      "doubt": "Figure-only numbers; cannot key a value from the words."
+     },
+     {
+      "id": "C-08",
+      "blanks": [
+       {
+        "blank": "(a) \u03c6Pn = ____ kips",
+        "value": "657.0 kips",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(b) \u03c6Pn = ____ kips",
+        "value": "498.9 kips",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "value": "498.9 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W12x50: Ag=14.6, d=12.2, bf=8.08, tf=0.64, ry=1.96. (a) 0.9*50*14.6=657.0 k. (b) 4 flange holes of 7/8+1/8=1.0: An=14.6-4(1.0)(0.64)=12.04. bf 8.08 < 2/3 d = 8.133 -> U=0.85. Ae=10.234. 0.75*65*10.234=498.9 k. (c) smaller = 498.9 k. L/r=288/1.96=147<300.",
+      "doubt": "bf vs 2/3d is a near call (8.08 vs 8.13); with the frozen data U=0.85. A reader taking U=0.90 would get 528.2 (wrong)."
+     },
+     {
+      "id": "C-09",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "226.2 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "2L5x3x1/2 LLBB: Ag=7.50 (2 x 3.75), t=0.5. A36 Fy36 Fu58. Yield 0.9*36*7.5=243.0 k. One hole (7/8+1/8=1.0) per angle, 2 angles: An=7.5-2(1.0)(0.5)=6.5. U case 8, 4 per line -> 0.80. Ae=5.2. Rupture 0.75*58*5.2=226.2 k. Governs 226.2 k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-10",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "542 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Pinned-pinned K=1.0, KL=20 ft both axes -> Table 4-1a W12x65 @20 ft = 542 k (unrounded 541.6). Hand check: KL/ry=240/3.02=79.5, Fe=45.3, Fcr=0.658^(1.103)*50=31.5, phiFcr=28.36, x19.1=541.7.",
+      "doubt": ""
+     },
+     {
+      "id": "C-11",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "512 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Fixed-pinned recommended K=0.8 -> KL=0.8*15=12 ft both axes -> Table 4-1a W10x49 @12 ft = 512 k (unrounded 512.3). Hand: 144/2.54=56.7, Fe=89.1, Fcr=39.5, phiFcr=35.58 x14.4=512.3.",
+      "doubt": ""
+     },
+     {
+      "id": "C-12",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "924.9 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W14x90: A=26.5, rx=6.14, ry=3.70. KxLx=30 ft=360 in -> 360/6.14=58.63; KyLy=15 ft=180 in -> 180/3.70=48.65. Lengths differ -> larger KL/r=58.63, round UP to 59, Table 4-14 Fy50: phiFcr=34.9 ksi. phiPn=34.9*26.5=924.9 k.",
+      "doubt": "x-axis governs (58.6 > 48.6). Unrounded phiFcr gives ~924.6; within tolerance."
+     },
+     {
+      "id": "C-13",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "343 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Fixed-fixed recommended K=0.65 -> KL=0.65*20=13 ft both axes -> Table 4-1a W8x40 @13 ft = 343 k (unrounded 343.3). Hand: 156/2.04=76.5, Fe=48.95, Fcr=32.6, phiFcr=29.35 x11.7=343.4.",
+      "doubt": ""
+     },
+     {
+      "id": "C-14",
+      "blanks": [
+       {
+        "blank": "Fe = ____ ksi",
+        "value": "29.2 ksi",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "Pe = ____ kips",
+        "value": "283.7 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W10x33: A=9.71, ry=1.94, Iy=36.6. K=1.0, L=16 ft=192 in, weak axis governs: KL/r=192/1.94=98.97. Fe=pi^2(29000)/98.97^2=286218/9795=29.22 ksi. Pe=Fe*A=29.22*9.71=283.7 k. (pi^2 E Iy/L^2 = 284.2 k; rounding KL/r up to 99 gives 29.20 / 283.6 -- all within 0.5%.)",
+      "doubt": "Pe via A*r^2 (283.7) vs via tabulated Iy (284.2) differ by 0.2%; both acceptable."
+     },
+     {
+      "id": "C-15",
+      "blanks": [
+       {
+        "blank": "Lightest W12 = ____",
+        "value": "W12x65",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Pu=1.2(150)+1.6(250)=180+400=580 k. K=1.0, KL=15 ft both axes -> Table 4-1a W12 @15 ft: x50=355, x53=478, x58=525 (all <580), x65=663 >=580. Lightest W12 = W12x65.",
+      "doubt": ""
+     },
+     {
+      "id": "C-16",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "NEEDS FIGURE: column length and end conditions (K) and any weak-axis bracing points",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W12x53: A=15.6, rx=5.23, ry=2.48, A992. If KxLx=KyLy: phiPn = Table 4-1a W12x53 at KL. If they differ: larger of KxLx/5.23 and KyLy/2.48, rounded UP, phiFcr from Table 4-14 (Fy50), times 15.6. L, K and bracing come only from Figure 2.",
+      "doubt": "Figure-only numbers."
+     },
+     {
+      "id": "C-17",
+      "blanks": [
+       {
+        "blank": "(a) KL/r = ____",
+        "value": "59.7",
+        "tolerance": "+-0.1 (60 acceptable only as her rounded-up table entry)"
+       },
+       {
+        "blank": "(b) \u03c6Fcr = ____ ksi",
+        "value": "34.6 ksi",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "value": "460.2 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W10x45: A=13.3, rx=4.32, ry=2.01. KxLx=20 ft=240 in -> 240/4.32=55.56; KyLy=10 ft=120 in -> 120/2.01=59.70. Governs 59.70 (y). Round UP to 60 -> Table 4-14 Fy50 phiFcr=34.6 ksi. phiPn=34.6*13.3=460.2 k.",
+      "doubt": "Blank (a): computed value 59.7; she reads the table at 60. A page printing 60 as the governing KL/r is her rounded value, not a wrong answer."
+     },
+     {
+      "id": "C-18",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "133 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Fixed-free recommended K=2.1 -> KL=2.1*10=21 ft both axes -> Table 4-1a W8x31 @21 ft = 133 k (unrounded 132.5). Hand: 252/2.02=124.8, Fe=18.39, Fy/Fe>2.25 -> Fcr=0.877*18.39=16.13, phiFcr=14.52 x9.13=132.5.",
+      "doubt": ""
+     },
+     {
+      "id": "C-19",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "334.1 ft-k",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "wu=1.2(1.2)+1.6(2.0)=1.44+3.2=4.64 k/ft. Mu=wL^2/8=4.64(24^2)/8=334.08 ft-k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-20",
+      "blanks": [
+       {
+        "blank": "Zx,req = ____ in.^3",
+        "value": "66.7 in.^3",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Zx,req=Mu*12/(0.9*50)=250*12/45=66.67 in^3.",
+      "doubt": ""
+     },
+     {
+      "id": "C-21",
+      "blanks": [
+       {
+        "blank": "Lightest W = ____",
+        "value": "W18x35",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "wu=1.2(1.0)+1.6(1.25)=3.2 k/ft; Mu=3.2(24^2)/8=230.4 ft-k; Zx,req=230.4*12/45=61.44. Table 3-2 lightest with Zx>=61.44: W18x35 (Zx 66.5, phiMp 249, bold). Self-weight after choosing: wu=1.2(1.035)+2.0=3.242, Mu=233.4 <= 249 ok. W18x35.",
+      "doubt": ""
+     },
+     {
+      "id": "C-22",
+      "blanks": [
+       {
+        "blank": "\u03c6Mp = ____ ft-k",
+        "value": "378.8 ft-k (Table 3-2 prints 379)",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W18x50 Zx=101. phiMp=0.9*50*101/12=378.75 ft-k; Table 3-2 = 379.",
+      "doubt": ""
+     },
+     {
+      "id": "C-23",
+      "blanks": [
+       {
+        "blank": "wD = ____ k/ft",
+        "value": "0.60 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "wL = ____ k/ft",
+        "value": "0.80 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "wu = ____ k/ft",
+        "value": "2.00 k/ft",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Tributary width 8 ft. wD=75*8/1000=0.60; wL=100*8/1000=0.80; wu=1.2(0.6)+1.6(0.8)=0.72+1.28=2.00 k/ft.",
+      "doubt": "No beam self-weight given or asked; none added."
+     },
+     {
+      "id": "C-24",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "value": "320 kips",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Pu=1.2(140)+1.6(95)=168+152=320 k (1.4D=196 smaller). Matches printed 320.",
+      "doubt": ""
+     },
+     {
+      "id": "C-25",
+      "blanks": [
+       {
+        "blank": "wL,max = ____ k/ft",
+        "value": "2.79 k/ft",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "phiMp=0.9*50*73.0/12=273.75 ft-k (Table 3-2: 274). wu,max=8*273.75/20^2=5.475 k/ft. wD=0.8+0.040 self wt=0.84 -> 1.2*0.84=1.008. wL=(5.475-1.008)/1.6=2.792 k/ft (2.795 with 274).",
+      "doubt": "Self-weight 40 lb/ft included because 'in addition to its own weight'; leaving it out would give 2.82 (wrong)."
+     },
+     {
+      "id": "C-26",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "value": "5.00 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "value": "490 ft-k",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) W ____",
+        "value": "W24x55",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "(a) wu=1.2(1.5)+1.6(2.0)=1.8+3.2=5.0 k/ft. (b) Mu=5.0(28^2)/8=490 ft-k. (c) Zx,req=490*12/45=130.67; Table 3-2 lightest: W24x55 (Zx 134, phiMp 503 >= 490). Beam weight already included.",
+      "doubt": ""
+     },
+     {
+      "id": "C-27",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "307.5 ft-k",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Mu=1.2[0.5(30^2)/8]+1.6[20(30)/4]=1.2(56.25)+1.6(150)=67.5+240=307.5 ft-k (1.4D alone=78.75).",
+      "doubt": ""
+     },
+     {
+      "id": "C-28",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "value": "2.50 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "value": "320 ft-k",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) W ____",
+        "value": "W21x44",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Trib width 10 ft: wD=0.75, wL=1.00 k/ft. (a) wu=0.9+1.6=2.5 k/ft. (b) Mu=2.5(32^2)/8=320 ft-k. (c) Zx,req=320*12/45=85.33; Table 3-2 lightest: W21x44 (Zx 95.4, phiMp 358). Framing weight already in the 75 psf.",
+      "doubt": ""
+     },
+     {
+      "id": "C-29",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "value": "53.0 kips",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "530 ft-k",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Beam: trib 10 ft, wu=[1.2(70)+1.6(80)]*10/1000=2.12 k/ft; reaction=2.12*25/2=26.5 k. Beams frame both sides -> girder point load=2*26.5=53.0 k at each third point (= 10 ft x 25 ft x 0.212 ksf). Girder two equal loads at third points: Mu=P*a=53.0*10=530 ft-k.",
+      "doubt": "Pu read as the TOTAL at each third point (both beams), per her rule girder load = 2 x beam reaction."
+     },
+     {
+      "id": "C-30",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "value": "416 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Trib area 20x25=500 ft^2 per floor, 4 floors. D=4*500*80/1000=160 k; L=4*500*70/1000=140 k. Pu=1.2(160)+1.6(140)=192+224=416 k.",
+      "doubt": "All four levels treated as floors (no roof live load)."
+     },
+     {
+      "id": "C-31",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "NEEDS FIGURE: span of beam B1 and its tributary width (beam spacing)",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "wu=[1.2(60)+1.6(100)]*trib/1000=0.232*trib k/ft; Mu=wu*L^2/8. Span L and tributary width come only from Figure 3.",
+      "doubt": "Figure-only numbers."
+     },
+     {
+      "id": "C-32",
+      "blanks": [
+       {
+        "blank": "Zx = ____ in.^3",
+        "value": "95.4 in.^3",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W21x44: Zx=95.4.",
+      "doubt": ""
+     },
+     {
+      "id": "C-33",
+      "blanks": [
+       {
+        "blank": "A = ____ in.^2",
+        "value": "24.0 in.^2",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "d = ____ in.",
+        "value": "14.3 in.",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "bf = ____ in.",
+        "value": "10.1 in.",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "tf = ____ in.",
+        "value": "0.855 in.",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "tw = ____ in.",
+        "value": "0.510 in.",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W14x82: A=24.0, d=14.3, bf=10.1, tf=0.855, tw=0.51.",
+      "doubt": ""
+     },
+     {
+      "id": "C-34",
+      "blanks": [
+       {
+        "blank": "ry = ____ in.",
+        "value": "1.94 in.",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W12x40: ry=1.94.",
+      "doubt": ""
+     },
+     {
+      "id": "C-35",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "value": "50 ksi",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "Fu = ____ ksi",
+        "value": "65 ksi",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her week-1 slide / Table 2-4: A572 Gr 50 Fy=50, Fu=65.",
+      "doubt": ""
+     },
+     {
+      "id": "C-36",
+      "blanks": [
+       {
+        "blank": "Hole diameter = ____ in.",
+        "value": "0.875 in.",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her rule: hole = bolt + 1/8 = 0.75+0.125=0.875 in (7/8). (J3.3 standard hole 13/16 + 1/16 for net area = same 0.875.)",
+      "doubt": "A page printing 0.8125 (J3.3 standard hole) would be wrong for a net-area question."
+     },
+     {
+      "id": "C-37",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "value": "1.2",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Table C-A-7.1 case (c): fixed base, top rotation fixed / translation free: theoretical 1.0, recommended design 1.2.",
+      "doubt": ""
+     },
+     {
+      "id": "C-38",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "value": "0.60",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Table D3.1 case 8, single angle, 3 fasteners per line: U=0.60.",
+      "doubt": ""
+     },
+     {
+      "id": "C-39",
+      "blanks": [
+       {
+        "blank": "Ix = ____ in.^4",
+        "value": "1830 in.^4",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W24x68: Ix=1830.",
+      "doubt": ""
+     },
+     {
+      "id": "C-40",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "value": "35 ksi",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her week-1 slide / Table 2-4: A53 Gr B Fy=35 (Fu 60).",
+      "doubt": ""
+     }
+    ]
+   },
+   "key2": {
+    "keys": [
+     {
+      "id": "C-01",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "488.3 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W10x45: Ag 13.3, d 10.1, bf 8.02, tf 0.62, ry 2.01; A992 Fy 50 Fu 65. Yield: 0.9*50*13.3 = 598.5 k. Holes: 2 per flange x 2 flanges = 4, hole = 0.75+0.125 = 0.875 in. An = 13.3 - 4*0.875*0.62 = 11.13 in^2. U: Case 7 flange, 3 bolts/line, bf 8.02 >= 2/3 d = 6.73 -> U 0.90. Ae = 10.017. Rupture 0.75*65*10.017 = 488.33 k. Governs 488.3 k. L/r = 240/2.01 = 119 < 300 OK.",
+      "doubt": ""
+     },
+     {
+      "id": "C-02",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "113.1 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "L4x4x1/2: Ag 3.75, t 0.5. A36 as stated (Fy 36, Fu 58; overrides her default A572 for L). Yield 0.9*36*3.75 = 121.5 k. Hole 0.875+0.125 = 1.0; An = 3.75 - 1*1.0*0.5 = 3.25. U Case 8, 4 bolts/line -> 0.80; Ae = 2.60. Rupture 0.75*58*2.60 = 113.1 k. Governs 113.1 k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-03",
+      "blanks": [
+       {
+        "blank": "Ag = ____ in.^2",
+        "value": "7.50 in^2",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "An = ____ in.^2",
+        "value": "6.00 in^2",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "243 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Ag = 0.75*10 = 7.5. Two lines -> 2 holes across, hole = 1.0 in: An = 7.5 - 2*1.0*0.75 = 6.0. U = 1.0 (Case 1, plate) Ae = 6.0. Yield 0.9*36*7.5 = 243 k; rupture 0.75*58*6.0 = 261 k. Governs 243 k. (Spec J4.1 0.85Ag = 6.375 > 6.0, no effect.)",
+      "doubt": "Bolts per line not given; irrelevant for a plate (U = 1.0)."
+     },
+     {
+      "id": "C-04",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "292.1 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W8x31: Ag 9.13, tw 0.285. Yield 0.9*50*9.13 = 410.85 k. Web: 2 holes of 1.0 in through tw: An = 9.13 - 2*1.0*0.285 = 8.56. U Case 7 web, 4 bolts/line -> 0.70; Ae = 5.992. Rupture 0.75*65*5.992 = 292.11 k. Governs 292.1 k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-05",
+      "blanks": [
+       {
+        "blank": "Lightest W8 = ____",
+        "value": "W8x31",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Pu = 1.2*120 + 1.6*100 = 304 k (1.4D = 168 less). Ag,req = 304/45 = 6.76; Ae,req = 304/48.75 = 6.24; rmin >= 300/300 = 1.0 in. Holes 4 x 0.875 x tf. W8x24 (A 7.08, tf 0.40, bf 6.50 >= 2/3*7.93 -> U 0.9): An 5.68, Ae 5.11, rupture 249.2 < 304 NG. W8x28 (A 8.25, tf 0.465, U 0.9): An 6.62, Ae 5.96, rupture 290.6 < 304 NG. W8x31 (A 9.13, tf 0.435, bf 8.0 = d 8.0 -> U 0.9): An 7.61, Ae 6.85, rupture 333.8 >= 304 OK; yield 410.9 OK; ry 2.02 -> L/r 149 OK. Self weight (0.78 k service) does not change the choice.",
+      "doubt": ""
+     },
+     {
+      "id": "C-06",
+      "blanks": [
+       {
+        "blank": "Ag,req = ____ in.^2",
+        "value": "4.44 in^2",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Pu = 1.2*40 + 1.6*60 = 144 k. Ag = 144/(0.9*36) = 4.444 in^2 (matches printed 4.44).",
+      "doubt": ""
+     },
+     {
+      "id": "C-07",
+      "blanks": [
+       {
+        "blank": "An = ____ in.^2",
+        "value": "NEEDS FIGURE: plate width, plate thickness, number of holes across the critical section (and stagger s, gage g if staggered)",
+        "tolerance": "n/a"
+       }
+      ],
+      "working": "Hole = 0.75 + 0.125 = 0.875 in. An = (b - n*0.875 + sum s^2/4g) * t, using the smallest over the possible failure paths. All of b, t, n, s, g come from the figure.",
+      "doubt": "Figure-only numbers; no key possible from the words."
+     },
+     {
+      "id": "C-08",
+      "blanks": [
+       {
+        "blank": "(a) \u03c6Pn = ____ kips",
+        "value": "657 kips",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(b) \u03c6Pn = ____ kips",
+        "value": "498.9 kips",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "value": "498.9 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W12x50: Ag 14.6, d 12.2, bf 8.08, tf 0.64, ry 1.96. (a) 0.9*50*14.6 = 657 k. (b) 4 holes x 1.0 in x 0.64: An = 14.6 - 2.56 = 12.04. bf 8.08 < 2/3 d = 8.133 -> U 0.85. Ae = 10.234. 0.75*65*10.234 = 498.9 k. (c) smaller = 498.9 k. L/r = 288/1.96 = 147 OK.",
+      "doubt": "bf vs 2/3 d is close (8.08 vs 8.13) but clearly U = 0.85; a solver using 0.90 would get 528.2 (wrong)."
+     },
+     {
+      "id": "C-09",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "226.2 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "2L5x3x1/2 LLBB: Ag = 7.50 (2 x 3.75), t 0.5. A36 Fy 36 Fu 58. Yield 0.9*36*7.5 = 243 k. One hole per angle (bolt passes through both): An = 7.5 - 2*1.0*0.5 = 6.5. U Case 8, 4 bolts/line -> 0.80; Ae = 5.2. Rupture 0.75*58*5.2 = 226.2 k. Governs 226.2 k.",
+      "doubt": "Assumes the single line of bolts passes through both angles (2 holes deducted), the standard reading."
+     },
+     {
+      "id": "C-10",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "542 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Pinned-pinned K = 1.0, KL = 20 ft both axes -> Table 4-1a W12x65 at 20 ft = 542 k (lookup; hand check ry 3.02, KL/r 79.5, Fe 45.3, Fcr 31.5, phiFcr 28.36 x 19.1 = 541.6).",
+      "doubt": ""
+     },
+     {
+      "id": "C-11",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "512 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Fixed-pinned recommended K = 0.8; KL = 0.8*15 = 12 ft both axes -> Table 4-1a W10x49 at 12 ft = 512 k (hand check: 144/2.54 = 56.7, Fe 89.1, Fcr 39.53, phiFcr 35.58 x 14.4 = 512.3).",
+      "doubt": ""
+     },
+     {
+      "id": "C-12",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "924.9 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W14x90: A 26.5, rx 6.14, ry 3.70. KxLx = 30 ft = 360 in -> 360/6.14 = 58.63; KyLy = 15 ft = 180 in -> 180/3.70 = 48.65. Lengths differ -> her method: larger KL/r 58.63 rounded UP to 59; Table 4-14 Fy 50 at 59: phiFcr = 34.9 ksi. phiPn = 34.9*26.5 = 924.85 k.",
+      "doubt": "Unrounded KL/r (or Table 4-1a with equivalent KL = 30/1.66 = 18.1 ft) gives about 927.5 k; within 0.3%, so both pass at +-0.5%."
+     },
+     {
+      "id": "C-13",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "343 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Fixed-fixed recommended K = 0.65; KL = 0.65*20 = 13 ft both axes -> Table 4-1a W8x40 at 13 ft = 343 k (hand check: 156/2.04 = 76.5, Fe 48.9, Fcr 32.6, phiFcr 29.34 x 11.7 = 343.3).",
+      "doubt": ""
+     },
+     {
+      "id": "C-14",
+      "blanks": [
+       {
+        "blank": "Fe = ____ ksi",
+        "value": "29.22 ksi",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "Pe = ____ kips",
+        "value": "283.7 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W10x33: A 9.71, ry 1.94 (governs), Iy 36.6. KL = 192 in; KL/r = 192/1.94 = 98.97. Fe = pi^2*29000/98.97^2 = 286218/9794.9 = 29.22 ksi. Pe = Fe*A = 29.22*9.71 = 283.7 k.",
+      "doubt": "Rounding KL/r up to 99 gives Fe 29.20, Pe 283.6; Pe = pi^2 E Iy/(KL)^2 with Iy 36.6 gives 284.2. All within +-0.5%."
+     },
+     {
+      "id": "C-15",
+      "blanks": [
+       {
+        "blank": "Lightest W12 = ____",
+        "value": "W12x65",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Pu = 1.2*150 + 1.6*250 = 580 k. K = 1.0, KL = 15 ft both axes -> Table 4-1a at 15 ft: W12x53 478, W12x58 525 (< 580 NG), W12x65 663 >= 580 OK. Self weight 1.2*0.975 = 1.2 k does not change it.",
+      "doubt": ""
+     },
+     {
+      "id": "C-16",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "NEEDS FIGURE: column length L, end conditions (K), and any intermediate bracing about the weak axis",
+        "tolerance": "n/a"
+       }
+      ],
+      "working": "W12x53: A 15.6, rx 5.23, ry 2.48. If KxLx = KyLy: Table 4-1a W12x53 at KL. Else larger of KxLx/5.23, KyLy/2.48 rounded up, phiFcr from Table 4-14 (Fy 50) x 15.6.",
+      "doubt": "All governing numbers are in the figure."
+     },
+     {
+      "id": "C-17",
+      "blanks": [
+       {
+        "blank": "(a) KL/r = ____",
+        "value": "59.7",
+        "tolerance": "59.7 to 60 (her method rounds 59.7 up to 60 before Table 4-14)"
+       },
+       {
+        "blank": "(b) \u03c6Fcr = ____ ksi",
+        "value": "34.6 ksi",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "value": "460.2 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "W10x45: A 13.3, rx 4.32, ry 2.01. x: 240/4.32 = 55.56; y: 120/2.01 = 59.70 -> governs 59.70, round up to 60. Table 4-14 Fy 50 at 60: phiFcr = 34.6 ksi. phiPn = 34.6*13.3 = 460.18 k.",
+      "doubt": "(a) could be expected as 59.7 or as her rounded 60; unrounded phiFcr is 34.68 (phiPn 461.2), within tolerance."
+     },
+     {
+      "id": "C-18",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "value": "133 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Fixed-free recommended K = 2.1; KL = 2.1*10 = 21 ft both axes -> Table 4-1a W8x31 at 21 ft = 133 k (unrounded 132.5; hand check: 252/2.02 = 124.8, Fe 18.39, Fy/Fe > 2.25 -> Fcr = 0.877Fe = 16.13, phiFcr 14.52 x 9.13 = 132.5). KL/r < 200 OK.",
+      "doubt": "132.5 and 133 both acceptable."
+     },
+     {
+      "id": "C-19",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "334.1 ft-k",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "wu = 1.2*1.2 + 1.6*2.0 = 4.64 k/ft. Mu = 4.64*24^2/8 = 334.08 ft-k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-20",
+      "blanks": [
+       {
+        "blank": "Zx,req = ____ in.^3",
+        "value": "66.67 in^3",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Zx = Mu*12/(0.9*50) = 3000/45 = 66.67 in^3.",
+      "doubt": ""
+     },
+     {
+      "id": "C-21",
+      "blanks": [
+       {
+        "blank": "Lightest W = ____",
+        "value": "W18x35",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "wu = 1.2*1.0 + 1.6*1.25 = 3.2 k/ft; Mu = 3.2*24^2/8 = 230.4 ft-k; Zx,req = 230.4*12/45 = 61.44. Table 3-2 lightest with Zx >= 61.44: W18x35 (Zx 66.5, phiMp 249). Add self weight: wu = 3.2 + 1.2*0.035 = 3.242, Mu = 233.4 <= 249 OK.",
+      "doubt": ""
+     },
+     {
+      "id": "C-22",
+      "blanks": [
+       {
+        "blank": "\u03c6Mp = ____ ft-k",
+        "value": "378.75 ft-k",
+        "tolerance": "+-0.5% (Table 3-2 prints 379)"
+       }
+      ],
+      "working": "W18x50 Zx 101. phiMp = 0.9*50*101/12 = 378.75 ft-k (Table 3-2: 379).",
+      "doubt": ""
+     },
+     {
+      "id": "C-23",
+      "blanks": [
+       {
+        "blank": "wD = ____ k/ft",
+        "value": "0.60 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "wL = ____ k/ft",
+        "value": "0.80 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "wu = ____ k/ft",
+        "value": "2.00 k/ft",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "wD = 75*8/1000 = 0.60; wL = 100*8/1000 = 0.80; wu = 1.2*0.6 + 1.6*0.8 = 0.72 + 1.28 = 2.00 k/ft.",
+      "doubt": ""
+     },
+     {
+      "id": "C-24",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "value": "320 kips",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "1.2*140 + 1.6*95 = 168 + 152 = 320 k (matches printed answer).",
+      "doubt": ""
+     },
+     {
+      "id": "C-25",
+      "blanks": [
+       {
+        "blank": "wL,max = ____ k/ft",
+        "value": "2.79 k/ft",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "phiMp = 0.9*50*73/12 = 273.75 ft-k. wu,max = 8*273.75/20^2 = 5.475 k/ft. wD = 0.8 + 0.040 (self weight) = 0.84; 1.2*0.84 = 1.008. wL = (5.475 - 1.008)/1.6 = 2.792 k/ft.",
+      "doubt": "Using Table 3-2 printed 274 gives 2.795 (fine). Omitting the self weight would give 2.82 (about 1% high) -- the words say 'in addition to its own weight', so self weight is included."
+     },
+     {
+      "id": "C-26",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "value": "5.00 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "value": "490 ft-k",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) W ____",
+        "value": "W24x55",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "wu = 1.2*1.5 + 1.6*2.0 = 5.0 k/ft. Mu = 5.0*28^2/8 = 490 ft-k. Zx,req = 490*12/45 = 130.67. Table 3-2 lightest: W24x55 (Zx 134, phiMp 503 >= 490). W21x57 (Zx 129) fails. Beam weight already included.",
+      "doubt": ""
+     },
+     {
+      "id": "C-27",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "307.5 ft-k",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Uniform: 1.2*0.5 = 0.6 k/ft -> 0.6*30^2/8 = 67.5. Point: 1.6*20 = 32 k -> 32*30/4 = 240. Both max at midspan: Mu = 307.5 ft-k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-28",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "value": "2.50 k/ft",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "value": "320 ft-k",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "(c) W ____",
+        "value": "W21x44",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "wD = 75*10/1000 = 0.75, wL = 100*10/1000 = 1.0; wu = 0.9 + 1.6 = 2.5 k/ft. Mu = 2.5*32^2/8 = 320 ft-k. Zx,req = 320*12/45 = 85.33. Table 3-2 lightest: W21x44 (Zx 95.4, phiMp 358). (W18x40 Zx 78.4 fails; W18x46 heavier.) Framing weight already in the 75 psf.",
+      "doubt": ""
+     },
+     {
+      "id": "C-29",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "value": "53.0 kips",
+        "tolerance": "+-0.5%"
+       },
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "530 ft-k",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Beam wu = (1.2*70 + 1.6*80)*10/1000 = 212 psf*10 ft = 2.12 k/ft. Beam reaction = 2.12*25/2 = 26.5 k. Beams from both sides -> girder load at each third point Pu = 2*26.5 = 53.0 k. Girder, two equal loads at third points: Mu = Pu*a = 53*10 = 530 ft-k.",
+      "doubt": "Pu could be misread as one beam reaction (26.5 k); her note says girder load = 2 x beam reaction when beams frame in from both sides, so 53 k."
+     },
+     {
+      "id": "C-30",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "value": "416 kips",
+        "tolerance": "+-0.5%"
+       }
+      ],
+      "working": "Area 20*25 = 500 ft^2 per floor x 4 floors. D = 80*500*4/1000 = 160 k; L = 70*500*4/1000 = 140 k. Pu = 1.2*160 + 1.6*140 = 192 + 224 = 416 k.",
+      "doubt": ""
+     },
+     {
+      "id": "C-31",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "value": "NEEDS FIGURE: span L of B1 and its tributary width (beam spacing)",
+        "tolerance": "n/a"
+       }
+      ],
+      "working": "wu = (1.2*60 + 1.6*100) psf = 232 psf x tributary width s (ft) /1000 = 0.232 s k/ft. Mu = wu*L^2/8 (simple span).",
+      "doubt": "Span, spacing and support conditions are in the figure."
+     },
+     {
+      "id": "C-32",
+      "blanks": [
+       {
+        "blank": "Zx = ____ in.^3",
+        "value": "95.4 in^3",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W21x44: Zx = 95.4.",
+      "doubt": ""
+     },
+     {
+      "id": "C-33",
+      "blanks": [
+       {
+        "blank": "A = ____ in.^2",
+        "value": "24.0 in^2",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "d = ____ in.",
+        "value": "14.3 in",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "bf = ____ in.",
+        "value": "10.1 in",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "tf = ____ in.",
+        "value": "0.855 in",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "tw = ____ in.",
+        "value": "0.510 in",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W14x82: A 24.0, d 14.3, bf 10.1, tf 0.855, tw 0.51.",
+      "doubt": ""
+     },
+     {
+      "id": "C-34",
+      "blanks": [
+       {
+        "blank": "ry = ____ in.",
+        "value": "1.94 in",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W12x40: ry = 1.94.",
+      "doubt": ""
+     },
+     {
+      "id": "C-35",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "value": "50 ksi",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "Fu = ____ ksi",
+        "value": "65 ksi",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her week-1 slide / Table 2-4: A572 Gr 50 Fy 50, Fu 65.",
+      "doubt": ""
+     },
+     {
+      "id": "C-36",
+      "blanks": [
+       {
+        "blank": "Hole diameter = ____ in.",
+        "value": "0.875 in",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her rule R4: hole = bolt + 1/8 = 0.75 + 0.125 = 0.875 in (7/8 in).",
+      "doubt": "Table J3.3 standard hole is 13/16 = 0.8125 in; the words say 'in net area calculations', so 0.875."
+     },
+     {
+      "id": "C-37",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "value": "1.2",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Table C-A-7.1 case (c), fixed base / top rotation fixed, translation free: theoretical 1.0, recommended design value 1.2 (her slide row: 0.65, 0.80, 1.2, 1.0, 2.10, 2.0).",
+      "doubt": ""
+     },
+     {
+      "id": "C-38",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "value": "0.60",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Table D3.1 Case 8, single angle, three fasteners per line: U = 0.60.",
+      "doubt": ""
+     },
+     {
+      "id": "C-39",
+      "blanks": [
+       {
+        "blank": "Ix = ____ in.^4",
+        "value": "1830 in^4",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Lookup W24x68: Ix = 1830.",
+      "doubt": ""
+     },
+     {
+      "id": "C-40",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "value": "35 ksi",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her week-1 slide: pipes ASTM A53 Grade B Fy 35 (Fu 60).",
+      "doubt": ""
+     }
+    ]
+   },
+   "final": [
+    {
+     "id": "C-01",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "488.3 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 488.3 (net rupture governs, 4 flange holes 0.875 x tf 0.62, U=0.90)"
+    },
+    {
+     "id": "C-02",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "113.1 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 113.1 (A36 stated in the words overrides her L default; U=0.80)"
+    },
+    {
+     "id": "C-03",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Ag = ____ in.^2",
+       "value": "7.50 in.^2",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "An = ____ in.^2",
+       "value": "6.00 in.^2",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "243.0 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 7.50 / 6.00 / 243 (yield governs)"
+    },
+    {
+     "id": "C-04",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "292.1 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 292.1 (web, U=0.70)"
+    },
+    {
+     "id": "C-05",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Lightest W8 = ____",
+       "value": "W8x31",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both W8x31 (W8x28 rupture 290.6 < 304)"
+    },
+    {
+     "id": "C-06",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Ag,req = ____ in.^2",
+       "value": "4.44 in.^2",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 4.44, matches printed answer"
+    },
+    {
+     "id": "C-07",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "An = ____ in.^2",
+       "value": "NEEDS FIGURE: plate width, plate thickness, number of holes in the critical section (and stagger s, gage g if staggered)",
+       "tolerance": "page must stop and ask for the figure values; any number printed from the words alone is WRONG"
+      }
+     ],
+     "settled": "agree: both keyers say figure-only; kept as a must-ask-for-figure item rather than dropped"
+    },
+    {
+     "id": "C-08",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "(a) \u03c6Pn = ____ kips",
+       "value": "657.0 kips",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "(b) \u03c6Pn = ____ kips",
+       "value": "498.9 kips",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "(c) \u03c6Pn = ____ kips",
+       "value": "498.9 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 657 / 498.9 / 498.9 (bf 8.08 < 2/3 d 8.13 -> U=0.85; 528.2 with U=0.90 is wrong)"
+    },
+    {
+     "id": "C-09",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "226.2 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 226.2"
+    },
+    {
+     "id": "C-10",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "542 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 542 (Table 4-1a, K=1.0, 20 ft)"
+    },
+    {
+     "id": "C-11",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "512 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 512 (K=0.8, KL=12 ft)"
+    },
+    {
+     "id": "C-12",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "924.9 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 924.9 (x governs 58.63 -> 59, Table 4-14 phiFcr 34.9 x 26.5)"
+    },
+    {
+     "id": "C-13",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "343 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 343 (K=0.65, KL=13 ft)"
+    },
+    {
+     "id": "C-14",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Fe = ____ ksi",
+       "value": "29.22 ksi",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "Pe = ____ kips",
+       "value": "283.7 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: 29.2 vs 29.22 same within last printed digit; Pe 283.7 both (284.2 via Iy also within tolerance)"
+    },
+    {
+     "id": "C-15",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Lightest W12 = ____",
+       "value": "W12x65",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both W12x65 (Pu 580; W12x58 525 fails)"
+    },
+    {
+     "id": "C-16",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "NEEDS FIGURE: column length, end conditions (K) and any weak-axis bracing points",
+       "tolerance": "page must stop and ask for the figure values; any number printed from the words alone is WRONG"
+      }
+     ],
+     "settled": "agree: both keyers say figure-only; kept as a must-ask-for-figure item rather than dropped"
+    },
+    {
+     "id": "C-17",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "(a) KL/r = ____",
+       "value": "59.7",
+       "tolerance": "59.7 to 60 (60 is her rounded-up table entry)"
+      },
+      {
+       "blank": "(b) \u03c6Fcr = ____ ksi",
+       "value": "34.6 ksi",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "(c) \u03c6Pn = ____ kips",
+       "value": "460.2 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 59.7 (60 accepted) / 34.6 / 460.2 (y governs 120/2.01)"
+    },
+    {
+     "id": "C-18",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Pn = ____ kips",
+       "value": "133 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 133 (K=2.1, KL=21 ft; unrounded 132.5 within tolerance)"
+    },
+    {
+     "id": "C-19",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Mu = ____ ft-k",
+       "value": "334.1 ft-k",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 334.1"
+    },
+    {
+     "id": "C-20",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Zx,req = ____ in.^3",
+       "value": "66.67 in.^3",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: 66.7 vs 66.67 same within rounding"
+    },
+    {
+     "id": "C-21",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Lightest W = ____",
+       "value": "W18x35",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both W18x35 (self weight checked after, 233.4 <= 249)"
+    },
+    {
+     "id": "C-22",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "\u03c6Mp = ____ ft-k",
+       "value": "378.8 ft-k",
+       "tolerance": "+-0.5% (computed 378.75; Table 3-2 prints 379)"
+      }
+     ],
+     "settled": "agree: 378.8 vs 378.75 same within rounding"
+    },
+    {
+     "id": "C-23",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "wD = ____ k/ft",
+       "value": "0.60 k/ft",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "wL = ____ k/ft",
+       "value": "0.80 k/ft",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "wu = ____ k/ft",
+       "value": "2.00 k/ft",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 0.60 / 0.80 / 2.00"
+    },
+    {
+     "id": "C-24",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Pu = ____ kips",
+       "value": "320 kips",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 320, matches printed answer"
+    },
+    {
+     "id": "C-25",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "wL,max = ____ k/ft",
+       "value": "2.79 k/ft",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 2.79 (self weight 0.040 included per 'in addition to its own weight'; 2.82 without it is wrong)"
+    },
+    {
+     "id": "C-26",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "(a) wu = ____ k/ft",
+       "value": "5.00 k/ft",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "(b) Mu = ____ ft-k",
+       "value": "490 ft-k",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "(c) W ____",
+       "value": "W24x55",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 5.00 / 490 / W24x55"
+    },
+    {
+     "id": "C-27",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Mu = ____ ft-k",
+       "value": "307.5 ft-k",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 307.5"
+    },
+    {
+     "id": "C-28",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "(a) wu = ____ k/ft",
+       "value": "2.50 k/ft",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "(b) Mu = ____ ft-k",
+       "value": "320 ft-k",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "(c) W ____",
+       "value": "W21x44",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 2.50 / 320 / W21x44"
+    },
+    {
+     "id": "C-29",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Pu = ____ kips",
+       "value": "53.0 kips",
+       "tolerance": "+-0.5%"
+      },
+      {
+       "blank": "Mu = ____ ft-k",
+       "value": "530 ft-k",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 53.0 / 530 (girder load = 2 x beam reaction, her rule)"
+    },
+    {
+     "id": "C-30",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Pu = ____ kips",
+       "value": "416 kips",
+       "tolerance": "+-0.5%"
+      }
+     ],
+     "settled": "agree: both 416"
+    },
+    {
+     "id": "C-31",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Mu = ____ ft-k",
+       "value": "NEEDS FIGURE: span of beam B1 and its tributary width (beam spacing)",
+       "tolerance": "page must stop and ask for the figure values; any number printed from the words alone is WRONG"
+      }
+     ],
+     "settled": "agree: both keyers say figure-only; kept as a must-ask-for-figure item rather than dropped"
+    },
+    {
+     "id": "C-32",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Zx = ____ in.^3",
+       "value": "95.4 in.^3",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 95.4"
+    },
+    {
+     "id": "C-33",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "A = ____ in.^2",
+       "value": "24.0 in.^2",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "d = ____ in.",
+       "value": "14.3 in.",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "bf = ____ in.",
+       "value": "10.1 in.",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "tf = ____ in.",
+       "value": "0.855 in.",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "tw = ____ in.",
+       "value": "0.510 in.",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 24.0 / 14.3 / 10.1 / 0.855 / 0.510"
+    },
+    {
+     "id": "C-34",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "ry = ____ in.",
+       "value": "1.94 in.",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 1.94"
+    },
+    {
+     "id": "C-35",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Fy = ____ ksi",
+       "value": "50 ksi",
+       "tolerance": "exact"
+      },
+      {
+       "blank": "Fu = ____ ksi",
+       "value": "65 ksi",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 50 / 65"
+    },
+    {
+     "id": "C-36",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Hole diameter = ____ in.",
+       "value": "0.875 in.",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 0.875 (her rule bolt + 1/8; 0.8125 is wrong for net area)"
+    },
+    {
+     "id": "C-37",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "K = ____",
+       "value": "1.2",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 1.2"
+    },
+    {
+     "id": "C-38",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "U = ____",
+       "value": "0.60",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 0.60"
+    },
+    {
+     "id": "C-39",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Ix = ____ in.^4",
+       "value": "1830 in.^4",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 1830"
+    },
+    {
+     "id": "C-40",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "Fy = ____ ksi",
+       "value": "35 ksi",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both 35"
+    }
+   ]
+  },
+  {
+   "kind": "words",
+   "key1": {
+    "keys": [
+     {
+      "id": "C-41",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "b (elastic limit)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her slide (sentence 104): 'Elastic Limit: Largest stress the material can resist without being permanently deformed'; sentence 6: stretch it, let it go, it goes back to the original, no permanent deformation. Proportional limit is only where the curve stops being straight (103).",
+      "doubt": "In some textbooks the proportional limit and the elastic limit are almost the same point, but the definition given (no permanent set) is her elastic limit."
+     },
+     {
+      "id": "C-42",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "c (both have E = 29,000 ksi)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentence 1098: E steel = 29,000 ksi, a constant; strength (Fy, Fu) changes with grade but E does not. 11,200 ksi is G, the shear modulus (115).",
+      "doubt": ""
+     },
+     {
+      "id": "C-43",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "value": "d (0.60)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Table D3.1 Case 8 (single and double angles), her sentence 170: 4 or more fasteners per line U = 0.80; 3 fasteners per line U = 0.60. Here there are 3 bolts in one line parallel to the load, so U = 0.60.",
+      "doubt": "The Spec lets you use a larger U from Case 2 (1 - x/l), but the question asks for the Table D3.1 value and gives no x-bar or connection length, so 0.60 under her method."
+     },
+     {
+      "id": "C-44",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "B (live loads are harder to predict accurately than dead loads)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentence 1105: 'We can be very accurate with dead load and less accurate with live loads. So that's a bigger safety factor.'",
+      "doubt": ""
+     },
+     {
+      "id": "C-45",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "B (A992)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her rule R2 and her materials list (L139): all W, C and MC shapes are ASTM A992, Fy 50, Fu 65.",
+      "doubt": ""
+     },
+     {
+      "id": "C-46",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "B (the weak y-y axis)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentence 195: if KxLx = KyLy then KL/ry is always the largest slenderness ratio and the member buckles about the y-axis first: 'If the lengths are the same in both directions, the weak axis will fail first.' The question names Fig. 2, but you do not need the figure because the text says KxLx = KyLy.",
+      "doubt": "The question mentions Fig. 2. If the figure showed something special, such as bracing, that would matter, but the text says the effective lengths are equal, so the weak axis governs."
+     },
+     {
+      "id": "C-47",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "value": "b (0.65)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her K table (sentence 309, Table C-A-7.1): fixed-fixed has a theoretical K of 0.5 and a recommended design value of 0.65. She says 'Use K for design.' The question asks for the recommended design value, so the answer is 0.65.",
+      "doubt": "0.50 is the theoretical value and is a distractor. The question explicitly asks for the recommended design value."
+     },
+     {
+      "id": "C-48",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "b (the lightest shape in the group)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "R11 and sentence 90: the boldface shape at the very top of each grouping is the cheapest, the lightest. Sentence 314: 'We are not looking for the one that's closest. We are looking for the lightest.'",
+      "doubt": ""
+     },
+     {
+      "id": "C-49",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "b (occupants have two hours to evacuate the building)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentences 25 and 1101, in her words: 'all office buildings have to have a two hour fire rate. It means you have two hours to evacuate the building.' Also: 'It isn't because the steel melted'. Her version is stored on purpose.",
+      "doubt": "In ordinary engineering a fire rating is a fire-resistance duration of the assembly, not an evacuation time. The rules say her version counts, so b."
+     },
+     {
+      "id": "C-50",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "C (corrosion (rust))",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her disadvantages slide (123) lists corrosion (rust), maintenance, fireproofing, strength loss at high temperature, buckling, fatigue and delivery. Strength-to-weight ratio, speed of erection and reuse (scrap value) are on her advantages list (124, 128, 129).",
+      "doubt": ""
+     },
+     {
+      "id": "C-51",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "ductile",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentences 120 and 1109: 'Ductile (withstands large deformations w/o failure)' against a brittle material such as concrete, which fails suddenly.",
+      "doubt": "The noun form 'ductility' would also be acceptable, but the sentence reads 'is said to be ____', which asks for the adjective."
+     },
+     {
+      "id": "C-52",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "effective length",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "written ____",
+        "value": "KL",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her slide (181): 'KL = Effective Length; Distance between Inflection Points / Distance between Points of Zero Moment'.",
+      "doubt": "The 16th-edition AISC symbol is Lc, which some keys may accept. Her slide writes KL, so KL is the primary answer."
+     },
+     {
+      "id": "C-53",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "shear lag",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentence 162: shear lag is the 'Nonuniform tensile stress distribution in a member or connecting element in the vicinity of a connection.' U accounts for it (161).",
+      "doubt": ""
+     },
+     {
+      "id": "C-54",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "strain",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "Greek letter ____",
+        "value": "epsilon",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentences 4 and 1106: 'Strain: Is it equal to the change in length, designated epsilon?' Strain is epsilon = delta / L.",
+      "doubt": "The symbol itself is the Greek epsilon. It is written out as 'epsilon' here to keep the text ASCII."
+     },
+     {
+      "id": "C-55",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "Analysis: you know the geometric property (the member size) and the material strength, and you calculate the load (the capacity). Design: you know the load and the material strength, and you choose the geometric property (the size); design is trial and error.",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her slide (173): 'Design: know LOAD & Fmat'l, choose GEO. PROP'; 'Analysis: know GEO. PROP & Fmat'l, calculate LOAD'; 'Design is trial & error'. Sentence 37 says the same in class. Sentence 174: of load, geometric property and material, you always know two of the three.",
+      "doubt": "This is a free-response question. Any wording that states known versus found for both cases matches her key."
+     },
+     {
+      "id": "C-56",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "Bending acts as a couple: one flange is in compression and the other in tension. The deeper the member, the farther apart the two flanges and the more moment it can resist without adding steel, because most of the moment of inertia is the flange area times its distance squared (A d^2).",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Sentence 1069: 'The deeper the member is the further away these two flanges are the more moment it can resist... for the same A and make it deeper you get a lot more capacity.' Sentence 82: bending resolves into a couple. Sentence 99: most of the moment of inertia is the flange area times its distance squared.",
+      "doubt": "This is a free-response question. The key idea is the larger lever arm between the flanges (the couple), or A d^2."
+     },
+     {
+      "id": "C-57",
+      "blanks": [
+       {
+        "blank": "1) ____",
+        "value": "Greater deflection and drift than braced frames or shear walls",
+        "tolerance": "exact"
+       },
+       {
+        "blank": "2) ____",
+        "value": "Expensive moment connections (they need care in erection), or: localized stress concentrations at the rigid joints",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Her slide wk3 p.10 (188 and 1089) gives four disadvantages of an unbraced (moment) frame: greater deflection and drift than braced frames or shear walls; localized stress concentrations at rigid joints; care needed in erecting connections to resist lateral loads; expensive moment connections. In class (1039) she added that it needs bigger members because it is flexible and will move.",
+      "doubt": "Any two of the four slide items, or the bigger-members point from class, should count. The two above are the most direct."
+     },
+     {
+      "id": "C-58",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "value": "F (False)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Pcr = pi^2 E I / L^2 contains no Fy. Her slide (176) says Euler's formula is 'Independent of material strength', and sentence 1041 says it has no material strength in it. E = 29,000 ksi for every grade (1098), so a higher Fy does not change the Euler load.",
+      "doubt": ""
+     },
+     {
+      "id": "C-59",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "value": "F (False)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "R8 and sentence 317: compression capacity is phi Fcr Ag, the GROSS area: 'There's no A net here' because the bolt shafts fill the holes and become part of the member.",
+      "doubt": ""
+     },
+     {
+      "id": "C-60",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "value": "T (True)",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "R12 and sentence 1100: 'If it's not labelled ultimate or factored, it's unfactored'; 'If they say nothing, it means it's unfactored', and you apply the load factors (1.2D + 1.6L) yourself.",
+      "doubt": ""
+     }
+    ]
+   },
+   "key2": {
+    "keys": [
+     {
+      "id": "C-41",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "b",
+        "tolerance": "exact (letter b = elastic limit)"
+       }
+      ],
+      "working": "Her slide (#104): 'Elastic Limit: Largest stress the material can resist without being permanently deformed'; class (#6): stretch it and let go, it goes back to the original, no permanent deformation. Proportional limit (#103) is where the line stops being straight, not where permanent set starts. Answer b) elastic limit.",
+      "doubt": ""
+     },
+     {
+      "id": "C-42",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "c",
+        "tolerance": "exact (letter c = both 29,000 ksi)"
+       }
+      ],
+      "working": "#114 / #1098: 'E steel = 29,000 ksi a constant'. Strength (Fy, Fu) changes with grade but E does not. Her slides use 29,000 ksi for Fy 50, 46 and 36. 11,200 ksi is G, the shear modulus (#115), so d is a distractor. Answer (c).",
+      "doubt": ""
+     },
+     {
+      "id": "C-43",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "value": "d",
+        "tolerance": "exact (letter d = 0.60)"
+       }
+      ],
+      "working": "Table D3.1 Case 8 (single and double angles), her slide (#170): '4 or more fasteners per line: U = 0.80; 3 fasteners per line: U = 0.60', in either leg, parallel to the force. A single angle bolted through one leg has 3 bolts in one line, so U = 0.60. The Spec D3 minimum U, the connected-leg area over the gross area (about 0.5 for an equal-leg angle), is below 0.60, so it does not govern. Case 1 (U = 1.0) does not apply because the outstanding leg is not connected. Answer d.",
+      "doubt": "Case 2 (U = 1 - x/l) may give a larger value, but it needs geometry the question does not give, and her method uses Case 8. The question names Table D3.1 and the bolt count, so the answer is unambiguous."
+     },
+     {
+      "id": "C-44",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "B",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "#1105: 'We can be very accurate with dead load and less accurate with live loads. So that's a bigger safety factor.' Live load is harder to grasp (the apartment that becomes a fraternity). Answer B.",
+      "doubt": ""
+     },
+     {
+      "id": "C-45",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "B",
+        "tolerance": "exact (A992)"
+       }
+      ],
+      "working": "R2 / #15 / #275: 'All wide flange W, C and MC shapes are ASTM A992 -> Fy = 50 ksi Fu = 65 ksi'. Answer (B) A992.",
+      "doubt": ""
+     },
+     {
+      "id": "C-46",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "B",
+        "tolerance": "exact (weak y-y axis)"
+       }
+      ],
+      "working": "#195: 'IF KxLx = KyLy then KL/r_y is always the maximum slenderness ratio, and the compression member will fail first, buckle about the y-axis.' 'If the lengths are the same in both directions, the weak axis will fail first.' #1108: it buckles first about the axis with the SMALLER r, so D is wrong. Answer B.",
+      "doubt": "The question cites 'Fig. 2' but has no figure. The text alone (KxLx = KyLy, W shape) settles it, so the figure is not needed."
+     },
+     {
+      "id": "C-47",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "value": "b",
+        "tolerance": "exact (letter b = 0.65)"
+       }
+      ],
+      "working": "Her K table (#309, Table C-A-7.1): fixed-fixed theoretical 0.5, recommended design value 0.65. 'Use K for design.' #1072: K = 0.65 for fixed-fixed. The question asks for the recommended design value, so the answer is 0.65 = b (a = 0.50 is the theoretical value).",
+      "doubt": "A student who mixes up the theoretical and the recommended value would pick a) 0.50. The question explicitly says 'recommended design value', so the answer is b."
+     },
+     {
+      "id": "C-48",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "b",
+        "tolerance": "exact (lightest)"
+       }
+      ],
+      "working": "R11 / #90: 'the one at the very top of each grouping is in boldface and the one in boldface is the cheapest. It's the lightest.' #314: 'We are not looking for the one that's closest. We are looking for the lightest.' Answer (b).",
+      "doubt": ""
+     },
+     {
+      "id": "C-49",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "b",
+        "tolerance": "exact (her version: two hours to evacuate)"
+       }
+      ],
+      "working": "#25 / #1101: 'all office buildings have to have a two hour fire rate. It means you have two hours to evacuate the building.' 'It isn't because the steel melted.' Her version is stored per hard rule 3. Answer b.",
+      "doubt": "Ordinary code language describes the rating as how long the assembly resists the fire, not evacuation time. Her wording is the evacuation time, and hard rule 3 says to keep her version, so the answer is b."
+     },
+     {
+      "id": "C-50",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "value": "C",
+        "tolerance": "exact (corrosion / rust)"
+       }
+      ],
+      "working": "Her disadvantages list (#123): 'Corrosion (rust) - note rust scale can be 12x original thickness'. A (high strength-to-weight), B (speed of erection) and D (possible reuse / scrap value) are all on her ADVANTAGES list (#122). Answer C.",
+      "doubt": ""
+     },
+     {
+      "id": "C-51",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "ductile",
+        "tolerance": "exact word (ductile; 'ductility' acceptable)"
+       }
+      ],
+      "working": "#120 / #1109, her slide: 'Ductile (withstands large deformations w/o failure)' '(vs a brittle material such as concrete -> sudden failure)'. Answer: ductile.",
+      "doubt": ""
+     },
+     {
+      "id": "C-52",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "effective length",
+        "tolerance": "exact term"
+       },
+       {
+        "blank": "written ____",
+        "value": "KL",
+        "tolerance": "KL (Lc also acceptable, the newer-edition symbol she equates to KL)"
+       }
+      ],
+      "working": "Her slide (#181): 'Define: KL = Effective Length; Distance between Inflection Points / Distance between Points of Zero Moment'. #73 / #179: Lc/r = KL/r, and in the red manual 'instead of LC/r they call it KL/r'. Answers: effective length; KL.",
+      "doubt": "The 16th-edition symbol is Lc. Her slides write KL, and she says Lc = KL, so KL is her answer and Lc is equivalent."
+     },
+     {
+      "id": "C-53",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "shear lag",
+        "tolerance": "exact term"
+       }
+      ],
+      "working": "#162: 'Shear lag: Nonuniform tensile stress distribution in a member or connecting element in the vicinity of a connection.' #161: 'U models lag before entire X-Area is effective'. Answer: shear lag.",
+      "doubt": ""
+     },
+     {
+      "id": "C-54",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "strain",
+        "tolerance": "exact term"
+       },
+       {
+        "blank": "Greek letter ____",
+        "value": "epsilon",
+        "tolerance": "epsilon (the letter itself also correct)"
+       }
+      ],
+      "working": "#4 / #1106: 'Strain: Is it equal to the change in length, designated epsilon'. Her slide: epsilon = delta / L. Answers: strain; epsilon.",
+      "doubt": ""
+     },
+     {
+      "id": "C-55",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "Analysis: know the geometric property (member size) and the material strength, calculate the load (capacity). Design: know the load and the material, choose the geometric property (size); design is trial and error.",
+        "tolerance": "must state both: analysis knows size + material and finds load/capacity; design knows load + material and finds the size/geometric property"
+       }
+      ],
+      "working": "Her slides (#173): 'Design: know LOAD & Fmat'l, choose GEO. PROP' / 'Analysis: know GEO. PROP & Fmat'l, calculate LOAD' / 'Design is trial & error'. Class (#37): analysis - 'We know what we have and the size of the member, we know the strength of the steel and calculate the capacity'; design - 'We've chosen the material. We're looking for the Geometric Property.' #174: there are always 3 things (load, geometric property, material), and you know two of the three.",
+      "doubt": ""
+     },
+     {
+      "id": "C-56",
+      "blanks": [
+       {
+        "blank": "____",
+        "value": "Bending is a couple: one flange in compression, the other in tension. The deeper the member, the farther apart the two flanges and the more moment it resists, without adding steel. Most of I is the flange area times its distance squared (A d^2).",
+        "tolerance": "must give the couple / flange-distance idea (farther apart flanges -> more moment); A d^2 is supporting"
+       }
+      ],
+      "working": "#1069: 'The deeper the member is the further away these two flanges are the more moment it can resist.' 'Without adding additional steel we make it deeper. We are increasing the moment capacity.' 'So for the same A and make it deeper you get a lot more capacity.' #82: bending resolves into a couple. #99: 'Most of the moment of inertia is the area of the flange times its distance squared.'",
+      "doubt": ""
+     },
+     {
+      "id": "C-57",
+      "blanks": [
+       {
+        "blank": "1) ____",
+        "value": "Produces greater deflection and drift compared to that of braced frames or shear walls",
+        "tolerance": "any one of her four listed disadvantages (or 'needs bigger members'); must differ from 2)"
+       },
+       {
+        "blank": "2) ____",
+        "value": "Expensive moment connections",
+        "tolerance": "any other one of: localized stress concentrations at rigid joints; requires care in erection of connections to resist lateral loads; expensive moment connections; greater deflection and drift; needs bigger members (class 9/09)"
+       }
+      ],
+      "working": "Her slide wk3 p.10 (#188 / #1089), disadvantages of an unbraced (moment) frame: greater deflection and drift than braced frames or shear walls; localized stress concentrations at rigid joints; care needed in erecting the connections to resist lateral loads; expensive moment connections. Class (#1039): it needs bigger members because it is flexible and will move. Any two distinct items are correct.",
+      "doubt": "The question takes any two of four (or five) items, so there is no single key. The grader must accept any two distinct items from her list."
+     },
+     {
+      "id": "C-58",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "value": "F",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "Euler Pcr = pi^2 E I / L^2 (#58) contains no Fy. Her slide (#176) says it is 'Independent of material strength'. #1041: the elastic buckling equation has no material strength because the column becomes unstable before the material strength is exhausted. E = 29,000 ksi for every grade (#1098). A higher Fy does not change Pcr, so the answer is False.",
+      "doubt": ""
+     },
+     {
+      "id": "C-59",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "value": "F",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "R8 / #71 / #317: 'the capacity is equal to 0.9 times F critical times A gross. There's no A net here because even if there are holes ... the shaft of the bolts ... just becomes part of the way.' Compression uses the gross area, so the answer is False.",
+      "doubt": ""
+     },
+     {
+      "id": "C-60",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "value": "T",
+        "tolerance": "exact"
+       }
+      ],
+      "working": "R12 / #145: 'If loads are not labeled as Factored loads - you must assume they are unfactored loads'. #1100: 'If it's not labelled ultimate or factored, it's unfactored', so you apply 1.2D + 1.6L. Answer: True.",
+      "doubt": ""
+     }
+    ]
+   },
+   "final": [
+    {
+     "id": "C-41",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "b (elastic limit)",
+       "tolerance": "exact: letter b / elastic limit"
+      }
+     ],
+     "settled": "agree: both keys b; her #104 'Elastic Limit: Largest stress the material can resist without being permanently deformed', #6 no permanent deformation; proportional limit (#103) is only the end of the straight line"
+    },
+    {
+     "id": "C-42",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "c (both have E = 29,000 ksi)",
+       "tolerance": "exact: letter c"
+      }
+     ],
+     "settled": "agree: both keys c; #114/#1098 'E steel = 29,000 ksi a constant' for every grade; 11,200 ksi is G (#115), so d is the distractor"
+    },
+    {
+     "id": "C-43",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "U = ____",
+       "value": "d (0.60)",
+       "tolerance": "exact: letter d / U = 0.60"
+      }
+     ],
+     "settled": "agree: both keys d; her Table D3.1 Case 8 row (#170): 3 fasteners per line U = 0.60 (4 or more = 0.80); no x-bar or connection length given, so Case 2 cannot be used"
+    },
+    {
+     "id": "C-44",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "B (live loads are harder to predict accurately than dead loads)",
+       "tolerance": "exact: letter B"
+      }
+     ],
+     "settled": "agree: both keys B; #1105 'We can be very accurate with dead load and less accurate with live loads. So that's a bigger safety factor.'"
+    },
+    {
+     "id": "C-45",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "B (A992)",
+       "tolerance": "exact: letter B / A992"
+      }
+     ],
+     "settled": "agree: both keys B; R2 and her-materials L139: all W, C and MC shapes are ASTM A992, Fy 50, Fu 65"
+    },
+    {
+     "id": "C-46",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "B (the weak y-y axis)",
+       "tolerance": "exact: letter B"
+      }
+     ],
+     "settled": "agree: both keys B; #195 'IF KxLx = KyLy then KL/r_y is always the maximum slenderness ratio ... buckle about the y-axis'; #1108 buckles about the axis with the smaller r (so D is wrong). The text states KxLx = KyLy, so the cited Fig. 2 is not needed"
+    },
+    {
+     "id": "C-47",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "K = ____",
+       "value": "b (0.65)",
+       "tolerance": "exact: letter b / K = 0.65 (0.50 is the theoretical value and is WRONG here)"
+      }
+     ],
+     "settled": "agree: both keys b; her K table #309: fixed-fixed theoretical 0.5, recommended design value 0.65, 'Use K for design'; question asks for the recommended design value"
+    },
+    {
+     "id": "C-48",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "b (the lightest shape in the group)",
+       "tolerance": "exact: letter b"
+      }
+     ],
+     "settled": "agree: both keys b; R11 and #90 'the one in boldface is the cheapest. It's the lightest'; #314 'We are not looking for the one that's closest. We are looking for the lightest.'"
+    },
+    {
+     "id": "C-49",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "b (occupants have two hours to evacuate the building)",
+       "tolerance": "exact: letter b (her version, per hard rule 3)"
+      }
+     ],
+     "settled": "agree: both keys b; #25/#1101 'all office buildings have to have a two hour fire rate. It means you have two hours to evacuate the building.' 'It isn't because the steel melted'. Hard rule 3 keeps her wording over the ordinary fire-resistance definition"
+    },
+    {
+     "id": "C-50",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "answer ____",
+       "value": "C (corrosion (rust))",
+       "tolerance": "exact: letter C"
+      }
+     ],
+     "settled": "agree: both keys C; her disadvantages slide #123 lists 'Corrosion (rust)'; A, B and D are all on her advantages slide #122"
+    },
+    {
+     "id": "C-51",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "____",
+       "value": "ductile",
+       "tolerance": "word: ductile (ductility also acceptable)"
+      }
+     ],
+     "settled": "agree: both keys ductile; #120/#1109 'Ductile (withstands large deformations w/o failure)' vs a brittle material such as concrete -> sudden failure"
+    },
+    {
+     "id": "C-52",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "____",
+       "value": "effective length",
+       "tolerance": "term: effective length"
+      },
+      {
+       "blank": "written ____",
+       "value": "KL",
+       "tolerance": "KL (Lc also acceptable: she equates Lc/r = KL/r, #73/#179)"
+      }
+     ],
+     "settled": "agree: both keys effective length / KL; her slide #181 'KL = Effective Length; Distance between Inflection Points / Distance between Points of Zero Moment'"
+    },
+    {
+     "id": "C-53",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "____",
+       "value": "shear lag",
+       "tolerance": "term: shear lag"
+      }
+     ],
+     "settled": "agree: both keys shear lag; #162 'Nonuniform tensile stress distribution in a member or connecting element in the vicinity of a connection'; #161 U models the lag"
+    },
+    {
+     "id": "C-54",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "____",
+       "value": "strain",
+       "tolerance": "term: strain"
+      },
+      {
+       "blank": "Greek letter ____",
+       "value": "epsilon",
+       "tolerance": "epsilon (the Greek letter itself also correct)"
+      }
+     ],
+     "settled": "agree: both keys strain / epsilon; #4/#1106 'Strain: Is it equal to the change in length, designated epsilon'"
+    },
+    {
+     "id": "C-55",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "____",
+       "value": "Analysis: you know the geometric property (the member size) and the material strength, and you calculate the load (the capacity). Design: you know the load and the material strength, and you choose the geometric property (the size); design is trial and error.",
+       "tolerance": "free response: must state both halves -- analysis knows size + material and finds the load/capacity; design knows load + material and finds the size/geometric property"
+      }
+     ],
+     "settled": "agree: both keys give the same content; her slide #173 'Design: know LOAD & Fmat'l, choose GEO. PROP / Analysis: know GEO. PROP & Fmat'l, calculate LOAD / Design is trial & error'; #37, #174"
+    },
+    {
+     "id": "C-56",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "____",
+       "value": "Bending acts as a couple: one flange is in compression and the other in tension. The deeper the member, the farther apart the two flanges and the more moment it can resist without adding steel, because most of the moment of inertia is the flange area times its distance squared (A d^2).",
+       "tolerance": "free response: must give the couple / flanges-farther-apart (larger lever arm) idea; A d^2 is supporting"
+      }
+     ],
+     "settled": "agree: both keys give the same content; #1069 'The deeper the member is the further away these two flanges are the more moment it can resist ... for the same A and make it deeper you get a lot more capacity'; #82 couple; #99 A d^2"
+    },
+    {
+     "id": "C-57",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "1) ____",
+       "value": "Greater deflection and drift than braced frames or shear walls",
+       "tolerance": "accept-set: any one of her listed disadvantages -- greater deflection and drift; localized stress concentrations at rigid joints; care needed in erecting connections to resist lateral loads; expensive moment connections; needs bigger members (class #1039). Must differ from 2)"
+      },
+      {
+       "blank": "2) ____",
+       "value": "Expensive moment connections",
+       "tolerance": "accept-set: any other item from the same list (distinct from 1))"
+      }
+     ],
+     "settled": "agree: both keys draw both blanks from her slide #188/#1089 list (plus #1039 bigger members). Kept, not dropped: her method gives a closed list, so any two distinct items is a fully gradeable accept-set, not an ambiguity"
+    },
+    {
+     "id": "C-58",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "T / F ____",
+       "value": "F (False)",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both keys F; Pcr = pi^2 E I / L^2 (#58) has no Fy; her slide #176 'Independent of material strength'; #1041; E = 29,000 ksi for every grade (#1098)"
+    },
+    {
+     "id": "C-59",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "T / F ____",
+       "value": "F (False)",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both keys F; R8 and #71/#317 capacity = phi Fcr A gross, 'There's no A net here' because the bolt shafts become part of the member"
+    },
+    {
+     "id": "C-60",
+     "drop": false,
+     "blanks": [
+      {
+       "blank": "T / F ____",
+       "value": "T (True)",
+       "tolerance": "exact"
+      }
+     ],
+     "settled": "agree: both keys T; R12, #145 'If loads are not labeled as Factored loads - you must assume they are unfactored loads', #1100 'If it's not labelled ultimate or factored, it's unfactored'"
+    }
+   ]
+  }
+ ],
+ "grades": [
+  {
+   "version": "clean",
+   "kind": "calc",
+   "g": {
+    "per_question": [
+     {
+      "id": "C-01",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "488.3 kips",
+        "page": "ANSWER: Tension capacity (first failure load): phi Pn = 488.3 kips -- rupture governs (yielding 598.5, rupture 488.3)",
+        "grade": "right"
+       }
+      ],
+      "note": "Net rupture governs, 4 flange holes x 0.875 x 0.62, U = 0.90."
+     },
+     {
+      "id": "C-02",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "113.1 kips",
+        "page": "ANSWER: Tension capacity (first failure load): phi Pn = 113.1 kips -- rupture governs (yielding 121.5, rupture 113.1)",
+        "grade": "right"
+       }
+      ],
+      "note": "Used A36 (36/58) from the words, U = 0.80."
+     },
+     {
+      "id": "C-03",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Ag = ____ in.^2",
+        "key": "7.50 in.^2",
+        "page": "FOR YOUR BLANK (Ag = ____ in.^2): Ag = 7.5 in^2",
+        "grade": "right"
+       },
+       {
+        "blank": "An = ____ in.^2",
+        "key": "6.00 in.^2",
+        "page": "FOR YOUR BLANK (An = ____ in.^2): An = 6 in^2",
+        "grade": "right"
+       },
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "243.0 kips",
+        "page": "ANSWER: Tension capacity (first failure load): phi Pn = 243 kips -- yielding governs (yielding 243, rupture 261)",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-04",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "292.1 kips",
+        "page": "ANSWER: Tension capacity (first failure load): phi Pn = 292.1 kips -- rupture governs (yielding 410.9, rupture 292.1)",
+        "grade": "right"
+       }
+      ],
+      "note": "Web, U = 0.70."
+     },
+     {
+      "id": "C-05",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Lightest W8 = ____",
+        "key": "W8x31",
+        "page": "ANSWER: Lightest tension member: W8X31 (31 lb/ft) phi Pn = 333.8 kips (rupture) >= Pu = 304 kips",
+        "grade": "right"
+       }
+      ],
+      "note": "Followed by the soft caution 'CHECK YOUR BLANK: the page does not know what \"Lightest W8 = ____\" asks for...'; the ANSWER names the lightest W8, so the value is right and copyable."
+     },
+     {
+      "id": "C-06",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Ag,req = ____ in.^2",
+        "key": "4.44 in.^2",
+        "page": "ANSWER: Required gross area: Ag >= 4.444 in^2 (Pu = 144 kips)",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-07",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "An = ____ in.^2",
+        "key": "NEEDS FIGURE (must stop and ask)",
+        "page": "status=refused, gate figure; read: NO ANSWER from Net area (with staggered holes) (MISSING): Missing: how many holes cross the section ... Enter the number of holes in the critical section (holes_across), or the staggered holes list.",
+        "grade": "asked"
+       }
+      ],
+      "note": "Desired behaviour: no number printed; asks for the number of holes in the critical section (first missing figure value; plate width/thickness not asked yet). Status is refused with a figure gate."
+     },
+     {
+      "id": "C-08",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "(a) \u03c6Pn = ____ kips",
+        "key": "657.0 kips",
+        "page": "part a: ANSWER TO \"design strength phi Pn\": phi Pn (yielding) = 657 kips",
+        "grade": "right"
+       },
+       {
+        "blank": "(b) \u03c6Pn = ____ kips",
+        "key": "498.9 kips",
+        "page": "part b: ANSWER TO \"design strength phi Pn\": phi Pn (rupture) = 498.91 kips",
+        "grade": "right"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "key": "498.9 kips",
+        "page": "part c: ANSWER: Tension capacity (first failure load): phi Pn = 498.9 kips -- rupture governs",
+        "grade": "right"
+       }
+      ],
+      "note": "U = 0.85 correctly (bf 8.08 < 2/3 d 8.133). In parts a/b the overall capacity sits under ALSO FOUND (warned), the clean line is the per-part value."
+     },
+     {
+      "id": "C-09",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "226.2 kips",
+        "page": "status=refused; read: NO ANSWER from Tension capacity of a given member (AMBIGUOUS): \"2L5x3x1/2\" is a double angle with several back-to-back variants ... For tension use the single angle (L8X4X1/2) and set \"angles\" to 2.",
+        "grade": "stopped"
+       }
+      ],
+      "note": "Stopped although the words say 'long legs back-to-back'. Key re-checked: 2 x 3.75 = 7.50, An = 6.50, Ae = 0.80 x 6.50 = 5.20, 0.75 x 58 x 5.20 = 226.2. DEFECT in the stop message: it names an unrelated shape 'L8X4X1/2' (hard-coded example string in frozen ext/engine.js:469), i.e. a shape with numbers in a stop message that is not the question's L5X3X1/2; not an answer line but misleading -- pipeline could rewrite/strip it."
+     },
+     {
+      "id": "C-10",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "542 kips",
+        "page": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 542 kips (KL/r route 538.6; exact E3 541.6)",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-11",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "512 kips",
+        "page": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 12 ft, phi Pn = 512 kips",
+        "grade": "right"
+       }
+      ],
+      "note": "K = 0.8."
+     },
+     {
+      "id": "C-12",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "924.9 kips",
+        "page": "ANSWER: Column capacity phi Pn: phi Pn = 924.9 kips (table method: KL/r 58.6 rounded up to 59, phi Fcr 34.9 ksi x Ag 26.5 in^2)",
+        "grade": "right"
+       }
+      ],
+      "note": "x-axis governs."
+     },
+     {
+      "id": "C-13",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "343 kips",
+        "page": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 13 ft, phi Pn = 343 kips",
+        "grade": "right"
+       }
+      ],
+      "note": "K = 0.65."
+     },
+     {
+      "id": "C-14",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Fe = ____ ksi",
+        "key": "29.22 ksi",
+        "page": "FOR YOUR BLANK (Fe = ____ ksi): Fe = 29.22 ksi",
+        "grade": "right"
+       },
+       {
+        "blank": "Pe = ____ kips",
+        "key": "283.7 kips",
+        "page": "ANSWER: Euler critical load Pcr: Pcr = 283.74 kips (Fe = 29.221 ksi, KL/r = 98.97) -- NOT VALID here",
+        "grade": "right"
+       }
+      ],
+      "note": "Pe value right on the ANSWER line, but it is tagged 'NOT VALID here' plus a read WARNING (Euler unconservative below 113.4); the question explicitly asks for the Euler load, so the value is the right one to copy, though the tag may make him hesitate."
+     },
+     {
+      "id": "C-15",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Lightest W12 = ____",
+        "key": "W12x65",
+        "page": "ANSWER: Lightest column: W12X65 (65 lb/ft) phi Pn = 663 kips > Pu = 580 kips ok",
+        "grade": "right"
+       }
+      ],
+      "note": "Followed by the soft 'CHECK YOUR BLANK' caution; value right."
+     },
+     {
+      "id": "C-16",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "NEEDS FIGURE (must stop and ask)",
+        "page": "status=refused, gate figure; read: NO ANSWER from Capacity of a given column (MISSING): Enter the effective length: KxLx and KyLy (or K from the end conditions and the member length L).",
+        "grade": "asked"
+       }
+      ],
+      "note": "Desired behaviour: no number; asks for the effective length / K and L from the figure."
+     },
+     {
+      "id": "C-17",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "(a) KL/r = ____",
+        "key": "59.7",
+        "page": "part a: ANSWER TO \"governing KL/r\": KL/r = 59.7   <- write this number.",
+        "grade": "right"
+       },
+       {
+        "blank": "(b) \u03c6Fcr = ____ ksi",
+        "key": "34.6 ksi",
+        "page": "part b: ANSWER TO \"design critical stress phi Fcr\": phi Fcr = 34.6 ksi",
+        "grade": "right"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "key": "460.2 kips",
+        "page": "part c: ANSWER: Column capacity phi Pn: phi Pn = 460.2 kips",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-18",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "133 kips",
+        "page": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 21 ft, phi Pn = 133 kips",
+        "grade": "right"
+       }
+      ],
+      "note": "K = 2.1."
+     },
+     {
+      "id": "C-19",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "334.1 ft-k",
+        "page": "ANSWER: Maximum factored moment Mu: Mu = 334.08 kip-ft (1.2D + 1.6L) at x = 12 ft; ...",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-20",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Zx,req = ____ in.^3",
+        "key": "66.67 in.^3",
+        "page": "status=needs; gate: required:\"Factored moment Mu\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "Asks for Mu although the words give 'Mu = 250 ft-k': the unit 'ft-k' is not read for Mu (same sentence with 'kip-ft' answers Zx >= 66.667). Coverage miss, no wrong number."
+     },
+     {
+      "id": "C-21",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Lightest W = ____",
+        "key": "W18x35",
+        "page": "ANSWER: Most economical beam: W18X35 (35 lb/ft, d = 17.7 in) phi Mp = 249 kip-ft >= Mu = 233.42",
+        "grade": "right"
+       }
+      ],
+      "note": "Followed by the soft 'CHECK YOUR BLANK' caution; value right."
+     },
+     {
+      "id": "C-22",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Mp = ____ ft-k",
+        "key": "378.8 ft-k",
+        "page": "ANSWER: Design moment phi Mp: phi Mp = 379 kip-ft (W18X50, fully braced)",
+        "grade": "right"
+       }
+      ],
+      "note": "379 is the Table 3-2 value, within tolerance of 378.75."
+     },
+     {
+      "id": "C-23",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "wD = ____ k/ft",
+        "key": "0.60 k/ft",
+        "page": "status=needs; gate: required:\"Beam position\" is required: it is empty.",
+        "grade": "asked"
+       },
+       {
+        "blank": "wL = ____ k/ft",
+        "key": "0.80 k/ft",
+        "page": "status=needs; gate: required:\"Beam position\" is required: it is empty.",
+        "grade": "asked"
+       },
+       {
+        "blank": "wu = ____ k/ft",
+        "key": "2.00 k/ft",
+        "page": "status=needs; gate: required:\"Beam position\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "Asks for the beam position (interior/edge) although 'spaced 8 ft on center' already gives the tributary width. Coverage miss, no wrong number."
+     },
+     {
+      "id": "C-24",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "key": "320 kips",
+        "page": "ANSWER: Largest factored load U: 320 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), ...",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-25",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "wL,max = ____ k/ft",
+        "key": "2.79 k/ft",
+        "page": "status=needs; gate: required:Your question asks whether the member is adequate, so it needs a load: type the factored moment Mu.",
+        "grade": "asked"
+       }
+      ],
+      "note": "Misrouted to beam_capacity adequacy check; it asks for a factored moment Mu that is not on the paper (the question asks for the maximum live load). Dead end for him, but no wrong number."
+     },
+     {
+      "id": "C-26",
+      "version": "clean",
+      "outcome": "some-right",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "key": "5.00 k/ft",
+        "page": "part a: ANSWER: Factored load: 5 k/ft (1.2D + 1.6L)",
+        "grade": "right"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "key": "490 ft-k",
+        "page": "part b: ANSWER: Maximum factored moment Mu: Mu = 490 kip-ft (1.2D + 1.6L) at x = 14 ft; ...",
+        "grade": "right"
+       },
+       {
+        "blank": "(c) W ____",
+        "key": "W24x55",
+        "page": "part c: ANSWER: Most economical beam: W24X55 ... then NOT WHAT YOUR BLANK ASKS: your blank is \"W ____ ; wu = ____ k/ft ; Mu = ____ ft-k\". This calculation does not give that. Do NOT copy the ANSWER line above into that blank.",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "(c) The right shape W24X55 is on the ANSWER line, but the page then tells him NOT to copy it (false mismatch: the three trailing blanks were glued into one 'W ____ ; wu = ____ ; Mu = ____' and judged not answered), plus a read WARNING. Not a wrong answer, but he would leave (c) empty. Graded present-not-on-answer-line for want of a right-under-false-warning grade."
+     },
+     {
+      "id": "C-27",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "307.5 ft-k",
+        "page": "ANSWER: Maximum factored moment Mu: Mu = 307.5 kip-ft (1.2D + 1.6L) at x = 15 ft; ...",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-28",
+      "version": "clean",
+      "outcome": "wrong",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "key": "2.50 k/ft",
+        "page": "part a: ANSWER TO \"factored line load wu\": wu = 3.7 k/ft  (also part c: FOR YOUR BLANK (wu = ____ k/ft, the beam): wu = 3.7 k/ft)",
+        "grade": "WRONG-COPYABLE"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "key": "320 ft-k",
+        "page": "part b: ANSWER TO \"factored moment Mu\": Mu = 473.6 kip-ft  (also part c: FOR YOUR BLANK (Mu = ____ ft-k, the beam): Mu = 473.6 kip-ft)",
+        "grade": "WRONG-COPYABLE"
+       },
+       {
+        "blank": "(c) W ____",
+        "key": "W21X44",
+        "page": "part c: ANSWER: Floor plan result (through step 2): Beam W24X55, reaction 59.2 kips / FOR YOUR BLANK (W ____, the beam): Shape = W24X55",
+        "grade": "WRONG-COPYABLE"
+       }
+      ],
+      "note": "THREE CLEAN WRONG ANSWERS. Key recomputed and confirmed: D = 75 psf (framing included), L = 100 psf: wu = (1.2x75 + 1.6x100) x 10 / 1000 = 2.50 k/ft; Mu = 2.5 x 32^2 / 8 = 320 ft-k; Table 3-2 lightest with phi Mp >= 320 is W21X44 (358; W18X40 294 too small). Page step 2: 'Dead D = 0 (slab) + 75 (superimposed) + 100 (steel framing) = 175 psf' -- it took the LIVE load 100 psf as a framing allowance. Root cause: ext/reader.js:2370 regex /(?:steel\\s+)?framing[^.;]{0,40}?(\\d+(?:\\.\\d+)?)\\s*psf/i matches 'framing) and the floor live load is 100 psf' (the next psf number within 40 chars, crossing a ')' and 'live load'), sets framing_psf = 100. The only warnings shown are the slab-thickness WARNING and a NOTE that framing weight is included -- neither flags the 175 psf. Removing '(including the weight of the framing)' makes the page give 2.5 k/ft and W21X44. Fix idea: stop the framing capture at ')' / 'and' / a 'live' word, or require the number to belong to framing ('N psf for framing' / 'framing of N psf'), and treat 'including the weight of the framing' as include_self_weight=false only."
+     },
+     {
+      "id": "C-29",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "key": "53.0 kips",
+        "page": "FOR YOUR BLANK (Pu = ____ kips, the girder): Pu = 53 kips",
+        "grade": "right"
+       },
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "530 ft-k",
+        "page": "FOR YOUR BLANK (Mu = ____ ft-k, the girder): Mu = 530 kip-ft",
+        "grade": "right"
+       }
+      ],
+      "note": "The ANSWER line names shapes (beam W16X26, girder W21X62) that no blank asks for; not graded as wrong since it does not map to a blank."
+     },
+     {
+      "id": "C-30",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "key": "416 kips",
+        "page": "status=refused; read: NO ANSWER from Floor plan: beam, girder, column (MISSING): Step 2 needs the beam span (ft).",
+        "grade": "asked"
+       }
+      ],
+      "note": "Column-load question routed to floor_plan, which asks for a beam span that is not on the paper (should be 20 x 25 x 4 floors x 208 psf = 416). Dead end, no number printed."
+     },
+     {
+      "id": "C-31",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "NEEDS FIGURE (must stop and ask)",
+        "page": "status=refused, gate figure; read: NO ANSWER from Floor plan: beam, girder, column (MISSING): Step 2 needs the beam span (ft).",
+        "grade": "asked"
+       }
+      ],
+      "note": "Desired behaviour: no number; asks for the span of the beam (figure value)."
+     },
+     {
+      "id": "C-32",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Zx = ____ in.^3",
+        "key": "95.4 in.^3",
+        "page": "ANSWER: Zx of W21X44: Zx = 95.4 in^3",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-33",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "A = ____ in.^2",
+        "key": "24.0 in.^2",
+        "page": "status=refused (words/lookup_definition): NO ANSWER from Find her definition (NOT_FOUND): No definition matches ...",
+        "grade": "stopped"
+       },
+       {
+        "blank": "d = ____ in.",
+        "key": "14.3 in.",
+        "page": "same NOT_FOUND stop",
+        "grade": "stopped"
+       },
+       {
+        "blank": "bf = ____ in.",
+        "key": "10.1 in.",
+        "page": "same NOT_FOUND stop",
+        "grade": "stopped"
+       },
+       {
+        "blank": "tf = ____ in.",
+        "key": "0.855 in.",
+        "page": "same NOT_FOUND stop",
+        "grade": "stopped"
+       },
+       {
+        "blank": "tw = ____ in.",
+        "key": "0.510 in.",
+        "page": "same NOT_FOUND stop",
+        "grade": "stopped"
+       }
+      ],
+      "note": "A five-property shape look-up ('list the following properties of a W14x82: area A, depth d, ...') falls to the definition finder and stops; expand.js does not split it into five lookup_shape parts. Coverage miss, no wrong number."
+     },
+     {
+      "id": "C-34",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "ry = ____ in.",
+        "key": "1.94 in.",
+        "page": "ANSWER: ry of W12X40: ry = 1.94 in",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-35",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "key": "50 ksi",
+        "page": "ANSWER: Steel ASTM A572 Grade 50: ... Fy = 50 ksi, Fu = 65 ksi",
+        "grade": "right"
+       },
+       {
+        "blank": "Fu = ____ ksi",
+        "key": "65 ksi",
+        "page": "ANSWER: Steel ASTM A572 Grade 50: ... Fy = 50 ksi, Fu = 65 ksi",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-36",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Hole diameter = ____ in.",
+        "key": "0.875 in.",
+        "page": "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-37",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "key": "1.2",
+        "page": "ANSWER: Effective length factor K: K = 1.2 (fixed with sway ...)",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-38",
+      "version": "clean",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "key": "0.60",
+        "page": "status=refused; read: NO ANSWER from Shear lag factor U (Table D3.1) (MISSING): Missing: fasteners per line (count the bolts in one row along the direction of the force).",
+        "grade": "asked"
+       }
+      ],
+      "note": "Asks for fasteners per line although the words say 'three bolts in the direction of loading'. Coverage miss, no wrong number."
+     },
+     {
+      "id": "C-39",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Ix = ____ in.^4",
+        "key": "1830 in.^4",
+        "page": "ANSWER: Ix of W24X68: Ix = 1830 in^4",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-40",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "key": "35 ksi",
+        "page": "ANSWER: Steel ASTM A53 Grade B: ... Fy = 35 ksi, Fu = 60 ksi",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     }
+    ]
+   }
+  },
+  {
+   "version": "clean",
+   "kind": "words",
+   "g": {
+    "per_question": [
+     {
+      "id": "C-41",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "b (elastic limit)",
+        "page": "CIRCLE: b. elastic limit   (her sentence for \"Elastic limit\" ...); ANSWER: Elastic limit: \"If I take steel and stretch it ... No permanent deformation...\"",
+        "grade": "right"
+       }
+      ],
+      "note": "Right on both the CIRCLE and ANSWER lines. The generic CHECK YOUR BLANK line follows, but the value is right. (Housekeeping: another worker shares C/grade-clean/ and overwrote q.json/run.json/out.txt there. My files are in C/grade-clean/c41-60/: q.json, one-out.txt, one-all.js.)"
+     },
+     {
+      "id": "C-42",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "c (both have E = 29,000 ksi)",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): softer; parts a,b,c,d all status=nomatch",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by unknown-word hiding: 'softer' is an ordinary word on a clean paper question. Nothing useful is behind it. The reader split the inline choices '(a) ... (b) ... (c) ... (d) ...' into four lettered problem parts, and every part is nomatch. That also happens with 'softer' replaced by 'weak', so the hiding is not the only problem. No number is printed and nothing is wrong."
+     },
+     {
+      "id": "C-43",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "key": "d (0.60)",
+        "page": "ANSWER: Shear lag factor U: U = 0.60 (Table D3.1 case 8)",
+        "grade": "right"
+       }
+      ],
+      "note": "U = 0.60 matches choice d. There is no CIRCLE letter, but the key accepts U = 0.60. The step line says 3 fasteners per line, Case 8."
+     },
+     {
+      "id": "C-44",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "B (live loads are harder to predict accurately than dead loads)",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): predict; behind it: loads_combinations status=refused 'NO ANSWER from All 7 LRFD load combinations (MISSING): Enter at least one load (D, L, Lr, S, R, W, E).'",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by 'predict'. Behind the hiding, the concept question was sent to the load-combination calculator, which refuses for lack of loads. The refusal has no number and no wrong line, but it is a misroute: her #1105 sentence about live loads being less accurately known is never shown."
+     },
+     {
+      "id": "C-45",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "B (A992)",
+        "page": "NO LETTER FROM THE PAGE ... HER SENTENCES: 1. pipe as round HSS if A53 Grade B; 2. Table 2-4 availability; 3. Table 2-4 legend",
+        "grade": "missing"
+       }
+      ],
+      "note": "No letter is given, and none of the shown sentences names A992 for W shapes, although the page has the materials slide (lookup_material: W = A992). Sentence 1 quotes 'ASTM A53/A53M Grade B', which is the wording of distractor D. It is not on an answer line and the page says it does not choose, but it could steer him toward D."
+     },
+     {
+      "id": "C-46",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "B (the weak y-y axis)",
+        "page": "step '1. Controlling slenderness when KxLx = KyLy (her slide): ... buckle about the y-axis ... the weak axis will fail first.' (under NO LETTER FROM THE PAGE)",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "The page says NO LETTER. Her sentence that decides it (weak y-y axis, B) is item 1 of the shown sentences, and item 3 adds 'the axis with the smaller r', which rules out D. No answer line."
+     },
+     {
+      "id": "C-47",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "key": "b (0.65)",
+        "page": "ANSWER: Effective length factor K: K = 0.65 (fixed at both ends (braced frame, no sidesway))",
+        "grade": "right"
+       }
+      ],
+      "note": "Recommended design value 0.65 (choice b). The theoretical 0.5 appears only in a step. There is no CIRCLE letter. The generic CHECK YOUR BLANK line follows a right value."
+     },
+     {
+      "id": "C-48",
+      "version": "clean",
+      "outcome": "wrong",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "b (the lightest shape in the group)",
+        "page": "ANSWER: Lightest W with Zx >= 36: W16X26 (26 lb/ft), Zx = 44.2 in^3  [followed only by the generic CHECK YOUR BLANK line]",
+        "grade": "wrong-under-warning"
+       }
+      ],
+      "note": "DANGEROUS MISREAD, the worst item in this set. The reader took 'A36' from choice (d) 'a shape made of A36 steel' as a required Zx of 36 and printed a clean-looking ANSWER line for a quantity the question never asks for (W16X26). Replacing 'A36 steel' with 'steel' turns it into a beam_select refusal, which confirms the source. The only warning is the generic CHECK YOUR BLANK line that is added to almost every words answer, right answers included (C-41, C-47, C-51), so it is a weak guard. No CIRCLE letter is printed. Key rechecked: the boldface shape at the top of each Table 3-2 group is the lightest (b)."
+     },
+     {
+      "id": "C-49",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "b (occupants have two hours to evacuate the building)",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): occupants, renewed, department, arrive; behind it: NO LETTER FROM THE PAGE, sentence 2 'It means you have two hours to evacuate the building.'",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by four ordinary words taken from the clean choices. Behind the hiding there is no letter, and the deciding sentence (two hours to evacuate) is only in the shown sentences, so it would be present-not-on-answer-line. Nothing is wrong."
+     },
+     {
+      "id": "C-50",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "C (corrosion (rust))",
+        "page": "HER SENTENCES 1. Disadvantages of steel (her slide): '... Corrosion (rust) ...'; 3. Advantages: high strength to weight, speed of erection, possible reuse",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "No CIRCLE or ANSWER line. The disadvantages slide (which names corrosion) and the advantages slide (which names A, B and D) are both shown, so the letter can be worked out from the steps but is not printed."
+     },
+     {
+      "id": "C-51",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "ductile",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): unlike, suddenly; behind it: ANSWER: Ductile steel stretches before it fails; brittle material fails suddenly: \"Ductile (withstands large deformations w/o failure) ...\"",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by the ordinary words 'unlike' and 'suddenly' in a clean question. Behind the hiding the ANSWER line is right (Ductile). This is coverage lost to false-positive hiding, not a wrong answer."
+     },
+     {
+      "id": "C-52",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "effective length",
+        "page": "HER SENTENCES 1. Effective length KL (her slide): 'KL = Effective Length / Distance between Inflection Points / Distance between Points of Zero Moment ...'",
+        "grade": "present-not-on-answer-line"
+       },
+       {
+        "blank": "written ____",
+        "key": "KL",
+        "page": "same sentence 1: 'KL = Effective Length'",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "Both terms are in sentence 1 of the shown sentences, but there is no ANSWER line. Sentence 2 is garbled CART text ('effective blend is equal to F'), which is not an answer line but is confusing."
+     },
+     {
+      "id": "C-53",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "shear lag",
+        "page": "HER SENTENCES 1. Shear lag (definition): 'Nonuniform tensile stress distribution in a member ... in the vicinity of a connection.'",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "The right term is the title of sentence 1, but there is no ANSWER line. Sentence 4 (the AISC 'Stress' glossary entry) is labelled as only matching a name in the question."
+     },
+     {
+      "id": "C-54",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "strain",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): Greek; behind it: ANSWER: Strain (epsilon): \"Strain: Is it equal to the change in length, designated epsilon?\"",
+        "grade": "hidden"
+       },
+       {
+        "blank": "Greek letter ____",
+        "key": "epsilon",
+        "page": "same hidden ANSWER line: Strain (epsilon)",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden only because 'Greek' is unknown, an ordinary word in a clean question. Behind the hiding the ANSWER line is right for both blanks (strain, epsilon)."
+     },
+     {
+      "id": "C-55",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "Analysis: know size + material, find load/capacity. Design: know load + material, choose geometric property; trial and error.",
+        "page": "ANSWER: Analysis vs design: \"... We know ... the size of the member, we know the strength of the steel and calculate the capacity. / ... What do we know when we are designing? We've chosen the material. We're looking for the Geometric Property.\"",
+        "grade": "right"
+       }
+      ],
+      "note": "Graded right with a caveat: the analysis half is complete, but the design half says material known and geometric property found without stating that the LOAD is known in design (her #173). Nothing in it is false. A strict marker might give partial credit."
+     },
+     {
+      "id": "C-56",
+      "version": "clean",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "couple: flanges farther apart give more moment for the same area (A d^2)",
+        "page": "ANSWER: Why a deeper section carries more moment (why wide flanges): \"The deeper the member is the further away these two flanges are the more moment it can resist ... for the same, A and make it deeper you get a lot more capacity.\"",
+        "grade": "right"
+       }
+      ],
+      "note": "It gives the flanges-farther-apart idea at the same area. The ALSO FOUND line (Beam glossary) is a warned extra and is harmless."
+     },
+     {
+      "id": "C-57",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "1) ____",
+        "key": "any one of: greater deflection/drift; stress concentrations at rigid joints; care erecting connections; expensive moment connections; bigger members",
+        "page": "HER SENTENCES 2. Disadvantages of an unbraced (moment) frame: 'Produces greater deflection and drift ... / localized stress concentrations ... / Requires care in the erection ... / Expensive moment connections'",
+        "grade": "present-not-on-answer-line"
+       },
+       {
+        "blank": "2) ____",
+        "key": "a different item from the same list",
+        "page": "same sentence 2",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "The list is right but there is no ANSWER line. Sentence 1 mixes advantage and disadvantage items for braced and unbraced frames ('Accommodates service penetrations', 'obstruction of bracings'), so copying from sentence 1 instead of sentence 2 could give a wrong item. It is not an answer line."
+     },
+     {
+      "id": "C-58",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "key": "F (False)",
+        "page": "ANSWER: Euler's formula (her slide wk3 p.2): \"... as the column length becomes very long, the critical load becomes very small ... crushing rather than buckling.\"",
+        "grade": "missing"
+       }
+      ],
+      "note": "The ANSWER line prints no T/F and does not say whether Pcr depends on Fy. The deciding formula Pcr = pi^2 E I / L^2 (no Fy) is only in the warned ALSO FOUND line. Nothing on the answer line points to True, so it is missing rather than wrong."
+     },
+     {
+      "id": "C-59",
+      "version": "clean",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "key": "F (False)",
+        "page": "tension_capacity status=refused: 'NO ANSWER from Tension capacity of a given member (MISSING): A plate needs its width and thickness (inches).'",
+        "grade": "stopped"
+       }
+      ],
+      "note": "A concept T/F about compression was sent to the TENSION capacity calculator, which refuses and names a plate width and thickness as missing. There is no number and no wrong line, but the misroute could send him looking for plate dimensions that do not exist. Her rule (gross area for columns, 'There's no A net here') is never shown."
+     },
+     {
+      "id": "C-60",
+      "version": "clean",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "key": "T (True)",
+        "page": "ANSWER: Service loads and working loads (her slide): \"Unfactored loads are called Service loads or Working Loads / If loads are not labeled as Factored loads - you must assume they are unfactored loads\"",
+        "grade": "missing"
+       }
+      ],
+      "note": "Graded strictly as missing because no T/F is printed. The ANSWER line is her rule restating the statement, so it clearly supports T and a student reading it would very likely write T. Nothing is wrong."
+     }
+    ]
+   }
+  },
+  {
+   "version": "typed",
+   "kind": "calc",
+   "g": {
+    "per_question": [
+     {
+      "id": "C-01",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "488.3 kips",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): thru | ANSWER: Tension capacity (first failure load): phi Pn = 488.3 kips -- rupture governs",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden only by the unknown word 'thru'. The answer under the hiding is right: 488.3 (4 flange holes, U=0.90). With 'through' typed it shows the same right 488.3."
+     },
+     {
+      "id": "C-02",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "113.1 kips",
+        "page": "NO ANSWER ... (OUT_OF_RANGE): Bolt diameter ... You typed: 4.875.",
+        "grade": "stopped"
+       }
+      ],
+      "note": "The page misread 'single line of 4 7/8in bolts' as one bolt of 4-7/8 in diameter (a mixed number) and refused as out of range. This is safe, but the stop message prints a number (4.875). Also hidden by 'thru'; it still refuses with 'through'. Key re-checked: 113.1 is correct."
+     },
+     {
+      "id": "C-03",
+      "version": "typed",
+      "outcome": "some-right",
+      "blanks": [
+       {
+        "blank": "Ag = ____ in.^2",
+        "key": "7.50",
+        "page": "step 3: Gross area Ag = width x thickness = 10 x 0.75 = 7.5 in^2",
+        "grade": "present-not-on-answer-line"
+       },
+       {
+        "blank": "An = ____ in.^2",
+        "key": "6.00",
+        "page": "step 4: Net area An = Ag - 2 holes x 1 x t 0.75 = 7.5 - 1.5 = 6 in^2",
+        "grade": "present-not-on-answer-line"
+       },
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "243.0 kips",
+        "page": "ANSWER: Tension capacity (first failure load): phi Pn = 243 kips -- yielding governs",
+        "grade": "right"
+       }
+      ],
+      "note": "A 'CHECK YOUR BLANK' warning follows the ANSWER: the page says it does not know what the three blanks ask for. There is only one ANSWER line (phi Pn). Ag and An appear only in the steps."
+     },
+     {
+      "id": "C-04",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "292.1 kips",
+        "page": "UNKNOWN WORDS: thru | ANSWER: ... phi Pn = 292.1 kips -- rupture governs",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden only by 'thru'. The answer under the hiding is right: 292.1 (web, U=0.70). The same right value shows with 'through'."
+     },
+     {
+      "id": "C-05",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Lightest W8 = ____",
+        "key": "W8x31",
+        "page": "gate: unused: The number \"100 k\" is in your text but in no box. Say which box it belongs in",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks where the live load '100 k' goes. Also hidden by 'thru'; the same ask appears with 'through'. No number is printed."
+     },
+     {
+      "id": "C-06",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Ag,req = ____ in.^2",
+        "key": "4.44 in.^2",
+        "page": "gate: unused: The number \"60 k\" is in your text but in no box.",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks where the live load '60 k' goes. No number is printed."
+     },
+     {
+      "id": "C-07",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "An = ____ in.^2",
+        "key": "NEEDS FIGURE (must stop and ask)",
+        "page": "gate: figure: Your question mentions a figure... | NO ANSWER (MISSING): how many holes cross the section",
+        "grade": "asked"
+       }
+      ],
+      "note": "This matches the key's required behavior. The page names the figure, asks for the number of holes in the critical section, and prints no number."
+     },
+     {
+      "id": "C-08",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "(a) \u03c6Pn = ____ kips",
+        "key": "657.0 kips",
+        "page": "UNKNOWN WORDS: thru | (a) ANSWER: Tension capacity (first failure load): phi Pn = 551.9 kips",
+        "grade": "hidden"
+       },
+       {
+        "blank": "(b) \u03c6Pn = ____ kips",
+        "key": "498.9 kips",
+        "page": "UNKNOWN WORDS: thru | (b) ANSWER: ... phi Pn = 551.9 kips",
+        "grade": "hidden"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "key": "498.9 kips",
+        "page": "UNKNOWN WORDS: thru | (c) ANSWER: ... phi Pn = 551.9 kips",
+        "grade": "hidden"
+       }
+      ],
+      "note": "LATENT WRONG-COPYABLE on all three blanks. Only the hiding of 'thru' holds them back. Once he fixes thru->through (or clicks 'Spelled exactly as on my paper'), (a), (b) and (c) each show a clean ANSWER of 551.9. Cause: '2 lines 7/8in bolts per flange' (no 'of') is read as 1 hole per flange, 2 in all; '2 lines OF 7/8in bolts per flange' gives 4 holes and 498.9. Also, part (a) asks for gross yielding (657) but gets the governing value 551.9. Key re-checked: An = 14.6 - 4(1.0)(0.64) = 12.04, U = 0.85 (bf 8.08 < 8.13), 0.75 x 65 x 0.85 x 12.04 = 498.9. The key is right."
+     },
+     {
+      "id": "C-09",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "226.2 kips",
+        "page": "NO ANSWER ... (OUT_OF_RANGE): Bolt diameter ... You typed: 4.875.",
+        "grade": "stopped"
+       }
+      ],
+      "note": "Same misread as C-02: '4 7/8in bolts' is taken as a 4.875 in bolt, then refused. The stop message prints a number."
+     },
+     {
+      "id": "C-10",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "542 kips",
+        "page": "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 542 kips",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-11",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "512 kips",
+        "page": "ANSWER: ... Table 4-1a (her method): KL = 12 ft, phi Pn = 512 kips",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-12",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "924.9 kips",
+        "page": "NO ANSWER (MISSING): the strong axis member length (Lx_ft)",
+        "grade": "stopped"
+       }
+      ],
+      "note": "The page did not take the 30 ft for the strong axis when the words say 'braced at mid height weak (y) axis only'. It stops safely."
+     },
+     {
+      "id": "C-13",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "343 kips",
+        "page": "NO ANSWER (MISSING): the strong axis member length (Lx_ft)",
+        "grade": "stopped"
+       }
+      ],
+      "note": "The page did not read '20ft' as the length. It stops safely."
+     },
+     {
+      "id": "C-14",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Fe = ____ ksi",
+        "key": "29.22 ksi",
+        "page": "gate: required: \"Length L\" is required: it is empty.",
+        "grade": "asked"
+       },
+       {
+        "blank": "Pe = ____ kips",
+        "key": "283.7 kips",
+        "page": "gate: required: \"Length L\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks for Length L, although '16ft' is in the words. No number is printed."
+     },
+     {
+      "id": "C-15",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Lightest W12 = ____",
+        "key": "W12x65",
+        "page": "gate: unused: The number \"250 k\" is in your text but in no box.",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks where the live load '250 k' goes, although 'live load 250k' is typed."
+     },
+     {
+      "id": "C-16",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "NEEDS FIGURE (must stop and ask)",
+        "page": "gate: figure ... | NO ANSWER (MISSING): Enter the effective length: KxLx and KyLy (or K ... and L)",
+        "grade": "asked"
+       }
+      ],
+      "note": "This matches the key's required behavior: it names the figure, asks for length and K, and prints no number."
+     },
+     {
+      "id": "C-17",
+      "version": "typed",
+      "outcome": "some-right",
+      "blanks": [
+       {
+        "blank": "(a) KL/r = ____",
+        "key": "59.7 (60 accepted)",
+        "page": "(a) NO ANSWER (MISSING): Enter a column shape",
+        "grade": "stopped"
+       },
+       {
+        "blank": "(b) \u03c6Fcr = ____ ksi",
+        "key": "34.6 ksi",
+        "page": "(b) status nomatch (no block)",
+        "grade": "stopped"
+       },
+       {
+        "blank": "(c) \u03c6Pn = ____ kips",
+        "key": "460.2 kips",
+        "page": "(c) ANSWER: Column capacity phi Pn: phi Pn = 460.2 kips (table method: KL/r 59.7 rounded up to 60, phi Fcr 34.6 ksi x Ag 13.3 in^2)",
+        "grade": "right"
+       }
+      ],
+      "note": "Parts (a) and (b) give no answer of their own. The right values 59.7 and 34.6 appear only inside the parentheses of the (c) ANSWER line."
+     },
+     {
+      "id": "C-18",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "\u03c6Pn = ____ kips",
+        "key": "133 kips",
+        "page": "NO ANSWER (MISSING): the strong axis end condition (x_end_condition)",
+        "grade": "stopped"
+       }
+      ],
+      "note": "'base fixed top is free' was not read as an end condition. It stops safely."
+     },
+     {
+      "id": "C-19",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "334.1 ft-k",
+        "page": "ANSWER: Maximum factored moment Mu: Mu = 334.08 kip-ft (1.2D + 1.6L) at x = 12 ft; ...",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-20",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Zx,req = ____ in.^3",
+        "key": "66.67 in.^3",
+        "page": "gate: required: \"Factored moment Mu\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks for Mu, although 'mu=250ft-k' is typed. No number is printed."
+     },
+     {
+      "id": "C-21",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Lightest W = ____",
+        "key": "W18x35",
+        "page": "ANSWER: Most economical beam: W18X35 (35 lb/ft, d = 17.7 in) phi Mp = 249 kip-ft >= Mu = 233.42",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-22",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "\u03c6Mp = ____ ft-k",
+        "key": "378.8 ft-k (+-0.5%)",
+        "page": "ANSWER: Design moment phi Mp: phi Mp = 379 kip-ft (W18X50, fully braced)",
+        "grade": "right"
+       }
+      ],
+      "note": "379 is within the 0.5% tolerance of 378.75."
+     },
+     {
+      "id": "C-23",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "wD = ____ k/ft",
+        "key": "0.60",
+        "page": "gate: required: \"Beam position\" is required | unused: \"100 psf\" in no box",
+        "grade": "asked"
+       },
+       {
+        "blank": "wL = ____ k/ft",
+        "key": "0.80",
+        "page": "same gate",
+        "grade": "asked"
+       },
+       {
+        "blank": "wu = ____ k/ft",
+        "key": "2.00",
+        "page": "same gate",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks for the beam position and where '100 psf' (the live load) goes. No number is printed."
+     },
+     {
+      "id": "C-24",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "key": "320 kips",
+        "page": "gate: unused: \"95 k\" in no box | unused: \"320 k\" in no box",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks where the live load 95 k and the typed book answer 320 k go."
+     },
+     {
+      "id": "C-25",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "wL,max = ____ k/ft",
+        "key": "2.79 k/ft",
+        "page": "gate: required: Your question asks whether the member is adequate, so it needs a load: type the factored moment Mu.",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page reads the question as an adequacy check and asks for Mu. The real question is the largest live load. No number is printed."
+     },
+     {
+      "id": "C-26",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "key": "5.00",
+        "page": "(a) ANSWER: Factored load: 5 k/ft (1.2D + 1.6L)",
+        "grade": "right"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "key": "490",
+        "page": "(b) ANSWER: Maximum factored moment Mu: Mu = 490 kip-ft",
+        "grade": "right"
+       },
+       {
+        "blank": "(c) W ____",
+        "key": "W24x55",
+        "page": "(c) ANSWER: Most economical beam: W24X55 ... phi Mp = 503 kip-ft >= Mu = 490",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-27",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "307.5 ft-k",
+        "page": "ANSWER: Maximum factored moment Mu: Mu = 307.5 kip-ft (1.2D + 1.6L) at x = 15 ft",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-28",
+      "version": "typed",
+      "outcome": "wrong",
+      "blanks": [
+       {
+        "blank": "(a) wu = ____ k/ft",
+        "key": "2.50",
+        "page": "(a) NO ANSWER (MISSING): Step 3 needs the girder span (ft).",
+        "grade": "stopped"
+       },
+       {
+        "blank": "(b) Mu = ____ ft-k",
+        "key": "320",
+        "page": "(b) NO ANSWER (MISSING): Step 3 needs the girder span (ft).",
+        "grade": "stopped"
+       },
+       {
+        "blank": "(c) W ____",
+        "key": "W21x44",
+        "page": "(c) ANSWER TO \"the shape to choose\": Shape = W24X55",
+        "grade": "WRONG-COPYABLE"
+       }
+      ],
+      "note": "CLEAN WRONG on (c). In 'floor dead 75psf including weight of framing live 100psf', the single 100 psf is used twice: as the steel-framing weight (step 2: D = 0 + 75 + 100 = 175 psf) and as the live load (L = 100). The page then gets wu 3.7, Mu 473.6 and W24X55. The line 'ANSWER TO \"the shape to choose\"' carries no warning; only the separate 'Floor plan result' line has ALSO FOUND. A comma after 'framing' still gives W24X55. Key re-checked: wu = (1.2 x 75 + 1.6 x 100) x 10 / 1000 = 2.50, Mu = 2.5 x 32^2 / 8 = 320, and the lightest with phi Mp >= 320 is W21X44 (358; W18X46 at 340 is heavier). The key is right."
+     },
+     {
+      "id": "C-29",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "key": "53.0 kips",
+        "page": "gate: unused: The number \"80 psf\" is in your text but in no box.",
+        "grade": "asked"
+       },
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "530 ft-k",
+        "page": "same gate",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks where the live load 80 psf goes. No number is printed."
+     },
+     {
+      "id": "C-30",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Pu = ____ kips",
+        "key": "416 kips",
+        "page": "gate: unused: The number \"70 psf\" is in your text but in no box.",
+        "grade": "asked"
+       }
+      ],
+      "note": "The page asks where the live load 70 psf goes."
+     },
+     {
+      "id": "C-31",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Mu = ____ ft-k",
+        "key": "NEEDS FIGURE (must stop and ask)",
+        "page": "gate: unused: The number \"100 psf\" is in your text but in no box.",
+        "grade": "asked"
+       }
+      ],
+      "note": "No number is printed, so it is safe. But the page asks where 100 psf goes instead of asking for the figure values (the B1 span and spacing). No figure gate fired despite 'see fig 3'."
+     },
+     {
+      "id": "C-32",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Zx = ____ in.^3",
+        "key": "95.4",
+        "page": "ANSWER: W21X44: W = 44 lb/ft, A = 13 in^2, ... Zx = 95.4 in^3, ...",
+        "grade": "right"
+       }
+      ],
+      "note": "The full property row is printed; the labeled Zx = 95.4 is right."
+     },
+     {
+      "id": "C-33",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "A = ____ in.^2",
+        "key": "24.0",
+        "page": "(a) ANSWER: A of W14X82: A = 24 in^2",
+        "grade": "right"
+       },
+       {
+        "blank": "d = ____ in.",
+        "key": "14.3",
+        "page": "(b) ANSWER: d of W14X82: d = 14.3 in",
+        "grade": "right"
+       },
+       {
+        "blank": "bf = ____ in.",
+        "key": "10.1",
+        "page": "(c) ANSWER: bf of W14X82: bf = 10.1 in",
+        "grade": "right"
+       },
+       {
+        "blank": "tf = ____ in.",
+        "key": "0.855",
+        "page": "(d) ANSWER: tf of W14X82: tf = 0.855 in",
+        "grade": "right"
+       },
+       {
+        "blank": "tw = ____ in.",
+        "key": "0.510",
+        "page": "(e) ANSWER: tw of W14X82: tw = 0.51 in",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-34",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "ry = ____ in.",
+        "key": "1.94",
+        "page": "ANSWER: ry of W12X40: ry = 1.94 in",
+        "grade": "right"
+       }
+      ],
+      "note": "The page split this into two parts (a) and (b), both with the same ry = 1.94."
+     },
+     {
+      "id": "C-35",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "key": "50",
+        "page": "ANSWER: Steel ASTM A572 Grade 50: ... Fy = 50 ksi, Fu = 65 ksi",
+        "grade": "right"
+       },
+       {
+        "blank": "Fu = ____ ksi",
+        "key": "65",
+        "page": "same ANSWER line: Fu = 65 ksi",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-36",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "Hole diameter = ____ in.",
+        "key": "0.875",
+        "page": "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)",
+        "grade": "right"
+       }
+      ],
+      "note": ""
+     },
+     {
+      "id": "C-37",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "key": "1.2",
+        "page": "NO ANSWER from Capacity of a given column (MISSING): Enter a column shape",
+        "grade": "stopped"
+       }
+      ],
+      "note": "The page sent a K look-up to column capacity and refused for lack of a shape. No number is printed."
+     },
+     {
+      "id": "C-38",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "key": "0.60",
+        "page": "UNKNOWN WORDS: thru | NO ANSWER (MISSING): fasteners per line",
+        "grade": "stopped"
+       }
+      ],
+      "note": "'3 bolts in direction of loading' was not read as fasteners per line. Also hidden by 'thru'; it still refuses with 'through'."
+     },
+     {
+      "id": "C-39",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "Ix = ____ in.^4",
+        "key": "1830",
+        "page": "gate: required: \"Span L\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "A property look-up was sent to beam analysis, which asks for a span. No number is printed."
+     },
+     {
+      "id": "C-40",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "Fy = ____ ksi",
+        "key": "35",
+        "page": "status nomatch (no part made)",
+        "grade": "stopped"
+       }
+      ],
+      "note": "'astm a53 grade b steel pipe' found no match. No number is printed."
+     }
+    ]
+   }
+  },
+  {
+   "version": "typed",
+   "kind": "words",
+   "g": {
+    "per_question": [
+     {
+      "id": "C-41",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "b (elastic limit)",
+        "page": "CIRCLE: b. elastic limit   (her sentence for \"Elastic limit\" ...); ANSWER: Elastic limit: \"... goes back to the original. No permanent deformation...\"",
+        "grade": "right"
+       }
+      ],
+      "note": "Status words, no unknown words. CIRCLE letter b plus the elastic-limit ANSWER line, both match the key."
+     },
+     {
+      "id": "C-42",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "c (both have E = 29,000 ksi)",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): softer; parts a/b/c/d all status=nomatch",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden because of the unknown word 'softer'. Underneath there is nothing to show: expand split the four choices into parts a-d and every part is nomatch, with no write lines. I re-ran it with 'soft' instead of 'softer': no hiding, but still four nomatch parts. So confirming the word would still give no answer. Nothing wrong is printed."
+     },
+     {
+      "id": "C-43",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "U = ____",
+        "key": "d (0.60)",
+        "page": "ANSWER: Shear lag factor U: U = 0.60 (Table D3.1 case 8)",
+        "grade": "right"
+       }
+      ],
+      "note": "lookup_U answered, Case 8 with 3 fasteners gives U = 0.60, which is choice d. There is no CIRCLE line, but the value is the key value. The read NOTE about Case 2 is only advice."
+     },
+     {
+      "id": "C-44",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "B (live loads harder to predict accurately than dead loads)",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): bigger, predict, accuratly; under it: NO LETTER FROM THE PAGE ... HER SENTENCES 1. \"... We can be very accurate with dead load and less accurate with live loads...\"",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by unknown words (bigger, predict, accuratly). Even once confirmed there is no ANSWER or CIRCLE line: the page prints NO LETTER and lists her sentences. Sentence 1 holds the reason for B, so underneath the grade would be present-not-on-answer-line. Nothing wrong is printed."
+     },
+     {
+      "id": "C-45",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "B (A992)",
+        "page": "NO LETTER FROM THE PAGE ... HER SENTENCES 1. Steel for W, C and MC shapes: A992: \"All wide flange W, C and MC shapes are ASTM A992 -> Fy = 50 ksi Fu = 65 ksi\"",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "No unknown words. The page will not choose a letter. Her sentence 1 says A992, which is B, but it is only in the sentence list. No answer line, nothing wrong."
+     },
+     {
+      "id": "C-46",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "B (the weak y-y axis)",
+        "page": "NO LETTER FROM THE PAGE ... HER SENTENCES 1. \"... IF K_xL_x = K_yL_y then KL/r_y is always the maximum slenderness ratio ... buckle about the y-axis ... the weak axis will fail first.\"",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "No letter. Her sentences 1 and 3 (weak axis; buckles about the axis with the smaller r) point to B, but only in the sentence list. Nothing wrong."
+     },
+     {
+      "id": "C-47",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "K = ____",
+        "key": "b (0.65)",
+        "page": "status=refused: NO ANSWER from Select the lightest column (MISSING): Enter the loads D and L (service), or tick \"already factored\" and enter Pu.",
+        "grade": "stopped"
+       }
+      ],
+      "note": "Misrouted to column_select and refused for missing loads D and L, so no K value is printed. The recommended design K = 0.65 is never shown. No wrong answer."
+     },
+     {
+      "id": "C-48",
+      "version": "typed",
+      "outcome": "wrong",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "b (the lightest shape in the group)",
+        "page": "ANSWER: Lightest W with Zx >= 36: W16X26 (26 lb/ft), Zx = 44.2 in^3",
+        "grade": "WRONG-COPYABLE"
+       }
+      ],
+      "note": "CLEAN WRONG ANSWER. Choice (d) 'a36 steel shape' and choice (c) 'Zx closest to required Zx' together set off a lookup_by_property for Zx >= 36. The page printed a clean ANSWER line, W16X26, with no warning, no hiding and no unknown words. The question asks a concept letter (b, lightest in group). The line answers a different quantity and invents a required Zx of 36 that comes from 'a36'. I checked the cause: with '(d) a36 steel shape' cut to '(d) steel shape', the page returns NO LETTER plus her sentences ('the one in boldface is the cheapest. It's the lightest'), which is safe. I recomputed the key: her #90/#314 and Table 3-2 make the bold shape the lightest in its group, so b is correct and the key stands."
+     },
+     {
+      "id": "C-49",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "b (occupants have two hours to evacuate the building)",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): renewed, arrive; under it: ANSWER: Fire rating: \"all office buildings have to have a two hour fire rate. It means you have two hours to evacuate the building.\"",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by unknown words (renewed, arrive). The ANSWER line under the hiding is right (her two-hours-to-evacuate wording is choice b), but there is no CIRCLE letter. Once confirmed it would be right. Nothing wrong."
+     },
+     {
+      "id": "C-50",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "answer ____",
+        "key": "C (corrosion (rust))",
+        "page": "NO LETTER FROM THE PAGE ... HER SENTENCES 1. Disadvantages of steel (her slide): \"Maintenance costs (Painting) / Corrosion (rust) ...\"; 2. Advantages ... Speed of erection / Possible reuse (scrap value)",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "No letter. Her disadvantages slide (sentence 1) contains Corrosion (rust), and the advantages slide (sentence 2) contains A, B and D. All of it is only in the sentence list, with no answer line. Nothing wrong."
+     },
+     {
+      "id": "C-51",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "ductile",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): unlike, suddenly; under it: ANSWER: Ductile steel stretches before it fails; brittle material fails suddenly: \"Ductile (withstands large deformations w/o failure) ...\" + CHECK YOUR BLANK",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by unknown words (unlike, suddenly). The ANSWER line under the hiding gives 'Ductile', the key value, followed by a CHECK YOUR BLANK caution. Once confirmed it would be right, with that caution. Nothing wrong."
+     },
+     {
+      "id": "C-52",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "effective length",
+        "page": "HER SENTENCES ABOUT THIS -- the page does not choose: 1. Effective length KL (her slide): \"Define: KL = Effective Length / Distance between Inflection Points / Distance between Points of Zero Moment ...\"",
+        "grade": "present-not-on-answer-line"
+       },
+       {
+        "blank": "written ____",
+        "key": "KL",
+        "page": "same sentence 1: \"KL = Effective Length\"",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "There is no ANSWER line, only her sentences and a CHECK YOUR BLANK caution that refers to an ANSWER line that does not exist. Sentence 1 has both 'Effective Length' and 'KL'. Sentence 3 is garbled CART ('effective blend is equal to F'), but it sits in the list only, not on an answer line. Nothing wrong."
+     },
+     {
+      "id": "C-53",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "shear lag",
+        "page": "status=needs; gate: \"Where are the bolts / what is connected?\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "Misrouted to the lookup_U form (because of 'the factor U'). The page asks 'Where are the bolts / what is connected?' instead of giving the term 'shear lag'. No number and no wrong answer printed."
+     },
+     {
+      "id": "C-54",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "strain",
+        "page": "UNKNOWN WORDS (answers hidden until confirmed): greek; under it: ANSWER: Strain (epsilon): \"Strain: Is it equal to the change in length, designated epsilon?\"",
+        "grade": "hidden"
+       },
+       {
+        "blank": "Greek letter ____",
+        "key": "epsilon",
+        "page": "same hidden ANSWER line: Strain (epsilon)",
+        "grade": "hidden"
+       }
+      ],
+      "note": "Hidden by the unknown word 'greek'. The ANSWER line under the hiding, 'Strain (epsilon)', is right for both blanks, followed by a CHECK YOUR BLANK caution. Once confirmed both would be right. Nothing wrong."
+     },
+     {
+      "id": "C-55",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "Analysis: know size + material, calculate load/capacity; Design: know load + material, choose geometric property (trial and error)",
+        "page": "ANSWER: Analysis vs design: \"... analysis. We know what we have and the size of the member, we know the strength of the steel and calculate the capacity. / ... design ... We've chosen the material. We're looking for the Geometric Property.\"",
+        "grade": "right"
+       }
+      ],
+      "note": "Both halves are on the ANSWER line. Analysis: knows size and steel strength, finds capacity. Design: knows material, finds geometric property. Read strictly, the design half never says the LOAD is known and does not mention trial and error, so it is slightly incomplete, but it is not wrong. No warning."
+     },
+     {
+      "id": "C-56",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "____",
+        "key": "couple / flanges farther apart -> larger lever arm, more moment for same area (A d^2)",
+        "page": "ANSWER: Why a deeper section carries more moment (why wide flanges): \"The deeper the member is the further away these two flanges are the more moment it can resist ... for the same, A and make it deeper you get a lot more capacity.\"",
+        "grade": "right"
+       }
+      ],
+      "note": "The ANSWER line gives the flanges-farther-apart idea for the same A. There is also an ALSO FOUND warning with the AISC Beam glossary entry, but it is a separate, warned item and does not touch the ANSWER line."
+     },
+     {
+      "id": "C-57",
+      "version": "typed",
+      "outcome": "answered-nothing-keyed",
+      "blanks": [
+       {
+        "blank": "1) ____",
+        "key": "any one of: greater deflection and drift; localized stress concentrations at rigid joints; care in erecting connections; expensive moment connections; bigger members",
+        "page": "HER SENTENCES ABOUT THIS -- the page does not choose: 1. Disadvantages of an unbraced (moment) frame: \"Produces greater deflection and drift ... / localized stress concentrations ... / Requires care in the erection ... / Expensive moment connections\"",
+        "grade": "present-not-on-answer-line"
+       },
+       {
+        "blank": "2) ____",
+        "key": "a second distinct item from the same list",
+        "page": "same sentence 1",
+        "grade": "present-not-on-answer-line"
+       }
+      ],
+      "note": "There is no ANSWER line. Sentence 1 lists four valid disadvantages. Sentence 2 mixes in braced-frame items ('Produces problems for a layout of windows and doors due to obstruction of bracings', 'Accommodates service penetrations') that would be wrong if copied. They sit in the 'page does not choose' list, not on an answer line, so this is not a clean wrong answer."
+     },
+     {
+      "id": "C-58",
+      "version": "typed",
+      "outcome": "asked",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "key": "F (False)",
+        "page": "status=needs; gate: \"Length L\" is required: it is empty.",
+        "grade": "asked"
+       }
+      ],
+      "note": "Misrouted to the column_euler form. It asks for 'Length L' instead of answering the T/F (Pcr does not depend on Fy). No number and no wrong answer printed."
+     },
+     {
+      "id": "C-59",
+      "version": "typed",
+      "outcome": "stopped",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "key": "F (False)",
+        "page": "status=refused: NO ANSWER from Tension capacity of a given member (MISSING): A plate needs its width and thickness (inches).",
+        "grade": "stopped"
+       }
+      ],
+      "note": "Misrouted to tension_capacity because of 'bolt holes' and 'net area', then refused because plate width and thickness are missing. No T/F is given and nothing wrong is printed."
+     },
+     {
+      "id": "C-60",
+      "version": "typed",
+      "outcome": "all-right",
+      "blanks": [
+       {
+        "blank": "T / F ____",
+        "key": "T (True)",
+        "page": "ANSWER: Service loads and working loads (her slide): \"Unfactored loads are called Service loads or Working Loads / If loads are not labeled as Factored loads - you must assume they are unfactored loads\"",
+        "grade": "right"
+       }
+      ],
+      "note": "The page prints no literal 'T'. The ANSWER line is her slide sentence, which states the claim almost word for word (loads not labeled factored are unfactored, i.e. service loads), so it supports True. Graded right, with that caveat."
+     }
+    ]
+   }
+  }
+ ]
+}

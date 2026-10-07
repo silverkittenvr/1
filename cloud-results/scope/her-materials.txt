@@ -1,0 +1,6 @@
+L139 All wide flange W, C and MC shapes | ASTM A992  Fy 50 Fu 65 
+L140 All M, S, HP & L shapes | ASTM A572 Grade 50 Fy 50 Fu 65 
+L141 All Plates | ASTM A36  Fy 36 Fu 58 
+L142 All Plates (alternate, by thickness) | ASTM A572 Grade 50 Fy 50 Fu 65 (alternate)
+L143 All pipes | ASTM A53 Grade B Fy 35 Fu 60 
+L144 All HSS sections (Rectangular or Round) | ASTM A500 Grade C Fy 50 Fu 62 

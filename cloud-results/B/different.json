@@ -1,0 +1,2298 @@
+[
+ {
+  "id": "BC-004~pair1",
+  "base": "BC-004",
+  "base2": "BC-011",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:dot",
+   "A.shape:c10*20",
+   "A.misspell:member>memebr",
+   "A.spaces:before-punct,before-punct",
+   "B.glue",
+   "B.misspell:area>aarea",
+   "B.lower",
+   "B.spaces:double"
+  ],
+  "cleanText": "A C10x20 channel of A36 steel is used as a tension member. It is connected through the web with two lines of 3/4-in. bolts, three bolts in each line. Assume a shear lag factor U = 0.85. Find the design tensile strength of the channel.\n[b] Compute the net area An of a PL 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. Take the hole diameter as the bolt diameter plus 1/8 in.",
+  "roughText": "a. A c10*20 channel of A36 steel is used as a tension memebr. It is connected through the web with two lines of 3/4-in. bolts , three bolts in each line. Assume a shear lag factor U = 0.85. Find the design tensile strength of the channel . b. compute the net aarea an of a pl 5/8 in. x 9in tension plate that has one hole for a 3/4in bolt in the cross section. take the hole  diameter as the bolt diameter plus 1/8 in.",
+  "cleanLines": [
+   "ANSWER: Tension capacity (first failure load): phi Pn = 190.2 kips -- yielding governs (yielding 190.2, rupture 192.5)",
+   "ANSWER: Net area An: An = 5.0781 in^2 (Ag = 5.625 in^2, 9 x 0.625 plate)"
+  ],
+  "roughLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "lost": [
+   "answer|tension capacity first failure load##190.2,190.2,192.5",
+   "answer|net area an##5.0781,2,5.625,2,9,0.625"
+  ],
+  "extra": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "cleanStatus": "tension_capacity:answered",
+  "roughStatus": "tension_capacity:refused lookup_hole:answered",
+  "cause": [
+   "pair:dot"
+  ],
+  "causeHow": "pair: clean pair DIFFERENT, A alone FEWER, B alone DIFFERENT",
+  "reading": "tension_capacity -> tension_capacity:refused lookup_hole:answered"
+ },
+ {
+  "id": "BC-005~pair1",
+  "base": "BC-005",
+  "base2": "BC-033",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:bare",
+   "B.misspell:effective>effecyive",
+   "B.lower",
+   "B.nostops"
+  ],
+  "cleanText": "What is the maximum factored tensile load that a W8x31 (Fy = 50 ksi, Fu = 65 ksi) can resist if it is connected through its flanges with 7/8-in. bolts, two lines per flange and four bolts per line?\n[b] A plate of A36 steel carries D = 40 kips and L = 75 kips in tension. Find the required gross area for yielding and the required effective net area for rupture.",
+  "roughText": "a What is the maximum factored tensile load that a W8x31 (Fy = 50 ksi, Fu = 65 ksi) can resist if it is connected through its flanges with 7/8-in. bolts, two lines per flange and four bolts per line? b a plate of a36 steel carries d = 40 kips and l = 75 kips in tension find the required gross area for yielding and the required effecyive net area for rupture",
+  "cleanLines": [
+   "ANSWER: Tension capacity (first failure load): phi Pn = 324.2 kips -- rupture governs (yielding 410.9, rupture 324.2)",
+   "ANSWER: Required gross area: Ag >= 5.185 in^2 (Pu = 168 kips)"
+  ],
+  "roughLines": [
+   "ANSWER TO \"factored load Pu\": Pu = 168 kips"
+  ],
+  "lost": [
+   "answer|tension capacity first failure load##324.2,410.9,324.2",
+   "answer|required gross area##5.185,2,168"
+  ],
+  "extra": [
+   "blank|pu##168"
+  ],
+  "cleanStatus": "tension_capacity:answered",
+  "roughStatus": "tension_required_area:answered",
+  "cause": [
+   "pair:bare"
+  ],
+  "causeHow": "pair: clean pair DIFFERENT, A alone SAME, B alone SAME",
+  "reading": "tension_capacity -> tension_required_area:answered"
+ },
+ {
+  "id": "BC-006~M3",
+  "base": "BC-006",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "glue",
+   "misspell:bolts>blots",
+   "typed:(answer: 126.1k)",
+   "fig:refer to fig 3-27",
+   "lower",
+   "nostops"
+  ],
+  "cleanText": "Using LRFD, determine the design tensile capacity of an L6 x 4 x 1/2 angle of A572 Grade 50 steel. The long leg is connected with one line of three 3/4-in.-diameter bolts.",
+  "roughText": "using lrfd, determine the design tensile capacity of an l6 x 4 x 1/2 angle of a572 grade 50 steel refer to fig 3-27 (answer: 126.1k) the long leg is connected with one line of three 3/4\" blots",
+  "cleanLines": [
+   "ANSWER: Tension capacity (first failure load): phi Pn = 126.1 kips -- rupture governs (yielding 213.8, rupture 126.1)"
+  ],
+  "roughLines": [
+   "ANSWER: Tension capacity (first failure load): phi Pn = 213.8 kips -- yielding governs (no holes)"
+  ],
+  "lost": [
+   "answer|tension capacity first failure load##126.1,213.8,126.1"
+  ],
+  "extra": [
+   "answer|tension capacity first failure load##213.8"
+  ],
+  "cleanStatus": "tension_capacity:answered",
+  "roughStatus": "tension_capacity:answered",
+  "cause": [
+   "misspell:bolts"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "tension_capacity -> tension_capacity:answered"
+ },
+ {
+  "id": "BC-011~lower",
+  "base": "BC-011",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "lower"
+  ],
+  "cleanText": "Compute the net area An of a PL 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. Take the hole diameter as the bolt diameter plus 1/8 in.",
+  "roughText": "compute the net area an of a pl 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. take the hole diameter as the bolt diameter plus 1/8 in.",
+  "cleanLines": [
+   "ANSWER: Net area An: An = 5.0781 in^2 (Ag = 5.625 in^2, 9 x 0.625 plate)"
+  ],
+  "roughLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "lost": [
+   "answer|net area an##5.0781,2,5.625,2,9,0.625"
+  ],
+  "extra": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "cleanStatus": "tension_net_area:answered",
+  "roughStatus": "lookup_hole:answered",
+  "cause": [
+   "lower:lower"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_net_area -> lookup_hole:answered"
+ },
+ {
+  "id": "BC-011~nostops",
+  "base": "BC-011",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "nostops"
+  ],
+  "cleanText": "Compute the net area An of a PL 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. Take the hole diameter as the bolt diameter plus 1/8 in.",
+  "roughText": "Compute the net area An of a PL 5/8 in x 9 in tension plate that has one hole for a 3/4-in-diameter bolt in the cross section Take the hole diameter as the bolt diameter plus 1/8 in",
+  "cleanLines": [
+   "ANSWER: Net area An: An = 5.0781 in^2 (Ag = 5.625 in^2, 9 x 0.625 plate)"
+  ],
+  "roughLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "lost": [
+   "answer|net area an##5.0781,2,5.625,2,9,0.625"
+  ],
+  "extra": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "cleanStatus": "tension_net_area:answered",
+  "roughStatus": "lookup_hole:answered",
+  "cause": [
+   "nostops:nostops"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_net_area -> lookup_hole:answered"
+ },
+ {
+  "id": "BC-011~L1",
+  "base": "BC-011",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "misspell:diameter>diamter",
+   "lower",
+   "spaces:double,double"
+  ],
+  "cleanText": "Compute the net area An of a PL 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. Take the hole diameter as the bolt diameter plus 1/8 in.",
+  "roughText": "compute the net area   an of a pl 5/8 in. x 9 in. tension plate that has one hole  for a 3/4-in.-diameter bolt in the cross section. take the hole diameter as the bolt diamter plus 1/8 in.",
+  "cleanLines": [
+   "ANSWER: Net area An: An = 5.0781 in^2 (Ag = 5.625 in^2, 9 x 0.625 plate)"
+  ],
+  "roughLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "lost": [
+   "answer|net area an##5.0781,2,5.625,2,9,0.625"
+  ],
+  "extra": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "cleanStatus": "tension_net_area:answered",
+  "roughStatus": "lookup_hole:answered",
+  "cause": [
+   "lower:lower"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "tension_net_area -> lookup_hole:answered"
+ },
+ {
+  "id": "BC-011~L2",
+  "base": "BC-011",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "nostops"
+  ],
+  "cleanText": "Compute the net area An of a PL 5/8 in. x 9 in. tension plate that has one hole for a 3/4-in.-diameter bolt in the cross section. Take the hole diameter as the bolt diameter plus 1/8 in.",
+  "roughText": "Compute the net area An of a PL 5/8 in x 9 in tension plate that has one hole for a 3/4-in-diameter bolt in the cross section Take the hole diameter as the bolt diameter plus 1/8 in",
+  "cleanLines": [
+   "ANSWER: Net area An: An = 5.0781 in^2 (Ag = 5.625 in^2, 9 x 0.625 plate)"
+  ],
+  "roughLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "lost": [
+   "answer|net area an##5.0781,2,5.625,2,9,0.625"
+  ],
+  "extra": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "cleanStatus": "tension_net_area:answered",
+  "roughStatus": "lookup_hole:answered",
+  "cause": [
+   "nostops:nostops"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "tension_net_area -> lookup_hole:answered"
+ },
+ {
+  "id": "BC-015~syntax",
+  "base": "BC-015",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "syntax:qmark"
+  ],
+  "cleanText": "Find the effective net area Ae of an L6 x 6 x 1/2 angle connected through one leg with a single line of five 7/8-in. bolts.",
+  "roughText": "Find? the effective net area Ae of an L6 x 6 x 1/2 angle connected through one leg with a single line of five 7/8-in. bolts.",
+  "cleanLines": [
+   "ANSWER TO \"effective net area Ae\": Ae = 4.22 in^2"
+  ],
+  "roughLines": [
+   "ANSWER: Tension capacity (first failure load): phi Pn = 205.5 kips -- rupture governs (yielding 259.7, rupture 205.5)"
+  ],
+  "lost": [
+   "blank|ae##4.22,2"
+  ],
+  "extra": [
+   "answer|tension capacity first failure load##205.5,259.7,205.5"
+  ],
+  "cleanStatus": "tension_capacity:answered",
+  "roughStatus": "tension_capacity:answered",
+  "cause": [
+   "syntax:qmark"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_capacity -> tension_capacity:answered"
+ },
+ {
+  "id": "BC-024~numspace",
+  "base": "BC-024",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:70>7 0"
+  ],
+  "cleanText": "Select the lightest W8 shape of A992 steel to carry a service dead load of 70 kips and a service live load of 110 kips in tension. The member is connected through the flanges with two lines of 3/4-in. bolts in each flange, three bolts per line.",
+  "roughText": "Select the lightest W8 shape of A992 steel to carry a service dead load of 7 0 kips and a service live load of 110 kips in tension. The member is connected through the flanges with two lines of 3/4-in. bolts in each flange, three bolts per line.",
+  "cleanLines": [
+   "ANSWER: Lightest tension member: W8X28 (28 lb/ft) phi Pn = 290.6 kips (rupture) >= Pu = 260 kips"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest tension member: W8X21 (21 lb/ft) phi Pn = 197.2 kips (rupture) >= Pu = 176 kips"
+  ],
+  "lost": [
+   "answer|lightest tension member#W8X28#28,290.6,260"
+  ],
+  "extra": [
+   "answer|lightest tension member#W8X21#21,197.2,176"
+  ],
+  "cleanStatus": "tension_select:answered",
+  "roughStatus": "tension_select:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_select -> tension_select:answered"
+ },
+ {
+  "id": "BC-025~numspace",
+  "base": "BC-025",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:500>5 00"
+  ],
+  "cleanText": "Using LRFD, choose the lightest W10 tension member to support a factored load Pu = 500 kips. The connection is through the flanges with 7/8-in. bolts, two holes in each flange, and four bolts per line. Use A992 steel.",
+  "roughText": "Using LRFD, choose the lightest W10 tension member to support a factored load Pu = 5 00 kips. The connection is through the flanges with 7/8-in. bolts, two holes in each flange, and four bolts per line. Use A992 steel.",
+  "cleanLines": [
+   "ANSWER: Lightest tension member: W10X49 (49 lb/ft) phi Pn = 533.5 kips (rupture) >= Pu = 500 kips",
+   "ANSWER TO \"factored load Pu\": Pu = 500 kips"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest tension member: W10X12 (12 lb/ft) phi Pn = 111.9 kips (rupture) >= Pu = 5 kips",
+   "ANSWER TO \"factored load Pu\": Pu = 5 kips"
+  ],
+  "lost": [
+   "answer|lightest tension member#W10X49#49,533.5,500",
+   "blank|pu##500"
+  ],
+  "extra": [
+   "answer|lightest tension member#W10X12#12,111.9,5",
+   "blank|pu##5"
+  ],
+  "cleanStatus": "tension_select:answered",
+  "roughStatus": "tension_select:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_select -> tension_select:answered"
+ },
+ {
+  "id": "BC-029~numspace",
+  "base": "BC-029",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:300>3 00"
+  ],
+  "cleanText": "Select the lightest W14 for a truss tension chord carrying service loads of 250 kips dead and 300 kips live. The flanges are connected with two lines of 1-in. bolts per flange, four bolts per line. A992 steel.",
+  "roughText": "Select the lightest W14 for a truss tension chord carrying service loads of 250 kips dead and 3 00 kips live. The flanges are connected with two lines of 1-in. bolts per flange, four bolts per line. A992 steel.",
+  "cleanLines": [
+   "ANSWER: Lightest tension member: W14X74 (74 lb/ft) phi Pn = 801.5 kips (rupture) >= Pu = 780 kips"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest tension member: W14X38 (38 lb/ft) phi Pn = 368.1 kips (rupture) >= Pu = 350 kips"
+  ],
+  "lost": [
+   "answer|lightest tension member#W14X74#74,801.5,780"
+  ],
+  "extra": [
+   "answer|lightest tension member#W14X38#38,368.1,350"
+  ],
+  "cleanStatus": "tension_select:answered",
+  "roughStatus": "tension_select:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_select -> tension_select:answered"
+ },
+ {
+  "id": "BC-030~numspace",
+  "base": "BC-030",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:60>6 0"
+  ],
+  "cleanText": "A tension member must carry a service dead load of 60 kips and a service live load of 90 kips. Using A992 steel, what minimum gross area is required to prevent yielding?",
+  "roughText": "A tension member must carry a service dead load of 6 0 kips and a service live load of 90 kips. Using A992 steel, what minimum gross area is required to prevent yielding?",
+  "cleanLines": [
+   "ANSWER: Required gross area: Ag >= 4.8 in^2 (Pu = 216 kips)"
+  ],
+  "roughLines": [
+   "ANSWER: Required gross area: Ag >= 3.2 in^2 (Pu = 144 kips)"
+  ],
+  "lost": [
+   "answer|required gross area##4.8,2,216"
+  ],
+  "extra": [
+   "answer|required gross area##3.2,2,144"
+  ],
+  "cleanStatus": "tension_required_area:answered",
+  "roughStatus": "tension_required_area:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_required_area -> tension_required_area:answered"
+ },
+ {
+  "id": "BC-033~numspace",
+  "base": "BC-033",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:40>4 0"
+  ],
+  "cleanText": "A plate of A36 steel carries D = 40 kips and L = 75 kips in tension. Find the required gross area for yielding and the required effective net area for rupture.",
+  "roughText": "A plate of A36 steel carries D = 4 0 kips and L = 75 kips in tension. Find the required gross area for yielding and the required effective net area for rupture.",
+  "cleanLines": [
+   "ANSWER: Required gross area: Ag >= 5.185 in^2 (Pu = 168 kips)"
+  ],
+  "roughLines": [
+   "ANSWER: Required gross area: Ag >= 3.704 in^2 (Pu = 120 kips)"
+  ],
+  "lost": [
+   "answer|required gross area##5.185,2,168"
+  ],
+  "extra": [
+   "answer|required gross area##3.704,2,120"
+  ],
+  "cleanStatus": "tension_required_area:answered",
+  "roughStatus": "tension_required_area:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "tension_required_area -> tension_required_area:answered"
+ },
+ {
+  "id": "BC-036~pair1",
+  "base": "BC-036",
+  "base2": "BC-060",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:bare",
+   "A.misspell:determine>detremine",
+   "A.lower",
+   "A.nostops",
+   "A.spaces:eq",
+   "B.glue",
+   "B.misspell:load>loda",
+   "B.typed:ans = w14x109",
+   "B.lower"
+  ],
+  "cleanText": "Determine the design compressive strength phi Pn of a W12x65 column of A992 steel with an effective length KL = 16 ft about both axes.\n[b] Choose the lightest W14 shape for a column with a factored load Pu = 1,100 kips and KL = 16 ft.",
+  "roughText": "a detremine the design compressive strength phi pn of a w12x65 column of a992 steel with an effective length kl =16 ft about both axes b choose the lightest w14 shape for a column with a factored loda pu = 1,100kips and kl = 16 ft. ans = w14x109",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 16 ft, phi Pn = 640 kips (KL/r route 637.9; exact E3 639.6)",
+   "ANSWER: Lightest column: W14X109 (109 lb/ft) phi Pn = 1190 kips > Pu = 1100 kips ok (Table 4-1a, her method: KL = 16 ft; KL/r route 1180.8)",
+   "ANSWER TO \"factored load Pu\": Pu = 1100 kips"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest column: W14X109 (109 lb/ft) phi Pn = 1190 kips > Pu = 1100 kips ok (Table 4-1a, her method: KL = 16 ft; KL/r route 1180.8)",
+   "ANSWER TO \"design strength phi Pn\": phi Pn = 1190 kips",
+   "ANSWER TO \"factored load Pu\": Pu = 1100 kips"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##4,1,16,640,637.9,3,639.6"
+  ],
+  "extra": [
+   "blank|phi pn##1190"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_select:answered",
+  "cause": [
+   "pair+typing"
+  ],
+  "causeHow": "pair: clean pair SAME, A alone SAME, B alone SAME",
+  "reading": "column_capacity -> column_select:answered"
+ },
+ {
+  "id": "BC-037~numspace",
+  "base": "BC-037",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:20>2 0"
+  ],
+  "cleanText": "A W14x90 column is 20 ft long and pinned at both ends. Using Table 4-1a, what is its available axial compressive strength (LRFD)?",
+  "roughText": "A W14x90 column is 2 0 ft long and pinned at both ends. Using Table 4-1a, what is its available axial compressive strength (LRFD)?",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 20 ft, phi Pn = 877 kips (KL/r route 874.5; exact E3 876.7)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 0 ft, phi Pn = 1190 kips (KL/r route 1192.5; exact E3 1192.5)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##4,1,20,877,874.5,3,876.7"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,0,1190,1192.5,3,1192.5"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-038~numspace",
+  "base": "BC-038",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:14>1 4"
+  ],
+  "cleanText": "A W10x49 column, 14 ft long, is fixed at the base and pinned at the top. Using the recommended design value of K, find phi Pn.",
+  "roughText": "A W10x49 column, 1 4 ft long, is fixed at the base and pinned at the top. Using the recommended design value of K, find phi Pn.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 11.2 ft read at the 12-ft row, phi Pn = 512 kips (KL/r route 527; exact E3 528)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 3.2 ft read at the 4-ft row, phi Pn = 631 kips (KL/r route 636.5; exact E3 637.3)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##4,1,11.2,12,512,527,3,528"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,3.2,4,631,636.5,3,637.3"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-039~numspace",
+  "base": "BC-039",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:12>1 2"
+  ],
+  "cleanText": "Compute the design strength of a W8x31 column of A992 steel that is 12 ft long with both ends fixed.",
+  "roughText": "Compute the design strength of a W8x31 column of A992 steel that is 1 2 ft long with both ends fixed.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 7.8 ft read at the 8-ft row, phi Pn = 348 kips (KL/r route 349.7; exact E3 351.2)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 1.3 ft read at the 2-ft row, phi Pn = 407 kips (KL/r route 409; exact E3 409.1)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##4,1,7.8,8,348,349.7,3,351.2"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,1.3,2,407,409,3,409.1"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-043~numspace",
+  "base": "BC-043",
+  "cls": "DIFFERENT",
+  "warnedOnly": true,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:15>1 5"
+  ],
+  "cleanText": "The design axial compressive strength of a W14x68 column, 15 ft long with pinned ends, is ____ kips.",
+  "roughText": "The design axial compressive strength of a W14x68 column, 1 5 ft long with pinned ends, is ____ kips.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 15 ft, phi Pn = 608 kips (KL/r route 604; exact E3 608.5)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 5 ft, phi Pn = 862 kips (KL/r route 860; exact E3 861.7)   [under a warning]"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##4,1,15,608,604,3,608.5"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,5,862,860,3,861.7"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-044~numspace",
+  "base": "BC-044",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:10>1 0"
+  ],
+  "cleanText": "A W8x24 column 10 ft long is fixed at the bottom and free at the top. Using the recommended design K value, find the design compressive strength.",
+  "roughText": "A W8x24 column 1 0 ft long is fixed at the bottom and free at the top. Using the recommended design K value, find the design compressive strength.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 21 ft, phi Pn = 65 kips (KL/r route 64.9; exact E3 65.3)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 0 ft, phi Pn = 319 kips (KL/r route 318.6; exact E3 318.6)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##4,1,21,65,64.9,3,65.3"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,0,319,318.6,3,318.6"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-047~pair1",
+  "base": "BC-047",
+  "base2": "BC-063",
+  "cls": "DIFFERENT",
+  "warnedOnly": true,
+  "diffKind": "detail",
+  "transforms": [
+   "pair:close",
+   "A.blanks:= ?",
+   "A.misspell:pinned>pinend",
+   "A.nostops",
+   "A.breaks:added",
+   "B.glue",
+   "B.misspell:ends>edns",
+   "B.nostops",
+   "B.spaces:double,inword:fixed"
+  ],
+  "cleanText": "A column is fixed at the base and pinned at the top. Using the recommended design values of AISC Table C-A-7.1, K = ____.\n[b] A 13 ft column that is fixed at both ends supports a dead load of 300 k and a live load of 400 k. Select the most economical W14 shape.",
+  "roughText": "a) A column is fixed at the base and pinend at the top Using the recommended design values of AISC Table C-A-7.1,\nK = ? b) A 13ft column that is fi xed at both edns supports a dead load of 300k and a live load of 400 k Select the most economical W14  shape",
+  "cleanLines": [
+   "ANSWER: Effective length factor K: K = 0.8 (one end fixed, the other pinned (braced frame, no sidesway))",
+   "ANSWER: Lightest column: W14X90 (90 lb/ft) phi Pn = 1120 kips > Pu = 1000 kips ok (Table 4-1a, her method: KL = 8.45 ft read at the 9-ft row; KL/r route 1126.3)"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest column: W14X90 (90 lb/ft) phi Pn = 1090 kips > Pu = 1000 kips ok (Table 4-1a, her method: KL = 10.4 ft read at the 11-ft row; KL/r route 1097.1)   [under a warning]"
+  ],
+  "lost": [
+   "answer|effective length factor k##0.8",
+   "answer|lightest column#W14X90#90,1120,1000,4,1,8.45,9,1126.3"
+  ],
+  "extra": [
+   "answer|lightest column#W14X90#90,1090,1000,4,1,10.4,11,1097.1"
+  ],
+  "cleanStatus": "lookup_K:answered",
+  "roughStatus": "column_select:answered",
+  "cause": [
+   "pair+typing"
+  ],
+  "causeHow": "pair: clean pair SAME, A alone SAME, B alone FEWER",
+  "reading": "lookup_K -> column_select:answered"
+ },
+ {
+  "id": "BC-052~numspace",
+  "base": "BC-052",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:24>2 4"
+  ],
+  "cleanText": "A W12x58 column of A992 steel is 24 ft long, pinned at both ends, and braced about the weak axis at mid-height. Determine the design compressive strength.",
+  "roughText": "A W12x58 column of A992 steel is 2 4 ft long, pinned at both ends, and braced about the weak axis at mid-height. Determine the design compressive strength.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: phi Pn = 598.4 kips (table method: KL/r 57.4 rounded up to 58, phi Fcr 35.2 ksi x Ag 17 in^2)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: phi Pn = 759.9 kips (table method: KL/r 9.6 rounded up to 10, phi Fcr 44.7 ksi x Ag 17 in^2)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##598.4,57.4,58,35.2,17,2"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##759.9,9.6,10,44.7,17,2"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-053~numspace",
+  "base": "BC-053",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:30>3 0"
+  ],
+  "cleanText": "For a W14x82 column with KxLx = 30 ft and KyLy = 15 ft, find the controlling slenderness ratio and the design strength phi Pn using Table 4-14.",
+  "roughText": "For a W14x82 column with KxLx = 3 0 ft and KyLy = 15 ft, find the controlling slenderness ratio and the design strength phi Pn using Table 4-14.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: phi Pn = 732 kips (table method: KL/r 72.6 rounded up to 73, phi Fcr 30.5 ksi x Ag 24 in^2)",
+   "ANSWER TO \"governing KL/r\": KL/r = 72.58   <- write this number.   (73 is only the row of her table that phi Fcr is read from)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 15 ft, phi Pn = 735 kips (KL/r route 732; exact E3 734.8)",
+   "ANSWER TO \"governing KL/r\": KL/r = 72.58   <- write this number.   (73 is only the row of her table that phi Fcr is read from)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##732,72.6,73,30.5,24,2"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,15,735,732,3,734.8"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-055~numspace",
+  "base": "BC-055",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:16>1 6"
+  ],
+  "cleanText": "A W8x40 column is 16 ft long with pinned ends. It is braced about the weak axis at the third points. Determine phi Pn.",
+  "roughText": "A W8x40 column is 1 6 ft long with pinned ends. It is braced about the weak axis at the third points. Determine phi Pn.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: phi Pn = 422.4 kips (table method: KL/r 54.4 rounded up to 55, phi Fcr 36.1 ksi x Ag 11.7 in^2)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: phi Pn = 510.1 kips (table method: KL/r 20.4 rounded up to 21, phi Fcr 43.6 ksi x Ag 11.7 in^2)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##422.4,54.4,55,36.1,11.7,2"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##510.1,20.4,21,43.6,11.7,2"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-058~numspace",
+  "base": "BC-058",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:20>2 0"
+  ],
+  "cleanText": "Determine the design compressive strength of a W10x45 column that is 20 ft long with K = 1.0 about both axes and is braced at mid-height about the y-axis only.",
+  "roughText": "Determine the design compressive strength of a W10x45 column that is 2 0 ft long with K = 1.0 about both axes and is braced at mid-height about the y-axis only.",
+  "cleanLines": [
+   "ANSWER: Column capacity phi Pn: phi Pn = 460.2 kips (table method: KL/r 59.7 rounded up to 60, phi Fcr 34.6 ksi x Ag 13.3 in^2)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 0 ft, phi Pn = 599 kips (KL/r route 598.5; exact E3 598.5)"
+  ],
+  "lost": [
+   "answer|column capacity phi pn##460.2,59.7,60,34.6,13.3,2"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,0,599,598.5,3,598.5"
+  ],
+  "cleanStatus": "column_capacity:answered",
+  "roughStatus": "column_capacity:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_capacity -> column_capacity:answered"
+ },
+ {
+  "id": "BC-061~pair1",
+  "base": "BC-061",
+  "base2": "BC-055",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:close",
+   "A.misspell:lightest>lighgest",
+   "A.nostops",
+   "B.shape:W8X40",
+   "B.misspell:braced>braceed",
+   "B.lower",
+   "B.nostops"
+  ],
+  "cleanText": "Select the lightest W10 to carry D = 100 kips and L = 150 kips as a column. The column is 15 ft long and pinned at both ends.\n[b] A W8x40 column is 16 ft long with pinned ends. It is braced about the weak axis at the third points. Determine phi Pn.",
+  "roughText": "a) Select the lighgest W10 to carry D = 100 kips and L = 150 kips as a column The column is 15 ft long and pinned at both ends b) a w8x40 column is 16 ft long with pinned ends it is braceed about the weak axis at the third points determine phi pn",
+  "cleanLines": [
+   "ANSWER: Lightest column: W10X49 (49 lb/ft) phi Pn = 449 kips > Pu = 360 kips ok (Table 4-1a, her method: KL = 15 ft; KL/r route 447.8)",
+   "ANSWER: Column capacity phi Pn: phi Pn = 422.4 kips (table method: KL/r 54.4 rounded up to 55, phi Fcr 36.1 ksi x Ag 11.7 in^2)"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest column: W10X33 (33 lb/ft) phi Pn = 381.6 kips > Pu = 360 kips ok (Table 4-1a: 381)",
+   "ANSWER TO \"design strength phi Pn\": phi Pn = 381.6 kips"
+  ],
+  "lost": [
+   "answer|lightest column#W10X49#49,449,360,4,1,15,447.8",
+   "answer|column capacity phi pn##422.4,54.4,55,36.1,11.7,2"
+  ],
+  "extra": [
+   "answer|lightest column#W10X33#33,381.6,360,4,1,381",
+   "blank|phi pn##381.6"
+  ],
+  "cleanStatus": "column_select:answered",
+  "roughStatus": "column_select:answered",
+  "cause": [
+   "pair:close"
+  ],
+  "causeHow": "pair: clean pair DIFFERENT, A alone SAME, B alone SAME",
+  "reading": "column_select -> column_select:answered"
+ },
+ {
+  "id": "BC-063~numspace",
+  "base": "BC-063",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:400>40 0"
+  ],
+  "cleanText": "A 13 ft column that is fixed at both ends supports a dead load of 300 k and a live load of 400 k. Select the most economical W14 shape.",
+  "roughText": "A 13 ft column that is fixed at both ends supports a dead load of 300 k and a live load of 40 0 k. Select the most economical W14 shape.",
+  "cleanLines": [
+   "ANSWER: Lightest column: W14X90 (90 lb/ft) phi Pn = 1120 kips > Pu = 1000 kips ok (Table 4-1a, her method: KL = 8.45 ft read at the 9-ft row; KL/r route 1126.3)"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest column: W14X43 (43 lb/ft) phi Pn = 447 kips > Pu = 420 kips ok (Table 4-1a, her method: KL = 8.45 ft read at the 9-ft row; KL/r route 458.6)"
+  ],
+  "lost": [
+   "answer|lightest column#W14X90#90,1120,1000,4,1,8.45,9,1126.3"
+  ],
+  "extra": [
+   "answer|lightest column#W14X43#43,447,420,4,1,8.45,9,458.6"
+  ],
+  "cleanStatus": "column_select:answered",
+  "roughStatus": "column_select:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_select -> column_select:answered"
+ },
+ {
+  "id": "BC-063~M3",
+  "base": "BC-063",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "misspell:ends>edns",
+   "misspell:load>laod",
+   "shuffle:21",
+   "lower",
+   "nostops",
+   "nospace:join,num-word",
+   "spaces:double,double,double"
+  ],
+  "cleanText": "A 13 ft column that is fixed at both ends supports a dead load of 300 k and a live load of 400 k. Select the most economical W14 shape.",
+  "roughText": "Select the most economical w14 shape a 13ftcolumn that is fixed at both edns supports a dead load of 300   k and a live laod of  400  k",
+  "cleanLines": [
+   "ANSWER: Lightest column: W14X90 (90 lb/ft) phi Pn = 1120 kips > Pu = 1000 kips ok (Table 4-1a, her method: KL = 8.45 ft read at the 9-ft row; KL/r route 1126.3)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 1000 kips (1.2D + 1.6L)"
+  ],
+  "lost": [
+   "answer|lightest column#W14X90#90,1120,1000,4,1,8.45,9,1126.3"
+  ],
+  "extra": [
+   "answer|factored load##1000,1.2,1.6"
+  ],
+  "cleanStatus": "column_select:answered",
+  "roughStatus": "loads_factored:answered",
+  "cause": [
+   "shuffle:shuffle",
+   "nostops:nostops",
+   "nospace:join,num-word"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "column_select -> loads_factored:answered"
+ },
+ {
+  "id": "BC-066~numspace",
+  "base": "BC-066",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:15>1 5"
+  ],
+  "cleanText": "Calculate the elastic critical buckling load Pe for a W8x31 that is 15 ft long and pinned at both ends, buckling about the y-axis. E = 29,000 ksi.",
+  "roughText": "Calculate the elastic critical buckling load Pe for a W8x31 that is 1 5 ft long and pinned at both ends, buckling about the y-axis. E = 29,000 ksi.",
+  "cleanLines": [
+   "ANSWER: Euler critical load Pcr: Pcr = 329.1 kips (Fe = 36.046 ksi, KL/r = 89.11) -- NOT VALID here"
+  ],
+  "roughLines": [
+   "ANSWER: Euler critical load Pcr: Pcr = 2961.89 kips (Fe = 324.413 ksi, KL/r = 29.7) -- NOT VALID here"
+  ],
+  "lost": [
+   "answer|euler critical load pcr##329.1,36.046,89.11"
+  ],
+  "extra": [
+   "answer|euler critical load pcr##2961.89,324.413,29.7"
+  ],
+  "cleanStatus": "column_euler:answered",
+  "roughStatus": "column_euler:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_euler -> column_euler:answered"
+ },
+ {
+  "id": "BC-067~syntax",
+  "base": "BC-067",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "syntax:qmark"
+  ],
+  "cleanText": "A W12x50 column is 25 ft long and fixed at both ends. Using the recommended K, find the Euler buckling load about the minor axis.",
+  "roughText": "A W12x50 column is 25 ft long and fixed at both? ends. Using the recommended K, find the Euler buckling load about the minor axis.",
+  "cleanLines": [
+   "ANSWER: Euler critical load Pcr: Pcr = 178.37 kips (Fe = 12.217 ksi, KL/r = 153.06)"
+  ],
+  "roughLines": [
+   "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 16.25 ft read at the 17-ft row, phi Pn = 298 kips (KL/r route 316.8; exact E3 318.6)"
+  ],
+  "lost": [
+   "answer|euler critical load pcr##178.37,12.217,153.06"
+  ],
+  "extra": [
+   "answer|column capacity phi pn##4,1,16.25,17,298,316.8,3,318.6"
+  ],
+  "cleanStatus": "column_euler:answered",
+  "roughStatus": "column_capacity:answered column_euler:needs",
+  "cause": [
+   "syntax:qmark"
+  ],
+  "causeHow": "pure",
+  "reading": "column_euler -> column_capacity:answered column_euler:needs"
+ },
+ {
+  "id": "BC-067~numspace",
+  "base": "BC-067",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:25>2 5"
+  ],
+  "cleanText": "A W12x50 column is 25 ft long and fixed at both ends. Using the recommended K, find the Euler buckling load about the minor axis.",
+  "roughText": "A W12x50 column is 2 5 ft long and fixed at both ends. Using the recommended K, find the Euler buckling load about the minor axis.",
+  "cleanLines": [
+   "ANSWER: Euler critical load Pcr: Pcr = 178.37 kips (Fe = 12.217 ksi, KL/r = 153.06)"
+  ],
+  "roughLines": [
+   "ANSWER: Euler critical load Pcr: Pcr = 4459.23 kips (Fe = 305.427 ksi, KL/r = 30.61) -- NOT VALID here"
+  ],
+  "lost": [
+   "answer|euler critical load pcr##178.37,12.217,153.06"
+  ],
+  "extra": [
+   "answer|euler critical load pcr##4459.23,305.427,30.61"
+  ],
+  "cleanStatus": "column_euler:answered",
+  "roughStatus": "column_euler:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "column_euler -> column_euler:answered"
+ },
+ {
+  "id": "BC-074~numspace",
+  "base": "BC-074",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:27>2 7"
+  ],
+  "cleanText": "Two equal concentrated service loads, each 12 kips dead and 15 kips live, act at the third points of a 27 ft simply supported beam. Neglecting self-weight, find the maximum factored moment.",
+  "roughText": "Two equal concentrated service loads, each 12 kips dead and 15 kips live, act at the third points of a 2 7 ft simply supported beam. Neglecting self-weight, find the maximum factored moment.",
+  "cleanLines": [
+   "ANSWER: Maximum factored moment Mu: Mu = 345.6 kip-ft (1.2D + 1.6L) at x = 9 ft; reactions RA = 38.4 (1.2D + 1.6L), RB = 38.4 (1.2D + 1.6L); Vu = 38.4 (1.2D + 1.6L) -- reactions and shear in kips"
+  ],
+  "roughLines": [
+   "ANSWER: Maximum factored moment Mu: Mu = 89.6 kip-ft (1.2D + 1.6L) at x = 2.333 ft; reactions RA = 38.4 (1.2D + 1.6L), RB = 38.4 (1.2D + 1.6L); Vu = 38.4 (1.2D + 1.6L) -- reactions and shear in kips"
+  ],
+  "lost": [
+   "answer|maximum factored moment mu##345.6,1.2,1.6,9,38.4,1.2,1.6,38.4,1.2,1.6,38.4,1.2,1.6"
+  ],
+  "extra": [
+   "answer|maximum factored moment mu##89.6,1.2,1.6,2.333,38.4,1.2,1.6,38.4,1.2,1.6,38.4,1.2,1.6"
+  ],
+  "cleanStatus": "beam_analysis:answered",
+  "roughStatus": "beam_analysis:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "beam_analysis -> beam_analysis:answered"
+ },
+ {
+  "id": "BC-075~H3",
+  "base": "BC-075",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "compress:no-the",
+   "glue",
+   "misspell:factored>factorred",
+   "misspell:load>loda",
+   "label:Problem 9-33.",
+   "lower",
+   "nostops",
+   "syntax:qmark,qmark",
+   "breaks:added",
+   "numspace:22>2 2"
+  ],
+  "cleanText": "A simply supported floor beam has a span of 22 ft and a factored uniform load wu = 3.4 kips/ft. Compute the maximum factored moment Mu.",
+  "roughText": "Problem 9-33 a simply supported floor? beam has a span of 2 2ft and a factorred uniform loda wu = 3.4k/ft compute?\nmaximum factored moment mu",
+  "cleanLines": [
+   "ANSWER: Maximum factored moment Mu: Mu = 205.7 kip-ft at x = 11 ft; reactions RA = 37.4, RB = 37.4 kips"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 3.4 k/ft (already factored in the problem)"
+  ],
+  "lost": [
+   "answer|maximum factored moment mu##205.7,11,37.4,37.4"
+  ],
+  "extra": [
+   "answer|factored load##3.4"
+  ],
+  "cleanStatus": "beam_analysis:answered",
+  "roughStatus": "lookup_definition:refused loads_factored:answered",
+  "cause": [
+   "compress:no-the",
+   "nostops:nostops",
+   "syntax:qmark,qmark"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "beam_analysis -> lookup_definition:refused loads_factored:answered"
+ },
+ {
+  "id": "BC-076~numspace",
+  "base": "BC-076",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:18>1 8"
+  ],
+  "cleanText": "A single concentrated load acts at the center of a 16 ft simple span: 10 k dead and 18 k live. What is the factored maximum moment? Ignore the beam weight.",
+  "roughText": "A single concentrated load acts at the center of a 16 ft simple span: 10 k dead and 1 8 k live. What is the factored maximum moment? Ignore the beam weight.",
+  "cleanLines": [
+   "ANSWER: Maximum factored moment Mu: Mu = 163.2 kip-ft (1.2D + 1.6L) at x = 8 ft; reactions RA = 20.4 (1.2D + 1.6L), RB = 20.4 (1.2D + 1.6L); Vu = 20.4 (1.2D + 1.6L) -- reactions and shear in kips"
+  ],
+  "roughLines": [
+   "ANSWER: Maximum factored moment Mu: Mu = 99.2 kip-ft (1.2D + 1.6L) at x = 8 ft; reactions RA = 12.4 (1.2D + 1.6L), RB = 12.4 (1.2D + 1.6L); Vu = 12.4 (1.2D + 1.6L) -- reactions and shear in kips"
+  ],
+  "lost": [
+   "answer|maximum factored moment mu##163.2,1.2,1.6,8,20.4,1.2,1.6,20.4,1.2,1.6,20.4,1.2,1.6"
+  ],
+  "extra": [
+   "answer|maximum factored moment mu##99.2,1.2,1.6,8,12.4,1.2,1.6,12.4,1.2,1.6,12.4,1.2,1.6"
+  ],
+  "cleanStatus": "beam_analysis:answered",
+  "roughStatus": "beam_analysis:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "beam_analysis -> beam_analysis:answered"
+ },
+ {
+  "id": "BC-078~numspace",
+  "base": "BC-078",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:320>32 0"
+  ],
+  "cleanText": "The factored moment on a fully braced A992 beam is Mu = 320 kip-ft. Find the minimum required plastic section modulus Zx.",
+  "roughText": "The factored moment on a fully braced A992 beam is Mu = 32 0 kip-ft. Find the minimum required plastic section modulus Zx.",
+  "cleanLines": [
+   "ANSWER: Required Zx: Zx >= 85.333 in^3"
+  ],
+  "roughLines": [
+   "ANSWER: Required Zx: Zx >= 8.533 in^3"
+  ],
+  "lost": [
+   "answer|required zx##85.333,3"
+  ],
+  "extra": [
+   "answer|required zx##8.533,3"
+  ],
+  "cleanStatus": "beam_required_zx:answered",
+  "roughStatus": "beam_required_zx:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "beam_required_zx -> beam_required_zx:answered"
+ },
+ {
+  "id": "BC-083~pair1",
+  "base": "BC-083",
+  "base2": "BC-094",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:close-nl",
+   "A.misspell:simply supported>simpy suported",
+   "A.lower",
+   "A.nostops",
+   "A.spaces:before-punct,double",
+   "B.shape:w16 31",
+   "B.misspell:steel>stee",
+   "B.shuffle:21",
+   "B.label:Problem 4-18.",
+   "B.nostops",
+   "B.syntax:qmark"
+  ],
+  "cleanText": "Select the lightest W-shape of A992 steel for a simply supported beam with a span of 30 ft carrying a uniform dead load of 1.0 kip/ft and a uniform live load of 2.0 kips/ft. The compression flange is fully braced. Neglect self-weight for the first trial, then check it.\n[b] A W16x31 beam of A992 steel is fully braced. Is it adequate for a factored moment of 190 kip-ft?",
+  "roughText": "a) select the lightest w-shape of a992 steel  for a simpy suported beam with a span of 30 ft carrying a uniform dead load of 1.0 kip/ft and a uniform live load of 2.0 kips/ft the compression flange is fully braced neglect self-weight for the first trial , then check it.\nb) Problem 4-18 Is it adequate? for a factored moment of 190 kip-ft? A w16 31 beam of A992 stee is fully braced",
+  "cleanLines": [
+   "ANSWER: Most economical beam: W24X55 (55 lb/ft, d = 23.6 in) phi Mp = 503 kip-ft >= Mu = 495",
+   "ANSWER: Design moment phi Mp: phi Mp = 203 kip-ft (W16X31, fully braced); adequate for Mu = 190"
+  ],
+  "roughLines": [
+   "ANSWER: Most economical beam: W16X77 (77 lb/ft, d = 16.5 in) phi Mp = 563 kip-ft >= Mu = 495"
+  ],
+  "lost": [
+   "answer|most economical beam#W24X55#55,23.6,503,495",
+   "answer|design moment phi mp#W16X31#203,190"
+  ],
+  "extra": [
+   "answer|most economical beam#W16X77#77,16.5,563,495"
+  ],
+  "cleanStatus": "beam_select:answered",
+  "roughStatus": "beam_select:answered beam_analysis:needs",
+  "cause": [
+   "pair+typing"
+  ],
+  "causeHow": "pair: clean pair SAME, A alone SAME, B alone FEWER",
+  "reading": "beam_select -> beam_select:answered beam_analysis:needs"
+ },
+ {
+  "id": "BC-087~pair1",
+  "base": "BC-087",
+  "base2": "BC-093",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:dot",
+   "A.misspell:steel>stteel",
+   "A.label:prob 1.1",
+   "A.lower",
+   "A.nostops",
+   "A.breaks:added",
+   "B.shape:w21x44",
+   "B.glue",
+   "B.misspell:beam>baem",
+   "B.misspell:lateral>latral",
+   "B.fig:(see figure)",
+   "B.label:Problem 3-40.",
+   "B.lower",
+   "B.nostops",
+   "B.spaces:before-punct"
+  ],
+  "cleanText": "A floor beam spans 25 ft with service loads of 0.65 k/ft dead and 1.1 k/ft live. Find the lightest W-shape from the Zx table (Table 3-2), A992 steel, with full lateral support.\n[b] Find phi Mp for a W21x44 beam of A992 steel with continuous lateral support. Express the answer in kip-ft.",
+  "roughText": "a. prob 1.1 a floor beam spans 25 ft with service loads of 0.65 k/ft dead and 1.1 k/ft live find the lightest w-shape from the zx table (table 3-2), a992 stteel,\nwith full lateral support b. problem 3-40 find phi mp for a w21x44 baem of a992 steel with continuous latral support express the answer in k-ft . (see figure)",
+  "cleanLines": [
+   "ANSWER: Most economical beam: W16X31 (31 lb/ft, d = 15.9 in) phi Mp = 203 kip-ft >= Mu = 198.44",
+   "ANSWER: Design moment phi Mp: phi Mp = 358 kip-ft (W21X44, fully braced)"
+  ],
+  "roughLines": [
+   "ANSWER: Most economical beam: W16X31 (31 lb/ft, d = 15.9 in) phi Mp = 203 kip-ft >= Mu = 198.44",
+   "ANSWER TO \"design moment strength phi Mn\": phi Mn = 203 kip-ft"
+  ],
+  "lost": [
+   "answer|design moment phi mp#W21X44#358"
+  ],
+  "extra": [
+   "blank|phi mn##203"
+  ],
+  "cleanStatus": "beam_select:answered",
+  "roughStatus": "beam_select:figure",
+  "cause": [
+   "pair+typing"
+  ],
+  "causeHow": "pair: clean pair SAME, A alone SAME, B alone SAME",
+  "reading": "beam_select -> beam_select:figure"
+ },
+ {
+  "id": "BC-089~H1",
+  "base": "BC-089",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "detail",
+  "transforms": [
+   "compress:no-the",
+   "glue",
+   "misspell:required>requried",
+   "misspell:modulus>modulous",
+   "misspell-ordinary:least>lesat",
+   "typed:ans = w21x48",
+   "lower",
+   "nostops",
+   "spaces:inword:shape"
+  ],
+  "cleanText": "Select the lightest W shape with a plastic section modulus of at least 98 in.^3 (required Zx = 98 in.^3).",
+  "roughText": "Select lightest w sh ape with a plastic section modulous of at lesat 98in^3 (requried zx = 98in^3) ans = w21x48",
+  "cleanLines": [
+   "ANSWER: Lightest W with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest W21 with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3"
+  ],
+  "lost": [
+   "answer|lightest w with zx#W21X48#98,48,107,3"
+  ],
+  "extra": [
+   "answer|lightest w with zx#W21X48#21,98,48,107,3"
+  ],
+  "cleanStatus": "lookup_by_property:answered",
+  "roughStatus": "lookup_by_property:answered",
+  "cause": [
+   "typed:book answer"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_by_property -> lookup_by_property:answered"
+ },
+ {
+  "id": "BC-089~H2",
+  "base": "BC-089",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "detail",
+  "transforms": [
+   "compress:no-the",
+   "misspell:plastic>plastik",
+   "misspell:lightest>lightst",
+   "misspell-ordinary:with>wiht",
+   "typed:answer W21X48",
+   "label:a)",
+   "lower",
+   "nostops",
+   "nospace:num-word",
+   "spaces:double,eq,inword:least,inword:section"
+  ],
+  "cleanText": "Select the lightest W shape with a plastic section modulus of at least 98 in.^3 (required Zx = 98 in.^3).",
+  "roughText": "a) select lightst w shape wiht a plastik secti on  modulus of at le ast 98in^3 (required zx  =  98 in^3) answer w21x48",
+  "cleanLines": [
+   "ANSWER: Lightest W with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3"
+  ],
+  "roughLines": [
+   "ANSWER: Lightest W21 with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3"
+  ],
+  "lost": [
+   "answer|lightest w with zx#W21X48#98,48,107,3"
+  ],
+  "extra": [
+   "answer|lightest w with zx#W21X48#21,98,48,107,3"
+  ],
+  "cleanStatus": "lookup_by_property:answered",
+  "roughStatus": "lookup_by_property:answered",
+  "cause": [
+   "typed:book answer",
+   "nostops:nostops"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_by_property -> lookup_by_property:answered"
+ },
+ {
+  "id": "BC-093~pair1",
+  "base": "BC-093",
+  "base2": "BC-083",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:close-nl",
+   "A.shape:w21 44",
+   "A.misspell:support>sjpport",
+   "A.misspell:lateral>lateal",
+   "A.label:Problem 1-40.",
+   "A.lower",
+   "A.nostops",
+   "A.spaces:double",
+   "A.breaks:added",
+   "B.misspell:simply supported>simpy suported",
+   "B.lower",
+   "B.nostops"
+  ],
+  "cleanText": "Find phi Mp for a W21x44 beam of A992 steel with continuous lateral support. Express the answer in kip-ft.\n[b] Select the lightest W-shape of A992 steel for a simply supported beam with a span of 30 ft carrying a uniform dead load of 1.0 kip/ft and a uniform live load of 2.0 kips/ft. The compression flange is fully braced. Neglect self-weight for the first trial, then check it.",
+  "roughText": "a) problem 1-40 find phi mp for a w21 44 beam of   a992 steel with continuous lateal sjpport\nexpress the answer in kip-ft\nb) select the lightest w-shape of a992 steel for a simpy suported beam with a span of 30 ft carrying a uniform dead load of 1.0 kip/ft and a uniform live load of 2.0 kips/ft. the compression flange is fully braced neglect self-weight for the first trial, then check it",
+  "cleanLines": [
+   "ANSWER: Design moment phi Mp: phi Mp = 358 kip-ft (W21X44, fully braced)",
+   "ANSWER: Most economical beam: W24X55 (55 lb/ft, d = 23.6 in) phi Mp = 503 kip-ft >= Mu = 495"
+  ],
+  "roughLines": [
+   "ANSWER: Most economical beam: W21X62 (62 lb/ft, d = 21 in) phi Mp = 540 kip-ft >= Mu = 495",
+   "ANSWER TO \"design moment strength phi Mn\": phi Mn = 540 kip-ft"
+  ],
+  "lost": [
+   "answer|design moment phi mp#W21X44#358",
+   "answer|most economical beam#W24X55#55,23.6,503,495"
+  ],
+  "extra": [
+   "answer|most economical beam#W21X62#62,21,540,495",
+   "blank|phi mn##540"
+  ],
+  "cleanStatus": "beam_capacity:answered units:needs",
+  "roughStatus": "beam_select:answered",
+  "cause": [
+   "pair+typing"
+  ],
+  "causeHow": "pair: clean pair SAME, A alone FEWER, B alone SAME",
+  "reading": "beam_capacity units -> beam_select:answered"
+ },
+ {
+  "id": "BC-094~pair1",
+  "base": "BC-094",
+  "base2": "BC-089",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:close",
+   "A.glue",
+   "A.misspell:beam>beem",
+   "B.misspell:shape>sshape",
+   "B.misspell:select>slect",
+   "B.lower",
+   "B.nostops",
+   "B.nospace:num-word"
+  ],
+  "cleanText": "A W16x31 beam of A992 steel is fully braced. Is it adequate for a factored moment of 190 kip-ft?\n[b] Select the lightest W shape with a plastic section modulus of at least 98 in.^3 (required Zx = 98 in.^3).",
+  "roughText": "a) A W16x31 beem of A992 steel is fully braced. Is it adequate for a factored moment of 190k-ft? b) slect the lightest w sshape with a plastic section modulus of at least 98 in^3 (required zx = 98in^3).",
+  "cleanLines": [
+   "ANSWER: Design moment phi Mp: phi Mp = 203 kip-ft (W16X31, fully braced); adequate for Mu = 190",
+   "ANSWER: Lightest W with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3"
+  ],
+  "roughLines": [
+   "ANSWER: Design moment phi Mp: phi Mp = 203 kip-ft (W16X31, fully braced); adequate for Mu = 190",
+   "ANSWER: Lightest W16 with Zx >= 98: W16X57 (57 lb/ft), Zx = 105 in^3"
+  ],
+  "lost": [
+   "answer|lightest w with zx#W21X48#98,48,107,3"
+  ],
+  "extra": [
+   "answer|lightest w with zx#W16X57#16,98,57,105,3"
+  ],
+  "cleanStatus": "beam_capacity:answered",
+  "roughStatus": "beam_capacity:answered lookup_by_property:answered",
+  "cause": [
+   "pair:close"
+  ],
+  "causeHow": "pair: clean pair DIFFERENT, A alone SAME, B alone SAME",
+  "reading": "beam_capacity -> beam_capacity:answered lookup_by_property:answered"
+ },
+ {
+  "id": "BC-101~numspace",
+  "base": "BC-101",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:180>18 0"
+  ],
+  "cleanText": "A column supports a service dead load of 120 kips and a service live load of 180 kips. Compute the factored (required) load Pu using the load combination 1.2D + 1.6L.",
+  "roughText": "A column supports a service dead load of 120 kips and a service live load of 18 0 kips. Compute the factored (required) load Pu using the load combination 1.2D + 1.6L.",
+  "cleanLines": [
+   "ANSWER: Largest factored load U: 432 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 432 kips (combination 2); smallest: 108 kips (combination 5 and 7)"
+  ],
+  "roughLines": [
+   "ANSWER: Largest factored load U: 168 kips -- combination 1: 1.4D, L* = 0.5 L; smallest: 108 kips (combination 5 and 7)"
+  ],
+  "lost": [
+   "answer|largest factored load u##432,2,1.2,1.6,0.5,0.5,1,432,2,108,5,7"
+  ],
+  "extra": [
+   "answer|largest factored load u##168,1,1.4,0.5,108,5,7"
+  ],
+  "cleanStatus": "loads_combinations:answered",
+  "roughStatus": "loads_combinations:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_combinations -> loads_combinations:answered"
+ },
+ {
+  "id": "BC-102~numspace",
+  "base": "BC-102",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:30>3 0"
+  ],
+  "cleanText": "Determine the factored load for a tension member with a dead load of 45 k and a live load of 30 k.",
+  "roughText": "Determine the factored load for a tension member with a dead load of 45 k and a live load of 3 0 k.",
+  "cleanLines": [
+   "ANSWER: Factored load: 102 kips (1.2D + 1.6L)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 63 kips (1.4D governs: L is less than D/8)"
+  ],
+  "lost": [
+   "answer|factored load##102,1.2,1.6"
+  ],
+  "extra": [
+   "answer|factored load##63,1.4,8"
+  ],
+  "cleanStatus": "loads_factored:answered",
+  "roughStatus": "loads_factored:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_factored -> loads_factored:answered"
+ },
+ {
+  "id": "BC-104~syntax",
+  "base": "BC-104",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "syntax:qmark"
+  ],
+  "cleanText": "The service loads on a hanger are 25 kips dead and 5 kips live. What is the governing factored load?",
+  "roughText": "The service loads on a hanger are 25 kips dead? and 5 kips live. What is the governing factored load?",
+  "cleanLines": [
+   "ANSWER: Largest factored load U: 38 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 38 kips (combination 2); smallest: 22.5 kips (combination 5 and 7)"
+  ],
+  "roughLines": [
+   "ANSWER: Largest factored load U: 8 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 8 kips (combination 2); smallest: 0 kips (combination 1 and 3b and 5 and 7)"
+  ],
+  "lost": [
+   "answer|largest factored load u##38,2,1.2,1.6,0.5,0.5,1,38,2,22.5,5,7"
+  ],
+  "extra": [
+   "answer|largest factored load u##8,2,1.2,1.6,0.5,0.5,1,8,2,0,1,3,5,7"
+  ],
+  "cleanStatus": "loads_combinations:answered",
+  "roughStatus": "tension_capacity:refused loads_combinations:answered",
+  "cause": [
+   "syntax:qmark"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_combinations -> tension_capacity:refused loads_combinations:answered"
+ },
+ {
+  "id": "BC-104~numspace",
+  "base": "BC-104",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:25>2 5"
+  ],
+  "cleanText": "The service loads on a hanger are 25 kips dead and 5 kips live. What is the governing factored load?",
+  "roughText": "The service loads on a hanger are 2 5 kips dead and 5 kips live. What is the governing factored load?",
+  "cleanLines": [
+   "ANSWER: Largest factored load U: 38 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 38 kips (combination 2); smallest: 22.5 kips (combination 5 and 7)"
+  ],
+  "roughLines": [
+   "ANSWER: Largest factored load U: 14 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 14 kips (combination 2); smallest: 4.5 kips (combination 5 and 7)"
+  ],
+  "lost": [
+   "answer|largest factored load u##38,2,1.2,1.6,0.5,0.5,1,38,2,22.5,5,7"
+  ],
+  "extra": [
+   "answer|largest factored load u##14,2,1.2,1.6,0.5,0.5,1,14,2,4.5,5,7"
+  ],
+  "cleanStatus": "loads_combinations:answered",
+  "roughStatus": "loads_combinations:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_combinations -> loads_combinations:answered"
+ },
+ {
+  "id": "BC-104~M2",
+  "base": "BC-104",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "glue",
+   "misspell:service>servcie",
+   "shuffle:21",
+   "label:5-30)",
+   "lower",
+   "nostops",
+   "nospace:num-word",
+   "breaks:added"
+  ],
+  "cleanText": "The service loads on a hanger are 25 kips dead and 5 kips live. What is the governing factored load?",
+  "roughText": "5-30) what is the governing factored load?\nthe servcie loads on a hanger are 25kips dead and 5klive",
+  "cleanLines": [
+   "ANSWER: Largest factored load U: 38 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 38 kips (combination 2); smallest: 22.5 kips (combination 5 and 7)"
+  ],
+  "roughLines": [
+   "ANSWER: Largest factored load U: 35 kips -- combination 1: 1.4D, L* = 0.5 L; smallest: 22.5 kips (combination 5 and 7)"
+  ],
+  "lost": [
+   "answer|largest factored load u##38,2,1.2,1.6,0.5,0.5,1,38,2,22.5,5,7"
+  ],
+  "extra": [
+   "answer|largest factored load u##35,1,1.4,0.5,22.5,5,7"
+  ],
+  "cleanStatus": "loads_combinations:answered",
+  "roughStatus": "loads_combinations:answered",
+  "cause": [
+   "glue:glue",
+   "nospace:num-word"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "loads_combinations -> loads_combinations:answered"
+ },
+ {
+  "id": "BC-107~syntax",
+  "base": "BC-107",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "syntax:qmark"
+  ],
+  "cleanText": "What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and an occupancy live load of 95 kips?",
+  "roughText": "What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and? an occupancy live load of 95 kips?",
+  "cleanLines": [
+   "ANSWER: Factored load: 254 kips (1.2D + 1.6L)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 119 kips (1.4D governs: L is less than D/8)",
+   "ANSWER: Factored load: 152 kips (1.2D + 1.6L)"
+  ],
+  "lost": [
+   "answer|factored load##254,1.2,1.6"
+  ],
+  "extra": [
+   "answer|factored load##119,1.4,8",
+   "answer|factored load##152,1.2,1.6"
+  ],
+  "cleanStatus": "loads_factored:answered",
+  "roughStatus": "loads_factored:answered loads_factored:answered",
+  "cause": [
+   "syntax:qmark"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_factored -> loads_factored:answered loads_factored:answered"
+ },
+ {
+  "id": "BC-107~numspace",
+  "base": "BC-107",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:95>9 5"
+  ],
+  "cleanText": "What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and an occupancy live load of 95 kips?",
+  "roughText": "What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and an occupancy live load of 9 5 kips?",
+  "cleanLines": [
+   "ANSWER: Factored load: 254 kips (1.2D + 1.6L)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 119 kips (1.4D governs: L is less than D/8)"
+  ],
+  "lost": [
+   "answer|factored load##254,1.2,1.6"
+  ],
+  "extra": [
+   "answer|factored load##119,1.4,8"
+  ],
+  "cleanStatus": "loads_factored:answered",
+  "roughStatus": "loads_factored:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_factored -> loads_factored:answered"
+ },
+ {
+  "id": "BC-107~H2",
+  "base": "BC-107",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "compress:DL",
+   "compress:LL",
+   "glue",
+   "misspell:live>liev",
+   "misspell:load>loda",
+   "misspell-ordinary:with>wwith",
+   "lower",
+   "spaces:double,double,double",
+   "numspace:85>8 5"
+  ],
+  "cleanText": "What is the factored axial load for a column with a dead load of 85 kips (including self-weight) and an occupancy live load of 95 kips?",
+  "roughText": "what is the factored axial loda for a column wwith a   dl  of 8 5k (including self-weight)   and an occupancy liev of 95k?",
+  "cleanLines": [
+   "ANSWER: Factored load: 254 kips (1.2D + 1.6L)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 152 kips (1.2D + 1.6L)"
+  ],
+  "lost": [
+   "answer|factored load##254,1.2,1.6"
+  ],
+  "extra": [
+   "answer|factored load##152,1.2,1.6"
+  ],
+  "cleanStatus": "loads_factored:answered",
+  "roughStatus": "loads_factored:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "loads_factored -> loads_factored:answered"
+ },
+ {
+  "id": "BC-115~pair1",
+  "base": "BC-115",
+  "base2": "BC-104",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:bare",
+   "A.misspell:beam>baem",
+   "A.spaces:before-punct,before-punct",
+   "B.misspell:factored>factorred",
+   "B.spaces:double"
+  ],
+  "cleanText": "A W16x31 floor beam spans 24 ft with a tributary width of 8 ft. The floor dead load is 65 psf (not including the beam) and the live load is 100 psf. Including the beam weight, compute the factored line load and Mu.\n[b] The service loads on a hanger are 25 kips dead and 5 kips live. What is the governing factored load?",
+  "roughText": "a A W16x31 floor beam spans 24 ft with a tributary width of 8 ft . The floor dead load is 65 psf (not including the baem) and the live load is 100 psf . Including the beam weight, compute the factored line load and Mu. b The service loads on a hanger are 25  kips dead and 5 kips live. What is the governing factorred load?",
+  "cleanLines": [
+   "ANSWER TO \"factored moment Mu\": Mu = 139.77 kip-ft",
+   "ANSWER TO \"factored line load wu\": wu = 1.9 k/ft",
+   "ANSWER: Largest factored load U: 38 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 38 kips (combination 2); smallest: 22.5 kips (combination 5 and 7)"
+  ],
+  "roughLines": [
+   "ANSWER TO \"factored moment Mu\": Mu = 139.77 kip-ft",
+   "ANSWER TO \"factored line load wu\": wu = 1.9 k/ft",
+   "ANSWER: Largest factored load U: 238 psf -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 238 psf (combination 2); smallest: 58.5 psf (combination 5 and 7)"
+  ],
+  "lost": [
+   "answer|largest factored load u##38,2,1.2,1.6,0.5,0.5,1,38,2,22.5,5,7"
+  ],
+  "extra": [
+   "answer|largest factored load u##238,2,1.2,1.6,0.5,0.5,1,238,2,58.5,5,7"
+  ],
+  "cleanStatus": "floor_plan:answered",
+  "roughStatus": "floor_plan:answered loads_combinations:answered",
+  "cause": [
+   "pair:bare"
+  ],
+  "causeHow": "pair: clean pair DIFFERENT, A alone SAME, B alone SAME",
+  "reading": "floor_plan -> floor_plan:answered loads_combinations:answered"
+ },
+ {
+  "id": "BC-127~numspace",
+  "base": "BC-127",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:100>1 00"
+  ],
+  "cleanText": "A corner column supports a tributary area of 12.5 ft x 15 ft on each of four floors. Each floor has a dead load of 75 psf and a live load of 100 psf. Find the service dead load, the service live load and the factored load on the column at the foundation.",
+  "roughText": "A corner column supports a tributary area of 12.5 ft x 15 ft on each of four floors. Each floor has a dead load of 75 psf and a live load of 1 00 psf. Find the service dead load, the service live load and the factored load on the column at the foundation.",
+  "cleanLines": [
+   "ANSWER: Factored column load at the lowest level: Pu = 187.5 kips (4 floors, no roof)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored column load at the lowest level: Pu = 78.75 kips (4 floors, no roof; 1.4D governs: L is less than D/8)"
+  ],
+  "lost": [
+   "answer|factored column load at the lowest level##187.5,4"
+  ],
+  "extra": [
+   "answer|factored column load at the lowest level##78.75,4,1.4,8"
+  ],
+  "cleanStatus": "loads_takedown:answered",
+  "roughStatus": "loads_takedown:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_takedown -> loads_takedown:answered"
+ },
+ {
+  "id": "BC-129~numspace",
+  "base": "BC-129",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:30>3 0"
+  ],
+  "cleanText": "At each floor an interior column receives two girder reactions, each 30 kips dead and 40 kips live (service). The column supports three floors. Compute the factored axial load in the bottom story.",
+  "roughText": "At each floor an interior column receives two girder reactions, each 3 0 kips dead and 40 kips live (service). The column supports three floors. Compute the factored axial load in the bottom story.",
+  "cleanLines": [
+   "ANSWER: Factored load: 100 kips (1.2D + 1.6L)"
+  ],
+  "roughLines": [
+   "ANSWER: Factored load: 64 kips (1.2D + 1.6L)"
+  ],
+  "lost": [
+   "answer|factored load##100,1.2,1.6"
+  ],
+  "extra": [
+   "answer|factored load##64,1.2,1.6"
+  ],
+  "cleanStatus": "loads_factored:answered",
+  "roughStatus": "loads_factored:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "loads_factored -> loads_factored:answered"
+ },
+ {
+  "id": "BL-006~H1",
+  "base": "BL-006",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "compress:no-the",
+   "shape:W 24X68",
+   "misspell:inertia>imertia",
+   "misspell:axis>axiw",
+   "misspell-ordinary:about>avout",
+   "typed:(ans 1830 in^4)",
+   "label:P6-26",
+   "syntax:bracket,qmark",
+   "breaks:added",
+   "numspace:1830>18 30"
+  ],
+  "cleanText": "Look up the moment of inertia about the strong axis, Ix, for a W24x68.",
+  "roughText": "P6-26 Look up the moment of imertia avout strong axiw,\nIx, for? a W 24X68. (ans 18 30 in^4",
+  "cleanLines": [
+   "ANSWER: Ix of W24X68: Ix = 1830 in^4 (W24X68, moment of inertia Ix)",
+   "ANSWER: Ix of W24X68: Ix = 1830 in^4 (W24X68, moment of inertia Ix)"
+  ],
+  "roughLines": [
+   "ANSWER: W24X68: W = 68 lb/ft, A = 20.1 in^2, d = 23.7 in, bf = 8.97 in, tw = 0.415 in, tf = 0.585 in, Ix = 1830 in^4, Zx = 177 in^3, Sx = 154 in^3, rx = 9.55 in, Iy = 70.4 in^4, Zy = 24.5 in^3, Sy = 15.7 in^3, ry = 1.87 in"
+  ],
+  "lost": [
+   "answer|ix of shape#W24X68,W24X68#1830,4"
+  ],
+  "extra": [
+   "answer|shape#W24X68#68,20.1,2,23.7,8.97,0.415,0.585,1830,4,177,3,154,3,9.55,70.4,4,24.5,3,15.7,3,1.87"
+  ],
+  "cleanStatus": "lookup_shape:answered lookup_shape:answered",
+  "roughStatus": "lookup_shape:answered",
+  "cause": [
+   "typed:book answer",
+   "syntax:bracket,qmark"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_shape lookup_shape -> lookup_shape:answered"
+ },
+ {
+  "id": "BL-007~pair1",
+  "base": "BL-007",
+  "base2": "BL-004",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:dot",
+   "A.misspell:plastic>plastuc",
+   "A.misspell:modulus>moudlus",
+   "A.typed:ans = 73 in^3",
+   "A.lower",
+   "A.nospace:after-punct,after-punct",
+   "B.shape:w10 49",
+   "B.misspell:thickness>thikness",
+   "B.nostops",
+   "B.spaces:double",
+   "B.breaks:added"
+  ],
+  "cleanText": "What is the plastic section modulus about the x-axis, Zx, of a W16x40?\n[b] Find the flange thickness, tf, of a W10x49 in inches.",
+  "roughText": "a. what is the plastuc section moudlus about the x-axis,zx,of a w16x40? ans = 73 in^3 b. Find the flange thikness,  tf,\nof a w10 49 in inches",
+  "cleanLines": [
+   "ANSWER: Zx of W16X40: Zx = 73 in^3 (W16X40, plastic section modulus Zx)",
+   "ANSWER: Zx of W16X40: Zx = 73 in^3 (W16X40, plastic section modulus Zx)",
+   "ANSWER: tf of W10X49: tf = 0.56 in (W10X49, flange thickness tf)"
+  ],
+  "roughLines": [
+   "ANSWER: tf of W16X40: tf = 0.505 in (W16X40, flange thickness tf)"
+  ],
+  "lost": [
+   "answer|zx of shape#W16X40,W16X40#73,3",
+   "answer|tf of shape#W10X49,W10X49#0.56"
+  ],
+  "extra": [
+   "answer|tf of shape#W16X40,W16X40#0.505"
+  ],
+  "cleanStatus": "lookup_shape:answered lookup_shape:answered",
+  "roughStatus": "lookup_shape:answered",
+  "cause": [
+   "pair+typing"
+  ],
+  "causeHow": "pair: clean pair SAME, A alone SAME, B alone FEWER",
+  "reading": "lookup_shape lookup_shape -> lookup_shape:answered"
+ },
+ {
+  "id": "BL-014~L2",
+  "base": "BL-014",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "misspell:weak>week",
+   "nostops"
+  ],
+  "cleanText": "From the AISC Manual, find the gross area and the weak-axis radius of gyration of a W10x33.",
+  "roughText": "From the AISC Manual, find the gross area and the week-axis radius of gyration of a W10x33",
+  "cleanLines": [
+   "ANSWER: A of W10X33: A = 9.71 in^2 (W10X33, gross area Ag)",
+   "ANSWER: ry of W10X33: ry = 1.94 in (W10X33, radius of gyration ry)"
+  ],
+  "roughLines": [
+   "ANSWER: W10X33: W = 33 lb/ft, A = 9.71 in^2, d = 9.73 in, bf = 7.96 in, tw = 0.29 in, tf = 0.435 in, Ix = 171 in^4, Zx = 38.8 in^3, Sx = 35 in^3, rx = 4.19 in, Iy = 36.6 in^4, Zy = 14 in^3, Sy = 9.2 in^3, ry = 1.94 in"
+  ],
+  "lost": [
+   "answer|a of shape#W10X33,W10X33#9.71,2",
+   "answer|ry of shape#W10X33,W10X33#1.94"
+  ],
+  "extra": [
+   "answer|shape#W10X33#33,9.71,2,9.73,7.96,0.29,0.435,171,4,38.8,3,35,3,4.19,36.6,4,14,3,9.2,3,1.94"
+  ],
+  "cleanStatus": "lookup_shape:answered lookup_shape:answered",
+  "roughStatus": "lookup_shape:answered",
+  "cause": [
+   "misspell:weak"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_shape lookup_shape -> lookup_shape:answered"
+ },
+ {
+  "id": "BL-014~M1",
+  "base": "BL-014",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "shape:w10x 33",
+   "misspell:weak>week",
+   "misspell:axis>axiss",
+   "nostops",
+   "breaks:added"
+  ],
+  "cleanText": "From the AISC Manual, find the gross area and the weak-axis radius of gyration of a W10x33.",
+  "roughText": "From the AISC Manual, find the gross area and the week-axiss radius of gyration of a w10x\n33",
+  "cleanLines": [
+   "ANSWER: A of W10X33: A = 9.71 in^2 (W10X33, gross area Ag)",
+   "ANSWER: ry of W10X33: ry = 1.94 in (W10X33, radius of gyration ry)"
+  ],
+  "roughLines": [
+   "ANSWER: W10X33: W = 33 lb/ft, A = 9.71 in^2, d = 9.73 in, bf = 7.96 in, tw = 0.29 in, tf = 0.435 in, Ix = 171 in^4, Zx = 38.8 in^3, Sx = 35 in^3, rx = 4.19 in, Iy = 36.6 in^4, Zy = 14 in^3, Sy = 9.2 in^3, ry = 1.94 in"
+  ],
+  "lost": [
+   "answer|a of shape#W10X33,W10X33#9.71,2",
+   "answer|ry of shape#W10X33,W10X33#1.94"
+  ],
+  "extra": [
+   "answer|shape#W10X33#33,9.71,2,9.73,7.96,0.29,0.435,171,4,38.8,3,35,3,4.19,36.6,4,14,3,9.2,3,1.94"
+  ],
+  "cleanStatus": "lookup_shape:answered lookup_shape:answered",
+  "roughStatus": "lookup_shape:answered",
+  "cause": [
+   "misspell:weak+axis"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_shape lookup_shape -> lookup_shape:answered"
+ },
+ {
+  "id": "BL-024~pair1",
+  "base": "BL-024",
+  "base2": "BL-018",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "pair:dot",
+   "A.lower",
+   "B.shape:WT 8X28.5",
+   "B.misspell:depth>depht"
+  ],
+  "cleanText": "Which steel grade is most commonly specified for rectangular HSS, and what are its Fy and Fu?\n[b] For a WT8x28.5 structural tee, find the cross-sectional area and the depth of the tee.",
+  "roughText": "a. Which steel grade is most commonly specified for rectangular hss, and what are its fy and fu? b. For a WT 8X28.5 structural tee, find the cross-sectional area and the depht of the tee.",
+  "cleanLines": [
+   "ANSWER: Steel for HSS: ASTM A500 Grade C: Fy = 50 ksi, Fu = 62 ksi",
+   "ANSWER: A of WT8X28.5: A = 8.39 in^2 (WT8X28.5, gross area Ag)",
+   "ANSWER: d of WT8X28.5: d = 8.22 in (WT8X28.5, overall depth d)"
+  ],
+  "roughLines": [
+   "ANSWER: Steel for WT8X28.5: ASTM A992: Fy = 50 ksi, Fu = 65 ksi"
+  ],
+  "lost": [
+   "answer|steel for hss##500,50,62",
+   "answer|a of shape#WT8X28.5,WT8X28.5#8.39,2",
+   "answer|d of shape#WT8X28.5,WT8X28.5#8.22"
+  ],
+  "extra": [
+   "answer|steel for shape#WT8X28.5#992,50,65"
+  ],
+  "cleanStatus": "lookup_material:answered",
+  "roughStatus": "lookup_material:answered",
+  "cause": [
+   "pair:dot"
+  ],
+  "causeHow": "pair: clean pair DIFFERENT, A alone SAME, B alone SAME",
+  "reading": "lookup_material -> lookup_material:answered"
+ },
+ {
+  "id": "BL-043~compress",
+  "base": "BL-043",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "compress:dia",
+   "compress:dia",
+   "compress:no-the"
+  ],
+  "cleanText": "An L4x4x3/8 angle is connected by three 3/4 in. diameter bolts in one line. Find the hole diameter used for the net area and the shear lag factor U.",
+  "roughText": "An L4x4x3/8 angle is connected by three 3/4 in. dia bolts in one line. Find the hole dia. used for the net area and shear lag factor U.",
+  "cleanLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "roughLines": [
+   "ANSWER: Net area An: An = 2.5319 in^2 (Ag = 2.86 in^2, L4X4X3/8)"
+  ],
+  "lost": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "extra": [
+   "answer|net area an#L4X4X3/8#2.5319,2,2.86,2"
+  ],
+  "cleanStatus": "lookup_hole:answered",
+  "roughStatus": "tension_net_area:answered",
+  "cause": [
+   "compress:dia,dia,no-the"
+  ],
+  "causeHow": "pure",
+  "reading": "lookup_hole -> tension_net_area:answered"
+ },
+ {
+  "id": "BL-043~M2",
+  "base": "BL-043",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "compress:dia",
+   "compress:dia",
+   "shape:L 4x4x3/8",
+   "misspell:net>nt",
+   "misspell:hole>hoe",
+   "lower",
+   "syntax:punct",
+   "spaces:inword:factor,before-punct"
+  ],
+  "cleanText": "An L4x4x3/8 angle is connected by three 3/4 in. diameter bolts in one line. Find the hole diameter used for the net area and the shear lag factor U.",
+  "roughText": "an l 4x4x3/8 angle is connected by three 3/4 in . dia bolts in one line. find the hoe dia used for the nt area and the shear lag fact or u.,",
+  "cleanLines": [
+   "ANSWER: Hole size for net area: hole = 0.875 in (bolt 0.75 in + 1/8)"
+  ],
+  "roughLines": [
+   "ANSWER: Net area An: An = 2.5319 in^2 (Ag = 2.86 in^2, L4X4X3/8)"
+  ],
+  "lost": [
+   "answer|hole size for net area##0.875,0.75,1,8"
+  ],
+  "extra": [
+   "answer|net area an#L4X4X3/8#2.5319,2,2.86,2"
+  ],
+  "cleanStatus": "lookup_hole:answered",
+  "roughStatus": "tension_net_area:answered",
+  "cause": [
+   "compress:dia,dia",
+   "misspell:net+hole"
+  ],
+  "causeHow": "each alone (several causes)",
+  "reading": "lookup_hole -> tension_net_area:answered"
+ },
+ {
+  "id": "BL-050~breaks",
+  "base": "BL-050",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "breaks:added"
+  ],
+  "cleanText": "With Fy = 50 ksi and KL/r = 150, Table 4-14 gives phi Fcr = ____ ksi.",
+  "roughText": "With Fy = 50 ksi and KL/r = 150, Table 4-14 gives phi\nFcr = ____ ksi.",
+  "cleanLines": [
+   "ANSWER: Design critical stress phi Fcr: phi Fcr = 10 ksi (KL/r = 150, Fy = 50 ksi)"
+  ],
+  "roughLines": [
+   "ANSWER FOR YOUR BLANK (Fcr = ____ ksi): Fcr = phi Fcr / 0.90 = 10 / 0.90 = 11.11 ksi   (your blank has no phi: it asks for the NOMINAL value)"
+  ],
+  "lost": [
+   "answer|design critical stress phi fcr##10,150,50"
+  ],
+  "extra": [
+   "blank|fcr##0.9,10,0.9,11.11"
+  ],
+  "cleanStatus": "lookup_critical_stress:answered",
+  "roughStatus": "lookup_critical_stress:answered",
+  "cause": [
+   "breaks:added"
+  ],
+  "causeHow": "pure",
+  "reading": "lookup_critical_stress -> lookup_critical_stress:answered"
+ },
+ {
+  "id": "BL-050~numspace",
+  "base": "BL-050",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "numspace:150>15 0"
+  ],
+  "cleanText": "With Fy = 50 ksi and KL/r = 150, Table 4-14 gives phi Fcr = ____ ksi.",
+  "roughText": "With Fy = 50 ksi and KL/r = 15 0, Table 4-14 gives phi Fcr = ____ ksi.",
+  "cleanLines": [
+   "ANSWER: Design critical stress phi Fcr: phi Fcr = 10 ksi (KL/r = 150, Fy = 50 ksi)"
+  ],
+  "roughLines": [
+   "ANSWER: Design critical stress phi Fcr: phi Fcr = 44.3 ksi (KL/r = 15, Fy = 50 ksi)"
+  ],
+  "lost": [
+   "answer|design critical stress phi fcr##10,150,50"
+  ],
+  "extra": [
+   "answer|design critical stress phi fcr##44.3,15,50"
+  ],
+  "cleanStatus": "lookup_critical_stress:answered",
+  "roughStatus": "lookup_critical_stress:answered",
+  "cause": [
+   "numspace:numspace"
+  ],
+  "causeHow": "pure",
+  "reading": "lookup_critical_stress -> lookup_critical_stress:answered"
+ },
+ {
+  "id": "BL-052~spaces",
+  "base": "BL-052",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "spaces:inword:curve"
+  ],
+  "cleanText": "What is the yield point, Fy, on the stress-strain curve?",
+  "roughText": "What is the yield point, Fy, on the stress-strain cur ve?",
+  "cleanLines": [
+   "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+  ],
+  "roughLines": [
+   "ANSWER: Yield point (Fy): \"Fy Yield Point: the stress at which there is substantial elongation (strain) w/o a corresponding increase in stress\" (undated; Materials/Steel 1 Introduction IN PERSON CLASSES Canvas.pdf.md (PDF text layer) line 111 (her slide p.3))"
+  ],
+  "lost": [
+   "answer|points and regions on her stress strain curve slide p##2,1,1,59,2"
+  ],
+  "extra": [
+   "answer|yield point fy##1,111,3"
+  ],
+  "cleanStatus": "lookup_definition:words",
+  "roughStatus": "lookup_definition:words",
+  "cause": [
+   "spaces:inword"
+  ],
+  "causeHow": "pure",
+  "reading": "lookup_definition -> lookup_definition:words"
+ },
+ {
+  "id": "BL-052~H3",
+  "base": "BL-052",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "misspell:stress-strain>stress-stain",
+   "misspell:stress>stresss",
+   "misspell-ordinary:point>ppoint",
+   "fig:shown in fig p4-3",
+   "lower",
+   "nospace:after-punct"
+  ],
+  "cleanText": "What is the yield point, Fy, on the stress-strain curve?",
+  "roughText": "what is the yield ppoint, fy,on the stresss-stain curve? shown in fig p4-3",
+  "cleanLines": [
+   "ANSWER: Points and regions on her stress-strain curve (slide p.2): Proportional Limit; Elastic Limit; Yield pt; Ultimate Strength; Rupture Strength; Actual Rupture Strength (necking) (undated; quiz1/wk1-intro-lecture.md line 59 (her slide p.2))"
+  ],
+  "roughLines": [
+   "ANSWER: Yield point (Fy): \"Fy Yield Point: the stress at which there is substantial elongation (strain) w/o a corresponding increase in stress\" (undated; Materials/Steel 1 Introduction IN PERSON CLASSES Canvas.pdf.md (PDF text layer) line 111 (her slide p.3))"
+  ],
+  "lost": [
+   "answer|points and regions on her stress strain curve slide p##2,1,1,59,2"
+  ],
+  "extra": [
+   "answer|yield point fy##1,111,3"
+  ],
+  "cleanStatus": "lookup_definition:words",
+  "roughStatus": "lookup_definition:words",
+  "cause": [
+   "misspell:stress-strain+stress+point"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_definition -> lookup_definition:words"
+ },
+ {
+  "id": "BL-056~syntax",
+  "base": "BL-056",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "syntax:qmark"
+  ],
+  "cleanText": "What is strain hardening?",
+  "roughText": "What? is strain hardening?",
+  "cleanLines": [
+   "ANSWER: Strain hardening (her slide): \"Strain hardening = unacceptably large deformations\""
+  ],
+  "roughLines": [
+   "ANSWER: Strain hardening: \"Soon as it starts to harden we can resist additional load until it gets to it's maximum stress or ultimate strength.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 9 (CART transcript, wording is rough))"
+  ],
+  "lost": [
+   "answer|strain hardening her slide##"
+  ],
+  "extra": [
+   "answer|strain hardening##2026,8,26,2026,9,30,9"
+  ],
+  "cleanStatus": "lookup_definition:words",
+  "roughStatus": "lookup_definition:words",
+  "cause": [
+   "syntax:qmark"
+  ],
+  "causeHow": "pure",
+  "reading": "lookup_definition -> lookup_definition:words"
+ },
+ {
+  "id": "BL-056~L3",
+  "base": "BL-056",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "lower",
+   "spaces:inword:strain"
+  ],
+  "cleanText": "What is strain hardening?",
+  "roughText": "what is st rain hardening?",
+  "cleanLines": [
+   "ANSWER: Strain hardening (her slide): \"Strain hardening = unacceptably large deformations\""
+  ],
+  "roughLines": [
+   "ANSWER: Strain hardening: \"Soon as it starts to harden we can resist additional load until it gets to it's maximum stress or ultimate strength.\" (2026-08-26; CLAUDE-transcript-mining-2026-09-30.md, Vocabulary no. 9 (CART transcript, wording is rough))"
+  ],
+  "lost": [
+   "answer|strain hardening her slide##"
+  ],
+  "extra": [
+   "answer|strain hardening##2026,8,26,2026,9,30,9"
+  ],
+  "cleanStatus": "lookup_definition:words",
+  "roughStatus": "lookup_definition:words",
+  "cause": [
+   "spaces:inword"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_definition -> lookup_definition:words"
+ },
+ {
+  "id": "BL-061~fig",
+  "base": "BL-061",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "fig:fig. 7.7"
+  ],
+  "cleanText": "What is the radius of gyration, r, of a cross section?",
+  "roughText": "What is the radius of gyration, r, of a cross section? fig. 7.7",
+  "cleanLines": [
+   "ANSWER: A round pipe or round HSS has only one radius of gyration: \"Because it's round there's only 1 and I look up R and it's 3. 68 and it's structural steel. / If it's round, there's only one r and look up the A.\""
+  ],
+  "roughLines": [
+   "ANSWER: Radius of gyration r (her slide): \"r = radius of gyration (\"measure of lateral stiffness\")\" (undated; quiz1/wk3-4-compression-lecture.md line 302 (her slide wk3 p.13))"
+  ],
+  "lost": [
+   "answer|a round pipe or round hss has only one radius of gyration##1,3,68"
+  ],
+  "extra": [
+   "answer|radius of gyration r her slide##1,3,4,302,3,13"
+  ],
+  "cleanStatus": "lookup_definition:words",
+  "roughStatus": "lookup_definition:words",
+  "cause": [
+   "fig:fig"
+  ],
+  "causeHow": "pure",
+  "reading": "lookup_definition -> lookup_definition:words"
+ },
+ {
+  "id": "BL-061~H1",
+  "base": "BL-061",
+  "cls": "DIFFERENT",
+  "warnedOnly": false,
+  "diffKind": "main",
+  "transforms": [
+   "misspell:radius>raduis",
+   "misspell:gyration>giration",
+   "misspell-ordinary:cross>crows",
+   "fig:see figure p4.25",
+   "lower",
+   "syntax:punct",
+   "nospace:after-punct,after-punct",
+   "spaces:double,double",
+   "breaks:added"
+  ],
+  "cleanText": "What is the radius of gyration, r, of a cross section?",
+  "roughText": "what is the   raduis of giration,r,,of a crows section?\nsee figure  p4.25",
+  "cleanLines": [
+   "ANSWER: A round pipe or round HSS has only one radius of gyration: \"Because it's round there's only 1 and I look up R and it's 3. 68 and it's structural steel. / If it's round, there's only one r and look up the A.\""
+  ],
+  "roughLines": [
+   "ANSWER: Radius of gyration r (her slide): \"r = radius of gyration (\"measure of lateral stiffness\")\" (undated; quiz1/wk3-4-compression-lecture.md line 302 (her slide wk3 p.13))"
+  ],
+  "lost": [
+   "answer|a round pipe or round hss has only one radius of gyration##1,3,68"
+  ],
+  "extra": [
+   "answer|radius of gyration r her slide##1,3,4,302,3,13"
+  ],
+  "cleanStatus": "lookup_definition:words",
+  "roughStatus": "lookup_definition:words",
+  "cause": [
+   "fig:fig"
+  ],
+  "causeHow": "leave-one-out",
+  "reading": "lookup_definition -> lookup_definition:words"
+ }
+]

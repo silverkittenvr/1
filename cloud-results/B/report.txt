@@ -1,0 +1,53 @@
+rough copies: 3221   SAME 2056   FEWER 356   MORE 5   DIFFERENT 66 (64 not under a warning; 63 change the value he copies)   HIDDEN 738 (would be SAME 288, DIFFERENT 42)
+
+BY LEVEL
+transform              n      SAME   FEWER  MORE   DIFF   HIDDEN  (as SAME/DIFF)
+pure                   1892   1512   145    2      38     195     118/7
+medium                 407    163    79     0      5      160     70/10
+light                  404    316    36     2      4      46      28/3
+heavy                  384    41     53     0      7      283     59/13
+pair                   134    24     43     1      12     54      13/9
+
+PURE (one transform only)
+transform              n      SAME   FEWER  MORE   DIFF   HIDDEN  (as SAME/DIFF)
+misspell               282    256    5      0      0      21      15/0
+fig                    141    128    7      0      1      5       5/0
+label                  141    126    10     0      0      5       5/0
+breaks                 141    135    0      0      1      5       5/0
+lower                  136    127    2      1      1      5       5/0
+nospace                135    21     12     0      0      102     45/4
+syntax                 131    96     25     0      5      5       4/0
+nostops                122    112    3      1      1      5       5/0
+spaces                 115    82     6      0      1      26      16/2
+typed                  112    92     19     0      0      1       1/0
+compress               101    77     19     0      1      4       4/0
+glue                   85     81     1      0      0      3       3/0
+shuffle                75     71     0      0      0      4       4/0
+shape                  64     55     9      0      0      0       0/0
+numspace               60     9      20     0      27     4       1/1
+frac                   23     18     5      0      0      0       0/0
+phi                    18     18     0      0      0      0       0/0
+blanks                 10     8      2      0      0      0       0/0
+
+MIXED copies (light / medium / heavy / pair) containing the transform
+transform              n      SAME   FEWER  MORE   DIFF   HIDDEN  (as SAME/DIFF)
+misspell               1082   365    182    3      26     506     149/31
+lower                  1071   388    181    2      22     478     149/30
+nostops                830    284    143    2      18     383     119/23
+spaces                 616    143    105    1      16     351     94/19
+glue                   455    151    83     1      10     210     55/18
+breaks                 442    141    66     2      9      224     58/19
+nospace                430    32     60     0      7      331     79/21
+shape                  382    124    96     2      10     150     20/12
+misspell-ordinary      361    37     49     0      6      269     58/13
+compress               308    42     68     0      6      192     36/8
+syntax                 266    51     45     0      5      165     48/8
+label                  237    45     35     0      7      150     46/6
+fig                    208    44     34     0      4      126     34/9
+typed                  178    30     49     0      6      93      15/3
+pair                   134    24     43     1      12     54      13/9
+shuffle                85     16     14     0      3      52      13/4
+phi                    55     18     9      1      0      27      10/2
+blanks                 53     16     13     0      1      23      4/0
+numspace               48     1      9      0      3      35      2/5
+frac                   26     8      4      0      0      14      1/1
