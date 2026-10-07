@@ -1074,6 +1074,12 @@ function cgApply(t, H) {
     x = /\b(one|two|a|1|2)\s+(?:(?:line|row|bolt|hole)s?\s+)?(?:of\s+(?:bolts?|holes?)\s+)?(?:on\s+|at\s+|to\s+|in\s+)?(?:each|either|both|every)\s+sides?\s+of\s+(?:the\s+|its\s+)?(?:web|stem)\b/i.exec(t);
     if (x) H.perFlange = { value: (/^(?:two|2)$/i.test(x[1]) ? 2 : 1) * 2, from: x[0], viaGrammar: true };
   }
+  /* (10/07, A1-tcap-18: "one line of 3/4-in. bolts on each side of the web in each flange" printed 640.3 kips for 596.2: the count per flange read
+     above WAS the count of one side of the web.)  When the count per flange comes from words that start with that count and go on to "each side of the
+     web", it is doubled.  Any other count per flange is left as it was ("both sides" too: one line on both sides can be read two ways). */
+  else if (H.perFlange && /\b(?:each|either|every)\s+sides?\s+of\s+(?:the\s+|its\s+)?(?:web|stem)\b/i.test(H.perFlange.from)
+    && (x = /^(one|two|a|single|1|2)\s+(?:(?:gage\s+)?(?:line|row|bolt|hole)s?\s+)?(?:of\s+(?:\S+\s+){0,4}?(?:bolts?|holes?)\s+)?(?:on\s+|at\s+|to\s+|in\s+)?(?:each|either|every)\s+sides?\s+of\b/i.exec(H.perFlange.from))
+    && wnum(x[1]) === H.perFlange.value) H.perFlange = { value: H.perFlange.value * 2, from: H.perFlange.from, viaGrammar: true, lines: H.perFlange.lines };
   /* the bolt size the grammar met beside the word bolt or hole (used only when the older rules found none) */
   for (i = 0; i < P.sizes.length; i++) {
     x = P.sizes[i];
@@ -1208,6 +1214,15 @@ function findHoles(t) {
   if ((m = re.exec(t))) H.grossYield = m[0];
   /* 0.8: what the rules above left empty is read by the count grammar (any order of the words inside a clause) */
   cgApply(t, H);
+  /* (10/07, A1-tcap-17: "W12x53 ..., 6 bolts in each flange, 3 bolts per line" printed 419.6 kips for 596.2: SIX holes across each flange.)  A count
+     of BOLTS said for a flange, beside a count of bolts in a line, is all the bolts of that flange: lines = bolts / bolts per line, and a cross-section
+     cuts one hole in each line.  FEWER bolts than a line holds can only be the bolts across the flange ("two 3/4in bolts in each flange, 3 bolts per
+     line" stays two).  The same number, or not a whole number of lines: two readings, asked (H.askPerFlange, see tensionCommon). */
+  if (H.perFlange && !H.perFlange.lines && H.perLine && H.perLine.value > 1 && H.perFlange.from !== H.perLine.from
+    && /(?:^|[^a-z])bolts?\b/i.test(H.perFlange.from) && !/(?:^|[^a-z])(?:holes?|lines?|rows?)\b|\bacross\b/i.test(H.perFlange.from)) {   /* ("6bolts", "2lines": his glued typing) */
+    if (H.perFlange.value > H.perLine.value && H.perFlange.value % H.perLine.value === 0) H.perFlange = { value: H.perFlange.value / H.perLine.value, from: H.perFlange.from + ' ... ' + H.perLine.from, lines: true };
+    else if (H.perFlange.value >= H.perLine.value) { H.askPerFlange = H.perFlange.from; H.perFlange = null; }
+  }
   return H;
 }
 
@@ -1224,8 +1239,10 @@ function findBolt(t) {
     if ((m = re.exec(t))) o = { value: dimValue(m[1]), from: m[0], kind: 'bolt' };
   }
   if (!o) {
-    re = new RegExp('(?:bolts?|holes?)\\s+(?:are|is)?\\s*\\(?(' + N + ')\\s*-?\\s*(?:in\\.?|inch(?:es)?|")\\s*(?:in\\s+)?(?:diameter|dia\\.?)', 'i');
-    if ((m = re.exec(t))) o = { value: dimValue(m[1]), from: m[0], kind: 'bolt' };
+    /* (10/07, A1-tcap-22/23: "The holes are 15/16 in. in diameter", "holes 7/8 in diameter" were taken as the BOLT and 1/8 was added to a hole: 7.86
+       printed for 7.97, 7.97 for 8.08.)  The noun says which it is: a size said of the holes is a hole, and the bolt-or-hole question is asked. */
+    re = new RegExp('(bolts?|holes?)\\s+(?:are|is)?\\s*\\(?(' + N + ')\\s*-?\\s*(?:in\\.?|inch(?:es)?|")\\s*(?:in\\s+)?(?:diameter|dia\\.?)', 'i');
+    if ((m = re.exec(t))) o = { value: dimValue(m[2]), from: m[0], kind: /hole/i.test(m[1]) ? 'hole' : 'bolt' };
   }
   return o;
 }
@@ -1570,6 +1587,40 @@ function fillEnds(F, B, D, fx, fy, o) {
 /* ---------------------------------------------------------------- 10. fillers per function */
 var FILL = {};
 
+/* (10/07, A1-tcap-12/13: "two L4x4x1/2 angles, each connected by one leg ..." printed ONE angle, 129.2 kips for 258.4, An 4.29 for 8.58: the count was
+   looked for only right before the word "angles", and here the angle's name stands between.)  A pair is read from "two / double / a pair of" right
+   before the word angles OR the L name, and from a bare "2" that is not the tail of a size ("L4x4x1/2 angles" is one angle).  Returns
+   { from } for a pair, { ask: true } when it is not certain: "(2) L4x4x1/2" (the "(2)" can be a part number), or a pair that the question also calls
+   "per angle" / "single angle" / "one angle" (the strength of one angle or of the pair: two readings). */
+function pairOfAngles(t) {
+  var m = /\b(?:double|pair\s+of|two)\s+angles?\b/i.exec(t) || /(?:^|[^\w\/.\-])2\s+angles?\b/i.exec(t)
+    || /\b(?:double|pair\s+of|two)\s+L\s?\d/i.exec(t) || /(?:^|[^\w\/.\-()])2\s+L\s?\d/i.exec(t);
+  if (!m) return /\(\s*2\s*\)\s*(?:angles?\b|L\s?\d)/i.test(t) ? { ask: true } : null;
+  if (/\b(?:per|single|one)\s+angle\b|\bone\s+of\s+(?:the\s+)?(?:two|2|both|pair)\b/i.test(t)) return { ask: true };
+  return { from: m[0].replace(/^[^A-Za-z0-9]+/, '') };
+}
+function setPairOfAngles(t, B, conf) {
+  var p = pairOfAngles(t);
+  if (p && p.ask) B.ask('angles', 'Is the tension member ONE angle or a PAIR of angles (a double angle)? The words can be read both ways. Type the number of angles.', ['angles'], null, 'need');
+  else if (p) B.set('angles', 2, p.from, conf);
+}
+/* (10/07, A1-tcap-14/15/16: "An L4x4x1/2 ... connected through both legs with one line of 3/4-in. diameter bolts in each leg" printed Case 8 (one leg,
+   U 0.80) and ONE hole: 129.2 kips for 140.2, U 0.80 for 1.0, An 3.3125 for 2.875.)  Her slide (glossary 168): "if all outstanding elements are
+   connected, U = 1.0", "Plates & Ls w/ both legs [connected]" = Case 1.  A cross-section cuts one hole in each line of each leg, so only a count said
+   PER LEG ("one line in each leg", "one hole in each leg") gives the holes (twice it); any other count, or none, is asked.  When the text also names
+   ONE leg (short / long / connected leg) the two say different things: { conflict }. */
+function angleBothLegs(t) {
+  /* the legs must be named with the bolts ("the gage in each leg is 2.5 in" is not a connection); "either leg" is one leg, whichever; a welded angle
+     is left as it was */
+  var m = /\b(?:connected|bolted|attached|fastened|connection|bolts?|holes?|lines?|rows?)\b(?:(?!gage|gauge)[^.;,]){0,60}?\b(?:through|thru|in|by|on|at|to|via|along|using)\s+(?:both|each|every|its\s+two|the\s+two)\s*legs?\b|\bboth\s+(?:of\s+(?:its|the)\s+)?legs\s+(?:are\s+|being\s+)?(?:connected|bolted|attached|fastened)\b/i.exec(t), c;   /* (\s*: "thru bothlegs", "in eachleg") */
+  if (!m) return null;
+  if (/\bone\s+leg\b|\beither\s+leg\b|\b(?:short|long|connected|attached|bolted|outstanding|unconnected)\s+leg\b/i.test(t)) return { from: m[0], conflict: true };
+  c = /\b(one|two|three|a\s+single|single|a)\s+(?:\S+\s+){0,3}?(?:lines?|rows?)\b(?:[^;,.]|\.(?=\s*[a-z\d])){0,60}?(?:\b(?:in|on|along|through|thru|of|for)\s+(?:each|every)\s*leg|\bper\s*leg)\b/i.exec(t)
+    || /\b(one|two|three|a\s+single|single|a)\s+(?:\S+\s+){0,4}?(?:bolt\s+)?holes?\s+(?:in|on|through)\s+(?:each|every)\s*leg\b/i.exec(t)
+    || /\b(one|a\s+single|single)\s+(?:in|on|along)\s+(?:each|every)\s*leg\b/i.exec(t);
+  return { from: m[0], perLeg: c ? { value: wnum(c[1].replace(/^a\s+single$/i, 'single')), from: c[0] } : null };
+}
+
 function tensionCommon(fn, F, B, D) {
   var t = F.t, H = F.holes, sh = F.dshapes, kind = null, shp = null;
   var plate = F.plates.length ? F.plates[0] : null, hasPlateWord = /\bplate\b/i.test(t);
@@ -1582,7 +1633,7 @@ function tensionCommon(fn, F, B, D) {
     if (sh.length === 1) {
       shp = sh[0];
       B.set('shape', shp.norm, shp.raw, 'high');
-      if (shp.kind === 'L' || shp.kind === '2L') { B.set('member', 'angle', shp.raw, 'high', 'angle shape'); if (shp.kind === '2L') B.set('angles', 2, shp.raw, 'high', '2L = two angles'); else if (/\b(?:double|pair\s+of|two)\s+angles?\b/i.test(t)) B.set('angles', 2, t.match(/\b(?:double|pair\s+of|two)\s+angles?\b/i)[0], 'high'); }
+      if (shp.kind === 'L' || shp.kind === '2L') { B.set('member', 'angle', shp.raw, 'high', 'angle shape'); if (shp.kind === '2L') B.set('angles', 2, shp.raw, 'high', '2L = two angles'); else setPairOfAngles(t, B, 'high'); }
       else B.set('member', 'shape', shp.raw, 'high', 'rolled shape');
     } else if (sh.length > 1) {
       B.ask('which_shape', 'The text names more than one shape. Which is the tension member?', ['shape', 'member'], sh.map(function (s) { return s.norm; }));
@@ -1600,6 +1651,7 @@ function tensionCommon(fn, F, B, D) {
   if (isSelect) {
     if (!pickFamily(F, B, 'family', false)) { /* question already added */ }
     if (shapeKinds['2L'] || /\b(?:double|pair\s+of|two)\s+angles?\b/i.test(t)) B.set('angles', 2, (t.match(/\b(?:double|pair\s+of|two)\s+angles?\b/i) || ['2L'])[0], 'medium');
+    else if (F.families[0] && /^L/i.test(F.families[0].norm)) setPairOfAngles(t, B, 'medium');   /* "select the lightest two L4 angles" (same rule as A1-tcap-12) */
   }
   if (isU && sh.length === 1) B.set('shape', sh[0].norm, sh[0].raw, 'high');
   else if (isU && sh.length > 1) B.ask('which_shape', 'The text names more than one shape. Which one is the member?', ['shape'], sh.map(function (s) { return s.norm; }));
@@ -1607,6 +1659,7 @@ function tensionCommon(fn, F, B, D) {
   // ---- bolt / holes
   var memberIsPlate = !isSelect && !isU && !sh.length && (plate || hasPlateWord);
   var memberIsAngle = angleLike;
+  var legs = memberIsAngle ? angleBothLegs(t) : null, dblAngle = !!(shapeKinds['2L'] || pairOfAngles(t));   /* A1-tcap-14/15/16 (see angleBothLegs) */
   var welded = !!H.weldedWord && !H.perFlange && !H.web && !H.perLine && !(F.bolt && /hole/i.test(H.weldedWord) === false && /bolt/i.test(t) && !/no\s+bolt\s+holes/i.test(t));
   if (H.weldedWord && /no\s+bolt\s+holes|all\s+connections\s+are\s+welded|welded/i.test(H.weldedWord) && !F.bolt) welded = true;
   if (/no\s+bolt\s+holes/i.test(t)) welded = true;
@@ -1639,8 +1692,13 @@ function tensionCommon(fn, F, B, D) {
       }
       if (!pf && cutF) {
         if (shapeIsTee || !cutF.plural) pf = { value: cutF.value, from: cutF.from, viaCut: true };
-        else if (cutF.value % 2 === 0) pf = { value: cutF.value / 2, from: cutF.from, viaCut: true, half: true };
+        else if (cutF.value % 2 === 0 && !(cutF.lines && cutF.value === 2)) pf = { value: cutF.value / 2, from: cutF.from, viaCut: true, half: true };
       }
+      /* (10/07, A1-tsel-13: "2 lines of 3/4in bolts in the flanges" was halved to one line per flange without a word: W8X21 printed where two lines in
+         each flange give W8X24.)  Halving stays for her Q8 ("four lines ... through its flanges" = two per flange); TWO lines "in the flanges" are two
+         readings (both flanges together, or each flange), and so is a bolt count per flange that is not a whole number of lines (A1-tcap-17): asked. */
+      if (!pf && !shapeIsTee && (H.askPerFlange || (cutF && cutF.plural && cutF.lines && cutF.value === 2)))
+        B.ask('count_perFlange', 'Your words about the bolts in the flanges can be read two ways: counted for both flanges together, or for each flange. The page does not choose: type the holes a cross-section cuts in EACH flange (count on the drawing if there is one).', ['holes_per_flange'], null, 'need');
       if (pf) B.set('holes_per_flange', pf.value, pf.from, pf.half ? 'medium' : 'high', pf.half ? 'holes cut in both flanges / 2' : null);
       else if (H.noFlange) B.set('holes_per_flange', 0, H.noFlangeFrom, 'high');
       if (wb) B.set('web_holes', wb.value, wb.from, 'high');
@@ -1654,7 +1712,13 @@ function tensionCommon(fn, F, B, D) {
       }
     } else {
       // plate or angle
-      if (H.across && !H.stagger) B.set('holes_across', H.across.value, H.across.from, 'high');
+      /* both legs bolted (A1-tcap-14/16): an explicit count across the section stands; a count per leg is doubled; nothing else is guessed (a double
+         angle "in each leg", or one leg and both legs named together, is asked) */
+      if (legs && !H.stagger && !H.inSection && !(H.across && !/\bleg\b/i.test(H.across.from))) {
+        if (legs.perLeg && !legs.conflict && !dblAngle) B.set('holes_across', 2 * legs.perLeg.value, legs.perLeg.from, 'medium', 'bolted through both legs: a cross-section cuts one hole in each line of each leg');
+        else B.ask('holes_across', 'Your angle is bolted through BOTH legs (or the words name one leg and both legs). How many holes does a cross-section cut, counting both legs (no stagger)?', ['holes_across', 'holes'], null, 'need');
+      }
+      else if (H.across && !H.stagger) B.set('holes_across', H.across.value, H.across.from, 'high');
       else if (H.inSection && !H.stagger) B.set('holes_across', H.inSection.value, H.inSection.from, 'high');      /* 0.5: "one hole in any cross-section" */
       else if (H.oneHole) B.set('holes_across', H.oneHole.value, H.oneHole.from, 'medium');
       else if (H.forBolt && !H.stagger) B.set('holes_across', H.forBolt.value, H.forBolt.from, 'medium', 'the holes of this plate or angle, named by their bolt');
@@ -1710,6 +1774,8 @@ function tensionCommon(fn, F, B, D) {
     else if (hasF && hasW) { conn = 'all'; cfrom = fromF + ' ... ' + fromW; why = 'holes in both flanges and web = all parts connected'; }
     else if (hasF && !hasW) { conn = 'flanges'; cfrom = fromF; why = 'holes only in the flanges'; }
     else if (hasW && !hasF) { conn = 'web'; cfrom = fromW; why = 'holes only in the web'; }
+    else if (memberIsAngle && legs && (legs.conflict || dblAngle)) B.ask('connection', 'Is the angle bolted through ONE leg or through BOTH legs? The words can be read both ways.', ['connection'], ['angle', 'all'], 'need');
+    else if (memberIsAngle && legs) { conn = 'all'; cfrom = legs.from + (F.bolt ? ' ... ' + F.bolt.from : ''); why = 'an angle bolted through both legs: all parts connected (her slide, Ls with both legs)'; }   /* A1-tcap-14/15 */
     else if (memberIsAngle && (H.locLeg || F.bolt || H.oneHole)) { conn = 'angle'; cfrom = H.locLeg || (F.bolt ? F.bolt.from : H.oneHole.from); why = 'angle bolted through one leg'; }
     else if (memberIsPlate) { conn = 'all'; cfrom = plate ? plate.raw : 'plate'; why = 'a plain plate: all of the cross-section connected'; }
     if (conn) B.set('connection', conn, cfrom, (why && !H.onlyFlange && !H.onlyWeb) ? 'medium' : 'high', why);
