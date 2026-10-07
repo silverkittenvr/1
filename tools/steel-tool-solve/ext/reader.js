@@ -229,6 +229,14 @@ function lenToFt(v, unit) { return unit === 'in' ? v / 12 : v; }
 
 /* loads: symbol forms (PD = 115 k, wL = 0.9 k/ft, Pu = 800 kips) and word forms (a live load of 40 psf) */
 var SYMKIND = { D: 'D', DL: 'D', L: 'L', LL: 'L', E: 'E', W: 'W', S: 'S', R: 'R', Lr: 'Lr', u: 'u', ult: 'u' };
+/* the text just before a number ends in a load kind ("dead 80", "dead load 100", "live = 50"): the number is that kind's (see the number-first rules) --
+   unless that kind word itself ends a number-first phrase: in "30 kips dead 20 kips live" the 20 is the live load's (A1-csel-P35, A1-csel-P46) */
+var KIND_BEFORE = /\b(?:dead|live|snow|wind|rain)(?:\s+loads?)?\s*(?:=|:|of|is)?\s*$/i;
+function kindOwnsNumber(t, idx) {
+  var b = t.slice(Math.max(0, idx - 48), idx), k = KIND_BEFORE.exec(b);
+  if (!k) return false;
+  return !/\d\s*-?\s*(?:kips?\s?\/\s?ft|k\s?\/\s?ft|klf|plf|psf|lbs?\s?\/\s?ft|kips?|k)\s+(?:of\s+)?(?:service\s+)?$/i.test(b.slice(0, k.index));
+}
 function findLoads(t) {
   var out = [], m, re, v, u;
   var LU = '(k|klf|plf|psf|lb|pcf|kipft|kipin)';
@@ -237,6 +245,13 @@ function findLoads(t) {
   while ((m = re.exec(t)) !== null) {
     var sym = m[1].replace(/[\s_]/g, ''), first = sym.charAt(0), kind = SYMKIND[sym.slice(1)];
     if (!kind) continue;
+    /* (10/07, A1-tcap-20 / A1-ccap-213) "Pu = 1.2(100) + 1.6(150)": the number after "=" was the first COEFFICIENT of a formula he typed along, and
+       "adequate for Pu = 1.2" was printed; "Pu = 1.2D + 1.6L" gave Pu = 1 (the number cut inside "1.2D").  A unitless number followed by "(number)", "x", "*"
+       or "+" and a number, or cut inside a number, is no given value: it is not read, and the formula is marked so the axial forms ask for Pu. */
+    if (!m[3] && /^(?:\.?\d|\s*\(\s*[\d.]+\s*\)|\s*[*+]\s*[\d(.]|\s*[xX]\s*[\d(.])/.test(t.slice(m.index + m[0].length))) {
+      if (!out.formula) out.formula = { sym: sym, first: first, kind: kind, from: m[0].replace(/^[^A-Za-z0-9]/, '') };
+      continue;
+    }
     u = canonUnit(m[3]);
     v = parseNum(m[2]);
     if (u === 'ft' || u === 'in' || u === 'ksi' || u === 'psi' || u === 'sf' || u === 'in2') continue;
@@ -253,6 +268,36 @@ function findLoads(t) {
     out.push({ sym: sym0, first: sym0.charAt(0), kind: kind0, value: parseNum(m[2]), unit: canonUnit(m[3]), basis: kind0 === 'u' ? 'factored' : null, via: 'symbol',
       from: m[0].replace(/^[^A-Za-z0-9]/, ''), start: st0, end: m.index + m[0].length });
   }
+  /* (10/07, cluster load-reading) THE DEAD AND THE LIVE LOAD SAID TOGETHER, ONE UNIT FOR BOTH.  Each of these lost one of the two loads, and the empty box was
+     factored as 0:
+       "D/L = 200/300 kips", "dead/live = 80/50 psf" (A1-csel-01 / 02): "L = 200/300" was read as the FRACTION 0.667 and D was lost (Pu = 1 kips printed);
+       "D=50 L=100 kips", "D = 30, L = 60 kips" (A1-tsel-01 / 04, A1-tcap-34): the unit is typed once, after the last number, and the bare rule below
+         wants a unit after EACH number, so D was lost;
+       "D = L = 75 kips" (A1-tsel-07): only "L = 75 kips" was read;
+       "dead and live loads are each 50 kips" (A1-tsel-08): only the live load was read;
+       "dead 100 live 150 kips" (A1-tcap-36): D was lost.
+     Each reading below is the only one the words allow (D first, then L, the unit after the last number).  Any other order or shape is not read here,
+     and the box left empty is asked (namedButUnread). */
+  var PAIRU = '(kips?\\s?\\/\\s?ft|k\\s?\\/\\s?ft|klf|lbs?\\s?\\/\\s?ft|plf|psf|kips?|k)(?![A-Za-z\\/])', NUM = '(\\d+(?:\\.\\d+)?)', pairs = [];
+  re = new RegExp('(?:^|[^A-Za-z0-9])(?:[Pp]\\s?_?)?(?:[Dd][Ll]?|[Dd]ead)\\s*\\/\\s*(?:[Pp]\\s?_?)?(?:[Ll][Ll]?|[Ll]ive)\\s*(?:loads?\\s*)?(?:=|:|are|of)?\\s*' + NUM + '\\s*(?:-?\\s*(?:kips?|k|psf)\\s*)?\\/\\s*' + NUM + '\\s*-?\\s*' + PAIRU, 'g');
+  while ((m = re.exec(t)) !== null) pairs.push({ m: m, d: m[1], l: m[2], u: m[3] });
+  re = new RegExp('(?:^|[^A-Za-z0-9])D\\s*=\\s*' + NUM + '\\s*(?:,|;|&|\\band\\b)?\\s*L\\s*=\\s*' + NUM + '\\s*-?\\s*' + PAIRU, 'g');
+  while ((m = re.exec(t)) !== null) pairs.push({ m: m, d: m[1], l: m[2], u: m[3] });
+  re = new RegExp('(?:^|[^A-Za-z0-9])(?:D\\s*=\\s*L|L\\s*=\\s*D)\\s*=\\s*' + NUM + '\\s*-?\\s*' + PAIRU, 'g');
+  while ((m = re.exec(t)) !== null) pairs.push({ m: m, d: m[1], l: m[1], u: m[2] });
+  /* (A2-loads-p33 / p55) "dead and live loads of 20 kips each", "dead load and live load are both 20 kips" */
+  re = new RegExp('\\b(?:dead(?:\\s+loads?)?\\s*(?:and|&|\\+)\\s*(?:the\\s+)?live|live(?:\\s+loads?)?\\s*(?:and|&|\\+)\\s*(?:the\\s+)?dead)(?:\\s+loads?)?\\s*(?:are\\s+|of\\s+)?(?:(?:each|both)\\s*(?:=|:|of|is|equal\\s+to)?\\s*' + NUM + '\\s*-?\\s*' + PAIRU + '|' + NUM + '\\s*-?\\s*' + PAIRU + '\\s+(?:each|both)\\b)', 'gi');
+  while ((m = re.exec(t)) !== null) pairs.push({ m: m, d: m[1] || m[3], l: m[1] || m[3], u: m[2] || m[4] });
+  re = new RegExp('\\bequal\\s+(?:dead\\s+and\\s+live|live\\s+and\\s+dead)\\s+loads?\\s*(?:of|=|:|are)?\\s*' + NUM + '\\s*-?\\s*' + PAIRU, 'gi');
+  while ((m = re.exec(t)) !== null) pairs.push({ m: m, d: m[1], l: m[1], u: m[2] });
+  re = new RegExp('\\bdead(?:\\s+loads?)?\\s*(?:=|:|of|is)?\\s*' + NUM + '\\s*(?:,|;|&|\\band\\b)?\\s*(?:the\\s+|a\\s+)?live(?:\\s+loads?)?\\s*(?:=|:|of|is)?\\s*' + NUM + '\\s*-?\\s*' + PAIRU, 'gi');
+  while ((m = re.exec(t)) !== null) pairs.push({ m: m, d: m[1], l: m[2], u: m[3] });
+  pairs.forEach(function (p) {
+    var st = p.m.index + (p.m[0].length - p.m[0].replace(/^[^A-Za-z0-9]/, '').length), en = p.m.index + p.m[0].length, from = p.m[0].replace(/^[^A-Za-z0-9]/, ''), q;
+    for (q = 0; q < out.length; q++) if (out[q].start < en && out[q].end > st) return;
+    out.push({ sym: null, first: '', kind: 'D', value: parseNum(p.d), unit: canonUnit(p.u), basis: null, via: 'pair', from: from, start: st, end: en });
+    out.push({ sym: null, first: '', kind: 'L', value: parseNum(p.l), unit: canonUnit(p.u), basis: null, via: 'pair', from: from, start: st, end: en });
+  });
   // bare D = 50 k, L = 30 k (only with a load unit)
   /* 0.5: the longer units first -- "D = 1.50 k/ft" used to be read as 1.50 k (a point load), because "k" matched before "k/ft" */
   re = new RegExp('(?:^|[^A-Za-z0-9])(D|L|S|W|E|R|Lr)\\s*=\\s*(' + N + ')\\s*-?\\s*(kips?\\s?\\/\\s?ft|k\\s?\\/\\s?ft|klf|lbs?\\s?\\/\\s?ft|plf|psf|kips?|k)(?![A-Za-z\\/])', 'g');
@@ -260,13 +305,16 @@ function findLoads(t) {
     var already = false, st = m.index + (m[0].length - m[0].replace(/^[^A-Za-z0-9]/, '').length), j;
     for (j = 0; j < out.length; j++) if (out[j].start <= st && out[j].end > st) already = true;
     if (already) continue;
+    if (/^\d+\/\d+$/.test(m[2])) continue;                       /* (A1-csel-01) "L = 200/300 kips" is half of a pair, not the fraction 0.667 */
     out.push({ sym: m[1], first: '', kind: SYMKIND[m[1]], value: parseNum(m[2]), unit: canonUnit(m[3]), basis: null, via: 'symbol',
       from: m[0].replace(/^[^A-Za-z0-9]/, ''), start: st, end: m.index + m[0].length });
   }
   // word forms: <kind> load ... <number> <unit>
   re = new RegExp('(?:(service|working|unfactored|factored|ultimate|design)\\s+)?(?:(partition|superimposed|additional|roof|movable|fixed)\\s+)?(dead|live|snow|wind|rain|earthquake|seismic)\\s+loads?\\b', 'gi');
   while ((m = re.exec(t)) !== null) {
-    var after = t.slice(m.index + m[0].length, m.index + m[0].length + 60), f = new RegExp('^((?:\\s*\\([^)]*\\))?[^0-9.;=]{0,28}?(?:=|:|of|is|are|totaling|totalling|equal to|equals|being|at)?\\s*)(' + N + ')\\s*-?\\s*(' + UNITS + ')', 'i').exec(after);
+    /* (10/07, A1-csel-07) the words between the kind and its number may not run over ANOTHER load kind: "the live load is twice the dead load of 150 kips"
+       read the dead load's 150 as the live load too (Pu = 420 for 660, W12X53 printed for W12X65). */
+    var after = t.slice(m.index + m[0].length, m.index + m[0].length + 60), f = new RegExp('^((?:\\s*\\([^)]*\\))?(?:(?!\\b(?:dead|live|snow|wind|rain|seismic|earthquake)\\b)[^0-9.;=]){0,28}?(?:=|:|of|is|are|totaling|totalling|equal to|equals|being|at)?\\s*)(' + N + ')\\s*-?\\s*(' + UNITS + ')', 'i').exec(after);
     var kw = m[3].toLowerCase(), kk = kw === 'dead' ? 'D' : kw === 'live' ? 'L' : kw === 'snow' ? 'S' : kw === 'wind' ? 'W' : kw === 'rain' ? 'R' : 'E';
     if (m[2] && /^roof$/i.test(m[2]) && kk === 'L') kk = 'Lr';
     /* 0.8: a parenthesis between the kind and its number, which must then follow "=", ":", "of" or "is":
@@ -275,6 +323,7 @@ function findLoads(t) {
     if (!f) continue;
     u = canonUnit(f[3]);
     if (u === 'ft' || u === 'in' || u === 'ksi' || u === 'psi') continue;
+    if (/^\d+\/\d+$/.test(f[2])) continue;                       /* (A1-csel-02) "dead/live loads = 80/50 psf": half of a pair, not the fraction 1.6 */
     out.push({ sym: null, first: '', kind: kk, value: parseNum(f[2]), unit: u, basis: m[1] ? (/^(service|working|unfactored)$/i.test(m[1]) ? 'service' : 'factored') : null,
       qualifier: m[2] ? m[2].toLowerCase() : null, via: 'words', from: (m[0] + after.slice(0, f[0].length)).replace(/^\s+/, ''), start: m.index, end: m.index + m[0].length + f[0].length });
   }
@@ -289,12 +338,16 @@ function findLoads(t) {
       basis: m[3] ? (/^(service|working)$/i.test(m[3]) ? 'service' : 'factored') : null, qualifier: m[4] ? m[4].toLowerCase() : null, via: 'words', from: m[0], start: m.index, end: m.index + m[0].length });
   }
   /* 0.5: the number first and no word "load": "100 k dead + 150 k live", "90 kips dead and 120 kips live" */
-  re = new RegExp('(' + N + ')\\s*-?\\s*(kips?\\s?\\/\\s?ft|k\\s?\\/\\s?ft|klf|kips?|k(?![A-Za-z])|psf|plf)\\s+(?:of\\s+)?(?:service\\s+)?(dead|live)\\b(?!\\s+loads?\\b)', 'gi');
+  /* (10/07, A1-csel-08 / 09) a number that stands right AFTER a kind word is that kind's: "dead 80 psf live 100 psf" bound "80 psf live" (L = 80, D lost,
+     460.8 printed for 921.6); "live 50 psf dead 80 psf" bound "50 psf dead".  Such a match is left to the kind-first rule below.
+     (A1-csel-24) "100k dead + 150k live + 50k snow": the snow load was not read and the answer left it out; snow and wind are read here too. */
+  re = new RegExp('(' + N + ')\\s*-?\\s*(kips?\\s?\\/\\s?ft|k\\s?\\/\\s?ft|klf|kips?|k(?![A-Za-z])|psf|plf)\\s+(?:of\\s+)?(?:service\\s+)?(dead|live|snow|wind)\\b(?!\\s+loads?\\b)', 'gi');
   while ((m = re.exec(t)) !== null) {
     var ex3 = false, j3;
     for (j3 = 0; j3 < out.length; j3++) if (out[j3].start < m.index + m[0].length && out[j3].end > m.index) ex3 = true;
     if (ex3) continue;
-    out.push({ sym: null, first: '', kind: /dead/i.test(m[3]) ? 'D' : 'L', value: parseNum(m[1]), unit: canonUnit(m[2]), basis: /service/i.test(m[0]) ? 'service' : null, via: 'words', from: m[0], start: m.index, end: m.index + m[0].length });
+    if (kindOwnsNumber(t, m.index)) continue;
+    out.push({ sym: null, first: '', kind: /dead/i.test(m[3]) ? 'D' : /live/i.test(m[3]) ? 'L' : /snow/i.test(m[3]) ? 'S' : 'W', value: parseNum(m[1]), unit: canonUnit(m[2]), basis: /service/i.test(m[0]) ? 'service' : null, via: 'words', from: m[0], start: m.index, end: m.index + m[0].length });
   }
   /* 0.5: a factored load given in words: "an ultimate axial load of 660 kips", "a factored load of 3.2 k/ft", "factored tension force = 250 k".
      (Symbol forms such as Pu = 660 kips were read above; a "factored dead load" is one of the word forms above.) */
@@ -316,6 +369,7 @@ function findLoads(t) {
     if (ql8 && /^compress/.test(ql8) && k8 !== 'W' && k8 !== 'E') continue;
     for (q8 = 0; q8 < out.length; q8++) if (out[q8].start < m.index + m[0].length && out[q8].end > m.index) dup8 = true;
     if (dup8) continue;
+    if (/^\d+\/\d+$/.test(m[3])) continue;                       /* (A1-csel-02) "live = 80/50 psf": half of a pair, not the fraction 1.6 */
     if (/\b(?:dead|live|snow|wind|rain|D|L)\s*(?:\+|&|and|plus)\s*(?:\d+(?:\.\d+)?\s*)?$/i.test(t.slice(Math.max(0, m.index - 24), m.index))) continue;       /* "dead + live = 120 psf" is a sum, not the live load */
     if (/\b(?:total|combined|factored|ultimate)\s+$/i.test(t.slice(Math.max(0, m.index - 12), m.index))) continue;                                           /* "total dead = 87.5 psf", "factored live ..." are not a service load to enter */
     if (ql8 === 'roof' && k8 === 'L') k8 = 'Lr';
@@ -328,6 +382,20 @@ function findLoads(t) {
     for (q9 = 0; q9 < out.length; q9++) if (out[q9].start < m.index + m[0].length && out[q9].end > m.index) dup9 = true;
     if (dup9) continue;
     out.push({ sym: null, first: '', kind: kw9 === 'roof live' ? 'Lr' : kw9 === 'dead' ? 'D' : kw9 === 'live' ? 'L' : kw9 === 'snow' ? 'S' : kw9 === 'wind' ? 'W' : kw9 === 'rain' ? 'R' : 'E', value: parseNum(m[1]), unit: canonUnit(m[2]), basis: null, qualifier: null, via: 'words', from: m[0], start: m.index, end: m.index + m[0].length });
+  }
+  /* (10/07, A1-tsel-05 / 06, A1-csel-05 / 06 / 07) THE LIVE LOAD GIVEN AS A MULTIPLE OF THE DEAD LOAD: "live load twice the dead load", "the live load is 3 times
+     the dead load", "L = 2D", "live load equal to the dead load".  No rule read it, and the empty live load was factored as 0 (W8X10 printed for W8X18,
+     W12X40 for W12X65).  It is read only when the text says it ONCE, no live load number was read, and the dead load was read exactly once (its unit is
+     the live load's); anything else is left empty and asked. */
+  var RWORD = { twice: 2, double: 2, two: 2, three: 3, four: 4, five: 5 }, ratios = [], deads = out.filter(function (x) { return x.kind === 'D'; });
+  re = /\blive\s+loads?\s*(?:is\s+|=\s*|equals?\s+|being\s+|of\s+)?(?:(twice|double)|(\d+(?:\.\d+)?|two|three|four|five)\s*(?:times|x)|(equal\s+to|the\s+same\s+as|same\s+as))\s+(?:the\s+|that\s+of\s+the\s+)?dead(?:\s+loads?)?\b/gi;
+  while ((m = re.exec(t)) !== null) ratios.push({ m: m, f: m[1] ? 2 : m[2] ? (RWORD[m[2].toLowerCase()] || parseNum(m[2])) : 1, st: m.index });
+  /* "L = 2D", "L = 2 x D", "L = D" (A2-loads-p151) */
+  re = /(?:^|[^A-Za-z0-9])L\s*=\s*(\d+(?:\.\d+)?)?\s*(?:x|\*)?\s*D(?![A-Za-z0-9])(?!\s*=)/g;
+  while ((m = re.exec(t)) !== null) ratios.push({ m: m, f: m[1] ? parseNum(m[1]) : 1, st: m.index + (m[0].length - m[0].replace(/^[^A-Za-z0-9]/, '').length) });
+  if (ratios.length === 1 && deads.length === 1 && !out.some(function (x) { return x.kind === 'L'; }) && isFinite(ratios[0].f) && ratios[0].f > 0) {
+    out.push({ sym: null, first: '', kind: 'L', value: Math.round(ratios[0].f * deads[0].value * 1e6) / 1e6, unit: deads[0].unit, basis: null, via: 'ratio',
+      from: ratios[0].m[0].replace(/^[^A-Za-z0-9]/, ''), start: ratios[0].st, end: ratios[0].m.index + ratios[0].m[0].length });
   }
   out.sort(function (a, b) { return a.start - b.start; });
   return out;
@@ -1423,7 +1491,10 @@ function fillFamily(B, fieldName, famNorm, from, asList, conf) {
 function loadBasis(F, B, defaults) {
   // returns {mode:'service'|'factored'|null}
   var hasU = F.loads.filter(function (l) { return l.kind === 'u'; }), t0 = F.t.replace(/unfactored/ig, ''),
-    givenFactored = /loads?\s+(?:given\s+)?(?:are|is)\s+(?:already\s+)?factored|already\s+factored|(?:factored|ultimate)\s+(?:dead|live)\s+loads?|(?:factored|ultimate)\s+loads?\s*(?:of|=|:)\s*\d/i.test(t0),
+    givenFactored = /loads?\s+(?:given\s+)?(?:are|is)\s+(?:already\s+)?factored|already\s+factored|(?:factored|ultimate)\s+(?:dead|live)\s+loads?|(?:factored|ultimate)\s+loads?\s*(?:of|=|:)\s*\d/i.test(t0)
+      /* (10/07, A1-csel-11) "factored loads D=200k L=300k", "D=200k, L=300k (factored)", "these are factored loads": the loads were factored AGAIN (720 for
+         500).  Only a dead / live symbol after the words counts ("the factored load Pu = ?" asks for a value and says nothing of the given loads). */
+      || /(?:[Ff]actored|[Uu]ltimate)\s+loads?\s*,?\s*(?:are\s+)?(?:P\s?_?)?(?:D|L|DL|LL)\s*=\s*\d|\d\s*-?\s*(?:k|kips?)\s*\(\s*(?:already\s+)?factored\s*\)|\b(?:[Tt]hese|[Tt]hey|[Bb]oth|[Aa]ll)\s+(?:loads\s+)?are\s+(?:already\s+)?factored\b/.test(t0),
     explicitService = /\bservice\b|\bworking\b|\bunfactored\b/i.test(F.t);
   if (hasU.length) return 'factored';
   if (explicitService && !givenFactored) return 'service';
@@ -1433,6 +1504,21 @@ function loadBasis(F, B, defaults) {
   return 'service-symbol';          // PD, PL, WD, WL, wD, wL are the service (nominal) loads by definition; the factored ones are written Pu, wu, Mu
 }
 
+/* (10/07, cluster load-reading: A1-tcap-34 / 35 / 36, A1-tsel-01 .. 08, A1-csel-05 / 06) ONE OF THE TWO LOADS READ, THE OTHER NAMED.  "D=100k,L=150" (the
+   unit typed once), "dead 100 live 150 kips", "L = 2 x D" ...: the reader took one load, the other box stayed empty, and the calculator factors an empty
+   box as 0 ("adequate for Pu = 240" printed where 360 is right).  When the words NAME the other load (the word dead / live, or its symbol with "="), do
+   not say it is absent ("no live load", "dead load only", "L = 0") and do not ASK for it ("find the maximum live load"), the empty box is asked. */
+function namedButUnread(t, kind) {
+  var x = String(t).replace(/\broof\s+live\b/gi, 'roof Lr'), w = kind === 'D' ? 'dead' : 'live', o = kind === 'D' ? 'live' : 'dead';     /* a roof live load is no floor live load */
+  if (new RegExp('\\bno\\s+(?:service\\s+)?' + w + '\\b|\\b' + w + '(?:\\s+loads?)?\\s*(?:is\\s+|=\\s*|:\\s*)?(?:zero|none|negligible|neglected|ignored|0(?![.\\d]))|\\b(?:neglect|ignor|disregard)\\w*\\s+(?:the\\s+)?' + w + '\\b|\\bwithout\\s+(?:any\\s+)?' + w + '\\b|\\bzero\\s+' + w + '\\b|\\b' + o + '\\s+loads?\\s+(?:only|alone)\\b|\\bonly\\s+(?:the\\s+|a\\s+)?' + o + '\\b|(?:^|[^A-Za-z0-9])' + kind + '\\s*=\\s*0(?![.\\d])', 'i').test(x)) return false;
+  /* (the question ASKS for that load: "find max. live load", "what live load can it support" -- A1-tsel-p-p42 -- is answered by the maximum-load form) */
+  var adj = '(?:max(?:imum)?\\b\\.?\\s*|allowable\\s+|service\\s+|factored\\s+|additional\\s+)*';
+  if (new RegExp('\\b(?:max(?:imum)?|allowable|largest|greatest|permissible|safe|additional)\\b\\.?\\s+(?:[\\w.]+\\s+){0,2}' + w + '\\b|\\b(?:what|which|how\\s+much)\\s+(?:is\\s+|are\\s+)?(?:the\\s+)?' + adj + w + '\\b|\\b(?:find|determine|calculate|compute|get)\\s+(?:the\\s+)?' + adj + w + '\\b|\\b' + w + '\\s+loads?\\s+(?:can|could|may|will|would)\\b|\\b' + w + '\\s+loads?\\s*(?:=\\s*)?(?:\\?|_{2,})|(?:^|[^A-Za-z0-9])' + kind + '\\s*=\\s*(?:\\?|_{2,})', 'i').test(x)) return false;
+  if (new RegExp('\\b' + w + '\\b', 'i').test(x)) return true;
+  if (new RegExp('(?:^|[^A-Za-z0-9])(?:P\\s?_?)?' + kind + 'L?\\s*=(?![\\d.\\s\\/]*(?:ft|feet|foot|in\\b|inch|"|\'))').test(x)) return true;
+  /* "d=100, L=150 kips": a lower-case d with a bare number is no depth here (a depth carries "in") */
+  return kind === 'D' && /(?:^|[^A-Za-z0-9])d\s*=\s*\d[\d.,]*(?![\d.,]*\s*(?:ft|feet|foot|in\b|inch|"|'|\/))/.test(x);
+}
 function loadValue(l) { return l.value; }
 /* point loads / axial loads in k: D, L, Pu (tension, column, selects) */
 function fillAxialLoads(F, B, D) {
@@ -1454,6 +1540,11 @@ function fillAxialLoads(F, B, D) {
     B.set('Pu', pu.value, pu.from, 'high');
     return;
   }
+  /* (10/07, A1-tcap-20 / A1-ccap-213) "Pu = 1.2(100) + 1.6(150)": findLoads did not read the formula's first number as Pu; the load is asked */
+  if (F.loads.formula && F.loads.formula.first === 'P' && F.loads.formula.kind === 'u' && !(d && l)) {
+    B.ask('pu_formula', 'Your question writes the factored load as a formula. Work it out on a calculator and type the result as Pu in kips.', ['Pu'], null, 'need');
+    return;
+  }
   if (d || l) {
     if (basis === 'factored') {
       // "factored loads PD = .. PL = .." -> they are already factored: one number would be needed
@@ -1466,6 +1557,8 @@ function fillAxialLoads(F, B, D) {
     }
     if (d) B.set('D', d.value, d.from, 'high');
     if (l) B.set('L', l.value, l.from, 'high');
+    if (!d && namedButUnread(F.t, 'D')) B.ask('load_D', 'Your question names a DEAD load but the page did not read its number. Type the dead load D in kips.', ['D'], null, 'need');
+    if (!l && namedButUnread(F.t, 'L')) B.ask('load_L', 'Your question names a LIVE load but the page did not read its number. Type the live load L in kips.', ['L'], null, 'need');
     if (basis === 'service-default' && D.loads_basis) B.warn('Loads taken as service loads because of: "' + D.loads_basis.from + '"');
     if (basis === 'service-symbol') B.warn('D and L are treated as SERVICE loads (the symbols PD, PL mean service dead and live load; a factored load is written Pu). Check that the problem does not say otherwise.');
     return;
@@ -2091,7 +2184,8 @@ function addSelf(t) {
   return m ? m[0] : null;
 }
 function neglectSelf(t) {
-  var m = /(?:neglect|ignore|disregard|not\s+include|do\s+not\s+include|self[- ]weights?\s+(?:are\s+)?not\s+(?:included|considered))[^.;]{0,40}(?:weight|self)/i.exec(t);
+  /* (10/07, A2-beam-74, reached once "dead 50 psf live 80 psf" was read right) "neglect beam wt": the short "wt" is the weight too (55.35 printed for 54.14) */
+  var m = /(?:neglect|ignore|disregard|not\s+include|do\s+not\s+include|self[- ]weights?\s+(?:are\s+)?not\s+(?:included|considered))[^.;]{0,40}(?:weight|wt\b|self)/i.exec(t);
   if (!m) m = /beam\s+self[- ]weights?\s+(?:are\s+)?not\s+included/i.exec(t);
   /* 0.6 (review 4): more ways of saying the steel's own weight is not to be added: "this includes the weight of the framing", "the beam weight is
      negligible", "may be ignored", "is not considered", "without the self-weight", "excluding beam self-weight", "already included in the ... dead load"
@@ -2495,6 +2589,9 @@ FILL.loads_takedown = function (F, B, D) {
   });
   if (d) B.set('floor_D_psf', d.value, d.from, 'high'); if (l) B.set('floor_L_psf', l.value, l.from, 'high');
   if (!d && !l) B.ask('floor_loads', 'What are the floor dead and live loads (psf)?', ['floor_D_psf', 'floor_L_psf'], null);
+  /* (10/07, A1-csel-06) "dead 80 psf, live load twice the dead load" when the multiple is not read: the empty floor live load was taken as 0 (168 for 528) */
+  else if (!l && namedButUnread(t, 'L')) B.ask('floor_L', 'Your question names a floor LIVE load but the page did not read its number. Type the floor live load in psf.', ['floor_L_psf'], null, 'need');
+  else if (!d && !F.slab && namedButUnread(t, 'D')) B.ask('floor_D', 'Your question names a floor DEAD load but the page did not read its number. Type the floor dead load in psf.', ['floor_D_psf'], null, 'need');
   if (rd) B.set('roof_D_psf', rd.value, rd.from, 'high', 'said in the sentence about the roof');
   if (rl) B.set('roof_L_psf', rl.value, rl.from, 'high', 'said in the sentence about the roof (roof live load is factored 1.6 like floor live load)');
   /* a roof in the words and no roof load read: the calculator would leave the roof out.  The two boxes are asked (0 and 0 = the column carries no roof) */
@@ -2507,6 +2604,13 @@ FILL.loads_factored = function (F, B, D) {
   F.loads.forEach(function (x) { if (x.kind === 'D' && !d) d = x; if (x.kind === 'L' && !l) l = x; });
   var basis = loadBasis(F, B, D);
   if (d) B.set('D', d.value, d.from, 'high'); if (l) B.set('L', l.value, l.from, 'high');
+  /* (10/07, A2-loads-p156, reached once "dead 20 k live 30 k" was read right) "unfactored load? dead 20 k live 30 k" asks for the SERVICE load; this form
+     gives the factored one ("Factored load: 72 kips" printed) */
+  if (/\b(?:unfactored|service|working)\s+(?:axial\s+|total\s+|column\s+)?loads?\s*(?:\?|=\s*(?:\?|_{2,}))|\b(?:what\s+is|find|determine|calculate|compute|give)\s+(?:the\s+)?(?:total\s+)?(?:unfactored|service|working)\s+(?:axial\s+|total\s+|column\s+)?loads?\b/i.test(F.t))
+    B.ask('asks_service', 'Your question asks for the UNFACTORED (service) load, and this calculation gives the factored load, so its answer is not the one asked. By hand: the service load is the dead load plus the live load.', [], null, 'stop');
+  /* (10/07, cluster load-reading) "D=100, L=150 kips, find the factored load": one load read, the other named, and the empty one was factored as 0 */
+  if (d && !l && namedButUnread(F.t, 'L')) B.ask('load_L', 'Your question names a LIVE load but the page did not read its number. Type the live load L in the same unit as D.', ['L'], null, 'need');
+  if (l && !d && namedButUnread(F.t, 'D')) B.ask('load_D', 'Your question names a DEAD load but the page did not read its number. Type the dead load D in the same unit as L.', ['D'], null, 'need');
   var u = F.loads.filter(function (x) { return x.kind === 'u'; })[0];
   if (u) { B.set('already_factored', true, u.from, 'high'); B.set('factored_value', u.value, u.from, 'high'); }
   var unit = (d || l || u || {}).unit; if (unit) B.set('unit', unit === 'klf' ? 'k/ft' : unit === 'k' ? 'kips' : unit, (d || l || u).from, 'medium');
@@ -2520,6 +2624,10 @@ FILL.loads_combinations = function (F, B, D) {
   var u = F.loads.filter(function (x) { return x.unit; })[0];
   if (u) B.set('unit', u.unit === 'klf' ? 'k/ft' : u.unit === 'k' ? 'kips' : u.unit, u.from, 'medium');
   if (!B.fields.length) B.ask('loads', 'Which loads are given (D, L, Lr, S, R, W, E)?', ['D', 'L'], null);
+  /* (10/07, cluster load-reading) the same guard as the factored-load form: when that form asked for the unread dead or live load, the page moved the
+     question here and answered it with the empty load as 0 ("L = 30 k, D = L, find Pu": 48 printed for 84) */
+  else if (B.has('D') && !B.has('L') && namedButUnread(F.t, 'L')) B.ask('load_L', 'Your question names a LIVE load but the page did not read its number. Type the live load L in the same unit as D.', ['L'], null, 'need');
+  else if (B.has('L') && !B.has('D') && namedButUnread(F.t, 'D')) B.ask('load_D', 'Your question names a DEAD load but the page did not read its number. Type the dead load D in the same unit as L.', ['D'], null, 'need');
   if (B.has('W') || B.has('E')) B.ask('uplift', 'Is there a reverse (uplift / tension) value of the wind or earthquake load? Enter it as a positive number, or leave empty.', ['W_reverse', 'E_reverse'], null);
 };
 FILL.loads_max_service = function (F, B, D) {
@@ -2607,7 +2715,9 @@ function readChunk(text, opts) {
      - a LOAD that stands twice with one value is two loads: "a dead load of 1.5 k/ft and a ... live lad of 1.5 k/ft" -- one field quoted "1.5 k/ft"
        and BOTH were called used.  For a load, as many occurrences count as used as the fields quote. */
   var coll = function (s) { return String(s).replace(/\s+/g, ' ').replace(/^\s+|\s+$/g, ''); }, unplaced = [], seenN = {};
-  var occ = function (hay, needle) { var n = 0, at = 0, j; hay = String(hay); if (!needle) return 0; for (;;) { j = hay.indexOf(needle, at); if (j < 0) break; n++; at = j + needle.length; } return n; };
+  /* (10/07, A1-csel-24) an occurrence counts only when no digit or point stands just before it: "50 k" was found inside "150 k live", so the unread
+     "50k snow" was called used and the answer left the snow load out */
+  var occ = function (hay, needle) { var n = 0, at = 0, j; hay = String(hay); if (!needle) return 0; for (;;) { j = hay.indexOf(needle, at); if (j < 0) break; if (!(j > 0 && /[\d.]/.test(hay.charAt(j - 1)))) n++; at = j + needle.length; } return n; };
   F.q.forEach(function (q) {
     if (!q.unit || q.unit === 'ksi' || q.unit === 'psi' || q.unit === 'in2') return;
     var txt = coll(q.text), isLoad = /kip|^k$|k\/ft|klf|psf|plf|lb/i.test(String(q.unit)), nFrom = 0, used;
