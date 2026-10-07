@@ -783,9 +783,44 @@ function amendRoute(route, askText, stem) {
       return out;
     }
   }
-  return route;
+  /* 5. (unit D, 10/07) THE LARGEST LIVE LOAD IN WORDS THE FINDER'S SIGNALS MISS.  "W12x53 column KL=14ft D=200k. max L?", "what is the max service live
+     load the W12x40 column (KL = 12 ft) can carry if the dead load is 150 k", "determine the max. live load it can support", "the biggest live load", "a W8x24
+     tension member ... dead load of 50 kips. max L?" went to the member's capacity alone, and the page printed "ANSWER: phi Pn = 352 kips" -- clean, and not
+     what is asked (L = 107.5 kips is).  The finder knows "max live", "maximum service live" ...: the ask is put in those words and the finder chooses again;
+     its choice is taken only when it IS a largest-live-load form.  Only beside a dead load or a slab in the words (a reverse calculation has one), never with
+     a number after the L (a given), never for a moment, a shear or a deflection of the live load. */
+  var r5 = route, m5, rr5;
+  if (route.family !== 'words' && !/-maxl$|^L-max$/.test(String(route.form || '')) && (m5 = MAXL_ASK_RE.exec(t)) && /\bdead\b|\bD\s*=\s*\d|\bDL\b|\bslab\b/i.test(all)) {
+    rr5 = E.FINDER.identify(stem || '', t.slice(0, m5.index) + ' maximum live load ' + t.slice(m5.index + m5[0].length));
+    if (rr5 && /^[CTBF]-maxl$|^L-max$/.test(String(rr5.form || ''))) { rr5.amended = true; rr5.why = (rr5.why || []).concat(['corrected on top of the finder: ' + trim(m5[0])]); r5 = rr5; }
+  }
+  /* 5b. ... and the member's OWN WEIGHT in the words: the largest-live-load form takes D as typed and does not add it.  "a 20ft long w8x24 hanger, 3/4in
+     bolts 2 per flange 3 per line, dead load 40k. include the self weight of the hanger. max service live load?" printed L = 125.75625 kips from D = 40
+     (with the hanger's 0.48 kips it is 125.4).  Any mention stops it ("dead load includes the self weight" too: the page cannot tell the two apart),
+     unless the words say to neglect it. */
+  if (/^[CT]-maxl$|^L-max$/.test(String(r5.form || '')) && MAXL_SELFW_RE.test(all) && !MAXL_NEGLECT_RE.test(all)) return notInRoute(r5, 'maxl-self-weight', MAXL_SELFW_STOP, [MAXL_SELFW_RE.exec(all)[0]]);
+  /* 6. (unit D) the largest live load of a BEAM whose loads are given per foot, with no floor: the page's form works it from a floor (slab, psf, beam
+     spacing), so "W16x26 spans 20 ft, dead load 0.5 k/ft ... maximum service live load" stopped asking for a spacing the question does not have, and
+     "W16x31 ... dead load 0.6 k/ft. max service live load in k/ft" printed "ANSWER: Mu = 60.48 kip-ft".  One plain sentence instead. */
+  if (/^[BF]-maxl$/.test(String(r5.form || '')) && /\d\s*(?:k|kips?|lbs?|#)\s*\/\s*(?:ft|foot|')|\d\s*(?:klf|plf)\b/i.test(all)
+    && !/psf|\bslab\b|\bspac(?:ed|ing)\b|\bon\s+cent(?:er|re)s?\b|\bo\.\s?c\b|\boc\b|\btributary\b|\bapart\b/i.test(all)) return notInRoute(r5, 'maxl-per-foot', MAXL_PER_FOOT_STOP, [trim(m5 ? m5[0] : 'live load'), 'k/ft']);
+  return r5;
 }
 SOLVE.amendRoute = amendRoute;
+/* (unit D) the ask of rule 5: max / largest / biggest + up to two of service, unfactored ... + live (load) / LL / L / "service load L" */
+var MAXL_ASK_RE = /\b(?:max(?:imum)?\.?|largest|greatest|biggest|highest)\s+(?:(?:service|unfactored|allowable|permissible|safe|additional|uniform|applied|superimposed|axial)\s+){0,2}(?:(?:service|live)\s+loads?\s+L|live(?:\s+loads?)?|LL|L)\b(?!\s*(?:=|is\b|of\b|:)?\s*\d)(?!\s*\/|\s*-?\s*(?:moments?|shears?|deflections?|reactions?|stress|factor|combinations?)\b)/i;
+var MAXL_SELFW_RE = /\bself[\s-]?weights?\b|\bown\s+weights?\b|\bweights?\s+of\s+the\s+(?:member|hanger|column|rod|bar|angle|plate|section|shape|tie|strut|channel|tee|pipe)\b/i;
+var MAXL_NEGLECT_RE = /\b(?:neglect|ignor|disregard)\w*\b[^.;]{0,40}\b(?:self|own|weight)|\b(?:self[\s-]?weight|own\s+weight)s?\b[^.;]{0,30}\b(?:neglected|ignored|disregarded|negligible)\b/i;
+var MAXL_SELFW_STOP = 'Your question speaks of the member\'s own weight, and the page\'s largest-live-load calculation does not add it to the dead load, so it gives no answer to copy here.';
+var MAXL_PER_FOOT_STOP = 'Your question gives the beam\'s loads per foot and no floor, and the page works out the largest live load of a beam only from a floor (slab, loads in psf and the beam spacing), so it gives no answer to copy here.';
+/* a route the calculator cannot do, with the one sentence that says why (the part shows "Why: ..." and calculates nothing) */
+function notInRoute(route, id, why, words) {
+  var out = {}, k;
+  for (k in route) if (has(route, k)) out[k] = route[k];
+  out.traps = (route.traps || []).concat([{ id: id, when: why, 'do': why, words: words || [], not_in_tool: true }]);
+  out.not_in_tool = true; out.amended = true; out.why = (route.why || []).concat(['corrected on top of the finder: ' + id]);
+  return out;
+}
 
 /* ==================================================================================================== what is ASKED, and which form GIVES it
    COUNCIL 2026-10-06 (OpenAI GPT-6.1, xAI Grok 4.7, DeepSeek v4 Pro; two rounds; data/exam-kits/ARCH-232-midterm/research/council-2026-10-06/).
