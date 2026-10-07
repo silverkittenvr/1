@@ -3606,6 +3606,15 @@ function oneNumberSplit(fn, res, ask) {
   if (!a || !a.label || !a.text) return null;
   t = collapse(a.text); L = String(a.label);
   if (/\b1\.4D\b/.test(t)) return null;
+  /* (review 10/07) a question that asks for what the cut would move to the Check line keeps the whole line: "simply supported beam 24 ft, wd = 1, wl = 1.5.
+     find RA and RB" printed "ANSWER: ... Mu = 259.2 kip-ft" alone (the reactions only on Check); "D = 40 L = 60. which combination governs" printed only
+     "144 kips"; "where does the maximum moment occur", "which case of Table D3.1", "which KL/r row" the same.  (The page has no answer line of its own for these.) */
+  p = /\bwhich\b|\b(?:gov|contro?l)\w*\s+(?:load\s+)?comb|\bcomb\w*\s+(?:\w+\s+){0,3}(?:gov|contro?l)|smallest|minimum|\bmin\b|\bleast\b|uplift|revers/i;
+  p = { beam_analysis: /reaction|\br\s*[ab12]\b|shear|\bv\s*u\b|\bwhere\b|locat|distance|\bx\s*=|\bcomb|\bgov/i, loads_combinations: p, loads_factored: p,
+    lookup_U: /\bwhich\b|\bwhat\s+(?:\S+\s+){0,3}(?:cas|cse)|\b(?:cas|cse)\w*\s*(?:no\.?|number|#)?\s*(?:=|_|\?)/i, lookup_critical_stress: /\brow\b|\bwhich\b|round/i,
+    tension_net_area: /gross|\bgros\b|\ba\s*g\b/i }[fn];
+  if (p && p.test(String(ask || ''))) return null;
+  p = null;
   function near(s) { var d = String(s).indexOf('.') >= 0 ? String(s).split('.')[1].length : 0; return isNum(a.value) && Math.abs(Number(s) - a.value) <= 0.5 * Math.pow(10, -d) + 1e-9; }
   function picked(s) { return !!(vals.selected_shape && String(vals.selected_shape.value) === s); }
   function out(main, ok) { return ok ? [L + ': ' + main, cmp, chk] : null; }

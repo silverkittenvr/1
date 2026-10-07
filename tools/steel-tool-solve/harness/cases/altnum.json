@@ -454,5 +454,58 @@
    ]
   },
   "note": "review: unequal KL, Table 4-14 named: the cut prints no \"do not copy\" line, so it stays cut"
+ },
+ {
+  "id": "rv04",
+  "text": "simply supported beam 24 ft span wd = 1 k/ft wl = 1.5 k/ft.find RA and RB",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Maximum factored moment Mu: Mu = 259.2 kip-ft (1.2D + 1.6L) at x = 12 ft; reactions RA = 43.2 (1.2D + 1.6L), RB = 43.2 (1.2D + 1.6L); Vu = 43.2 (1.2D + 1.6L) -- reactions and shear in kips"
+   ]
+  },
+  "note": "review: the question asks for the reactions, which the cut would move to Check: whole line kept"
+ },
+ {
+  "id": "rv05",
+  "text": "D = 40 kips L = 60 kips .find the factored load.which combination governs",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Largest factored load U: 144 kips -- combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 144 kips (combination 2); smallest: 36 kips (combination 5 and 7)"
+   ]
+  },
+  "note": "review: \"which combination governs\": whole line kept"
+ },
+ {
+  "id": "rv06",
+  "text": "the servise loads on a hanger are 25 kips dead and 5 kips live. what is the governing factored load?",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Largest factored load U: 38 kips",
+    "Check: combination 2: 1.2D + 1.6L + 0.5(Lr or S or R), L* = 0.5 L; with L* = 1.0 L: 38 kips (combination 2); smallest: 22.5 kips (combination 5 and 7)"
+   ]
+  },
+  "note": "review: \"governing factored load\" asks for the load only: cut"
+ },
+ {
+  "id": "rv07",
+  "text": "what is U for a w8x24 connected through the flanges with 3 bolts per line.which case of table d3.1",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Shear lag factor U: U = 0.90 (Table D3.1 case 7)"
+   ]
+  },
+  "note": "review: \"which case of Table D3.1\": whole line kept"
  }
 ]
