@@ -804,6 +804,19 @@ function amendRoute(route, askText, stem) {
      "W16x31 ... dead load 0.6 k/ft. max service live load in k/ft" printed "ANSWER: Mu = 60.48 kip-ft".  One plain sentence instead. */
   if (/^[BF]-maxl$/.test(String(r5.form || '')) && /\d\s*(?:k|kips?|lbs?|#)\s*\/\s*(?:ft|foot|')|\d\s*(?:klf|plf)\b/i.test(all)
     && !/psf|\bslab\b|\bspac(?:ed|ing)\b|\bon\s+cent(?:er|re)s?\b|\bo\.\s?c\b|\boc\b|\btributary\b|\bapart\b/i.test(all)) return notInRoute(r5, 'maxl-per-foot', MAXL_PER_FOOT_STOP, [trim(m5 ? m5[0] : 'live load'), 'k/ft']);
+  /* 7. (unit D) THE DEAD LOAD ALONE of a floor.  "a floor of 6 in concrete slab and 20 psf finishes, beams 25 ft span spaced 8 ft. what is the factored dead
+     load on the beam in k/ft" went to the floor plan, which insists on a live load: he was asked for a number his question does not have (and a 0 typed
+     there is factored as 1.4D by the calculator, not her 1.2D).  A floor question that speaks of no live load at all and asks only for a dead load stops
+     with one sentence; so does a floor question whose words say there IS no live load ("6 in slab and 20 psf superimposed dead load (dead load only) ...
+     find wu": her 1.2D is not what the floor forms print). */
+  if ((r5.fn === 'floor_plan' || r5.fn === 'loads_floor') && DEAD_NO_LIVE_RE.test(all)) return notInRoute(r5, 'dead-only', DEAD_NO_LIVE_STOP, [DEAD_NO_LIVE_RE.exec(all)[0]]);
+  /* (his full stops come before lower-case words -- "spaced 8ft . whats the factored dead load" -- so the sentences are cut here at every full stop) */
+  if ((r5.fn === 'floor_plan' || r5.fn === 'loads_floor') && !/\blive\b|\bLL\b|\bL\s*=|\boccupan|\bsnow\b|\broof\b/i.test(all)) {
+    var s7all = t.split(/[.?!;]+\s+|\n+/).filter(function (s7) { return looksLikeAsk(s7) || /\bwhat'?s\b/i.test(s7); }),
+      dAsk = s7all.filter(function (s7) { return DEAD_ASK_RE.test(s7); });
+    if (dAsk.length && dAsk.length === s7all.length && !dAsk.some(function (s7) { return /\bmoments?\b|\bshears?\b|\breactions?\b|\bselect|\blightest|\bsize\b|\bdesign\b|\bW\s?\d|\bgirders?\b|\bcolumns?\b|\b[MVP]\s?u\b|\bw\s?u\b|\bdeflect|\btotal\s+(?:factored\s+)?load\b/i.test(s7.replace(DEAD_ASK_RE, ' ')); }))
+      return notInRoute(r5, 'dead-only', DEAD_ONLY_STOP, [trim(DEAD_ASK_RE.exec(dAsk[0])[0])]);
+  }
   return r5;
 }
 SOLVE.amendRoute = amendRoute;
@@ -813,6 +826,12 @@ var MAXL_SELFW_RE = /\bself[\s-]?weights?\b|\bown\s+weights?\b|\bweights?\s+of\s
 var MAXL_NEGLECT_RE = /\b(?:neglect|ignor|disregard)\w*\b[^.;]{0,40}\b(?:self|own|weight)|\b(?:self[\s-]?weight|own\s+weight)s?\b[^.;]{0,30}\b(?:neglected|ignored|disregarded|negligible)\b/i;
 var MAXL_SELFW_STOP = 'Your question speaks of the member\'s own weight, and the page\'s largest-live-load calculation does not add it to the dead load, so it gives no answer to copy here.';
 var MAXL_PER_FOOT_STOP = 'Your question gives the beam\'s loads per foot and no floor, and the page works out the largest live load of a beam only from a floor (slab, loads in psf and the beam spacing), so it gives no answer to copy here.';
+/* (unit D) the ask of rule 7: a dead load (or weight), service or factored */
+var DEAD_ASK_RE = /\b(?:(?:factored|service|unfactored|total|uniform(?:ly\s+distributed)?|distributed|line)\s+){0,2}dead\s+(?:loads?|weights?)\b/i;
+var DEAD_ONLY_STOP = 'Your question asks for the dead load alone, and the page works out a floor only with its live load as well, so it gives no answer to copy here.';
+/* (unit D) words that say the floor carries NO live load */
+var DEAD_NO_LIVE_RE = /\bno\s+(?:service\s+)?live\b|\bzero\s+live\b|\bwithout\s+(?:any\s+|a\s+)?live\b|\blive\s+loads?\s+(?:is\s+|are\s+)?(?:negligible|neglected|ignored|zero|none)\b|\bdead\s+loads?\s+only\b|\bonly\s+(?:a\s+|the\s+)?dead\s+loads?\b/i;
+var DEAD_NO_LIVE_STOP = 'Your question gives the floor a dead load only, and the page works out a floor only with its live load as well, so it gives no answer to copy here.';
 /* a route the calculator cannot do, with the one sentence that says why (the part shows "Why: ..." and calculates nothing) */
 function notInRoute(route, id, why, words) {
   var out = {}, k;
