@@ -1,0 +1,527 @@
+[
+ {
+  "id": "E-01-his-b",
+  "text": "determane the effective net area of w18 x 46 shown in fig p3-23 assume holes are for 3/4 in phi bolts (ans. 9.67 in^2)",
+  "expect": {
+   "answers": {
+    "where_bolts": "flanges",
+    "hole_rows": "straight",
+    "holes_per_flange": 2,
+    "web_holes": 0,
+    "fasteners_per_line": 4
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "holes_per_flange",
+    "fasteners_per_line"
+   ],
+   "final": "Ae = 9\\.6[78]"
+  }
+ },
+ {
+  "id": "E-02-his-sample-b",
+  "text": "(a) a c12x30 is connected through its web with three gage lines of 7/8in phi bolts. the gage lines are 3 in on center and the bolts are spaced three in on center along the gage line. if the center row of polts is staggered with respect to the outer row,  determine the effective net cross sectional area of the channel. assume there are four bolts in each line. (b) determane the effective net area of w18 x 46 shown in fig p3-23 assume holes are for 3/4 in phi bolts (ans. 9.67 in^2)",
+  "expect": {
+   "part": "b",
+   "answers": {
+    "where_bolts": "flanges",
+    "hole_rows": "straight",
+    "holes_per_flange": 2,
+    "web_holes": 0,
+    "fasteners_per_line": 4
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "holes_per_flange",
+    "fasteners_per_line"
+   ],
+   "final": "Ae = 9\\.6[78]"
+  }
+ },
+ {
+  "id": "E-03-his-sample-a-unchanged",
+  "text": "(a) a c12x30 is connected through its web with three gage lines of 7/8in phi bolts. the gage lines are 3 in on center and the bolts are spaced three in on center along the gage line. if the center row of polts is staggered with respect to the outer row,  determine the effective net cross sectional area of the channel. assume there are four bolts in each line. (b) determane the effective net area of w18 x 46 shown in fig p3-23 assume holes are for 3/4 in phi bolts (ans. 9.67 in^2)",
+  "expect": {
+   "part": "a",
+   "noAsk": true,
+   "stop": true
+  }
+ },
+ {
+  "id": "E-04-rough-w18-strength",
+  "text": "a w 18x46 tensoin member shown in fig p3-23,holes for 3/4in phi bolts.find the desgin tensile strength",
+  "expect": {
+   "answers": {
+    "where_bolts": "flanges",
+    "hole_rows": "straight",
+    "holes_per_flange": 2,
+    "web_holes": 0,
+    "fasteners_per_line": 4
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "holes_per_flange",
+    "fasteners_per_line"
+   ],
+   "final": "471\\.[67]"
+  }
+ },
+ {
+  "id": "E-05-w12-net-area",
+  "text": "determine the net area of the w 12x26 shown in fig p3-8. holes are for 3/4 in phi bolts (ans 6.32 in^2)",
+  "expect": {
+   "answers": {
+    "where_bolts": "flanges",
+    "hole_rows": "straight",
+    "holes_per_flange": 2,
+    "web_holes": 0
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "holes_per_flange"
+   ],
+   "final": "6\\.32"
+  }
+ },
+ {
+  "id": "E-06-w14-web-hanger",
+  "text": "determine the design strength of the w14x48  hanger shown in the figure ,it is bolted with 7/8 in bolts",
+  "expect": {
+   "answers": {
+    "where_bolts": "web",
+    "hole_rows": "straight",
+    "web_holes": 2,
+    "holes_per_flange": 0,
+    "fasteners_per_line": 4
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "web_holes",
+    "fasteners_per_line"
+   ],
+   "final": "phi Pn = 458 kips"
+  }
+ },
+ {
+  "id": "E-07-channel-web-net",
+  "text": "find the net area of the c10x20 shown in the figure, holes for 3/4in bolts",
+  "expect": {
+   "answers": {
+    "where_bolts": "web",
+    "hole_rows": "straight",
+    "web_holes": 2,
+    "holes_per_flange": 0
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "web_holes"
+   ],
+   "final": "5\\.2[01]"
+  }
+ },
+ {
+  "id": "E-08-angle-one-leg",
+  "text": "an l4x4x1/2 angle tension member is connected through one leg with 7/8 in bolts as shown in fig p3-5. determine the design tensile strength phi pn",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_across": 1,
+    "fasteners_per_line": 4
+   },
+   "seq": [
+    "hole_rows",
+    "holes_across",
+    "fasteners_per_line"
+   ],
+   "final": "126\\.[78]"
+  }
+ },
+ {
+  "id": "E-09-angle-two-lines",
+  "text": "determine the effective net area of the l6x4x1/2 shown in the figure. the long leg is bolted with 3/4 in bolts",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_across": 2,
+    "fasteners_per_line": 3,
+    "fastener_lines": 2
+   },
+   "seq": [
+    "hole_rows",
+    "holes_across",
+    "fasteners_per_line",
+    "fastener_lines"
+   ],
+   "final": "Ae = 3\\.1\\b"
+  }
+ },
+ {
+  "id": "E-10-plate-straight",
+  "text": "the 1/2 x 8 in plate shown in fig p3-1 is connected with 3/4in bolts. determine its net area",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_across": 2
+   },
+   "seq": [
+    "hole_rows",
+    "holes_across"
+   ],
+   "final": "3\\.1[23]"
+  }
+ },
+ {
+  "id": "E-11-plate-zigzag-stops",
+  "text": "the 1/2 x 8 in plate shown in fig p3-1 is connected with 3/4in bolts. determine its net area",
+  "expect": {
+   "answers": {
+    "hole_rows": "zigzag"
+   },
+   "seq": [
+    "hole_rows",
+    "hole_rows_stop"
+   ],
+   "stop": true
+  }
+ },
+ {
+  "id": "E-12-w-zigzag-stops",
+  "text": "determane the effective net area of w18 x 46 shown in fig p3-23 assume holes are for 3/4 in phi bolts",
+  "expect": {
+   "answers": {
+    "where_bolts": "flanges",
+    "hole_rows": "zigzag"
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "hole_rows_stop"
+   ],
+   "stop": true
+  }
+ },
+ {
+  "id": "E-13-column-length-in-figure",
+  "text": "a w10x49 column with pinned ends is shown in fig p4-2. determine the design compressive strength phi pn",
+  "expect": {
+   "answers": {
+    "Lx_ft": 14,
+    "braced": "no"
+   },
+   "seq": [
+    "Lx_ft",
+    "braced"
+   ],
+   "final": "471 kips"
+  }
+ },
+ {
+  "id": "E-14-column-ends-in-figure",
+  "text": "a 14 ft long w10x49 coloumn as shown in the figure. find phi pn",
+  "expect": {
+   "answers": {
+    "end_bottom": "pinned",
+    "end_top": "pinned",
+    "braced": "no"
+   },
+   "seq": [
+    "end_bottom",
+    "end_top",
+    "braced"
+   ],
+   "final": "471 kips"
+  }
+ },
+ {
+  "id": "E-15-column-braced-in-figure",
+  "text": "the w8x40 colmun shown in fig p4-6 is 16 ft long. determine phi pn",
+  "expect": {
+   "answers": {
+    "end_bottom": "pinned",
+    "end_top": "pinned",
+    "braced": "third"
+   },
+   "seq": [
+    "end_bottom",
+    "end_top",
+    "braced"
+   ],
+   "final": "422\\.[34]"
+  }
+ },
+ {
+  "id": "E-16-beam-span-in-figure",
+  "text": "the beam shown in fig 2-4 is simply supported and carries a uniform dead load of 1.2 k/ft and a live load of 1.8 k/ft (beam weight included). find the factored moment mu",
+  "expect": {
+   "answers": {
+    "span_ft": 20
+   },
+   "seq": [
+    "span_ft"
+   ],
+   "final": "216"
+  }
+ },
+ {
+  "id": "E-17-beam-rough-support-in-figure",
+  "text": "the bema shown in fig 2-4 carrys a uniform dead load of 1.2k/ft and a live load of 1.8 k/ft including its weight. find mu",
+  "expect": {
+   "answers": {
+    "held_by": "simple",
+    "span_ft": 20
+   },
+   "seq": [
+    "held_by",
+    "span_ft"
+   ],
+   "final": "216"
+  }
+ },
+ {
+  "id": "E-18-takedown-floors-in-figure",
+  "text": "an interior column supports a tributary area of 400 sq ft on each floor of the building shown in the figure. each floor has a dead load of 80 psf and a live load of 50 psf. find the factored load on the column at the foundation",
+  "expect": {
+   "answers": {
+    "floors": 3
+   },
+   "seq": [
+    "floors"
+   ],
+   "final": "211\\.2"
+  }
+ },
+ {
+  "id": "E-19-words-give-all-unchanged",
+  "text": "a w12x26 tension member is connected through both flanges with two lines of 3/4 in bolts in each flange, four bolts per line, as shown in the figure. determine the effective net area",
+  "expect": {
+   "noAsk": true,
+   "final": "5\\.37"
+  }
+ },
+ {
+  "id": "E-20-no-figure-unchanged",
+  "text": "determine the effective net area of a w18x46 with holes for 3/4 in bolts",
+  "expect": {
+   "noAsk": true,
+   "answers": {
+    "holes_per_flange": 2,
+    "web_holes": 0
+   }
+  }
+ },
+ {
+  "id": "E-21-shear-lag-word-unchanged",
+  "text": "q40. whqt   is sher lag? see fig 3-34",
+  "expect": {
+   "noAsk": true
+  }
+ },
+ {
+  "id": "E-22-lookup-misroute-unchanged",
+  "text": "As shown what isplastic section modulis abut the x-aixs,zx,of a w16 40? (answer: 73in3)",
+  "expect": {
+   "noAsk": true
+  }
+ },
+ {
+  "id": "E-23-column-words-braced-unchanged",
+  "text": "#25 a w12x58column of a992 steel is 24' long , pined bo thend,and braced about week axis at mid-hright as shown determine the design compressive st rength from table rx=5.28in",
+  "expect": {
+   "noAsk": true
+  }
+ },
+ {
+  "id": "E-24-required-area-plate-unchanged",
+  "text": "a plate of a36 stel carries d = 40k and l=75kips in tesnion., fnid requi red gross areafor yielding   and required effectivenet areafor rupture;: as shown in the figure",
+  "expect": {
+   "noAsk": true
+  }
+ },
+ {
+  "id": "E-25-floor-plan-beam",
+  "text": "the floor plan shown in the figure has a 5 in concrete slab and a live load of 80 psf. find the factored moment mu of the typical interior beam",
+  "expect": {
+   "answers": {
+    "beam_span_ft": 30,
+    "beam_spacing_ft": 10
+   },
+   "seq": [
+    "beam_span_ft",
+    "beam_spacing_ft"
+   ]
+  }
+ },
+ {
+  "id": "E-26-column-words-complete-unchanged",
+  "text": "the w8x40 column in the sketch has pinned ends and is 16 ft long. find the design strength phi pn",
+  "expect": {
+   "noAsk": true,
+   "final": "275 kips"
+  }
+ },
+ {
+  "id": "E-27-column-fixed-braced-stops",
+  "text": "a 20 ft w10x49 column shown in the figure. determine phi pn",
+  "expect": {
+   "answers": {
+    "end_bottom": "fixed",
+    "end_top": "pinned",
+    "braced": "mid"
+   },
+   "seq": [
+    "end_bottom",
+    "end_top",
+    "braced",
+    "braced_stop"
+   ],
+   "stop": true
+  }
+ },
+ {
+  "id": "E-28-channel-case2-spacing",
+  "text": "determine the design tensile strength of the c8x11.5 shown in fig p3-12. holes are for 3/4 in bolts",
+  "expect": {
+   "answers": {
+    "where_bolts": "web",
+    "hole_rows": "straight",
+    "web_holes": 2,
+    "fasteners_per_line": 3,
+    "bolt_spacing": 3
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "web_holes",
+    "fasteners_per_line",
+    "bolt_spacing"
+   ],
+   "final": "phi Pn = "
+  }
+ },
+ {
+  "id": "E-29-tee-flange",
+  "text": "compute the effective net area of the wt6x17.5 shown in the figure;bolts are 3/4in",
+  "expect": {
+   "answers": {
+    "where_bolts": "flanges",
+    "hole_rows": "straight",
+    "holes_per_flange": 2,
+    "fasteners_per_line": 3
+   },
+   "seq": [
+    "where_bolts",
+    "hole_rows",
+    "holes_per_flange",
+    "fasteners_per_line"
+   ],
+   "final": "Ae = "
+  }
+ },
+ {
+  "id": "E-30-w-words-connection-figure-counts",
+  "text": "a w10x33 tension member is connected through both flanges with 3/4 in bolts as shown in the figure. determine the effective net area",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_per_flange": 2,
+    "fasteners_per_line": 4
+   },
+   "seq": [
+    "hole_rows",
+    "holes_per_flange",
+    "fasteners_per_line"
+   ],
+   "final": "Ae = "
+  }
+ },
+ {
+  "id": "E-31-column-brace-elsewhere",
+  "text": "the w8x40 column in the sketch is 16 ft long. find the design strength phi pn",
+  "expect": {
+   "answers": {
+    "end_bottom": "pinned",
+    "end_top": "pinned",
+    "braced": "other",
+    "brace_len": 10
+   },
+   "seq": [
+    "end_bottom",
+    "end_top",
+    "braced",
+    "brace_len"
+   ],
+   "final": "phi Pn = "
+  }
+ },
+ {
+  "id": "E-32-takedown-rough",
+  "text": "a interior colum supports a tributary area of 20ft x 25 ft on each flor of the bulding shown in the figure.dead load 90psf ,live 50 psf.find the factored axial load at the base",
+  "expect": {
+   "answers": {
+    "floors": 4
+   },
+   "seq": [
+    "floors"
+   ]
+  }
+ },
+ {
+  "id": "E-33-angle-bolt-size-in-figure",
+  "text": "determine the net area of the l5x3x1/2 angle shown in the figure (bolted)",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_across": 1,
+    "bolt_dia_in": "3/4"
+   },
+   "seq": [
+    "hole_rows",
+    "holes_across",
+    "bolt_dia_in"
+   ],
+   "final": "An = 3\\.31"
+  }
+ },
+ {
+  "id": "E-34-unequal-angle-case2-no-ask",
+  "text": "find the design tensile strength of the l6x4x1/2 shown in the figure ,bolted with 3/4 in bolts through the short leg",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_across": 1,
+    "fasteners_per_line": 2
+   },
+   "seq": [
+    "hole_rows",
+    "holes_across",
+    "fasteners_per_line"
+   ],
+   "stop": true
+  }
+ },
+ {
+  "id": "E-35-equal-angle-case2-spacing",
+  "text": "find the design tensile strength of the l4x4x1/2 shown in the figure ,bolted with 3/4 in bolts",
+  "expect": {
+   "answers": {
+    "hole_rows": "straight",
+    "holes_across": 1,
+    "fasteners_per_line": 2,
+    "bolt_spacing": 3
+   },
+   "seq": [
+    "hole_rows",
+    "holes_across",
+    "fasteners_per_line",
+    "bolt_spacing"
+   ],
+   "final": "phi Pn = 98 kips"
+  }
+ }
+]
