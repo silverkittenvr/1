@@ -1325,6 +1325,7 @@ function drawWanted(part, host) {
   if (part.kind !== 'form' || !ui.vals) return;
   try { list = SOLVE.wantedBoxes(part, ui.vals, ui.run && !ui.run.ok ? ui.run : null); } catch (e) { list = []; }
   if (!list.length) return;
+  if (list[0].ask) { drawAsk(part, host, list[0]); return; }          /* asks.js: ONE plain question about the drawing (his W18x46 of fig p3-23) */
   wrap = h('div', { class: 'wanted' }, h('div', { class: 'wantedhead' }, list.length === 1 ? 'The page needs one thing from you:' : 'The page needs ' + list.length + ' things from you:'));
   list.forEach(function (w) {
     var blk = h('div', { class: 'wbox' }), inp, msg = h('div', { class: 'uqmsg' }), unit = w.unit ? ' ' + w.unit : '';
@@ -1350,6 +1351,31 @@ function drawWanted(part, host) {
     blk.appendChild(msg);
     wrap.appendChild(blk);
   });
+  host.appendChild(wrap);
+}
+/* (10/07, unit E) ONE question about the drawing, from asks.js: a button per choice, or one number.  His answer is kept by the page (SOLVE.applyAsk);
+   the part is drawn again and the next question, or the answer, appears.  Two boxes at once and then a dead end ("Where is the member connected?")
+   was what his W18x46 of fig p3-23 got before. */
+function drawAsk(part, host, a) {
+  var ui = part.ui, msg = h('div', { class: 'uqmsg' }), wrap = h('div', { class: 'wanted' }), blk = h('div', { class: 'wbox' }), inp;
+  function answer(v) {
+    if (!SOLVE.applyAsk(part, ui.vals, a, v)) { msg.textContent = a.kind === 'int' ? 'Type a whole number, for example 2.' : 'Type a number, for example 14 or 3/4.'; msg.className = 'uqmsg open'; return; }
+    ui.noAuto = true; try { renderBody(part); } finally { ui.noAuto = false; }
+    ui.sig = null; autoCalc(part, true); if (!ui.run) renderResult(part);
+  }
+  wrap.appendChild(h('div', { class: 'wantedhead' }, a.stop ? 'The page stops here:' : 'Look at the drawing of your question and answer this one question:'));
+  blk.appendChild(h('div', { class: 'wlabel' }, h('b', null, a.q), a.hint ? h('div', { class: 'whint' }, a.hint) : null));
+  if (a.stop) blk.appendChild(h('button', { type: 'button', class: 'small', onclick: function () { answer(null); } }, 'Go back: I chose the wrong answer'));
+  else if (a.choices) a.choices.forEach(function (c) { blk.appendChild(h('button', { type: 'button', class: 'opt wcand', onclick: function () { answer(c.key); } }, c.label)); });
+  else {
+    inp = h('input', { type: 'text', class: 'wtype', size: '8', autocomplete: 'off', 'aria-label': a.q });
+    inp.addEventListener('keydown', function (ev) { if (ev.key === 'Enter') { ev.preventDefault(); answer(trim(inp.value)); } });
+    blk.appendChild(h('div', { class: 'wtyperow' }, inp, (a.unit ? ' ' + a.unit : '') + '  ',
+      h('button', { type: 'button', class: 'small sg', onclick: function () { answer(trim(inp.value)); } }, 'Use this number'), '   ',
+      h('button', { type: 'button', class: 'small', onclick: function () { msg.textContent = 'Then this part cannot be worked out. Copy the parts that did work, and move on to the next question.'; msg.className = 'uqmsg open'; } }, 'The drawing does not show it')));
+  }
+  blk.appendChild(msg);
+  wrap.appendChild(blk);
   host.appendChild(wrap);
 }
 
