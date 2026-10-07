@@ -3592,6 +3592,90 @@ function answerLine(res) {
   if (tail && text.toLowerCase().indexOf(tail.toLowerCase()) === 0) return text;
   return (a.label ? a.label + ': ' : '') + text;
 }
+/* ONE NUMBER ON THE LINE TO COPY (the councils of 10/06 night, HANDOFF 8: "a second number gets copied").  The calculator's own text puts the other routes and
+   the numbers the answer stands on beside her value -- "ANSWER: Column capacity phi Pn: Table 4-1a (her method): KL = 14 ft, phi Pn = 471 kips (KL/r route
+   466.6; exact E3 470.6)"; "phi Pn = 596.2 kips -- rupture governs (yielding 702, rupture 596.2)" -- and he copies from that line.  The calculator is frozen,
+   so the line is cut here, in its own words: her value with its unit and the words that say what it is (and a YES / NO verdict, without its numbers) stay on
+   the ANSWER line; the other routes go on a line "For comparison only (do not copy)", the numbers it stands on (Pu, Ag, the table case, the shape's weight,
+   the yielding and rupture strengths) on a line "Check:".  KL, and the KL/r working of the table method, are dropped: the numbered steps above already print them.  Nothing is computed.  A cut
+   is made only when the text has exactly the form below AND the number kept is the calculator's own answer value (for a selection: the shape it selected);
+   any other text keeps the old line.  Left whole on purpose: a list asked for as a whole (every property of a shape, Fy and Fu of a steel, a conversion, the
+   members of a floor plan), a NOT RELIABLE result, KL/r above 200, the slender-element (E7) column, "Lightest W with Zx >= 98" (a number in its label), and
+   any text that names 1.4D (her class uses 1.2D + 1.6L only; that question is a fix of its own).   -> [ANSWER text, comparison, check] or null */
+function oneNumberSplit(fn, res) {
+  var a = res && res.answer, vals = (res && res.values) || {}, t, L, m, p, cmp = '', chk = '', vd = '';
+  if (!a || !a.label || !a.text) return null;
+  t = collapse(a.text); L = String(a.label);
+  if (/\b1\.4D\b/.test(t)) return null;
+  function near(s) { var d = String(s).indexOf('.') >= 0 ? String(s).split('.')[1].length : 0; return isNum(a.value) && Math.abs(Number(s) - a.value) <= 0.5 * Math.pow(10, -d) + 1e-9; }
+  function picked(s) { return !!(vals.selected_shape && String(vals.selected_shape.value) === s); }
+  function out(main, ok) { return ok ? [L + ': ' + main, cmp, chk] : null; }
+  if (fn === 'column_capacity' && L === 'Column capacity phi Pn') {
+    if ((m = /^(.*?) -- (adequate: phi Pn >= Pu\? (YES|NO) \(.*)$/.exec(t))) { t = m[1]; chk = m[2]; vd = ' -- adequate: phi Pn >= Pu? ' + m[3]; }
+    if ((m = /^Table 4-1a \(her method\): KL = [\d.]+ ft(?: read at the \d+-ft row)?, phi Pn = ([\d.]+) kips \((KL\/r route [\d.]+; exact E3 [\d.]+)\)$/.exec(t))) { cmp = m[2]; return out('phi Pn = ' + m[1] + ' kips (her method)' + vd, near(m[1])); }
+    if ((m = /^phi Pn = ([\d.]+) kips \(table method: [^()]*\)(?:; (Table 4-1a lookup: [\d.]+ kips))?$/.exec(t))) { cmp = m[2] || ''; return out('phi Pn = ' + m[1] + ' kips (her method)' + vd, near(m[1])); }
+    return null;
+  }
+  if (fn === 'column_select' && L === 'Lightest column') {
+    m = /^(\S+) (\([\d.]+ lb\/ft\) phi Pn = [\d.]+ kips > Pu = [\d.]+ kips ok)(?: \((.*)\))?$/.exec(t);
+    if (!m || !picked(m[1])) return null;
+    chk = m[1] + ' ' + m[2];
+    if (m[3] && (p = /^(Table 4-1a, her method: KL = [\d.]+ ft(?: read at the \d+-ft row)?)(?:; (KL\/r route [\d.]+))?$/.exec(m[3]))) { chk += ' (' + p[1] + ')'; cmp = p[2] || ''; }
+    else if (m[3] && /^Table 4-1a: [\d.]+$/.test(m[3])) cmp = m[3];
+    else if (m[3]) return null;
+    return out(m[1], true);
+  }
+  if (fn === 'beam_capacity' && L === 'Design moment phi Mp') {
+    if (!(m = /^(phi Mp = ([\d.]+) kip-ft \(\S+, fully braced\)); (((?:NOT )?adequate) for Mu = [\d.]+)$/.exec(t))) return null;
+    chk = m[3]; return out(m[1] + '; ' + m[4], near(m[2]));
+  }
+  if (fn === 'beam_select' && L === 'Most economical beam') {
+    m = /^(\S+) (?:\(same weight as [^()]*\) )?\([\d.]+ lb\/ft, d = [\d.]+ in\) phi Mp = [\d.]+ kip-ft >= Mu = [\d.]+$/.exec(t);
+    if (!m || !picked(m[1])) return null;
+    chk = t; return out(m[1], true);
+  }
+  if (fn === 'tension_capacity' && L === 'Tension capacity (first failure load)') {
+    m = /^(phi Pn = ([\d.]+) kips -- (?:yielding|rupture) governs)(?: \((yielding [\d.]+, rupture [\d.]+)(?:; (welded, U = [\d.]+ as given))?\)| (\(no holes\)))(?:; (((?:NOT )?adequate) for Pu = [\d.]+))?$/.exec(t);
+    if (!m || !(m[3] || m[6])) return null;
+    /* yielding and rupture are not other routes to the same number: a blank may ask for either of them (its own FOR YOUR BLANK line reads the values) */
+    chk = [m[3], m[4], m[6]].filter(function (x) { return !!x; }).join('; ');
+    return out(m[1] + (m[5] ? ' ' + m[5] : '') + (m[7] ? '; ' + m[7] : ''), near(m[2]));
+  }
+  if (fn === 'tension_select' && L === 'Lightest tension member') {
+    m = /^((\S+)(?: \(two angles\))?) \([\d.]+ lb\/ft\) phi Pn = [\d.]+ kips \((?:yielding|rupture)\) >= Pu = [\d.]+ kips$/.exec(t);
+    if (!m || !picked(m[2])) return null;
+    chk = t; return out(m[1], true);
+  }
+  if (fn === 'column_euler' && L === 'Euler critical load Pcr') {
+    if (!(m = /^(Pcr = ([\d.]+) kips) \((Fe = [\d.]+ ksi, KL\/r = [\d.]+)\)(?: -- (Euler applies) \(([^()]*)\)| -- (NOT VALID here))?$/.exec(t))) return null;
+    chk = m[3] + (m[5] ? '; ' + m[5] : '');
+    return out(m[1] + (m[4] ? ' -- ' + m[4] : '') + (m[6] ? ' -- ' + m[6] : ''), near(m[2]));
+  }
+  if (fn === 'loads_max_service' && L === 'Maximum service live load L') {
+    if (!(m = /^L = (\(phi Rn - 1\.2 D\) \/ 1\.6) = (([\d.]+) \S+) \(service, unfactored; ([^()]*)\)$/.exec(t))) return null;
+    chk = 'L = ' + m[1] + '; ' + m[4]; return out('L = ' + m[2] + ' (service, unfactored)', near(m[3]));
+  }
+  if (fn === 'beam_analysis' && /^Maximum factored moment Mu(?: \(cantilever, at the wall\))?$/.test(L)) {
+    if (!(m = /^(Mu = ([\d.]+) kip-ft) (.+)$/.exec(t))) return null;
+    chk = m[3]; return out(m[1], near(m[2]));
+  }
+  if (fn === 'loads_combinations' && L === 'Largest factored load U') {
+    if (!(m = /^(([\d.]+) \S+) -- (combination .+)$/.exec(t))) return null;
+    chk = m[3]; return out(m[1], near(m[2]));
+  }
+  /* the rest: "<her value> (<what it stands on>)", one pattern per form */
+  p = { tension_net_area: ['Net area An', /^(An = ([\d.]+) in\^2) \((Ag = [\d.]+ in\^2, .*)\)$/],
+    tension_required_area: ['Required gross area', /^(Ag >= ([\d.]+) in\^2) \((Pu = [\d.]+ kips)\)$/],
+    lookup_U: ['Shear lag factor U', /^(U = ([\d.]+)) \((Table D3\.1 case \d+)\)$/],
+    lookup_hole: ['Hole size for net area', /^(hole = ([\d.]+) in) \((bolt [\d.]+ in \+ 1\/8)\)$/],
+    lookup_critical_stress: ['Design critical stress phi Fcr', /^(phi Fcr = ([\d.]+) ksi) \((KL\/r = \d+, Fy = [\d.]+ ksi)\)$/],
+    loads_factored: ['Factored load', /^(([\d.]+) \S+) \((1\.2D \+ 1\.6L)\)$/],
+    loads_takedown: ['Factored column load at the lowest level', /^(Pu = ([\d.]+) kips) \(([^()]*)\)$/],
+    beam_max_live_load: ['Largest service live load', /^(([\d.]+) psf) \(([^()]*)\)$/] }[fn];
+  if (fn === 'loads_floor') p = L === 'Factored floor load' ? [L, /^(([\d.]+) psf) \((dead [\d.]+, live [\d.]+)\)$/] : ['Factored line load wu', /^(wu = ([\d.]+) k\/ft) \((factored floor load [\d.]+ psf x [\d.]+ ft)\)$/];
+  if (!p || L !== p[0] || !(m = p[1].exec(t))) return null;
+  chk = m[3]; return out(m[1], near(m[2]));
+}
 function flagKind(t) { return /^WARNING/i.test(t) ? 'warning' : (/^CHECK/i.test(t) ? 'check' : 'note'); }
 SOLVE.flagKind = flagKind;
 
@@ -3778,7 +3862,12 @@ SOLVE.writeBlock = function (part, run, vals) {
       write.push((i + 1) + '. ' + collapse(res.steps[i].text));
       if (res.steps[i].source) sources.push((multi ? 'step ' + (si + 1) + ', ' : '') + 'line ' + (i + 1) + ': ' + collapse(res.steps[i].source));
     }
-    write.push('ANSWER' + (multi ? ' (step ' + (si + 1) + ')' : '') + ': ' + answerLine(res));
+    /* (10/07) her value alone on the line to copy; the other numbers of the calculator's answer text on lines of their own (see oneNumberSplit) */
+    var one = null;
+    try { one = oneNumberSplit(sr.fn || (st && st.fn), res); } catch (eOne) { one = null; }
+    write.push('ANSWER' + (multi ? ' (step ' + (si + 1) + ')' : '') + ': ' + (one ? one[0] : answerLine(res)));
+    if (one && one[2]) write.push('Check: ' + one[2]);
+    if (one && one[1]) write.push('For comparison only (do not copy): ' + one[1]);
     if (wa && wa.mode === 'keep' && wa.lines && wa.lines.length) for (i = 0; i < wa.lines.length; i++) write.push(wa.lines[i]);
     if (part.kind === 'words' && part.mc) {
       /* a multiple-choice question: the letter, and only when her own wording supports exactly one choice (or he chose one himself) */
