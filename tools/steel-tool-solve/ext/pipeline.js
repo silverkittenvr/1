@@ -3600,8 +3600,7 @@ function answerLine(res) {
    the yielding and rupture strengths) on a line "Check:".  KL, and the KL/r working of the table method, are dropped: the numbered steps above already print them.  Nothing is computed.  A cut
    is made only when the text has exactly the form below AND the number kept is the calculator's own answer value (for a selection: the shape it selected);
    any other text keeps the old line.  Left whole on purpose: a list asked for as a whole (every property of a shape, Fy and Fu of a steel, a conversion, the
-   members of a floor plan), a NOT RELIABLE result, KL/r above 200, the slender-element (E7) column, "Lightest W with Zx >= 98" (a number in its label), and
-   any text that names 1.4D (her class uses 1.2D + 1.6L only; that question is a fix of its own).   -> [ANSWER text, comparison, check] or null */
+   members of a floor plan), a NOT RELIABLE result, KL/r above 200, the slender-element (E7) column, and any text that names 1.4D (her class uses 1.2D + 1.6L only; that question is a fix of its own).   -> [ANSWER text, comparison, check] or null */
 function oneNumberSplit(fn, res) {
   var a = res && res.answer, vals = (res && res.values) || {}, t, L, m, p, cmp = '', chk = '', vd = '';
   if (!a || !a.label || !a.text) return null;
@@ -3645,6 +3644,12 @@ function oneNumberSplit(fn, res) {
     m = /^((\S+)(?: \(two angles\))?) \([\d.]+ lb\/ft\) phi Pn = [\d.]+ kips \((?:yielding|rupture)\) >= Pu = [\d.]+ kips$/.exec(t);
     if (!m || !picked(m[2])) return null;
     chk = t; return out(m[1], true);
+  }
+  /* "Lightest W with Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3": the minimum he typed sits in the label itself; it moves to the Check line with the rest */
+  if (fn === 'lookup_by_property' && (p = /^(Lightest \S+ with) (\S+) >= ([\d.]+)$/.exec(L))) {
+    m = /^(\S+) \([\d.]+ lb\/ft\), (\S+) = [\d.]+(?: \S+)?$/.exec(t);
+    if (!m || m[2] !== p[2] || !picked(m[1])) return null;
+    return [p[1] + ' enough ' + p[2] + ': ' + m[1], '', p[2] + ' >= ' + p[3] + ': ' + t];
   }
   if (fn === 'column_euler' && L === 'Euler critical load Pcr') {
     if (!(m = /^(Pcr = ([\d.]+) kips) \((Fe = [\d.]+ ksi, KL\/r = [\d.]+)\)(?: -- (Euler applies) \(([^()]*)\)| -- (NOT VALID here))?$/.exec(t))) return null;

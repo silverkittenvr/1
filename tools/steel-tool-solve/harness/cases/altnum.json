@@ -398,5 +398,19 @@
    "lines": []
   },
   "note": "must NOT change"
+ },
+ {
+  "id": "an22",
+  "text": "Select lightest w sh ape with a plastic section modulous of at lesat 98in^3 (requried zx = 98in^3)",
+  "expect": {
+   "status": [
+    "answered"
+   ],
+   "lines": [
+    "ANSWER: Lightest W with enough Zx: W21X48",
+    "Check: Zx >= 98: W21X48 (48 lb/ft), Zx = 107 in^3"
+   ]
+  },
+  "note": "changes: her value alone on the ANSWER line"
  }
 ]
