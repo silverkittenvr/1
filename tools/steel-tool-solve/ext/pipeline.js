@@ -3344,12 +3344,15 @@ SOLVE.runPart = function (part, vals) {
     }
     /* The question speaks of bolts or holes, and the answer took NO hole out of the area ("yielding governs (no holes)"): the holes are in a figure, or were
        written in a way the page could not read.  That is a wrong answer, not an answer: the page asks for the holes instead. */
-    if (/^tension_(?:capacity|net_area)$/.test(st.fn) && res && res.ok && res.values && res.values.An && res.values.Ag && isNum(res.values.An.value) && isNum(res.values.Ag.value)
-      && Math.abs(Number(res.values.An.value) - Number(res.values.Ag.value)) < 1e-9) {
+    /* (10/07, A1-tsel-10/12) a SELECTION run with no hole is the same thing ("select lightest w8 ... bolted 3/4in 2 per flange 3 per line": W8X18 by
+       yielding printed, W8X24 right): the engine's own note says it took no hole.  And the words may be glued to their numbers ("3/4inbolts", "2holes",
+       A1-tcap-19 / A1-tsel-11: no word boundary there, so this guard did not see them) */
+    if ((/^tension_(?:capacity|net_area)$/.test(st.fn) && res && res.ok && res.values && res.values.An && res.values.Ag && isNum(res.values.An.value) && isNum(res.values.Ag.value)
+      && Math.abs(Number(res.values.An.value) - Number(res.values.Ag.value)) < 1e-9) || (st.fn === 'tension_select' && res && res.ok && /no holes were entered/.test((res.flags || []).join('\n')))) {
       var ownT = String(part.ctx || '').slice(part.coverLen || 0);
       /* (10/07, A1-tcap-01..08) a "no holes" that names a place ("no holes in the web") says the OTHER parts have them: it no longer switches this off */
       var envR = env().READER, noHolesAt = envR && envR._internal && envR._internal.noHolesWord;
-      if (/\b(?:bolt(?:s|ed)?|holes?|rivet(?:s|ed)?)\b/i.test(ownT) && !/\bweld|\bwithout\s+(?:any\s+)?(?:bolt\s+)?holes?\b|\bnot\s+bolted\b|gross\s+(?:section\s+)?yield/i.test(ownT)
+      if (/bolt|rivet|(?:^|[^w])hole/i.test(ownT) && !/\bweld|\bwithout\s+(?:any\s+)?(?:bolt\s+)?holes?\b|\bnot\s+bolted\b|gross\s+(?:section\s+)?yield/i.test(ownT)
         && !(noHolesAt ? noHolesAt(ownT, /\bno\s+(?:bolt\s+)?holes?\b/gi) : /\bno\s+(?:bolt\s+)?holes?\b/i.test(ownT))) {
         res = { ok: false, error: { code: 'MISSING', message: 'Your question mentions bolts or holes, but the page found no hole to take out of the area: how many holes cross the section (per flange / in the web / across the plate)? Count them in your question or in its figure and fill the hole boxes.' } };
       }
