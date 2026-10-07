@@ -3287,6 +3287,12 @@ function herLoadNumbersUsed(own, used) {
    printed; 1.2D + 1.6L on the misread value gave 1441.28; the answer is 2720).  Loads in pounds AND in kips in one question: nothing is printed. */
 var HER_LB_RE = /\d\s*(?:plf|psf|lbs?\b|lb\s*\/|pounds?\b)/i, HER_KIP_RE = /\d\s*(?:k\b|kips?\b|klf\b|k\s*\/\s*ft|kips?\s*\/|kips?\s+per\b|kip\s*-?\s*(?:ft|in)\b|ksf\b)/i;
 var HER_UNITS_STOP = 'Your question gives its loads in pounds and in kips, and the page does not convert them here, so it gives no answer to copy. Write every load in the same unit and try again.';
+/* (review 10/07) words that ask for MORE than her one combination: 1.4D named, ASCE / ASD, "combinations", a governing or controlling combination, a
+   load other than dead and live.  "dead load 100 kips, live load 5 kips. find 1.4D" printed 128 (its words ask 140); "the larger of 1.4D and 1.2D+1.6L"
+   printed 128; "D = 100 kips, L = 5 kips and S = 3 . determine the governing factored load": the table stopped, the page moved the question to the
+   factored-load form, which has no snow box, and printed 128 (wind 10, rain 2, Lr = 3 the same).  There nothing is printed. */
+var HER_ASCE_RE = /\b1\.4\s*(?:x|\*|times)?\s*(?:the\s+)?\(?\s*(?:D|DL|dead)\b|\bASCE\b|\bASD\b|\bcombinations\b|\b(?:govern|control)\w*\s+(?:\w+\s+){0,2}(?:combination|load)|\bcombination\s+(?:\w+\s+){0,2}(?:govern|control)|\bcombination\s*(?:no\.?\s*|#\s*)?\d|\b(?:snow|wind|roof|rain|seismic|earthquake)\b|\b(?:Lr|S|W|R|E)\s*=\s*-?\s*\d+(?:\.\d+)?(?!\s*(?:ksi|in\b|inch|"|ft\b|feet|'|\d|[.,]\d|\/))/i;
+var HER_ASCE_STOP = 'Your question asks for more than her one load combination (another combination, or a load other than dead and live load), so the page gives no answer to copy here.';
 function herRound(x) { return Number(Number(x).toPrecision(10)); }
 /* "a member has a design strength phi Pn = 1000 kips. the service dead load is 750 kips. find the maximum service live load": the calculator refused
    (1.4 x 750 = 1050 > 1000).  Her one combination: L = (1000 - 1.2 x 750) / 1.6 = 62.5 kips.  The calculator's own steps, without its 1.4D check. */
@@ -3311,6 +3317,7 @@ function herCombo(fn, args, res, own, whole, isLast) {
   if (!res.ok) {
     e = res.error || {};
     if (fn === 'loads_max_service' && e.dead_load_alone_exceeds && isNum(e.phiRn) && isNum(e.D) && 1.2 * e.D <= e.phiRn + 1e-9 * Math.max(1, e.phiRn)) {
+      if (HER_ASCE_RE.test(own) || HER_ASCE_RE.test(whole)) return { res: herComboStop(HER_ASCE_STOP), args: args };
       if (HER_LB_RE.test(own) && HER_KIP_RE.test(own)) return { res: herComboStop(HER_UNITS_STOP), args: args };
       if (!herLoadNumbersUsed(own, [e.phiRn, e.D])) return { res: herComboStop(HER_LOADNUM_STOP), args: args };
       return { res: herMaxService(e.phiRn, e.D, args), args: args };
@@ -3321,6 +3328,7 @@ function herCombo(fn, args, res, own, whole, isLast) {
     return keep;
   }
   if (!herComboUsed14(res)) return keep;
+  if (HER_ASCE_RE.test(own) || HER_ASCE_RE.test(whole)) return { res: herComboStop(HER_ASCE_STOP), args: args };
   if (has(HER_COMBO_FORMS, fn) || fn === 'loads_factored') {
     if (HER_LB_RE.test(own) && HER_KIP_RE.test(own)) return { res: herComboStop(HER_UNITS_STOP), args: args };
     if (isLast && args) {
