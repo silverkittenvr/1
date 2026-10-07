@@ -820,8 +820,8 @@ var FORM_GIVES = {
   column_select: { main: ['shape'], also: ['phipn', 'klr'] },
   tension_net_area: { main: ['an'], also: ['ag', 'hole'] },
   tension_capacity: { main: ['phipn'], also: ['an', 'ae', 'ag', 'u', 'klr'] },
-  tension_required_area: { main: ['ag'], also: ['ae'] },
-  tension_select: { main: ['shape'], also: ['phipn', 'klr'] }
+  tension_required_area: { main: ['ag', 'agreq'], also: ['ae', 'aereq'] },
+  tension_select: { main: ['shape'], also: ['phipn', 'klr', 'agreq'] }
 };
 /* where a form's result holds each asked quantity (the engine's own names), first match wins */
 /* (the floor plan's step2_ / step3_ / step4_ names are NOT here: a floor plan is read member by member, see sigValueFor)
@@ -835,11 +835,14 @@ var SIG_VALUE = {
   an: [/^An$/], ae: [/^Ae$/, /^Ae_required$/], ag: [/^Ag$/, /^Ag_required$/, /^A$/], u: [/^U$/], k: [/^K$/], zx: [/^Zx_required$/, /^Zx$/, /^Z$/],
   shape: [/^selected_shape$/], pu: [/^Pu$/, /^factored_total$/, /^Pu_bottom$/, /^U_max$/],
   live: [/^live_psf$/, /^L_max$/], fe: [/^Fe$/], pcr: [/^Pcr$/], fy: [/^Fy$/], fu: [/^Fu$/], hole: [/^hole$/],
-  axis: [/^governing_axis$/], governs: [/^governs$/]
+  axis: [/^governing_axis$/], governs: [/^governs$/],
+  /* (A1-tsel-20 / -21) the area a member NEEDS is its own quantity: "Ag required = ____" got the chosen W8X18's Ag 5.26 where 220 / 45 = 4.889 is asked */
+  agreq: [/^Ag_required$/], aereq: [/^Ae_required$/]
 };
 var SIG_LABEL = { vu: 'Vu', reaction: 'Reaction', ra: 'RA', rb: 'RB', mu: 'Mu', wu: 'wu', klr: 'KL/r', phifcr: 'phi Fcr', phipn: 'phi Pn', phimn: 'phi Mn', an: 'An', ae: 'Ae', ag: 'Ag', u: 'U', k: 'K',
   zx: 'Zx', shape: 'Shape', pu: 'Pu', live: 'Live load', fe: 'Fe', pcr: 'Pcr', fy: 'Fy', fu: 'Fu', hole: 'Hole size', phipn_y: 'phi Pn (yielding)', phipn_r: 'phi Pn (rupture)',
-  pn: 'Pn', mn: 'Mn', fcr: 'Fcr', pn_y: 'Pn (yielding)', pn_r: 'Pn (rupture)', kl: 'KL', klrx: 'KxLx/rx', klry: 'KyLy/ry', deadpsf: 'Dead load', livepsf: 'Live load' };
+  pn: 'Pn', mn: 'Mn', fcr: 'Fcr', pn_y: 'Pn (yielding)', pn_r: 'Pn (rupture)', kl: 'KL', klrx: 'KxLx/rx', klry: 'KyLy/ry', deadpsf: 'Dead load', livepsf: 'Live load',
+  agreq: 'Ag required', aereq: 'Ae required' };
 /* REVIEW 10/06: a blank WITHOUT phi asks for the NOMINAL value ("Mp = ___", "Pn = ___", "Fcr = ___"); the forms give the design value.  The page printed the
    design value into such blanks (phi Mp = 240 where Mp = 266.7).  Nominal = design / phi, and only where that phi is one number: columns, beams, the stress
    table, and ONE named limit state of a tension member. */
@@ -932,6 +935,13 @@ function wordId(left, unit) {
   if (unit === 'kips' && / pu /.test(w)) return 'pu';
   if (unit === 'kips' && / vu /.test(w)) return 'vu';
   if (unit === 'klf' && / wu /.test(w)) return 'wu';
+  /* (A1-tsel-20) "Ag required = ____ in2" asks for the area the member NEEDS: the "ag" shortcut below printed the chosen W8X18's own Ag 5.26 where
+     220 / (0.9 x 50) = 4.889 is asked.  The blank's own sentence is read first: a required gross or effective area has an id of its own; a required NET
+     area has no single value on this page (it needs U), so that blank stays one the page does not know. */
+  if (unit === 'in2') {
+    var rqa = reqAreaAsks(String(left || '').split(/[.?!;]\s+/).pop()).filter(function (q) { return !q.given; });
+    if (rqa.length) return rqa[rqa.length - 1].id === 'anreq' ? null : rqa[rqa.length - 1].id;
+  }
   if (unit === 'in2' && / ae /.test(w)) return 'ae';
   if (unit === 'in2' && / ag /.test(w)) return 'ag';
   if (unit === 'kips') {
@@ -1004,16 +1014,71 @@ function asksInProse(s) {
   if (/\d/.test(s.replace(/\bD3\.1\b|\b4-1[a4]?\b|\b3-2\b/g, ''))) return false;
   return (s.match(/\b(?:An|Ae|Ag|U|Pu|Mu|Pn|Mn|Pcr|Fcr)\b|KL\s*\/\s*r/g) || []).length >= 2;
 }
+/* A REQUIRED AREA, in words or with its symbol: "required gross area", "min Ag", "Ag required", "required Ae", "minimum net area required", "what gross area
+   is required".  The area a member NEEDS (Pu / 0.9 Fy, Pu / 0.75 Fu) is not the area of a shape: the page printed the chosen W8X18's Ag 5.26 under "min Ag?"
+   (A1-tsel-21), the required GROSS area under "required Ae?" and "required net area" (A1-tsel-19, -18), and a factored load under "required gross area"
+   (A1-tsel-09).  -> [{id: agreq | aereq | anreq, given, at, end}]; given = followed by its value ("Ag req = 4.89 in2" is typed along, not asked). */
+var REQ_AREA_WORD = '(?:required|req(?:\'?d|\\.)?|minimum|min\\.?|needed|necessary)';
+var REQ_AREA_KIND = '(gross\\s+(?:cross[\\s-]*sectional\\s+)?area(?:\\s*,?\\s*\\(?Ag\\)?)?|effective\\s+(?:net\\s+)?(?:cross[\\s-]*sectional\\s+)?area(?:\\s*,?\\s*\\(?Ae\\)?)?'
+  + '|net\\s+(?:cross[\\s-]*sectional\\s+)?area(?:\\s*,?\\s*\\(?An\\)?)?|area\\s*,?\\s*\\(?A[ge]\\b\\)?|Ag\\b|Ae\\b|A\\s?net\\b|An\\b(?=\\s*(?:[,;=?)]|$)))';
+var REQ_AREA_RE = [new RegExp('\\b' + REQ_AREA_WORD + '\\s+(?:(?:value\\s+of|the|an?)\\s+)?(?:(?:required|minimum|min|needed|design)\\s+)?' + REQ_AREA_KIND, 'gi'),
+  new RegExp('\\b' + REQ_AREA_KIND + '\\s*(?:is\\s+)?' + REQ_AREA_WORD + '(?![A-Za-z])', 'gi')];
+var REQ_AREA_RAW = { agreq: 'required gross area Ag', aereq: 'required effective net area Ae', anreq: 'required net area An' };
+function reqAreaAsks(s) {
+  var t = String(s || ''), out = [], r, m, k, id, a, e, q, clash;
+  for (r = 0; r < REQ_AREA_RE.length; r++) {
+    REQ_AREA_RE[r].lastIndex = 0;
+    while ((m = REQ_AREA_RE[r].exec(t)) !== null) {
+      k = ' ' + m[1].toLowerCase().replace(/[^a-z]+/g, ' ') + ' ';
+      id = / effective | ae /.test(k) ? 'aereq' : (/ gross | ag /.test(k) ? 'agreq' : 'anreq');
+      a = m.index; e = m.index + m[0].length; clash = false;
+      for (q = 0; q < out.length; q++) if (out[q].at < e && a < out[q].end) clash = true;
+      if (!clash) out.push({ id: id, at: a, end: e, given: /^\s*(?:of|=|is|:|was|equals?|>=?)?\s*-?\.?\d/.test(t.slice(e)) });
+    }
+  }
+  out.sort(function (x, y) { return x.at - y.at; });
+  return out;
+}
+SOLVE.reqAreaAsks = reqAreaAsks;
+/* A required area depends on Pu and the steel alone.  When the words name a steel the run did not use ("a36steel", glued, was not read and Fy 50 was used:
+   Ae 6.15 printed for 6.9, BC-031~M1; two problems pasted together named Fy = 50 and A36, BC-005~pair1) or a load it did not take ("D = 4 0 kips",
+   BC-033~numspace; "live load 3 times the dead load", A1-tsel-09), its required area is not an answer.  run: a finished run of the required-area form or
+   of a tension selection (any other form: false).  Fy left empty is the form's own default, 50. */
+var REQ_GRADE_FY = { '36': 36, '992': 50, '53': 35 };
+function reqAreaDoubt(text, run) {
+  var t = String(text || ''), fys = [], re = /\b[Aa]\s?-?\s?(36|992|53)(?![0-9])/g, m, st = null, i, a, fy;
+  function none(v) { return v === undefined || v === null || v === '' || Number(v) === 0; }
+  for (i = 0; run && run.stages && i < run.stages.length; i++) if (/^tension_(?:required_area|select)$/.test(String(run.stages[i].fn))) st = run.stages[i];
+  if (!st) return false;
+  a = st.args || {};
+  while ((m = re.exec(t)) !== null) if (fys.indexOf(REQ_GRADE_FY[m[1]]) < 0) fys.push(REQ_GRADE_FY[m[1]]);
+  m = /\bF\s?y\s*(?:=|of|is|:)?\s*(\d{2}(?:\.\d+)?)(?![\d.])/.exec(t);
+  if (m && fys.indexOf(Number(m[1])) < 0) fys.push(Number(m[1]));
+  fy = none(a.Fy) ? 50 : Number(a.Fy);
+  if (fys.length > 1 || (fys.length === 1 && fys[0] !== fy)) return true;
+  if (a.already_factored === true || a.already_factored === 'yes' || a.already_factored === 'true') return false;
+  if (/\b[Dd]ead\b|\bD\s*=\s*\d|\bDL\b|\bPD\s*=/.test(t) && none(a.D)) return true;
+  if (/\b[Ll]ive\b|\bL\s*=\s*\d[\d.]*\s*(?:k|kips?)\b|\bLL\b|\bPL\s*=/.test(t) && none(a.L)) return true;
+  return false;
+}
 function askedInWords(text) {
-  var sens = sentenceList(String(text || '')), out = [], i, j, s, s2, m, seen = {};
+  var sens = sentenceList(String(text || '')), out = [], i, j, s, s2, m, seen = {}, rq;
   for (i = 0; i < sens.length; i++) {
     s = sens[i];
+    /* (A1-tsel-18 / -19 / -21 / -09) a REQUIRED area is asked wherever it stands without its value, also in a sentence with no asking word ("required net
+       area PD=30k PL=60k A36", "... L=90k. required Ae?"); it has an id of its own, never the shape's Ag, Ae or An (those are skipped below) */
+    rq = reqAreaAsks(s);
+    for (j = 0; j < rq.length; j++) {
+      if (rq[j].given || seen[rq[j].id]) continue;
+      seen[rq[j].id] = 1;
+      out.push({ id: rq[j].id, unit: '', raw: REQ_AREA_RAW[rq[j].id], sym: REQ_AREA_RAW[rq[j].id], byWords: true, prose: true, context: trim(s).slice(-40), after: '' });
+    }
     if (!asksInProse(s)) continue;
     for (j = 0; j < ASK_WORDS.length; j++) {
       /* "the effective net area" does not also ask for the net area */
       s2 = ASK_WORDS[j][1] === 'an' ? s.replace(/\beffective\s+net\s+(?:cross[\s-]*sectional\s+)?area\b/gi, ' ') : s;
       /* an area the member NEEDS ("Show Ag required") is not the area of the shape: no line for it from here */
-      if (/^(?:ag|an|ae)$/.test(ASK_WORDS[j][1]) && /\b(?:required|minimum|needed|necessary)\b/i.test(s)) continue;
+      if (/^(?:ag|an|ae)$/.test(ASK_WORDS[j][1]) && (/\b(?:required|minimum|needed|necessary)\b/i.test(s) || rq.length)) continue;
       m = ASK_WORDS[j][0].exec(s2);
       if (!m || seen[ASK_WORDS[j][1]]) continue;
       /* a quantity that is followed by its VALUE is a given, not an ask ("to carry a factored axial load of 500 kips", "Using U = 0.80"); and "round the
@@ -1146,7 +1211,9 @@ function sigFamily(fn) { return /^tension_|^lookup_U$|^lookup_hole$/.test(fn) ? 
 function sigConflict(fn, text) {
   var t = String(text || ''), fam = sigFamily(fn),
     T = /\btension|tensile|\bhanger|\btie\s+(?:rod|member)|net\s+area|shear\s+lag|rupture/i.test(t),
-    C = /\bcolumns?\b|compress|buckl|slender|k\s?l\s*\/\s*r|\bstrut|\beuler/i.test(t),
+    /* (A1-ccap-277) an effective-length factor or length is a column's word too: "W10x49 14 ft long, Kx = 1.0, Ky = 0.8. find phi Pn" was moved to the
+       tension capacity (648 kips, yielding) where the column's 527 is asked */
+    C = /\bcolumns?\b|compress|buckl|slender|k\s?l\s*\/\s*r|\bstrut|\beuler/i.test(t) || /\bK\s?[xy]?\s*=\s*\d|\bK[xy]?L[xy]?\s*=|[Ee]ffective\s+[Ll]ength\b/.test(t),
     B = /\bbeams?\b|girder|joist|flexur|bending|\bmoment|lintel/i.test(t);
   if (fn === 'column_euler' && !/euler|elastic\s+buckling|\bP\s?cr\b|\bP\s?e\b|critical\s+(?:buckling\s+)?load/i.test(t)) return true;
   if (fam === 'tension') return (C || B) && !T;
@@ -1356,11 +1423,25 @@ function signaturePass(parts, cover, body) {
         b.curGives = s;
         return s;
       })) : 1;
+      /* (BC-031~M1, BC-005~pair1) a required area asked of a run that did not use the steel or a load the words name is not answered (see reqAreaDoubt) */
+      if (curOk && known.some(function (b) { return /^(?:agreq|aereq)$/.test(b.id) && b.curGives > 0; }) && reqAreaDoubt(String(part.stem || '') + ' ' + String(part.text || ''), cur.run)) {
+        part.askedMismatch = { raw: known.map(function (b) { return b.raw; }).join(' ; '), several: [] };
+        continue;
+      }
       /* ASKS READ FROM A SENTENCE (no blank) are weaker evidence than a blank: "Find: Euler Pcr, the AISC phi Pn, and why they differ" asks two things
          that no one form gives, and "The capacity Pu = phi Pn" names Pu without asking for a load.  (The regression dump of 10/07 01:15 caught the page
          printing "NOT WHAT YOUR BLANK ASKS ... do NOT copy" under four RIGHT answers of her own review and class problems.)  So for such asks:
          a part that is worked out and gives AT LEAST ONE of the things named stays as it is, and no part is ever flagged for them. */
       var proseOnly = known.length > 0 && known.every(function (b) { return b.prose; });
+      /* (A1-tcap-33) ... but an AREA or U asked in a sentence counts as given only when the finished run HOLDS it.  "W12x53 tension member, flanges welded to
+         gusset plates, find the effective net area" printed the welded member's phi Pn = 702 kips as its clean ANSWER: the table above says a tension
+         capacity gives Ae on the way, and with no holes this one works none out.  Flagged in place; no other form is tried (the required-area form would
+         answer it with the Ae a member NEEDS, which is another quantity). */
+      if (proseOnly && curOk && known.some(function (b) { return b.curGives === 1; }) && known.every(function (b) {
+        return !(b.curGives > 0) || (b.curGives === 1 && /^(?:ae|an|u)$/.test(b.id) && sigValueFor(part, cur.run, b) === null); })) {
+        part.askedMismatch = { raw: known.map(function (b) { return b.raw; }).join(' ; '), several: [] };
+        continue;
+      }
       if (proseOnly && curOk && known.some(function (b) { return b.curGives > 0; })) continue;
       /* REVIEW 10/06: a floor plan is never left for a single-member form and never flagged.  A stopped floor plan was re-chosen as "beam analysis" and printed
          a reaction of 1.05 kips where 22.98 is right: the other form could not even see the slab and the psf loads. */
@@ -1407,6 +1488,11 @@ function signaturePass(parts, cover, body) {
            for a strength or an area of it is never moved to a selection form -- a bolted W12x53, "Design strength for yielding of the gross section", was
            answered with the yielding strength of the lightest W12 (526.5 kips for 702). */
         if (/_select$/.test(fn) && !known.some(function (b) { return b.id === 'shape'; }) && /\b(?:W|WT|HP|HSS|MC|C|S|M|L|2L)\s?\d+(?:\.\d+)?\s*[xX]\s*\d/.test(ownTxt)) continue;
+        /* (A1-csel-26) "choose lightest w12 Pu=500k length 14 ft": no word says tension or compression, and a W shape with a length in feet reads as a column
+           at least as well as a tension member.  The tension selection was taken silently (W12X40 by yielding; as a column it is W12X53).  A tension
+           member is chosen over the finder's own kind only on a word of its own. */
+        if (/^tension_(?:select|capacity)$/.test(fn) && sigFamily(String(lastFn || '')) !== 'tension' && /\d\s*-?\s*(?:ft|feet|foot)\b|\d\s*'/i.test(ownTxt)
+          && !/\btension|tensile|\bhang(?:er|ing)|\btie\b|\brods?\b|\bbars?\b|\bplates?\b|\bbolt|\bholes?\b|\bweld|\bgusset|net\s+area|effective\s+(?:net\s+)?area|shear\s+lag|rupture|\bA[gen]\b/i.test(ownTxt)) continue;
         try {
           p2 = makePart(part.stem, part.text, formRoute(part.route, fn, ['what is asked and what is given'], sigWant(fn)), part.label, part.defaultsLine, cover, part.id);
           p2.route.family = sigFamily(fn) === 'lookup' ? 'lookup' : (sigFamily(fn) === 'floor' ? 'floor' : sigFamily(fn));
@@ -1419,6 +1505,9 @@ function signaturePass(parts, cover, body) {
         } catch (e1) { parts[i] = part; continue; }
         if (SIGDBG) console.log('SIGDBG ' + fn + ' status ' + d2.status + ' unplaced ' + sigUnplaced(p2));
         if (!(d2.status === 'answered' || d2.status === 'figure')) continue;
+        /* (A1-tsel-09) a required area or a selection is chosen over the finder's form only with every LOAD and the steel the words name: "required gross
+           area, dead load 30 kips, live load 3 times the dead load" was worked with the dead load alone, 1.4 D = 42 kips, Ag = 1.296 for 5.556 */
+        if (reqAreaDoubt(ownTxt, d2.run)) continue;
         /* REVIEW 10/06: the new form must have taken EVERY number of the question that carries a unit.  A form that leaves the slab thickness and the psf
            loads aside can still "work out" and "give" the asked symbol -- with a wrong number. */
         if (sigUnplaced(p2) > 0) continue;
@@ -1446,7 +1535,13 @@ function signaturePass(parts, cover, body) {
         best.part.rerouted = { from: lastFn, fromLabel: lastFn ? ((formOf(lastFn) || {}).label || lastFn) : null, to: best.fn, toLabel: label, why: why, was: cur.status };
         parts[i] = best.part;
       } else if (proseOnly) {
-        /* nothing better found for an ask read from a sentence: the part stays as the finder left it, unflagged */
+        /* nothing better found for an ask read from a sentence: the part stays as the finder left it, unflagged ... */
+        /* ... unless the sentence asks for a CHOICE of shape, or for a REQUIRED area, and the part gives none of what is asked: "select lightest w12,
+           pu=500 kips, kxlx=kyly=14ft" printed "Factored load: 500 kips" as its clean ANSWER (A1-csel-20 / -21 / -26), "required net area" the required
+           GROSS area (A1-tsel-18), "required gross area" a factored load (A1-tsel-09).  (A shape named in the words may be what a strength is about: no flag.) */
+        if (curOk && !known.some(function (b) { return b.curGives > 0; })
+          && known.some(function (b) { return /^(?:agreq|aereq|anreq)$/.test(b.id) || (b.id === 'shape' && !SHAPE_NAMED.test(ownTxt)); }))
+          part.askedMismatch = { raw: known.map(function (b) { return b.raw; }).join(' ; '), several: feas.map(function (f) { return (formOf(f.fn) || {}).label || f.fn; }) };
       } else if (curOk && known.length && curScore === 0) {
         /* worked out, but NOT what the blank asks, and no other form stands out: the answer must not be copied into that blank */
         part.askedMismatch = { raw: known.map(function (b) { return b.raw; }).join(' ; '), several: feas.map(function (f) { return (formOf(f.fn) || {}).label || f.fn; }) };
@@ -1809,6 +1904,11 @@ function recaseTyped(text) {
   t = t.replace(/(^|[^A-Za-z0-9_\/])([a-z]{1,3})(?=\s*(?:=|_{2,}))/g, function (m0, a, s) { return has(RECASE_EQ, s) ? a + RECASE_EQ[s] : m0; });
   t = t.replace(/(^|[^A-Za-z0-9_])k\s?l(?=\s*\/\s*r)/g, '$1KL');
   t = t.replace(/(^|[^A-Za-z0-9_])k([xy])\s?l([xy])(?=\s*\/\s*r)/g, function (m0, a, p, q) { return a + 'K' + p + 'L' + q; });
+  /* (A1-csel-20) "kxlx=kyly=14ft": the effective lengths about each axis in front of "=" (four letters: the rule for symbols above takes three).  Only as a
+     PAIR, each with a number in feet that reads cleanly: one of them alone is taken for both axes ("kxlx =30ft andkyly = 1 5'" printed 257 kips at
+     KL = 30 ft where 732 is right, BC-053~H3) */
+  var KLP = /(^|[^A-Za-z0-9_\/])k([xy])\s?l([xy])(?=\s*=\s*(?:k[xy]\s?l[xy]\s*=\s*)?\d+(?:\.\d+)?\s*(?:ft|feet|foot|')(?![A-Za-z0-9]))/g, klp = t.match(KLP) || [];
+  if (klp.some(function (x) { return /kx\s?lx$/.test(x); }) && klp.some(function (x) { return /ky\s?ly$/.test(x); })) t = t.replace(KLP, function (m0, a, p, q) { return a + 'K' + p + 'L' + q; });
   /* "d = 100 psf" is the dead load D; "d = 12.2 in" is a depth and stays */
   t = t.replace(/(^|[^A-Za-z0-9_\/])d(?=\s*=\s*\d[\d.,]*\s*(?:kips?|k\b|psf|plf|klf|k\/ft|kip\/ft|lb\/ft|pcf))/g, '$1D');
   /* symbols that are no English word, wherever they stand */
@@ -2004,6 +2104,16 @@ SOLVE.analyzeRead = function (text, opts) {
   for (i = 0; i < routed.parts.length; i++) {
     r = routed.parts[i];
     try { var am = amendRoute(r, r.text, routed.stem); if (am !== r) { am.letter = r.letter; am.text = r.text; r = am; routed.parts[i] = am; } } catch (ea) { /* the finder's own route stands */ }
+    /* (A1-ccap-195) a lettered part that REFERS BACK -- "(b) repeat if it is braced at mid height about the weak axis", "(b) the same column fixed at both
+       ends" -- is the calculation of the part before it with one thing changed.  The finder sent it to the definitions on "weak axis", and her class quote
+       stood as its clean ANSWER (689.5 kips is right).  It is not given the form of the part before either: that form carries the part before's lengths
+       and ends and does not read what this part changes (the same column "braced at mid height" came out at the part before's 442).  It stops, in words. */
+    var pr = i > 0 ? routed.parts[i - 1] : null;
+    if (pr && r.family === 'words' && !r.mcWords && r.letter && pr.fn && pr.family && pr.family !== 'words' && !pr.not_in_tool
+      && /^\s*(?:repeat|redo|rework|re-?(?:calculate|compute|solve|do)\b|do\s+the\s+same|(?:the\s+)?same\s+(?:as|column|member|beam|girder|shape|section|problem|question)\b)/i.test(String(r.text || ''))) {
+      parts.push(errorPart(r.letter, r.text, 'p' + (++n), 'it refers back to part (' + pr.letter + ') and says only what changes. Type it again as a whole question: the shape, the length, the end conditions and what this part changes'));
+      continue;
+    }
     try {
       try { subs = o.noSplit ? [] : splitAsks(routed.stem, r); } catch (es) { subs = []; }
       for (k = 0; k < subs.length; k++) { try { var am2 = amendRoute(subs[k].route, subs[k].route.text, subs[k].stem); if (am2 !== subs[k].route) { am2.text = subs[k].route.text; subs[k].route = am2; } } catch (ea2) { /* keep */ } }

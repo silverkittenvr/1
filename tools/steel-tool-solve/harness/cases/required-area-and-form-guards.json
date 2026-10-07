@@ -1,0 +1,169 @@
+[
+ {
+  "id": "A1-tsel-09",
+  "text": "required gross area, dead load 30 kips, live load 3 times the dead load, A36",
+  "expect": "STOP",
+  "note": "right 5.556 in^2 needs the live load read (load-reading cluster); never the factored load 42 nor Ag with L dropped"
+ },
+ {
+  "id": "A1-tsel-18",
+  "text": "required net area PD=30k PL=60k A36",
+  "expect": "STOP",
+  "note": "required An needs U; Ae >= 3.034; never the required Ag 4.074"
+ },
+ {
+  "id": "A1-tsel-19",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. required Ae?",
+  "expect": "3.938"
+ },
+ {
+  "id": "A1-tsel-20",
+  "text": "select lightest w8 tension member welded D=50k L=100k. Ag required = ____ in2",
+  "expect": "4.889"
+ },
+ {
+  "id": "A1-tsel-21",
+  "text": "select lightest w8 welded D=50k L=100k. min Ag?",
+  "expect": "4.889"
+ },
+ {
+  "id": "A1-tcap-33",
+  "text": "W12x53 tension member, flanges welded to gusset plates, find the effective net area",
+  "expect": "STOP"
+ },
+ {
+  "id": "A1-csel-20",
+  "text": "select lightest w12, pu=500 kips, kxlx=kyly=14ft",
+  "expect": "W12X53"
+ },
+ {
+  "id": "A1-csel-21",
+  "text": "select lightest w12 pu=400k, Lx=24ft, Ly=12ft, pinned",
+  "expect": "STOP",
+  "note": "W12X50 if a bare 'pinned' were read (not done here)"
+ },
+ {
+  "id": "A1-csel-26",
+  "text": "choose lightest w12 Pu=500k length 14 ft",
+  "expect": "STOP"
+ },
+ {
+  "id": "A1-ccap-277",
+  "text": "W10x49 14 ft long, Kx = 1.0, Ky = 0.8. find phi Pn",
+  "expect": "STOP",
+  "note": "527.0 kips once per-axis K is read (column cluster); never tension 648"
+ },
+ {
+  "id": "A1-ccap-195",
+  "text": "(a) W12x65 column 24 ft long pinned ends. find phi Pn. (b) repeat if it is braced at mid height about the weak axis",
+  "expect": "(a) 442 / (b) STOP",
+  "note": "(b) right 689.5"
+ },
+ {
+  "id": "NM-01",
+  "text": "A tension member must carry a service dead load of 60 kips and a service live load of 90 kips. Using A992 steel, what minimum gross area is required to prevent yielding?",
+  "expect": "4.8",
+  "note": "unchanged"
+ },
+ {
+  "id": "NM-02",
+  "text": "select lightest w8 tension member welded D=50k L=100k. Ag = ____ in2",
+  "expect": "5.26",
+  "note": "plain Ag of the chosen shape, unchanged"
+ },
+ {
+  "id": "NM-03",
+  "text": "W12x53 tension member, Ag = ____ in2, phi Pn = ____ kips",
+  "expect": "15.6 / 702",
+  "note": "unchanged"
+ },
+ {
+  "id": "NM-04",
+  "text": "choose lightest w12 tension member Pu=500k length 14 ft",
+  "expect": "W12X40",
+  "note": "the word tension is there: unchanged"
+ },
+ {
+  "id": "NM-05",
+  "text": "W12x53 tension member, flanges bolted with 3/4 in bolts 2 per flange 3 per line, find the effective net area",
+  "expect": "12.23",
+  "note": "unchanged"
+ },
+ {
+  "id": "NM-06",
+  "text": "W10x49 column 14 ft long pinned ends. find phi Pn",
+  "expect": "471",
+  "note": "unchanged"
+ },
+ {
+  "id": "NM-07",
+  "text": "(a) w8x31 column, 15ft , pinned at both ends, phi pn = ____ (b) the same column fixed at both ends, phi pn = ____",
+  "expect": "(a) 230 / (b) STOP",
+  "note": "unchanged or still a stop"
+ },
+ {
+  "id": "NM-08",
+  "text": "select lightest W14 for Pu = 900 kips, KxLx = 26 ft and KyLy = 13 ft",
+  "expect": "W14X90",
+  "note": "unchanged"
+ },
+ {
+  "id": "NM-09",
+  "text": "W12x53 welded tension member, find the gross area Ag and phi Pn",
+  "expect": "702 / 15.6",
+  "note": "unchanged"
+ },
+ {
+  "id": "NM-10",
+  "text": "required area: PD=30k, PL=60k, A36. Ag req = ____ in2   Ae req = ____ in2",
+  "expect": "4.074 / 3.034",
+  "note": "values unchanged"
+ },
+ {
+  "id": "NM-11",
+  "text": "select lightest w8 tension member welded, D=50k L=100k, Ag req = 4.89 in2",
+  "expect": "W8X18",
+  "note": "Ag req typed along is a given, no line for the shape's Ag"
+ },
+ {
+  "id": "NM-12",
+  "text": "choose lightest w12 Pu=500k",
+  "expect": "W12X40",
+  "note": "no length: only the tension reading fits the numbers; unchanged"
+ },
+ {
+  "id": "RT-tsel-19",
+  "text": "w8x24 tension , 3/4in bolts 2 per flange 3 per line,D=40k L=90k.  required  Ae ?",
+  "expect": "3.938"
+ },
+ {
+  "id": "RT-tsel-20",
+  "text": "selct lightest w8 tension membr welded D=50k L=100k.Ag required= ____ in2",
+  "expect": "4.889"
+ },
+ {
+  "id": "RT-csel-20",
+  "text": "select lightest w12,pu=500kips , kxlx = kyly=14 ft",
+  "expect": "W12X53"
+ },
+ {
+  "id": "RT-csel-26",
+  "text": "choose lightest  w12 Pu =500k lenght 14ft",
+  "expect": "STOP"
+ },
+ {
+  "id": "RT-ccap-277",
+  "text": "W10x49 14ft long,Kx=1.0 ,Ky = 0.8 .find phi Pn",
+  "expect": "STOP"
+ },
+ {
+  "id": "RT-tcap-33",
+  "text": "w12x53 tension membr , flanges weldedto gusset plates find the efective net area",
+  "expect": "STOP"
+ },
+ {
+  "id": "RT-ccap-195",
+  "text": "(a)W12x65 column 24ft long pinned ends.find phi Pn (b)repeat if its braced at mid height abuot the weak axis",
+  "expect": "(a) 442 / (b) STOP"
+ }
+]
