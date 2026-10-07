@@ -1005,10 +1005,13 @@ function asksInProse(s) {
   return (s.match(/\b(?:An|Ae|Ag|U|Pu|Mu|Pn|Mn|Pcr|Fcr)\b|KL\s*\/\s*r/g) || []).length >= 2;
 }
 function askedInWords(text) {
-  var sens = sentenceList(String(text || '')), out = [], i, j, s, s2, m, seen = {};
+  var sens = sentenceList(String(text || '')), out = [], i, j, s, s2, m, seen = {}, px = null;
+  /* (prose-asks, 10/07) the words that turn the quantity into another one -- "nominal", one limit state, "excess", ASD, "about the x axis" -- and a last
+     clause that asks with no verb ("... 3 per line. nominal yield strength"): src/proseask.js (A1-tcap-24..32, A1-tsel-23..29, A1-ccap-215..292) */
+  try { if (typeof PROSEASK !== 'undefined') { px = PROSEASK.read(sens, asksInProse); sens = px.sens; } } catch (ePx) { px = null; }
   for (i = 0; i < sens.length; i++) {
     s = sens[i];
-    if (!asksInProse(s)) continue;
+    if (!asksInProse(s) && !(px && px.asking[i])) continue;
     for (j = 0; j < ASK_WORDS.length; j++) {
       /* "the effective net area" does not also ask for the net area */
       s2 = ASK_WORDS[j][1] === 'an' ? s.replace(/\beffective\s+net\s+(?:cross[\s-]*sectional\s+)?area\b/gi, ' ') : s;
@@ -1032,7 +1035,7 @@ function askedInWords(text) {
     }
   }
   /* (an asked thing that is the form's own result is skipped where the lines are written: the form's ANSWER line already is its answer) */
-  return out;
+  return px ? px.finish(out) : out;
 }
 /* words that ask for the strength itself (or for a choice made by strength): with one of them in the question, the form's own ANSWER line stays an answer */
 var STRENGTH_ASK = /\b(?:strengths?|capacity|capacities|adequa\w+|lightest|select\w*|choose|safe(?:ly)?)\b|\bphi\s*\*?\s*[PMRT]\s?n\b|\bhow\s+much\s+(?:load|force|weight)\b|\b(?:maximum|largest|greatest|allowable)\s+(?:factored\s+|service\s+|axial\s+|tensile\s+|live\s+|dead\s+)?(?:load|force)\b|\bcan\s+(?:it|the\s+\w+)\s+(?:carry|support|resist)\b/i;
@@ -1254,6 +1257,8 @@ function sigValueFor0(part, run, b) {
     if (lastFn !== 'lookup_K' || !kv || typeof kv.value !== 'number' || !isNum(b.len)) return null;
     return { key: 'KL', value: Math.round(kv.value * Number(b.len) * 1000) / 1000, unit: 'ft', stage: kv.stage, converted: 'K x L = ' + sigNum(kv.value) + ' x ' + sigNum(Number(b.len)) };
   }
+  /* (prose-asks, 10/07) a tension member's nominal Pn asked with no limit state: only where both readings give one value (src/proseask.js) */
+  if (b.tpn) { try { return typeof PROSEASK !== 'undefined' ? PROSEASK.tensionPn(run) : null; } catch (eTp) { return null; } }
   if (lastFn !== 'floor_plan') return sigValue(run, b.id);
   /* the floor's own loads (step 1): they belong to no member */
   if (b.id === 'deadpsf') return sigValueKeys(run, [/^step1_dead_psf$/]);
@@ -1341,6 +1346,9 @@ function signaturePass(parts, cover, body) {
         if (y && !rAny) ls = 'y'; else if (r && !yAny) ls = 'r';
         if (ls && (fam0 === 'tension' || /\btension|tensile/i.test(own))) known.forEach(function (b) { if (b.id === 'phipn') b.id = 'phipn_' + ls; else if (b.id === 'pn') b.id = 'pn_' + ls; });
       })();
+      /* (prose-asks, 10/07) what the member's family decides for those words (a tension member's nominal Pn has two phis; ASD is not her class):
+         src/proseask.js.  What the page cannot answer goes to part.proseStops, said in writeBlock in one plain sentence. */
+      if (blanks.fromProse && typeof PROSEASK !== 'undefined') { try { known = PROSEASK.settle(part, blanks, known); } catch (ePs) { part.proseStops = []; } }
       part.asked = known; part.blankCount = blanks.length; part.unknownBlanks = blanks.filter(function (b0) { return !b0.id; }).map(function (b0) { return b0.raw; });
       cur = dryPart(parts, i);
       if (part.kind === 'words' || part.kind === 'error') continue;
@@ -1413,6 +1421,7 @@ function signaturePass(parts, cover, body) {
           p2.split = part.split; if (part.choiceNote) p2.choiceNote = part.choiceNote;
           p2.whole = part.whole;
           p2.asked = known; p2.blankCount = blanks.length; p2.unknownBlanks = part.unknownBlanks;
+          p2.proseStops = part.proseStops;
           old = parts[i]; parts[i] = p2;
           d2 = dryPart(parts, i);
           parts[i] = old;
@@ -1524,7 +1533,9 @@ function askedLines(part, run) {
     if (v.nominal) txt = (SIG_LABEL[b.id] || b.sym) + ' = ' + v.nominal.label + ' / ' + v.nominal.phi.toFixed(2) + ' = ' + sigNum(v.nominal.design) + ' / ' + v.nominal.phi.toFixed(2) + ' = ' + sigNum(v.value)
       + (v.unit ? ' ' + v.unit : '') + '   (your blank has no phi: it asks for the NOMINAL value)';
     if (v.mp) txt = 'Mp = Fy Zx / 12 = ' + sigNum(v.mp.Fy) + ' x ' + sigNum(v.mp.Zx) + ' / 12 = ' + sigNum(v.value) + ' kip-ft   (the plastic moment: no phi)';
-    if (v.converted) txt += '   (= ' + v.converted + ')';
+    /* (prose-asks, 10/07) a question with no blank gets ONE number on its line ("KL = 16 ft", "Pn = 974.44 kips"): the working is in the steps */
+    if (b.qual && b.prose) txt = (SIG_LABEL[b.id] || b.sym || b.id) + ' = ' + (typeof v.value === 'number' ? sigNum(v.value) : String(v.value)) + (v.unit ? ' ' + v.unit : '') + (v.nominal ? '   (nominal: no phi)' : '');
+    else if (v.converted) txt += '   (= ' + v.converted + ')';
     /* (10/06 20:20: a reader who knows no engineering, given this line as "KL/r = 58.43 (her table step rounds it up to 59)", answered "58.43 (or 59)" --
        two numbers on the line, and the working's "her table method (rounded-up KL/r) is the answer to write" is about phi Pn.  The line now says which of
        the two goes in the blank.  Her own solutions write the ratio itself, to the nearest whole number or with its decimals, never the rounded-up row.) */
@@ -3838,9 +3849,13 @@ SOLVE.writeBlock = function (part, run, vals) {
   /* (a floor plan's own ANSWER line is a summary of the worksheet -- beam, girder, reaction -- never the one number a blank asks for) */
   /* asked in a sentence, with no blank: the form's own result loses the word ANSWER only when NOTHING in the question asks for a strength ("Determine the
      design tensile strength. Report An, U and Ae" asks for all four -- the regression dump of 10/07 01:00 caught the strength being marked "not asked") */
-  var allProse = (part.asked || []).length > 0 && (part.asked || []).every(function (b) { return b.prose; })
-    && !STRENGTH_ASK.test(String(part.ctx || '').slice(part.coverLen || 0) || String(part.text || ''));
-  if (al.length && ((part.blankCount || 0) === 1 || allProse) && (!mainAsked || lastFnW === 'floor_plan')) {
+  /* (prose-asks, 10/07) what a sentence asks and no line here answers (src/proseask.js): an excess, a tension member's nominal Pn, ASD beside LRFD, or an
+     ask of those words the form does not hold.  "nominal strength", "rupture strength" are not requests for the design strength, so STRENGTH_ASK reads
+     the text without them (A1-tcap-24: "Determine the nominal tensile strength Pn" kept phi Pn = 359.2 as a clean ANSWER). */
+  var pStops = (part.proseStops || []).concat((part.asked || []).filter(function (b) { return b.qual && !al.some(function (l0) { return l0.indexOf('ANSWER TO "' + b.raw + '": ') === 0; }); }).map(function (b) { return b.raw; }));
+  var allProse = ((part.asked || []).length > 0 || pStops.length > 0) && (part.asked || []).every(function (b) { return b.prose; })
+    && !STRENGTH_ASK.test((function (t0) { try { return typeof PROSEASK !== 'undefined' ? PROSEASK.plain(t0) : t0; } catch (eT) { return t0; } })(String(part.ctx || '').slice(part.coverLen || 0) || String(part.text || '')));
+  if (((al.length && (part.blankCount || 0) === 1) || ((al.length || pStops.length) && allProse)) && (!mainAsked || lastFnW === 'floor_plan')) {
     /* council 10/06: one answer to copy.  The form's own result is not what the blank asks, so it must not carry the word ANSWER. */
     for (ai = 0; ai < write.length; ai++) if (/^ANSWER(?: \(step \d+\))?: /.test(write[ai])) write[ai] = write[ai].replace(/^ANSWER(?: \(step \d+\))?: /, 'ALSO FOUND (your blank does not ask for this): ');
   }
@@ -3888,6 +3903,7 @@ SOLVE.writeBlock = function (part, run, vals) {
     if (adeqN && (part.blankCount || 0) === 1) for (ai = 0; ai < write.length; ai++) if (/^ANSWER(?: \(step \d+\))?: /.test(write[ai])) write[ai] = write[ai].replace(/^ANSWER(?: \(step \d+\))?: /, 'ALSO FOUND (your blank does not ask for this): ');
   }
   if (run.ok && ub.length && !part.askedMismatch && !part.familyMismatch) write.push('CHECK YOUR BLANK: the page does not know what "' + ub.join('" ; "') + '" asks for. Before you copy, make sure the ANSWER line above names the SAME thing as that blank. If it names something else, that blank is NOT answered here.');
+  if (run.ok && pStops.length && !part.askedMismatch && !part.familyMismatch) write.push('CHECK YOUR BLANK: your question asks for "' + pStops.join('" ; "') + '", and the page does not work that out here. No line above is that answer: do not copy one for it.');
   if (part.askedMismatch && run.ok) {
     write.push('NOT WHAT YOUR BLANK ASKS: your blank is "' + part.askedMismatch.raw + '". This calculation does not give that. Do NOT copy the ANSWER line above into that blank.');
     read.unshift('WARNING: the page worked out something other than what your answer blank asks for (' + part.askedMismatch.raw + '). Choose another form at the bottom of this part, or use the worked lines as partial credit only.');

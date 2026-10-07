@@ -1,0 +1,287 @@
+[
+ {
+  "id": "A1-tcap-24",
+  "text": "A W10x33 tension member is connected through its flanges with two 3/4-in. diameter bolts in each flange, three bolts per line. Determine the nominal tensile strength Pn.",
+  "expect": "479.0 (or STOP)"
+ },
+ {
+  "id": "A1-tcap-25",
+  "text": "W10x33 tension member 3/4in bolts 2 per flange 3 per line. what is Pn",
+  "expect": "479.0 (or STOP)"
+ },
+ {
+  "id": "A1-tcap-26",
+  "text": "W10x33 tension member 3/4in bolts 2 per flange 3 per line. nominal yield strength",
+  "expect": "485.5"
+ },
+ {
+  "id": "A1-tcap-27",
+  "text": "w12x53 tension member bolted through flanges, 2 lines of 3/4in bolts each flange, 3 bolts per line. design strength for yielding?",
+  "expect": "702"
+ },
+ {
+  "id": "A1-tcap-28",
+  "text": "W10x33 tension member 3/4in bolts 2 per flange 3 per line. gross yielding?",
+  "expect": "437"
+ },
+ {
+  "id": "A1-tcap-29",
+  "text": "PL 1/2 x 8 plate A36 with one line of 3/4 in bolts, 2 holes across the width. find the rupture strength",
+  "expect": "135.9"
+ },
+ {
+  "id": "A1-tcap-30",
+  "text": "PL 1/2 x 8 A36, 2 holes across the width for 3/4in bolts. phi Pn for rupture",
+  "expect": "135.9"
+ },
+ {
+  "id": "A1-tcap-31",
+  "text": "W12x53 tension member, 2 lines of 3/4 in bolts each flange 3 per line, (a) find An (b) find Ae (c) find yielding strength (d) rupture strength",
+  "expect": "(c) 702 ; (d) 596.2 (rupture governs)"
+ },
+ {
+  "id": "A1-tcap-32",
+  "text": "W12x53 tension member 3/4in bolts 2 per flange 3 per line, length 20ft. L/r?",
+  "expect": "96.8"
+ },
+ {
+  "id": "A1-tsel-23",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. what is the excess capacity",
+  "expect": "STOP (or 57.2)"
+ },
+ {
+  "id": "A1-tsel-24",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. how much extra load can it take",
+  "expect": "STOP"
+ },
+ {
+  "id": "A1-tsel-25",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. what percent of the capacity is used",
+  "expect": "STOP"
+ },
+ {
+  "id": "A1-tsel-26",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. nominal strength Pn?",
+  "expect": "332.3 (or STOP)"
+ },
+ {
+  "id": "A1-tsel-27",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. nominal rupture strength",
+  "expect": "332.3"
+ },
+ {
+  "id": "A1-tsel-28",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. design strength for yielding?",
+  "expect": "318.6"
+ },
+ {
+  "id": "A1-tsel-29",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. ASD allowable strength?",
+  "expect": "STOP"
+ },
+ {
+  "id": "A1-ccap-269",
+  "text": "W14x90 KL = 20 ft. nominal strength",
+  "expect": "974.4"
+ },
+ {
+  "id": "A1-ccap-270",
+  "text": "W14x90 KL = 20 ft. find Pn",
+  "expect": "974.4"
+ },
+ {
+  "id": "A1-ccap-283",
+  "text": "W14x90 KL = 20 ft. allowable strength",
+  "expect": "STOP"
+ },
+ {
+  "id": "A1-ccap-292",
+  "text": "W12x53 column 16 ft long pinned ends. what is the effective length KL",
+  "expect": "16 ft"
+ },
+ {
+  "id": "A1-ccap-220",
+  "text": "W8x31 column 20 ft long pinned ends. find the euler critical stress",
+  "expect": "20.28"
+ },
+ {
+  "id": "A1-ccap-215",
+  "text": "W10x45 column 20 ft long pinned ends braced at mid height about the weak axis. find KL/r about the x axis",
+  "expect": "55.56"
+ },
+ {
+  "id": "pa-near-01",
+  "text": "A W12x53 tension member has two lines of 3/4 in bolts in each flange, three bolts per line. Determine the design tensile strength. Report An, U and Ae.",
+  "expect": "UNCHANGED (phi Pn stays the ANSWER)"
+ },
+ {
+  "id": "pa-near-02",
+  "text": "A W8x31 column is 20 ft long with pinned ends. Find: Euler Pcr, the AISC phi Pn, and why they differ.",
+  "expect": "UNCHANGED (never flagged)"
+ },
+ {
+  "id": "pa-near-03",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line. find the design strength for yielding and rupture",
+  "expect": "UNCHANGED (no single limit state)"
+ },
+ {
+  "id": "pa-near-04",
+  "text": "A W12x53 tension member is connected through its flanges with two lines of 3/4 in bolts in each flange, three bolts per line. A992 steel. Determine the design strength for yielding of the gross section.",
+  "expect": "UNCHANGED (702, already right)"
+ },
+ {
+  "id": "pa-near-05",
+  "text": "W14x90 column KL = 20 ft. find phi Pn",
+  "expect": "UNCHANGED (877)"
+ },
+ {
+  "id": "pa-near-06",
+  "text": "W14x90 column KL = 20 ft. Pn = ____ kips",
+  "expect": "UNCHANGED (blank path: 974.44)"
+ },
+ {
+  "id": "pa-near-07",
+  "text": "W8x31 column 20 ft long pinned ends. find the euler critical load",
+  "expect": "UNCHANGED (Pcr 185.12)"
+ },
+ {
+  "id": "pa-near-08",
+  "text": "W10x45 column 20 ft long pinned ends braced at mid height about the weak axis. find the governing KL/r",
+  "expect": "UNCHANGED (59.7)"
+ },
+ {
+  "id": "pa-near-09",
+  "text": "W12x53 column 16 ft long pinned ends. what is the effective length factor K",
+  "expect": "UNCHANGED (K = 1)"
+ },
+ {
+  "id": "pa-near-10",
+  "text": "W10x33 tension member, yield strength 50 ksi, 3/4in bolts 2 per flange 3 per line. find the design strength",
+  "expect": "UNCHANGED (359.2)"
+ },
+ {
+  "id": "pa-near-11",
+  "text": "w8x24 tension, 3/4in bolts 2 per flange 3 per line, D=40k L=90k. is it adequate",
+  "expect": "UNCHANGED"
+ },
+ {
+  "id": "pa-near-12",
+  "text": "what is the difference between ASD and LRFD",
+  "expect": "UNCHANGED (words)"
+ },
+ {
+  "id": "pa-near-13",
+  "text": "W14x90 column KL=20 ft. find phi Pn using LRFD (not ASD)",
+  "expect": "UNCHANGED (877)"
+ },
+ {
+  "id": "pa-near-14",
+  "text": "According to Table J3.3 of the AISC Specification, what is the nominal diameter of a standard hole for a 3/4 in. bolt?",
+  "expect": "UNCHANGED (nominal hole is not mine)"
+ },
+ {
+  "id": "pa-near-15",
+  "text": "W10x45 column 20 ft long pinned ends braced at mid height about the weak axis. find phi Pn",
+  "expect": "UNCHANGED (460.2)"
+ },
+ {
+  "id": "pa-near-16",
+  "text": "W12x53 tension member 3/4in bolts 2 per flange 3 per line, length 20ft. find L/r",
+  "expect": "UNCHANGED (96.77)"
+ },
+ {
+  "id": "pa-near-17",
+  "text": "w8x24 tension member, 3/4 in bolts, 2 per flange, 3 per line, D = 40 k, L = 90 k, an additional 10 k live load. find the design strength",
+  "expect": "UNCHANGED"
+ },
+ {
+  "id": "pa-near-18",
+  "text": "W14x90 column KL=20 ft, D=200k. what is the maximum allowable live load",
+  "expect": "UNCHANGED (allowable LOAD is LRFD here)"
+ },
+ {
+  "id": "pa-rough-01",
+  "text": "W10x33 tensoin member 3/4in bolts 2 per flange 3 per line .nomnal  yeild strenght",
+  "expect": "485.5"
+ },
+ {
+  "id": "pa-rough-02",
+  "text": "W14x90 KL =20ft.nominla strength",
+  "expect": "974.4"
+ },
+ {
+  "id": "pa-rough-03",
+  "text": "w8x24 tension,3/4in bolts 2 per flange 3 per line,D=40k L=90k.what is the exces capacity",
+  "expect": "STOP"
+ },
+ {
+  "id": "pa-rough-04",
+  "text": "w8x24 tension 3/4in bolts 2 per flange 3 per line.ASD alowable strength?",
+  "expect": "STOP"
+ },
+ {
+  "id": "pa-rough-05",
+  "text": "W10x45 colu mn 20 ft long pinned ends braced at mid height about the weak axis.find KL/r about the x  axis",
+  "expect": "55.56"
+ },
+ {
+  "id": "pa-rough-06",
+  "text": "w12x53 tension member bolted through flanges 2 lines of 3/4in bolts each flange 3 bolts per line design strenght for yeilding",
+  "expect": "702"
+ },
+ {
+  "id": "pa-rough-07",
+  "text": "W8x31 colmun 20 ft long pinned ends.find the eulr critical stress",
+  "expect": "20.28"
+ },
+ {
+  "id": "pa-rough-08",
+  "text": "w12x53 colum 16ft long pinned ends. what is the effective lenght KL",
+  "expect": "16 ft"
+ },
+ {
+  "id": "pa-rough-09",
+  "text": "PL 1/2 x 8 A36 ,2 holes across the width for 3/4in bolts.. phi Pn for rupture",
+  "expect": "135.9"
+ },
+ {
+  "id": "pa-rough-10",
+  "text": "w14x90 colum KL=20ft .  find Pn",
+  "expect": "974.4"
+ },
+ {
+  "id": "pa-var-01",
+  "text": "W14x90 column 20 ft long pinned ends, find phi Pn and the nominal strength Pn",
+  "expect": "877 and 974.4"
+ },
+ {
+  "id": "pa-var-02",
+  "text": "what is Pn (not phi Pn) of a W10x49 with KL = 14 ft",
+  "expect": "523.3"
+ },
+ {
+  "id": "pa-var-03",
+  "text": "W14x90 column 20 ft long pinned ends find the allowable strength Pn/omega",
+  "expect": "STOP"
+ },
+ {
+  "id": "pa-var-04",
+  "text": "w8x24 tension member 3/4in bolts 2 per flange 3 per line. design strength for yielding of the gross section?",
+  "expect": "318.6"
+ },
+ {
+  "id": "pa-var-05",
+  "text": "W12x53 tension member 3/4in bolts 2 lines each flange 3 per line. find the yield strength and the rupture strength",
+  "expect": "702 and 596.2"
+ },
+ {
+  "id": "pa-var-06",
+  "text": "what is the nominal moment strength of a W24x55 , fully braced",
+  "expect": "STOP (or 558.3)"
+ },
+ {
+  "id": "pa-var-07",
+  "text": "W14x90 column 20 ft long pinned ends. what percent of the capacity is used if Pu = 600 kips",
+  "expect": "STOP"
+ }
+]
