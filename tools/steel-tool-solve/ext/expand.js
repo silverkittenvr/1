@@ -697,9 +697,48 @@
     return r;
   }
 
+  /* ------------------------------------------------------------------------------------------------ (unit D, 10/07) TWO CASES OF ONE COLUMN
+     "a W10x49 column is 14 ft long. Case A: pinned both ends; Case B: fixed both ends. find phi Pn for each" was one part with two end conditions: the
+     column form stopped for "the strong axis end condition" although both are in the words.  Each case becomes a lettered part of its own, in the order
+     typed: the case's end condition, then the sentences that ask (so that each part knows what it is asked); the other sentences are the stem.  Only when
+     every case is nothing but an end condition the page's reader reads by itself (READER._internal.findEnds), the cases run A, B, ... or 1, 2, ... in
+     order, nothing else in the text names an end, a K or a figure, and a sentence asks something.  Otherwise the text comes back as typed. */
+  var CASE_RE = /(^|[^A-Za-z0-9])(case\s*([a-d1-4])\s*[:.)-]?)(?=\s)/gi;
+  var CASE_ASK_RE = /\?|\b(?:find|determine|calculate|compute|what|whats|which|how|check|select|give|state|is\s+(?:it|the))\b/i;
+  var CASE_ENDWORD_RE = /\b(?:fixed|pinned|hinged|pin|free|sway\w*|fixity|translat\w*|rotat\w*|braced|unbraced|cantilever\w*|flag\s?pole|built[\s-]in)\b|\bK\s*=/i;
+  function caseParts(src) {
+    var text = String(src), f = root.READER && root.READER._internal && root.READER._internal.findEnds, m, marks = [], i, seg, ends, e0, cl = [], pre, post = '', ss, asks = [], keep = [];
+    if (typeof f !== 'function' || text.length > 1200 || NEVER_RE.test(text) || /(^|\s)\([a-h]\)/.test(text)) return null;
+    CASE_RE.lastIndex = 0;
+    while ((m = CASE_RE.exec(text)) !== null) {
+      if (marks.length ? m[3].toLowerCase() !== String.fromCharCode(marks[marks.length - 1].ch.charCodeAt(0) + 1) : !/^[a1]$/i.test(m[3])) return null;
+      marks.push({ ch: m[3].toLowerCase(), start: m.index + m[1].length, end: m.index + m[0].length });
+    }
+    if (marks.length < 2) return null;
+    for (i = 0; i < marks.length; i++) {
+      seg = text.slice(marks[i].end, i + 1 < marks.length ? marks[i + 1].start : text.length);
+      ends = f(seg).filter(function (x) { return !x.viaK; }).sort(function (a, b) { return a.start - b.start; });
+      if (!ends.length) return null;
+      e0 = ends[0];
+      /* the case says its end condition first ("Case A: pinned both ends", "case B the column is fixed at both ends") ... */
+      if (!/^[\s:,.;()-]*(?:(?:the\s+)?(?:column|member|ends?|it)\s+(?:is|are)\s+)?$/i.test(seg.slice(0, e0.start))) return null;
+      /* ... and nothing more, except the last one, after which the rest of the question follows */
+      if (i + 1 < marks.length && !/^[\s,.;:)(-]*(?:and|or)?[\s,.;:-]*$/i.test(seg.slice(e0.end))) return null;
+      if (i + 1 === marks.length) post = seg.slice(e0.end).replace(/^[\s,.;:)-]+/, '');
+      cl.push({ ch: marks[i].ch, label: 'Case ' + (/\d/.test(marks[i].ch) ? marks[i].ch : marks[i].ch.toUpperCase()), ends: trim(e0.from) });
+    }
+    pre = trim(text.slice(0, marks[0].start));
+    if (CASE_ENDWORD_RE.test(pre + ' ' + post)) return null;
+    ss = (pre + (pre && !/[.?!;:]$/.test(pre) ? '.' : '') + ' ' + post).split(/[.;]+(?:\s+|$)|\n+/);
+    for (i = 0; i < ss.length; i++) { if (!trim(ss[i])) continue; if (CASE_ASK_RE.test(ss[i])) asks.push(trim(ss[i])); else keep.push(trim(ss[i]) + '.'); }
+    if (!asks.length) return null;
+    return { text: (keep.length ? keep.join(' ') + NL : '') + cl.map(function (c, k) { return '(' + String.fromCharCode(97 + k) + ') ' + c.label + ': ' + c.ends + '. ' + asks.join('. ') + (/[?.]$/.test(asks[asks.length - 1]) ? '' : '.'); }).join(NL),
+      expanded: [{ kind: 'cases', items: cl.length, from: collapse(text) }] };
+  }
+
   function expand(text) {
     var src = String(text === undefined || text === null ? '' : text), r = null;
-    try { r = run(src); } catch (e) { r = null; }
+    try { r = caseParts(src) || run(src); } catch (e) { r = null; }
     if (!r || r.text === src) return { text: src, expanded: [] };
     return r;
   }
