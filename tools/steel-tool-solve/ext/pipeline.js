@@ -3347,7 +3347,10 @@ SOLVE.runPart = function (part, vals) {
     if (/^tension_(?:capacity|net_area)$/.test(st.fn) && res && res.ok && res.values && res.values.An && res.values.Ag && isNum(res.values.An.value) && isNum(res.values.Ag.value)
       && Math.abs(Number(res.values.An.value) - Number(res.values.Ag.value)) < 1e-9) {
       var ownT = String(part.ctx || '').slice(part.coverLen || 0);
-      if (/\b(?:bolt(?:s|ed)?|holes?|rivet(?:s|ed)?)\b/i.test(ownT) && !/\bweld|\bno\s+(?:bolt\s+)?holes?\b|\bwithout\s+(?:any\s+)?(?:bolt\s+)?holes?\b|\bnot\s+bolted\b|gross\s+(?:section\s+)?yield/i.test(ownT)) {
+      /* (10/07, A1-tcap-01..08) a "no holes" that names a place ("no holes in the web") says the OTHER parts have them: it no longer switches this off */
+      var envR = env().READER, noHolesAt = envR && envR._internal && envR._internal.noHolesWord;
+      if (/\b(?:bolt(?:s|ed)?|holes?|rivet(?:s|ed)?)\b/i.test(ownT) && !/\bweld|\bwithout\s+(?:any\s+)?(?:bolt\s+)?holes?\b|\bnot\s+bolted\b|gross\s+(?:section\s+)?yield/i.test(ownT)
+        && !(noHolesAt ? noHolesAt(ownT, /\bno\s+(?:bolt\s+)?holes?\b/gi) : /\bno\s+(?:bolt\s+)?holes?\b/i.test(ownT))) {
         res = { ok: false, error: { code: 'MISSING', message: 'Your question mentions bolts or holes, but the page found no hole to take out of the area: how many holes cross the section (per flange / in the web / across the plate)? Count them in your question or in its figure and fill the hole boxes.' } };
       }
     }

@@ -1081,6 +1081,25 @@ function cgApply(t, H) {
   }
 }
 
+/* (10/07, red team A1-tcap-01..08) the first "no bolt holes" / "no holes" that says the WHOLE member has none, or null.  One that names where there are
+   none is not that: "no bolt holes in the web", "no holes in its flanges", "no bolt holes in web", "the short leg has no bolt holes", "no bolt holes
+   elsewhere" (each of these was read as a welded member, and only yielding was worked out).  One word may stand before the part ("in teh web"). */
+var NOHOLE_PART = '(?:web|stem|flanges?|(?:(?:short|long|outstanding|other|connected|unconnected|attached|vertical|horizontal)\\s+)?legs?)';
+function noHolesWord(t, re) {
+  var m, after, before;
+  re = re || /no\s+bolt\s+holes|no\s+holes\b/gi;
+  re.lastIndex = 0;
+  while ((m = re.exec(t)) !== null) {
+    after = t.slice(m.index + m[0].length, m.index + m[0].length + 60);
+    before = t.slice(Math.max(0, m.index - 40), m.index);
+    if (new RegExp('^\\s*(?:are\\s+|is\\s+)?(?:(?:drilled|punched|located|placed|made|cut)\\s+)?(?:in|through|thru|on|at|along|across)\\s+(?:\\S+\\s+)?' + NOHOLE_PART + '\\b', 'i').test(after)) continue;
+    if (/^\s*(?:anywhere\s+)?else(?:where)?\b/i.test(after)) continue;
+    if (new RegExp('\\b' + NOHOLE_PART + '\\s+(?:has|have|contains?|carries|carry|with)\\s+$', 'i').test(before)) continue;
+    return m;
+  }
+  return null;
+}
+
 function findHoles(t) {
   var H = { perFlange: null, web: null, perLine: null, lines: null, angle: null, noFlange: false, noWeb: false, locFlange: null, locWeb: null, locLeg: null, oneHole: null, weldedWord: null };
   var m, re;
@@ -1108,7 +1127,11 @@ function findHoles(t) {
      The lines are shared by the two flanges, so each flange has half of them (the same rule as "cuts four holes in the flanges" below). */
   re = new RegExp('\\bthrough\\s+(?:its|the|both)\\s+(?:two\\s+)?flanges\\s+(?:only\\s+)?(?:using|by|with)\\s+(' + WN + ')\\s+(?:lines?|rows?)\\s+of\\s+(?:\\S+\\s+){0,5}?(?:bolts?|holes?)', 'i');
   if (!H.perFlange && (m = re.exec(t))) H.cutFlange = { value: wnum(m[1]), from: m[0], plural: true, lines: true };
-  re = new RegExp('\\b(' + WN + ')\\s+(?:lines?|rows?)\\s+of\\s+(?:\\S+\\s+){0,5}?(?:bolts?|holes?)\\s+(?:in|through|across)\\s+(?:its|the|both)\\s+(?:two\\s+)?flanges\\b', 'i');
+  /* (10/07, A1-tcap-09/10/11) the words skipped between "N lines of" and the place never cross a "no" (also glued: "bolts,no"): "four lines of 3/4in
+     bolts, no holes in the web" put the four lines IN the web (603.5 printed where 596.2 is right).  (Not a comma: "two lines of 3/4-in;: bolts in each
+     flange" must still be read, or the halving rule of "through the flanges with two lines" takes its place.) */
+  var SK = '(?:(?!\\S*\\b(?:no|not|none|without)\\b)\\S+\\s+){0,5}?';
+  re = new RegExp('\\b(' + WN + ')\\s+(?:lines?|rows?)\\s+of\\s+' + SK + '(?:bolts?|holes?)\\s+(?:in|through|across)\\s+(?:its|the|both)\\s+(?:two\\s+)?flanges\\b', 'i');
   if (!H.perFlange && !H.cutFlange && (m = re.exec(t))) H.cutFlange = { value: wnum(m[1]), from: m[0], plural: true, lines: true };
   /* 0.6 (review 2): "Each flange has 2 holes and the web has 2 holes"; "2 per flange, 2 in the web"; "2 in each flange and 2 in the web" */
   re = new RegExp('\\bweb\\s+has\\s+(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?holes?\\b', 'i');
@@ -1135,7 +1158,7 @@ function findHoles(t) {
   /* 0.5: "2 holes per flange" */
   re = new RegExp('(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?(?:holes?|bolts?)\\s+per\\s+flange\\b', 'i');
   if (!H.perFlange && (m = re.exec(t)) && !innerOfLines(m)) H.perFlange = { value: wnum(m[1]), from: m[0] };
-  re = new RegExp('(' + WN + ')\\s+lines?\\s+of\\s+(?:\\S+\\s+){0,5}?(?:bolts?|holes?)(?:\\s+for\\s+\\S+\\s+bolts?)?\\s+(?:in|across|through)\\s+(?:each|every)\\s+flange', 'i');
+  re = new RegExp('(' + WN + ')\\s+lines?\\s+of\\s+' + SK + '(?:bolts?|holes?)(?:\\s+for\\s+\\S+\\s+bolts?)?\\s+(?:in|across|through)\\s+(?:each|every)\\s+flange', 'i');
   if (!H.perFlange && (m = re.exec(t))) H.perFlange = { value: wnum(m[1]), from: m[0], lines: true };
   /* 0.5: the flange named first: "Each flange has two lines of 7/8-in diameter bolts", "each flange is bolted with two rows of bolts" */
   re = new RegExp('\\b(?:each|every)\\s+flange\\s+(?:has|have|contains?|carries|is\\s+(?:bolted|connected|attached|fastened)\\s+(?:with|by|through))\\s+(' + WN + ')\\s+(?:lines?|rows?)\\s+of\\s+(?:\\S+\\s+){0,5}?(?:bolts?|holes?)', 'i');
@@ -1144,7 +1167,7 @@ function findHoles(t) {
   if (!H.perFlange && (m = re.exec(t))) H.perFlange = { value: wnum(m[1]), from: m[0] };
   re = new RegExp('(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?(?:holes?|bolts?)\\s+(?:in|across|through)\\s+(?:its|the|their)\\s+web', 'i');
   if ((m = re.exec(t)) && !innerOfLines(m)) H.web = { value: wnum(m[1]), from: m[0] };
-  re = new RegExp('(' + WN + ')\\s+lines?\\s+of\\s+(?:\\S+\\s+){0,5}?(?:bolts?|holes?)\\s+(?:in|across|through)\\s+the\\s+web', 'i');
+  re = new RegExp('(' + WN + ')\\s+lines?\\s+of\\s+' + SK + '(?:bolts?|holes?)\\s+(?:in|across|through)\\s+the\\s+web', 'i');
   if (!H.web && (m = re.exec(t))) H.web = { value: wnum(m[1]), from: m[0], lines: true };
   re = new RegExp('cuts?\\s+(' + WN + ')\\s+holes?\\s*,?\\s*(?:all|both)?\\s*in\\s+the\\s+(flanges?|web)', 'i');
   if ((m = re.exec(t))) {
@@ -1162,7 +1185,7 @@ function findHoles(t) {
   re = new RegExp('\\b(' + WN + '|a\\s+single|single)\\s+(?:lines?|rows?)\\s+(?:in|through|across|along)\\s+(?:the|its)\\s+web\\b', 'i');
   if (!H.web && (m = re.exec(t))) H.web = { value: wnum(m[1].replace(/^a\s+single$/i, 'single')), from: m[0], lines: true };
   /* 0.5: a tee has ONE flange: "two lines of 3/4-in bolts in the flange", "two holes across the flange" */
-  re = new RegExp('(' + WN + ')\\s+lines?\\s+of\\s+(?:\\S+\\s+){0,5}?(?:bolts?|holes?)\\s+(?:in|across|through)\\s+(?:the|its)\\s+flange\\b(?!s)', 'i');
+  re = new RegExp('(' + WN + ')\\s+lines?\\s+of\\s+' + SK + '(?:bolts?|holes?)\\s+(?:in|across|through)\\s+(?:the|its)\\s+flange\\b(?!s)', 'i');
   if (!H.perFlange && (m = re.exec(t))) H.perFlange = { value: wnum(m[1]), from: m[0], lines: true };
   re = new RegExp('(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?(?:holes?|bolts?)\\s+across\\s+(?:the|its|each)\\s+flange\\b', 'i');
   if (!H.perFlange && (m = re.exec(t)) && !innerOfLines(m)) H.perFlange = { value: wnum(m[1]), from: m[0] };
@@ -1178,12 +1201,18 @@ function findHoles(t) {
   /* 0.6 (review 3): "two 3/4 in. bolt holes across its width", and a hole in an angle's leg: "one 3/4 in. diameter bolt hole in the connected leg" */
   re = new RegExp('(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?(?:bolts?|holes?)\\s+across\\s+(?:the\\s+|its\\s+)?(?:width|plate|section|member|angle)', 'i');
   if ((m = re.exec(t))) H.across = { value: wnum(m[1]), from: m[0] };
+  /* (10/07, A1-tcap-07 / n08) "PL 1/2 x 8 ... with 2 holes across for 3/4in bolts": across with nothing after it but the bolt (or the end of the clause).
+     Read before, it was the welded reading of "no bolt holes elsewhere" that answered it.  Not when the question names one limit state ("find design
+     rupture strength", k05..k07): the page still prints the governing one for those (the prose-asks fix), so they stay stopped as before */
+  re = new RegExp('\\b(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?holes?\\s+across(?=\\s+for\\s|\\s*[,.;)]|\\s*$)', 'i');
+  if (!H.across && !/ruptur|fractur|yield|(?:net|gross)[\s-]+(?:section|area)/i.test(t) && (m = re.exec(t)) && !innerOfLines(m)) H.across = { value: wnum(m[1]), from: m[0] };
   re = new RegExp('\\b(' + WN + ')\\s+' + DIA + '(?:bolt\\s+)?holes?\\s+in\\s+(?:the|its|one|each)\\s+(?:connected\\s+|attached\\s+|bolted\\s+|long\\s+|short\\s+|outstanding\\s+|\\d+(?:\\s*-\\s*\\d\\/\\d)?\\s*-?\\s*in\\.?\\s+)?leg\\b', 'i');
   if (!H.across && (m = re.exec(t))) H.across = { value: wnum(m[1]), from: m[0] };
   /* 0.6: the question SAYS there are none there, in more wordings: "(there are no bolts in the web)", "No holes in the web", "no web holes", "the web is not bolted" */
-  re = /the\s+flanges?\s+(?:have|has|contains?)\s+no\s+(?:bolt\s+)?(?:holes?|bolts?)|\bno\s+(?:bolt\s+)?(?:holes?|bolts?)\s+(?:are\s+|is\s+)?(?:in|through|on|at)\s+(?:the|its|either|each|any)\s+flanges?\b|\bno\s+flange\s+(?:bolt\s+)?(?:holes?|bolts?)\b|\bflanges?\s+(?:is|are)\s+not\s+(?:bolted|connected|drilled|punched)\b/i;
+  /* (10/07, A1-tcap-03: "there are no bolt holes in web", typed without "the") */
+  re = /the\s+flanges?\s+(?:have|has|contains?)\s+no\s+(?:bolt\s+)?(?:holes?|bolts?)|\bno\s+(?:bolt\s+)?(?:holes?|bolts?)\s+(?:are\s+|is\s+)?(?:in|through|on|at)\s+(?:(?:the|its|either|each|any)\s+)?flanges?\b|\bno\s+flange\s+(?:bolt\s+)?(?:holes?|bolts?)\b|\bflanges?\s+(?:is|are)\s+not\s+(?:bolted|connected|drilled|punched)\b/i;
   if ((m = re.exec(t))) { H.noFlange = true; H.noFlangeFrom = m[0]; }
-  re = /the\s+(?:web|stem)\s+(?:have|has|contains?)\s+no\s+(?:bolt\s+)?(?:holes?|bolts?)|\bno\s+(?:bolt\s+)?(?:holes?|bolts?)\s+(?:are\s+|is\s+)?(?:in|through|on|at)\s+(?:the|its)\s+(?:web|stem)\b|\bno\s+(?:web|stem)\s+(?:bolt\s+)?(?:holes?|bolts?)\b|\b(?:web|stem)\s+is\s+not\s+(?:bolted|connected|drilled|punched)\b/i;
+  re = /the\s+(?:web|stem)\s+(?:have|has|contains?)\s+no\s+(?:bolt\s+)?(?:holes?|bolts?)|\bno\s+(?:bolt\s+)?(?:holes?|bolts?)\s+(?:are\s+|is\s+)?(?:in|through|on|at)\s+(?:(?:the|its)\s+)?(?:web|stem)\b|\bno\s+(?:web|stem)\s+(?:bolt\s+)?(?:holes?|bolts?)\b|\b(?:web|stem)\s+is\s+not\s+(?:bolted|connected|drilled|punched)\b/i;
   if ((m = re.exec(t))) { H.noWeb = true; H.noWebFrom = m[0]; }
   /* 0.8: "one hole in each flange and none in the web", "two lines in the web, none in the flanges" */
   if (!H.noWeb && (m = /\bnone\s+(?:in|through|on|at)\s+(?:the|its)\s+(?:web|stem)\b/i.exec(t)) && /\b(?:holes?|bolts?)\b/i.test(t)) { H.noWeb = true; H.noWebFrom = m[0]; }
@@ -1202,8 +1231,15 @@ function findHoles(t) {
   re = /staggered|stagger|gage|\bpitch\b|\bs\s*=\s*\d|\bg\s*=\s*\d/i;
   if ((m = re.exec(t))) H.stagger = m[0];
   /* (0.6, review 4: "connected with welds", "attached by fillet welds", "a welded connection" are the same thing: the page asked for holes) */
-  re = /no\s+bolt\s+holes|all\s+connections\s+are\s+welded|\bwelded\b(?!\s+to\s+(?:each|the\s+flange))|no\s+holes\b|\b(?:connected|attached|joined|fastened)\s+(?:\w+\s+){0,4}?(?:with|by|using)\s+(?:\w+\s+){0,2}?welds?\b|\bweld(?:ed)?\s+connections?\b/i;
-  if ((m = re.exec(t))) H.weldedWord = m[0];
+  re = /all\s+connections\s+are\s+welded|\bwelded\b(?!\s+to\s+(?:each|the\s+flange))|\b(?:connected|attached|joined|fastened)\s+(?:\w+\s+){0,4}?(?:with|by|using)\s+(?:\w+\s+){0,2}?welds?\b|\bweld(?:ed)?\s+connections?\b/i;
+  m = re.exec(t);
+  /* (10/07, red team A1-tcap-01..08) "no bolt holes" / "no holes" is a welded member only when it says where nowhere: "no bolt holes in the web", "the
+     short leg has no bolt holes", "no bolt holes elsewhere" are members WITH holes (702 printed for a W12x53 with two lines of bolts in each flange, where
+     596.2 is right).  The first of the welded words still names it, as before. */
+  var nh = noHolesWord(t);
+  if (nh) H.noHoles = nh[0];
+  if (nh && (!m || nh.index < m.index)) m = nh;
+  if (m) H.weldedWord = m[0];
   re = /gross[\s-]*(?:section\s+)?yield(?:ing)?|yielding\s+of\s+the\s+gross/i;
   if ((m = re.exec(t))) H.grossYield = m[0];
   /* 0.8: what the rules above left empty is read by the count grammar (any order of the words inside a clause) */
@@ -1607,9 +1643,15 @@ function tensionCommon(fn, F, B, D) {
   // ---- bolt / holes
   var memberIsPlate = !isSelect && !isU && !sh.length && (plate || hasPlateWord);
   var memberIsAngle = angleLike;
-  var welded = !!H.weldedWord && !H.perFlange && !H.web && !H.perLine && !(F.bolt && /hole/i.test(H.weldedWord) === false && /bolt/i.test(t) && !/no\s+bolt\s+holes/i.test(t));
+  /* (10/07, A1-tcap-01..08) a "no bolt holes" that names a place ("in the web", "the short leg has ...", "elsewhere") is not H.noHoles, and does not
+     make the member welded any more.  One that names no place, beside words that count holes or bolts, cannot both be true: welded was yielding only
+     (684.45 printed for "4 holes in the flanges ..., no holes in the web, U=0.9", 596.2 right).  Then the hole boxes are asked, below. */
+  var holesSaid = !!(H.perFlange || H.cutFlange || H.web || H.perLine || H.lines || H.across || H.inSection || H.forBolt || H.oneHole);
+  var noBoltHoles = !!H.noHoles && /bolt/i.test(H.noHoles), noHolesClash = !!H.noHoles && holesSaid;
+  var welded = !!H.weldedWord && !H.perFlange && !H.web && !H.perLine && !(F.bolt && /hole/i.test(H.weldedWord) === false && /bolt/i.test(t) && !noBoltHoles);
   if (H.weldedWord && /no\s+bolt\s+holes|all\s+connections\s+are\s+welded|welded/i.test(H.weldedWord) && !F.bolt) welded = true;
-  if (/no\s+bolt\s+holes/i.test(t)) welded = true;
+  if (noBoltHoles) welded = true;
+  if (noHolesClash) welded = false;
   /* (0.6: not when the same text also names rupture or the net section -- "Enter 1 for gross-section yielding or 2 for net-section rupture" is a list of
      choices, and the member has holes) */
   /* (0.7, 10/06 night: and not when the text DESCRIBES bolts -- a diameter, holes per flange, in the web, per line.  "A W12x53 ... two lines of 7/8 in.
@@ -1645,6 +1687,9 @@ function tensionCommon(fn, F, B, D) {
       else if (H.noFlange) B.set('holes_per_flange', 0, H.noFlangeFrom, 'high');
       if (wb) B.set('web_holes', wb.value, wb.from, 'high');
       else if (H.noWeb) B.set('web_holes', 0, H.noWebFrom, 'high');
+      /* (10/07, A1-tcap-09) holes counted in the web AND "no holes in the web": the count won silently (603.5 printed, 596.2 right).  Asked instead. */
+      if (wb && H.noWeb) B.ask('count_web', 'Your question counts holes in the web and also says "' + H.noWebFrom + '". The page does not choose: type the number of web holes your paper means (count on the drawing if there is one).', ['web_holes'], null, 'need');
+      if (pf && H.noFlange) B.ask('count_perFlange', 'Your question counts holes in the flanges and also says "' + H.noFlangeFrom + '". The page does not choose: type the number of holes in each flange your paper means (count on the drawing if there is one).', ['holes_per_flange'], null, 'need');
       if (!B.has('holes_per_flange') && !B.has('web_holes')) {
         if (!shapeIsTee) B.ask('holes_count', 'How many holes does a cross-section cut: in each flange, and in the web?', ['holes_per_flange', 'web_holes'], null);
         else B.ask('holes_count', 'For this tee: how many holes in the flange, and how many in the stem?', ['holes_per_flange', 'web_holes'], null);
@@ -1673,6 +1718,8 @@ function tensionCommon(fn, F, B, D) {
       else B.ask('holes_count', 'How many holes does a cross-section cut: in each flange, and in the web?', ['holes_per_flange', 'web_holes', 'holes_across'], null);
     }
   }
+  /* (10/07) "no holes" that names no place, and holes or bolts counted as well (see noHolesClash above): the hole boxes are emptied and asked */
+  if (noHolesClash && !isU && !welded) B.ask('count_noholes', 'Your question says "' + H.noHoles + '" and also counts bolts or holes, without saying where there are none. The page does not choose: type the holes one cross-section cuts, as your paper or its drawing shows them.', (memberIsPlate || memberIsAngle) ? ['holes_across'] : ['holes_per_flange', 'web_holes'], null, 'need');
   if (isSelect && welded) B.set('welded', true, H.weldedWord || 'welded', 'high');
 
   // ---- a U the question STATES.  It is set FIRST: a field that is set twice keeps its first value, and the cover page's "U = 1.0" used to be set before
@@ -2692,6 +2739,7 @@ function read(text, opts) {
 }
 
 var READER = { read: read, version: VERSION, rules: RULES, _fold: fold, _internal: { findShapes: findShapes, findLoads: findLoads, scanQuantities: scanQuantities, findEnds: findEnds, findHoles: findHoles, findLengths: findLengths, splitParts: splitParts } };
+READER._internal.noHolesWord = noHolesWord;     /* (10/07) pipeline's "mentions bolts or holes" guard asks the same question: does "no holes" name a place? */
 if (typeof module !== 'undefined' && module.exports) module.exports = READER;
 if (root) root.READER = READER;
 })(typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : this));
