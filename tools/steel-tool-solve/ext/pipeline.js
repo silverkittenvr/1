@@ -763,8 +763,13 @@ function amendRoute(route, askText, stem) {
   /* 1. a multiple-choice question whose choices are WORDS is a word question, whatever member it happens to mention ("... for a column is (choose one): ...") */
   ch = mcChoices(t);
   if (route.family !== 'words' && ch && choicesAreWords(ch)) return wordsRoute(route, ['multiple choice']);
-  /* 2. "the required Ix is 3000 in4 ... the lightest section" is a look-up by property, not a beam chosen from a moment */
-  if (route.fn !== 'lookup_by_property' && (m = /\b(?:required|needed|minimum|necessary)\s+(?:value\s+of\s+)?(I[xy]|Z[xy]|S[xy]|r[xy])\b[^.;0-9]{0,40}?\d|\b(I[xy]|S[xy]|r[xy])\s+(?:required|needed|req'?d)\b[^.;0-9]{0,30}?\d/i.exec(t))
+  /* (cloud, holdout C-48) ... and it STAYS one: the rules below never turn it into a calculation.  "(c) the one with Zx closest to required Zx
+     (d) a36 steel shape" fell to rule 2 below (the 3 of "a36" read as the required Zx) and printed "ANSWER: Lightest W with Zx >= 36: W16X26" under a
+     question whose answer is the letter b. */
+  if (route.family === 'words' && ch && choicesAreWords(ch)) return route;
+  /* 2. "the required Ix is 3000 in4 ... the lightest section" is a look-up by property, not a beam chosen from a moment.
+     (cloud, holdout C-48) The number must stand on its own: a digit glued to a letter ("A36", "a36 steel") is a grade, never the property's value. */
+  if (route.fn !== 'lookup_by_property' && (m = /\b(?:required|needed|minimum|necessary)\s+(?:value\s+of\s+)?(I[xy]|Z[xy]|S[xy]|r[xy])\b[^.;0-9]{0,40}?[^A-Za-z0-9.;]\d|\b(I[xy]|S[xy]|r[xy])\s+(?:required|needed|req'?d)\b[^.;0-9]{0,30}?[^A-Za-z0-9.;]\d/i.exec(t))
     && /lightest|economical|section|shape|\bbeam\b|\bW\b/i.test(t) && !/\bM\s?u\s*=|\bkip\s?-?\s?ft\b|\bk\s?-\s?ft\b/i.test(t)) return formRoute(route, 'lookup_by_property', [trim(m[0]).replace(/\s*\d$/, '')], 'The lightest shape that has at least some property');
   /* 3. "KL/r = 100, what is the available (critical, design) stress" with no shape named is the phi Fcr table, not a column's capacity */
   if (route.fn !== 'lookup_critical_stress' && /\bk\s?l\s*\/\s*r\s*(?:=|of|is)\s*\d/i.test(all) && /\b(?:available|critical|design|nominal|allowable)\s+(?:\w+\s+)?stress\b|phi\s*_?\s*c?\s*F\s*_?\s*(?:cr|n)\b|\bF\s?cr\b/i.test(t)
