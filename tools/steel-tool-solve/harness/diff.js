@@ -11,6 +11,7 @@ function lines(r) {
     L.push(h + (p.why ? ' why=' + p.why : '') + (p.askedMismatch ? ' MISMATCH=' + p.askedMismatch : ''));
     (p.write || []).forEach(function (l) { if (/^(ANSWER|FOR YOUR BLANK|ANSWER TO|ALSO FOUND|NOT WHAT|CHECK YOUR BLANK|CIRCLE|NO LETTER|YES|NO\b)/.test(l)) L.push('  ' + l); });
     if (p.gate) L.push('  gate ' + p.gate.join(' | '));
+    if (p.wanted && p.wanted.length) L.push('  wanted ' + p.wanted.join(' | '));
   });
   return L;
 }

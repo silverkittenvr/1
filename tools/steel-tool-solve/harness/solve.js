@@ -21,6 +21,10 @@ function solve(text, opts) {
     if (d.run) { try { wb = S.writeBlock(p, d.run, d.vals); } catch (e2) { rec.wbCrash = String(e2 && e2.message ? e2.message : e2); } }
     if (wb) { rec.write = wb.writeLines; rec.read = wb.read; }
     if (d.gate && d.gate.length) rec.gate = d.gate.map(function (x) { return x.kind + ':' + (x.text || x.label || x.path || x.msg || ''); });
+    /* STEEL_WANTED=1: what the page asks him for under a part that has no answer (asks.js: the first plain question; else the box list) -- unit E's regression */
+    if (process.env.STEEL_WANTED && d.vals && !(d.run && d.run.ok) && p.kind === 'form') {
+      try { rec.wanted = S.wantedBoxes(p, d.vals, d.run && !d.run.ok ? d.run : null).map(function (w, k) { return w.ask ? (k === 0 ? 'ASK ' + w.id + (w.stop ? ' (stop)' : '') + ': ' + w.q : '') : w.name; }).filter(function (x) { return x; }); } catch (eW) { rec.wanted = ['CRASH ' + (eW && eW.message)]; }
+    }
     out.parts.push(rec);
   }
   return out;
